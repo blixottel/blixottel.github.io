@@ -2012,8 +2012,8 @@
 	  const currentDate = new Date();
 
 	  // Calculate the date 6 days from now
-	  const sixDaysLater = new Date();
-	  sixDaysLater.setDate(sixDaysLater.getDate() + 6);
+	  const fiveDaysLater = new Date();
+	  fiveDaysLater.setDate(fiveDaysLater.getDate() + 5);
 
 	  // Get all elements with the class "icon-cell"
 	  const iconCells = document.querySelectorAll('.icon-cell');
@@ -2033,7 +2033,7 @@
 		  iconElement.classList.add('fa-flip');
 		  // Add the "red-icon" class to the icon for red color
 		  iconElement.classList.add('red-icon');
-		} else if (eventDate <= sixDaysLater) {
+		} else if (eventDate <= fiveDaysLater) {
 		  // Add the "fa-beat" class to the icon
 		  iconElement.classList.add('fa-beat');
 		  // Add the "red-icon" class to the icon for red color
