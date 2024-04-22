@@ -1,0 +1,198 @@
+/* General Styles */
+body {
+	font-family: 'Formula Condensed', sans-serif;
+	background: linear-gradient(to bottom, #f0f0f0, #e6e6e6);
+	padding: 20px;
+}
+
+h1 {
+	font-family: 'Formula Condensed', sans-serif;
+	text-align: center;
+	margin: 20px 0;
+}
+
+table {
+	font-family: 'Formula Condensed', sans-serif;
+	width: 100%;
+	border-collapse: collapse;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+}
+
+th, td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+
+th {
+	background-color: #ECEFF1;
+}
+
+/* Series Headers */
+.formula1-header {
+	background-color: #C00000;
+	color: white;
+}
+
+.formulaRegional-header {
+	background-color: #FFC000;
+	color: black;
+}
+
+.formula4-header {
+	background-color: #92D050;
+	color: black;
+}
+
+.nonFIA-header {
+	background-color: #AEAAAA;
+	color: black;
+}
+
+.usaSeries-header {
+	background-color: #00B050;
+	color: black;
+}
+
+.motorbikes-header {
+	background-color: #0070C0;
+	color: white;
+}
+
+.electric-header {
+	background-color: #7030A0;
+	color: white;
+}
+
+.karting-header {
+	background-color: #C65911;
+	color: white;
+}
+
+.trackResults-header {
+	background-color: #CD7F32;
+	color: white;
+}
+
+/* Series Pastels */
+.formula1-pastel {
+	background-color: #FFBABA;
+}
+
+.formulaRegional-pastel {
+	background-color: #FFE6B3;
+}
+
+.formula4-pastel {
+	background-color: #D9FFBF;
+}
+
+.nonFIA-pastel {
+	background-color: #E6E6E6;
+}
+
+.usaSeries-pastel {
+	background-color: #B3FFD9;
+}
+
+.motorbikes-pastel {
+	background-color: #B3D9FF;
+}
+
+.electric-pastel {
+	background-color: #D9B3FF;
+}
+
+.karting-pastel {
+	background-color: #FFC299;
+}
+
+.trackResults-pastel {
+	background-color: #B08E6D;
+}
+
+/* Inner Table Styles */
+.icon-cell {
+	text-align: left;
+}
+
+.icon-header-series,
+.icon-header,
+.icon-cell i {
+	text-align: center;
+}
+
+.icon-header.ongoing {
+  color: #00B050;
+}
+
+.icon-header.upcoming {
+  color: #00B050;
+}
+
+.icon-header.completed {
+  color: #00B050;
+}
+
+.outer-table {
+	width: 100%;
+	table-layout: fixed; /* Forces equal width for columns */
+}
+
+.outer-cell {
+	width: 20%; /* Each cell takes 20% of the table width */
+	padding: 10px;
+	vertical-align: top; /* Aligns content at the top of the cell */
+}
+
+.inner-table {
+	width: 100%;
+}
+
+.no-link {
+	color: #AEAAAA;
+	text-decoration: none;
+}
+
+/* Icons */
+h1::before {
+	content: "\f024"; /* Unicode for flag icon */
+	font-family: 'Font Awesome 5 Free';
+	margin-right: 10px; /* Adjust spacing between icon and text */
+}
+
+th.icon-header::before {
+	content: "";
+	font-family: 'Font Awesome 5 Free';
+	display: inline-block;
+	margin-right: 5px; /* Adjust spacing between icon and text */
+}
+
+th.icon-header-series::before {
+	content: "\f091"; /* Unicode for the trophy icon */
+}
+
+/* Define the animation for the fa-flip class */
+@keyframes fa-flip {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+/* Define the animation for the fa-beat class */
+@keyframes fa-beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.fa-beat {
+  animation: fa-beat 1s infinite;
+}
+
+.fa-flip {
+  animation: fa-flip 1s linear infinite;
+}
+
+/* Add red color to the icon */
+.red-icon {
+  color: red;
+}
