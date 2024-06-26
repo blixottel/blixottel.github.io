@@ -1,3 +1,4 @@
+/* General Styles */
 body {
 	font-family: 'Segoe UI', sans-serif;
 	background: linear-gradient(to bottom, #f0f0f0, #e6e6e6);
@@ -27,6 +28,7 @@ th {
 	background-color: #ECEFF1;
 }
 
+/* Series Headers */
 .formula1-header {
 	background-color: #C00000;
 	color: white;
@@ -67,6 +69,12 @@ th {
 	color: white;
 }
 
+.trackResults-header {
+	background-color: #FF6A00;
+	color: white;
+}
+
+/* Series Pastels */
 .formula1-pastel {
 	background-color: #FFBABA;
 }
@@ -99,6 +107,11 @@ th {
 	background-color: #FFC299;
 }
 
+.trackResults-pastel {
+	background-color: #FFD9B3;
+}
+
+/* Inner Table Styles */
 .icon-cell {
 	width: 80%;
 	text-align: left;
@@ -116,6 +129,10 @@ th {
 }
 
 .icon-header.ongoing {
+  color: #00B050;
+}
+
+.icon-header.upcoming {
   color: #00B050;
 }
 
@@ -140,6 +157,7 @@ th {
 	text-decoration: none;
 }
 
+/* Icons */
 h1::before {
 	content: "\f024"; /* Unicode for flag icon */
 	font-family: 'Font Awesome 5 Free';
@@ -157,6 +175,18 @@ th.icon-header-series::before {
 	content: "\f091"; /* Unicode for the trophy icon */
 }
 
+/* Define the animation for the fa-flip class */
+@keyframes fa-flip {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+/* Define the animation for the fa-beat class */
+@keyframes fa-beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
 .fa-beat {
   animation: fa-beat 1s infinite;
 }
@@ -165,6 +195,7 @@ th.icon-header-series::before {
   animation: fa-flip 1s linear infinite;
 }
 
+/* Add red color to the icon */
 .red-icon {
   color: red;
 }
