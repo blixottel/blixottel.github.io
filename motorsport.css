@@ -145,12 +145,6 @@ th {
 	flex-wrap: wrap;
 }
 
-.outer-cell {
-	width: 20%; /* Each cell takes 20% of the table width */
-	padding: 10px;
-	vertical-align: top; /* Aligns content at the top of the cell */
-}
-
 .inner-table {
   width: calc(20% - 10px); /* 20% width minus some gap */
   margin: 5px; /* Adjust the gap between columns as needed */
