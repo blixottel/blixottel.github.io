@@ -140,9 +140,9 @@ th {
   color: #00B050;
 }
 
-.outer-table {
-	width: 100%;
-	table-layout: fixed; /* Forces equal width for columns */
+.container {
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .outer-cell {
@@ -152,7 +152,10 @@ th {
 }
 
 .inner-table {
-	width: 100%;
+  width: calc(20% - 10px); /* 20% width minus some gap */
+  margin: 5px; /* Adjust the gap between columns as needed */
+  border: 1px solid #ccc; /* Styling for inner tables */
+  padding: 10px;
 }
 
 .no-link {
