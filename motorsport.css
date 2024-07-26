@@ -1,17 +1,17 @@
 body {
-	font-family: 'Segoe UI', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	background: linear-gradient(to bottom, #f0f0f0, #e6e6e6);
 	padding: 20px;
 }
 
 h1 {
-	font-family: 'Segoe UI', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	text-align: center;
 	margin: 20px 0;
 }
 
 table {
-	font-family: 'Segoe UI', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	width: 100%;
 	border-collapse: collapse;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
