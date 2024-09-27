@@ -14,7 +14,7 @@ table {
 	font-family: 'Roboto', sans-serif;
 	width: 100%;
 	border-collapse: collapse;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
