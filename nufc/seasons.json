@@ -1,0 +1,14 @@
+[
+  {
+    "id": "2026-27",
+    "label": "2026/27",
+    "playersFile": "players-2026-27.json",
+    "fixturesFile": "fixtures-2026-27.json"
+  },
+  {
+    "id": "2025-26",
+    "label": "2025/26",
+    "playersFile": "players-2025-26.json",
+    "fixturesFile": "fixtures-2025-26.json"
+  }
+]

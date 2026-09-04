@@ -1,11 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=motorsport.html">
-    <title>Redirecting...</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>blixottel — site index</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #131315;
+    --ink-soft: #232326;
+    --paper: #F5F4F0;
+    --paper-raised: #FFFFFF;
+    --slate: #6B6E76;
+    --hairline: #DCDAD4;
+    --radius: 3px;
+
+    /* motorsport accent — pulled from the racing/track world */
+    --motor: #A6192E;
+    --motor-bg: #FBEDEE;
+
+    /* nufc accent — literal tokens from the squad tracker */
+    --pitch: #2F5233;
+    --pitch-bg: #E6EDE7;
+    --gold: #B99A4B;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  .masthead {
+    background: repeating-linear-gradient(90deg, var(--ink) 0 42px, var(--ink-soft) 42px 84px);
+    color: var(--paper);
+    padding: 56px 24px 44px;
+  }
+  .masthead-inner { max-width: 1000px; margin: 0 auto; }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: #B9B9BE;
+    margin: 0 0 12px;
+  }
+  h1.title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(32px, 6vw, 52px);
+    line-height: 1.02;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    font-size: 16px;
+    color: #C9C9CC;
+    margin: 14px 0 0;
+    max-width: 46ch;
+    line-height: 1.5;
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .sites {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 700px) {
+    .sites { grid-template-columns: 1fr; }
+  }
+
+  .site-card {
+    display: block;
+    text-decoration: none;
+    background: var(--paper-raised);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    padding: 28px 26px 26px;
+    border-top: 4px solid var(--card-accent, var(--ink));
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .site-card:hover,
+  .site-card:focus-visible {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+    transform: translateY(-2px);
+  }
+  .site-card:focus-visible {
+    outline: 2px solid var(--card-accent, var(--ink));
+    outline-offset: 3px;
+  }
+
+  .site-card .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--card-accent, var(--slate));
+    margin: 0 0 10px;
+  }
+  .site-card h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 24px;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+  .site-card p.desc {
+    font-size: 14.5px;
+    color: var(--slate);
+    line-height: 1.55;
+    margin: 0 0 18px;
+  }
+  .site-card .visit {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--card-accent, var(--ink));
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card-motor { --card-accent: var(--motor); }
+  .card-nufc { --card-accent: var(--pitch); }
+
+  footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+    font-size: 12.5px;
+    color: var(--slate);
+  }
+</style>
 </head>
 <body>
-    <p>If you are not redirected automatically, <a href="motorsport.html">click here</a>.</p>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <p class="eyebrow">blixottel.github.io</p>
+      <h1 class="title">Two hobbies, hand-built</h1>
+      <p class="subtitle">A pair of static sites I maintain for fun — one tracking single-seater motorsport, one tracking Newcastle United's squad.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="sites">
+
+      <a class="site-card card-motor" href="motorsport/">
+        <p class="kicker">MOTORSPORT · LINK TRACKER</p>
+        <h2>Pit Wall</h2>
+        <p class="desc">Every single-seater series worth following in one place — official site, results, standings, calendar and next date at a glance.</p>
+        <span class="visit">Open Pit Wall</span>
+      </a>
+
+      <a class="site-card card-nufc" href="nufc/">
+        <p class="kicker">NUFC · SQUAD TRACKER</p>
+        <h2>The Teamsheet</h2>
+        <p class="desc">Newcastle United's senior, U21 and U18 squads — appearances, leaderboards and a fixture-by-fixture matrix, season by season.</p>
+        <span class="visit">Open The Teamsheet</span>
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    Both sites are maintained by hand from local data files — see each site's own DATA-GUIDE.md for details.
+  </footer>
+
 </body>
 </html>

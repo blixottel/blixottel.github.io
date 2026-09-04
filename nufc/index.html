@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Teamsheet — NUFC Squad Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #131315;
+    --ink-soft: #232326;
+    --paper: #F5F4F0;
+    --paper-raised: #FFFFFF;
+    --pitch: #2F5233;
+    --pitch-soft: #E6EDE7;
+    --slate: #6B6E76;
+    --hairline: #DCDAD4;
+    --hairline-dark: #3A3A3D;
+    --gold: #B99A4B;
+    --amber-bg: #FBF2E1;
+    --amber-line: #D9B166;
+    --sky-bg: #EAF1F5;
+    --sky-line: #7FA8C0;
+    --claret-bg: #F6E9E8;
+    --claret-line: #B97A76;
+    --claret-ink: #7A2E2E;
+    --injury-bg: #FBEAE7;
+    --injury-line: #D98B7D;
+    --injury-ink: #9A2A1E;
+    --slate-bg: #EDEDF0;
+    --slate-line: #B9B9C2;
+    --cup-ink: #3B2B54;
+    --cup-gold: #C9A9E0;
+    --cup-col-bg: #F1ECFA;
+    --euro-ink: #0A3A5C;
+    --euro-gold: #8FD6E8;
+    --euro-col-bg: #E7F3F8;
+    --radius: 3px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .masthead {
+    background: repeating-linear-gradient(90deg, var(--ink) 0 42px, var(--ink-soft) 42px 84px);
+    color: var(--paper);
+    padding: 40px 24px 28px;
+    position: relative;
+  }
+  .masthead-inner { max-width: 1180px; margin: 0 auto; position: relative; }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 10px;
+  }
+  h1.title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(34px, 6vw, 64px);
+    line-height: 0.95;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #C9C9CC;
+    margin: 10px 0 0;
+  }
+
+  .season-switcher {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .season-switcher-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #9B9B9F;
+  }
+  .season-switcher select {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--paper);
+    background: var(--ink-soft);
+    border: 1px solid #4A4A4E;
+    border-radius: var(--radius);
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+  .season-switcher select:hover { border-color: var(--gold); }
+  @media (max-width: 640px) {
+    .season-switcher { position: static; margin-top: 14px; }
+  }
+
+  nav.tabs {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--paper);
+    border-bottom: 3px solid var(--ink);
+    display: flex;
+    gap: 0;
+    max-width: 1180px;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+  nav.tabs a {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--slate);
+    text-decoration: none;
+    padding: 14px 22px;
+    white-space: nowrap;
+    border-right: 1px solid var(--hairline);
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+  nav.tabs a:hover { color: var(--ink); background: var(--paper-raised); }
+  nav.tabs a.active {
+    color: var(--ink);
+    background: var(--paper-raised);
+    box-shadow: inset 0 -3px 0 var(--pitch);
+  }
+  nav.tabs a .count {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    margin-left: 6px;
+  }
+
+  main { max-width: 1180px; margin: 0 auto; padding: 0 24px 80px; }
+
+  section.squad { padding-top: 40px; display: none; }
+  section.squad.active-squad { display: block; }
+
+  .squad-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 4px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+  }
+  .squad-header h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 28px;
+    margin: 0;
+  }
+  .squad-header .meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--slate);
+  }
+
+  .section-subhead {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--paper-raised);
+    background: var(--pitch);
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 18px 0 10px;
+    border-radius: var(--radius);
+  }
+  .position-group:first-of-type .section-subhead,
+  h3.block-heading + .section-subhead { margin-top: 0; }
+
+  h3.block-heading {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    margin: 34px 0 4px;
+  }
+
+  .player-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .player-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 9px;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .player-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.12); transform: translateY(-2px); }
+  .player-card .photo-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(160deg, var(--ink) 0%, var(--ink-soft) 100%);
+    overflow: hidden;
+  }
+  .player-card .photo-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .player-card .photo-fallback {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: 'Archivo Black', sans-serif; font-size: 30px; color: rgba(255,255,255,0.28);
+  }
+  .player-card .number-badge {
+    position: absolute; top: 6px; left: 6px;
+    background: var(--gold); color: var(--ink);
+    font-family: 'Archivo Black', sans-serif; font-size: 13px;
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  }
+  .player-card .card-name {
+    font-weight: 700; font-size: 13px; margin-top: 8px; padding: 0 6px;
+    line-height: 1.25;
+  }
+  .player-card .card-meta { font-size: 10.5px; color: var(--slate); margin-top: 2px; padding: 0 6px; }
+
+  .guest-tag {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+    color: var(--pitch);
+    background: var(--pitch-soft);
+    border: 1px solid var(--pitch);
+    border-radius: 2px;
+    padding: 1px 5px;
+    margin-left: 7px;
+    vertical-align: middle;
+  }
+  .guest-tag.loan-tag { color: #8A6414; background: var(--amber-bg); border-color: var(--amber-line); }
+  .guest-tag.incoming-tag { color: #3D6E88; background: var(--sky-bg); border-color: var(--sky-line); }
+  .guest-tag.left-tag { color: var(--claret-ink); background: var(--claret-bg); border-color: var(--claret-line); }
+  .guest-tag.injured-season-tag { color: var(--injury-ink); background: var(--injury-bg); border-color: var(--injury-line); }
+  .guest-tag.not-selected-season-tag { color: var(--slate); background: var(--slate-bg); border-color: var(--slate-line); }
+  .guest-tag.trialist-tag { color: var(--cup-ink); background: var(--cup-col-bg); border-color: var(--cup-gold); }
+
+  /* Small pill overlaid on a player-card's photo, used in the main Player
+     Info grid to flag a player who left mid-season, is out on loan but has
+     appeared, or is guesting from another squad. */
+  .player-card .status-pill {
+    position: absolute; top: 6px; right: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8.5px; font-weight: 700; letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 5px; border-radius: 2px;
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    cursor: default;
+  }
+  .status-pill.pill-cross { background: var(--pitch); }
+  .status-pill.pill-loan { background: #8A6414; }
+  .status-pill.pill-left { background: var(--claret-ink); }
+
+  .matrix-wrap { margin-top: 14px; overflow-x: auto; border: 1px solid var(--hairline); background: var(--paper-raised); }
+  table.matrix { border-collapse: collapse; font-size: 12.5px; min-width: 100%; }
+  table.matrix th, table.matrix td { border-bottom: 1px solid var(--hairline); }
+  table.matrix thead th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 11px;
+    color: var(--paper);
+    background: var(--ink);
+    padding: 5px 2px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    cursor: default;
+  }
+  table.matrix thead th.player-col {
+    text-align: left;
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    padding: 6px 10px;
+  }
+  table.matrix thead th .fx-num { display: block; font-size: 12px; }
+  table.matrix thead th .fx-venue { display: block; color: var(--gold); font-size: 9px; }
+  table.matrix tbody td.player-col {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--paper-raised);
+    padding: 7px 10px;
+    font-weight: 600;
+    white-space: nowrap;
+    border-right: 2px solid var(--ink);
+  }
+  table.matrix tbody tr.guest-row td.player-col { font-style: italic; }
+  table.matrix tbody tr.guest-row-cross td.player-col { background: var(--pitch-soft); }
+  table.matrix tbody tr.guest-row-loan td.player-col { background: var(--amber-bg); }
+  table.matrix tbody tr.guest-row-incoming td.player-col { background: var(--sky-bg); }
+  table.matrix tbody tr.guest-row-left td.player-col { background: var(--claret-bg); }
+  table.matrix tbody tr.guest-row-injured-season td.player-col { background: var(--injury-bg); }
+  table.matrix tbody tr.guest-row-not-selected-season td.player-col { background: var(--slate-bg); }
+  table.matrix tbody tr.guest-row-trialist td.player-col { background: var(--cup-col-bg); }
+  table.matrix tbody tr:hover td { background: var(--pitch-soft); }
+  table.matrix tbody tr:not(.guest-row):hover td.player-col { background: var(--pitch-soft); }
+  table.matrix td.cell { text-align: center; padding: 5px 1px; width: 26px; min-width: 26px; }
+  table.matrix th.total-col, table.matrix td.total-col {
+    text-align: center; font-weight: 700; background: var(--pitch-soft);
+    border-left: 2px solid var(--ink); padding: 5px 8px; min-width: 34px;
+  }
+  table.matrix thead th.total-col { background: var(--pitch); color: var(--paper-raised); }
+
+  .mk { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; }
+  .mk-start { width: 10px; height: 10px; background: var(--ink); border-radius: 2px; }
+  .mk-sub { width: 10px; height: 10px; border: 2px solid var(--ink); border-radius: 2px; background: linear-gradient(135deg, var(--ink) 50%, transparent 50%); }
+  .mk-unused { width: 8px; height: 8px; border: 2px solid var(--hairline-dark); border-radius: 2px; opacity: 0.6; }
+  .mk-out { color: var(--slate); font-size: 12px; font-weight: 700; opacity: 0.5; }
+  .mk-injured { color: #C0392B; font-size: 12px; font-weight: 800; }
+  .mk-suspended { color: #B9762F; font-size: 13px; font-weight: 800; }
+  .mk-loan { color: #8A6414; font-size: 12px; font-weight: 800; }
+  .mk-transferred { color: var(--claret-ink); font-size: 13px; font-weight: 800; }
+  .mk-incoming { color: #3D6E88; font-size: 13px; font-weight: 800; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 18px; margin: 14px 0 6px; font-size: 12px; color: var(--slate); align-items: center; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+  .note {
+    font-size: 12.5px;
+    color: var(--slate);
+    background: var(--pitch-soft);
+    border-left: 3px solid var(--pitch);
+    padding: 8px 12px;
+    margin-bottom: 20px;
+  }
+
+  .status-grid { margin-top: 14px; }
+  .player-card.status-card { text-align: center; }
+  .status-card .card-detail {
+    font-size: 10.5px;
+    font-weight: 600;
+    margin-top: 4px;
+    padding: 3px 6px 0;
+    line-height: 1.3;
+  }
+  .status-card-loan { border-top: 3px solid var(--amber-line); }
+  .status-card-loan .card-detail { color: #8A6414; }
+  .status-card-incoming { border-top: 3px solid var(--sky-line); }
+  .status-card-incoming .card-detail { color: #3D6E88; }
+  .status-card-injured-season { border-top: 3px solid var(--injury-line); }
+  .status-card-injured-season .card-detail { color: var(--injury-ink); }
+  .status-card-not-selected-season { border-top: 3px solid var(--slate-line); }
+  .status-card-not-selected-season .card-detail { color: var(--slate); }
+  .status-card-trialist { border-top: 3px solid var(--cup-gold); }
+  .status-card-trialist .card-detail { color: var(--cup-ink); }
+  .panel-empty { font-size: 12.5px; color: var(--slate); padding: 10px 2px; font-style: italic; }
+
+  .leaderboard-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--lb-cols, 4), 1fr);
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .leaderboard-card { border: 1px solid var(--hairline); background: var(--paper-raised); padding: 10px 12px 6px; }
+  .leaderboard-card h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin: 0 0 8px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .leaderboard-card table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .leaderboard-card td { padding: 4px 0; border-bottom: 1px solid var(--hairline); }
+  .leaderboard-card tr:last-child td { border-bottom: none; }
+  .leaderboard-card td.lb-name { font-weight: 600; }
+  .leaderboard-card td.lb-val {
+    text-align: right; font-family: 'IBM Plex Mono', monospace; font-weight: 700; color: var(--pitch);
+    width: 40px;
+  }
+
+  footer {
+    max-width: 1180px; margin: 40px auto 0; padding: 20px 24px;
+    border-top: 1px solid var(--hairline);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--slate);
+  }
+
+  #load-error {
+    max-width: 1180px; margin: 24px auto; padding: 16px 20px;
+    background: #fff3f0; border: 1px solid #e0a89c; border-radius: var(--radius);
+    font-size: 14px; display: none;
+  }
+  #load-error code { background: #00000010; padding: 2px 6px; border-radius: 2px; }
+
+  /* ===== Validation panel ===== */
+  #validation-panel {
+    max-width: 1180px; margin: 24px auto 0; padding: 14px 20px;
+    background: #fff8ec; border: 1px solid var(--amber-line); border-left: 4px solid #C0392B;
+    border-radius: var(--radius);
+    font-size: 13px;
+    display: none;
+  }
+  #validation-panel h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin: 0 0 4px;
+  }
+  #validation-panel .vp-sub { color: var(--slate); font-size: 12px; margin: 0 0 10px; }
+  #validation-panel .vp-squad { margin-top: 10px; }
+  #validation-panel .vp-squad-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin: 0 0 4px;
+  }
+  #validation-panel ul { margin: 0; padding-left: 20px; }
+  #validation-panel li { margin: 3px 0; }
+  #validation-panel li.error { color: #9A2A1E; }
+  #validation-panel li.warning { color: #8A6414; }
+
+  .tab-flag {
+    display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+    background: #C0392B; margin-left: 6px; vertical-align: middle;
+  }
+
+  table.matrix thead th.fx-flagged { background: #4a2f2f; }
+  table.matrix thead th.fx-flagged .fx-opp::after { content: " ⚠"; color: #E4B937; }
+
+  table.matrix thead th.fx-cup { background: var(--cup-ink); }
+  table.matrix thead th.fx-cup .fx-venue { color: var(--cup-gold); }
+  table.matrix thead th.fx-cup.fx-flagged { background: #4a2f2f; }
+  table.matrix td.cell.fx-cup-col { background: var(--cup-col-bg); }
+  table.matrix tbody tr:hover td.cell.fx-cup-col { background: var(--cup-col-bg); }
+
+  table.matrix thead th.fx-euro { background: var(--euro-ink); }
+  table.matrix thead th.fx-euro .fx-venue { color: var(--euro-gold); }
+  table.matrix thead th.fx-euro.fx-flagged { background: #4a2f2f; }
+  table.matrix td.cell.fx-euro-col { background: var(--euro-col-bg); }
+  table.matrix tbody tr:hover td.cell.fx-euro-col { background: var(--euro-col-bg); }
+
+  .legend .fx-swatch { display: inline-block; width: 13px; height: 13px; border-radius: 2px; vertical-align: middle; }
+  .legend .fx-swatch.league { background: var(--ink); }
+  .legend .fx-swatch.cup { background: var(--cup-ink); }
+  .legend .fx-swatch.euro { background: var(--euro-ink); }
+
+  @media (max-width: 640px) {
+    .player-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; }
+    .leaderboard-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <div id="season-switcher-slot"></div>
+    <p class="eyebrow" id="eyebrow">Est. manually · Season 2026/27</p>
+    <h1 class="title">The Teamsheet</h1>
+    <p class="subtitle">Newcastle United — Seniors, U21s &amp; U18s, appearance by appearance</p>
+  </div>
+</div>
+
+<nav class="tabs" id="tabs">
+  <a href="#senior">First Team <span class="count" id="count-senior"></span></a>
+  <a href="#u21">Under-21s <span class="count" id="count-u21"></span></a>
+  <a href="#u18">Under-18s <span class="count" id="count-u18"></span></a>
+</nav>
+
+<div id="load-error">
+  <strong>Couldn't load the data files.</strong> If you opened this page directly from disk (a <code>file://</code> link),
+  most browsers block a local page from reading local JSON files. Run a tiny local server from this folder instead, e.g.
+  <code>python3 -m http.server 8000</code>, then open <code>http://localhost:8000</code>. See DATA-GUIDE.md for details.
+</div>
+
+<div id="validation-panel">
+  <h2>Data checks</h2>
+  <p class="vp-sub">These don't stop the page from working — just things worth double-checking in the JSON.</p>
+  <div id="validation-list"></div>
+</div>
+
+<main id="main"></main>
+
+<footer id="footer-note">
+  Data maintained by hand in <code>players.json</code> and <code>fixtures.json</code>. Appearance stats are calculated automatically from the fixture records. See <code>DATA-GUIDE.md</code> for field reference.
+</footer>
+
+<script>
+const POSITION_ORDER = ['GK', 'DEF', 'MID', 'FWD'];
+const POSITION_LABEL = { GK: 'Goalkeepers', DEF: 'Defenders', MID: 'Midfielders', FWD: 'Forwards' };
+const SQUAD_LABEL = { senior: 'First Team', u21: 'Under-21s', u18: 'Under-18s' };
+const SQUAD_SHORT = { senior: 'Seniors', u21: 'U21', u18: 'U18' };
+// players.json's `squad` field is matched case-insensitively against the
+// internal squad keys above, so it can be entered as "U18", "u18", "U21",
+// "Senior"/"Seniors", etc. — whatever's convenient — while still resolving
+// to the same squad. A value that doesn't match any real squad (e.g. "U16")
+// simply doesn't match here, which is what lets that player fall through to
+// the guest-row/guest-card mechanism instead of getting a roster spot.
+const normSquad = (s) => (s || '').trim().toLowerCase() === 'seniors' ? 'senior' : (s || '').trim().toLowerCase();
+
+const STAT_COLUMNS = [
+  { key: 'appearances', label: 'Apps' },
+  { key: 'starts', label: 'Starts' },
+  { key: 'subApps', label: 'Sub' },
+  { key: 'goals', label: 'Goals' },
+  { key: 'xg', label: 'xG', seniorOnly: true, decimals: 2 },
+  { key: 'assists', label: 'Assists' },
+  { key: 'yellowCards', label: 'YC' },
+  { key: 'redCards', label: 'RC' },
+  { key: 'minutes', label: 'Mins', seniorOnly: true },
+];
+
+function statColumnsFor(squadKey) {
+  return STAT_COLUMNS.filter(col => !col.seniorOnly || squadKey === 'senior');
+}
+
+const APPEARANCE_STATUSES = new Set(['start', 'sub_on']);
+
+function calcAge(dob) {
+  if (!dob) return '—';
+  const d = new Date(dob);
+  const now = new Date();
+  let age = now.getFullYear() - d.getFullYear();
+  const m = now.getMonth() - d.getMonth();
+  if (m < 0 || (m === 0 && now.getDate() < d.getDate())) age--;
+  return age;
+}
+
+function fmtDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso + 'T00:00:00');
+  return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' });
+}
+
+async function loadData(playersFile, fixturesFile) {
+  const [playersRes, fixturesRes] = await Promise.all([
+    fetch(playersFile),
+    fetch(fixturesFile),
+  ]);
+  if (!playersRes.ok || !fixturesRes.ok) throw new Error('fetch failed');
+  const players = await playersRes.json();
+  const fixtures = await fixturesRes.json();
+  return { players, fixtures };
+}
+
+/**
+ * Multi-season support. seasons.json is an optional manifest listing each
+ * season and which players/fixtures files belong to it — e.g.:
+ *   [
+ *     { "id": "2026-27", "label": "2026/27", "playersFile": "players-2026-27.json", "fixturesFile": "fixtures-2026-27.json" },
+ *     { "id": "2025-26", "label": "2025/26", "playersFile": "players-2025-26.json", "fixturesFile": "fixtures-2025-26.json" }
+ *   ]
+ * The first entry is treated as the default/current season. If seasons.json
+ * doesn't exist (fetch fails, e.g. a single-season setup that hasn't been
+ * migrated yet), the page falls back to the original single-season files
+ * (players.json / fixtures.json) and no season switcher is shown at all.
+ */
+async function loadSeasons() {
+  try {
+    const res = await fetch('seasons.json');
+    if (!res.ok) return null;
+    const seasons = await res.json();
+    if (!Array.isArray(seasons) || seasons.length === 0) return null;
+    return seasons;
+  } catch (err) {
+    return null;
+  }
+}
+
+function currentSeasonId(seasons) {
+  const requested = new URLSearchParams(location.search).get('season');
+  if (requested && seasons.some(s => s.id === requested)) return requested;
+  return seasons[0].id;
+}
+
+function buildSeasonSwitcher(seasons, activeId) {
+  const wrap = document.createElement('div');
+  wrap.className = 'season-switcher';
+
+  const label = document.createElement('label');
+  label.setAttribute('for', 'season-select');
+  label.className = 'season-switcher-label';
+  label.textContent = 'Season';
+  wrap.appendChild(label);
+
+  const select = document.createElement('select');
+  select.id = 'season-select';
+  seasons.forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s.id;
+    opt.textContent = s.label || s.id;
+    if (s.id === activeId) opt.selected = true;
+    select.appendChild(opt);
+  });
+  select.addEventListener('change', () => {
+    // Full page reload on season switch — simplest way to get a clean
+    // re-render of everything (roster, matrix, leaderboards, validation)
+    // against the new season's files. The currently open squad tab (in the
+    // URL hash) is preserved since only the query string changes.
+    const params = new URLSearchParams(location.search);
+    params.set('season', select.value);
+    location.search = params.toString();
+  });
+  wrap.appendChild(select);
+
+  return wrap;
+}
+
+/**
+ * Walks every fixture list (senior/u21/u18) and totals up each player's
+ * season record from their per-fixture appearance entries — this is the
+ * single source of truth for stats, so players.json never needs a stats block.
+ */
+/**
+ * Computes stat totals from a single squad's own fixture data only —
+ * NOT aggregated across all three squads. This matters for a player whose
+ * home squad differs from where they actually played: e.g. a U18 player
+ * who's only ever turned out for the U21s should have that yellow card
+ * show up in the U21 leaderboards (where the match actually happened),
+ * not bleed onto their home U18 page just because it's technically "their"
+ * card. Call this once per squad with that squad's own { fixtures, appearances }.
+ */
+function computeStatsForSquad(fixtureData) {
+  const stats = {};
+  const minutesTracked = {};
+
+  const ensure = (id) => {
+    if (!stats[id]) {
+      stats[id] = { appearances: 0, starts: 0, subApps: 0, unusedSubs: 0, goals: 0, xg: 0, assists: 0, yellowCards: 0, redCards: 0, minutes: 0 };
+      minutesTracked[id] = false;
+    }
+    return stats[id];
+  };
+
+  const appearances = (fixtureData && fixtureData.appearances) || {};
+  Object.keys(appearances).forEach(playerId => {
+    const byFixture = appearances[playerId];
+    Object.values(byFixture).forEach(rec => {
+      if (!rec || !rec.status) return;
+      const s = ensure(playerId);
+      if (APPEARANCE_STATUSES.has(rec.status)) {
+        s.appearances += 1;
+        if (rec.status === 'start') s.starts += 1;
+        if (rec.status === 'sub_on') s.subApps += 1;
+      }
+      if (rec.status === 'unused_sub') s.unusedSubs += 1;
+      s.goals += rec.goals || 0;
+      s.xg += rec.xg || 0;
+      s.assists += rec.assists || 0;
+      if (rec.yellowCard) s.yellowCards += 1;
+      if (rec.redCard) s.redCards += 1;
+      if (typeof rec.minutes === 'number') {
+        s.minutes += rec.minutes;
+        minutesTracked[playerId] = true;
+      }
+    });
+  });
+
+  Object.keys(stats).forEach(id => {
+    if (!minutesTracked[id]) stats[id].minutes = null;
+  });
+
+  return stats;
+}
+
+/**
+ * Parses a result string like "W 3–1" / "D 1-1" / "L 0-2" into
+ * { letter, forGoals, againstGoals }. "for" is always Newcastle's goals,
+ * regardless of home/away, matching the DATA-GUIDE convention.
+ * Returns null if the string is empty or doesn't match the expected shape.
+ */
+function parseResult(resultStr) {
+  if (!resultStr || !resultStr.trim()) return null;
+  const m = resultStr.trim().match(/^([WDL])\s*(\d+)\s*[–-]\s*(\d+)/i);
+  if (!m) return null;
+  return { letter: m[1].toUpperCase(), forGoals: parseInt(m[2], 10), againstGoals: parseInt(m[3], 10) };
+}
+
+/**
+ * Cross-checks fixtures.json against itself and against players.json:
+ * goals tally, starter count, subs count, W/D/L vs scoreline, clean sheet
+ * plausibility, stray stats on bench/unavailable records, and unknown
+ * player ids. Returns a flat list of issues; an empty list means clean data.
+ */
+const KNOWN_PLAYER_STATUSES = new Set(['active', 'loan', 'incoming', 'left', 'injured_season', 'not_selected_season', 'trialist']);
+
+function validateFixtures(fixturesData, playersById) {
+  const issues = []; // { squad, fixtureId, fixtureLabel, severity, message }
+
+  Object.keys(playersById).forEach(pid => {
+    const p = playersById[pid];
+    if (p.status && !KNOWN_PLAYER_STATUSES.has(p.status)) {
+      issues.push({ squad: normSquad(p.squad), fixtureId: null, fixtureLabel: null, severity: 'error',
+        message: `${p.name} has an unrecognized status "${p.status}" in players.json (expected "active", "loan", "incoming", "left", "injured_season", "not_selected_season", "trialist", or omitted).` });
+    }
+  });
+
+  Object.keys(fixturesData).forEach(squadKey => {
+    const sq = fixturesData[squadKey] || {};
+    const fixtures = sq.fixtures || [];
+    const appearances = sq.appearances || {};
+
+    const seenFixtureIds = new Set();
+    fixtures.forEach(fx => {
+      if (seenFixtureIds.has(fx.id)) {
+        issues.push({ squad: squadKey, fixtureId: fx.id, fixtureLabel: null, severity: 'error',
+          message: `Duplicate fixture id "${fx.id}" in ${SQUAD_LABEL[squadKey]} fixtures.` });
+      }
+      seenFixtureIds.add(fx.id);
+    });
+
+    const validFixtureIds = new Set(fixtures.map(fx => fx.id));
+
+    Object.keys(appearances).forEach(pid => {
+      if (!playersById[pid]) {
+        issues.push({ squad: squadKey, fixtureId: null, fixtureLabel: null, severity: 'error',
+          message: `"${pid}" is logged in ${SQUAD_LABEL[squadKey]} appearances but isn't in players.json (typo in the id?).` });
+      }
+      Object.keys(appearances[pid] || {}).forEach(fxId => {
+        if (!validFixtureIds.has(fxId)) {
+          const name = (playersById[pid] || {}).name || pid;
+          issues.push({ squad: squadKey, fixtureId: null, fixtureLabel: null, severity: 'error',
+            message: `${name} has an appearance logged against fixture id "${fxId}", which doesn't match any fixture in ${SQUAD_LABEL[squadKey]}'s fixture list (typo in the id? this fixture's real entry would be silently skipped).` });
+        }
+      });
+    });
+
+    fixtures.forEach(fx => {
+      const records = [];
+      Object.keys(appearances).forEach(pid => {
+        const rec = appearances[pid][fx.id];
+        if (rec) records.push({ pid, rec });
+      });
+
+      const label = `${fmtDate(fx.date)} v ${fx.opponent}`;
+      const flag = (severity, message) => issues.push({ squad: squadKey, fixtureId: fx.id, fixtureLabel: label, severity, message: `${label}: ${message}` });
+
+      if (records.length === 0) {
+        // Nothing logged for this fixture yet. That's expected for a fixture
+        // that genuinely hasn't been played — but if it has a result, or its
+        // date has already passed, it should have appearance data by now.
+        const isPastDate = !!fx.date && new Date(fx.date + 'T00:00:00') < new Date(new Date().toDateString());
+        if (fx.result) {
+          flag('error', `result "${fx.result}" is entered but no player appearances have been logged for this fixture at all.`);
+        } else if (isPastDate) {
+          flag('warning', `this fixture's date has passed but no player appearances have been logged for it yet.`);
+        }
+        return; // nothing else to check until at least one appearance is logged
+      }
+
+      const KNOWN_STATUSES = new Set(['start', 'sub_on', 'unused_sub', 'injured', 'suspended', 'loan', 'transferred', 'incoming', 'unavailable']);
+      records.forEach(({ pid, rec }) => {
+        if (!KNOWN_STATUSES.has(rec.status)) {
+          const name = (playersById[pid] || {}).name || pid;
+          flag('error', `${name} has an unrecognized status "${rec.status}" (expected "start", "sub_on", "unused_sub", "injured", "suspended", "loan", "transferred", "incoming", or "unavailable") — this record won't be counted anywhere until it's fixed.`);
+        }
+      });
+
+      const starts = records.filter(r => r.rec.status === 'start');
+      const subsOn = records.filter(r => r.rec.status === 'sub_on');
+      const unusedSubs = records.filter(r => r.rec.status === 'unused_sub');
+      const goalsSum = records.reduce((s, r) => s + (r.rec.goals || 0), 0);
+      const assistsSum = records.reduce((s, r) => s + (r.rec.assists || 0), 0);
+
+      // If nobody has a "start" or "sub_on" record yet, this fixture hasn't actually
+      // been logged as played — e.g. only a loan player's "unavailable" was pre-filled
+      // for a future match. Skip the lineup/goals checks, but still catch stray stats
+      // below (a goal on an "unavailable" record would still be a mistake worth flagging).
+      const hasPlayingData = starts.length > 0 || subsOn.length > 0;
+
+      if (!hasPlayingData && fx.result) {
+        // A result is on the board, but nobody's actually logged as having
+        // started or come off the bench — e.g. only an "unavailable"/"loan"
+        // placeholder record exists so far. Flag this directly, rather than
+        // relying on the goals-vs-result check below, which would otherwise
+        // stay silent for a scoreless-for-us result (a 0-0 draw or an
+        // away loss) even though the lineup is still completely missing.
+        flag('error', `result "${fx.result}" is entered but no players are logged as having started or come on as a substitute for this fixture.`);
+      }
+
+      if (hasPlayingData && starts.length !== 11) {
+        flag('error', `${starts.length} starter${starts.length === 1 ? '' : 's'} logged, expected 11.`);
+      }
+
+      if (hasPlayingData && typeof fx.subsUsed === 'number' && fx.subsUsed !== subsOn.length) {
+        flag('error', `fixture says ${fx.subsUsed} sub${fx.subsUsed === 1 ? '' : 's'} used, but ${subsOn.length} player record${subsOn.length === 1 ? '' : 's'} show "sub_on".`);
+      }
+      if (hasPlayingData && typeof fx.subsUnused === 'number' && fx.subsUnused !== unusedSubs.length) {
+        flag('error', `fixture says ${fx.subsUnused} unused sub${fx.subsUnused === 1 ? '' : 's'}, but ${unusedSubs.length} player record${unusedSubs.length === 1 ? '' : 's'} show "unused_sub".`);
+      }
+
+      if (assistsSum > goalsSum) {
+        flag('error', `assists logged (${assistsSum}) exceed goals logged (${goalsSum}).`);
+      }
+
+      const yellowSum = records.filter(r => r.rec.yellowCard).length;
+      const redSum = records.filter(r => r.rec.redCard).length;
+
+      if (hasPlayingData && typeof fx.assistsTotal === 'number' && fx.assistsTotal !== assistsSum) {
+        flag('error', `fixture says ${fx.assistsTotal} assist${fx.assistsTotal === 1 ? '' : 's'}, but player records total ${assistsSum}.`);
+      }
+      if (hasPlayingData && typeof fx.yellowCardsTotal === 'number' && fx.yellowCardsTotal !== yellowSum) {
+        flag('error', `fixture says ${fx.yellowCardsTotal} yellow card${fx.yellowCardsTotal === 1 ? '' : 's'}, but player records total ${yellowSum}.`);
+      }
+      if (hasPlayingData && typeof fx.redCardsTotal === 'number' && fx.redCardsTotal !== redSum) {
+        flag('error', `fixture says ${fx.redCardsTotal} red card${fx.redCardsTotal === 1 ? '' : 's'}, but player records total ${redSum}.`);
+      }
+
+      // Senior-only: total minutes across the XI + subs should equal 11 × 90, and
+      // per-player xG should tally to the fixture's team xG — only meaningful once
+      // every playing record has the relevant field filled in, otherwise it's just
+      // partial data and would produce a misleading mismatch.
+      if (squadKey === 'senior' && hasPlayingData) {
+        const playingRecords = records.filter(r => APPEARANCE_STATUSES.has(r.rec.status));
+        const allHaveMinutes = playingRecords.length > 0 && playingRecords.every(r => typeof r.rec.minutes === 'number');
+        if (allHaveMinutes) {
+          const minutesSum = playingRecords.reduce((s, r) => s + r.rec.minutes, 0);
+          const matchMinutes = fx.wentToExtraTime ? 120 : 90;
+          const baseTotal = matchMinutes * 11;
+          const expectedMinutes = baseTotal - (fx.redCardMinutesLost || 0);
+          if (minutesSum !== expectedMinutes) {
+            const baseLabel = fx.wentToExtraTime ? `11 × 120 (extra time) = ${baseTotal}` : `11 × 90 = ${baseTotal}`;
+            flag('warning', `total minutes played (${minutesSum}) doesn't equal ${expectedMinutes === baseTotal ? baseLabel : `${baseTotal} − ${fx.redCardMinutesLost} (red card) = ${expectedMinutes}`} — a red card or non-standard match length can legitimately explain a difference, otherwise worth checking.`);
+          }
+        }
+
+        if (typeof fx.xg === 'number') {
+          const xgSum = playingRecords.reduce((s, r) => s + (r.rec.xg || 0), 0);
+          if (Math.abs(xgSum - fx.xg) > 0.02) {
+            flag('error', `fixture xG is ${fx.xg.toFixed(2)}, but player records total ${xgSum.toFixed(2)}.`);
+          }
+        }
+      }
+
+      records.forEach(({ pid, rec }) => {
+        if (!APPEARANCE_STATUSES.has(rec.status) && !rec.allowNonPlayingStats) {
+          const extras = [];
+          if (rec.goals) extras.push('goals');
+          if (rec.assists) extras.push('assists');
+          if (rec.yellowCard) extras.push('a yellow card');
+          if (rec.redCard) extras.push('a red card');
+          if (rec.xg) extras.push('xG');
+          if (extras.length) {
+            const name = (playersById[pid] || {}).name || pid;
+            flag('error', `${name} is marked "${rec.status}" but has ${extras.join(', ')} recorded.`);
+          }
+        }
+      });
+
+      const parsed = parseResult(fx.result);
+      if (fx.result && !parsed) {
+        flag('warning', `result "${fx.result}" isn't in the expected "W 3–1" format, so it can't be checked against logged goals.`);
+      }
+      if (parsed) {
+        const outcomeOk = (parsed.letter === 'W' && parsed.forGoals > parsed.againstGoals)
+          || (parsed.letter === 'L' && parsed.forGoals < parsed.againstGoals)
+          || (parsed.letter === 'D' && parsed.forGoals === parsed.againstGoals);
+        if (!outcomeOk) {
+          flag('warning', `result "${fx.result}" — the W/D/L doesn't match the scoreline.`);
+        }
+
+        const ownGoals = fx.ownGoalsFor || 0;
+        const expectedFor = goalsSum + ownGoals;
+        if (hasPlayingData && expectedFor !== parsed.forGoals) {
+          const detail = ownGoals
+            ? `${goalsSum} + ${ownGoals} own goal${ownGoals === 1 ? '' : 's'} = ${expectedFor}`
+            : `${goalsSum}`;
+          flag('error', `result shows ${parsed.forGoals} goal${parsed.forGoals === 1 ? '' : 's'} for, but player records total ${detail}.`);
+        }
+
+        // Once a result is on the board, nudge towards filling in everything else
+        // too — the checks above only fire once a field is present, so an entirely
+        // missing field would otherwise pass silently.
+        if (hasPlayingData) {
+          const requiredFields = ['subsUsed', 'subsUnused', 'assistsTotal', 'yellowCardsTotal', 'redCardsTotal'];
+          requiredFields.forEach(field => {
+            if (typeof fx[field] !== 'number') {
+              flag('warning', `result is entered but "${field}" hasn't been filled in yet.`);
+            }
+          });
+
+          if (squadKey === 'senior') {
+            if (typeof fx.xg !== 'number') {
+              flag('warning', `result is entered but "xg" (team expected goals) hasn't been filled in yet.`);
+            }
+            const playingRecords = records.filter(r => APPEARANCE_STATUSES.has(r.rec.status));
+            const missingMinutes = playingRecords.filter(r => typeof r.rec.minutes !== 'number');
+            if (missingMinutes.length) {
+              flag('warning', `result is entered but ${missingMinutes.length} player${missingMinutes.length === 1 ? '' : 's'} still missing "minutes".`);
+            }
+            // Deliberately no per-player "missing xg" nag: not every player needs
+            // an individual xG value. The only xG check that matters is the tally
+            // above — that whatever per-player xG values ARE logged add up to the
+            // fixture's total xg.
+          }
+        }
+      }
+    });
+  });
+
+  return issues;
+}
+
+function renderValidationPanel(issues) {
+  const panel = document.getElementById('validation-panel');
+  const list = document.getElementById('validation-list');
+  if (issues.length === 0) {
+    panel.style.display = 'none';
+    return;
+  }
+
+  const bySquad = { senior: [], u21: [], u18: [], _general: [] };
+  issues.forEach(iss => {
+    (bySquad[iss.squad] || bySquad._general).push(iss);
+  });
+
+  list.innerHTML = '';
+  ['senior', 'u21', 'u18', '_general'].forEach(key => {
+    const group = bySquad[key];
+    if (!group || group.length === 0) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'vp-squad';
+    const heading = document.createElement('p');
+    heading.className = 'vp-squad-name';
+    heading.textContent = key === '_general' ? 'General' : SQUAD_LABEL[key];
+    wrap.appendChild(heading);
+    const ul = document.createElement('ul');
+    group.forEach(iss => {
+      const li = document.createElement('li');
+      li.className = iss.severity;
+      li.textContent = iss.message;
+      ul.appendChild(li);
+    });
+    wrap.appendChild(ul);
+    list.appendChild(wrap);
+  });
+
+  const errorCount = issues.filter(i => i.severity === 'error').length;
+  const warnCount = issues.filter(i => i.severity === 'warning').length;
+  const parts = [];
+  if (errorCount) parts.push(`${errorCount} issue${errorCount === 1 ? '' : 's'}`);
+  if (warnCount) parts.push(`${warnCount} warning${warnCount === 1 ? '' : 's'}`);
+  document.querySelector('#validation-panel h2').textContent = `Data checks — ${parts.join(', ')}`;
+
+  panel.style.display = 'block';
+}
+
+function initialsFor(name) {
+  const parts = (name || '').trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return '?';
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+function buildPlayerCard(p, badge, badgeTitle) {
+  const card = document.createElement('div');
+  card.className = 'player-card';
+  const pillCls = badge ? `status-pill pill-${badge.kind === 'cross' ? 'cross' : badge.kind}` : '';
+  const pillHtml = badge ? `<span class="${pillCls}"${badgeTitle ? ` title="${badgeTitle}"` : ''}>${badge.text}</span>` : '';
+  card.innerHTML = `
+    <div class="photo-wrap">
+      <div class="photo-fallback">${initialsFor(p.name)}</div>
+      ${p.photo ? `<img src="${p.photo}" alt="" onerror="this.style.display='none'">` : ''}
+      <span class="number-badge">${p.number != null ? p.number : ''}</span>
+      ${pillHtml}
+    </div>
+    <div class="card-name">${p.name}</div>
+    <div class="card-meta">${p.position} · ${calcAge(p.dob)} · ${p.nationality || '—'}</div>
+  `;
+  return card;
+}
+
+/**
+ * Renders the main Player Info grid. Each position group is built from a
+ * pre-sorted list of { p, badge, badgeTitle } entries: the squad's own
+ * active/left/appeared-while-on-loan players sorted by number, followed by
+ * any cross-squad guests (already sorted to the end of the group by the
+ * caller) — see buildSquadSection for how that combined list is put together.
+ */
+function buildPlayerInfoGrid(entriesByPosition) {
+  const container = document.createElement('div');
+  POSITION_ORDER.forEach(pos => {
+    const entries = entriesByPosition[pos] || [];
+    if (entries.length === 0) return;
+
+    const subhead = document.createElement('div');
+    subhead.className = 'section-subhead';
+    subhead.textContent = POSITION_LABEL[pos];
+    container.appendChild(subhead);
+
+    const grid = document.createElement('div');
+    grid.className = 'player-grid';
+    entries.forEach(({ p, badge, badgeTitle }) => grid.appendChild(buildPlayerCard(p, badge, badgeTitle)));
+    container.appendChild(grid);
+  });
+  return container;
+}
+
+function statusMarker(rec) {
+  const status = rec ? rec.status : 'not_in_squad';
+  switch (status) {
+    case 'start': return '<span class="mk"><span class="mk-start"></span></span>';
+    case 'sub_on': return '<span class="mk"><span class="mk-sub"></span></span>';
+    case 'unused_sub': return '<span class="mk"><span class="mk-unused"></span></span>';
+    case 'injured': return '<span class="mk"><span class="mk-injured">+</span></span>';
+    case 'suspended': return '<span class="mk"><span class="mk-suspended">⊘</span></span>';
+    case 'loan': return '<span class="mk"><span class="mk-loan">⇄</span></span>';
+    case 'transferred': return '<span class="mk"><span class="mk-transferred">→</span></span>';
+    case 'incoming': return '<span class="mk"><span class="mk-incoming">←</span></span>';
+    case 'unavailable': return '<span class="mk"><span class="mk-out">–</span></span>';
+    case 'not_in_squad': return '<span class="mk"><span class="mk-out">·</span></span>';
+    default: return '<span class="mk"><span class="mk-out">·</span></span>';
+  }
+}
+
+
+/**
+ * Builds the fixture matrix for a squad. Includes the squad's own active
+ * roster, plus any "guest" players from a different squad who show up in
+ * this squad's appearance records (e.g. an U18 called up to play U21s).
+ */
+function playerBadge(p, squadKey) {
+  if (normSquad(p.squad) !== squadKey) return { text: SQUAD_SHORT[normSquad(p.squad)] || p.squad, cls: 'guest-tag', kind: 'cross' };
+  if (p.status === 'loan') return { text: 'On loan', cls: 'guest-tag loan-tag', kind: 'loan' };
+  if (p.status === 'incoming') return { text: 'Incoming', cls: 'guest-tag incoming-tag', kind: 'incoming' };
+  if (p.status === 'left') return { text: 'Left', cls: 'guest-tag left-tag', kind: 'left' };
+  if (p.status === 'injured_season') return { text: 'Injured', cls: 'guest-tag injured-season-tag', kind: 'injured-season' };
+  if (p.status === 'not_selected_season') return { text: 'Not selected', cls: 'guest-tag not-selected-season-tag', kind: 'not-selected-season' };
+  if (p.status === 'trialist') return { text: 'Trialist', cls: 'guest-tag trialist-tag', kind: 'trialist' };
+  return null;
+}
+
+/**
+ * The three "season-long, hasn't played" statuses. These never show in the
+ * main Player Info grid — a player in one of these states is, by definition,
+ * not part of the matchday picture — but if they somehow do pick up a real
+ * appearance record before you've flipped their status back to "active",
+ * they'll still show as a small badged row in the fixture matrix, same
+ * mechanism as loan/incoming/left (see playerBadge above).
+ */
+const SEASON_LONG_STATUSES = {
+  injured_season: { label: 'Injured (season)', tagText: 'Injured', rowClass: 'guest-row-injured-season', tagCls: 'guest-tag injured-season-tag' },
+  not_selected_season: { label: 'Not selected', tagText: 'Not selected', rowClass: 'guest-row-not-selected-season', tagCls: 'guest-tag not-selected-season-tag' },
+  trialist: { label: 'Trialist', tagText: 'Trialist', rowClass: 'guest-row-trialist', tagCls: 'guest-tag trialist-tag' },
+};
+
+/**
+ * Finds the most recent fixture date a player actually started or came on
+ * as a sub for, within one squad's own fixture list. Used to give the
+ * "Left" badge a hover date without needing a separate leftDate field —
+ * per the DATA-GUIDE, that date is considered derivable from the matrix.
+ */
+function lastAppearanceDate(playerId, fixtureData) {
+  const appearances = ((fixtureData && fixtureData.appearances) || {})[playerId] || {};
+  const fixturesById = {};
+  (fixtureData.fixtures || []).forEach(fx => { fixturesById[fx.id] = fx; });
+  let latest = null;
+  Object.keys(appearances).forEach(fxId => {
+    const rec = appearances[fxId];
+    if (!rec || !APPEARANCE_STATUSES.has(rec.status)) return;
+    const fx = fixturesById[fxId];
+    if (!fx || !fx.date) return;
+    if (!latest || fx.date > latest) latest = fx.date;
+  });
+  return latest;
+}
+
+/** True if a fixture's competition is a cup competition rather than a league one. */
+function isCupFixture(fx) {
+  return !!(fx.competition && /cup|trophy/i.test(fx.competition));
+}
+
+/** True if a fixture's competition is a European club competition (Champions League etc). */
+function isEuropeanFixture(fx) {
+  return !!(fx.competition && /champions league|europa league|conference league/i.test(fx.competition));
+}
+
+/** Which colour class (if any) a fixture's column should be styled with. European
+ * competitions take priority in the unlikely case a competition name matches both. */
+function fixtureColourClass(fx) {
+  if (isEuropeanFixture(fx)) return 'euro';
+  if (isCupFixture(fx)) return 'cup';
+  return null;
+}
+
+function buildMatrix(rosterPlayers, fixtureData, playersById, squadKey, fixtureIssuesMap, squadStats, seasonLongPlayers) {
+  const fixtures = fixtureData.fixtures || [];
+  const appearances = fixtureData.appearances || {};
+  if (fixtures.length === 0) return null;
+  seasonLongPlayers = seasonLongPlayers || [];
+
+  const rosterIds = new Set(rosterPlayers.map(p => p.id));
+  const guestIds = Object.keys(appearances).filter(id => !rosterIds.has(id) && playersById[id]);
+
+  const wrap = document.createElement('div');
+  wrap.className = 'matrix-wrap';
+  const table = document.createElement('table');
+  table.className = 'matrix';
+
+  const thead = document.createElement('thead');
+  const headRow = document.createElement('tr');
+  const playerTh = document.createElement('th');
+  playerTh.className = 'player-col';
+  playerTh.textContent = 'Player';
+  headRow.appendChild(playerTh);
+
+  fixtures.forEach((fx, idx) => {
+    const th = document.createElement('th');
+    const fxIssues = fixtureIssuesMap[squadKey + '::' + fx.id] || [];
+    const fxNumber = (fx.gameweek != null) ? fx.gameweek : (idx + 1);
+    let titleText = `${fmtDate(fx.date)} — ${fx.venue === 'H' ? 'v' : '@'} ${fx.opponent}${fx.competition ? ' · ' + fx.competition : ''}${fx.result ? ' · ' + fx.result : ''}`;
+    const colourClass = fixtureColourClass(fx);
+    if (colourClass) th.classList.add('fx-' + colourClass);
+    if (fxIssues.length) {
+      th.classList.add('fx-flagged');
+      titleText += '\n\n⚠ ' + fxIssues.join('\n⚠ ');
+    }
+    th.title = titleText;
+    th.innerHTML = `<span class="fx-num">${fxNumber}</span><span class="fx-venue">${fx.venue || ''}</span>`;
+    headRow.appendChild(th);
+  });
+
+  const totalTh = document.createElement('th');
+  totalTh.className = 'total-col';
+  totalTh.title = 'Total appearances (starts + sub appearances)';
+  totalTh.textContent = 'Total';
+  headRow.appendChild(totalTh);
+
+  thead.appendChild(headRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+
+  const addRow = (p, isGuest, squadKey, reasonKind) => {
+    const tr = document.createElement('tr');
+    const nameTd = document.createElement('td');
+    nameTd.className = 'player-col';
+    if (reasonKind) {
+      const def = SEASON_LONG_STATUSES[reasonKind];
+      tr.className = 'guest-row ' + def.rowClass;
+      nameTd.innerHTML = `${p.name} <span class="${def.tagCls}">${def.tagText}</span>`;
+    } else if (isGuest) {
+      const badge = playerBadge(p, squadKey);
+      tr.className = 'guest-row guest-row-' + (badge ? badge.kind : 'cross');
+      nameTd.innerHTML = badge ? `${p.name} <span class="${badge.cls}">${badge.text}</span>` : p.name;
+    } else {
+      nameTd.innerHTML = p.name;
+    }
+    tr.appendChild(nameTd);
+
+    fixtures.forEach(fx => {
+      const td = document.createElement('td');
+      td.className = 'cell';
+      const colourClass = fixtureColourClass(fx);
+      if (colourClass) td.classList.add('fx-' + colourClass + '-col');
+      // A reason row (season-long injury/non-selection/trial) has no
+      // per-fixture appearance data at all — every cell is just a dot.
+      const rec = reasonKind ? null : (appearances[p.id] || {})[fx.id];
+      td.innerHTML = statusMarker(rec);
+      if (rec && (rec.status === 'injured' || rec.status === 'suspended' || rec.status === 'loan' || rec.status === 'transferred' || rec.status === 'incoming') && rec.reasonNote) {
+        td.title = rec.reasonNote;
+      }
+      tr.appendChild(td);
+    });
+
+    const totalTd = document.createElement('td');
+    totalTd.className = 'total-col';
+    const stat = squadStats[p.id];
+    const totalApps = (stat && typeof stat.appearances === 'number') ? stat.appearances : 0;
+    totalTd.textContent = totalApps;
+    tr.appendChild(totalTd);
+
+    tbody.appendChild(tr);
+  };
+
+  // One combined sort across the squad's own roster and any guest rows
+  // (players from another squad, or the squad's own loan/incoming/left
+  // players who still have logged appearances):
+  //   1. Own players out on loan always sink to the very bottom, regardless
+  //      of how many appearances they've made — they're not part of the
+  //      matchday picture right now.
+  //   2. Everyone else (roster + U18/U21-style guests) is ranked together by
+  //      appearance count, most to fewest; ties are broken by starts, then
+  //      sub appearances, then unused-sub count, all most to fewest.
+  //   3. On a further tie, the squad's own roster player is listed before a guest.
+  //   4. Final tiebreak is alphabetical.
+  const statFor = (id, key) => {
+    const s = squadStats[id];
+    return (s && typeof s[key] === 'number') ? s[key] : 0;
+  };
+  const isLoanRow = (id) => {
+    const pl = playersById[id];
+    return !!pl && normSquad(pl.squad) === squadKey && pl.status === 'loan';
+  };
+
+  const rows = [
+    ...rosterPlayers.map(p => ({ p, isGuest: false })),
+    ...guestIds.map(id => ({ p: playersById[id], isGuest: true })),
+  ];
+
+  rows.sort((a, b) => {
+    const aLoan = a.isGuest && isLoanRow(a.p.id);
+    const bLoan = b.isGuest && isLoanRow(b.p.id);
+    if (aLoan !== bLoan) return aLoan ? 1 : -1;
+    const keys = ['appearances', 'starts', 'subApps', 'unusedSubs'];
+    for (const key of keys) {
+      const diff = statFor(b.p.id, key) - statFor(a.p.id, key);
+      if (diff !== 0) return diff;
+    }
+    if (a.isGuest !== b.isGuest) return a.isGuest ? 1 : -1;
+    return a.p.name.localeCompare(b.p.name);
+  });
+
+  rows.forEach(r => addRow(r.p, r.isGuest, squadKey));
+
+  // Season-long injured/not-selected/trialist players always sink below
+  // everything else — they have no fixture data to sort by, so they're just
+  // listed alphabetically among themselves at the very bottom.
+  const reasonRows = seasonLongPlayers.slice().sort((a, b) => a.name.localeCompare(b.name));
+  reasonRows.forEach(p => addRow(p, true, squadKey, p.status));
+
+  table.appendChild(tbody);
+  wrap.appendChild(table);
+  return wrap;
+}
+
+function buildLegend() {
+  const div = document.createElement('div');
+  div.className = 'legend';
+  div.innerHTML = `
+    <span><span class="mk"><span class="mk-start"></span></span> Started</span>
+    <span><span class="mk"><span class="mk-sub"></span></span> Sub appearance</span>
+    <span><span class="mk"><span class="mk-unused"></span></span> Unused sub</span>
+    <span><span class="mk"><span class="mk-injured">+</span></span> Injured</span>
+    <span><span class="mk"><span class="mk-suspended">⊘</span></span> Suspended</span>
+    <span><span class="mk"><span class="mk-loan">⇄</span></span> Unavailable (on loan)</span>
+    <span><span class="mk"><span class="mk-transferred">→</span></span> Unavailable (transferred out)</span>
+    <span><span class="mk"><span class="mk-incoming">←</span></span> Unavailable (not yet joined)</span>
+    <span><span class="mk"><span class="mk-out">–</span></span> Unavailable (other)</span>
+    <span><span class="mk"><span class="mk-out">·</span></span> Not in squad</span>
+    <span><span class="guest-tag">U18</span> Guesting from another squad</span>
+    <span><span class="guest-tag loan-tag">On loan</span> Own squad, currently out on loan</span>
+    <span><span class="guest-tag incoming-tag">Incoming</span> Own squad, incoming signing</span>
+    <span><span class="guest-tag left-tag">Left</span> Own squad, left the club</span>
+    <span><span class="guest-tag injured-season-tag">Injured</span> Season-long injury</span>
+    <span><span class="guest-tag not-selected-season-tag">Not selected</span> Season-long non-selection</span>
+    <span><span class="guest-tag trialist-tag">Trialist</span> On trial</span>
+    <span><span class="fx-swatch league"></span> League fixture</span>
+    <span><span class="fx-swatch cup"></span> Cup fixture</span>
+    <span><span class="fx-swatch euro"></span> European fixture</span>
+  `;
+  return div;
+}
+
+/**
+ * Builds the "Out on loan" / "Incoming" / "Left the club" side panel for a
+ * squad, as a grid of photo cards (same visual language as the Player Info
+ * cards) with a kind-specific detail line (loan club, incoming from/expected,
+ * or new club/date left). Returns null when there's nobody to show, so the
+ * caller can skip appending the section entirely rather than rendering an
+ * empty panel.
+ */
+function statusDetailLine(p, kind) {
+  if (kind === 'loan') {
+    return p.loanClub ? `On loan · ${p.loanClub}` : 'On loan';
+  }
+  if (kind === 'incoming') {
+    const parts = [];
+    if (p.fromClub) parts.push(`From ${p.fromClub}`);
+    if (p.expectedDate) parts.push(`Exp. ${fmtDate(p.expectedDate)}`);
+    return parts.length ? parts.join(' · ') : 'Incoming signing';
+  }
+  if (kind === 'injured-season') {
+    return p.reasonNote ? `Injured · ${p.reasonNote}` : 'Injured — out for the season';
+  }
+  if (kind === 'not-selected-season') {
+    return p.reasonNote ? `Not selected · ${p.reasonNote}` : 'Not selected all season';
+  }
+  // trialist
+  return p.reasonNote ? `Trialist · ${p.reasonNote}` : 'On trial';
+}
+
+function buildStatusCard(p, kind) {
+  const card = document.createElement('div');
+  card.className = `player-card status-card status-card-${kind}`;
+  card.innerHTML = `
+    <div class="photo-wrap">
+      <div class="photo-fallback">${initialsFor(p.name)}</div>
+      ${p.photo ? `<img src="${p.photo}" alt="" onerror="this.style.display='none'">` : ''}
+      <span class="number-badge">${p.number != null ? p.number : ''}</span>
+    </div>
+    <div class="card-name">${p.name}</div>
+    <div class="card-meta">${p.position} · ${calcAge(p.dob)} · ${p.nationality || '—'}</div>
+    <div class="card-detail">${statusDetailLine(p, kind)}</div>
+  `;
+  return card;
+}
+
+const SIDE_PANEL_HEADINGS = {
+  loan: 'Out on loan',
+  incoming: 'Incoming',
+  'injured-season': 'Injured (season)',
+  'not-selected-season': 'Not selected',
+  trialist: 'Trialists',
+};
+
+function buildSidePanel(kind, players) {
+  if (players.length === 0) return null;
+
+  const wrap = document.createElement('div');
+
+  const heading = document.createElement('h3');
+  heading.className = 'block-heading';
+  heading.textContent = SIDE_PANEL_HEADINGS[kind] || kind;
+  wrap.appendChild(heading);
+
+  const grid = document.createElement('div');
+  grid.className = 'player-grid status-grid';
+  players.forEach(p => grid.appendChild(buildStatusCard(p, kind)));
+  wrap.appendChild(grid);
+
+  return wrap;
+}
+
+
+const LEADERBOARD_DEFS = [
+  { key: 'goals', label: 'Top scorers' },
+  { key: 'assists', label: 'Assists' },
+  { key: 'yellowCards', label: 'Yellow cards' },
+  { key: 'redCards', label: 'Red cards' },
+];
+const SENIOR_LEADERBOARD_DEFS = [
+  { key: 'minutes', label: 'Minutes played' },
+  { key: 'xg', label: 'xG', decimals: 2 },
+];
+
+/**
+ * Picks a column count for the leaderboard grid so cards land in balanced
+ * rows instead of leaving a single card stranded alone on the last row
+ * (e.g. 6 cards as 5-then-1). Prefers an even split, falling back to
+ * whatever avoids a lone leftover card.
+ */
+function pickLeaderboardColumns(n) {
+  if (n <= 3) return n || 1;
+  for (let c = 4; c >= 2; c--) {
+    if (n % c === 0) return c;
+  }
+  for (let c = 4; c >= 2; c--) {
+    if (n % c !== 1) return c;
+  }
+  return n;
+}
+
+function buildLeaderboards(playersById, squadStats, squadKey) {
+  const defs = squadKey === 'senior' ? [...LEADERBOARD_DEFS, ...SENIOR_LEADERBOARD_DEFS] : LEADERBOARD_DEFS;
+
+  const grid = document.createElement('div');
+  grid.className = 'leaderboard-grid';
+
+  let anyRendered = false;
+  const candidateIds = Object.keys(squadStats);
+
+  defs.forEach(def => {
+    const ranked = candidateIds
+      .map(id => ({ p: playersById[id], stat: squadStats[id] }))
+      .filter(x => x.p && typeof x.stat[def.key] === 'number' && x.stat[def.key] > 0)
+      .sort((a, b) => b.stat[def.key] - a.stat[def.key])
+      .slice(0, 10);
+    if (ranked.length === 0) return;
+    anyRendered = true;
+
+    const card = document.createElement('div');
+    card.className = 'leaderboard-card';
+    const h4 = document.createElement('h4');
+    h4.textContent = def.label;
+    card.appendChild(h4);
+
+    const table = document.createElement('table');
+    const tbody = document.createElement('tbody');
+    ranked.forEach(({ p, stat }) => {
+      const tr = document.createElement('tr');
+      const val = def.decimals != null ? stat[def.key].toFixed(def.decimals) : stat[def.key];
+      const badge = playerBadge(p, squadKey);
+      const nameHtml = badge ? `${p.name} <span class="${badge.cls}">${badge.text}</span>` : p.name;
+      tr.innerHTML = `<td class="lb-name">${nameHtml}</td><td class="lb-val">${val}</td>`;
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    card.appendChild(table);
+    grid.appendChild(card);
+  });
+
+  if (!anyRendered) {
+    const p = document.createElement('p');
+    p.className = 'panel-empty';
+    p.textContent = 'No stats logged yet.';
+    grid.appendChild(p);
+  } else {
+    grid.style.setProperty('--lb-cols', pickLeaderboardColumns(grid.children.length));
+  }
+
+  return grid;
+}
+
+function buildSquadSection(squadKey, allSquadPlayers, fixtureData, playersById, fixtureIssuesMap) {
+  const activePlayers = allSquadPlayers.filter(p => (p.status || 'active') === 'active');
+  const loanPlayers = allSquadPlayers.filter(p => p.status === 'loan');
+  const incomingPlayers = allSquadPlayers.filter(p => p.status === 'incoming');
+  const leftPlayers = allSquadPlayers.filter(p => p.status === 'left');
+  const injuredSeasonPlayers = allSquadPlayers.filter(p => p.status === 'injured_season');
+  const notSelectedPlayers = allSquadPlayers.filter(p => p.status === 'not_selected_season');
+  const trialistPlayers = allSquadPlayers.filter(p => p.status === 'trialist');
+
+  // Stats scoped to THIS squad's own fixtures only — a guest appearance (e.g. a
+  // U18 who's only ever played for the U21s) contributes here, not to their home
+  // squad's numbers, since that's where the match actually happened.
+  const squadStats = computeStatsForSquad(fixtureData);
+  const appsFor = (id) => {
+    const s = squadStats[id];
+    return (s && typeof s.appearances === 'number') ? s.appearances : 0;
+  };
+
+  // A loan player who made appearances for this squad before heading out
+  // (or who's due back and already played some games) belongs up with
+  // everyone else, badged "On loan" — only a loan spell with zero logged
+  // appearances this season counts as a genuine "hasn't played" case.
+  const loanPlayedPlayers = loanPlayers.filter(p => appsFor(p.id) > 0);
+  const loanOutPlayers = loanPlayers.filter(p => appsFor(p.id) === 0);
+
+  const appearances = fixtureData.appearances || {};
+  const hasAnyAppearanceRecord = (id) => {
+    const rec = appearances[id];
+    return !!rec && Object.keys(rec).length > 0;
+  };
+
+  // Cross-squad guests who were named in a matchday squad here at all —
+  // started, came on, or sat as an unused sub — same mechanism the matrix
+  // already uses, but only for the statuses that mean "was actually part of
+  // a squad", so an injured/loan/incoming/etc. record logged against this
+  // squad on their behalf doesn't wrongly earn them a spot in the grid.
+  const NAMED_STATUSES = new Set(['start', 'sub_on', 'unused_sub']);
+  const namedInSquad = (id) => {
+    const recs = appearances[id];
+    return !!recs && Object.values(recs).some(r => r && NAMED_STATUSES.has(r.status));
+  };
+  const guestPlayers = Object.keys(appearances)
+    .filter(id => {
+      const pl = playersById[id];
+      return pl && normSquad(pl.squad) !== squadKey && namedInSquad(id);
+    })
+    .map(id => playersById[id]);
+
+  const section = document.createElement('section');
+  section.className = 'squad';
+  section.id = squadKey;
+
+  const header = document.createElement('div');
+  header.className = 'squad-header';
+  header.innerHTML = `<h2>${SQUAD_LABEL[squadKey]}</h2><span class="meta">${activePlayers.length} players</span>`;
+  section.appendChild(header);
+
+  // Main Player Info grid: the squad's own active/left/appeared-while-on-loan
+  // players, position-grouped and sorted by shirt number, followed by any
+  // guests from another squad sorted to the end of each position group.
+  const badgeFor = (p) => {
+    const badge = playerBadge(p, squadKey);
+    let badgeTitle;
+    if (badge && badge.kind === 'left') {
+      const d = lastAppearanceDate(p.id, fixtureData);
+      if (d) badgeTitle = `Last appeared ${fmtDate(d)}`;
+    }
+    return { p, badge, badgeTitle };
+  };
+  const regularTop = [...activePlayers, ...leftPlayers, ...loanPlayedPlayers];
+  const positionEntries = {};
+  POSITION_ORDER.forEach(pos => {
+    const regular = regularTop.filter(p => p.position === pos).sort((a, b) => (a.number ?? 999) - (b.number ?? 999));
+    const guests = guestPlayers.filter(p => p.position === pos).sort((a, b) => a.name.localeCompare(b.name));
+    positionEntries[pos] = [...regular.map(badgeFor), ...guests.map(badgeFor)];
+  });
+
+  const infoHeader = document.createElement('h3');
+  infoHeader.className = 'block-heading';
+  infoHeader.style.marginTop = '0';
+  infoHeader.textContent = 'Player Info';
+  section.appendChild(infoHeader);
+
+  section.appendChild(buildPlayerInfoGrid(positionEntries));
+
+  const fxHeader = document.createElement('h3');
+  fxHeader.className = 'block-heading';
+  fxHeader.textContent = 'Fixture-by-fixture';
+  section.appendChild(fxHeader);
+
+  section.appendChild(buildLegend());
+
+  const seasonLongPlayers = [...injuredSeasonPlayers, ...notSelectedPlayers, ...trialistPlayers]
+    .filter(p => !hasAnyAppearanceRecord(p.id));
+  const matrix = buildMatrix(activePlayers, fixtureData, playersById, squadKey, fixtureIssuesMap, squadStats, seasonLongPlayers);
+  if (matrix) {
+    section.appendChild(matrix);
+  } else {
+    const p = document.createElement('p');
+    p.className = 'note';
+    p.textContent = 'No fixtures recorded yet for this squad.';
+    section.appendChild(p);
+  }
+
+  const lbHeader = document.createElement('h3');
+  lbHeader.className = 'block-heading';
+  lbHeader.textContent = 'Leaderboards';
+  section.appendChild(lbHeader);
+  section.appendChild(buildLeaderboards(playersById, squadStats, squadKey));
+
+  // Bottom panels: everyone who hasn't played a single match for this squad
+  // this season, grouped by why — season-long loan, incoming (not yet
+  // joined), season-long injury, season-long non-selection, and trialists.
+  const loanPanel = buildSidePanel('loan', loanOutPlayers);
+  if (loanPanel) section.appendChild(loanPanel);
+  const incomingPanel = buildSidePanel('incoming', incomingPlayers);
+  if (incomingPanel) section.appendChild(incomingPanel);
+  const injuredPanel = buildSidePanel('injured-season', injuredSeasonPlayers);
+  if (injuredPanel) section.appendChild(injuredPanel);
+  const notSelectedPanel = buildSidePanel('not-selected-season', notSelectedPlayers);
+  if (notSelectedPanel) section.appendChild(notSelectedPanel);
+  const trialistPanel = buildSidePanel('trialist', trialistPlayers);
+  if (trialistPanel) section.appendChild(trialistPanel);
+
+  return section;
+}
+
+async function init() {
+  const main = document.getElementById('main');
+  try {
+    const seasons = await loadSeasons();
+    let playersFile = 'players.json';
+    let fixturesFile = 'fixtures.json';
+    let activeSeason = null;
+
+    if (seasons) {
+      const activeId = currentSeasonId(seasons);
+      activeSeason = seasons.find(s => s.id === activeId) || seasons[0];
+      playersFile = activeSeason.playersFile;
+      fixturesFile = activeSeason.fixturesFile;
+
+      document.getElementById('season-switcher-slot').appendChild(buildSeasonSwitcher(seasons, activeSeason.id));
+      const eyebrow = document.getElementById('eyebrow');
+      if (eyebrow) eyebrow.textContent = `Est. manually · Season ${activeSeason.label || activeSeason.id}`;
+      const footerNote = document.getElementById('footer-note');
+      if (footerNote) {
+        footerNote.innerHTML = `Data maintained by hand in <code>${playersFile}</code> and <code>${fixturesFile}</code> (season ${activeSeason.label || activeSeason.id} — see <code>seasons.json</code> for the full list). Appearance stats are calculated automatically from the fixture records. See <code>DATA-GUIDE.md</code> for field reference.`;
+      }
+    }
+
+    const { players, fixtures } = await loadData(playersFile, fixturesFile);
+    const playersById = {};
+    players.forEach(p => { playersById[p.id] = p; });
+
+    const issues = validateFixtures(fixtures, playersById);
+    renderValidationPanel(issues);
+
+    const fixtureIssuesMap = {}; // "squad::fixtureId" -> [messages]
+    const squadIssueCounts = { senior: 0, u21: 0, u18: 0 };
+    issues.forEach(iss => {
+      if (squadIssueCounts[iss.squad] !== undefined) squadIssueCounts[iss.squad] += 1;
+      if (iss.fixtureId) {
+        const key = iss.squad + '::' + iss.fixtureId;
+        (fixtureIssuesMap[key] = fixtureIssuesMap[key] || []).push(iss.message.replace(/^.*?: /, ''));
+      }
+    });
+
+    ['senior', 'u21', 'u18'].forEach(squadKey => {
+      const squadPlayers = players.filter(p => normSquad(p.squad) === squadKey);
+      const activeCount = squadPlayers.filter(p => (p.status || 'active') === 'active').length;
+      document.getElementById('count-' + squadKey).textContent = activeCount;
+      if (squadIssueCounts[squadKey] > 0) {
+        const dot = document.createElement('span');
+        dot.className = 'tab-flag';
+        dot.title = `${squadIssueCounts[squadKey]} data check(s) to review`;
+        document.querySelector(`nav.tabs a[href="#${squadKey}"]`).appendChild(dot);
+      }
+      main.appendChild(buildSquadSection(squadKey, squadPlayers, fixtures[squadKey] || { fixtures: [], appearances: {} }, playersById, fixtureIssuesMap));
+    });
+
+    setupTabs();
+  } catch (err) {
+    console.error(err);
+    document.getElementById('load-error').style.display = 'block';
+  }
+}
+
+function setupTabs() {
+  const tabLinks = Array.from(document.querySelectorAll('nav.tabs a'));
+  const sections = Array.from(document.querySelectorAll('section.squad'));
+
+  const showTab = (squadKey) => {
+    sections.forEach(s => s.classList.toggle('active-squad', s.id === squadKey));
+    tabLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + squadKey));
+  };
+
+  tabLinks.forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      const squadKey = a.getAttribute('href').slice(1);
+      showTab(squadKey);
+      history.replaceState(null, '', '#' + squadKey);
+    });
+  });
+
+  const validKeys = sections.map(s => s.id);
+  const initial = validKeys.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'senior';
+  showTab(initial);
+}
+
+init();
+</script>
+
+</body>
+</html>

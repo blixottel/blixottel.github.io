@@ -1,0 +1,545 @@
+{
+    "senior": {
+        "fixtures": [
+            { "id": "s-f1", "date": "2026-08-23", "opponent": "Liverpool", "venue": "H", "competition": "Premier League", "result": "D 2-2", "subsUsed": 5, "subsUnused": 4, "xg": 1.57, "assistsTotal": 2, "yellowCardsTotal": 5, "redCardsTotal": 0 },
+            { "id": "s-f2", "date": "2026-08-26", "opponent": "West Bromwich Albion", "venue": "H", "competition": "Carabao Cup", "result": "W 3-2", "subsUsed": 4, "subsUnused": 5, "xg": 2.84, "assistsTotal": 3, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "s-f3", "date": "2026-08-29", "opponent": "Tottenham Hotspur", "venue": "A", "competition": "Premier League", "result": "W 2-0", "subsUsed": 5, "subsUnused": 4, "xg": 0.73, "assistsTotal": 2, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "s-f4", "date": "2026-09-05", "opponent": "AFC Bournemouth", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f5", "date": "2026-09-09", "opponent": "Millwall", "venue": "A", "competition": "Carabao Cup", "result": "" },
+            { "id": "s-f6", "date": "2026-09-14", "opponent": "Leeds United", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f7", "date": "2026-09-19", "opponent": "Hull City", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f8", "date": "2026-10-12", "opponent": "Coventry City", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f9", "date": "2026-10-17", "opponent": "Aston Villa", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f10", "date": "2026-10-25", "opponent": "Crystal Palace", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f11", "date": "2026-11-02", "opponent": "Everton", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f12", "date": "2026-11-07", "opponent": "Fulham", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f13", "date": "2026-11-21", "opponent": "Arsenal", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f14", "date": "2026-11-28", "opponent": "Brighton and Hove Albion", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f15", "date": "2026-12-02", "opponent": "Manchester United", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f16", "date": "2026-12-05", "opponent": "mackems", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f17", "date": "2026-12-12", "opponent": "Ipswich Town", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f18", "date": "2026-12-19", "opponent": "Brentford", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f19", "date": "2026-12-26", "opponent": "Manchester City", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f20", "date": "2026-12-30", "opponent": "Nottingham Forest", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f21", "date": "2027-01-02", "opponent": "Chelsea", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f22", "date": "2027-01-06", "opponent": "Manchester United", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f23", "date": "2027-01-09", "opponent": "", "venue": "", "competition": "FA Cup", "result": "" },
+            { "id": "s-f24", "date": "2027-01-16", "opponent": "Fulham", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f25", "date": "2027-01-23", "opponent": "Arsenal", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f26", "date": "2027-01-30", "opponent": "Brighton and Hove Albion", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f27", "date": "2027-02-06", "opponent": "Everton", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f28", "date": "2027-02-10", "opponent": "Chelsea", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f29", "date": "2027-02-20", "opponent": "Manchester City", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f30", "date": "2027-02-27", "opponent": "Brentford", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f31", "date": "2027-03-03", "opponent": "Nottingham Forest", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f32", "date": "2027-03-13", "opponent": "AFC Bournemouth", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f33", "date": "2027-03-20", "opponent": "Leeds United", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f34", "date": "2027-04-10", "opponent": "Liverpool", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f35", "date": "2027-04-17", "opponent": "Tottenham Hotspur", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f36", "date": "2027-04-24", "opponent": "Ipswich Town", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f37", "date": "2027-05-01", "opponent": "mackems", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f38", "date": "2027-05-08", "opponent": "Coventry City", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f39", "date": "2027-05-15", "opponent": "Aston Villa", "venue": "A", "competition": "Premier League", "result": "" },
+            { "id": "s-f40", "date": "2027-05-23", "opponent": "Crystal Palace", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f41", "date": "2027-05-30", "opponent": "Hull City", "venue": "A", "competition": "Premier League", "result": "" }
+        ],
+        "appearances": {
+            "s-barnes": {
+                "s-f1": { "status": "start", "minutes": 90, "xg": 0.07 },
+                "s-f2": { "status": "sub_on", "minutes": 45, "goals": 2, "xg": 0.74 },
+                "s-f3": { "status": "start", "minutes": 89, "xg": 0.04 }
+            },
+            "s-botman": {
+                "s-f1": { "status": "start", "minutes": 90 },
+                "s-f2": { "status": "start", "minutes": 90 },
+                "s-f3": { "status": "start", "minutes": 90, "yellowCard": true, "xg": 0.01 }
+            },
+            "s-burn": {
+                "s-f1": { "status": "injured" }, "s-f2": { "status": "injured" }, "s-f3": { "status": "injured" }, "s-f4": { "status": "injured" }, "s-f5": { "status": "injured" }, "s-f6": { "status": "injured" },
+                "s-f7": { "status": "injured" }
+            },
+            "s-dedic": {
+                "s-f1": { "status": "start", "minutes": 90, "xg": 0.03 },
+                "s-f2": { "status": "start", "minutes": 90, "assists": 2, "xg": 0.05 },
+                "s-f3": { "status": "start", "minutes": 90, "assists": 1 }
+            },
+            "s-elanga": {
+                "s-f1": { "status": "start", "minutes": 76, "goals": 1, "xg": 0.22 },
+                "s-f2": { "status": "sub_on", "minutes": 26 },
+                "s-f3": { "status": "start", "minutes": 82, "goals": 1, "xg": 0.20 }
+            },
+            "s-gonzalez": {
+                "s-f1": { "status": "incoming" },
+                "s-f3": { "status": "start", "minutes": 71, "yellowCard": true }
+            },
+            "s-hall": {
+                "s-f1": { "status": "start", "minutes": 90 },
+                "s-f2": { "status": "start", "minutes": 90, "xg": 0.07 },
+                "s-f3": { "status": "start", "minutes": 90, "xg": 0.03 }
+            },
+            "s-hornicek": {
+                "s-f1": { "status": "start", "minutes": 90, "yellowCard": true },
+                "s-f2": { "status": "unused_sub" },
+                "s-f3": { "status": "start", "minutes": 90 }
+            },
+            "s-joelinton": {
+                "s-f1": { "status": "injured" }, "s-f2": { "status": "injured" }, "s-f3": { "status": "injured" }, "s-f4": { "status": "injured" }, "s-f5": { "status": "injured" }
+            },
+            "s-livramento": {
+                "s-f1": { "status": "injured" }, "s-f2": { "status": "injured" }, "s-f3": { "status": "injured" }
+            },
+            "s-murphy-j": {
+                "s-f1": { "status": "sub_on", "minutes": 14, "yellowCard": true },
+                "s-f2": { "status": "start", "minutes": 64 },
+                "s-f3": { "status": "sub_on", "minutes": 8 }
+            },
+            "s-osula": {
+                "s-f1": { "status": "start", "minutes": 56, "assists": 1, "xg": 0.06 }, "s-f2": { "status": "injured" }, "s-f3": { "status": "injured" }, "s-f4": { "status": "injured" }, "s-f5": { "status": "injured" },
+                "s-f6": { "status": "injured" }, "s-f7": { "status": "injured" }
+            },
+            "s-ramsey": {
+                "s-f1": { "status": "sub_on", "minutes": 34, "xg": 0.06, "yellowCard": true },
+                "s-f2": { "status": "start", "minutes": 90 },
+                "s-f3": { "status": "sub_on", "minutes": 8 }
+            },
+            "s-schar": {
+                "s-f1": { "status": "sub_on", "minutes": 1 },
+                "s-f2": { "status": "unused_sub" },
+                "s-f3": { "status": "unused_sub" }
+            },
+            "s-thiaw": {
+                "s-f1": { "status": "start", "minutes": 90 },
+                "s-f2": { "status": "start", "minutes": 90, "assists": 1, "xg": 0.07 },
+                "s-f3": { "status": "start", "minutes": 90 }
+            },
+            "s-willock": {
+                "s-f1": { "status": "sub_on", "minutes": 34 , "goals": 1, "xg": 0.09 },
+                "s-f2": { "status": "start", "minutes": 64, "xg": 0.33 },
+                "s-f3": { "status": "start", "minutes": 71, "xg": 0.07 }
+            },
+            "s-wissa": {
+                "s-f1": { "status": "start", "minutes": 89, "yellowCard": true, "assists": 1, "xg": 1.00 },
+                "s-f2": { "status": "sub_on", "minutes": 26, "xg": 0.55 },
+                "s-f3": { "status": "start", "minutes": 82, "goals": 1, "xg": 0.35 }
+            },
+            "u21-bamba": {
+                "s-f1": { "status": "sub_on", "minutes": 14 },
+                "s-f2": { "status": "unused_sub" },
+                "s-f3": { "status": "unused_sub" }
+            },
+            "u21-fernandez-pardo": {
+                "s-f1": { "status": "incoming" },
+                "s-f2": { "status": "incoming" },
+                "s-f3": { "status": "incoming" }
+            },
+            "u21-jaouen": {
+                "s-f1": { "status": "unused_sub" },
+                "s-f2": { "status": "start", "minutes": 90, "yellowCard": true },
+                "s-f3": { "status": "unused_sub" }
+            },
+            "u21-miley": {
+                "s-f1": { "status": "start", "minutes": 76, "xg": 0.05, "yellowCard": true },
+                "s-f2": { "status": "sub_on", "minutes": 25 },
+                "s-f3": { "status": "start", "minutes": 90 }
+            },
+            "u21-shahar": {
+                "s-f1": { "status": "unused_sub" },
+                "s-f2": { "status": "unused_sub" },
+                "s-f3": { "status": "unused_sub" }
+            },
+            "u21-steur": {
+                "s-f1": { "status": "start", "minutes": 56 },
+                "s-f2": { "status": "start", "minutes": 65, "yellowCard": true },
+                "s-f3": { "status": "sub_on", "minutes": 19 }
+            },
+            "u21-toure": {
+                "s-f1": { "status": "unused_sub" },
+                "s-f2": { "status": "start", "minutes": 45, "goals": 1, "xg": 0.98 },
+                "s-f3": { "status": "sub_on", "minutes": 1 }
+            },
+            "u21-neave": {
+                "s-f2": { "status": "unused_sub" }, "s-f4": { "status": "loan" }, "s-f5": { "status": "loan" }, "s-f6": { "status": "loan" }, "s-f7": { "status": "loan" }, "s-f8": { "status": "loan" },
+                "s-f9": { "status": "loan" }, "s-f10": { "status": "loan" }, "s-f11": { "status": "loan" }, "s-f12": { "status": "loan" }, "s-f13": { "status": "loan" }, "s-f14": { "status": "loan" },
+                "s-f15": { "status": "loan" }, "s-f16": { "status": "loan" }, "s-f17": { "status": "loan" }, "s-f18": { "status": "loan" }, "s-f19": { "status": "loan" }, "s-f20": { "status": "loan" },
+                "s-f21": { "status": "loan" }, "s-f22": { "status": "loan" }, "s-f23": { "status": "loan" }, "s-f24": { "status": "loan" }, "s-f25": { "status": "loan" }, "s-f26": { "status": "loan" },
+                "s-f27": { "status": "loan" }, "s-f28": { "status": "loan" }, "s-f29": { "status": "loan" }, "s-f30": { "status": "loan" }, "s-f31": { "status": "loan" }, "s-f32": { "status": "loan" },
+                "s-f33": { "status": "loan" }, "s-f34": { "status": "loan" }, "s-f35": { "status": "loan" }, "s-f36": { "status": "loan" }, "s-f37": { "status": "loan" }, "s-f38": { "status": "loan" },
+                "s-f39": { "status": "loan" }, "s-f40": { "status": "loan" }, "s-f41": { "status": "loan" }
+            },
+            "s-woltemade": {
+                "s-f1": { "status": "unused_sub" },
+                "s-f2": { "status": "start", "minutes": 90, "xg": 0.05 },
+                "s-f3": { "status": "sub_on", "minutes": 19, "assists": 1, "xg": 0.02 }, "s-f4": { "status": "loan" }, "s-f5": { "status": "loan" }, "s-f6": { "status": "loan" }, "s-f7": { "status": "loan" },
+                "s-f8": { "status": "loan" }, "s-f9": { "status": "loan" }, "s-f10": { "status": "loan" }, "s-f11": { "status": "loan" }, "s-f12": { "status": "loan" }, "s-f13": { "status": "loan" },
+                "s-f14": { "status": "loan" }, "s-f15": { "status": "loan" }, "s-f16": { "status": "loan" }, "s-f17": { "status": "loan" }, "s-f18": { "status": "loan" }, "s-f19": { "status": "loan" },
+                "s-f20": { "status": "loan" }, "s-f21": { "status": "loan" }, "s-f22": { "status": "loan" }, "s-f23": { "status": "loan" }, "s-f24": { "status": "loan" }, "s-f25": { "status": "loan" },
+                "s-f26": { "status": "loan" }, "s-f27": { "status": "loan" }, "s-f28": { "status": "loan" }, "s-f29": { "status": "loan" }, "s-f30": { "status": "loan" }, "s-f31": { "status": "loan" },
+                "s-f32": { "status": "loan" }, "s-f33": { "status": "loan" }, "s-f34": { "status": "loan" }, "s-f35": { "status": "loan" }, "s-f36": { "status": "loan" }, "s-f37": { "status": "loan" },
+                "s-f38": { "status": "loan" }, "s-f39": { "status": "loan" }, "s-f40": { "status": "loan" }, "s-f41": { "status": "loan" }
+            },
+            "s-ashby": {
+                "s-f1": { "status": "loan" }, "s-f2": { "status": "loan" }, "s-f3": { "status": "loan" }, "s-f4": { "status": "loan" }, "s-f5": { "status": "loan" }, "s-f6": { "status": "loan" },
+                "s-f7": { "status": "loan" }, "s-f8": { "status": "loan" }, "s-f9": { "status": "loan" }, "s-f10": { "status": "loan" }, "s-f11": { "status": "loan" }, "s-f12": { "status": "loan" },
+                "s-f13": { "status": "loan" }, "s-f14": { "status": "loan" }, "s-f15": { "status": "loan" }, "s-f16": { "status": "loan" }, "s-f17": { "status": "loan" }, "s-f18": { "status": "loan" },
+                "s-f19": { "status": "loan" }, "s-f20": { "status": "loan" }, "s-f21": { "status": "loan" }, "s-f22": { "status": "loan" }, "s-f23": { "status": "loan" }, "s-f24": { "status": "loan" },
+                "s-f25": { "status": "loan" }, "s-f26": { "status": "loan" }, "s-f27": { "status": "loan" }, "s-f28": { "status": "loan" }, "s-f29": { "status": "loan" }, "s-f30": { "status": "loan" },
+                "s-f31": { "status": "loan" }, "s-f32": { "status": "loan" }, "s-f33": { "status": "loan" }, "s-f34": { "status": "loan" }, "s-f35": { "status": "loan" }, "s-f36": { "status": "loan" },
+                "s-f37": { "status": "loan" }, "s-f38": { "status": "loan" }, "s-f39": { "status": "loan" }, "s-f40": { "status": "loan" }, "s-f41": { "status": "loan" }
+            },
+            "s-murphy-a": {
+                "s-f1": { "status": "loan" }, "s-f2": { "status": "loan" }, "s-f3": { "status": "loan" }, "s-f4": { "status": "loan" }, "s-f5": { "status": "loan" }, "s-f6": { "status": "loan" },
+                "s-f7": { "status": "loan" }, "s-f8": { "status": "loan" }, "s-f9": { "status": "loan" }, "s-f10": { "status": "loan" }, "s-f11": { "status": "loan" }, "s-f12": { "status": "loan" },
+                "s-f13": { "status": "loan" }, "s-f14": { "status": "loan" }, "s-f15": { "status": "loan" }, "s-f16": { "status": "loan" }, "s-f17": { "status": "loan" }, "s-f18": { "status": "loan" },
+                "s-f19": { "status": "loan" }, "s-f20": { "status": "loan" }, "s-f21": { "status": "loan" }, "s-f22": { "status": "loan" }, "s-f23": { "status": "loan" }, "s-f24": { "status": "loan" },
+                "s-f25": { "status": "loan" }, "s-f26": { "status": "loan" }, "s-f27": { "status": "loan" }, "s-f28": { "status": "loan" }, "s-f29": { "status": "loan" }, "s-f30": { "status": "loan" },
+                "s-f31": { "status": "loan" }, "s-f32": { "status": "loan" }, "s-f33": { "status": "loan" }, "s-f34": { "status": "loan" }, "s-f35": { "status": "loan" }, "s-f36": { "status": "loan" },
+                "s-f37": { "status": "loan" }, "s-f38": { "status": "loan" }, "s-f39": { "status": "loan" }, "s-f40": { "status": "loan" }, "s-f41": { "status": "loan" }
+            },
+            "s-vlachodimos": {
+                "s-f1": { "status": "loan" }, "s-f2": { "status": "loan" }, "s-f3": { "status": "loan" }, "s-f4": { "status": "loan" }, "s-f5": { "status": "loan" }, "s-f6": { "status": "loan" },
+                "s-f7": { "status": "loan" }, "s-f8": { "status": "loan" }, "s-f9": { "status": "loan" }, "s-f10": { "status": "loan" }, "s-f11": { "status": "loan" }, "s-f12": { "status": "loan" },
+                "s-f13": { "status": "loan" }, "s-f14": { "status": "loan" }, "s-f15": { "status": "loan" }, "s-f16": { "status": "loan" }, "s-f17": { "status": "loan" }, "s-f18": { "status": "loan" },
+                "s-f19": { "status": "loan" }, "s-f20": { "status": "loan" }, "s-f21": { "status": "loan" }, "s-f22": { "status": "loan" }, "s-f23": { "status": "loan" }, "s-f24": { "status": "loan" },
+                "s-f25": { "status": "loan" }, "s-f26": { "status": "loan" }, "s-f27": { "status": "loan" }, "s-f28": { "status": "loan" }, "s-f29": { "status": "loan" }, "s-f30": { "status": "loan" },
+                "s-f31": { "status": "loan" }, "s-f32": { "status": "loan" }, "s-f33": { "status": "loan" }, "s-f34": { "status": "loan" }, "s-f35": { "status": "loan" }, "s-f36": { "status": "loan" },
+                "s-f37": { "status": "loan" }, "s-f38": { "status": "loan" }, "s-f39": { "status": "loan" }, "s-f40": { "status": "loan" }, "s-f41": { "status": "loan" }
+            }
+        }
+    },
+    "u21": {
+        "fixtures": [
+            { "id": "u21-f1", "date": "2026-08-18", "opponent": "Tamworth", "venue": "A", "competition": "English National League Cup", "result": "L 3–5", "ownGoalsFor": 1, "subsUsed": 5, "subsUnused": 2, "assistsTotal": 1, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "u21-f2", "date": "2026-08-24", "opponent": "Tottenham Hotspur U21", "venue": "H", "competition": "Premier League 2", "result": "L 1-3", "subsUsed": 5, "subsUnused": 2, "assistsTotal": 1, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "u21-f3", "date": "2026-08-31", "opponent": "Fulham U21", "venue": "H", "competition": "Premier League 2", "result": "L 0-4", "subsUsed": 5, "subsUnused": 2, "assistsTotal": 0, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "u21-f4", "date": "2026-09-08", "opponent": "Boreham Wood", "venue": "A", "competition": "English National League Cup", "result": "" },
+            { "id": "u21-f5", "date": "2026-09-15", "opponent": "York City", "venue": "A", "competition": "EFL Trophy", "result": "" },
+            { "id": "u21-f6", "date": "2026-09-19", "opponent": "Leeds United U21", "venue": "A", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f7", "date": "2026-09-22", "opponent": "Bradford City", "venue": "A", "competition": "EFL Trophy", "result": "" },
+            { "id": "u21-f8", "date": "2026-10-06", "opponent": "Solihull Moors", "venue": "A", "competition": "English National League Cup", "result": "" },
+            { "id": "u21-f9", "date": "2026-10-09", "opponent": "Luton Town U21", "venue": "H", "competition": "Premier League Cup", "result": "" },
+            { "id": "u21-f10", "date": "2026-10-13", "opponent": "Hartlepool United", "venue": "A", "competition": "English National League Cup", "result": "" },
+            { "id": "u21-f11", "date": "2026-10-18", "opponent": "Manchester City U21", "venue": "H", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f12", "date": "2026-10-26", "opponent": "mackems U21", "venue": "H", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f13", "date": "2026-10-30", "opponent": "Peterborough United U21", "venue": "H", "competition": "Premier League Cup", "result": "" },
+            { "id": "u21-f14", "date": "2026-11-03", "opponent": "Rotherham United", "venue": "A", "competition": "EFL Trophy", "result": "" },
+            { "id": "u21-f15", "date": "2026-11-06", "opponent": "Reading U21", "venue": "A", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f16", "date": "2026-11-13", "opponent": "Peterborough United U21", "venue": "A", "competition": "Premier League Cup", "result": "" },
+            { "id": "u21-f17", "date": "2026-11-18", "opponent": "Nottingham Forest U21", "venue": "A", "competition": "Premier League Cup", "result": "" },
+            { "id": "u21-f18", "date": "2026-11-23", "opponent": "Nottingham Forest U21", "venue": "H", "competition": "Premier League Cup", "result": "" },
+            { "id": "u21-f19", "date": "2026-11-30", "opponent": "Brentford U21", "venue": "H", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f20", "date": "2026-12-07", "opponent": "Luton Town U21", "venue": "A", "competition": "Premier League Cup", "result": "" },
+            { "id": "u21-f21", "date": "2026-12-13", "opponent": "Arsenal U21", "venue": "A", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f22", "date": "2026-12-21", "opponent": "AFC Bournemouth U21", "venue": "H", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f23", "date": "2027-01-08", "opponent": "Aston Villa U21", "venue": "A", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f24", "date": "2027-01-18", "opponent": "Birmingham City U21", "venue": "A", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f25", "date": "2027-01-25", "opponent": "Ipswich Town U21", "venue": "H", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f26", "date": "2027-02-08", "opponent": "Norwich City U21", "venue": "H", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f27", "date": "2027-02-12", "opponent": "Wolverhampton Wanderers U21", "venue": "A", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f28", "date": "2027-02-22", "opponent": "Derby County U21", "venue": "H", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f29", "date": "2027-03-01", "opponent": "Crystal Palace U21", "venue": "A", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f30", "date": "2027-03-05", "opponent": "Chelsea U21", "venue": "A", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f31", "date": "2027-03-15", "opponent": "Leicester City U21", "venue": "H", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f32", "date": "2027-03-21", "opponent": "Brighton and Hove Albion U21", "venue": "A", "competition": "Premier League 2", "result": "" },
+            { "id": "u21-f33", "date": "2027-04-03", "opponent": "West Bromwich Albion U21", "venue": "A", "competition": "Premier League 2", "result": "" }
+        ],
+        "appearances": {
+            "u18-alabi": {
+                "u21-f3": { "status": "sub_on", "yellowCard": true }
+            },
+            "u21-bailey": {
+                "u21-f1": { "status": "start" },
+                "u21-f2": { "status": "start", "yellowCard": true },
+                "u21-f3": { "status": "start" }
+            },
+            "u21-ca": {
+                "u21-f1": { "status": "sub_on" },
+                "u21-f2": { "status": "sub_on" },
+                "u21-f3": { "status": "sub_on" }
+            },
+            "u21-craggs": {
+                "u21-f1": { "status": "start" },
+                "u21-f2": { "status": "sub_on" },
+                "u21-f3": { "status": "sub_on" }
+            },
+            "u21-charlton": {
+                "u21-f2": { "status": "start" },
+                "u21-f3": { "status": "start" }
+            },
+            "u21-durrant": {
+                "u21-f1": { "status": "sub_on" },
+                "u21-f2": { "status": "unused_sub" }
+            },
+            "u21-emerson": {
+                "u21-f3": { "status": "unused_sub" }
+            },
+            "u21-ferreira": {
+                "u21-f1": { "status": "start" },
+                "u21-f2": { "status": "start" },
+                "u21-f3": { "status": "start" }
+            },
+            "u21-fitzgerald": {
+                "u21-f1": { "status": "sub_on" }
+            },
+            "u21-harper": {
+                "u21-f1": { "status": "start" },
+                "u21-f2": { "status": "sub_on" },
+                "u21-f3": { "status": "start" }
+            },
+            "u21-johnson": {
+                "u21-f1": { "status": "start" },
+                "u21-f2": { "status": "start" },
+                "u21-f3": { "status": "start" }
+            },
+            "u21-jones": {
+                "u21-f2": { "status": "unused_sub" },
+                "u21-f3": { "status": "unused_sub" }
+            },
+            "u18-mair": {
+                "u21-f1": { "status": "start", "yellowCard": true },
+                "u21-f2": { "status": "start" },
+                "u21-f3": { "status": "start" }
+            },
+            "u18-miley": {
+                "u21-f2": { "status": "start" },
+                "u21-f3": { "status": "start" }
+            },
+            "u18-mills": {
+                "u21-f1": { "status": "start" },
+                "u21-f2": { "status": "sub_on" },
+                "u21-f3": { "status": "sub_on" }
+            },
+            "u18-moran": {
+                "u21-f1": { "status": "start" }
+            },
+            "u21-park": {
+                "u21-f1": { "status": "sub_on" },
+                "u21-f2": { "status": "sub_on" },
+                "u21-f3": { "status": "sub_on" }
+            },
+            "u21-pivas": {
+                "u21-f1": { "status": "start" },
+                "u21-f2": { "status": "start" },
+                "u21-f3": { "status": "start" }
+            },
+            "u21-salia": {
+                "u21-f1": { "status": "sub_on", "goals": 1 },
+                "u21-f2": { "status": "start", "goals": 1 },
+                "u21-f3": { "status": "start" }
+            },
+            "u21-sanusi": {
+                "u21-f1": { "status": "start", "goals": 1, "assists": 1 },
+                "u21-f2": { "status": "start", "assists": 1 },
+                "u21-f3": { "status": "start" }
+            },
+            "u21-walpole": {
+                "u21-f1": { "status": "unused_sub" }
+            },
+            "u21-watts": {
+                "u21-f1": { "status": "unused_sub" }
+            },
+            "u21-cordero": {
+                "u21-f1": { "status": "loan" }, "u21-f2": { "status": "loan" }, "u21-f3": { "status": "loan" }, "u21-f4": { "status": "loan" }, "u21-f5": { "status": "loan" }, "u21-f6": { "status": "loan" },
+                "u21-f7": { "status": "loan" }, "u21-f8": { "status": "loan" }, "u21-f9": { "status": "loan" }, "u21-f10": { "status": "loan" }, "u21-f11": { "status": "loan" }, "u21-f12": { "status": "loan" },
+                "u21-f13": { "status": "loan" }, "u21-f14": { "status": "loan" }, "u21-f15": { "status": "loan" }, "u21-f16": { "status": "loan" }, "u21-f17": { "status": "loan" }, "u21-f18": { "status": "loan" },
+                "u21-f19": { "status": "loan" }, "u21-f20": { "status": "loan" }, "u21-f21": { "status": "loan" }, "u21-f22": { "status": "loan" }, "u21-f23": { "status": "loan" }, "u21-f24": { "status": "loan" },
+                "u21-f25": { "status": "loan" }, "u21-f26": { "status": "loan" }, "u21-f27": { "status": "loan" }, "u21-f28": { "status": "loan" }, "u21-f29": { "status": "loan" }, "u21-f30": { "status": "loan" },
+                "u21-f31": { "status": "loan" }, "u21-f32": { "status": "loan" }, "u21-f33": { "status": "loan" }
+            },
+            "u21-diabate": {
+                "u21-f1": { "status": "incoming" }, "u21-f2": { "status": "incoming" }, "u21-f3": { "status": "loan" }, "u21-f4": { "status": "loan" }, "u21-f5": { "status": "loan" }, "u21-f6": { "status": "loan" },
+                "u21-f7": { "status": "loan" }, "u21-f8": { "status": "loan" }, "u21-f9": { "status": "loan" }, "u21-f10": { "status": "loan" }, "u21-f11": { "status": "loan" }, "u21-f12": { "status": "loan" },
+                "u21-f13": { "status": "loan" }, "u21-f14": { "status": "loan" }, "u21-f15": { "status": "loan" }, "u21-f16": { "status": "loan" }, "u21-f17": { "status": "loan" }, "u21-f18": { "status": "loan" },
+                "u21-f19": { "status": "loan" }, "u21-f20": { "status": "loan" }, "u21-f21": { "status": "loan" }, "u21-f22": { "status": "loan" }, "u21-f23": { "status": "loan" }, "u21-f24": { "status": "loan" },
+                "u21-f25": { "status": "loan" }, "u21-f26": { "status": "loan" }, "u21-f27": { "status": "loan" }, "u21-f28": { "status": "loan" }, "u21-f29": { "status": "loan" }, "u21-f30": { "status": "loan" },
+                "u21-f31": { "status": "loan" }, "u21-f32": { "status": "loan" }, "u21-f33": { "status": "loan" }
+            },
+            "u21-finneran": {
+                "u21-f2": { "status": "start" }, "u21-f3": { "status": "loan" }, "u21-f4": { "status": "loan" }, "u21-f5": { "status": "loan" }, "u21-f6": { "status": "loan" }, "u21-f7": { "status": "loan" },
+                "u21-f8": { "status": "loan" }, "u21-f9": { "status": "loan" }, "u21-f10": { "status": "loan" }, "u21-f11": { "status": "loan" }, "u21-f12": { "status": "loan" }, "u21-f13": { "status": "loan" },
+                "u21-f14": { "status": "loan" }, "u21-f15": { "status": "loan" }, "u21-f16": { "status": "loan" }, "u21-f17": { "status": "loan" }, "u21-f18": { "status": "loan" }, "u21-f19": { "status": "loan" },
+                "u21-f20": { "status": "loan" }, "u21-f21": { "status": "loan" }, "u21-f22": { "status": "loan" }, "u21-f23": { "status": "loan" }, "u21-f24": { "status": "loan" }, "u21-f25": { "status": "loan" },
+                "u21-f26": { "status": "loan" }, "u21-f27": { "status": "loan" }, "u21-f28": { "status": "loan" }, "u21-f29": { "status": "loan" }, "u21-f30": { "status": "loan" }, "u21-f31": { "status": "loan" },
+                "u21-f32": { "status": "loan" }, "u21-f33": { "status": "loan" }
+            },
+            "u21-munda": {
+                "u21-f1": { "status": "loan" }, "u21-f2": { "status": "loan" }, "u21-f3": { "status": "loan" }, "u21-f4": { "status": "loan" }, "u21-f5": { "status": "loan" }, "u21-f6": { "status": "loan" },
+                "u21-f7": { "status": "loan" }, "u21-f8": { "status": "loan" }, "u21-f9": { "status": "loan" }, "u21-f10": { "status": "loan" }, "u21-f11": { "status": "loan" }, "u21-f12": { "status": "loan" },
+                "u21-f13": { "status": "loan" }, "u21-f14": { "status": "loan" }, "u21-f15": { "status": "loan" }, "u21-f16": { "status": "loan" }, "u21-f17": { "status": "loan" }, "u21-f18": { "status": "loan" },
+                "u21-f19": { "status": "loan" }, "u21-f20": { "status": "loan" }, "u21-f21": { "status": "loan" }, "u21-f22": { "status": "loan" }, "u21-f23": { "status": "loan" }, "u21-f24": { "status": "loan" },
+                "u21-f25": { "status": "loan" }, "u21-f26": { "status": "loan" }, "u21-f27": { "status": "loan" }, "u21-f28": { "status": "loan" }, "u21-f29": { "status": "loan" }, "u21-f30": { "status": "loan" },
+                "u21-f31": { "status": "loan" }, "u21-f32": { "status": "loan" }, "u21-f33": { "status": "loan" }
+            },
+            "u21-neave": {
+                "u21-f1": { "status": "start" }, "u21-f2": { "status": "start", "yellowCard": true }, "u21-f3": { "status": "start" }, "u21-f4": { "status": "loan" }, "u21-f5": { "status": "loan" },
+                "u21-f6": { "status": "loan" }, "u21-f7": { "status": "loan" }, "u21-f8": { "status": "loan" }, "u21-f9": { "status": "loan" }, "u21-f10": { "status": "loan" }, "u21-f11": { "status": "loan" },
+                "u21-f12": { "status": "loan" }, "u21-f13": { "status": "loan" }, "u21-f14": { "status": "loan" }, "u21-f15": { "status": "loan" }, "u21-f16": { "status": "loan" }, "u21-f17": { "status": "loan" },
+                "u21-f18": { "status": "loan" }, "u21-f19": { "status": "loan" }, "u21-f20": { "status": "loan" }, "u21-f21": { "status": "loan" }, "u21-f22": { "status": "loan" }, "u21-f23": { "status": "loan" },
+                "u21-f24": { "status": "loan" }, "u21-f25": { "status": "loan" }, "u21-f26": { "status": "loan" }, "u21-f27": { "status": "loan" }, "u21-f28": { "status": "loan" }, "u21-f29": { "status": "loan" },
+                "u21-f30": { "status": "loan" }, "u21-f31": { "status": "loan" }, "u21-f32": { "status": "loan" }, "u21-f33": { "status": "loan" }
+            }
+        }
+    },
+    "u18": {
+        "fixtures": [
+            { "id": "u18-f1", "date": "2026-08-15", "opponent": "Derby County U18", "venue": "H", "competition": "U18 Premier League", "result": "W 3–1", "subsUsed": 5, "subsUnused": 1, "assistsTotal": 2, "yellowCardsTotal": 4, "redCardsTotal": 0 },
+            { "id": "u18-f2", "date": "2026-08-22", "opponent": "Stoke City U18", "venue": "H", "competition": "U18 Premier League", "result": "W 3-2", "subsUsed": 5, "subsUnused": 2, "assistsTotal": 2, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "u18-f3", "date": "2026-08-25", "opponent": "Fulham U18", "venue": "A", "competition": "U18 Premier League Cup", "result": "D 1-1", "subsUsed": 6, "subsUnused": 1, "assistsTotal": 1, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "u18-f4", "date": "2026-08-29", "opponent": "Blackburn Rovers U18", "venue": "H", "competition": "U18 Premier League", "result": "W 6-1", "subsUsed": 5, "subsUnused": 2, "assistsTotal": 5, "yellowCardsTotal": 0, "redCardsTotal": 0, "ownGoalsFor": 1 },
+            { "id": "u18-f5", "date": "2026-09-05", "opponent": "Leicester City U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f6", "date": "2026-09-12", "opponent": "Manchester United U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f7", "date": "2026-09-19", "opponent": "mackems U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f8", "date": "2026-10-10", "opponent": "Derby County U18", "venue": "H", "competition": "U18 Premier League Cup", "result": "" },
+            { "id": "u18-f9", "date": "2026-10-17", "opponent": "Burnley U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f10", "date": "2026-10-24", "opponent": "Middlesbrough U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f11", "date": "2026-10-31", "opponent": "Everton U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f12", "date": "2026-11-07", "opponent": "Tottenham Hotspur U18", "venue": "H", "competition": "U18 Premier League Cup", "result": "" },
+            { "id": "u18-f13", "date": "2026-11-21", "opponent": "Leeds United U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f14", "date": "2026-11-28", "opponent": "Manchester City U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f15", "date": "2026-12-12", "opponent": "Wolverhampton Wanderers U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f16", "date": "2026-12-19", "opponent": "Liverpool U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f17", "date": "2027-01-09", "opponent": "Nottingham Forest U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f18", "date": "2027-01-16", "opponent": "Stoke City U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f19", "date": "2027-01-23", "opponent": "Derby County U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f20", "date": "2027-01-30", "opponent": "Leicester City U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f21", "date": "2027-02-06", "opponent": "Blackburn Rovers U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f22", "date": "2027-02-13", "opponent": "Manchester United U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f23", "date": "2027-02-20", "opponent": "mackems U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f24", "date": "2027-02-27", "opponent": "Burnley U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f25", "date": "2027-03-06", "opponent": "Middlesbrough U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f26", "date": "2027-03-13", "opponent": "Everton U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f27", "date": "2027-03-20", "opponent": "Leeds United U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f28", "date": "2027-04-17", "opponent": "Wolverhampton Wanderers U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f29", "date": "2027-04-24", "opponent": "Manchester City U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f30", "date": "2027-05-01", "opponent": "Liverpool U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f31", "date": "2027-05-08", "opponent": "Nottingham Forest U18", "venue": "A", "competition": "U18 Premier League", "result": "" }
+        ],
+        "appearances": {
+            "u18-afumuzor": {
+                "u18-f1": { "status": "sub_on" },
+                "u18-f2": { "status": "sub_on" },
+                "u18-f3": { "status": "sub_on" },
+                "u18-f4": { "status": "sub_on" }
+            },
+            "u18-alabi": {
+                "u18-f1": { "status": "start", "assists": 1, "yellowCard": true },
+                "u18-f2": { "status": "start", "yellowCard": true },
+                "u18-f3": { "status": "start", "goals": 1 }
+            },
+            "u18-benjamin": {
+                "u18-f1": { "status": "sub_on", "goals": 1 },
+                "u18-f2": { "status": "sub_on" },
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "unused_sub" }
+            },
+            "u18-callaghan": {
+                "u18-f2": { "status": "sub_on" },
+                "u18-f3": { "status": "sub_on" },
+                "u18-f4": { "status": "start" }
+            },
+            "u18-dowell": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start", "assists": 1 },
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "start" }
+            },
+            "u16-flack": {
+                "u18-f3": { "status": "unused_sub" },
+                "u18-f4": { "status": "unused_sub" }
+            },
+            "u16-ghanem": {
+                "u18-f1": { "status": "start", "assists": 1, "yellowCard": true },
+                "u18-f2": { "status": "start" },
+                "u18-f3": { "status": "sub_on", "yellowCard": true },
+                "u18-f4": { "status": "start" }
+            },
+            "u18-gilligan": {
+                "u18-f2": { "status": "sub_on" },
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "sub_on" }
+            },
+            "u18-goodbrand": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start" },
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "sub_on" }
+            },
+            "u16-harper": {
+                "u18-f2": { "status": "unused_sub" }
+            },
+            "u18-healy-matthews": {
+                "u18-f1": { "status": "sub_on", "yellowCard": true },
+                "u18-f2": { "status": "start" },
+                "u18-f3": { "status": "sub_on" },
+                "u18-f4": { "status": "start", "assists": 1 }
+            },
+            "u18-holland": {
+                "u18-f1": { "status": "unused_sub" }
+            },
+            "u18-hutchison": {
+                "u18-f1": { "status": "start", "goals": 1 },
+                "u18-f2": { "status": "start", "goals": 1 },
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "start", "goals": 1, "assists": 2 }
+            },
+            "u18-kouossu": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start" },
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "start" }
+            },
+            "u18-moran": {
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "start" }
+            },
+            "u18-morgan": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start" },
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "start", "goals": 1 }
+            },
+            "u18-ndiweni": {
+                "u18-f1": { "status": "sub_on" },
+                "u18-f2": { "status": "sub_on" },
+                "u18-f3": { "status": "sub_on" }
+            },
+            "u18-old": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start", "assists": 1 },
+                "u18-f3": { "status": "sub_on" },
+                "u18-f4": { "status": "start" }
+            },
+            "u18-patterson": {
+                "u18-f1": { "status": "start" },
+                "u18-f4": { "status": "sub_on", "assists": 1 }
+            },
+            "u16-robinson": {
+                "u18-f1": { "status": "start" },
+                "u18-f4": { "status": "sub_on", "goals": 1 }
+            },
+            "u18-seldon": {
+                "u18-f1": { "status": "start", "goals": 1, "yellowCard": true },
+                "u18-f2": { "status": "start", "goals": 2 },
+                "u18-f3": { "status": "start", "assists": 1 },
+                "u18-f4": { "status": "start", "goals": 1, "assists": 1 }
+            },
+            "u16-skelton": {
+                "u18-f1": { "status": "sub_on" },
+                "u18-f2": { "status": "unused_sub" },
+                "u18-f4": { "status": "start", "goals": 1 }
+            },
+            "u18-thompson": {
+                "u18-f2": { "status": "start", "yellowCard": true },
+                "u18-f3": { "status": "start" }
+            },
+            "u18-martinez": {
+                "u18-f1": { "status": "incoming" }, "u18-f2": { "status": "incoming" }, "u18-f3": { "status": "incoming" }, "u18-f4": { "status": "incoming" }, "u18-f5": { "status": "incoming" },
+                "u18-f6": { "status": "incoming" }, "u18-f7": { "status": "incoming" }, "u18-f8": { "status": "incoming" }, "u18-f9": { "status": "incoming" }, "u18-f10": { "status": "incoming" },
+                "u18-f11": { "status": "incoming" }, "u18-f12": { "status": "incoming" }, "u18-f13": { "status": "incoming" }, "u18-f14": { "status": "incoming" }, "u18-f15": { "status": "incoming" },
+                "u18-f16": { "status": "incoming" }, "u18-f17": { "status": "incoming" }, "u18-f18": { "status": "incoming" }, "u18-f19": { "status": "incoming" }, "u18-f20": { "status": "incoming" },
+                "u18-f21": { "status": "incoming" }, "u18-f22": { "status": "incoming" }, "u18-f23": { "status": "incoming" }, "u18-f24": { "status": "incoming" }, "u18-f25": { "status": "incoming" },
+                "u18-f26": { "status": "incoming" }, "u18-f27": { "status": "incoming" }, "u18-f28": { "status": "incoming" }, "u18-f29": { "status": "incoming" }, "u18-f30": { "status": "incoming" },
+                "u18-f31": { "status": "incoming" }
+            }
+        }
+    }
+}
