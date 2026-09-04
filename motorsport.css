@@ -1,170 +1,283 @@
+/* ============================================================
+   Pit Wall — motorsport link tracker
+   Layout language borrows from a timing-tower / pit-wall monitor:
+   dense rows, a coloured tab per discipline, tabular data readouts.
+   Discipline colours are carried over unchanged from the previous
+   version so the colour coding stays familiar.
+
+   Rows use a real CSS table (.rows / .row / .cell) rather than
+   flexbox, so the Site/Results/Standings/Calendar buttons, the
+   social icons and the next-date readout line up in fixed columns
+   across every row, not just within a single row.
+   ============================================================ */
+
+:root {
+  --asphalt: #1B1D21;
+  --asphalt-raised: #24272C;
+  --asphalt-line: #33363C;
+  --ink: #ECEDEF;
+  --ink-dim: #9BA0A8;
+  --ink-faint: #676B73;
+  --warn: #FF5D4A;
+  --warn-bg: #3A2320;
+  --soon: #FFB238;
+  --soon-bg: #3A2E14;
+  --radius: 4px;
+
+  /* Discipline colours — unchanged from the previous version */
+  --formula1: #C00000;      --formula1-text: #FFFFFF;
+  --formulaRegional: #FFC000; --formulaRegional-text: #1B1D21;
+  --formula4: #92D050;      --formula4-text: #1B1D21;
+  --nonFIA: #AEAAAA;        --nonFIA-text: #1B1D21;
+  --usaSeries: #00B050;     --usaSeries-text: #1B1D21;
+  --motorbikes: #0070C0;    --motorbikes-text: #FFFFFF;
+  --electric: #7030A0;      --electric-text: #FFFFFF;
+  --karting: #C65911;       --karting-text: #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+
 body {
-	font-family: 'Roboto', sans-serif;
-	background: linear-gradient(to bottom, #f0f0f0, #e6e6e6);
-	padding: 20px;
+  margin: 0;
+  background: linear-gradient(180deg, var(--asphalt) 0%, #17181B 100%);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1 {
-	font-family: 'Roboto', sans-serif;
-	text-align: center;
-	margin: 20px 0;
+/* ---------- Masthead ---------- */
+
+.masthead {
+  padding: 36px 24px 22px;
+  border-bottom: 3px solid var(--asphalt-line);
+  background: repeating-linear-gradient(-45deg, #202226 0 14px, #212327 14px 28px);
+}
+.masthead-inner { max-width: 1180px; margin: 0 auto; }
+
+h1.title {
+  font-family: 'Formula Condensed', 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: clamp(30px, 5.4vw, 52px);
+  letter-spacing: 0.01em;
+  margin: 0;
+  color: var(--ink);
+}
+.title .flag { color: var(--ink-dim); margin-right: 12px; font-size: 0.7em; }
+
+.subtitle {
+  font-size: 14px;
+  color: var(--ink-dim);
+  margin: 8px 0 0;
+  max-width: 640px;
+  line-height: 1.5;
 }
 
-table {
-	font-family: 'Roboto', sans-serif;
-	width: 100%;
-	border-collapse: collapse;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.updated-stamp { font-size: 12px; color: var(--ink-faint); margin-top: 14px; }
+
+/* Legend: explains the colour coding once, so rows stay uncluttered */
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 18px; }
+.legend-item { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--ink-dim); }
+.legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+/* ---------- Quick jump ---------- */
+
+.jump-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--asphalt-raised);
+  border-bottom: 1px solid var(--asphalt-line);
+  padding: 10px 24px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+}
+.jump-nav a {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-dim);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--asphalt-line);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.jump-nav a:hover, .jump-nav a:focus-visible { color: var(--ink); border-color: var(--ink-faint); }
+.jump-nav a .n { color: var(--ink-faint); margin-left: 5px; }
+
+/* ---------- Main ---------- */
+
+main { max-width: 1180px; margin: 0 auto; padding: 8px 24px 80px; }
+
+#load-error {
+  display: none;
+  margin: 24px 0;
+  padding: 16px 18px;
+  background: var(--warn-bg);
+  border: 1px solid var(--warn);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.6;
+}
+#load-error code { background: rgba(0,0,0,0.3); padding: 1px 5px; border-radius: 3px; }
+
+/* ---------- Section groups ---------- */
+
+details.group {
+  margin-top: 26px;
+  border-top: 1px solid var(--asphalt-line);
+  padding-top: 14px;
+  scroll-margin-top: 56px;
+}
+details.group summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 6px 0;
+}
+details.group summary::-webkit-details-marker { display: none; }
+details.group summary::before {
+  content: "▸";
+  color: var(--ink-faint);
+  font-size: 12px;
+  transition: transform 0.15s ease;
+  transform: rotate(0deg);
+}
+details.group[open] summary::before { transform: rotate(90deg); }
+
+.group-title {
+  font-family: 'Formula Condensed', 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.group-count { font-size: 12.5px; color: var(--ink-faint); }
+
+/* ---------- Rows ----------
+   Every row — in every group — uses the exact same fixed grid
+   template (no content-based auto-sizing), so the button and date
+   columns land in the same x-position everywhere on the page, not
+   just within one group. */
+
+:root {
+  --col-tab: 6px;
+  --col-link: 96px;
+  --col-social: 116px;
+  --col-date: 112px;
 }
 
-th, td {
-	border: 1px solid #ddd;
-	padding: 8px;
-	text-align: left;
+.rows { margin-top: 10px; }
+
+.row {
+  display: grid;
+  grid-template-columns: var(--col-tab) minmax(150px, 1fr) repeat(4, var(--col-link)) var(--col-social) var(--col-date);
+  column-gap: 12px;
+  background: var(--asphalt-raised);
+  border: 1px solid var(--asphalt-line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.row:hover { border-color: var(--ink-faint); }
+
+.cell {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  min-width: 0;
 }
 
-th {
-	background-color: #ECEFF1;
+.cell-tab { padding: 0; background: var(--accent, var(--ink-faint)); align-self: stretch; }
+
+.cell-name {
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--ink);
+  overflow-wrap: anywhere;
 }
 
-.formula1-header {
-	background-color: #C00000;
-	color: white;
+.cell-link { justify-content: center; }
+.link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-dim);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--asphalt-raised);
+  border: 1px solid var(--asphalt-line);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.link-chip i { width: 12px; text-align: center; font-size: 11px; }
+.link-chip:hover, .link-chip:focus-visible { color: var(--ink); border-color: var(--accent, var(--ink-faint)); }
+.link-chip.inactive {
+  color: var(--ink-faint);
+  border-style: dashed;
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.55;
 }
 
-.formulaRegional-header {
-	background-color: #FFC000;
-	color: black;
+.cell-social { flex-wrap: wrap; gap: 8px; }
+.cell-social a { color: var(--ink-faint); font-size: 13px; text-decoration: none; }
+.cell-social a:hover, .cell-social a:focus-visible { color: var(--ink); }
+
+.cell-date {
+  justify-content: flex-end;
+  white-space: nowrap;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  color: var(--ink-dim);
+}
+.cell-date i { font-size: 12px; margin-right: 7px; }
+.cell-date.due-soon { color: var(--soon); }
+.cell-date.overdue { color: var(--warn); }
+.cell-date.overdue i { animation: pulse-flag 1.1s ease-in-out infinite; display: inline-block; }
+@keyframes pulse-flag { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) { .cell-date.overdue i { animation: none; } }
+
+/* ---------- Responsive: fall back to stacked cards ---------- */
+
+@media (max-width: 860px) {
+  .row {
+    display: block;
+    position: relative;
+    padding-left: 6px;
+  }
+  .cell { display: flex; padding: 4px 12px; }
+  .cell-tab {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+  }
+  .cell-name { padding-top: 10px; }
+  .cell-link { justify-content: flex-start; padding: 4px 6px 4px 12px; }
+  .cell-social { padding-bottom: 6px; padding-left: 12px; }
+  .cell-date { justify-content: flex-start; padding-bottom: 10px; }
 }
 
-.formula4-header {
-	background-color: #92D050;
-	color: black;
+@media (max-width: 480px) {
+  .masthead { padding: 28px 16px 18px; }
+  main { padding: 8px 16px 60px; }
+  .jump-nav { padding: 10px 16px; }
 }
 
-.nonFIA-header {
-	background-color: #AEAAAA;
-	color: black;
-}
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--soon); outline-offset: 2px; }
 
-.usaSeries-header {
-	background-color: #00B050;
-	color: black;
+footer.site-footer {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+  font-size: 12px;
+  color: var(--ink-faint);
+  line-height: 1.6;
 }
-
-.motorbikes-header {
-	background-color: #0070C0;
-	color: white;
-}
-
-.electric-header {
-	background-color: #7030A0;
-	color: white;
-}
-
-.karting-header {
-	background-color: #C65911;
-	color: white;
-}
-
-.formula1-pastel {
-	background-color: #FFBABA;
-}
-
-.formulaRegional-pastel {
-	background-color: #FFE6B3;
-}
-
-.formula4-pastel {
-	background-color: #D9FFBF;
-}
-
-.nonFIA-pastel {
-	background-color: #E6E6E6;
-}
-
-.usaSeries-pastel {
-	background-color: #B3FFD9;
-}
-
-.motorbikes-pastel {
-	background-color: #B3D9FF;
-}
-
-.electric-pastel {
-	background-color: #D9B3FF;
-}
-
-.karting-pastel {
-	background-color: #FFC299;
-}
-
-.icon-cell {
-	width: 80%;
-	text-align: left;
-}
-
-.icon-cell-social {
-	width: 20%;
-	text-align: center;
-}
-
-.icon-header-series,
-.icon-header,
-.icon-cell i {
-	text-align: center;
-}
-
-.icon-header.ongoing {
-  color: #00B050;
-}
-
-.icon-header.completed {
-  color: #00B050;
-}
-
-.container {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.inner-table {
-  width: calc(20% - 10px); /* 20% width minus some gap */
-  margin: 5px; /* Adjust the gap between columns as needed */
-  border: 1px solid #ccc; /* Styling for inner tables */
-  padding: 10px;
-}
-
-.no-link {
-	color: #AEAAAA;
-	text-decoration: none;
-}
-
-h1::before {
-	content: "\f024"; /* Unicode for flag icon */
-	font-family: 'Font Awesome 5 Free';
-	margin-right: 10px; /* Adjust spacing between icon and text */
-}
-
-th.icon-header::before {
-	content: "";
-	font-family: 'Font Awesome 5 Free';
-	display: inline-block;
-	margin-right: 5px; /* Adjust spacing between icon and text */
-}
-
-th.icon-header-series::before {
-	content: "\f091"; /* Unicode for the trophy icon */
-}
-
-.fa-beat {
-  animation: fa-beat 1s infinite;
-}
-
-.fa-flip {
-  animation: fa-flip 1s linear infinite;
-}
-
-.red-icon {
-  color: red;
-}
+footer.site-footer code { background: var(--asphalt-raised); padding: 1px 5px; border-radius: 3px; }

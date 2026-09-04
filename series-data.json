@@ -1,0 +1,1763 @@
+{
+    "series": [
+		{
+            "category": "formula1",
+            "name": "Formula 1",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.formula1.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072", "label": "Results", "active": true },
+                "standings": { "url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2025-2071", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.formula1.com/en/latest/article/formula-1-reveals-calendar-for-2026-season.YctbMZWqBvrgyddrnauo8", "label": "Calendar", "active": true }
+			},
+            "social": [
+                { "platform": "bluesky", "url": "https://bsky.app/profile/f1tv.bsky.social" },
+                { "platform": "x-twitter", "url": "https://x.com/f1" },
+                { "platform": "facebook", "url": "https://www.facebook.com/Formula1" },
+                { "platform": "instagram", "url": "https://www.instagram.com/f1" },
+                { "platform": "youtube", "url": "https://www.youtube.com/F1"}
+			]
+		},
+		{
+            "category": "formula1",
+            "name": "Formula 2",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.fiaformula2.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/formula-2-championship-44", "label": "Results", "active": true },
+                "standings": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/formula-2-championship-44", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.fiaformula2.com/Latest/28OvYB98ektUm0D8vrUgYS/fia-formula-2-championship-2026-season-calendar-revealed", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/Formula2" },
+                { "platform": "facebook", "url": "https://www.facebook.com/formula2" },
+                { "platform": "instagram", "url": "https://www.instagram.com/formula2"}
+            ]
+        },
+		{
+            "category": "formula1",
+            "name": "Formula 3",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.fiaformula3.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/fia-formula-3-championship-1012", "label": "Results", "active": true },
+                "standings": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/fia-formula-3-championship-1012", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.fiaformula3.com/Latest/16F8XBnz2PSr8Rn29WCsIs/fia-formula-3-championship-2026-season-calendar-revealed", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/Formula3" },
+                { "platform": "facebook", "url": "https://www.facebook.com/formula3" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fiaf3"}
+            ]
+        },
+		{
+            "category": "formula1",
+            "name": "F1 Academy",
+            "resultsVerified": true,
+            "nextDate": "24 Oct 2026",
+            "links": {
+                "official": { "url": "https://www.f1academy.com", "label": "Official site", "active": true },
+                "results": { "url": "https://webapp.sportity.com/channel/F1A2026", "label": "Results", "active": true },
+                "standings": { "url": "https://webapp.sportity.com/channel/F1A2026", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.f1academy.com/Latest/1C0Ca5XnCCSeV6ybe4f1Ai/f1-academy-reveals-2026-calendar", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/f1academy" },
+                { "platform": "instagram", "url": "https://www.instagram.com/f1academy" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@f1academy/featured"}
+            ]
+        },
+		{
+            "category": "formulaRegional",
+            "name": "FR Americas",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.framericas.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.framericas.com/pages/2026-results", "label": "Results", "active": true },
+                "standings": { "url": "https://www.framericas.com/event_scoring_points?season=2026&point_type=driver", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.framericas.com/events?group_by=year&year=2026", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/framericas" },
+                { "platform": "facebook", "url": "https://www.facebook.com/framericas" },
+                { "platform": "instagram", "url": "https://www.instagram.com/framericas" },
+                { "platform": "youtube", "url": "https://youtube.com/framericas"}
+            ]
+        },
+		{
+            "category": "formulaRegional",
+            "name": "FR Europe",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://fiafrec.com", "label": "Official site", "active": true },
+                "results": { "url": "https://fia-frec.vii-results.com/results", "label": "Results", "active": true },
+                "standings": { "url": "https://fiafrec.com/standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://fiafrec.com/calendar", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/fiaformularegionaleu" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fiaformularegionaleu" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@fiaformularegionaleu?si=7nt6umD7bSAYNNY8"}
+            ]
+        },
+		{
+            "category": "formulaRegional",
+            "name": "FR Japan",
+            "resultsVerified": true,
+            "nextDate": "26 Sep 2026",
+            "links": {
+                "official": { "url": "https://frj.jp", "label": "Official site", "active": true },
+                "results": { "url": "https://frj.jp/2026/index.html", "label": "Results", "active": true },
+                "standings": { "url": "https://frj.jp/2026/standings/2026FRJpoint.pdf", "label": "Standings", "active": true },
+                "calendar": { "url": "https://frj.jp", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/FRJapanese" },
+                { "platform": "facebook", "url": "https://www.facebook.com/FormulaRegionalJP" },
+                { "platform": "instagram", "url": "https://www.instagram.com/formula_regional_jp" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@formularegionaljapanesecha7279"}
+            ]
+        },
+		{
+            "category": "formulaRegional",
+            "name": "FR Middle East Trophy",
+            "resultsVerified": true,
+            "nextDate": "16 Jan 2027",
+            "links": {
+                "official": { "url": "https://www.formulamideast.com", "label": "Official site", "active": true },
+                "results": { "url": "https://cloud.topspeedchina.net/d/s/16QNY6lHJTmUmHu3r2QQT7sBRGFIOPme/IDhN1rkOCd7VtXHwX459AvLKidBKgLjC-j7Fg1-zk2gw", "label": "Results", "active": false },
+                "standings": { "url": "https://cloud.topspeedchina.net/d/s/16QNY6lHJTmUmHu3r2QQT7sBRGFIOPme/IDhN1rkOCd7VtXHwX459AvLKidBKgLjC-j7Fg1-zk2gw", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.instagram.com/p/DauGxhuR7N6", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/profile.php?id=100087532997507" },
+                { "platform": "instagram", "url": "https://www.instagram.com/frmiddleeasttrophy" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@frmechampionshipcertifi89"}
+            ]
+        },
+		{
+            "category": "formulaRegional",
+            "name": "FR Oceania Trophy",
+            "resultsVerified": true,
+            "nextDate": "2027",
+            "links": {
+                "official": { "url": "https://www.toyota.co.nz/toyota-racing/castrol-toyota-fr-oceania", "label": "Official site", "active": true },
+                "results": { "url": "https://www.teamapp.com/clubs/327911/documents?_list=v1", "label": "Results", "active": false },
+                "standings": { "url": "https://www.teamapp.com/clubs/327911/documents?_list=v1", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.toyota.co.nz/toyota-racing/castrol-toyota-fr-oceania/news/2025/june/castrol-toyota-formula-regional-oceania-trophy-dates-confirmed", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/TGRNewZealand" },
+                { "platform": "instagram", "url": "https://www.instagram.com/tgr_nz" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@ToyotaGAZOORacingNZ" },
+                { "platform": "flickr", "url": "https://www.flickr.com/photos/toyotaracingnz"}
+            ]
+        },
+		{
+            "category": "formulaRegional",
+            "name": "FR World Cup",
+            "resultsVerified": true,
+            "nextDate": "21 Nov 2026",
+            "links": {
+                "official": { "url": "https://www.macau.grandprix.gov.mo/en", "label": "Official site", "active": true },
+                "results": { "url": "https://www.macau.grandprix.gov.mo/en/info/result", "label": "Results", "active": false },
+                "standings": { "url": null, "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.macau.grandprix.gov.mo/uploads/attachment/2025-11/083a895784de8d2facdaf4cff54a6368.jpg", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/MacauGrandPrix" },
+                { "platform": "youtube", "url": "https://www.youtube.com/user/GrandePremiodeMacau" },
+                { "platform": "weibo", "url": "https://passport.weibo.com/visitor/visitor?entry=miniblog&a=enter&url=https%3A%2F%2Fweibo.com%2Fmgpmgp&domain=.weibo.com&"}
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 Brazil",
+            "resultsVerified": true,
+            "nextDate": "26 Sep 2026",
+            "links": {
+                "official": { "url": "https://velocigroup.com.br/#/fia-f4-brasil", "label": "Official site", "active": true },
+                "results": { "url": "https://www.chronon.com.br/formula-4-brasil-2026", "label": "Results", "active": true },
+                "standings": { "url": "https://www.chronon.com.br/formula-4-brasil-2026", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.instagram.com/p/DYnK7H1RTl0", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/f4brasileira" },
+                { "platform": "facebook", "url": "https://web.facebook.com/fiaf4brasil" },
+                { "platform": "instagram", "url": "https://www.instagram.com/f4brasileira" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@f4brasileira"}
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 Britain",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://fiaformula4.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.tsl-timing.com/results/toca/2026", "label": "Results", "active": true },
+                "standings": { "url": "https://www.tsl-timing.com/results/toca/2026", "label": "Standings", "active": true },
+                "calendar": { "url": "https://fiaformula4.com/british-f4-reveals-calendar-for-2026-season", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/BritishF4" },
+                { "platform": "facebook", "url": "https://www.facebook.com/BritishF4" },
+                { "platform": "instagram", "url": "https://www.instagram.com/britishf4" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCMyROh3W_whYFCqfeTUndEg" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@britishf4?lang=en" },
+                { "platform": "linktree", "url": "https://linktr.ee/britishf4"}
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 CEZ",
+            "resultsVerified": true,
+            "nextDate": "12 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.f4-cez.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.f4-cez.com/2026-results", "label": "Results", "active": true },
+                "standings": { "url": "https://www.f4-cez.com/2026-results", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.f4-cez.com/f4-cez-unveils-2026-calendar-with-another-f1-track-and-more-updates/", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/F4CEZChampionship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/f4cezchampionship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@f4cez" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@f4cezchampionship" },
+                { "platform": "linktree", "url": "https://linktr.ee/f4cezchampionship"}
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 CEZ",
+            "resultsVerified": true,
+            "nextDate": "17 Apr 2027",
+            "links": {
+                "official": { "url": "https://www.f4-cez.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.f4-cez.com/2026-results", "label": "Results", "active": false },
+                "standings": { "url": "https://www.f4-cez.com/2026-results", "label": "Standings", "active": false },
+                "calendar": { "url": "https://x.com/feeder_series/status/2084913059257049137", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/F4CEZChampionship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/f4cezchampionship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@f4cez" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@f4cezchampionship" },
+                { "platform": "linktree", "url": "https://linktr.ee/f4cezchampionship"}
+            ]
+        },
+        {
+            "category": "formula4",
+            "name": "F4 China",
+            "resultsVerified": false,
+            "nextDate": "26 Sep 2026",
+            "links": {
+                "official": { "url": "http://www.fiaf4.com.cn/fiaf4.html", "label": "Official site", "active": true },
+                "results": { "url": "http://www.fiaf4.com.cn/track/7/", "label": "Results", "active": false },
+                "standings": { "url": "http://www.fiaf4.com.cn/driverpoints.html", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.instagram.com/p/DUkbHOJEX77", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/formula4_china?lang=en" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia_f4_china" },
+                { "platform": "weibo", "url": "https://passport.weibo.com/visitor/visitor?entry=miniblog&a=enter&url=https%3A%2F%2Fweibo.com%2Fu%2F7744959716&domain=.weibo.com&" },
+                { "platform": "bilibili", "url": "https://space.bilibili.com/389555164" }
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 France",
+            "resultsVerified": true,
+            "nextDate": "19 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.ffsaacademy.org/championnat-de-france-f4/?lang=en", "label": "Official site", "active": true },
+                "results": { "url": "https://www.its-results.com/gt4/2026/5eeb2dbe-3e5d-42fe-8753-3de74635fd58", "label": "Results", "active": true },
+                "standings": { "url": "https://www.ffsaacademy.org/results-f4/?lang=en", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.ffsaacademy.org/championnat-de-france-f4/calendrier-f4/?lang=en", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/ffsaacademy" },
+                { "platform": "instagram", "url": "https://www.instagram.com/ffsaacademy" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCUWV6YsuDBWO5sYxmwSQUQQ"}
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 Germany",
+            "resultsVerified": true,
+            "nextDate": "2027",
+            "links": {
+                "official": { "url": "https://f4-germany.com", "label": "Official site", "active": true },
+                "results": { "url": null, "label": "Results", "active": false },
+                "standings": { "url": null, "label": "Standings", "active": false },
+                "calendar": { "url": null, "label": "Calendar", "active": false }
+            },
+            "social": [
+			    { "platform": "facebook", "url": "https://www.facebook.com/profile.php?id=61592154953372" },
+                { "platform": "instagram", "url": "https://www.instagram.com/f4_germany" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@f4_germany"}
+			]
+		},
+		{
+            "category": "formula4",
+            "name": "F4 India",
+            "resultsVerified": true,
+            "nextDate": "12 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.fiaindianf4.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiaindianf4.com/results_3", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiaindianf4.com/results", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.instagram.com/p/DbFZhBbzYse", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/FIAIndianF4" },
+                { "platform": "facebook", "url": "https://www.facebook.com/profile.php?id=100093702544635" },
+                { "platform": "instagram", "url": "https://www.instagram.com/indianf4championship"}
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 Italy",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.f4championship.com", "label": "Official site", "active": true },
+                "results": { "url": "https://webapp.sportity.com/channel/ARW_26", "label": "Results", "active": true },
+                "standings": { "url": "https://www.acisport.it/en/F4/standings/2026", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.f4championship.com/news/962/Italian%20F.4%20and%20E4%20Championships:%20the%20key%20dates%20to%20mark%20for%202026", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/f4italianchampionship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/f4_italian_championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@Italianf4-Euro4"}
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 Italy",
+            "resultsVerified": true,
+            "nextDate": "8 May 2027",
+            "links": {
+                "official": { "url": "https://www.f4championship.com", "label": "Official site", "active": true },
+                "results": { "url": "https://webapp.sportity.com/channel/ARW_26", "label": "Results", "active": false },
+                "standings": { "url": "https://www.acisport.it/en/F4/standings/2026", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.instagram.com/p/DbsdBLijE_O/?img_index=2", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/f4italianchampionship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/f4_italian_championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@Italianf4-Euro4"}
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 Japan",
+            "resultsVerified": true,
+            "nextDate": "19 Sep 2026",
+            "links": {
+                "official": { "url": "https://fiaf4.jp", "label": "Official site", "active": true },
+                "results": { "url": "https://fiaf4.jp/results", "label": "Results", "active": true },
+                "standings": { "url": "https://fiaf4.jp/standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://fiaf4.jp/calendar", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "youtube", "url": "https://www.youtube.com/@fia-f4japanese614"}
+            ]
+        },
+        {
+            "category": "formula4",
+            "name": "F4 NACAM",
+            "resultsVerified": false,
+            "nextDate": "12 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.f4nacam.com", "label": "Official site", "active": true },
+                "results": { "url": "https://speedhive.mylaps.com/organizations/3730", "label": "Results", "active": true },
+                "standings": { "url": "https://f4nacam.com/puntuacin", "label": "Standings", "active": true },
+                "calendar": { "url": "https://f4nacam.com/noticia/4782-Los-jvenes-leones-de-la-FIA-F4-NACAM-vuelven-a-la-accin", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/formula4_nacam" },
+                { "platform": "facebook", "url": "https://www.facebook.com/formula4nacam" },
+                { "platform": "instagram", "url": "https://www.instagram.com/formula4_nacam" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@notiautoracing/featured" }
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 Saudi Arabia",
+            "resultsVerified": true,
+            "nextDate": "3 Oct 2026",
+            "links": {
+                "official": { "url": "https://f4saudiarabia.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.its-results.com/f4sac/2025/18879dad-9569-47ce-a1a5-fbd20724f2a7", "label": "Results", "active": false },
+                "standings": { "url": "https://www.its-results.com/f4sac/2025/18879dad-9569-47ce-a1a5-fbd20724f2a7", "label": "Standings", "active": false },
+                "calendar": { "url": "http://instagram.com/p/DbDk3QoFXyH", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/F4_SaudiArabia" },
+                { "platform": "instagram", "url": "https://www.instagram.com/f4_saudiarabia" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@F4_SaudiArabia" },
+                { "platform": "linktree", "url": "https://linktr.ee/F4SaudiArabianChampionship"}
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 South East Asia",
+            "resultsVerified": true,
+            "nextDate": "2027",
+            "links": {
+                "official": { "url": "https://www.f4sea.com", "label": "Official site", "active": true },
+                "results": { "url": "https://timingresult.com", "label": "Results", "active": false },
+                "standings": { "url": "https://www.f4sea.com/2025Y", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.facebook.com/photo?fbid=122290708136025557&set=a.122137316522025557", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/F4SEA" },
+                { "platform": "instagram", "url": "https://www.instagram.com/f4seasia"}
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 Spain",
+            "resultsVerified": true,
+            "nextDate": "26 Sep 2026",
+            "links": {
+                "official": { "url": "https://f4spain.org", "label": "Official site", "active": true },
+                "results": { "url": "http://f4spain-e3.alkamelsystems.com", "label": "Results", "active": true },
+                "standings": { "url": "https://f4spain.org/standings/standings-2026", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.instagram.com/p/DR4Rv7rDBws", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/F4Spain" },
+                { "platform": "facebook", "url": "https://www.facebook.com/F4SpanishChampionship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/f4spanishchampionship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@F4SpanishChampionship" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@f4spainofficial" },
+                { "platform": "linkedin", "url": "https://www.linkedin.com/company/f4spanish-championship"}
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 United States",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.f4uschampionship.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.f4uschampionship.com/pages/2026-results", "label": "Results", "active": true },
+                "standings": { "url": "https://www.f4uschampionship.com", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.f4uschampionship.com/events?group_by=year&year=2026", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/f4championship" },
+                { "platform": "facebook", "url": "https://www.facebook.com/f4uschampionship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/f4uschampionship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@F4USChampionship"}
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 World Cup",
+            "resultsVerified": true,
+            "nextDate": "21 Nov 2026",
+            "links": {
+                "official": { "url": "https://www.macau.grandprix.gov.mo/en", "label": "Official site", "active": true },
+                "results": { "url": "https://www.macau.grandprix.gov.mo/en/info/result", "label": "Results", "active": false },
+                "standings": { "url": null, "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.macau.grandprix.gov.mo/uploads/attachment/2025-11/083a895784de8d2facdaf4cff54a6368.jpg", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/MacauGrandPrix" },
+                { "platform": "youtube", "url": "https://www.youtube.com/user/GrandePremiodeMacau" },
+                { "platform": "weibo", "url": "https://passport.weibo.com/visitor/visitor?entry=miniblog&a=enter&url=https%3A%2F%2Fweibo.com%2Fmgpmgp&domain=.weibo.com&"}
+            ]
+        },
+        {
+            "category": "nonFIA",
+            "name": "AU4",
+            "resultsVerified": true,
+            "nextDate": "12 Sep 2026",
+            "links": {
+                "official": { "url": "https://au4championship.com", "label": "Official site", "active": true },
+                "results": { "url": "http://racing.natsoft.com.au/results/#1", "label": "Results", "active": true },
+                "standings": { "url": "https://au4championship.com/2026-championship-pointscore", "label": "Standings", "active": true },
+                "calendar": { "url": "https://au4championship.com/#!calendar", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/profile.php?id=61589228726454" },
+                { "platform": "instagram", "url": "https://www.instagram.com/au4_championship" },
+                { "platform": "youtube", "url": "http://www.youtube.com/au4championship" }
+            ]
+        },
+        {
+            "category": "nonFIA",
+            "name": "Australian Formula Series",
+            "resultsVerified": true,
+            "nextDate": "5 Dec 2026",
+            "links": {
+                "official": { "url": "https://au4championship.com", "label": "Official site", "active": true },
+                "results": { "url": "http://racing.natsoft.com.au/results/#1", "label": "Results", "active": false },
+                "standings": { "url": "https://au4championship.com/2026-championship-pointscore", "label": "Standings", "active": false },
+                "calendar": { "url": "https://au4championship.com/summer-series", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/profile.php?id=61589228726454" },
+                { "platform": "instagram", "url": "https://www.instagram.com/au4_championship" },
+                { "platform": "youtube", "url": "http://www.youtube.com/au4championship" }
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "E4",
+            "resultsVerified": true,
+            "nextDate": "10 Oct 2026",
+            "links": {
+                "official": { "url": "https://www.euro4championship.com", "label": "Official site", "active": true },
+                "results": { "url": "https://webapp.sportity.com/channel/ARW_26", "label": "Results", "active": true },
+                "standings": { "url": "https://www.acisport.it/en/F4/standings/2026", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.f4championship.com/news/962/Italian%20F.4%20and%20E4%20Championships:%20the%20key%20dates%20to%20mark%20for%202026", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/f4italianchampionship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/wsk_promotion" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@Italianf4-Euro4"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "E4",
+            "resultsVerified": true,
+            "nextDate": "29 May 2027",
+            "links": {
+                "official": { "url": "https://www.euro4championship.com", "label": "Official site", "active": true },
+                "results": { "url": "https://webapp.sportity.com/channel/ARW_26", "label": "Results", "active": false },
+                "standings": { "url": "https://www.acisport.it/en/F4/standings/2026", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.instagram.com/p/DbsdBLijE_O/?img_index=2", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/f4italianchampionship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/wsk_promotion" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@Italianf4-Euro4"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Eurocup-3",
+            "resultsVerified": true,
+            "nextDate": "12 Sep 2026",
+            "links": {
+                "official": { "url": "https://eurocup3.org", "label": "Official site", "active": true },
+                "results": { "url": "http://f4spain-e3.alkamelsystems.com", "label": "Results", "active": true },
+                "standings": { "url": "https://eurocup3.org/standings-2026", "label": "Standings", "active": true },
+                "calendar": { "url": "https://eurocup3.org/article/eurocup-3-strengthens-its-european-presence-with-three-elms-rounds-in-the-2026-calendar", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/Eurocup_3" },
+                { "platform": "facebook", "url": "https://www.facebook.com/profile.php?id=100087438867240" },
+                { "platform": "instagram", "url": "https://www.instagram.com/eurocup_3" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@eurocup-3" },
+                { "platform": "linkedin", "url": "https://www.linkedin.com/company/eurocup3"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Eurocup-3 Spanish Winter Championship",
+            "resultsVerified": true,
+            "nextDate": "13 Feb 2027",
+            "links": {
+                "official": { "url": "https://spanishwinterchampionship.com", "label": "Official site", "active": true },
+                "results": { "url": "https://webapp.sportity.com/channel/2026_E3SWC_", "label": "Results", "active": false },
+                "standings": { "url": "https://spanishwinterchampionship.com/standings/eu3-2026", "label": "Standings", "active": false },
+                "calendar": { "url": "https://spanishwinterchampionship.com/newsarticle/spanish-winter-championship-unveils-2027-calendar-ahead-of-its-third-season", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/swchofficial" },
+                { "platform": "instagram", "url": "https://www.instagram.com/swchofficial" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@SpanishWinterChampionship" },
+                { "platform": "linkedin", "url": "https://www.linkedin.com/company/spanish-winter-championship"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Eurocup-4 Spanish Winter Championship",
+            "resultsVerified": true,
+            "nextDate": "13 Feb 2027",
+            "links": {
+                "official": { "url": "https://spanishwinterchampionship.com", "label": "Official site", "active": true },
+                "results": { "url": "https://webapp.sportity.com/channel/2026_E4SWC_", "label": "Results", "active": false },
+                "standings": { "url": "https://spanishwinterchampionship.com/standings/e4-2026", "label": "Standings", "active": false },
+                "calendar": { "url": "https://spanishwinterchampionship.com/newsarticle/spanish-winter-championship-unveils-2027-calendar-ahead-of-its-third-season", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/swchofficial" },
+                { "platform": "instagram", "url": "https://www.instagram.com/swchofficial" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@SpanishWinterChampionship" },
+                { "platform": "linkedin", "url": "https://www.linkedin.com/company/spanish-winter-championship"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Eurocup-5",
+            "resultsVerified": true,
+            "nextDate": "2027",
+            "links": {
+                "official": { "url": "", "label": "Official site", "active": true },
+                "results": { "url": "", "label": "Results", "active": false },
+                "standings": { "url": "", "label": "Standings", "active": false },
+                "calendar": { "url": "", "label": "Calendar", "active": false }
+            },
+            "social": [ ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Euroformula Open",
+            "resultsVerified": true,
+            "nextDate": "12 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.euroformulaopen.net", "label": "Official site", "active": true },
+                "results": { "url": "https://www.cronococa.com/results", "label": "Results", "active": true },
+                "standings": { "url": "https://euroformula.gtsport.es/resultados?categoria=OVERALL", "label": "Standings", "active": true },
+                "calendar": { "url": "https://euroformula.gtsport.es/blog/2026-calendar-of-the-euroformula-open-announced-misano-joins-as-a-new-track", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "instagram", "url": "https://www.instagram.com/euroformula_open" },
+                { "platform": "youtube", "url": "https://www.youtube.com/user/EuroFormulaOpen"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Euroformula Open",
+            "resultsVerified": true,
+            "nextDate": "10 Apr 2027",
+            "links": {
+                "official": { "url": "https://www.euroformulaopen.net", "label": "Official site", "active": true },
+                "results": { "url": "https://www.cronococa.com/results", "label": "Results", "active": false },
+                "standings": { "url": "https://euroformula.gtsport.es/resultados?categoria=OVERALL", "label": "Standings", "active": false },
+                "calendar": { "url": "https://euroformula.gtsport.es/blog/2027-euroformula-open-provisional-calendar-announced", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "instagram", "url": "https://www.instagram.com/euroformula_open" },
+                { "platform": "youtube", "url": "https://www.youtube.com/user/EuroFormulaOpen"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Formula IDN",
+            "resultsVerified": true,
+            "nextDate": "2027",
+            "links": {
+                "official": { "url": "https://www.formulaidn.com", "label": "Official site", "active": true },
+                "results": { "url": null, "label": "Results", "active": false },
+                "standings": { "url": null, "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.instagram.com/p/DZY8iT3E4Dm", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "instagram", "url": "https://www.instagram.com/formula_idn" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@formula4.idn" },
+                { "platform": "linktree", "url": "https://linktr.ee/Formula4.idn"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Formula Nordic",
+            "resultsVerified": true,
+            "nextDate": "19 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.formulanordic.se", "label": "Official site", "active": true },
+                "results": { "url": "https://motorsport-events.se/camp/index.php?dir=resultsmw/01%20results%202026/03%20Racing/05%20FORMEL%20NORDIC/", "label": "Results", "active": true },
+                "standings": { "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3jkLEnll0KSQ4XNdrH6ocEn80Ejtc0OMBFGbYH5mcjUR9V0cj3xdJJ6kkmQZpps4yAJ_y4Q1BYs-0/pubhtml?gid=1247783834&single=true", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.formulanordic.se/okategoriserade/kalendern-2026", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/formulanordic" },
+                { "platform": "instagram", "url": "https://www.instagram.com/formulanordic" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@FormulaNordic"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Formula Trophy",
+            "resultsVerified": true,
+            "nextDate": "2026",
+            "links": {
+                "official": { "url": "https://www.formulamideast.com", "label": "Official site", "active": true },
+                "results": { "url": "https://cloud.topspeedchina.net/d/s/15nNXmoHwbIZ8m7fizwOE3hSnhmKe1Kw/sUyUw-HoB2dH47Po3vwvEly8tc8-kkCu-8rWgXDOUvAw", "label": "Results", "active": false },
+                "standings": { "url": "https://cloud.topspeedchina.net/d/s/15nNXmoHwbIZ8m7fizwOE3hSnhmKe1Kw/sUyUw-HoB2dH47Po3vwvEly8tc8-kkCu-8rWgXDOUvAw", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.instagram.com/p/DQ3aQyxERCY", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/F4UAETROPHY" },
+                { "platform": "instagram", "url": "https://www.instagram.com/f4uaetrophy"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Formula Trophy Malaysia",
+            "resultsVerified": true,
+            "nextDate": "3 Oct 2026",
+            "links": {
+                "official": { "url": "https://www.f4sea.com", "label": "Official site", "active": true },
+                "results": { "url": "https://timingresult.com", "label": "Results", "active": false },
+                "standings": { "url": "https://www.f4sea.com/2025Y", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.facebook.com/photo/?fbid=122315059484025557&set=a.122137316522025557", "label": "Calendar", "active": true }
+            },
+            "social": [
+			    { "platform": "facebook", "url": "https://www.facebook.com/FormulaTrophyMalaysia" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@FormulaTrophyMalaysia"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Formula Winter Series",
+            "resultsVerified": true,
+            "nextDate": "23 Jan 2027",
+            "links": {
+                "official": { "url": "https://winter-series.racing/formula-winter-series/home", "label": "Official site", "active": true },
+                "results": { "url": "https://getraceresults.com/Results/organisator/2026/race/null?evenement=Winter+Series+by+Gedlich+Racing", "label": "Results", "active": false },
+                "standings": { "url": "https://winter-series.racing/formula-winter-series/results/", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.instagram.com/p/DYRxsw_Mv7a", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/formulawinterseries" },
+                { "platform": "instagram", "url": "https://www.instagram.com/formula_winter_series" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@winter-series"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "GB3",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.gb-3.net", "label": "Official site", "active": true },
+                "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2026", "label": "Results", "active": true },
+                "standings": { "url": "https://www.gb-3.net/standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.gb-3.net/news/2025/sept/25/gb3-championship-reveals-provisional-2026-calendar-with-red-bull-ring-and-barcelona-additions-", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/GB3Championship" },
+                { "platform": "facebook", "url": "https://www.facebook.com/GB3Championship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/GB3Championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@msvcircuits"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "GB3 Copa del Sol",
+            "resultsVerified": true,
+            "nextDate": "13 Feb 2027",
+            "links": {
+                "official": { "url": "https://www.gb-3.net", "label": "Official site", "active": true },
+                "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2026", "label": "Results", "active": false },
+                "standings": { "url": "https://www.gb-3.net/standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.gb-3.net/news/2026/aug/26/gb3-championship-announces-inaugural-copa-del-sol-series-in-february-2027", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/GB3Championship" },
+                { "platform": "facebook", "url": "https://www.facebook.com/GB3Championship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/GB3Championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@msvcircuits"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "GB4",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.gb-4.net", "label": "Official site", "active": true },
+                "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2026", "label": "Results", "active": true },
+                "standings": { "url": "https://www.gb-4.net/standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.gb-4.net/news/2025/sept/25/gb4-championship-confirms-provisional-2026-calendar-and-winter-series-plans", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/GB4Championship" },
+                { "platform": "facebook", "url": "https://www.facebook.com/GB4Championship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/GB4Championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@msvcircuits"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "GB4 Winter Series",
+            "resultsVerified": true,
+            "nextDate": "24 Oct 2026",
+            "links": {
+                "official": { "url": "https://www.gb-4.net", "label": "Official site", "active": true },
+                "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2025", "label": "Results", "active": false },
+                "standings": { "url": "https://www.gb-4.net/standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.gb-4.net/news/2025/sept/25/gb4-championship-confirms-provisional-2026-calendar-and-winter-series-plans", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/GB4Championship" },
+                { "platform": "facebook", "url": "https://www.facebook.com/GB4Championship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/GB4Championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@msvcircuits"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Kyojo Cup",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://kyojocup.jp", "label": "Official site", "active": true },
+                "results": { "url": "https://kyojocup.jp/result", "label": "Results", "active": true },
+                "standings": { "url": "https://kyojocup.jp/ranking/2026.html", "label": "Standings", "active": true },
+                "calendar": { "url": "https://kyojocup.jp/schedule", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/KYOJOCUP_OA" },
+                { "platform": "facebook", "url": "https://www.facebook.com/kyojocup" },
+                { "platform": "instagram", "url": "https://www.instagram.com/kyojocup_official" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@ipsxkjcchannel"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Ligier Junior Formula Championship",
+            "resultsVerified": true,
+            "nextDate": "19 Sep 2026",
+            "links": {
+                "official": { "url": "https://ligierjuniorformulachampionship.com", "label": "Official site", "active": true },
+                "results": { "url": "https://ligierjuniorformulachampionship.com/race-results", "label": "Results", "active": true },
+                "standings": { "url": "https://ligierjuniorformulachampionship.com/standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://ligierjuniorformulachampionship.com/schedule", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/ligierjfc" },
+                { "platform": "facebook", "url": "https://facebook.com/ligierjfc" },
+                { "platform": "instagram", "url": "https://instagram.com/ligierjfc" },
+                { "platform": "youtube", "url": "https://youtube.com/@ligierjfc" },
+                { "platform": "tiktok", "url": "https://tiktok.com/@ligierjfc" },
+                { "platform": "threads", "url": "https://www.threads.net/@ligierjfc"}
+            ]
+        },
+        {
+            "category": "nonFIA",
+            "name": "Nordic4",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://nordic4.dk/en", "label": "Official site", "active": true },
+                "results": { "url": "https://speedhive.mylaps.com", "label": "Results", "active": true },
+                "standings": { "url": "https://nordic4.dk/stillingen", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.instagram.com/p/DSGAVjajpK7", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/nordic4dk" },
+                { "platform": "instagram", "url": "https://www.instagram.com/nordic4dk" }
+            ]
+        },
+        {
+            "category": "nonFIA",
+            "name": "SMP F4",
+            "resultsVerified": true,
+            "nextDate": "12 Sep 2026",
+            "links": {
+                "official": { "url": "https://smpf4.ru", "label": "Official site", "active": true },
+                "results": { "url": "https://speedhive.mylaps.com/livetiming/69E97C4FD89D2491-2147484210", "label": "Results", "active": true },
+                "standings": { "url": "https://smpkarting.ru/competitions/formula-4/statistics", "label": "Standings", "active": true },
+                "calendar": { "url": "https://smpf4.ru/#calendar", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/smpracingrussia" },
+                { "platform": "instagram", "url": "https://www.instagram.com/smp_racing" },
+                { "platform": "vk", "url": "https://vk.com/smp_karting_f4" }
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Super Formula Lights",
+            "resultsVerified": true,
+            "nextDate": "12 Sep 2026",
+            "links": {
+                "official": { "url": "https://superformula-lights.com", "label": "Official site", "active": true },
+                "results": { "url": "https://superformula-lights.com", "label": "Results", "active": true },
+                "standings": { "url": "https://superformula-lights.com/wp-content/uploads/pdf/2026_rank.pdf", "label": "Standings", "active": true },
+                "calendar": { "url": "https://superformula-lights.com/race2026", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/SFormulaLights" },
+                { "platform": "facebook", "url": "https://www.facebook.com/Japanese-F3-258953797517678" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCMoJc2knK1Bll7_E-1MYpqQ"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "Super Formula",
+            "resultsVerified": true,
+            "nextDate": "10 Oct 2026",
+            "links": {
+                "official": { "url": "https://superformula.net/sf3/?lang=en", "label": "Official site", "active": true },
+                "results": { "url": "https://superformula.net/sf3/live_timing", "label": "Results", "active": true },
+                "standings": { "url": "https://superformula.net/sf3/driver_taxonomy/2026/?standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://superformula.net/sf3/wp/wp-content/uploads/2025/12/PC_2026Calendar.jpg", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/SUPER_FORMULA" },
+                { "platform": "instagram", "url": "https://www.instagram.com/superformula_official" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@superformula_official/featured"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "UAE4 Series",
+            "resultsVerified": true,
+            "nextDate": "16 Jan 2027",
+            "links": {
+                "official": { "url": "https://www.formulamideast.com", "label": "Official site", "active": true },
+                "results": { "url": "https://cloud.topspeedchina.net/d/s/16QTqoFWG5Ituq0iF0LB7Up8MMSMFcXw/BZzHZW5FRQhXH9fvKw-VDa2DlkMvGMWF-mbHgsi7l2gw", "label": "Results", "active": false },
+                "standings": { "url": "https://cloud.topspeedchina.net/d/s/16QTqoFWG5Ituq0iF0LB7Up8MMSMFcXw/BZzHZW5FRQhXH9fvKw-VDa2DlkMvGMWF-mbHgsi7l2gw", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.instagram.com/p/DauGxhuR7N6", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/UAE4SERIES" },
+                { "platform": "instagram", "url": "https://www.instagram.com/uae4series" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@uae4series"}
+            ]
+        },
+		{
+            "category": "usaSeries",
+            "name": "IndyCar",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.indycar.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.indycar.com/Results", "label": "Results", "active": true },
+                "standings": { "url": "https://www.indycar.com/Results?type=driver", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.indycar.com/Schedule?year=2026", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "http://x.com/indycar" },
+                { "platform": "facebook", "url": "http://facebook.com/indycar" },
+                { "platform": "instagram", "url": "http://www.instagram.com/indycar" },
+                { "platform": "youtube", "url": "http://www.youtube.com/indycars" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@indycar" },
+                { "platform": "threads", "url": "https://www.threads.net/@indycar" },
+                { "platform": "linktree", "url": "https://linktr.ee/NTTINDYCARSERIES"}
+            ]
+        },
+		{
+            "category": "usaSeries",
+            "name": "Indy NXT",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.indynxt.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.indynxt.com/Results", "label": "Results", "active": true },
+                "standings": { "url": "https://www.indynxt.com/Results?type=driver", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.indycar.com/INDYNXT/Schedule?year=2026", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/INDYNXT" },
+                { "platform": "facebook", "url": "https://www.facebook.com/Indynxt" },
+                { "platform": "instagram", "url": "https://www.instagram.com/indynxt" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCSihlA2prskLkYQkHpfrxmA" },
+                { "platform": "tiktok", "url": "https://tiktok.com/@indynxt" },
+                { "platform": "threads", "url": "https://www.threads.net/@indynxt" },
+                { "platform": "linktree", "url": "https://linktr.ee/INDYNXT"}
+            ]
+        },
+		{
+            "category": "usaSeries",
+            "name": "USF Pro 2000",
+            "resultsVerified": true,
+            "nextDate": "26 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.usfpro2000.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.usfpro2000.com/schedule", "label": "Results", "active": true },
+                "standings": { "url": "https://www.usfpro2000.com/results/standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.usfpro2000.com/news/usf-pro-championships-announces-2026-schedules", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/usfpro2000" },
+                { "platform": "facebook", "url": "https://www.facebook.com/usfprochampionships" },
+                { "platform": "instagram", "url": "https://www.instagram.com/USFProChampionships" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@USFPro2000" },
+                { "platform": "threads", "url": "https://www.tiktok.com/@usfprochampionships"}
+            ]
+        },
+		{
+            "category": "usaSeries",
+            "name": "USF2000",
+            "resultsVerified": true,
+            "nextDate": "26 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.usf2000.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.usf2000.com/schedule", "label": "Results", "active": true },
+                "standings": { "url": "https://www.usf2000.com/results/standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.usf2000.com/news/usf-pro-championships-announces-2026-schedules", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/USF2000" },
+                { "platform": "facebook", "url": "https://www.facebook.com/usfprochampionships" },
+                { "platform": "instagram", "url": "https://www.instagram.com/USFProChampionships" },
+                { "platform": "youtube", "url": "https://www.youtube.com/user/USF2000Series" },
+                { "platform": "threads", "url": "https://www.tiktok.com/@usfprochampionships"}
+            ]
+        },
+		{
+            "category": "usaSeries",
+            "name": "USF Juniors",
+            "resultsVerified": true,
+            "nextDate": "26 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.usfjuniors.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.usfjuniors.com/schedule/2026-season", "label": "Results", "active": true },
+                "calendar": { "url": "https://www.usfjuniors.com/news/usf-pro-championships-announces-2026-schedules", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/USFJuniors" },
+                { "platform": "facebook", "url": "https://www.facebook.com/USFJuniors" },
+                { "platform": "instagram", "url": "https://www.instagram.com/USFJuniors" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCiE5yv68stA0pjdSPHCWokw" },
+                { "platform": "threads", "url": "https://www.tiktok.com/@usfprochampionships"}
+            ]
+        },
+		{
+            "category": "electric",
+            "name": "Extreme H World Cup",
+            "resultsVerified": true,
+            "nextDate": "31 Oct 2026",
+            "links": {
+                "official": { "url": "https://www.fiaextremeh.com", "label": "Official site", "active": true },
+                "results": { "url": "http://extreme-e.alkamelsystems.com/?season=03_2024", "label": "Results", "active": false },
+                "standings": { "url": "http://extreme-e.alkamelsystems.com/?season=03_2024", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.extremeh.co/home#more-calendar", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/extremexexh" },
+                { "platform": "facebook", "url": "https://www.facebook.com/ExtremeELive" },
+                { "platform": "instagram", "url": "https://www.instagram.com/ExtremeELive" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@ExtremeELive" },
+                { "platform": "linkedin", "url": "https://www.linkedin.com/company/extremeelive" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@extremeelive" },
+                { "platform": "snapchat", "url": "https://www.snapchat.com/add/ExtremeELive" },
+                { "platform": "threads", "url": "https://www.threads.net/@extremeelive"}
+            ]
+        },
+		{
+            "category": "electric",
+            "name": "Formula E",
+            "resultsVerified": true,
+            "nextDate": "19 Dec 2026",
+            "links": {
+                "official": { "url": "https://www.fiaformulae.com/en", "label": "Official site", "active": true },
+                "results": { "url": "https://results.formulae.fia.com/notice-board", "label": "Results", "active": false },
+                "standings": { "url": "https://results.formulae.fia.com/notice-board", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiaformulae.com/en/news/1074657/formula-e-and-fia-unveil-record-breaking-21-race-2026-27-calendar-for-gen4-era", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/FIAFormulaE" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fiaformulae" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fiaformulae" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@FIAFormulaE" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@fiaformulae?lang=en" },
+                { "platform": "snapchat", "url": "https://t.snapchat.com/8PhuAY3n"}
+            ]
+        },
+        {
+            "category": "motorbikes",
+            "name": "MotoGP",
+            "resultsVerified": true,
+            "nextDate": "12 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
+                "standings": { "url": "https://www.motogp.com/en/gp-results", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.motogp.com/en/news/2025/07/24/2026-motogp-calendar-revealed/755478", "label": "Calendar", "active": true }
+        },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/MotoGP" },
+                { "platform": "facebook", "url": "https://facebook.com/MotoGP" },
+                { "platform": "instagram", "url": "https://instagram.com/motogp" },
+                { "platform": "youtube", "url": "https://www.youtube.com/user/MotoGP" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@motogp" },
+                { "platform": "threads", "url": "https://www.threads.net/@motogp" },
+                { "platform": "snapchat", "url": "https://www.snapchat.com/add/motogp" },
+                { "platform": "linkedin", "url": "https://www.linkedin.com/showcase/motogp" },
+                { "platform": "podcast", "url": "https://podcasts.apple.com/us/podcast/the-official-motogp-podcast/id1504466576" },
+                { "platform": "whatsapp", "url": "https://whatsapp.com/channel/0029Va4R14Z1iUxYGtYvLg2M" },
+                { "platform": "telegram", "url": "https://t.me/motogp" },
+                { "platform": "twitch", "url": "https://www.twitch.tv/motogp" },
+                { "platform": "spotify", "url": "https://open.spotify.com/show/3t0SHu3AYrWOZZl72P9Gjs" }
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "Moto2",
+            "resultsVerified": true,
+            "nextDate": "12 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
+                "standings": { "url": "https://www.motogp.com/en/gp-results", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.motogp.com/en/news/2025/07/24/2026-motogp-calendar-revealed/755478", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/MotoGP" },
+                { "platform": "facebook", "url": "https://facebook.com/MotoGP" },
+                { "platform": "instagram", "url": "https://instagram.com/motogp" },
+                { "platform": "youtube", "url": "https://www.youtube.com/user/MotoGP" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@motogp" },
+                { "platform": "threads", "url": "https://www.threads.net/@motogp" },
+                { "platform": "snapchat", "url": "https://www.snapchat.com/add/motogp" },
+                { "platform": "linkedin", "url": "https://www.linkedin.com/showcase/motogp" },
+                { "platform": "podcast", "url": "https://podcasts.apple.com/us/podcast/the-official-motogp-podcast/id1504466576" },
+                { "platform": "whatsapp", "url": "https://whatsapp.com/channel/0029Va4R14Z1iUxYGtYvLg2M" },
+                { "platform": "telegram", "url": "https://t.me/motogp" },
+                { "platform": "twitch", "url": "https://www.twitch.tv/motogp" },
+                { "platform": "spotify", "url": "https://open.spotify.com/show/3t0SHu3AYrWOZZl72P9Gjs"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "Moto3",
+            "resultsVerified": true,
+            "nextDate": "12 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
+                "standings": { "url": "https://www.motogp.com/en/gp-results", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.motogp.com/en/news/2025/07/24/2026-motogp-calendar-revealed/755478", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/MotoGP" },
+                { "platform": "facebook", "url": "https://facebook.com/MotoGP" },
+                { "platform": "instagram", "url": "https://instagram.com/motogp" },
+                { "platform": "youtube", "url": "https://www.youtube.com/user/MotoGP" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@motogp" },
+                { "platform": "threads", "url": "https://www.threads.net/@motogp" },
+                { "platform": "snapchat", "url": "https://www.snapchat.com/add/motogp" },
+                { "platform": "linkedin", "url": "https://www.linkedin.com/showcase/motogp" },
+                { "platform": "podcast", "url": "https://podcasts.apple.com/us/podcast/the-official-motogp-podcast/id1504466576" },
+                { "platform": "whatsapp", "url": "https://whatsapp.com/channel/0029Va4R14Z1iUxYGtYvLg2M" },
+                { "platform": "telegram", "url": "https://t.me/motogp" },
+                { "platform": "twitch", "url": "https://www.twitch.tv/motogp" },
+                { "platform": "spotify", "url": "https://open.spotify.com/show/3t0SHu3AYrWOZZl72P9Gjs"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "Moto2 Europe",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://fimmotojunior.com/", "label": "Official site", "active": true },
+                "results": { "url": "https://fimmotojunior.com/results/2026/results-by-round", "label": "Results", "active": true },
+                "standings": { "url": "https://fimmotojunior.com/results/2026/championship-standing", "label": "Standings", "active": true },
+                "calendar": { "url": "https://fimmotojunior.com/calendar/2026/all-rounds", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/motojuniorwc" },
+                { "platform": "facebook", "url": "https://www.facebook.com/FIMJuniorGP" },
+                { "platform": "instagram", "url": "https://www.instagram.com/juniorgp" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@motojuniorwc" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@motojuniorwc"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "Moto3 Junior World Championship",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://fimmotojunior.com/", "label": "Official site", "active": true },
+                "results": { "url": "https://fimmotojunior.com/results/2026/results-by-round", "label": "Results", "active": true },
+                "standings": { "url": "https://fimmotojunior.com/results/2026/championship-standing", "label": "Standings", "active": true },
+                "calendar": { "url": "https://fimmotojunior.com/calendar/2026/all-rounds", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/motojuniorwc" },
+                { "platform": "facebook", "url": "https://www.facebook.com/FIMJuniorGP" },
+                { "platform": "instagram", "url": "https://www.instagram.com/juniorgp" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@motojuniorwc" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@motojuniorwc"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "Moto4 Asia Cup",
+            "resultsVerified": true,
+            "nextDate": "3 Oct 2026",
+            "links": {
+                "official": { "url": "https://www.moto4asiacup.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.moto4asiacup.com/event/2026-2", "label": "Results", "active": true },
+                "standings": { "url": "https://www.moto4asiacup.com/results/2026-2", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.moto4asiacup.com/calendar", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/moto4asia" },
+                { "platform": "facebook", "url": "https://www.facebook.com/Moto4Asia" },
+                { "platform": "instagram", "url": "https://www.instagram.com/moto4asia" },
+                { "platform": "youtube", "url": "https://www.youtube.com/c/AsiaTalentCup"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "Moto4 British Cup",
+            "resultsVerified": true,
+            "nextDate": "19 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.moto4britishcup.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.britishtalentcup.com/event/2026-2", "label": "Results", "active": true },
+                "standings": { "url": "https://www.moto4britishcup.com/results", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.moto4britishcup.com/calendar", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://twitter.com/Moto4British" },
+                { "platform": "facebook", "url": "https://www.facebook.com/BritishTalentCup" },
+                { "platform": "instagram", "url": "https://www.instagram.com/Moto4British" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCl2gbMb3IZnnLB2iNjIlvnw"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "Moto4 European Cup",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://fimmotojunior.com", "label": "Official site", "active": true },
+                "results": { "url": "https://fimmotojunior.com/results/2026/results-by-round", "label": "Results", "active": true },
+                "standings": { "url": "https://fimmotojunior.com/results/2026/championship-standing", "label": "Standings", "active": true },
+                "calendar": { "url": "https://fimmotojunior.com/calendar/2026/all-rounds", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/motojuniorwc" },
+                { "platform": "facebook", "url": "https://www.facebook.com/FIMJuniorGP" },
+                { "platform": "instagram", "url": "https://www.instagram.com/juniorgp" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@motojuniorwc" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@motojuniorwc"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "Moto4 Latin Cup",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.moto4latincup.lat", "label": "Official site", "active": true },
+                "results": { "url": "https://www.moto4latincup.lat/results", "label": "Results", "active": false },
+                "standings": { "url": "https://www.moto4latincup.lat/campeonato.html", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.moto4latincup.lat/calendario.html", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "instagram", "url": "https://www.instagram.com/moto4latin"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "Moto4 Northern Cup",
+            "resultsVerified": true,
+            "nextDate": "19 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.moto4northerncup.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.moto4northerncup.com/event/2026-2", "label": "Results", "active": true },
+                "standings": { "url": "https://www.moto4northerncup.com/results/2026-2", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.moto4northerncup.com/calendar", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://twitter.com/moto4northern" },
+                { "platform": "facebook", "url": "https://www.facebook.com/northerntalentcup" },
+                { "platform": "instagram", "url": "https://www.instagram.com/moto4northern" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCyCm2ys065eehgvZ1AzBaMA"}
+            ]
+        },
+		{
+            "name": "R3 bLU cRU World Cup",
+            "category": "motorbikes",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.yamaha-racing.com/blu-cru/r3-fim-world-cup", "label": "Official site", "active": true },
+                "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": true },
+                "standings": { "url": "https://www.worldsbk.com/en/standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.worldsbk.com/en/calendar", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/WorldSBK" },
+                { "platform": "facebook", "url": "https://www.facebook.com/WorldSBK" },
+                { "platform": "instagram", "url": "https://www.instagram.com/WorldSBK" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@yamaharacing"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "Red Bull MotoGP Rookies Cup",
+            "resultsVerified": true,
+            "nextDate": "12 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.redbull.com/int-en/rookiescup", "label": "Official site", "active": true },
+                "results": { "url": "https://www.redbull.com/int-en/rookiescup/races", "label": "Results", "active": true },
+                "standings": { "url": "https://www.redbull.com/int-en/rookiescup/results", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.redbull.com/int-en/rookiescup/races", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/redbullrookiescup" },
+                { "platform": "instagram", "url": "https://www.instagram.com/redbullrookiescup" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@redbullrookiescup" },
+                { "platform": "youtube", "url": "https://www.youtube.com/redbullmotorsports" },
+                { "platform": "linktree", "url": "https://onein.bio/redbullrookiescup"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "WorldSBK",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.worldsbk.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": true },
+                "standings": { "url": "https://www.worldsbk.com/en/standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://resources.worldsbk.com/newsdesk/2026/Calendar/MOTUL-FIM-Superbike-World-Championship-2026-Calendar.pdf", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/WorldSBK" },
+                { "platform": "facebook", "url": "https://www.facebook.com/WorldSBK" },
+                { "platform": "instagram", "url": "https://www.instagram.com/WorldSBK" },
+                { "platform": "youtube", "url": "https://www.youtube.com/WorldSBK" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@WorldSBK"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "WorldSSP",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.worldsbk.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": true },
+                "standings": { "url": "https://www.worldsbk.com/en/standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://resources.worldsbk.com/newsdesk/2026/Calendar/MOTUL-FIM-Superbike-World-Championship-2026-Calendar.pdf", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/WorldSBK" },
+                { "platform": "facebook", "url": "https://www.facebook.com/WorldSBK" },
+                { "platform": "instagram", "url": "https://www.instagram.com/WorldSBK" },
+                { "platform": "youtube", "url": "https://www.youtube.com/WorldSBK" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@WorldSBK"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "WorldSPB",
+            "resultsVerified": true,
+            "nextDate": "5 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.worldsbk.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": true },
+                "standings": { "url": "https://www.worldsbk.com/en/standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://resources.worldsbk.com/newsdesk/2026/Calendar/MOTUL-FIM-Superbike-World-Championship-2026-Calendar.pdf", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/WorldSBK" },
+                { "platform": "facebook", "url": "https://www.facebook.com/WorldSBK" },
+                { "platform": "instagram", "url": "https://www.instagram.com/WorldSBK" },
+                { "platform": "youtube", "url": "https://www.youtube.com/WorldSBK" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@WorldSBK"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "WorldWCR",
+            "resultsVerified": true,
+            "nextDate": "17 Oct 2026",
+            "links": {
+                "official": { "url": "https://www.worldsbk.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": true },
+                "standings": { "url": "https://www.worldsbk.com/en/standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.worldsbk.com/en/news/2025/Provisional%202026%20WorldWCR%20calendar%20unveiled%20Portimao%20and%20Misano%20return%20to%20the%20schedule", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/world_wcr" },
+                { "platform": "facebook", "url": "https://www.facebook.com/profile.php?id=61558836968822" },
+                { "platform": "instagram", "url": "https://www.instagram.com/worldwcr" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@WorldWCR/videos" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@WorldSBK"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting Academy Trophy (Junior)",
+            "resultsVerified": true,
+            "nextDate": "10 Oct 2026",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": true },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting Academy Trophy (Senior)",
+            "resultsVerified": true,
+            "nextDate": "2027",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting Arrive & Drive Asia (Junior)",
+            "resultsVerified": true,
+            "nextDate": "12 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-arrive-and-drive-europe-championship-competitor-information", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+			]
+		},
+		{
+            "category": "karting",
+            "name": "Karting Arrive & Drive Asia (Senior)",
+            "resultsVerified": true,
+            "nextDate": "12 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-arrive-and-drive-europe-championship-competitor-information", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting Arrive & Drive Europe (Junior)",
+            "resultsVerified": true,
+            "nextDate": "2027",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-arrive-and-drive-europe-championship-competitor-information", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+			]
+		},
+		{
+            "category": "karting",
+            "name": "Karting Arrive & Drive Europe (Senior)",
+            "resultsVerified": true,
+            "nextDate": "2027",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-arrive-and-drive-europe-championship-competitor-information", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting A&D South America (Junior)",
+            "resultsVerified": true,
+            "nextDate": "3 Oct 2026",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-arrive-and-drive-europe-championship-competitor-information", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+			]
+		},
+		{
+            "category": "karting",
+            "name": "Karting A&D South America (Senior)",
+            "resultsVerified": true,
+            "nextDate": "3 Oct 2026",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-arrive-and-drive-europe-championship-competitor-information", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting European Championships (OK)",
+            "resultsVerified": true,
+            "nextDate": "2027",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting European Championships (OK-Junior)",
+			"resultsVerified": false,
+            "nextDate": "2027",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": true },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": true },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": true }
+			},
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting European Championships (KZ)",
+            "resultsVerified": true,
+            "nextDate": "2027",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting European Championships (KZ2)",
+            "resultsVerified": true,
+            "nextDate": "2027",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": false }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting Int'l SuperCup (KZ2-Masters)",
+            "resultsVerified": true,
+            "nextDate": "19 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting World Arrive & Drive (Junior)",
+            "resultsVerified": true,
+            "nextDate": "21 Nov 2026",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/summary-fia-karting-decisions-taken-world-motor-sport-council", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting World Arrive & Drive (Senior)",
+            "resultsVerified": true,
+            "nextDate": "21 Nov 2026",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/summary-fia-karting-decisions-taken-world-motor-sport-council", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting World Championships (KZ)",
+            "resultsVerified": true,
+            "nextDate": "19 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting World Championships (OK)",
+            "resultsVerified": true,
+            "nextDate": "7 Nov 2026",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting World Championships (OK-Junior)",
+            "resultsVerified": true,
+            "nextDate": "7 Nov 2026",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/latest-decisions-fia-world-motor-sport-council-regarding-karting-3", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting World Cup (KZ2)",
+            "resultsVerified": true,
+            "nextDate": "19 Sep 2026",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting World Cup (OK-N)",
+            "resultsVerified": true,
+            "nextDate": "10 Oct 2026",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        },
+		{
+            "category": "karting",
+            "name": "Karting World Cup (OK-NJ)",
+            "resultsVerified": true,
+            "nextDate": "10 Oct 2026",
+            "links": {
+                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
+            ]
+        }
+	]
+}
