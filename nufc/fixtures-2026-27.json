@@ -142,11 +142,6 @@
                 "s-f2": { "status": "sub_on", "minutes": 25 },
                 "s-f3": { "status": "start", "minutes": 90 }
             },
-            "u21-shahar": {
-                "s-f1": { "status": "unused_sub" },
-                "s-f2": { "status": "unused_sub" },
-                "s-f3": { "status": "unused_sub" }
-            },
             "u21-steur": {
                 "s-f1": { "status": "start", "minutes": 56 },
                 "s-f2": { "status": "start", "minutes": 65, "yellowCard": true },
@@ -165,6 +160,15 @@
                 "s-f27": { "status": "loan" }, "s-f28": { "status": "loan" }, "s-f29": { "status": "loan" }, "s-f30": { "status": "loan" }, "s-f31": { "status": "loan" }, "s-f32": { "status": "loan" },
                 "s-f33": { "status": "loan" }, "s-f34": { "status": "loan" }, "s-f35": { "status": "loan" }, "s-f36": { "status": "loan" }, "s-f37": { "status": "loan" }, "s-f38": { "status": "loan" },
                 "s-f39": { "status": "loan" }, "s-f40": { "status": "loan" }, "s-f41": { "status": "loan" }
+            },
+            "u21-shahar": {
+                "s-f1": { "status": "unused_sub" }, "s-f2": { "status": "unused_sub" }, "s-f3": { "status": "unused_sub" }, "s-f4": { "status": "loan" }, "s-f5": { "status": "loan" }, "s-f6": { "status": "loan" },
+				"s-f7": { "status": "loan" }, "s-f8": { "status": "loan" }, "s-f9": { "status": "loan" }, "s-f10": { "status": "loan" }, "s-f11": { "status": "loan" }, "s-f12": { "status": "loan" },
+				"s-f13": { "status": "loan" }, "s-f14": { "status": "loan" }, "s-f15": { "status": "loan" }, "s-f16": { "status": "loan" }, "s-f17": { "status": "loan" }, "s-f18": { "status": "loan" },
+				"s-f19": { "status": "loan" }, "s-f20": { "status": "loan" }, "s-f21": { "status": "loan" }, "s-f22": { "status": "loan" }, "s-f23": { "status": "loan" }, "s-f24": { "status": "loan" },
+				"s-f25": { "status": "loan" }, "s-f26": { "status": "loan" }, "s-f27": { "status": "loan" }, "s-f28": { "status": "loan" }, "s-f29": { "status": "loan" }, "s-f30": { "status": "loan" },
+				"s-f31": { "status": "loan" }, "s-f32": { "status": "loan" }, "s-f33": { "status": "loan" }, "s-f34": { "status": "loan" }, "s-f35": { "status": "loan" }, "s-f36": { "status": "loan" },
+				"s-f37": { "status": "loan" }, "s-f38": { "status": "loan" }, "s-f39": { "status": "loan" }, "s-f40": { "status": "loan" }, "s-f41": { "status": "loan" }
             },
             "s-woltemade": {
                 "s-f1": { "status": "unused_sub" },
@@ -376,6 +380,13 @@
                 "u21-f18": { "status": "loan" }, "u21-f19": { "status": "loan" }, "u21-f20": { "status": "loan" }, "u21-f21": { "status": "loan" }, "u21-f22": { "status": "loan" }, "u21-f23": { "status": "loan" },
                 "u21-f24": { "status": "loan" }, "u21-f25": { "status": "loan" }, "u21-f26": { "status": "loan" }, "u21-f27": { "status": "loan" }, "u21-f28": { "status": "loan" }, "u21-f29": { "status": "loan" },
                 "u21-f30": { "status": "loan" }, "u21-f31": { "status": "loan" }, "u21-f32": { "status": "loan" }, "u21-f33": { "status": "loan" }
+            },
+            "u21-shahar": {
+                "u21-f4": { "status": "loan" }, "u21-f5": { "status": "loan" }, "u21-f6": { "status": "loan" }, "u21-f7": { "status": "loan" }, "u21-f8": { "status": "loan" }, "u21-f9": { "status": "loan" },
+				"u21-f10": { "status": "loan" }, "u21-f11": { "status": "loan" }, "u21-f12": { "status": "loan" }, "u21-f13": { "status": "loan" }, "u21-f14": { "status": "loan" }, "u21-f15": { "status": "loan" },
+				"u21-f16": { "status": "loan" }, "u21-f17": { "status": "loan" }, "u21-f18": { "status": "loan" }, "u21-f19": { "status": "loan" }, "u21-f20": { "status": "loan" }, "u21-f21": { "status": "loan" },
+				"u21-f22": { "status": "loan" }, "u21-f23": { "status": "loan" }, "u21-f24": { "status": "loan" }, "u21-f25": { "status": "loan" }, "u21-f26": { "status": "loan" }, "u21-f27": { "status": "loan" },
+				"u21-f28": { "status": "loan" }, "u21-f29": { "status": "loan" }, "u21-f30": { "status": "loan" }, "u21-f31": { "status": "loan" }, "u21-f32": { "status": "loan" }, "u21-f33": { "status": "loan" }
             }
         }
     },

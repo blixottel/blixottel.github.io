@@ -969,6 +969,49 @@ function renderValidationPanel(issues) {
   panel.style.display = 'block';
 }
 
+/**
+ * Returns a player's candidate photo URLs, in the order they should be
+ * tried. Prefers the new `photos` array field (first entry = highest
+ * priority, e.g. official club photos, with later entries as fallbacks);
+ * falls back to the older single `photo` string field for any player
+ * records that haven't been migrated to `photos` yet. Empty/falsy entries
+ * are dropped so a blank string in the array doesn't count as a candidate.
+ */
+function photoCandidates(p) {
+  if (Array.isArray(p.photos) && p.photos.length) return p.photos.filter(Boolean);
+  if (p.photo) return [p.photo];
+  return [];
+}
+
+/**
+ * Builds the <img> markup for a player-card photo, wired up to fall through
+ * the candidate list on load failure: onerror hands off to
+ * handlePhotoAttemptFailed, which advances to the next URL in the queue
+ * (stashed on the element itself) or, once the queue's exhausted, hides the
+ * <img> entirely so the existing .photo-fallback initials badge underneath
+ * shows through. Returns '' when there are no candidates at all, same as
+ * the old single-photo behaviour.
+ */
+function buildPhotoImg(p) {
+  const candidates = photoCandidates(p);
+  if (candidates.length === 0) return '';
+  const first = candidates[0].replace(/"/g, '&quot;');
+  const restJson = JSON.stringify(candidates.slice(1)).replace(/"/g, '&quot;');
+  return `<img src="${first}" alt="" data-photo-queue="${restJson}" onerror="handlePhotoAttemptFailed(this)">`;
+}
+
+function handlePhotoAttemptFailed(img) {
+  let queue = [];
+  try { queue = JSON.parse((img.getAttribute('data-photo-queue') || '[]').replace(/&quot;/g, '"')); } catch (err) { queue = []; }
+  if (queue.length === 0) {
+    img.style.display = 'none';
+    return;
+  }
+  const next = queue.shift();
+  img.setAttribute('data-photo-queue', JSON.stringify(queue).replace(/"/g, '&quot;'));
+  img.src = next;
+}
+
 function initialsFor(name) {
   const parts = (name || '').trim().split(/\s+/).filter(Boolean);
   if (parts.length === 0) return '?';
@@ -984,7 +1027,7 @@ function buildPlayerCard(p, badge, badgeTitle) {
   card.innerHTML = `
     <div class="photo-wrap">
       <div class="photo-fallback">${initialsFor(p.name)}</div>
-      ${p.photo ? `<img src="${p.photo}" alt="" onerror="this.style.display='none'">` : ''}
+      ${buildPhotoImg(p)}
       <span class="number-badge">${p.number != null ? p.number : ''}</span>
       ${pillHtml}
     </div>
@@ -1310,7 +1353,7 @@ function buildStatusCard(p, kind) {
   card.innerHTML = `
     <div class="photo-wrap">
       <div class="photo-fallback">${initialsFor(p.name)}</div>
-      ${p.photo ? `<img src="${p.photo}" alt="" onerror="this.style.display='none'">` : ''}
+      ${buildPhotoImg(p)}
       <span class="number-badge">${p.number != null ? p.number : ''}</span>
     </div>
     <div class="card-name">${p.name}</div>
