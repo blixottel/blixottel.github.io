@@ -318,7 +318,7 @@
         "position": "GK",
         "nationality": "England",
         "dob": "2006-07-11",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -340,7 +340,7 @@
         "position": "DEF",
         "nationality": "Ireland",
         "dob": "2005-04-27",
-        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/44/32/914432_cathal_heffernan_20241005135626.jpg",
+        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/44/32/914432_cathal_heffernan_20241005135626.jpg"],
         "status": "left"
     },
     {
@@ -362,7 +362,7 @@
         "position": "FWD",
         "nationality": "England",
         "dob": "2005-03-10",
-        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/98/39/889839_ben_parkinson_20241005135529.jpg",
+        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/98/39/889839_ben_parkinson_20241005135529.jpg"],
         "status": "left"
     },
     {
@@ -396,7 +396,7 @@
         "position": "DEF",
         "nationality": "England",
         "dob": "2004-10-16",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -418,7 +418,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2005-11-28",
-        "photos": ["https://cdn-img.staticzz.com/img/jogadores/00/1007900_20240201161538_alfie_harrison_1706804138.jpg",
+        "photos": ["https://cdn-img.staticzz.com/img/jogadores/00/1007900_20240201161538_alfie_harrison_1706804138.jpg"],
         "status": "active"
     },
     {
@@ -429,7 +429,7 @@
         "position": "MID",
         "nationality": "Norway",
         "dob": "2005-11-04",
-        "photos": ["https://cdn-img.staticzz.com/img/jogadores/20/1011820_20220911131153_travis_hearnes.jpg",
+        "photos": ["https://cdn-img.staticzz.com/img/jogadores/20/1011820_20220911131153_travis_hearnes.jpg"],
         "status": "active"
     },
     {
@@ -462,7 +462,7 @@
         "position": "MID",
         "nationality": "Scotland",
         "dob": "2005-11-30",
-        "photos": ["",
+        "photos": [],
         "status": "injured_season"
     },
     {
@@ -473,7 +473,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2005-09-24",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -506,7 +506,7 @@
         "position": "MID",
         "nationality": "Turkey",
         "dob": "2007-01-02",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -517,7 +517,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2006-10-02",
-        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/04/99/1150499_fraser_harper_20240722191406.jpg",
+        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/04/99/1150499_fraser_harper_20240722191406.jpg"],
         "status": "active"
     },
     {
@@ -539,7 +539,7 @@
         "position": "FWD",
         "nationality": "England",
         "dob": "2007-04-21",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -550,7 +550,7 @@
         "position": "DEF",
         "nationality": "England",
         "dob": "2006-12-11",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -561,7 +561,7 @@
         "position": "DEF",
         "nationality": "England",
         "dob": "2007-07-14",
-        "photos": ["",
+        "photos": [],
         "status": "injured_season"
     },
     {
@@ -583,7 +583,7 @@
         "position": "GK",
         "nationality": "England",
         "dob": "2006-10-20",
-        "photos": ["https://cdn-img.staticzz.com/img/jogadores/55/1048755_20231219194823_adam_harrison_1703015303.jpg",
+        "photos": ["https://cdn-img.staticzz.com/img/jogadores/55/1048755_20231219194823_adam_harrison_1703015303.jpg"],
         "status": "active"
     },
     {
@@ -627,7 +627,7 @@
         "position": "DEF",
         "nationality": "England",
         "dob": "2007-01-22",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -649,7 +649,7 @@
         "position": "DEF",
         "nationality": "Serbia",
         "dob": "2005-05-17",
-        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/42/05/914205_miodrag_pivas_20241202125733.jpg",
+        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/42/05/914205_miodrag_pivas_20241202125733.jpg"],
         "status": "active"
     },
     {
@@ -660,7 +660,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2009-03-14",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -682,7 +682,7 @@
         "position": "DEF",
         "nationality": "Scotland",
         "dob": "2009-02-09",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -693,7 +693,7 @@
         "position": "FWD",
         "nationality": "Scotland",
         "dob": "2009-01-22",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -704,7 +704,7 @@
         "position": "GK",
         "nationality": "England",
         "dob": "2008-07-15",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -715,7 +715,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2007-09-13",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -726,7 +726,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2007-12-19",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -737,7 +737,7 @@
         "position": "DEF",
         "nationality": "England",
         "dob": "2008-02-04",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -748,7 +748,7 @@
         "position": "FWD",
         "nationality": "England",
         "dob": "2008-08-02",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -759,7 +759,7 @@
         "position": "DEF",
         "nationality": "England",
         "dob": "2008-01-01",
-        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/38/02/1243802_henry_johnson_20260811215400.jpg",
+        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/38/02/1243802_henry_johnson_20260811215400.jpg"],
         "status": "active"
     },
     {
@@ -770,7 +770,7 @@
         "position": "GK",
         "nationality": "England",
         "dob": "2008-04-18",
-        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/45/07/1264507_tyler_jones_20250918220447.jpg",
+        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/45/07/1264507_tyler_jones_20250918220447.jpg"],
         "status": "active"
     },
     {
@@ -781,7 +781,7 @@
         "position": "MF",
         "nationality": "England",
         "dob": "2007-10-03",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -792,7 +792,7 @@
         "position": "MID",
         "nationality": "Ireland",
         "dob": "2008-02-29",
-        "photos": ["https://cdn-img.staticzz.com/img/jogadores/97/959597__20221201144230_rory_finneran.jpg",
+        "photos": ["https://cdn-img.staticzz.com/img/jogadores/97/959597__20221201144230_rory_finneran.jpg"],
         "status": "active"
     },
     {
@@ -803,7 +803,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2008-03-31",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -814,7 +814,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2007-11-28",
-        "photos": ["https://pbs.twimg.com/media/Gc2obJRXUAAtdkK?format=jpg&name=large",
+        "photos": ["https://pbs.twimg.com/media/Gc2obJRXUAAtdkK?format=jpg&name=large"],
         "status": "active"
     },
     {
@@ -825,7 +825,7 @@
         "position": "FWD",
         "nationality": "England",
         "dob": "2008-04-04",
-        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/42/62/1274262_kacey_wooster_20250414162914.jpg",
+        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/42/62/1274262_kacey_wooster_20250414162914.jpg"],
         "status": "active"
     },
     {
@@ -836,7 +836,7 @@
         "position": "DEF",
         "nationality": "Poland",
         "dob": "2008-04-07",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -847,7 +847,7 @@
         "position": "DEF",
         "nationality": "England",
         "dob": "2007-11-07",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -858,7 +858,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2007-10-30",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -880,7 +880,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2008-12-14",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -891,7 +891,7 @@
         "position": "GK",
         "nationality": "England",
         "dob": "2009-01-03",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -902,7 +902,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2008-09-29",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -913,7 +913,7 @@
         "position": "FWD",
         "nationality": "England",
         "dob": "2009-02-18",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -924,7 +924,7 @@
         "position": "DEF",
         "nationality": "England",
         "dob": "2008-10-06",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -935,7 +935,7 @@
         "position": "FWD",
         "nationality": "England",
         "dob": "2008-09-17",
-        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/82/07/2008207_ethan_ndiweni_20251102173438.jpg",
+        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/82/07/2008207_ethan_ndiweni_20251102173438.jpg"],
         "status": "active"
     },
     {
@@ -946,7 +946,7 @@
         "position": "DEF",
         "nationality": "England",
         "dob": "2008-09-19",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -957,7 +957,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2008-09-19",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -968,7 +968,7 @@
         "position": "FWD",
         "nationality": "England",
         "dob": "2008-11-17",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -979,7 +979,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2008-12-06",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -990,7 +990,7 @@
         "position": "GK",
         "nationality": "England",
         "dob": "2009-09-28",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -1001,7 +1001,7 @@
         "position": "GK",
         "nationality": "England",
         "dob": "2009-12-03",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -1012,7 +1012,7 @@
         "position": "FWD",
         "nationality": "England",
         "dob": "2009-10-20",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -1023,7 +1023,7 @@
         "position": "FWD",
         "nationality": "Spain",
         "dob": "2006-11-14",
-        "photos": ["",
+        "photos": [],
         "status": "loan",
         "loanClub": "Westerlo & Cádiz"
     },
@@ -1035,7 +1035,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2009-10-21",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -1046,7 +1046,7 @@
         "position": "FWD",
         "nationality": "England",
         "dob": "2010-08-01",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -1057,7 +1057,7 @@
         "position": "GK",
         "nationality": "England",
         "dob": "2011-07-02",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -1068,7 +1068,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2010-12-23",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -1079,7 +1079,7 @@
         "position": "MID",
         "nationality": "England",
         "dob": "2010-04-28",
-        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/63/25/2756325_jayden_kouossu_20250823133012.jpg",
+        "photos": ["https://cdn-img.staticzz.com/img/jogadores/new/63/25/2756325_jayden_kouossu_20250823133012.jpg"],
         "status": "active"
     },
     {
@@ -1090,7 +1090,7 @@
         "position": "FWD",
         "nationality": "England",
         "dob": "2009-12-07",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {
@@ -1101,7 +1101,7 @@
         "position": "FWD",
         "nationality": "England",
         "dob": "2011-03-16",
-        "photos": ["",
+        "photos": [],
         "status": "active"
     },
     {

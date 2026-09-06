@@ -802,8 +802,8 @@
 		{
             "category": "nonFIA",
             "name": "Kyojo Cup",
-            "resultsVerified": true,
-            "nextDate": "5 Sep 2026",
+            "resultsVerified": false,
+            "nextDate": "10 Oct 2026",
             "links": {
                 "official": { "url": "https://kyojocup.jp", "label": "Official site", "active": true },
                 "results": { "url": "https://kyojocup.jp/result", "label": "Results", "active": true },
@@ -841,12 +841,12 @@
             "category": "nonFIA",
             "name": "Nordic4",
             "resultsVerified": true,
-            "nextDate": "5 Sep 2026",
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://nordic4.dk/en", "label": "Official site", "active": true },
-                "results": { "url": "https://speedhive.mylaps.com", "label": "Results", "active": true },
-                "standings": { "url": "https://nordic4.dk/stillingen", "label": "Standings", "active": true },
-                "calendar": { "url": "https://www.instagram.com/p/DSGAVjajpK7", "label": "Calendar", "active": true }
+                "results": { "url": "https://speedhive.mylaps.com", "label": "Results", "active": false },
+                "standings": { "url": "https://nordic4.dk/stillingen", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.instagram.com/p/DSGAVjajpK7", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "facebook", "url": "https://www.facebook.com/nordic4dk" },
@@ -1272,7 +1272,7 @@
             "name": "R3 bLU cRU World Cup",
             "category": "motorbikes",
             "resultsVerified": true,
-            "nextDate": "5 Sep 2026",
+            "nextDate": "26 Sep 2026",
             "links": {
                 "official": { "url": "https://www.yamaha-racing.com/blu-cru/r3-fim-world-cup", "label": "Official site", "active": true },
                 "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": true },

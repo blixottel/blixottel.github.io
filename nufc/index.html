@@ -398,6 +398,63 @@
     width: 40px;
   }
 
+  .lb-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+  .lb-tab {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--slate);
+    background: var(--paper-raised);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    padding: 6px 14px;
+    cursor: pointer;
+  }
+  .lb-tab:hover { color: var(--ink); border-color: var(--ink); }
+  .lb-tab.active { color: var(--paper-raised); background: var(--ink); border-color: var(--ink); }
+
+  /* ===== Compact fixtures list ===== */
+  .fixtures-list-wrap { margin-top: 14px; overflow-x: auto; border: 1px solid var(--hairline); background: var(--paper-raised); }
+  table.fixtures-list { border-collapse: collapse; width: 100%; min-width: 480px; font-size: 12.5px; }
+  table.fixtures-list th, table.fixtures-list td {
+    padding: 6px 12px;
+    border-bottom: 1px solid var(--hairline);
+    text-align: left;
+    white-space: nowrap;
+  }
+  table.fixtures-list thead th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--slate);
+    background: var(--pitch-soft);
+    border-bottom: 2px solid var(--ink);
+  }
+  table.fixtures-list td.fl-num, table.fixtures-list td.fl-date {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--slate);
+    font-size: 11.5px;
+  }
+  table.fixtures-list td.fl-comp { color: var(--slate); font-size: 11.5px; }
+  table.fixtures-list td.fl-fixture { font-weight: 600; white-space: normal; }
+  table.fixtures-list td.fl-score {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    text-align: right;
+  }
+  table.fixtures-list td.fl-score.fx-res-W { color: var(--pitch); }
+  table.fixtures-list td.fl-score.fx-res-D { color: var(--slate); }
+  table.fixtures-list td.fl-score.fx-res-L { color: var(--claret-ink); }
+  table.fixtures-list tbody tr:hover td { background: var(--pitch-soft); }
+  table.fixtures-list tbody tr.fl-cup td { background: var(--cup-col-bg); }
+  table.fixtures-list tbody tr.fl-euro td { background: var(--euro-col-bg); }
+  table.fixtures-list tbody tr.fl-cup:hover td { background: var(--cup-col-bg); }
+  table.fixtures-list tbody tr.fl-euro:hover td { background: var(--euro-col-bg); }
+  table.fixtures-list tbody tr.fl-flagged td.fl-fixture::after { content: " ⚠"; color: #C0392B; }
+
   footer {
     max-width: 1180px; margin: 40px auto 0; padding: 20px 24px;
     border-top: 1px solid var(--hairline);
@@ -471,6 +528,9 @@
   @media (max-width: 640px) {
     .player-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; }
     .leaderboard-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
+    .lb-tab { padding: 5px 10px; font-size: 11px; }
+    table.fixtures-list td.fl-comp { display: none; }
+    table.fixtures-list thead th:nth-child(3) { display: none; }
   }
 </style>
 </head>
@@ -645,6 +705,16 @@ function buildSeasonSwitcher(seasons, activeId) {
  * card. Call this once per squad with that squad's own { fixtures, appearances }.
  */
 function computeStatsForSquad(fixtureData) {
+  return computeStatsForFixtureIds(fixtureData, null);
+}
+
+/**
+ * Same aggregation as computeStatsForSquad, but optionally scoped to a
+ * subset of fixture ids (e.g. just this squad's league fixtures, or just
+ * its cup fixtures) — the basis for the per-competition leaderboards.
+ * Pass fixtureIdSet = null/undefined for no filtering (every fixture).
+ */
+function computeStatsForFixtureIds(fixtureData, fixtureIdSet) {
   const stats = {};
   const minutesTracked = {};
 
@@ -659,7 +729,9 @@ function computeStatsForSquad(fixtureData) {
   const appearances = (fixtureData && fixtureData.appearances) || {};
   Object.keys(appearances).forEach(playerId => {
     const byFixture = appearances[playerId];
-    Object.values(byFixture).forEach(rec => {
+    Object.keys(byFixture).forEach(fxId => {
+      if (fixtureIdSet && !fixtureIdSet.has(fxId)) return;
+      const rec = byFixture[fxId];
       if (!rec || !rec.status) return;
       const s = ensure(playerId);
       if (APPEARANCE_STATUSES.has(rec.status)) {
@@ -685,6 +757,31 @@ function computeStatsForSquad(fixtureData) {
   });
 
   return stats;
+}
+
+/**
+ * Groups a squad's fixtures by competition name, in display order: the
+ * "League" bucket (fixtures with no competition set, or a competition name
+ * that isn't a cup/European one) first, then every other named competition
+ * in the order it first appears in the fixture list. Returns an array of
+ * { label, fixtureIds: Set } — used to build the per-competition leaderboard
+ * tabs alongside the season-wide "Overall" view.
+ */
+function competitionGroups(fixtures) {
+  const order = [];
+  const idsByLabel = {};
+  fixtures.forEach(fx => {
+    const label = (fx.competition && fx.competition.trim()) ? fx.competition.trim() : 'League';
+    if (!idsByLabel[label]) {
+      idsByLabel[label] = new Set();
+      order.push(label);
+    }
+    idsByLabel[label].add(fx.id);
+  });
+  const ordered = [];
+  if (idsByLabel['League']) ordered.push('League');
+  order.forEach(label => { if (label !== 'League') ordered.push(label); });
+  return ordered.map(label => ({ label, fixtureIds: idsByLabel[label] }));
 }
 
 /**
@@ -1150,6 +1247,63 @@ function fixtureColourClass(fx) {
   return null;
 }
 
+/** Which W/D/L class a fixture's score cell should get, based on its result string. */
+function resultLetterClass(fx) {
+  const parsed = parseResult(fx.result);
+  return parsed ? 'fx-res-' + parsed.letter : '';
+}
+
+/**
+ * Builds a compact, all-fixtures list for a squad: one row per fixture with
+ * date, competition, opponent (with venue), and score — a plain-English
+ * companion to the fixture matrix above it, which favours density over
+ * per-player detail. League/cup/European fixtures get the same colour
+ * treatment as the matrix columns so the two views read consistently.
+ */
+function buildFixturesList(fixtureData, squadKey, fixtureIssuesMap) {
+  const fixtures = fixtureData.fixtures || [];
+  if (fixtures.length === 0) return null;
+
+  const wrap = document.createElement('div');
+  wrap.className = 'fixtures-list-wrap';
+  const table = document.createElement('table');
+  table.className = 'fixtures-list';
+
+  const thead = document.createElement('thead');
+  thead.innerHTML = '<tr><th>#</th><th>Date</th><th>Comp</th><th>Fixture</th><th>Score</th></tr>';
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  fixtures.forEach((fx, idx) => {
+    const tr = document.createElement('tr');
+    const colourClass = fixtureColourClass(fx);
+    if (colourClass) tr.classList.add('fl-' + colourClass);
+    const fxIssues = (fixtureIssuesMap && fixtureIssuesMap[squadKey + '::' + fx.id]) || [];
+    if (fxIssues.length) {
+      tr.classList.add('fl-flagged');
+      tr.title = '⚠ ' + fxIssues.join('\n⚠ ');
+    }
+
+    const fxNumber = (fx.gameweek != null) ? fx.gameweek : (idx + 1);
+    const compLabel = (fx.competition && fx.competition.trim()) ? fx.competition.trim() : 'League';
+    const venueSuffix = fx.venue === 'H' ? ' (H)' : (fx.venue === 'A' ? ' (A)' : '');
+    const oppText = `v ${fx.opponent || '—'}${venueSuffix}`.trim();
+    const resClass = resultLetterClass(fx);
+
+    tr.innerHTML = `
+      <td class="fl-num">${fxNumber}</td>
+      <td class="fl-date">${fx.date ? fmtDate(fx.date) : '—'}</td>
+      <td class="fl-comp">${compLabel}</td>
+      <td class="fl-fixture">${oppText}</td>
+      <td class="fl-score ${resClass}">${fx.result || '—'}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  wrap.appendChild(table);
+  return wrap;
+}
+
 function buildMatrix(rosterPlayers, fixtureData, playersById, squadKey, fixtureIssuesMap, squadStats, seasonLongPlayers) {
   const fixtures = fixtureData.fixtures || [];
   const appearances = fixtureData.appearances || {};
@@ -1175,7 +1329,8 @@ function buildMatrix(rosterPlayers, fixtureData, playersById, squadKey, fixtureI
     const th = document.createElement('th');
     const fxIssues = fixtureIssuesMap[squadKey + '::' + fx.id] || [];
     const fxNumber = (fx.gameweek != null) ? fx.gameweek : (idx + 1);
-    let titleText = `${fmtDate(fx.date)} — ${fx.venue === 'H' ? 'v' : '@'} ${fx.opponent}${fx.competition ? ' · ' + fx.competition : ''}${fx.result ? ' · ' + fx.result : ''}`;
+    const titleVenueSuffix = fx.venue === 'H' ? ' (H)' : (fx.venue === 'A' ? ' (A)' : '');
+    let titleText = `${fmtDate(fx.date)} — v ${fx.opponent}${titleVenueSuffix}${fx.competition ? ' · ' + fx.competition : ''}${fx.result ? ' · ' + fx.result : ''}`;
     const colourClass = fixtureColourClass(fx);
     if (colourClass) th.classList.add('fx-' + colourClass);
     if (fxIssues.length) {
@@ -1469,6 +1624,56 @@ function buildLeaderboards(playersById, squadStats, squadKey) {
   return grid;
 }
 
+/**
+ * Wraps buildLeaderboards with an "Overall" view plus one view per
+ * competition (League, cups, Europe, etc.), switchable via a small tab bar.
+ * Every view is pre-built up front and toggled with display:none, so
+ * switching tabs is instant and there's no re-render on click. If the
+ * squad's fixtures only span a single competition, "Overall" and that
+ * competition's numbers are identical, so the tab bar is skipped entirely
+ * and just the one grid is shown.
+ */
+function buildLeaderboardsBlock(playersById, fixtureData, squadKey) {
+  const fixtures = fixtureData.fixtures || [];
+  const groups = competitionGroups(fixtures);
+
+  const wrap = document.createElement('div');
+  wrap.className = 'leaderboards-block';
+
+  if (groups.length <= 1) {
+    wrap.appendChild(buildLeaderboards(playersById, computeStatsForSquad(fixtureData), squadKey));
+    return wrap;
+  }
+
+  const views = [{ key: '__overall__', label: 'Overall', grid: buildLeaderboards(playersById, computeStatsForSquad(fixtureData), squadKey) }];
+  groups.forEach(g => {
+    views.push({ key: g.label, label: g.label, grid: buildLeaderboards(playersById, computeStatsForFixtureIds(fixtureData, g.fixtureIds), squadKey) });
+  });
+
+  const tabBar = document.createElement('div');
+  tabBar.className = 'lb-tabs';
+  views.forEach((v, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'lb-tab' + (i === 0 ? ' active' : '');
+    btn.textContent = v.label;
+    btn.addEventListener('click', () => {
+      tabBar.querySelectorAll('.lb-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      views.forEach(vv => { vv.grid.style.display = (vv.key === v.key) ? '' : 'none'; });
+    });
+    tabBar.appendChild(btn);
+  });
+  wrap.appendChild(tabBar);
+
+  views.forEach((v, i) => {
+    if (i !== 0) v.grid.style.display = 'none';
+    wrap.appendChild(v.grid);
+  });
+
+  return wrap;
+}
+
 function buildSquadSection(squadKey, allSquadPlayers, fixtureData, playersById, fixtureIssuesMap) {
   const activePlayers = allSquadPlayers.filter(p => (p.status || 'active') === 'active');
   const loanPlayers = allSquadPlayers.filter(p => p.status === 'loan');
@@ -1573,11 +1778,25 @@ function buildSquadSection(squadKey, allSquadPlayers, fixtureData, playersById, 
     section.appendChild(p);
   }
 
+  const fxListHeader = document.createElement('h3');
+  fxListHeader.className = 'block-heading';
+  fxListHeader.textContent = 'All Fixtures';
+  section.appendChild(fxListHeader);
+  const fixturesList = buildFixturesList(fixtureData, squadKey, fixtureIssuesMap);
+  if (fixturesList) {
+    section.appendChild(fixturesList);
+  } else {
+    const p = document.createElement('p');
+    p.className = 'note';
+    p.textContent = 'No fixtures recorded yet for this squad.';
+    section.appendChild(p);
+  }
+
   const lbHeader = document.createElement('h3');
   lbHeader.className = 'block-heading';
   lbHeader.textContent = 'Leaderboards';
   section.appendChild(lbHeader);
-  section.appendChild(buildLeaderboards(playersById, squadStats, squadKey));
+  section.appendChild(buildLeaderboardsBlock(playersById, fixtureData, squadKey));
 
   // Bottom panels: everyone who hasn't played a single match for this squad
   // this season, grouped by why — season-long loan, incoming (not yet

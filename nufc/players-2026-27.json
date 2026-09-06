@@ -14,7 +14,7 @@
 			"https://cdn-img.staticzz.com/img/jogadores/new/02/27/210227_nick_pope_20251021194405.png",
 			"https://img.a.transfermarkt.technology/portrait/header/192080-1663841362.jpg"
         ],
-        "status": "not_selected_season"
+        "status": "active"
     },
     {
         "id": "s-livramento",
@@ -31,7 +31,7 @@
 			"https://cdn-img.staticzz.com/img/jogadores/new/31/75/643175_tino_livramento_20260114154143.png",
 			"https://img.a.transfermarkt.technology/portrait/header/503981-1699383321.jpg"
         ],
-        "status": "injured_season"
+        "status": "active"
     },
     {
         "id": "s-hall",
@@ -1118,7 +1118,7 @@
 			"",
             "https://cdn.resfu.com/img_data/players/medium/3533990.jpg?size=120x&lossy=1"
         ],
-        "status": "not_selected_season"
+        "status": "active"
     },
     {
         "id": "u18-mukumbira",

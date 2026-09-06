@@ -31,8 +31,6 @@ const LINK_TYPES = [
   { key: 'calendar',  icon: 'fa-calendar', label: 'Calendar' },
 ];
 
-const DUE_SOON_DAYS = 7;
-
 // Secondary sort within a group, after date: category in this fixed
 // sequence (distinct from the CATEGORY_META declaration order above,
 // which only drives the legend). Anything not listed falls to the end.
@@ -65,11 +63,27 @@ const OPEN_BY_DEFAULT = new Set(['this-week']);
 
 function parseSeriesDate(text) {
   if (!text) return null;
-  if (/^\d{4}$/.test(text.trim())) {
-    return { date: new Date(Number(text.trim()), 0, 1), bareYear: true };
+  const trimmed = text.trim();
+  if (/^\d{4}$/.test(trimmed)) {
+    return { date: new Date(Number(trimmed), 0, 1), bareYear: true };
   }
-  const d = new Date(text);
+  const isoMatch = /^(\d{4})-(\d{2})-(\d{2})$/.exec(trimmed);
+  if (isoMatch) {
+    const [, y, m, d] = isoMatch;
+    return { date: new Date(Number(y), Number(m) - 1, Number(d)), bareYear: false };
+  }
+  const d = new Date(trimmed);
   return isNaN(d) ? null : { date: d, bareYear: false };
+}
+
+// Bounds of the Monday-Sunday calendar week containing `now`.
+// Returns [weekStart, weekEnd) as local-midnight Date objects.
+function getWeekBounds(now) {
+  const day = now.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+  const diffToMonday = (day + 6) % 7; // 0 if Monday, 6 if Sunday
+  const weekStart = new Date(now.getFullYear(), now.getMonth(), now.getDate() - diffToMonday);
+  const weekEnd = new Date(weekStart.getFullYear(), weekStart.getMonth(), weekStart.getDate() + 7);
+  return { weekStart, weekEnd };
 }
 
 function classify(series, now) {
@@ -93,11 +107,12 @@ function classify(series, now) {
 
   if (bareYear) return { year, kind: 'tbs', sortDate: date };
 
-  const diffDays = (date - now) / 86400000;
-  let kind;
-  if (date <= now) kind = 'plain'; // already verified — just archived under its year, not "due soon"
-  else if (diffDays <= DUE_SOON_DAYS) kind = 'this-week';
-  else kind = 'plain';
+  // Verified series land in "this week" if their date falls within the
+  // current Monday-Sunday calendar week, whether that date is still to
+  // come or has already passed. Anything outside that window is "plain"
+  // until the week containing it actually starts.
+  const { weekStart, weekEnd } = getWeekBounds(now);
+  const kind = (date >= weekStart && date < weekEnd) ? 'this-week' : 'plain';
 
   return { year, kind, sortDate: date };
 }
