@@ -72,6 +72,14 @@ function parseSeriesDate(text) {
     const [, y, m, d] = isoMatch;
     return { date: new Date(Number(y), Number(m) - 1, Number(d)), bareYear: false };
   }
+  // D/M/YYYY (Australian convention) — e.g. "5/9/2026" = 5 September.
+  // Must be handled explicitly: JS's native Date parser reads slash-separated
+  // dates as US M/D/Y, which silently misreads "5/9/2026" as May 9th.
+  const dmyMatch = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(trimmed);
+  if (dmyMatch) {
+    const [, d, m, y] = dmyMatch;
+    return { date: new Date(Number(y), Number(m) - 1, Number(d)), bareYear: false };
+  }
   const d = new Date(trimmed);
   return isNaN(d) ? null : { date: d, bareYear: false };
 }
@@ -107,12 +115,18 @@ function classify(series, now) {
 
   if (bareYear) return { year, kind: 'tbs', sortDate: date };
 
-  // Verified series land in "this week" if their date falls within the
-  // current Monday-Sunday calendar week, whether that date is still to
-  // come or has already passed. Anything outside that window is "plain"
-  // until the week containing it actually starts.
-  const { weekStart, weekEnd } = getWeekBounds(now);
-  const kind = (date >= weekStart && date < weekEnd) ? 'this-week' : 'plain';
+  // Two independent rules, not one symmetric window:
+  //  - Past + verified: always "this week", no matter how long ago —
+  //    it stays there until the data is updated with the next round's date.
+  //  - Future: only surfaces under "this week" once the calendar week
+  //    containing it has started (i.e. from its Monday onward).
+  let kind;
+  if (date <= now) {
+    kind = 'this-week';
+  } else {
+    const { weekEnd } = getWeekBounds(now);
+    kind = (date < weekEnd) ? 'this-week' : 'plain';
+  }
 
   return { year, kind, sortDate: date };
 }
@@ -220,9 +234,12 @@ function groupBuckets(allSeries) {
 
   allSeries.forEach(series => {
     const { year, kind, sortDate } = classify(series, now);
-    const key = `${year}-${kind}`;
+    // Overdue is a manual flag, not tied to any particular season — merge
+    // every overdue series into one bucket regardless of year, titled
+    // plainly "Overdue".
+    const key = kind === 'overdue' ? 'overdue' : `${year}-${kind}`;
     if (!buckets.has(key)) {
-      const title = `${year} motorsport series${KIND_SUFFIX[kind]}`;
+      const title = kind === 'overdue' ? 'Overdue' : `${year} motorsport series${KIND_SUFFIX[kind]}`;
       buckets.set(key, {
         year, kind, title,
         id: title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''),
@@ -238,7 +255,11 @@ function groupBuckets(allSeries) {
     || categoryRank(a.series.category) - categoryRank(b.series.category)
     || a.series.name.localeCompare(b.series.name)
   ));
-  groups.sort((a, b) => a.year - b.year || KIND_ORDER[a.kind] - KIND_ORDER[b.kind]);
+  groups.sort((a, b) => {
+    if (a.kind === 'overdue') return -1;
+    if (b.kind === 'overdue') return 1;
+    return a.year - b.year || KIND_ORDER[a.kind] - KIND_ORDER[b.kind];
+  });
   return groups;
 }
 
@@ -272,8 +293,10 @@ function buildJumpNav(groups) {
   groups.forEach(group => {
     const a = document.createElement('a');
     a.href = '#' + group.id;
-    const suffix = KIND_SUFFIX[group.kind] ? KIND_SUFFIX[group.kind] : '';
-    a.innerHTML = `${group.year}${suffix}<span class="n">${group.items.length}</span>`;
+    const label = group.kind === 'overdue'
+      ? 'Overdue'
+      : `${group.year}${KIND_SUFFIX[group.kind] || ''}`;
+    a.innerHTML = `${label}<span class="n">${group.items.length}</span>`;
     a.addEventListener('click', () => {
       const target = document.getElementById(group.id);
       if (target) target.open = true;
