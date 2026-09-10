@@ -251,6 +251,16 @@
   .photo-tile-foot {
     padding: 6px 8px 8px;
   }
+  .photo-source {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--pitch);
+    display: block;
+    margin-bottom: 3px;
+  }
   .photo-url {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 9.5px;
@@ -316,6 +326,7 @@
       <button data-squad="senior">First Team</button>
       <button data-squad="u21">Under-21s</button>
       <button data-squad="u18">Under-18s</button>
+      <button data-squad="u16">Under-16s</button>
     </div>
     <label class="missing-toggle">
       <input type="checkbox" id="missing-only">
@@ -338,18 +349,80 @@
 </main>
 
 <script>
-const SQUAD_LABEL = { senior: 'First Team', u21: 'Under-21s', u18: 'Under-18s' };
+const SQUAD_LABEL = { senior: 'First Team', u21: 'Under-21s', u18: 'Under-18s', u16: 'Under-16s' };
 const normSquad = (s) => (s || '').trim().toLowerCase() === 'seniors' ? 'senior' : (s || '').trim().toLowerCase();
 
 /**
- * Same candidate-list logic as the main site (index.html): the new
- * `photos` array in priority order, falling back to the legacy single
- * `photo` string field for players not yet migrated.
+ * Same age-band computation as js/data.js — squad is derived from dob
+ * against the active season's ageBands, not stored in JSON. Unlike
+ * index.html, the gallery deliberately shows u16 players too (with their
+ * own filter button below): the whole point here is auditing photos for
+ * every player, not just the ones with a matchday-squad page.
+ */
+function ageBandForDob(dob, ageBands) {
+  for (const band of (ageBands || [])) {
+    const afterOk = !band.bornOnOrAfter || dob >= band.bornOnOrAfter;
+    const beforeOk = !band.bornBefore || dob < band.bornBefore;
+    if (afterOk && beforeOk) return band.squad;
+  }
+  return 'senior';
+}
+const DEFAULT_UNKNOWN_DOB_SQUAD = 'u16';
+
+/**
+ * Same candidate-resolution logic as the main site (js/data.js): `photos` is
+ * a source-name → URL map, tried in the order the keys appear in
+ * players-master.json, with an optional per-season `photoSource` override
+ * moving one source to the front. Returns {key, url} pairs (rather than
+ * bare URLs, like the main site) so the gallery can label each tile with
+ * which source it came from — useful for spotting e.g. "the transfermarkt
+ * one is stale" at a glance. Also falls back to the legacy `photos` array
+ * and single `photo` string field for anything not yet on the new schema.
  */
 function photoCandidates(p) {
-  if (Array.isArray(p.photos) && p.photos.length) return p.photos.filter(Boolean);
-  if (p.photo) return [p.photo];
+  const photos = p.photos;
+  if (photos && typeof photos === 'object' && !Array.isArray(photos)) {
+    const keys = Object.keys(photos).filter(k => photos[k]);
+    if (keys.length === 0) return [];
+    let ordered = keys;
+    if (p.photoSource && photos[p.photoSource]) {
+      ordered = [p.photoSource, ...keys.filter(k => k !== p.photoSource)];
+    }
+    return ordered.map(k => ({ key: k, url: photos[k] }));
+  }
+  if (Array.isArray(photos) && photos.length) {
+    return photos.filter(Boolean).map(url => ({ key: null, url }));
+  }
+  if (p.photo) return [{ key: null, url: p.photo }];
   return [];
+}
+
+/**
+ * Joins players-master.json (name/dob/photos/etc) with a season roster file
+ * (number/status/photoSource/etc) by id and computes `squad` from dob — same
+ * approach as mergePlayers in js/data.js. A roster id with no master entry
+ * is kept with placeholder fields (rather than dropped) so the gap is
+ * visible here too.
+ */
+function mergePlayers(masterList, seasonList, ageBands) {
+  const masterById = {};
+  masterList.forEach(m => { masterById[m.id] = m; });
+  return seasonList.map(s => {
+    const master = masterById[s.id];
+    if (!master) {
+      console.warn(`Season file references player id "${s.id}", which isn't in players-master.json (typo in the id?).`);
+      return { id: s.id, name: s.id, nationality: '', dob: '', position: '', photos: {}, ...s, squad: 'senior' };
+    }
+    const merged = { ...master, ...s };
+    if (merged.dob) {
+      merged.squad = ageBandForDob(merged.dob, ageBands);
+    } else if (merged.squadIfDobUnknown) {
+      merged.squad = merged.squadIfDobUnknown;
+    } else {
+      merged.squad = DEFAULT_UNKNOWN_DOB_SQUAD;
+    }
+    return merged;
+  });
 }
 
 async function loadSeasons() {
@@ -376,7 +449,8 @@ function copyText(text, btn) {
   });
 }
 
-function buildPhotoTile(url, index) {
+function buildPhotoTile(candidate, index) {
+  const { key, url } = candidate;
   const tile = document.createElement('div');
   tile.className = 'photo-tile';
 
@@ -404,6 +478,12 @@ function buildPhotoTile(url, index) {
 
   const foot = document.createElement('div');
   foot.className = 'photo-tile-foot';
+  if (key) {
+    const sourceEl = document.createElement('span');
+    sourceEl.className = 'photo-source';
+    sourceEl.textContent = key;
+    foot.appendChild(sourceEl);
+  }
   const urlEl = document.createElement('span');
   urlEl.className = 'photo-url';
   urlEl.textContent = url;
@@ -474,10 +554,10 @@ function buildPlayerBlock(p) {
   if (candidates.length === 0) {
     const note = document.createElement('p');
     note.className = 'empty-note';
-    note.textContent = 'Add a "photos" array (or a single "photo" field) for this player in players.json to see thumbnails here.';
+    note.textContent = 'Add a "photos" entry for this player in players-master.json to see thumbnails here.';
     row.appendChild(note);
   } else {
-    const tiles = candidates.map((url, i) => buildPhotoTile(url, i));
+    const tiles = candidates.map((c, i) => buildPhotoTile(c, i));
     tiles.forEach(({ tile }) => row.appendChild(tile));
     markInUse(tiles);
   }
@@ -508,24 +588,31 @@ function applyFilters() {
 async function init() {
   try {
     const seasons = await loadSeasons();
-    let playersFile = 'players.json';
+    let masterFile = 'players-master.json';
+    let playersFile = 'players-season.json';
     let seasonNote = '';
+    let ageBands = [];
 
     if (seasons) {
       const requested = new URLSearchParams(location.search).get('season');
       const active = seasons.find(s => s.id === requested) || seasons[0];
+      masterFile = active.playersMasterFile || masterFile;
       playersFile = active.playersFile;
+      ageBands = active.ageBands || [];
       seasonNote = `Season ${active.label || active.id}. Add ?season=<id> to the URL to check a different season.`;
     }
     document.getElementById('season-note').textContent = seasonNote;
 
-    const res = await fetch(playersFile);
-    if (!res.ok) throw new Error('fetch failed');
-    const players = await res.json();
+    const [masterRes, seasonRes] = await Promise.all([fetch(masterFile), fetch(playersFile)]);
+    if (!masterRes.ok || !seasonRes.ok) throw new Error('fetch failed');
+    const master = await masterRes.json();
+    const season = await seasonRes.json();
+    const players = mergePlayers(master, season, ageBands);
 
     const sorted = players.slice().sort((a, b) => {
       const sa = normSquad(a.squad), sb = normSquad(b.squad);
-      if (sa !== sb) return ['senior', 'u21', 'u18'].indexOf(sa) - ['senior', 'u21', 'u18'].indexOf(sb);
+      const order = ['senior', 'u21', 'u18', 'u16'];
+      if (sa !== sb) return order.indexOf(sa) - order.indexOf(sb);
       return (a.name || '').localeCompare(b.name || '');
     });
 

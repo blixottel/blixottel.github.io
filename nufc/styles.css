@@ -1,0 +1,552 @@
+:root {
+    --ink: #131315;
+    --ink-soft: #232326;
+    --paper: #F5F4F0;
+    --paper-raised: #FFFFFF;
+    --pitch: #2F5233;
+    --pitch-soft: #E6EDE7;
+    --slate: #6B6E76;
+    --hairline: #DCDAD4;
+    --hairline-dark: #3A3A3D;
+    --gold: #B99A4B;
+    --amber-bg: #FBF2E1;
+    --amber-line: #D9B166;
+    --sky-bg: #EAF1F5;
+    --sky-line: #7FA8C0;
+    --claret-bg: #F6E9E8;
+    --claret-line: #B97A76;
+    --claret-ink: #7A2E2E;
+    --injury-bg: #FBEAE7;
+    --injury-line: #D98B7D;
+    --injury-ink: #9A2A1E;
+    --slate-bg: #EDEDF0;
+    --slate-line: #B9B9C2;
+    --cup-ink: #3B2B54;
+    --cup-gold: #C9A9E0;
+    --cup-col-bg: #F1ECFA;
+    --euro-ink: #0A3A5C;
+    --euro-gold: #8FD6E8;
+    --euro-col-bg: #E7F3F8;
+    --radius: 3px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .masthead {
+    background: repeating-linear-gradient(90deg, var(--ink) 0 42px, var(--ink-soft) 42px 84px);
+    color: var(--paper);
+    padding: 40px 24px 28px;
+    position: relative;
+  }
+  .masthead-inner { max-width: 1180px; margin: 0 auto; position: relative; }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 10px;
+  }
+  h1.title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(34px, 6vw, 64px);
+    line-height: 0.95;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #C9C9CC;
+    margin: 10px 0 0;
+  }
+
+  .season-switcher {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .season-switcher-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #9B9B9F;
+  }
+  .season-switcher select {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--paper);
+    background: var(--ink-soft);
+    border: 1px solid #4A4A4E;
+    border-radius: var(--radius);
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+  .season-switcher select:hover { border-color: var(--gold); }
+  @media (max-width: 640px) {
+    .season-switcher { position: static; margin-top: 14px; }
+  }
+
+  nav.tabs {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--paper);
+    border-bottom: 3px solid var(--ink);
+    display: flex;
+    gap: 0;
+    max-width: 1180px;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+  nav.tabs a {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--slate);
+    text-decoration: none;
+    padding: 14px 22px;
+    white-space: nowrap;
+    border-right: 1px solid var(--hairline);
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+  nav.tabs a:hover { color: var(--ink); background: var(--paper-raised); }
+  nav.tabs a.active {
+    color: var(--ink);
+    background: var(--paper-raised);
+    box-shadow: inset 0 -3px 0 var(--pitch);
+  }
+  nav.tabs a .count {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    margin-left: 6px;
+  }
+
+  main { max-width: 1180px; margin: 0 auto; padding: 0 24px 80px; }
+
+  section.squad { padding-top: 40px; display: none; }
+  section.squad.active-squad { display: block; }
+
+  .squad-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 4px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+  }
+  .squad-header h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 28px;
+    margin: 0;
+  }
+  .squad-header .meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--slate);
+  }
+
+  .section-subhead {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--paper-raised);
+    background: var(--pitch);
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 18px 0 10px;
+    border-radius: var(--radius);
+  }
+  .position-group:first-of-type .section-subhead,
+  h3.block-heading + .section-subhead { margin-top: 0; }
+
+  h3.block-heading {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    margin: 34px 0 4px;
+  }
+
+  .player-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .player-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 9px;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .player-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.12); transform: translateY(-2px); }
+  .player-card .photo-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(160deg, var(--ink) 0%, var(--ink-soft) 100%);
+    overflow: hidden;
+  }
+  .player-card .photo-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .player-card .photo-fallback {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: 'Archivo Black', sans-serif; font-size: 30px; color: rgba(255,255,255,0.28);
+  }
+  .player-card .number-badge {
+    position: absolute; top: 6px; left: 6px;
+    background: var(--gold); color: var(--ink);
+    font-family: 'Archivo Black', sans-serif; font-size: 13px;
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  }
+  .player-card .card-name {
+    font-weight: 700; font-size: 13px; margin-top: 8px; padding: 0 6px;
+    line-height: 1.25;
+  }
+  .player-card .card-meta { font-size: 10.5px; color: var(--slate); margin-top: 2px; padding: 0 6px; }
+
+  .guest-tag {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+    color: var(--pitch);
+    background: var(--pitch-soft);
+    border: 1px solid var(--pitch);
+    border-radius: 2px;
+    padding: 1px 5px;
+    margin-left: 7px;
+    vertical-align: middle;
+  }
+  .guest-tag.loan-tag { color: #8A6414; background: var(--amber-bg); border-color: var(--amber-line); }
+  .guest-tag.incoming-tag { color: #3D6E88; background: var(--sky-bg); border-color: var(--sky-line); }
+  .guest-tag.left-tag { color: var(--claret-ink); background: var(--claret-bg); border-color: var(--claret-line); }
+  .guest-tag.injured-season-tag { color: var(--injury-ink); background: var(--injury-bg); border-color: var(--injury-line); }
+  .guest-tag.not-selected-season-tag { color: var(--slate); background: var(--slate-bg); border-color: var(--slate-line); }
+  .guest-tag.trialist-tag { color: var(--cup-ink); background: var(--cup-col-bg); border-color: var(--cup-gold); }
+
+  /* Small pill(s) overlaid on a player-card's photo, used in the main
+     Player Info grid to flag a player who left mid-season, is out on loan
+     but has appeared, or is guesting from another squad. A card can carry
+     more than one at once (e.g. a U21 guesting for the seniors who's since
+     gone out on loan) — .status-pills stacks them instead of overlapping. */
+  .player-card .status-pills {
+    position: absolute; top: 6px; right: 6px;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 3px;
+  }
+  .player-card .status-pill {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8.5px; font-weight: 700; letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 5px; border-radius: 2px;
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    cursor: default;
+  }
+  .status-pill.pill-cross { background: var(--pitch); }
+  .status-pill.pill-loan { background: #8A6414; }
+  .status-pill.pill-left { background: var(--claret-ink); }
+  .status-pill.pill-incoming { background: #3D6E88; }
+  .status-pill.pill-injured-season { background: var(--injury-ink); }
+  .status-pill.pill-not-selected-season { background: var(--slate); }
+  .status-pill.pill-trialist { background: var(--cup-ink); }
+
+  .matrix-wrap { margin-top: 14px; overflow-x: auto; border: 1px solid var(--hairline); background: var(--paper-raised); }
+  table.matrix { border-collapse: collapse; font-size: 12.5px; min-width: 100%; }
+  table.matrix th, table.matrix td { border-bottom: 1px solid var(--hairline); }
+  table.matrix thead th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 11px;
+    color: var(--paper);
+    background: var(--ink);
+    padding: 5px 2px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    cursor: default;
+  }
+  table.matrix thead th.player-col {
+    text-align: left;
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    padding: 6px 10px;
+  }
+  table.matrix thead th .fx-num { display: block; font-size: 12px; }
+  table.matrix thead th .fx-venue { display: block; color: var(--gold); font-size: 9px; }
+  table.matrix tbody td.player-col {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--paper-raised);
+    padding: 7px 10px;
+    font-weight: 600;
+    white-space: nowrap;
+    border-right: 2px solid var(--ink);
+  }
+  table.matrix tbody tr.guest-row td.player-col { font-style: italic; }
+  table.matrix tbody tr.guest-row-cross td.player-col { background: var(--pitch-soft); }
+  table.matrix tbody tr.guest-row-loan td.player-col { background: var(--amber-bg); }
+  table.matrix tbody tr.guest-row-incoming td.player-col { background: var(--sky-bg); }
+  table.matrix tbody tr.guest-row-left td.player-col { background: var(--claret-bg); }
+  table.matrix tbody tr.guest-row-injured-season td.player-col { background: var(--injury-bg); }
+  table.matrix tbody tr.guest-row-not-selected-season td.player-col { background: var(--slate-bg); }
+  table.matrix tbody tr.guest-row-trialist td.player-col { background: var(--cup-col-bg); }
+  table.matrix tbody tr:hover td { background: var(--pitch-soft); }
+  table.matrix tbody tr:not(.guest-row):hover td.player-col { background: var(--pitch-soft); }
+  table.matrix td.cell { text-align: center; padding: 5px 1px; width: 26px; min-width: 26px; }
+  table.matrix th.total-col, table.matrix td.total-col {
+    text-align: center; font-weight: 700; background: var(--pitch-soft);
+    border-left: 2px solid var(--ink); padding: 5px 8px; min-width: 34px;
+  }
+  table.matrix thead th.total-col { background: var(--pitch); color: var(--paper-raised); }
+
+  .mk { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; }
+  .mk-start { width: 10px; height: 10px; background: var(--ink); border-radius: 2px; }
+  .mk-sub { width: 10px; height: 10px; border: 2px solid var(--ink); border-radius: 2px; background: linear-gradient(135deg, var(--ink) 50%, transparent 50%); }
+  .mk-unused { width: 8px; height: 8px; border: 2px solid var(--hairline-dark); border-radius: 2px; opacity: 0.6; }
+  .mk-out { color: var(--slate); font-size: 12px; font-weight: 700; opacity: 0.5; }
+  .mk-injured { color: #C0392B; font-size: 12px; font-weight: 800; }
+  .mk-suspended { color: #B9762F; font-size: 13px; font-weight: 800; }
+  .mk-loan { color: #8A6414; font-size: 12px; font-weight: 800; }
+  .mk-transferred { color: var(--claret-ink); font-size: 13px; font-weight: 800; }
+  .mk-incoming { color: #3D6E88; font-size: 13px; font-weight: 800; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 18px; margin: 14px 0 6px; font-size: 12px; color: var(--slate); align-items: center; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+  .note {
+    font-size: 12.5px;
+    color: var(--slate);
+    background: var(--pitch-soft);
+    border-left: 3px solid var(--pitch);
+    padding: 8px 12px;
+    margin-bottom: 20px;
+  }
+
+  .status-grid { margin-top: 14px; }
+  .player-card.status-card { text-align: center; }
+  .status-card .card-detail {
+    font-size: 10.5px;
+    font-weight: 600;
+    margin-top: 4px;
+    padding: 3px 6px 0;
+    line-height: 1.3;
+  }
+  .status-card-loan { border-top: 3px solid var(--amber-line); }
+  .status-card-loan .card-detail { color: #8A6414; }
+  .status-card-incoming { border-top: 3px solid var(--sky-line); }
+  .status-card-incoming .card-detail { color: #3D6E88; }
+  .status-card-injured-season { border-top: 3px solid var(--injury-line); }
+  .status-card-injured-season .card-detail { color: var(--injury-ink); }
+  .status-card-not-selected-season { border-top: 3px solid var(--slate-line); }
+  .status-card-not-selected-season .card-detail { color: var(--slate); }
+  .status-card-trialist { border-top: 3px solid var(--cup-gold); }
+  .status-card-trialist .card-detail { color: var(--cup-ink); }
+
+  /* "Not in the matchday squad" grid — same cards, visually receded so the
+     eye reads them as separate from the actively-playing squad above
+     without losing the colour-coded top border or the reason text. Full
+     colour/opacity on hover, for a closer look. */
+  .status-grid-muted .player-card {
+    opacity: 0.62;
+    filter: saturate(0.35);
+    box-shadow: none;
+  }
+  .status-grid-muted .player-card:hover {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+  .status-grid-muted .player-card .photo-wrap img { filter: grayscale(0.7); }
+  .status-grid-muted .player-card:hover .photo-wrap img { filter: none; }
+
+  .panel-empty { font-size: 12.5px; color: var(--slate); padding: 10px 2px; font-style: italic; }
+
+  .leaderboard-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--lb-cols, 4), 1fr);
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .leaderboard-card { border: 1px solid var(--hairline); background: var(--paper-raised); padding: 10px 12px 6px; }
+  .leaderboard-card h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin: 0 0 8px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .leaderboard-card table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .leaderboard-card td { padding: 4px 0; border-bottom: 1px solid var(--hairline); }
+  .leaderboard-card tr:last-child td { border-bottom: none; }
+  .leaderboard-card td.lb-name { font-weight: 600; }
+  .leaderboard-card td.lb-val {
+    text-align: right; font-family: 'IBM Plex Mono', monospace; font-weight: 700; color: var(--pitch);
+    width: 40px;
+  }
+
+  .lb-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+  .lb-tab {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--slate);
+    background: var(--paper-raised);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    padding: 6px 14px;
+    cursor: pointer;
+  }
+  .lb-tab:hover { color: var(--ink); border-color: var(--ink); }
+  .lb-tab.active { color: var(--paper-raised); background: var(--ink); border-color: var(--ink); }
+
+  /* ===== Compact fixtures list ===== */
+  .fixtures-list-wrap { margin-top: 14px; overflow-x: auto; border: 1px solid var(--hairline); background: var(--paper-raised); }
+  table.fixtures-list { border-collapse: collapse; width: 100%; min-width: 480px; font-size: 12.5px; }
+  table.fixtures-list th, table.fixtures-list td {
+    padding: 6px 12px;
+    border-bottom: 1px solid var(--hairline);
+    text-align: left;
+    white-space: nowrap;
+  }
+  table.fixtures-list thead th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--slate);
+    background: var(--pitch-soft);
+    border-bottom: 2px solid var(--ink);
+  }
+  table.fixtures-list td.fl-num, table.fixtures-list td.fl-date {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--slate);
+    font-size: 11.5px;
+  }
+  table.fixtures-list td.fl-comp { color: var(--slate); font-size: 11.5px; }
+  table.fixtures-list td.fl-fixture { font-weight: 600; white-space: normal; }
+  table.fixtures-list td.fl-score {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    text-align: right;
+  }
+  table.fixtures-list td.fl-score.fx-res-W { color: var(--pitch); }
+  table.fixtures-list td.fl-score.fx-res-D { color: var(--slate); }
+  table.fixtures-list td.fl-score.fx-res-L { color: var(--claret-ink); }
+  table.fixtures-list tbody tr:hover td { background: var(--pitch-soft); }
+  table.fixtures-list tbody tr.fl-cup td { background: var(--cup-col-bg); }
+  table.fixtures-list tbody tr.fl-euro td { background: var(--euro-col-bg); }
+  table.fixtures-list tbody tr.fl-cup:hover td { background: var(--cup-col-bg); }
+  table.fixtures-list tbody tr.fl-euro:hover td { background: var(--euro-col-bg); }
+  table.fixtures-list tbody tr.fl-flagged td.fl-fixture::after { content: " ⚠"; color: #C0392B; }
+
+  footer {
+    max-width: 1180px; margin: 40px auto 0; padding: 20px 24px;
+    border-top: 1px solid var(--hairline);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--slate);
+  }
+
+  #load-error {
+    max-width: 1180px; margin: 24px auto; padding: 16px 20px;
+    background: #fff3f0; border: 1px solid #e0a89c; border-radius: var(--radius);
+    font-size: 14px; display: none;
+  }
+  #load-error code { background: #00000010; padding: 2px 6px; border-radius: 2px; }
+
+  /* ===== Validation panel ===== */
+  #validation-panel {
+    max-width: 1180px; margin: 24px auto 0; padding: 14px 20px;
+    background: #fff8ec; border: 1px solid var(--amber-line); border-left: 4px solid #C0392B;
+    border-radius: var(--radius);
+    font-size: 13px;
+    display: none;
+  }
+  #validation-panel h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin: 0 0 4px;
+  }
+  #validation-panel .vp-sub { color: var(--slate); font-size: 12px; margin: 0 0 10px; }
+  #validation-panel .vp-squad { margin-top: 10px; }
+  #validation-panel .vp-squad-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin: 0 0 4px;
+  }
+  #validation-panel ul { margin: 0; padding-left: 20px; }
+  #validation-panel li { margin: 3px 0; }
+  #validation-panel li.error { color: #9A2A1E; }
+  #validation-panel li.warning { color: #8A6414; }
+
+  .tab-flag {
+    display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+    background: #C0392B; margin-left: 6px; vertical-align: middle;
+  }
+
+  table.matrix thead th.fx-flagged { background: #4a2f2f; }
+  table.matrix thead th.fx-flagged .fx-opp::after { content: " ⚠"; color: #E4B937; }
+
+  table.matrix thead th.fx-cup { background: var(--cup-ink); }
+  table.matrix thead th.fx-cup .fx-venue { color: var(--cup-gold); }
+  table.matrix thead th.fx-cup.fx-flagged { background: #4a2f2f; }
+  table.matrix td.cell.fx-cup-col { background: var(--cup-col-bg); }
+  table.matrix tbody tr:hover td.cell.fx-cup-col { background: var(--cup-col-bg); }
+
+  table.matrix thead th.fx-euro { background: var(--euro-ink); }
+  table.matrix thead th.fx-euro .fx-venue { color: var(--euro-gold); }
+  table.matrix thead th.fx-euro.fx-flagged { background: #4a2f2f; }
+  table.matrix td.cell.fx-euro-col { background: var(--euro-col-bg); }
+  table.matrix tbody tr:hover td.cell.fx-euro-col { background: var(--euro-col-bg); }
+
+  .legend .fx-swatch { display: inline-block; width: 13px; height: 13px; border-radius: 2px; vertical-align: middle; }
+  .legend .fx-swatch.league { background: var(--ink); }
+  .legend .fx-swatch.cup { background: var(--cup-ink); }
+  .legend .fx-swatch.euro { background: var(--euro-ink); }
+
+  @media (max-width: 640px) {
+    .player-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; }
+    .leaderboard-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
+    .lb-tab { padding: 5px 10px; font-size: 11px; }
+    table.fixtures-list td.fl-comp { display: none; }
+    table.fixtures-list thead th:nth-child(3) { display: none; }
+  }

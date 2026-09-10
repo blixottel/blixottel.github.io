@@ -1,0 +1,1657 @@
+[
+    {
+        "id": "s-aidan-harris",
+        "name": "Aidan Harris",
+        "nationality": "England",
+        "dob": "2006-12-16",
+        "position": "GK",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/6TnqTKdu6kmTj4HFXomb7j/4916f069f32921ce62c8a0de3ad64954/Aidan_Harris-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/577980.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/60/43/976043_aidan_harris_20260224185246.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1019170-1710967838.jpg?lm=4711",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3270235.jpg?size=120x&lossy=1",
+            "flashscore": "https://static.flashscore.com/res/image/data/tpG8frDa-8te4SaIN.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000302058.png",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1554633.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1425207/image",
+            "sortitoutsi": "https://sortitoutsi.b-cdn.net/uploads/face/face_2000302058.png",
+            "statshub": "https://images.statshub.com/player/1425207.png"
+        }
+    },
+    {
+        "id": "s-aladji-bamba",
+        "name": "Aladji Bamba",
+        "nationality": "Ivory Coast",
+        "dob": "2006-07-14",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "official-other": "https://contentfulproxy.stadion.io/9ec6988xevcz/YS5q8s38h5ouLaaPgdesY/8df796fc1385152b301311d8a70585ef/Aladji_Bamba_-_NUFC.jpg?fm=webp&fit=fill&f=top&w=1920&h=1440&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/632794.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/21/91/1022191_aladji_bamba_20260803092234.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/975347-1764186059.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+            "statshub": "https://images.statshub.com/player/1868591.png"
+        }
+    },
+    {
+        "id": "s-alex-murphy",
+        "name": "Alex Murphy",
+        "nationality": "Ireland",
+        "dob": "2004-06-25",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/3dfjTQYrx2TTDysx8jmrJL/646dc5bbca6276dd85b26138a43ccf41/26_04_08_NUFC_ECOMM_HOME_37_A_MURPHY_227_KNOX-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/545477.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/55/69/965569_alex_murphy_20260114154428.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/900601-1787658294.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+            "statshub": "https://images.statshub.com/player/1125214.png"
+        }
+    },
+    {
+        "id": "s-amar-dedic",
+        "name": "Amar Dedić",
+        "nationality": "Bosnia-Hercegovina",
+        "dob": "2002-08-18",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/1WEMKAOOx0uqpP0TB6oavt/b12ce47ceda2587ae7d6e35078b91df0/Amar_Dedic-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/463726.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/83/31/748331_amar_dedic_20250916194312.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/519184-1758058581.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+            "statshub": "https://images.statshub.com/player/1102791.png"
+        }
+    },
+    {
+        "id": "s-anthony-elanga",
+        "name": "Anthony Elanga",
+        "nationality": "Sweden",
+        "dob": "2002-04-27",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/38eaHGpK5FbMXfffkdF9wY/96a217d81b69043cf828ac74bd2bc0d4/Anthony_Elanga-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/449434.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/00/96/660096_anthony_elanga_20260114154142.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/583189-1700739021.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/979232.png"
+        }
+    },
+    {
+        "id": "s-bazoumana-toure",
+        "name": "Bazoumana Touré",
+        "nationality": "Ivory Coast",
+        "dob": "2006-03-02",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/4bAyqievsQTOtW6G1w9uZm/d6ef4a2a693d575197d4b5fe5158fb12/Bazoumana_Toure-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/611665.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/79/76/1527976_bazoumana_toure_20260804141633.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1067904-1755092124.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/1568123.png"
+        }
+    },
+    {
+        "id": "s-dan-burn",
+        "name": "Dan Burn",
+        "nationality": "England",
+        "dob": "1992-05-09",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/2qMncKerumNScGBT98Lxy4/b5edd548f63b5de5f662d66cad296ade/Dan_Burn-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/78916.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/96/95/119695_dan_burn_20251105233525.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/134270-1682340860.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+            "statshub": "https://images.statshub.com/player/99090.png"
+        }
+    },
+    {
+        "id": "s-ewen-jaouen",
+        "name": "Ewen Jaouen",
+        "nationality": "France",
+        "dob": "2005-12-29",
+        "position": "GK",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/69EZceQxDmL1qmjy55qYPy/4e0aab9b038df01a4c32cf89774a5007/Ewen_Jaouen-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/554578.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/06/17/910617_ewen_jaouen_20260823194541.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/923757-1781091704.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/1154665.png"
+        }
+    },
+    {
+        "id": "s-fabian-schar",
+        "name": "Fabian Schär",
+        "nationality": "Switzerland",
+        "dob": "1991-12-20",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/45zCQOkEvt0JPPZ4TDPmAg/37e103ad0ba3ba7d06e42cbcabe9606c/Fabian_Schar-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/119471.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/16/69/121669_fabian_schar_20260114154547.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/135343-1667990394.jpg",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/101882.png"
+        }
+    },
+    {
+        "id": "s-harrison-ashby",
+        "name": "Harrison Ashby",
+        "nationality": "England",
+        "dob": "2001-11-14",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/441024.png",
+            "other-official": "https://images.gc.lutontownfcservices.co.uk/fit-in/1200x675/6c8db2d0-84ec-11f1-a072-b3ef80912883.webp",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/34/68/643468_harrison_ashby_20240815235925.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/559130-1667548907.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+            "statshub": ""
+        }
+    },
+    {
+        "id": "s-harvey-barnes",
+        "name": "Harvey Barnes",
+        "nationality": "England",
+        "dob": "1997-12-09",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/1cCfiFaakdMzgkzzTcVm1k/d07f8b2c992c7d2fa0eae380e0485b11/Harvey_Barnes-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/201666.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/57/17/465717_harvey_barnes_20251021194033.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/398065-1761079974.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/855647.png"
+        }
+    },
+    {
+        "id": "s-jacob-murphy",
+        "name": "Jacob Murphy",
+        "nationality": "England",
+        "dob": "1995-02-24",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/7E3kGHFzba2pQxbiM51Uz2/2ec88d95dede5f4dfcdfa18709e70f96/26_04_08_NUFC_ECOMM_HOME_23_MURPHY_255_EDIT-2-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/114243.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/20/62/392062_jacob_murphy_20251021193930.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/199527-1674210561.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/372336.png"
+        }
+    },
+    {
+        "id": "s-jacob-ramsey",
+        "name": "Jacob Ramsey",
+        "nationality": "England",
+        "dob": "2001-05-28",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/3pvQwgBStuGScSONc5cVrw/77355c345430f679f137778629e7b2b4/Jacob_Ramsey-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/232653.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/31/78/543178_jacob_ramsey_20251021193415.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/503749-1687975464.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/975937.png"
+        }
+    },
+    {
+        "id": "s-joelinton",
+        "name": "Joelinton",
+        "nationality": "Brazil",
+        "dob": "1996-08-14",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/7kYjgAEyoCtSk7GMPlVYE0/c909bd3dd48549cf5e2f6b7416edf309/Joelinton-2-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/180974.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/01/09/400109_joelinton_20251105233552.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/333241-1674210135.jpg",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+            "statshub": "https://images.statshub.com/player/560128.png"
+        }
+    },
+    {
+        "id": "s-joe-willock",
+        "name": "Joe Willock",
+        "nationality": "England",
+        "dob": "1999-08-20",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/7F9lrZRpIACxGdhJqXve1K/dbbd7970cf31e26d1834fef4b8a2d520/Joe_Willock-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/200089.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/39/98/433998_joe_willock_20240816000733.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/340329-1761077592.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/888550.png"
+        }
+    },
+    {
+        "id": "s-leo-shahar",
+        "name": "Leo Shahar",
+        "nationality": "England",
+        "dob": "2007-03-18",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/553746.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/05/24/900524_leo_shahar_20260224214426.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/940858-1746640379.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+            "statshub": ""
+        }
+    },
+    {
+        "id": "s-lewis-hall",
+        "name": "Lewis Hall",
+        "nationality": "England",
+        "dob": "2004-09-08",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/6pJQqtR0C6aUedQwc3UO07/5f37304cba9f4768f291ae6c26893814/Lewis_Hall-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/487838.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/82/23/828223_lewis_hall_20260114154144.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/670858-1699385942.jpg",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/1136730.png"
+        }
+    },
+    {
+        "id": "s-lewis-miley",
+        "name": "Lewis Miley",
+        "nationality": "England",
+        "dob": "2006-05-01",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/3Tghd5hUohDJWfMTIUXPDT/fa2103d7049d2d2072ec61191c85353e/Lewis_Miley-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/547719.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/98/37/889837_lewis_miley_20251021193112.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/922769-1696453881.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/1400650.png"
+        }
+    },
+    {
+        "id": "s-lukas-hornicek",
+        "name": "Lukáš Horníček",
+        "nationality": "Czechia",
+        "dob": "2002-07-13",
+        "position": "GK",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/4H4zm1hcAlaLXAGV6004DH/fe0ec6fdcb82ef6996893764dc212c45/Lukas_Hornicek-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/470551.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/25/63/702563_lukas_hornicek_20260727173713.jpg",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/629773-1732826321.jpg",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/963744.png"
+        }
+    },
+    {
+        "id": "s-malick-thiaw",
+        "name": "Malick Thiaw",
+        "nationality": "Germany",
+        "dob": "2001-08-08",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/1rqxaNIzTzlq5Tt7AvTZNL/1a90df0411ed727644b9ad2ff854fb35/Malick_Thiaw_-2-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/465642.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/26/91/662691_malick_thiaw_20251021194135.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/521964-1682063635.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/1014286.png"
+        }
+    },
+    {
+        "id": "s-mark-gillespie",
+        "name": "Mark Gillespie",
+        "nationality": "England",
+        "dob": "1992-03-27",
+        "position": "GK",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/2Wj4o1mgJLyiAbq9BZ1rZM/eef75d19d2b113d1e03965bcab9e2b3d/Mark_Gillespie-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/81441.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/40/66/124066_mark_gillespie_20260114154144.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/142389-1746646196.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+            "statshub": "https://images.statshub.com/player/108508.png"
+        }
+    },
+    {
+        "id": "s-matias-fernandez-pardo",
+        "name": "Matias Fernandez-Pardo",
+        "nationality": "Belgium",
+        "dob": "2005-02-03",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "official-other": "https://contentfulproxy.stadion.io/9ec6988xevcz/6UXfJi8QXbFUfkVrrDfFiP/610a8507a7c91e982640af1504276134/MFP26-2.jpg?fm=webp&fit=fill&f=top_right&w=1920&h=1080&q=75",
+            "premierleague": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/40/69/914069_matias_fernandez_pardo_20260726150405.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/724129-1780057362.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/1149144.png"
+        }
+    },
+    {
+        "id": "s-nick-pope",
+        "name": "Nick Pope",
+        "nationality": "England",
+        "dob": "1992-04-19",
+        "position": "GK",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/2ZjRJzZDC7AIvY4xGF8APE/6d65dbab44561e703d80fa41319c8a0e/26_04_08_NUFC_ECOMM_HOME_1_POPE_068-1-3.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/98747.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/02/27/210227_nick_pope_20251021194405.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/192080-1663841362.jpg",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+            "statshub": "https://images.statshub.com/player/162653.png"
+        }
+    },
+    {
+        "id": "s-nick-woltemade",
+        "name": "Nick Woltemade",
+        "nationality": "Germany",
+        "dob": "2002-02-14",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/3WIZhSqXFMieqRCuqxiyj/25e92943b3fbe417d55e65f90d0e84e7/Nick_Woltemade-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/66/58/716658_nick_woltemade_20260614171524.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/455661-1779983237.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/980623.png"
+        }
+    },
+    {
+        "id": "s-nico-gonzalez",
+        "name": "Nico González",
+        "nationality": "Spain",
+        "dob": "2002-01-03",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/ul8YkNp3wjr80fKS1YVXS/69c90120dcefcddcee8930794707ced0/Nico-Prem-League0003-removebg-preview-2-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/27/88/662788_nico_gonzalez_20251110002355.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/466805-1743669968.jpg",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/954056.png"
+        }
+    },
+    {
+        "id": "s-odysseas-vlachodimos",
+        "name": "Odysseas Vlachodimos",
+        "nationality": "Greece",
+        "dob": "1994-04-26",
+        "position": "GK",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "premierleague": "",
+            "other-official": "https://mediaverse.sevillafc.hiway.media/image/2026/08/14/6a7eceef/Odysseas.png?webp&q=70&size=-x610.5",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/71/06/197106_odysseas_vlachodimos_20251025141041.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/124419-1706829687.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+            "statshub": "https://images.statshub.com/player/138149.png"
+        }
+    },
+    {
+        "id": "s-park-seung-soo",
+        "name": "Park Seung-soo",
+        "nationality": "South Korea",
+        "dob": "2007-03-17",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/623110.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/01/20/1810120_park_seung_soo_20260114154649.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1134717-1755456190.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+            "statshub": "https://images.statshub.com/player/1501498.png"
+        }
+    },
+    {
+        "id": "s-sam-alabi",
+        "name": "Sam Alabi",
+        "nationality": "England",
+        "dob": "2009-07-09",
+        "position": "MID",
+        "photos": {
+            "official-profile": "",
+            "premierleague": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/72/96/1547296_sam_alabi_20251227141852.png",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "https://sortitoutsi.b-cdn.net/uploads/face/face_2000494868.png",
+            "statshub": ""
+        }
+    },
+    {
+        "id": "s-sean-neave",
+        "name": "Sean Neave",
+        "nationality": "England",
+        "dob": "2007-05-27",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/3Gr2fHRv58uNUybKU3olT4/00ea9ec80ef625e1aa9f44b02c5bc00f/Sean_Neave-2-removebg-preview-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/599303.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1071818-1769071089.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/09/07/1030907_sean_neave_20250403171953.png",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+            "statshub": ""
+        }
+    },
+    {
+        "id": "s-sean-steur",
+        "name": "Sean Steur",
+        "nationality": "Netherlands",
+        "dob": "2008-01-11",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/6BJbLzecnUNRqxSfSpjjLK/27f83f1f2efa0a72551a148cff039f1c/Sean_Steur-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/636852.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/43/19/1634319_sean_steur_20260803092104.jpg",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1111063-1788281171.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/1859920.png"
+        }
+    },
+    {
+        "id": "s-sven-botman",
+        "name": "Sven Botman",
+        "nationality": "Netherlands",
+        "dob": "2000-01-12",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/7jijBzTTazGe71BoLOKGSk/e8aa77849932bcb02ea969fb7b14ac0a/Sven_Botman-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/220237.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/21/17/532117_sven_botman_20251021194313.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/361093-1683290679.jpg",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/910046.png"
+        }
+    },
+    {
+        "id": "s-tino-livramento",
+        "name": "Tino Livramento",
+        "nationality": "England",
+        "dob": "2002-11-12",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/2dipMzwjV4PUHVlAPy5U3V/f243e95e34867825ce96ce8beffa75a8/Tino_Livramento-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/441191.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/31/75/643175_tino_livramento_20260114154143.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/503981-1699383321.jpg",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/980634.png"
+        }
+    },
+    {
+        "id": "s-trevan-sanusi",
+        "name": "Trevan Sanusi",
+        "nationality": "England",
+        "dob": "2007-04-25",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "premierleague": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/41/17/1044117_trevan_sanusi_20260801115023.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1011152-1746640468.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+            "statshub": ""
+        }
+    },
+    {
+        "id": "s-will-osula",
+        "name": "Will Osula",
+        "nationality": "Denmark",
+        "dob": "2003-08-04",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/8voggQvDbeuG5AgRo5Jqe/87a289d673fe7eb839471a1748d57b1e/William_Osula-01-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/538207.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/97/75/859775_will_osula_20250128142220.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/609556-1693217416.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/1122603.png"
+        }
+    },
+    {
+        "id": "s-yoane-wissa",
+        "name": "Yoane Wissa",
+        "nationality": "DR Congo",
+        "dob": "1996-09-03",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/7futvkUcOpWYZbDTkMCXis/61e79dab670da75e7708fbee6c289b8a/Yoane_Wisse-2-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/216646.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/76/12/477612_yoane_wissa_20251206174242.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/388165-1740646948.jpg?lm=4711",
+            "besoccer": "",
+            "flashscore": "",
+            "fminside": "",
+            "fotmob": "",
+            "sofascore": "",
+            "sortitoutsi": "",
+			"statshub": "https://images.statshub.com/player/805123.png"
+        }
+    },
+    {
+        "id": "u21-afner-ca",
+        "name": "Afner Cá",
+        "nationality": "Guinea-Bissau",
+        "dob": "2007-07-08",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/53/66/1065366_afner_ca_20260718194741.jpg",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1428060-1765911835.png?lm=4711"
+        }
+    },
+    {
+        "id": "u21-alex-walpole",
+        "name": "Alex Walpole",
+        "nationality": "England",
+        "dob": "2006-12-21",
+        "position": "GK",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/67/85/1296785_alex_walpole_20260613213636.jpg"
+        }
+    },
+    {
+        "id": "u21-alfie-hutchison",
+        "name": "Alfie Hutchison",
+        "nationality": "Scotland",
+        "dob": "2009-01-22",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "sortitoutsi": "https://sortitoutsi.b-cdn.net/uploads/face/face_2000478937.png"
+        }
+    },
+    {
+        "id": "u21-anthony-munda",
+        "name": "Anthony Munda",
+        "nationality": "England",
+        "dob": "2006-09-08",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "swindontownfcservices": "https://images.gc.swindontownfcservices.co.uk/fit-in/1200x675/71812f30-9bba-11f1-99a4-6b22d15e6366.webp",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1019167-1699385849.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/78/94/1007894_anthony_munda_20251001201705.png"
+        }
+    },
+    {
+        "id": "u21-antonio-cordero",
+        "name": "Antonio Cordero",
+        "nationality": "Spain",
+        "dob": "2006-11-14",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/77/72/1247772_antonio_cordero_20260811170636.jpg",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1178393-1725885968.jpg?lm=4711"
+        }
+    },
+    {
+        "id": "u21-baran-yildiz",
+        "name": "Baran Yıldız",
+        "nationality": "Turkey",
+        "dob": "2007-01-02",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1370686-1749021666.jpg?lm=4711"
+        }
+    },
+    {
+        "id": "u21-dylan-charlton",
+        "name": "Dylan Charlton",
+        "nationality": "England",
+        "dob": "2006-07-02",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/59/03/935903_dylan_charlton_20251001201613.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/965725-1699386251.jpg?lm=4711"
+        }
+    },
+    {
+        "id": "u21-fraser-harper",
+        "name": "Fraser Harper",
+        "nationality": "England",
+        "dob": "2006-10-02",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/04/99/1150499_fraser_harper_20240722191406.jpg",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3220363.jpg"
+        }
+    },
+    {
+        "id": "u21-george-mair",
+        "name": "George Mair",
+        "nationality": "England",
+        "dob": "2009-09-28",
+        "position": "GK",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3533990.jpg?size=120x&lossy=1",
+            "other": "https://i2-prod.chroniclelive.co.uk/article32564003.ece/ALTERNATES/s1200e/0_England-v-Venezuela-Mens-U17-International.jpg"
+        }
+    },
+    {
+        "id": "u21-guy-bloomer",
+        "name": "Guy Bloomer",
+        "nationality": "England",
+        "dob": "2007-09-13",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "sortitoutsi": "https://sortitoutsi.b-cdn.net/uploads/face/face_2000409918.png"
+        }
+    },
+    {
+        "id": "u21-henry-johnson",
+        "name": "Henry Johnson",
+        "nationality": "England",
+        "dob": "2008-01-01",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/38/02/1243802_henry_johnson_20260811215400.jpg"
+        }
+    },
+    {
+        "id": "u21-isaac-moran",
+        "name": "Isaac Moran",
+        "nationality": "England",
+        "dob": "2009-03-14",
+        "position": "MID",
+        "photos": {
+            "sortitoutsi": "https://sortitoutsi.b-cdn.net/uploads/face/face_2000494866.png"
+        }
+    },
+    {
+        "id": "u21-jake-durrant",
+        "name": "Jake Durrant",
+        "nationality": "England",
+        "dob": "2008-02-04",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "sortitoutsi": "https://sortitoutsi.b-cdn.net/uploads/face/face_2000409933.png"
+        }
+    },
+    {
+        "id": "u21-johnny-emerson",
+        "name": "Johnny Emerson",
+        "nationality": "Scotland",
+        "dob": "2005-11-30",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "google": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf1k1b3tjX5M6p06x-9vK73SdMpBGO5mDQVl8kwTioQg&s=10",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/953865-1699386383.jpg?lm=4711",
+            "statshub": "https://images.statshub.com/player/1469898.png"
+        }
+    },
+    {
+        "id": "u21-kacey-wooster",
+        "name": "Kacey Wooster",
+        "nationality": "England",
+        "dob": "2008-04-04",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/42/62/1274262_kacey_wooster_20250414162914.jpg"
+        }
+    },
+    {
+        "id": "u21-kyle-fitzgerald",
+        "name": "Kyle Fitzgerald",
+        "nationality": "Ireland",
+        "dob": "2007-01-28",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/22/31/1242231_kyle_fitzgerald_20250331043113.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1566262/image"
+        }
+    },
+    {
+        "id": "u21-logan-watts",
+        "name": "Logan Watts",
+        "nationality": "England",
+        "dob": "2007-01-22",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000302083.png",
+            "statshub": "https://images.statshub.com/player/1610751.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3358379.jpg",
+            "sortitoutsi": "https://sortitoutsi.b-cdn.net/uploads/face/face_2000302083.png"
+        }
+    },
+    {
+        "id": "u21-luke-craggs",
+        "name": "Luke Craggs",
+        "nationality": "England",
+        "dob": "2007-07-14",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1428136.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000302078.png",
+            "flashscore": "https://static.flashscore.com/res/image/data/0zSVdjDa-IilUkOMU.png"
+        }
+    },
+    {
+        "id": "u21-mason-miley",
+        "name": "Mason Miley",
+        "nationality": "England",
+        "dob": "2008-09-29",
+        "position": "MID",
+        "photos": {
+            "sortitoutsi": "https://sortitoutsi.b-cdn.net/uploads/face/face_2000494899.png"
+        }
+    },
+    {
+        "id": "u21-matheos-ferreira",
+        "name": "Matheos Ferreira",
+        "nationality": "England",
+        "dob": "2008-08-02",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1531976.png"
+        }
+    },
+    {
+        "id": "u21-michael-mills",
+        "name": "Michael Mills",
+        "nationality": "England",
+        "dob": "2009-02-18",
+        "position": "FWD",
+        "photos": {
+            "sortitoutsi": "https://sortitoutsi.b-cdn.net/uploads/face/face_2000494885.png"
+        }
+    },
+    {
+        "id": "u21-miodrag-pivas",
+        "name": "Miodrag Pivaš",
+        "nationality": "Serbia",
+        "dob": "2005-05-17",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/42/05/914205_miodrag_pivas_20241202125733.jpg",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/908890-1732871936.jpg?lm=4711"
+        }
+    },
+    {
+        "id": "u21-mo-waddani",
+        "name": "Mo Waddani",
+        "nationality": "England",
+        "dob": "2007-11-28",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "twitter": "https://pbs.twimg.com/media/Gc2obJRXUAAtdkK?format=jpg&name=large",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/98/36/1179836_mohamed_waddani_20250817164940.jpg"
+        }
+    },
+    {
+        "id": "u21-oliver-holland",
+        "name": "Oliver Holland",
+        "nationality": "England",
+        "dob": "2009-01-03",
+        "position": "GK",
+        "photos": {}
+    },
+    {
+        "id": "u21-ousmane-diabate",
+        "name": "Ousmane Diabaté",
+        "nationality": "Guinea",
+        "dob": "2007-09-24",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/93/59/3509359_ousmane_diabate_20260609163147.jpg"
+        }
+    },
+    {
+        "id": "u21-roman-dowell",
+        "name": "Roman Dowell",
+        "nationality": "England",
+        "dob": "2009-12-03",
+        "position": "GK",
+        "photos": {
+            "sofascore": "https://img.sofascore.com/api/v1/player/2249953/image",
+            "other": "https://i2-prod.chroniclelive.co.uk/article32563998.ece/ALTERNATES/s1200e/0_England-v-Venezuela-Mens-U17-International.jpg"
+        }
+    },
+    {
+        "id": "u21-rory-finneran",
+        "name": "Rory Finneran",
+        "nationality": "Ireland",
+        "dob": "2008-02-29",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/97/959597__20221201144230_rory_finneran.jpg",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1081165-1762419106.jpg?lm=4711"
+        }
+    },
+    {
+        "id": "u21-scott-bailey",
+        "name": "Scott Bailey",
+        "nationality": "England",
+        "dob": "2006-01-22",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/52/66/945266_scott_bailey_20251001201754.png"
+        }
+    },
+    {
+        "id": "u21-tyler-jones",
+        "name": "Tyler Jones",
+        "nationality": "England",
+        "dob": "2008-04-18",
+        "position": "GK",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/45/07/1264507_tyler_jones_20250918220447.jpg"
+        }
+    },
+    {
+        "id": "u21-vakhtang-salia",
+        "name": "Vakhtang Salia",
+        "nationality": "Georgia",
+        "dob": "2007-08-30",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/66/22/1036622_vakhtang_salia_20250307142931.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1077436-1713341685.png?lm=4711"
+        }
+    },
+    {
+        "id": "u18-aaron-epia",
+        "name": "Aaron Epia",
+        "nationality": "Poland",
+        "dob": "2008-04-07",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://resources.premierleague.com/premierleague25/photos/players/110x140/placeholder.png",
+            "sortitoutsi": "https://sortitoutsi.b-cdn.net/uploads/face/face_2000410007.png"
+        }
+    },
+    {
+        "id": "u18-alfie-seldon",
+        "name": "Alfie Seldon",
+        "nationality": "England",
+        "dob": "2009-10-20",
+        "position": "FWD",
+        "photos": {
+            "google": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVBhZW_aaECi4awu1IIPB__CTHhz6hH7VB8hC8YmzYw&s=10"
+        }
+    },
+    {
+        "id": "u18-charlie-robinson",
+        "name": "Charlie Robinson",
+        "nationality": "England",
+        "dob": "2011-03-16",
+        "position": "FWD",
+        "photos": {
+            "twitter": "https://pbs.twimg.com/media/HPrNeSzXcAADxco?format=jpg&name=900x900"
+        }
+    },
+    {
+        "id": "u18-christian-boothe",
+        "name": "Christian Boothe",
+        "nationality": "England",
+        "dob": "2009-11-27",
+        "position": "MID",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/7hw3iF3lKjrfjz8UqCjiTA/066c6b6463c59624cbdc8c86e663ceb4/Christian_Boothe_signing.jpg?fm=webp&fit=fill&f=top&w=1024&h=769&q=75"
+        }
+    },
+    {
+        "id": "u18-chukwudi-afumuzor",
+        "name": "Chukwudi Afumuzor",
+        "nationality": "England",
+        "dob": "2009-10-21",
+        "position": "MID",
+        "photos": {
+            "google": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-9_xgOB6C-tWQ6niobDeMu2l8j0wjWpptbC7mxlvegA&s=10"
+        }
+    },
+    {
+        "id": "u18-ethan-ndiweni",
+        "name": "Ethan Ndiweni",
+        "nationality": "England",
+        "dob": "2008-09-17",
+        "position": "FWD",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/82/07/2008207_ethan_ndiweni_20251102173438.jpg"
+        }
+    },
+    {
+        "id": "u18-jack-callaghan",
+        "name": "Jack Callaghan",
+        "nationality": "England",
+        "dob": "2008-12-06",
+        "position": "MID",
+        "photos": {}
+    },
+    {
+        "id": "u18-jack-patterson",
+        "name": "Jack Patterson",
+        "nationality": "England",
+        "dob": "2008-09-19",
+        "position": "MID",
+        "photos": {
+            "google": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbtqv59a0GddJ8goAsSYxmBwQEqACP_vtVKroRAnK8gw&s=10"
+        }
+    },
+    {
+        "id": "u18-jack-skelton",
+        "name": "Jack Skelton",
+        "nationality": "England",
+        "dob": "",
+        "squadIfDobUnknown": "U16",
+        "position": "FWD",
+        "photos": {
+            "twitter": "https://pbs.twimg.com/media/HQ5LHDdW8AA1oI8?format=jpg&name=large"
+        }
+    },
+    {
+        "id": "u18-jayden-kouossu",
+        "name": "Jayden Kouossu",
+        "nationality": "England",
+        "dob": "2010-04-28",
+        "position": "MID",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/63/25/2756325_jayden_kouossu_20250823133012.jpg"
+        }
+    },
+    {
+        "id": "u18-johan-martinez",
+        "name": "Johan Martinez",
+        "nationality": "Ecuador",
+        "dob": "2009-05-10",
+        "position": "FWD",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/02/98/3530298_johan_martinez_20260330214037.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1531763-1774964792.JPG?lm=4711"
+        }
+    },
+    {
+        "id": "u18-kyle-healy-matthews",
+        "name": "Kyle Healy-Matthews",
+        "nationality": "England",
+        "dob": "2009-11-25",
+        "position": "DEF",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/7uI6J7o9F4qYlI9sYMRm77/931f2454ed24c85ee9c2bb324a112306/Kyle_Healy-Matthews_signing.jpg?fm=webp&fit=fill&f=top&w=1024&h=768&q=75"
+        }
+    },
+    {
+        "id": "u21-kyran-thompson",
+        "name": "Kyran Thompson",
+        "nationality": "England",
+        "dob": "2009-09-06",
+        "position": "FWD",
+        "photos": {
+            "official-profile": "https://contentfulproxy.stadion.io/9ec6988xevcz/1jIY9K9DM7ENZzCA45CAAQ/98002a2ec69adcc53f4caa85661e0a31/Kyran_Thompson_signing.jpg?fm=webp&fit=fill&f=top&w=1024&h=768&q=75",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1396386-1771439566.jpg?lm=4711"
+        }
+    },
+    {
+        "id": "u18-leo-harper",
+        "name": "Leo Harper",
+        "nationality": "England",
+        "dob": "",
+        "squadIfDobUnknown": "U16",
+        "position": "GK",
+        "photos": {}
+    },
+    {
+        "id": "u18-leon-mukumbira",
+        "name": "Leon Mukumbira",
+        "nationality": "England",
+        "dob": "2009-12-07",
+        "position": "FWD",
+        "photos": {}
+    },
+    {
+        "id": "u18-les-yeutembip",
+        "name": "Les Yeutembip",
+        "nationality": "England",
+        "dob": "2010-01-01",
+        "position": "DEF",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/99/93/2519993_les_yeutembip_20251111170238.png"
+        }
+    },
+    {
+        "id": "u18-lucas-flack",
+        "name": "Lucas Flack",
+        "nationality": "England",
+        "dob": "2011-07-02",
+        "position": "GK",
+        "photos": {
+            "google": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtTLYB6EwswRPN_yHpFcHXd2qSqiTifCICQQZDtf7Apg&s=10"
+        }
+    },
+    {
+        "id": "u18-luke-gilligan",
+        "name": "Luke Gilligan",
+        "nationality": "England",
+        "dob": "2008-12-14",
+        "position": "MID",
+        "photos": {}
+    },
+    {
+        "id": "u18-muawiya-ghanem",
+        "name": "Muawiya Ghanem",
+        "nationality": "England",
+        "dob": "2010-12-23",
+        "position": "MID",
+        "photos": {
+            "google": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM3TJ5rkLr1inc9w9QGBrHc6dS7jyQ8iDWiREruox5cg&s=10"
+        }
+    },
+    {
+        "id": "u18-noah-morgan",
+        "name": "Noah Morgan",
+        "nationality": "England",
+        "dob": "2008-10-06",
+        "position": "DEF",
+        "photos": {
+            "twitter": "https://pbs.twimg.com/media/HQ4z2PiWEAAi1ya?format=jpg&name=small"
+        }
+    },
+    {
+        "id": "u18-oliver-goodbrand",
+        "name": "Oliver Goodbrand",
+        "nationality": "Scotland",
+        "dob": "2009-02-09",
+        "position": "DEF",
+        "photos": {
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/big/1186522-1771615740.jpg?lm=4711"
+        }
+    },
+    {
+        "id": "u18-sammy-pinnington",
+        "name": "Sammy Pinnington",
+        "nationality": "England",
+        "dob": "2008-11-17",
+        "position": "FWD",
+        "photos": {
+            "sortitoutsi": "https://sortitoutsi.b-cdn.net/uploads/face/face_2000494884.png"
+        }
+    },
+    {
+        "id": "u18-theo-benjamin",
+        "name": "Theo Benjamin",
+        "nationality": "England",
+        "dob": "2010-08-01",
+        "position": "FWD",
+        "photos": {
+            "cloudfront": "https://duaue565oke9q.cloudfront.net/uploads/ibercup/cascais/theo-benjamin-39-67fe2c3e6e612.jpg"
+        }
+    },
+    {
+        "id": "u18-thomas-old",
+        "name": "Thomas Old",
+        "nationality": "England",
+        "dob": "2008-09-19",
+        "position": "DEF",
+        "photos": {}
+    },
+    {
+        "id": "s-aaron-ramsdale",
+        "name": "Aaron Ramsdale",
+        "nationality": "England",
+        "dob": "1998-05-14",
+        "position": "GK",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/00/63/490063_aaron_ramsdale_20251227213501.png"
+        }
+    },
+    {
+        "id": "s-adam-harrison",
+        "name": "Adam Harrison",
+        "nationality": "England",
+        "dob": "2006-10-20",
+        "position": "GK",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/55/1048755_20231219194823_adam_harrison_1703015303.jpg"
+        }
+    },
+    {
+        "id": "s-anthony-gordon",
+        "name": "Anthony Gordon",
+        "nationality": "England",
+        "dob": "2001-02-24",
+        "position": "FWD",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/93/46/549346_anthony_gordon_20251021194529.png"
+        }
+    },
+    {
+        "id": "s-ben-parkinson",
+        "name": "Ben Parkinson",
+        "nationality": "England",
+        "dob": "2005-03-10",
+        "position": "FWD",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/98/39/889839_ben_parkinson_20241005135529.jpg"
+        }
+    },
+    {
+        "id": "s-bruno-guimaraes",
+        "name": "Bruno Guimarães",
+        "nationality": "Brazil",
+        "dob": "1997-11-16",
+        "position": "MID",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/34/78/463478_bruno_guimaraes_20260825170922.png"
+        }
+    },
+    {
+        "id": "s-callum-wilson",
+        "name": "Callum Wilson",
+        "nationality": "England",
+        "dob": "",
+        "position": "FWD",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/39/65/153965_callum_wilson_20260825163925.png"
+        },
+        "squadIfDobUnknown": "senior"
+    },
+    {
+        "id": "s-emil-krafth",
+        "name": "Emil Krafth",
+        "nationality": "Sweden",
+        "dob": "1994-08-02",
+        "position": "DEF",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/20/71/192071_emil_krafth_20260114154142.png"
+        }
+    },
+    {
+        "id": "s-isaac-hayden",
+        "name": "Isaac Hayden",
+        "nationality": "Jamaica",
+        "dob": "1995-03-22",
+        "position": "MID",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/23/58/282358_isaac_hayden_20240216174920.jpg"
+        }
+    },
+    {
+        "id": "s-jamaal-lascelles",
+        "name": "Jamaal Lascelles",
+        "nationality": "England",
+        "dob": "1993-11-11",
+        "position": "DEF",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/95/00/209500_jamaal_lascelles_20260114154427.png"
+        }
+    },
+    {
+        "id": "s-jamal-lewis",
+        "name": "Jamal Lewis",
+        "nationality": "Northern Ireland",
+        "dob": "1998-01-25",
+        "position": "DEF",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/10/80/481080_jamal_lewis_20251128145255.png"
+        }
+    },
+    {
+        "id": "s-james-huntley",
+        "name": "James Huntley",
+        "nationality": "England",
+        "dob": "2004-03-02",
+        "position": "MID",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/13/749813_20230529123003_james_huntley.png"
+        }
+    },
+    {
+        "id": "s-joe-white",
+        "name": "Joe White",
+        "nationality": "England",
+        "dob": "2002-10-01",
+        "position": "MID",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/98/23/659823_joe_white_20240816000909.png"
+        }
+    },
+    {
+        "id": "s-john-ruddy",
+        "name": "John Ruddy",
+        "nationality": "England",
+        "dob": "1986-10-24",
+        "position": "GK",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/75/67/17567_john_ruddy_20240815235253.png"
+        }
+    },
+    {
+        "id": "s-kieran-trippier",
+        "name": "Kieran Trippier",
+        "nationality": "England",
+        "dob": "1990-09-19",
+        "position": "DEF",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/44/65/114465_kieran_trippier_20251021194219.png"
+        }
+    },
+    {
+        "id": "s-lloyd-kelly",
+        "name": "Lloyd Kelly",
+        "nationality": "England",
+        "dob": "",
+        "position": "DEF",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/01/18/490118_lloyd_kelly_20260104222922.png"
+        },
+        "squadIfDobUnknown": "senior"
+    },
+    {
+        "id": "s-martin-dubravka",
+        "name": "Martin Dúbravka",
+        "nationality": "Slovakia",
+        "dob": "",
+        "position": "GK",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/30/15/73015_martin_dubravka_20251227221127.png"
+        },
+        "squadIfDobUnknown": "senior"
+    },
+    {
+        "id": "s-matt-targett",
+        "name": "Matt Targett",
+        "nationality": "England",
+        "dob": "1995-09-18",
+        "position": "DEF",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/22/46/372246_matt_targett_20260822124001.png"
+        }
+    },
+    {
+        "id": "s-max-thompson",
+        "name": "Max Thompson",
+        "nationality": "England",
+        "dob": "2004-08-01",
+        "position": "GK",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/59/65/705965_max_thompson_20251218141646.png"
+        }
+    },
+    {
+        "id": "s-miguel-almiron",
+        "name": "Miguel Almirón",
+        "nationality": "Paraguay",
+        "dob": "",
+        "position": "FWD",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/97/39/309739_miguel_almiron_20260222193745.png"
+        },
+        "squadIfDobUnknown": "senior"
+    },
+    {
+        "id": "s-sandro-tonali",
+        "name": "Sandro Tonali",
+        "nationality": "Italy",
+        "dob": "2000-05-08",
+        "position": "MID",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/63/04/586304_sandro_tonali_20260114154428.png"
+        }
+    },
+    {
+        "id": "s-sean-longstaff",
+        "name": "Sean Longstaff",
+        "nationality": "England",
+        "dob": "",
+        "position": "MID",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/97/10/449710_sean_longstaff_20260824163744.png"
+        },
+        "squadIfDobUnknown": "senior"
+    },
+    {
+        "id": "s-the-rat",
+        "name": "The Rat",
+        "nationality": "Sweden",
+        "dob": "",
+        "position": "FWD",
+        "photos": {
+            "other": "https://i.ibb.co/xSGBsg2n/The-Rat.png"
+        },
+        "squadIfDobUnknown": "senior"
+    },
+    {
+        "id": "s-travis-hernes",
+        "name": "Travis Hernes",
+        "nationality": "Norway",
+        "dob": "2005-11-04",
+        "position": "MID",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/20/1011820_20220911131153_travis_hearnes.jpg"
+        }
+    },
+    {
+        "id": "u21-alex-odonovan",
+        "name": "Alex O'Donovan",
+        "nationality": "England",
+        "dob": "2007-10-03",
+        "position": "MF",
+        "photos": {}
+    },
+    {
+        "id": "u21-alfie-harrison",
+        "name": "Alfie Harrison",
+        "nationality": "England",
+        "dob": "2005-11-28",
+        "position": "MID",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/00/1007900_20240201161538_alfie_harrison_1706804138.jpg"
+        }
+    },
+    {
+        "id": "u21-cathal-heffernan",
+        "name": "Cathal Heffernan",
+        "nationality": "Ireland",
+        "dob": "2005-04-27",
+        "position": "DEF",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/44/32/914432_cathal_heffernan_20241005135626.jpg"
+        }
+    },
+    {
+        "id": "u21-charlie-mcarthur",
+        "name": "Charlie McArthur",
+        "nationality": "Scotland",
+        "dob": "2005-05-12",
+        "position": "DEF",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/99/53/879953_charlie_mcarthur_20260826124208.png"
+        }
+    },
+    {
+        "id": "u21-ciaran-thompson",
+        "name": "Ciaran Thompson",
+        "nationality": "England",
+        "dob": "2004-10-16",
+        "position": "DEF",
+        "photos": {}
+    },
+    {
+        "id": "u21-darren-palmer",
+        "name": "Darren Palmer",
+        "nationality": "England",
+        "dob": "2005-09-24",
+        "position": "MID",
+        "photos": {}
+    },
+    {
+        "id": "u21-garang-kuol",
+        "name": "Garang Kuol",
+        "nationality": "Australia",
+        "dob": "2004-09-15",
+        "position": "FWD",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/70/84/967084_garang_kuol_20260114165751.png"
+        }
+    },
+    {
+        "id": "u21-james-taylor",
+        "name": "James Taylor",
+        "nationality": "England",
+        "dob": "2006-07-11",
+        "position": "GK",
+        "photos": {}
+    },
+    {
+        "id": "u21-joe-brayson",
+        "name": "Joe Brayson",
+        "nationality": "England",
+        "dob": "2007-04-21",
+        "position": "FWD",
+        "photos": {}
+    },
+    {
+        "id": "u21-thomas-bryant",
+        "name": "Thomas Bryant",
+        "nationality": "England",
+        "dob": "2006-12-11",
+        "position": "DEF",
+        "photos": {}
+    },
+    {
+        "id": "u21-will-anderson",
+        "name": "Will Anderson",
+        "nationality": "England",
+        "dob": "2008-07-15",
+        "position": "GK",
+        "photos": {}
+    },
+    {
+        "id": "u18-ezra-tika-lemba",
+        "name": "Ezra Tika-Lemba",
+        "nationality": "England",
+        "dob": "2007-11-07",
+        "position": "DEF",
+        "photos": {}
+    },
+    {
+        "id": "u18-jude-cogdon",
+        "name": "Jude Cogdon",
+        "nationality": "England",
+        "dob": "2007-12-19",
+        "position": "MID",
+        "photos": {}
+    },
+    {
+        "id": "u18-kayden-lucas",
+        "name": "Kayden Lucas",
+        "nationality": "England",
+        "dob": "2007-10-30",
+        "position": "MID",
+        "photos": {}
+    },
+    {
+        "id": "u18-matty-taylor",
+        "name": "Matty Taylor",
+        "nationality": "England",
+        "dob": "2008-03-31",
+        "position": "MID",
+        "photos": {}
+    },
+    {
+        "id": "u18-will-mcpartland",
+        "name": "Will McPartland",
+        "nationality": "England",
+        "dob": "2008-01-20",
+        "position": "DEF",
+        "photos": {
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/04/18/1260418_will_mcpartland_20250321124610.png"
+        }
+    }
+]

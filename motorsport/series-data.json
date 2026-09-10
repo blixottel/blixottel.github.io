@@ -91,7 +91,7 @@
 		{
             "category": "formulaRegional",
             "name": "FR Europe",
-            "resultsVerified": false,
+            "resultsVerified": true,
             "nextDate": "12 Sep 2026",
             "links": {
                 "official": { "url": "https://fiafrec.com", "label": "Official site", "active": true },
@@ -1320,7 +1320,7 @@
 		{
             "category": "motorbikes",
             "name": "Moto4 Latin Cup",
-            "resultsVerified": false,
+            "resultsVerified": true,
             "nextDate": "26 Sep 2026",
             "links": {
                 "official": { "url": "https://www.moto4latincup.lat", "label": "Official site", "active": true },

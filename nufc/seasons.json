@@ -1,14 +1,14 @@
 [
-  {
-    "id": "2026-27",
-    "label": "2026/27",
-    "playersFile": "players-2026-27.json",
-    "fixturesFile": "fixtures-2026-27.json"
-  },
-  {
-    "id": "2025-26",
-    "label": "2025/26",
-    "playersFile": "players-2025-26.json",
-    "fixturesFile": "fixtures-2025-26.json"
-  }
+	{
+		"id": "2026-27", "label": "2026/27", "playersFile": "players-2026-27.json", "fixturesFile": "fixtures-2026-27.json",
+		"ageBands": [ { "squad": "u16", "bornOnOrAfter": "2010-09-01" }, { "squad": "u18", "bornOnOrAfter": "2008-09-01", "bornBefore": "2010-09-01" }, { "squad": "u21", "bornOnOrAfter": "2005-01-01", "bornBefore": "2008-09-01" } ]
+	},
+	{
+		"id": "2025-26", "label": "2025/26", "playersFile": "players-2025-26.json", "fixturesFile": "fixtures-2025-26.json",
+		"ageBands": [ { "squad": "u16", "bornOnOrAfter": "2009-09-01" }, { "squad": "u18", "bornOnOrAfter": "2007-09-01", "bornBefore": "2009-09-01" }, { "squad": "u21", "bornOnOrAfter": "2004-01-01", "bornBefore": "2007-09-01" } ]
+	},
+	{
+		"id": "2024-25", "label": "2024/25", "playersFile": "players-2024-25.json", "fixturesFile": "fixtures-2024-25.json", "requireDetailedStats": false,
+		"ageBands": [ { "squad": "u16", "bornOnOrAfter": "2008-09-01" }, { "squad": "u18", "bornOnOrAfter": "2006-09-01", "bornBefore": "2008-09-01" }, { "squad": "u21", "bornOnOrAfter": "2003-01-01", "bornBefore": "2006-09-01" } ]
+	}
 ]

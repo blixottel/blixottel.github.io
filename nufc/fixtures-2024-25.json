@@ -1,0 +1,312 @@
+{
+    "senior": {
+        "fixtures": [
+            { "id": "s-f1", "date": "2024-08-17", "opponent": "Southampton", "venue": "H", "competition": "Premier League", "result": "W 1-0", "subsUsed": 3, "subsUnused": 6, "assistsTotal": 1, "yellowCardsTotal": 2, "redCardsTotal": 1 },
+            { "id": "s-f2", "date": "2024-08-25", "opponent": "AFC Bournemouth", "venue": "A", "competition": "Premier League", "result": "D 1-1", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 1, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "s-f3", "date": "2024-08-28", "opponent": "Nottingham Forest", "venue": "A", "competition": "Carabao Cup", "result": "D 1-1", "subsUsed": 4, "subsUnused": 5, "assistsTotal": 0, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "s-f4", "date": "2024-09-01", "opponent": "Tottenham Hotspur", "venue": "H", "competition": "Premier League", "result": "W 2-1", "subsUsed": 4, "subsUnused": 5, "assistsTotal": 2, "yellowCardsTotal": 4, "redCardsTotal": 0 },
+            { "id": "s-f5", "date": "2024-09-15", "opponent": "Wolverhampton Wanderers", "venue": "A", "competition": "Premier League", "result": "W 2-1", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 2, "yellowCardsTotal": 3, "redCardsTotal": 0 },
+            { "id": "s-f6", "date": "2024-09-21", "opponent": "Fulham", "venue": "A", "competition": "Premier League", "result": "L 1-3", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 1, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "s-f7", "date": "2024-09-28", "opponent": "Manchester City", "venue": "H", "competition": "Premier League", "result": "D 1-1", "subsUsed": 3, "subsUnused": 6, "assistsTotal": 0, "yellowCardsTotal": 4, "redCardsTotal": 0 },
+            { "id": "s-f8", "date": "2024-10-01", "opponent": "AFC Wimbledon", "venue": "H", "competition": "Carabao Cup", "result": "W 1-0", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 0, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "s-f9", "date": "2024-10-05", "opponent": "Everton", "venue": "A", "competition": "Premier League", "result": "D 0-0", "subsUsed": 4, "subsUnused": 5, "assistsTotal": 0, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "s-f10", "date": "2024-10-19", "opponent": "Brighton and Hove Albion", "venue": "H", "competition": "Premier League", "result": "L 0-1", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 0, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "s-f11", "date": "2024-10-27", "opponent": "Chelsea", "venue": "A", "competition": "Premier League", "result": "L 1-2", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 1, "yellowCardsTotal": 3, "redCardsTotal": 0 },
+            { "id": "s-f12", "date": "2024-10-30", "opponent": "Chelsea", "venue": "H", "competition": "Carabao Cup", "result": "W 2-0", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 1, "yellowCardsTotal": 4, "redCardsTotal": 0, "ownGoalsFor": 1 },
+            { "id": "s-f13", "date": "2024-11-02", "opponent": "Arsenal", "venue": "H", "competition": "Premier League", "result": "W 1-0", "subsUsed": 3, "subsUnused": 6, "assistsTotal": 1, "yellowCardsTotal": 4, "redCardsTotal": 0 },
+            { "id": "s-f14", "date": "2024-11-10", "opponent": "Nottingham Forest", "venue": "A", "competition": "Premier League", "result": "W 3-1", "subsUsed": 3, "subsUnused": 6, "assistsTotal": 2, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "s-f15", "date": "2024-11-25", "opponent": "West Ham United", "venue": "H", "competition": "Premier League", "result": "L 0-2", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 0, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "s-f16", "date": "2024-11-30", "opponent": "Crystal Palace", "venue": "A", "competition": "Premier League", "result": "D 1-1", "subsUsed": 3, "subsUnused": 6, "assistsTotal": 0, "yellowCardsTotal": 3, "redCardsTotal": 0, "ownGoalsFor": 1 },
+            { "id": "s-f17", "date": "2024-12-04", "opponent": "Liverpool", "venue": "H", "competition": "Premier League", "result": "D 3-3", "subsUsed": 4, "subsUnused": 5, "assistsTotal": 3, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "s-f18", "date": "2024-12-07", "opponent": "Brentford", "venue": "A", "competition": "Premier League", "result": "L 2-4" },
+            { "id": "s-f19", "date": "2024-12-14", "opponent": "Leicester City", "venue": "H", "competition": "Premier League", "result": "W 4-0" },
+            { "id": "s-f20", "date": "2024-12-18", "opponent": "Brentford", "venue": "H", "competition": "Carabao Cup", "result": "W 3-1" },
+            { "id": "s-f21", "date": "2024-12-21", "opponent": "Ipswich Town", "venue": "A", "competition": "Premier League", "result": "W 4-0" },
+            { "id": "s-f22", "date": "2024-12-26", "opponent": "Aston Villa", "venue": "H", "competition": "Premier League", "result": "W 3-0" },
+            { "id": "s-f23", "date": "2024-12-30", "opponent": "Manchester United", "venue": "A", "competition": "Premier League", "result": "W 2-0" },
+            { "id": "s-f24", "date": "2025-01-04", "opponent": "Tottenham Hotspur", "venue": "A", "competition": "Premier League", "result": "W 2-1" },
+            { "id": "s-f25", "date": "2025-01-07", "opponent": "Arsenal", "venue": "A", "competition": "Carabao Cup", "result": "W 2-0" },
+            { "id": "s-f26", "date": "2025-01-12", "opponent": "Bromley", "venue": "H", "competition": "FA Cup", "result": "W 3-1" },
+            { "id": "s-f27", "date": "2025-01-15", "opponent": "Wolverhampton Wanderers", "venue": "H", "competition": "Premier League", "result": "W 3-0" },
+            { "id": "s-f28", "date": "2025-01-18", "opponent": "AFC Bournemouth", "venue": "H", "competition": "Premier League", "result": "L 1-4" },
+            { "id": "s-f29", "date": "2025-01-25", "opponent": "Southampton", "venue": "A", "competition": "Premier League", "result": "W 3-1" },
+            { "id": "s-f30", "date": "2025-02-01", "opponent": "Fulham", "venue": "H", "competition": "Premier League", "result": "L 1-2" },
+            { "id": "s-f31", "date": "2025-02-05", "opponent": "Arsenal", "venue": "H", "competition": "Carabao Cup", "result": "W 2-0" },
+            { "id": "s-f32", "date": "2025-02-08", "opponent": "Birmingham City", "venue": "A", "competition": "FA Cup", "result": "W 3-2" },
+            { "id": "s-f33", "date": "2025-02-15", "opponent": "Manchester City", "venue": "A", "competition": "Premier League", "result": "L 0-4" },
+            { "id": "s-f34", "date": "2025-02-23", "opponent": "Nottingham Forest", "venue": "H", "competition": "Premier League", "result": "W 4-3" },
+            { "id": "s-f35", "date": "2025-02-26", "opponent": "Liverpool", "venue": "A", "competition": "Premier League", "result": "L 0-2" },
+            { "id": "s-f36", "date": "2025-03-02", "opponent": "Brighton and Hove Albion", "venue": "H", "competition": "FA Cup", "result": "L 1-2" },
+            { "id": "s-f37", "date": "2025-03-10", "opponent": "West Ham United", "venue": "A", "competition": "Premier League", "result": "W 1-0" },
+            { "id": "s-f38", "date": "2025-03-16", "opponent": "Liverpool", "venue": "N", "competition": "Carabao Cup", "result": "W 2-1" },
+            { "id": "s-f39", "date": "2025-04-02", "opponent": "Brentford", "venue": "H", "competition": "Premier League", "result": "W 2-1" },
+            { "id": "s-f40", "date": "2025-04-07", "opponent": "Leicester City", "venue": "A", "competition": "Premier League", "result": "W 3-0" },
+            { "id": "s-f41", "date": "2025-04-13", "opponent": "Manchester United", "venue": "H", "competition": "Premier League", "result": "W 4-1" },
+            { "id": "s-f42", "date": "2025-04-16", "opponent": "Crystal Palace", "venue": "H", "competition": "Premier League", "result": "W 5-0" },
+            { "id": "s-f43", "date": "2025-04-19", "opponent": "Aston Villa", "venue": "A", "competition": "Premier League", "result": "L 1-4" },
+            { "id": "s-f44", "date": "2025-04-26", "opponent": "Ipswich Town", "venue": "H", "competition": "Premier League", "result": "W 3-0" },
+            { "id": "s-f45", "date": "2025-05-04", "opponent": "Brighton and Hove Albion", "venue": "A", "competition": "Premier League", "result": "D 1-1" },
+            { "id": "s-f46", "date": "2025-05-11", "opponent": "Chelsea", "venue": "H", "competition": "Premier League", "result": "W 2-0" },
+            { "id": "s-f47", "date": "2025-05-18", "opponent": "Arsenal", "venue": "A", "competition": "Premier League", "result": "L 0-1" },
+            { "id": "s-f48", "date": "2025-05-25", "opponent": "Everton", "venue": "H", "competition": "Premier League", "result": "L 0-1" }
+        ],
+        "appearances": {
+            "s-miguel-almiron": {
+                "s-f1": { "status": "unused_sub" }, "s-f2": { "status": "sub_on" }, "s-f3": { "status": "start" }, "s-f4": { "status": "sub_on" }, "s-f5": { "status": "unused_sub" }, "s-f6": { "status": "unused_sub" },
+                "s-f7": { "status": "unused_sub" }, "s-f8": { "status": "start" }, "s-f9": { "status": "sub_on" }, "s-f10": { "status": "sub_on" }, "s-f11": { "status": "start" }, "s-f12": { "status": "unused_sub" },
+                "s-f13": { "status": "unused_sub" },
+                "s-f14": { "status": "unused_sub" },
+                "s-f15": { "status": "unused_sub" },
+                "s-f16": { "status": "unused_sub" },
+                "s-f17": { "status": "unused_sub" }
+            },
+            "s-harrison-ashby": {
+                "s-f4": { "status": "loan" }, "s-f5": { "status": "loan" }, "s-f6": { "status": "loan" }, "s-f7": { "status": "loan" }, "s-f8": { "status": "loan" }, "s-f9": { "status": "loan" }, "s-f10": { "status": "loan" },
+                "s-f11": { "status": "loan" }, "s-f12": { "status": "loan" }, "s-f13": { "status": "loan" }, "s-f14": { "status": "loan" }, "s-f15": { "status": "loan" }, "s-f16": { "status": "loan" }, "s-f17": { "status": "loan" },
+                "s-f18": { "status": "loan" }, "s-f19": { "status": "loan" }, "s-f20": { "status": "loan" }, "s-f21": { "status": "loan" }, "s-f22": { "status": "loan" }, "s-f23": { "status": "loan" }, "s-f24": { "status": "loan" },
+                "s-f25": { "status": "loan" }, "s-f26": { "status": "loan" }, "s-f27": { "status": "loan" }, "s-f28": { "status": "loan" }, "s-f29": { "status": "loan" }, "s-f30": { "status": "loan" }, "s-f31": { "status": "loan" },
+                "s-f32": { "status": "loan" }, "s-f33": { "status": "loan" }, "s-f34": { "status": "loan" }, "s-f35": { "status": "loan" }, "s-f36": { "status": "loan" }, "s-f37": { "status": "loan" }, "s-f38": { "status": "loan" },
+                "s-f39": { "status": "loan" }, "s-f40": { "status": "loan" }, "s-f41": { "status": "loan" }, "s-f42": { "status": "loan" }, "s-f43": { "status": "loan" }, "s-f44": { "status": "loan" }, "s-f45": { "status": "loan" },
+                "s-f46": { "status": "loan" }, "s-f47": { "status": "loan" }, "s-f48": { "status": "loan" }
+            },
+            "s-harvey-barnes": {
+                "s-f1": { "status": "sub_on" }, "s-f2": { "status": "sub_on", "assists": 1 }, "s-f3": { "status": "start" }, "s-f4": { "status": "start", "goals": 1 }, "s-f5": { "status": "sub_on", "goals": 1 },
+                "s-f6": { "status": "start", "goals": 1 }, "s-f7": { "status": "start" }, "s-f8": { "status": "start" }, "s-f9": { "status": "start" }, "s-f10": { "status": "sub_on" }, "s-f11": { "status": "start" }, "s-f12": { "status": "unused_sub" },
+                "s-f13": { "status": "sub_on" },
+                "s-f14": { "status": "sub_on", "goals": 1 },
+                "s-f15": { "status": "sub_on" },
+                "s-f16": { "status": "sub_on" },
+                "s-f17": { "status": "sub_on" }
+            },
+            "s-sven-botman": {
+                "s-f1": { "status": "injured" }, "s-f2": { "status": "injured" }, "s-f3": { "status": "injured" }, "s-f4": { "status": "injured" }, "s-f5": { "status": "injured" }, "s-f6": { "status": "injured" }, "s-f7": { "status": "injured" },
+                "s-f8": { "status": "injured" }, "s-f9": { "status": "injured" }, "s-f10": { "status": "injured" }, "s-f11": { "status": "injured" }, "s-f12": { "status": "injured" }, "s-f13": { "status": "injured" }, "s-f14": { "status": "injured" },
+                "s-f15": { "status": "injured" }, "s-f16": { "status": "injured" }, "s-f17": { "status": "injured" }, "s-f18": { "status": "injured" }, "s-f19": { "status": "injured" }
+            },
+            "s-bruno-guimaraes": {
+                "s-f1": { "status": "start" }, "s-f2": { "status": "start" }, "s-f3": { "status": "sub_on", "yellowCard": true }, "s-f4": { "status": "start", "yellowCard": true }, "s-f5": { "status": "start", "assists": 1 },
+                "s-f6": { "status": "start" }, "s-f7": { "status": "start", "yellowCard": true }, "s-f8": { "status": "sub_on" }, "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "start" },
+                "s-f12": { "status": "sub_on" },
+                "s-f13": { "status": "start" },
+                "s-f14": { "status": "start" },
+                "s-f15": { "status": "start" },
+                "s-f16": { "status": "start" },
+                "s-f17": { "status": "start", "assists": 2 }
+            },
+            "s-dan-burn": {
+                "s-f1": { "status": "start", "yellowCard": true }, "s-f2": { "status": "start", "yellowCard": true }, "s-f3": { "status": "start" }, "s-f4": { "status": "start" }, "s-f5": { "status": "start", "yellowCard": true },
+                "s-f6": { "status": "start" }, "s-f7": { "status": "start" }, "s-f8": { "status": "sub_on" }, "s-f9": { "status": "start" }, "s-f10": { "status": "start", "yellowCard": true }, "s-f11": { "status": "start" },
+                "s-f12": { "status": "sub_on" },
+                "s-f13": { "status": "start" },
+                "s-f14": { "status": "start", "yellowCard": true },
+                "s-f15": { "status": "suspended" },
+                "s-f16": { "status": "start" },
+                "s-f17": { "status": "start" }
+            },
+            "s-martin-dubravka": {
+                "s-f1": { "status": "unused_sub" }, "s-f4": { "status": "unused_sub" }, "s-f5": { "status": "unused_sub" }, "s-f6": { "status": "unused_sub" }, "s-f7": { "status": "unused_sub" }, "s-f8": { "status": "start" },
+                "s-f9": { "status": "injured" }, "s-f10": { "status": "injured" }, "s-f11": { "status": "injured" }, "s-f12": { "status": "unused_sub" },
+                "s-f13": { "status": "unused_sub" },
+                "s-f14": { "status": "unused_sub" },
+                "s-f15": { "status": "unused_sub" },
+                "s-f16": { "status": "unused_sub" },
+                "s-f17": { "status": "unused_sub" }
+            },
+            "s-anthony-gordon": {
+                "s-f1": { "status": "start" }, "s-f2": { "status": "start", "goals": 1 }, "s-f3": { "status": "sub_on" }, "s-f4": { "status": "start" }, "s-f5": { "status": "start" }, "s-f6": { "status": "start" },
+                "s-f7": { "status": "start", "goals": 1 }, "s-f8": { "status": "sub_on" }, "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "injured" }, "s-f12": { "status": "start", "yellowCard": true },
+                "s-f13": { "status": "start", "assists": 1 },
+                "s-f14": { "status": "start" },
+                "s-f15": { "status": "start" },
+                "s-f16": { "status": "start", "yellowCard": true },
+                "s-f17": { "status": "start", "goals": 1 }
+            },
+            "s-lewis-hall": {
+                "s-f1": { "status": "start", "yellowCard": true }, "s-f2": { "status": "sub_on" }, "s-f3": { "status": "start", "yellowCard": true }, "s-f4": { "status": "sub_on" }, "s-f5": { "status": "start" }, "s-f6": { "status": "sub_on" },
+                "s-f7": { "status": "start" }, "s-f8": { "status": "sub_on" }, "s-f9": { "status": "start", "yellowCard": true }, "s-f10": { "status": "start", "yellowCard": true }, "s-f11": { "status": "start", "assists": 1 },
+                "s-f12": { "status": "start" },
+                "s-f13": { "status": "start" },
+                "s-f14": { "status": "start" },
+                "s-f15": { "status": "start" },
+                "s-f16": { "status": "start" },
+                "s-f17": { "status": "start" }
+            },
+            "s-joelinton": {
+                "s-f1": { "status": "start", "goals": 1 }, "s-f2": { "status": "start", "yellowCard": true }, "s-f3": { "status": "start" }, "s-f4": { "status": "start", "yellowCard": true }, "s-f5": { "status": "start", "yellowCard": true },
+                "s-f6": { "status": "start" }, "s-f7": { "status": "start", "yellowCard": true }, "s-f8": { "status": "start" }, "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "start" },
+                "s-f12": { "status": "start" },
+                "s-f13": { "status": "start" },
+                "s-f14": { "status": "start", "goals": 1 },
+                "s-f15": { "status": "start" },
+                "s-f16": { "status": "start" },
+                "s-f17": { "status": "start" }
+            },
+            "s-lloyd-kelly": {
+                "s-f1": { "status": "sub_on" }, "s-f2": { "status": "start" }, "s-f3": { "status": "unused_sub" }, "s-f4": { "status": "start", "assists": 1, "yellowCard": true }, "s-f5": { "status": "sub_on" }, "s-f6": { "status": "start" },
+                "s-f7": { "status": "unused_sub" }, "s-f8": { "status": "start" }, "s-f9": { "status": "unused_sub" }, "s-f10": { "status": "unused_sub" }, "s-f11": { "status": "sub_on" }, "s-f12": { "status": "start" },
+                "s-f13": { "status": "sub_on" },
+                "s-f14": { "status": "unused_sub" },
+                "s-f15": { "status": "start", "yellowCard": true },
+                "s-f16": { "status": "unused_sub" },
+                "s-f17": { "status": "unused_sub" }
+            },
+            "s-emil-krafth": {
+                "s-f1": { "status": "sub_on" }, "s-f2": { "status": "start" }, "s-f3": { "status": "start" }, "s-f4": { "status": "start" }, "s-f5": { "status": "unused_sub" }, "s-f6": { "status": "unused_sub" }, "s-f7": { "status": "unused_sub" },
+                "s-f8": { "status": "start" }, "s-f9": { "status": "unused_sub" }, "s-f10": { "status": "unused_sub" }, "s-f11": { "status": "unused_sub" }, "s-f12": { "status": "start" },
+                "s-f13": { "status": "unused_sub" }, "s-f15": { "status": "injured" }, "s-f16": { "status": "injured" }, "s-f17": { "status": "injured" }, "s-f18": { "status": "injured" }, "s-f19": { "status": "injured" },
+                "s-f20": { "status": "injured" }, "s-f21": { "status": "injured" }, "s-f22": { "status": "injured" }, "s-f23": { "status": "injured" }, "s-f24": { "status": "injured" }, "s-f25": { "status": "injured" }, "s-f26": { "status": "injured" }
+            },
+            "s-jamaal-lascelles": {
+                "s-f1": { "status": "injured" }, "s-f2": { "status": "injured" }, "s-f3": { "status": "injured" }, "s-f4": { "status": "injured" }, "s-f5": { "status": "injured" }, "s-f6": { "status": "injured" }, "s-f7": { "status": "injured" },
+                "s-f8": { "status": "injured" }, "s-f9": { "status": "injured" }, "s-f10": { "status": "injured" }, "s-f11": { "status": "injured" }, "s-f12": { "status": "injured" }, "s-f13": { "status": "injured" }, "s-f14": { "status": "injured" },
+                "s-f15": { "status": "injured" }, "s-f16": { "status": "injured" }, "s-f17": { "status": "injured" }, "s-f18": { "status": "injured" }, "s-f19": { "status": "injured" }, "s-f20": { "status": "injured" }, "s-f21": { "status": "injured" },
+                "s-f22": { "status": "injured" }, "s-f23": { "status": "injured" }, "s-f24": { "status": "injured" }, "s-f25": { "status": "injured" }, "s-f26": { "status": "injured" }, "s-f27": { "status": "injured" }, "s-f28": { "status": "injured" },
+                "s-f29": { "status": "injured" }, "s-f30": { "status": "injured" }, "s-f31": { "status": "injured" }, "s-f32": { "status": "injured" }, "s-f33": { "status": "injured" }, "s-f34": { "status": "injured" }, "s-f35": { "status": "injured" },
+                "s-f36": { "status": "injured" }, "s-f37": { "status": "injured" }, "s-f38": { "status": "injured" }, "s-f39": { "status": "injured" }, "s-f40": { "status": "injured" }, "s-f41": { "status": "injured" }, "s-f42": { "status": "injured" },
+                "s-f43": { "status": "injured" }, "s-f44": { "status": "injured" }, "s-f45": { "status": "injured" }
+            },
+            "s-tino-livramento": {
+                "s-f1": { "status": "start" }, "s-f2": { "status": "start" }, "s-f3": { "status": "sub_on" }, "s-f4": { "status": "start" }, "s-f5": { "status": "start" }, "s-f6": { "status": "sub_on" }, "s-f7": { "status": "sub_on" },
+                "s-f8": { "status": "start" }, "s-f9": { "status": "sub_on" }, "s-f10": { "status": "start" }, "s-f11": { "status": "start" }, "s-f12": { "status": "sub_on" },
+                "s-f13": { "status": "start" },
+                "s-f14": { "status": "start" },
+                "s-f15": { "status": "start" },
+                "s-f16": { "status": "start" },
+                "s-f17": { "status": "start" }
+            },
+            "s-sean-longstaff": {
+                "s-f1": { "status": "start" }, "s-f2": { "status": "start" }, "s-f3": { "status": "sub_on" }, "s-f4": { "status": "start", "yellowCard": true }, "s-f5": { "status": "start" }, "s-f6": { "status": "unused_sub" },
+                "s-f7": { "status": "sub_on" }, "s-f8": { "status": "start", "yellowCard": true }, "s-f9": { "status": "sub_on" }, "s-f10": { "status": "sub_on" }, "s-f11": { "status": "sub_on", "yellowCard": true },
+                "s-f12": { "status": "start", "yellowCard": true },
+                "s-f13": { "status": "start" },
+                "s-f14": { "status": "start" },
+                "s-f15": { "status": "start" },
+                "s-f16": { "status": "sub_on" },
+                "s-f17": { "status": "sub_on" }
+            },
+            "s-lewis-miley": {
+                "s-f1": { "status": "injured" }, "s-f2": { "status": "injured" }, "s-f3": { "status": "injured" }, "s-f4": { "status": "injured" }, "s-f5": { "status": "injured" }, "s-f6": { "status": "injured" }, "s-f7": { "status": "injured" },
+                "s-f8": { "status": "injured" }, "s-f9": { "status": "injured" }, "s-f10": { "status": "unused_sub" }, "s-f11": { "status": "unused_sub" }, "s-f12": { "status": "sub_on" },
+                "s-f13": { "status": "unused_sub" },
+                "s-f14": { "status": "unused_sub" }
+            },
+            "s-alex-murphy": {
+                "s-f2": { "status": "unused_sub" }, "s-f4": { "status": "unused_sub" }, "s-f7": { "status": "unused_sub" }, "s-f8": { "status": "unused_sub" }, "s-f12": { "status": "unused_sub" },
+                "s-f13": { "status": "unused_sub" }
+            },
+            "s-jacob-murphy": {
+                "s-f1": { "status": "start" }, "s-f2": { "status": "start" }, "s-f3": { "status": "unused_sub" }, "s-f4": { "status": "sub_on", "assists": 1 }, "s-f5": { "status": "start", "yellowCard": true },
+                "s-f6": { "status": "sub_on", "assists": 1 }, "s-f7": { "status": "start" }, "s-f8": { "status": "unused_sub" }, "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "sub_on" },
+                "s-f12": { "status": "injured" },
+                "s-f13": { "status": "injured" },
+                "s-f14": { "status": "unused_sub" },
+                "s-f15": { "status": "sub_on" },
+                "s-f16": { "status": "unused_sub" },
+                "s-f17": { "status": "start" }
+            },
+            "s-will-osula": {
+                "s-f1": { "status": "unused_sub" }, "s-f2": { "status": "unused_sub" }, "s-f3": { "status": "unused_sub" }, "s-f4": { "status": "unused_sub" }, "s-f5": { "status": "unused_sub" }, "s-f6": { "status": "sub_on" },
+                "s-f7": { "status": "unused_sub" }, "s-f8": { "status": "start" }, "s-f9": { "status": "unused_sub" }, "s-f10": { "status": "sub_on" }, "s-f11": { "status": "sub_on" }, "s-f12": { "status": "sub_on" },
+                "s-f13": { "status": "unused_sub" },
+                "s-f14": { "status": "sub_on" },
+                "s-f15": { "status": "unused_sub" },
+                "s-f16": { "status": "unused_sub" },
+                "s-f17": { "status": "unused_sub" }
+            },
+            "s-nick-pope": {
+                "s-f1": { "status": "start" }, "s-f2": { "status": "start" }, "s-f3": { "status": "start" }, "s-f4": { "status": "start" }, "s-f5": { "status": "start" }, "s-f6": { "status": "start" }, "s-f7": { "status": "start" },
+                "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "start" }, "s-f12": { "status": "start", "yellowCard": true },
+                "s-f13": { "status": "start", "yellowCard": true },
+                "s-f14": { "status": "start" },
+                "s-f15": { "status": "start" },
+                "s-f16": { "status": "start" },
+                "s-f17": { "status": "start", "yellowCard": true }
+            },
+            "s-the-rat": {
+                "s-f1": { "status": "start", "assists": 1 }, "s-f2": { "status": "start" }, "s-f3": { "status": "start" }, "s-f4": { "status": "start", "goals": 1 }, "s-f5": { "status": "start" }, "s-f6": { "status": "start" },
+                "s-f7": { "status": "injured" }, "s-f8": { "status": "injured" }, "s-f9": { "status": "injured" }, "s-f10": { "status": "start" }, "s-f11": { "status": "start", "goals": 1 }, "s-f12": { "status": "start", "goals": 1 },
+                "s-f13": { "status": "start", "goals": 1 },
+                "s-f14": { "status": "start", "goals": 1, "assists": 1 },
+                "s-f15": { "status": "start" },
+                "s-f16": { "status": "start" },
+                "s-f17": { "status": "start", "goals": 1, "assists": 1 }
+            },
+            "s-john-ruddy": {
+                "s-f2": { "status": "unused_sub" }, "s-f3": { "status": "unused_sub" }, "s-f8": { "status": "unused_sub" }, "s-f9": { "status": "unused_sub" }, "s-f11": { "status": "unused_sub" }
+            },
+            "s-fabian-schar": {
+                "s-f1": { "status": "start", "redCard": true }, "s-f2": { "status": "suspended" }, "s-f3": { "status": "suspended" }, "s-f4": { "status": "suspended" }, "s-f5": { "status": "start", "goals": 1 }, "s-f6": { "status": "start" },
+                "s-f7": { "status": "start", "yellowCard": true }, "s-f8": { "status": "start", "goals": 1 }, "s-f9": { "status": "start", "yellowCard": true }, "s-f10": { "status": "start" }, "s-f11": { "status": "start", "yellowCard": true },
+                "s-f12": { "status": "start", "yellowCard": true },
+                "s-f13": { "status": "start", "yellowCard": true },
+                "s-f14": { "status": "start" },
+                "s-f15": { "status": "start" },
+                "s-f16": { "status": "start" },
+                "s-f17": { "status": "start", "goals": 1 }
+            },
+            "s-matt-targett": {
+                "s-f1": { "status": "unused_sub" }, "s-f2": { "status": "unused_sub" }, "s-f3": { "status": "unused_sub" }, "s-f4": { "status": "unused_sub" }, "s-f5": { "status": "injured" }, "s-f6": { "status": "injured" },
+                "s-f7": { "status": "injured" }, "s-f8": { "status": "injured" }, "s-f9": { "status": "injured" }, "s-f10": { "status": "injured" }, "s-f11": { "status": "injured" }, "s-f12": { "status": "injured" }, "s-f13": { "status": "injured" },
+                "s-f14": { "status": "unused_sub" },
+                "s-f15": { "status": "unused_sub" },
+                "s-f17": { "status": "unused_sub" }
+            },
+            "s-sandro-tonali": {
+                "s-f1": { "status": "suspended" }, "s-f2": { "status": "suspended" }, "s-f3": { "status": "start" }, "s-f4": { "status": "sub_on" }, "s-f5": { "status": "sub_on" }, "s-f6": { "status": "sub_on" },
+                "s-f7": { "status": "start", "yellowCard": true }, "s-f8": { "status": "unused_sub" }, "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "start", "yellowCard": true },
+                "s-f12": { "status": "start", "assists": 1 },
+                "s-f13": { "status": "sub_on", "yellowCard": true },
+                "s-f14": { "status": "sub_on", "assists": 1 },
+                "s-f15": { "status": "sub_on" },
+                "s-f16": { "status": "start" },
+                "s-f17": { "status": "start", "yellowCard": true }
+            },
+            "s-kieran-trippier": {
+                "s-f1": { "status": "unused_sub" }, "s-f2": { "status": "sub_on" }, "s-f3": { "status": "start" }, "s-f4": { "status": "unused_sub" }, "s-f5": { "status": "sub_on" }, "s-f6": { "status": "start" }, "s-f7": { "status": "start" },
+                "s-f9": { "status": "start" }, "s-f10": { "status": "injured" }, "s-f11": { "status": "injured" }, "s-f12": { "status": "injured" }, "s-f13": { "status": "injured" }, "s-f14": { "status": "injured" },
+                "s-f15": { "status": "sub_on" },
+                "s-f16": { "status": "unused_sub" }
+            },
+            "s-odysseas-vlachodimos": {
+                "s-f8": { "status": "sub_on" }, "s-f9": { "status": "unused_sub" }, "s-f10": { "status": "unused_sub" }, "s-f11": { "status": "unused_sub" }
+            },
+            "s-joe-white": {
+                "s-f2": { "status": "injured" }, "s-f4": { "status": "loan" }, "s-f5": { "status": "loan" }, "s-f6": { "status": "loan" }, "s-f7": { "status": "loan" }, "s-f8": { "status": "loan" }, "s-f9": { "status": "loan" },
+                "s-f10": { "status": "loan" }, "s-f11": { "status": "loan" }, "s-f12": { "status": "loan" }, "s-f13": { "status": "loan" }, "s-f14": { "status": "loan" }, "s-f15": { "status": "loan" }, "s-f16": { "status": "loan" },
+                "s-f17": { "status": "loan" }, "s-f18": { "status": "loan" }, "s-f19": { "status": "loan" }, "s-f20": { "status": "loan" }, "s-f21": { "status": "loan" }, "s-f22": { "status": "loan" }, "s-f23": { "status": "loan" },
+                "s-f24": { "status": "loan" }, "s-f25": { "status": "loan" }, "s-f26": { "status": "loan" }, "s-f27": { "status": "loan" }, "s-f28": { "status": "loan" }, "s-f29": { "status": "loan" }, "s-f30": { "status": "loan" },
+                "s-f31": { "status": "loan" }, "s-f32": { "status": "loan" }, "s-f33": { "status": "loan" }, "s-f34": { "status": "loan" }, "s-f35": { "status": "loan" }, "s-f36": { "status": "loan" }, "s-f37": { "status": "loan" },
+                "s-f38": { "status": "loan" }, "s-f39": { "status": "loan" }, "s-f40": { "status": "loan" }, "s-f41": { "status": "loan" }, "s-f42": { "status": "loan" }, "s-f43": { "status": "loan" }, "s-f44": { "status": "loan" },
+                "s-f45": { "status": "loan" }, "s-f46": { "status": "loan" }, "s-f47": { "status": "loan" }, "s-f48": { "status": "loan" }
+            },
+            "s-joe-willock": {
+                "s-f1": { "status": "unused_sub" }, "s-f2": { "status": "sub_on" }, "s-f3": { "status": "start", "goals": 1 }, "s-f4": { "status": "injured" }, "s-f5": { "status": "sub_on", "assists": 1 }, "s-f6": { "status": "start" },
+                "s-f7": { "status": "sub_on" }, "s-f8": { "status": "start" }, "s-f9": { "status": "sub_on" }, "s-f10": { "status": "sub_on" }, "s-f11": { "status": "sub_on" }, "s-f12": { "status": "start" },
+                "s-f13": { "status": "start", "yellowCard": true },
+                "s-f14": { "status": "start" },
+                "s-f15": { "status": "start" },
+                "s-f16": { "status": "start", "yellowCard": true },
+                "s-f17": { "status": "sub_on" }
+            },
+            "s-callum-wilson": {
+                "s-f1": { "status": "injured" }, "s-f2": { "status": "injured" }, "s-f3": { "status": "injured" }, "s-f4": { "status": "injured" }, "s-f5": { "status": "injured" }, "s-f6": { "status": "injured" }, "s-f7": { "status": "injured" },
+                "s-f8": { "status": "injured" }, "s-f9": { "status": "injured" }, "s-f10": { "status": "injured" }, "s-f11": { "status": "injured" }, "s-f12": { "status": "injured" }, "s-f13": { "status": "injured" }, "s-f14": { "status": "injured" },
+                "s-f15": { "status": "sub_on" },
+                "s-f16": { "status": "sub_on", "yellowCard": true },
+                "s-f17": { "status": "sub_on" }
+            }
+        }
+    },
+    "u21": {
+        "fixtures": [
+        ],
+        "appearances": {
+        }
+    },
+    "u18": {
+        "fixtures": [
+        ],
+        "appearances": {
+        }
+    }
+}
