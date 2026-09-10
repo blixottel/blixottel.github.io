@@ -37,13 +37,38 @@ function buildSeasonSwitcher(seasons, activeId) {
   return wrap;
 }
 
-function renderValidationPanel(issues) {
+/**
+ * Renders the "Data checks" panel. `verbose` controls how much detail is
+ * shown: true (local dev — see isLocalDev in data.js) gives the full
+ * per-squad breakdown of every issue, same as before. false (a published
+ * copy of the page) collapses it to a single concise line — enough to flag
+ * that something's worth checking in the source data, without airing the
+ * specifics to site visitors.
+ */
+function renderValidationPanel(issues, verbose) {
   const panel = document.getElementById('validation-panel');
   const list = document.getElementById('validation-list');
+  const sub = panel.querySelector('.vp-sub');
   if (issues.length === 0) {
     panel.style.display = 'none';
     return;
   }
+
+  if (!verbose) {
+    panel.classList.add('vp-concise');
+    if (sub) sub.style.display = 'none';
+    list.innerHTML = '';
+    const p = document.createElement('p');
+    p.className = 'vp-concise-note';
+    p.textContent = 'There are inconsistencies in the underlying data on this page.';
+    list.appendChild(p);
+    document.querySelector('#validation-panel h2').textContent = 'Data checks';
+    panel.style.display = 'block';
+    return;
+  }
+
+  panel.classList.remove('vp-concise');
+  if (sub) sub.style.display = '';
 
   const bySquad = { senior: [], u21: [], u18: [], _general: [] };
   issues.forEach(iss => {
@@ -79,6 +104,43 @@ function renderValidationPanel(issues) {
   document.querySelector('#validation-panel h2').textContent = `Data checks — ${parts.join(', ')}`;
 
   panel.style.display = 'block';
+}
+
+/**
+ * Renders the "next match" indicator into #next-match-slot — the earliest
+ * fixture, across all three squads, that doesn't have a result yet (see
+ * findNextMatch in data.js). `next` is { squad, fixture } or null; null
+ * (nothing left to play, or no fixtures at all) clears the slot so it
+ * takes up no space.
+ */
+function buildNextMatchBanner(next) {
+  const slot = document.getElementById('next-match-slot');
+  if (!slot) return;
+  slot.innerHTML = '';
+  if (!next) return;
+
+  const fx = next.fixture;
+  const wrap = document.createElement('div');
+  wrap.className = 'next-match';
+
+  const label = document.createElement('span');
+  label.className = 'next-match-label';
+  label.textContent = 'Next match';
+  wrap.appendChild(label);
+
+  const squadTag = document.createElement('span');
+  squadTag.className = 'next-match-squad';
+  squadTag.textContent = SQUAD_SHORT[next.squad] || SQUAD_LABEL[next.squad] || next.squad;
+  wrap.appendChild(squadTag);
+
+  const details = document.createElement('span');
+  details.className = 'next-match-details';
+  const venueSuffix = fx.venue === 'H' ? ' (H)' : (fx.venue === 'A' ? ' (A)' : '');
+  const compLabel = (fx.competition && fx.competition.trim()) ? fx.competition.trim() : 'League';
+  details.textContent = `${fx.date ? fmtDate(fx.date) : 'TBC'} · v ${fx.opponent || '—'}${venueSuffix} · ${compLabel}`;
+  wrap.appendChild(details);
+
+  slot.appendChild(wrap);
 }
 
 /**

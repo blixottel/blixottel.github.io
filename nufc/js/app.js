@@ -38,10 +38,14 @@ async function init() {
     const playersById = {};
     players.forEach(p => { playersById[p.id] = p; });
 
+    buildNextMatchBanner(findNextMatch(fixtures));
+
     const issues = validateFixtures(fixtures, playersById, {
       requireDetailedStats: activeSeason ? activeSeason.requireDetailedStats !== false : true,
     });
-    renderValidationPanel(issues);
+    // Full breakdown on a local dev server; a single concise line once this
+    // is published, so visitors see "worth a check" without the specifics.
+    renderValidationPanel(issues, isLocalDev());
 
     const fixtureIssuesMap = {}; // "squad::fixtureId" -> [messages]
     const squadIssueCounts = { senior: 0, u21: 0, u18: 0 };

@@ -177,6 +177,43 @@ async function loadSeasons() {
   }
 }
 
+/**
+ * True when the page is being viewed from a local dev server (or opened
+ * straight off disk), as opposed to a published/deployed copy. Used to
+ * decide how much detail the "Data checks" panel shows — see
+ * renderValidationPanel in render.js.
+ */
+function isLocalDev() {
+  const host = location.hostname;
+  return host === 'localhost' || host === '127.0.0.1' || host === '::1' || host === '' || location.protocol === 'file:';
+}
+
+// Order squads are checked in when looking for the next match, and the
+// tie-break order (see findNextMatch) if two squads share the earliest date.
+const SQUAD_ORDER = ['senior', 'u21', 'u18'];
+
+/**
+ * Finds the earliest fixture, across all three squads, that doesn't have a
+ * result yet — the basis for the "next match" indicator. Fixtures with no
+ * date are skipped, since there's nothing to sort them by. Ties on date are
+ * broken by SQUAD_ORDER (senior first). Returns { squad, fixture } or null
+ * if every fixture across every squad already has a result (or there are
+ * no fixtures at all).
+ */
+function findNextMatch(fixturesData) {
+  let best = null;
+  SQUAD_ORDER.forEach(squadKey => {
+    const fixtures = (fixturesData[squadKey] && fixturesData[squadKey].fixtures) || [];
+    fixtures.forEach(fx => {
+      if (fx.result || !fx.date) return;
+      if (!best || fx.date < best.fixture.date) {
+        best = { squad: squadKey, fixture: fx };
+      }
+    });
+  });
+  return best;
+}
+
 function currentSeasonId(seasons) {
   const requested = new URLSearchParams(location.search).get('season');
   if (requested && seasons.some(s => s.id === requested)) return requested;

@@ -1,0 +1,66 @@
+/**
+ * next-match.css — styling for the "next match" indicator and for the
+ * collapsed/concise mode of the existing #validation-panel. Kept separate
+ * from styles.css so these two additions are easy to find or remove later;
+ * feel free to fold them into styles.css if you'd rather keep one file.
+ */
+
+#next-match-slot:empty {
+  display: none;
+}
+
+.next-match {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  max-width: 960px;
+  margin: 1.1rem auto 0;
+  padding: 0.6rem 1.1rem;
+  background: #111315;
+  border: 1px solid #2b2e31;
+  border-left: 4px solid #f2b134;
+  border-radius: 4px;
+  color: #f4f4f4;
+}
+
+.next-match-label {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #f2b134;
+}
+
+.next-match-squad {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  background: #24272a;
+  color: #cfcfcf;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+}
+
+.next-match-details {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  color: #e6e6e6;
+}
+
+/* Concise "Data checks" mode — a published copy of the page shows this
+   instead of the full per-squad issue breakdown. See renderValidationPanel
+   in render.js. */
+#validation-panel.vp-concise #validation-list {
+  padding: 0;
+}
+
+.vp-concise-note {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #b3841f;
+}
