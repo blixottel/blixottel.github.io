@@ -1999,7 +1999,7 @@
         "id": "s-callum-wilson",
         "name": "Callum Wilson",
         "nationality": "England",
-        "dob": "",
+        "dob": "1992-02-27",
         "position": "FWD",
         "photos": {
             "official": "",
@@ -2014,8 +2014,7 @@
             "statshub": "https://images.statshub.com/player/113956.png",
             "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
-        },
-        "squadIfDobUnknown": "senior"
+        }
     },
     {
         "id": "s-emil-krafth",
@@ -2189,7 +2188,7 @@
         "id": "s-lloyd-kelly",
         "name": "Lloyd Kelly",
         "nationality": "England",
-        "dob": "",
+        "dob": "1998-10-06",
         "position": "DEF",
         "photos": {
             "official": "",
@@ -2204,14 +2203,13 @@
             "statshub": "https://images.statshub.com/player/865167.png",
             "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
-        },
-        "squadIfDobUnknown": "senior"
+        }
     },
     {
         "id": "s-martin-dubravka",
         "name": "Martin Dúbravka",
         "nationality": "Slovakia",
-        "dob": "",
+        "dob": "1989-01-15",
         "position": "GK",
         "photos": {
             "official": "",
@@ -2226,8 +2224,7 @@
             "statshub": "https://images.statshub.com/player/42209.png",
             "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
-        },
-        "squadIfDobUnknown": "senior"
+        }
     },
     {
         "id": "s-matt-targett",
@@ -2275,7 +2272,7 @@
         "id": "s-miguel-almiron",
         "name": "Miguel Almirón",
         "nationality": "Paraguay",
-        "dob": "",
+        "dob": "1994-02-10",
         "position": "FWD",
         "photos": {
             "official": "",
@@ -2290,8 +2287,7 @@
             "statshub": "https://images.statshub.com/player/333373.png",
             "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
-        },
-        "squadIfDobUnknown": "senior"
+        }
     },
     {
         "id": "s-sandro-tonali",
@@ -2318,7 +2314,7 @@
         "id": "s-sean-longstaff",
         "name": "Sean Longstaff",
         "nationality": "England",
-        "dob": "",
+        "dob": "1997-10-30",
         "position": "MID",
         "photos": {
             "official": "",
@@ -2333,14 +2329,13 @@
             "statshub": "https://images.statshub.com/player/866191.png",
             "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
-        },
-        "squadIfDobUnknown": "senior"
+        }
     },
     {
         "id": "s-the-rat",
         "name": "The Rat",
         "nationality": "Sweden",
-        "dob": "",
+        "dob": "1999-12-21",
         "position": "FWD",
         "photos": {
             "official": "https://i.ibb.co/xSGBsg2n/The-Rat.png",
@@ -2356,8 +2351,7 @@
             "fminside": "https://i.ibb.co/xSGBsg2n/The-Rat.png",
             "sortitoutsi": "https://i.ibb.co/xSGBsg2n/The-Rat.png",
             "other-other": "https://i.ibb.co/xSGBsg2n/The-Rat.png"
-        },
-        "squadIfDobUnknown": "senior"
+        }
     },
     {
         "id": "s-travis-hernes",
@@ -2376,6 +2370,27 @@
             "besoccer": "https://cdn.resfu.com/img_data/players/medium/3309870.jpg",
             "flashscore": "https://static.flashscore.com/res/image/data/nJ2fFQg5-GhoJNaZD.png",
             "statshub": "https://images.statshub.com/player/1400656.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "u21-adrian-janusz",
+        "name": "Adrian Janusz",
+        "nationality": "Poland",
+        "dob": "2006-06-30",
+        "position": "GK",
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "placeholder": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
         }
@@ -2507,6 +2522,27 @@
         }
     },
     {
+        "id": "u21-ellis-stanton",
+        "name": "Ellis Stanton",
+        "nationality": "England",
+        "dob": "2005-02-19",
+        "position": "MID",
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "placeholder": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
         "id": "u21-garang-kuol",
         "name": "Garang Kuol",
         "nationality": "Australia",
@@ -2523,6 +2559,27 @@
             "besoccer": "https://cdn.resfu.com/img_data/players/medium/3223402.jpg",
             "flashscore": "https://static.flashscore.com/res/image/data/raNoZQzB-Wlquzqgs.png",
             "statshub": "https://images.statshub.com/player/1169124.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "u21-harry-powell",
+        "name": "Harry Powell",
+        "nationality": "England",
+        "dob": "2005-12-31",
+        "position": "DEF",
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "placeholder": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
         }
@@ -2549,6 +2606,48 @@
         }
     },
     {
+        "id": "u21-jamie-miley",
+        "name": "Jamie Miley",
+        "nationality": "England",
+        "dob": "2004-01-14",
+        "position": "MID",
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "placeholder": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "u21-jay-turner-cooke",
+        "name": "Jay Turner-Cooke",
+        "nationality": "England",
+        "dob": "2003-12-31",
+        "position": "MID",
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "placeholder": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
         "id": "u21-joe-brayson",
         "name": "Joe Brayson",
         "nationality": "England",
@@ -2565,6 +2664,48 @@
             "besoccer": "https://cdn.resfu.com/img_data/players/medium/3346470.jpg",
             "flashscore": "https://static.flashscore.com/res/image/data/fo3IUGXg-dfVW2dki.png",
             "statshub": "https://images.statshub.com/player/1601606.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "u21-josh-donaldson",
+        "name": "Josh Donaldson",
+        "nationality": "England",
+        "dob": "2005-09-25",
+        "position": "FWD",
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "placeholder": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "u21-rory-powell",
+        "name": "Rory Powell",
+        "nationality": "England",
+        "dob": "2005-12-31",
+        "position": "DEF",
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "placeholder": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "sortitoutsi": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
         }
