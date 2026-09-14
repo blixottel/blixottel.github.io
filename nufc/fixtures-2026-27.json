@@ -464,7 +464,7 @@
             { "id": "u18-f3", "date": "2026-08-25", "opponent": "Fulham U18", "venue": "A", "competition": "U18 Premier League Cup", "result": "D 1-1", "subsUsed": 6, "subsUnused": 1, "assistsTotal": 1, "yellowCardsTotal": 1, "redCardsTotal": 0 },
             { "id": "u18-f4", "date": "2026-08-29", "opponent": "Blackburn Rovers U18", "venue": "H", "competition": "U18 Premier League", "result": "W 6-1", "subsUsed": 5, "subsUnused": 2, "assistsTotal": 5, "yellowCardsTotal": 0, "redCardsTotal": 0, "ownGoalsFor": 1 },
             { "id": "u18-f5", "date": "2026-09-05", "opponent": "Leicester City U18", "venue": "A", "competition": "U18 Premier League", "result": "W 4-1", "subsUsed": 5, "subsUnused": 2, "assistsTotal": 3, "yellowCardsTotal": 2, "redCardsTotal": 0 },
-            { "id": "u18-f6", "date": "2026-09-12", "opponent": "Manchester United U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+            { "id": "u18-f6", "date": "2026-09-12", "opponent": "Manchester United U18", "venue": "H", "competition": "U18 Premier League", "result": "L 0-2", "subsUsed": 3, "subsUnused": 2, "assistsTotal": 0, "yellowCardsTotal": 1, "redCardsTotal": 0 },
             { "id": "u18-f7", "date": "2026-09-19", "opponent": "mackems U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
             { "id": "u18-f8", "date": "2026-10-10", "opponent": "Derby County U18", "venue": "H", "competition": "U18 Premier League Cup", "result": "" },
             { "id": "u18-f9", "date": "2026-10-17", "opponent": "Burnley U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
@@ -492,12 +492,136 @@
             { "id": "u18-f31", "date": "2027-05-08", "opponent": "Nottingham Forest U18", "venue": "A", "competition": "U18 Premier League", "result": "" }
         ],
         "appearances": {
+            "u21-alfie-hutchison": {
+                "u18-f1": { "status": "start", "goals": 1 },
+                "u18-f2": { "status": "start", "goals": 1 },
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "start", "goals": 1, "assists": 2 },
+                "u18-f5": { "status": "start", "goals": 3 }
+            },
+            "u18-alfie-seldon": {
+                "u18-f1": { "status": "start", "goals": 1, "yellowCard": true },
+                "u18-f2": { "status": "start", "goals": 2 },
+                "u18-f3": { "status": "start", "assists": 1 },
+                "u18-f4": { "status": "start", "goals": 1, "assists": 1 },
+                "u18-f5": { "status": "start", "assists": 2 },
+                "u18-f6": { "status": "start" }
+            },
+            "u18-charlie-robinson": {
+                "u18-f1": { "status": "start" },
+                "u18-f4": { "status": "sub_on", "goals": 1 },
+                "u18-f5": { "status": "start" },
+                "u18-f6": { "status": "start", "yellowCard": true }
+            },
             "u18-chukwudi-afumuzor": {
                 "u18-f1": { "status": "sub_on" },
                 "u18-f2": { "status": "sub_on" },
                 "u18-f3": { "status": "sub_on" },
                 "u18-f4": { "status": "sub_on" },
+                "u18-f5": { "status": "unused_sub" },
+                "u18-f6": { "status": "sub_on" }
+            },
+            "u18-ethan-ndiweni": {
+                "u18-f1": { "status": "sub_on" },
+                "u18-f2": { "status": "sub_on" },
+                "u18-f3": { "status": "sub_on" }
+            },
+            "u21-george-mair": {
+                "u18-f5": { "status": "start" },
+                "u18-f6": { "status": "start" }
+            },
+            "u21-isaac-moran": {
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "start" },
+                "u18-f5": { "status": "start" },
+                "u18-f6": { "status": "start" }
+            },
+            "u18-jack-callaghan": {
+                "u18-f2": { "status": "sub_on" },
+                "u18-f3": { "status": "sub_on" },
+                "u18-f4": { "status": "start" },
+                "u18-f5": { "status": "sub_on" },
+                "u18-f6": { "status": "sub_on" }
+            },
+            "u18-jack-patterson": {
+                "u18-f1": { "status": "start" },
+                "u18-f4": { "status": "sub_on", "assists": 1 },
+                "u18-f5": { "status": "sub_on" },
+                "u18-f6": { "status": "unused_sub" }
+            },
+            "u18-jack-skelton": {
+                "u18-f1": { "status": "sub_on" },
+                "u18-f2": { "status": "unused_sub" },
+                "u18-f4": { "status": "start", "goals": 1 },
+                "u18-f6": { "status": "start" }
+            },
+            "u18-jayden-kouossu": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start" },
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "start" },
+                "u18-f5": { "status": "start", "yellowCard": true },
+                "u18-f6": { "status": "start" }
+            },
+            "u18-kyle-healy-matthews": {
+                "u18-f1": { "status": "sub_on", "yellowCard": true },
+                "u18-f2": { "status": "start" },
+                "u18-f3": { "status": "sub_on" },
+                "u18-f4": { "status": "start", "assists": 1 },
+                "u18-f5": { "status": "start" },
+                "u18-f6": { "status": "start" }
+            },
+            "u21-kyran-thompson": {
+                "u18-f2": { "status": "start", "yellowCard": true },
+                "u18-f3": { "status": "start" },
+                "u18-f5": { "status": "start", "goals": 1 }
+            },
+            "u18-leo-harper": {
+                "u18-f2": { "status": "unused_sub" },
                 "u18-f5": { "status": "unused_sub" }
+            },
+            "u18-lucas-flack": {
+                "u18-f3": { "status": "unused_sub" },
+                "u18-f4": { "status": "unused_sub" }
+            },
+            "u18-luke-gilligan": {
+                "u18-f2": { "status": "sub_on" },
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "sub_on" },
+                "u18-f5": { "status": "sub_on" },
+                "u18-f6": { "status": "start" }
+            },
+            "u18-muawiya-ghanem": {
+                "u18-f1": { "status": "start", "assists": 1, "yellowCard": true },
+                "u18-f2": { "status": "start" },
+                "u18-f3": { "status": "sub_on", "yellowCard": true },
+                "u18-f4": { "status": "start" },
+                "u18-f5": { "status": "start", "yellowCard": true }
+            },
+            "u18-noah-morgan": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start" },
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "start", "goals": 1 },
+                "u18-f5": { "status": "start", "assists": 1 },
+                "u18-f6": { "status": "start" }
+            },
+            "u18-oliver-goodbrand": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start" },
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "sub_on" },
+                "u18-f5": { "status": "sub_on" }
+            },
+            "u21-oliver-holland": {
+                "u18-f1": { "status": "unused_sub" },
+                "u18-f6": { "status": "unused_sub" }
+            },
+            "u21-roman-dowell": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start", "assists": 1 },
+                "u18-f3": { "status": "start" },
+                "u18-f4": { "status": "start" }
             },
             "s-sam-alabi": {
                 "u18-f1": { "status": "start", "assists": 1, "yellowCard": true },
@@ -509,125 +633,19 @@
                 "u18-f2": { "status": "sub_on" },
                 "u18-f3": { "status": "start" },
                 "u18-f4": { "status": "unused_sub" },
-                "u18-f5": { "status": "sub_on" }
-            },
-            "u18-jack-callaghan": {
-                "u18-f2": { "status": "sub_on" },
-                "u18-f3": { "status": "sub_on" },
-                "u18-f4": { "status": "start" },
-                "u18-f5": { "status": "sub_on" }
-            },
-            "u21-roman-dowell": {
-                "u18-f1": { "status": "start" },
-                "u18-f2": { "status": "start", "assists": 1 },
-                "u18-f3": { "status": "start" },
-                "u18-f4": { "status": "start" }
-            },
-            "u18-lucas-flack": {
-                "u18-f3": { "status": "unused_sub" },
-                "u18-f4": { "status": "unused_sub" }
-            },
-            "u18-muawiya-ghanem": {
-                "u18-f1": { "status": "start", "assists": 1, "yellowCard": true },
-                "u18-f2": { "status": "start" },
-                "u18-f3": { "status": "sub_on", "yellowCard": true },
-                "u18-f4": { "status": "start" },
-                "u18-f5": { "status": "start", "yellowCard": true }
-            },
-            "u18-luke-gilligan": {
-                "u18-f2": { "status": "sub_on" },
-                "u18-f3": { "status": "start" },
-                "u18-f4": { "status": "sub_on" },
-                "u18-f5": { "status": "sub_on" }
-            },
-            "u18-oliver-goodbrand": {
-                "u18-f1": { "status": "start" },
-                "u18-f2": { "status": "start" },
-                "u18-f3": { "status": "start" },
-                "u18-f4": { "status": "sub_on" },
-                "u18-f5": { "status": "sub_on" }
-            },
-            "u18-leo-harper": {
-                "u18-f2": { "status": "unused_sub" },
-                "u18-f5": { "status": "unused_sub" }
-            },
-            "u18-kyle-healy-matthews": {
-                "u18-f1": { "status": "sub_on", "yellowCard": true },
-                "u18-f2": { "status": "start" },
-                "u18-f3": { "status": "sub_on" },
-                "u18-f4": { "status": "start", "assists": 1 },
-                "u18-f5": { "status": "start" }
-            },
-            "u21-oliver-holland": {
-                "u18-f1": { "status": "unused_sub" }
-            },
-            "u21-alfie-hutchison": {
-                "u18-f1": { "status": "start", "goals": 1 },
-                "u18-f2": { "status": "start", "goals": 1 },
-                "u18-f3": { "status": "start" },
-                "u18-f4": { "status": "start", "goals": 1, "assists": 2 },
-                "u18-f5": { "status": "start", "goals": 3 }
-            },
-            "u18-jayden-kouossu": {
-                "u18-f1": { "status": "start" },
-                "u18-f2": { "status": "start" },
-                "u18-f3": { "status": "start" },
-                "u18-f4": { "status": "start" },
-                "u18-f5": { "status": "start", "yellowCard": true }
-            },
-            "u21-george-mair": {
-                "u18-f5": { "status": "start" }
-            },
-            "u21-isaac-moran": {
-                "u18-f3": { "status": "start" },
-                "u18-f4": { "status": "start" },
-                "u18-f5": { "status": "start" }
-            },
-            "u18-noah-morgan": {
-                "u18-f1": { "status": "start" },
-                "u18-f2": { "status": "start" },
-                "u18-f3": { "status": "start" },
-                "u18-f4": { "status": "start", "goals": 1 },
-                "u18-f5": { "status": "start", "assists": 1 }
-            },
-            "u18-ethan-ndiweni": {
-                "u18-f1": { "status": "sub_on" },
-                "u18-f2": { "status": "sub_on" },
-                "u18-f3": { "status": "sub_on" }
+                "u18-f5": { "status": "sub_on" },
+                "u18-f6": { "status": "start" }
             },
             "u18-thomas-old": {
                 "u18-f1": { "status": "start" },
                 "u18-f2": { "status": "start", "assists": 1 },
                 "u18-f3": { "status": "sub_on" },
                 "u18-f4": { "status": "start" },
-                "u18-f5": { "status": "start" }
+                "u18-f5": { "status": "start" },
+                "u18-f6": { "status": "start" }
             },
-            "u18-jack-patterson": {
-                "u18-f1": { "status": "start" },
-                "u18-f4": { "status": "sub_on", "assists": 1 },
-                "u18-f5": { "status": "sub_on" }
-            },
-            "u18-charlie-robinson": {
-                "u18-f1": { "status": "start" },
-                "u18-f4": { "status": "sub_on", "goals": 1 },
-                "u18-f5": { "status": "start" }
-            },
-            "u18-alfie-seldon": {
-                "u18-f1": { "status": "start", "goals": 1, "yellowCard": true },
-                "u18-f2": { "status": "start", "goals": 2 },
-                "u18-f3": { "status": "start", "assists": 1 },
-                "u18-f4": { "status": "start", "goals": 1, "assists": 1 },
-                "u18-f5": { "status": "start", "assists": 2 }
-            },
-            "u18-jack-skelton": {
-                "u18-f1": { "status": "sub_on" },
-                "u18-f2": { "status": "unused_sub" },
-                "u18-f4": { "status": "start", "goals": 1 }
-            },
-            "u21-kyran-thompson": {
-                "u18-f2": { "status": "start", "yellowCard": true },
-                "u18-f3": { "status": "start" },
-                "u18-f5": { "status": "start", "goals": 1 }
+            "u18-thomas-bowness": {
+                "u18-f6": { "status": "sub_on" }
             },
             "u18-johan-martinez": {
                 "u18-f1": { "status": "incoming" }, "u18-f2": { "status": "incoming" }, "u18-f3": { "status": "incoming" }, "u18-f4": { "status": "incoming" }, "u18-f5": { "status": "incoming" },

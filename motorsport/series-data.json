@@ -4,7 +4,7 @@
             "category": "formula1",
             "name": "Formula 1",
             "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "nextDate": "26 Sep 2026",
             "links": {
                 "official": { "url": "https://www.formula1.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072", "label": "Results", "active": true },
@@ -23,7 +23,7 @@
             "category": "formula1",
             "name": "Formula 2",
             "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "nextDate": "26 Sep 2026",
             "links": {
                 "official": { "url": "https://www.fiaformula2.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/formula-2-championship-44", "label": "Results", "active": true },
@@ -40,12 +40,12 @@
             "category": "formula1",
             "name": "Formula 3",
             "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://www.fiaformula3.com", "label": "Official site", "active": true },
-                "results": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/fia-formula-3-championship-1012", "label": "Results", "active": true },
-                "standings": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/fia-formula-3-championship-1012", "label": "Standings", "active": true },
-                "calendar": { "url": "https://www.fiaformula3.com/Latest/16F8XBnz2PSr8Rn29WCsIs/fia-formula-3-championship-2026-season-calendar-revealed", "label": "Calendar", "active": true }
+                "results": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/fia-formula-3-championship-1012", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/fia-formula-3-championship-1012", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiaformula3.com/Latest/16F8XBnz2PSr8Rn29WCsIs/fia-formula-3-championship-2026-season-calendar-revealed", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/Formula3" },
@@ -91,8 +91,8 @@
 		{
             "category": "formulaRegional",
             "name": "FR Europe",
-            "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "resultsVerified": false,
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://fiafrec.com", "label": "Official site", "active": true },
                 "results": { "url": "https://fia-frec.vii-results.com/results", "label": "Results", "active": true },
@@ -216,8 +216,8 @@
 		{
             "category": "formula4",
             "name": "F4 CEZ",
-            "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "resultsVerified": false,
+            "nextDate": "24 Oct 2026",
             "links": {
                 "official": { "url": "https://www.f4-cez.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.f4-cez.com/2026-results", "label": "Results", "active": true },
@@ -254,7 +254,7 @@
         {
             "category": "formula4",
             "name": "F4 China",
-            "resultsVerified": false,
+            "resultsVerified": true,
             "nextDate": "26 Sep 2026",
             "links": {
                 "official": { "url": "http://www.fiaf4.com.cn/fiaf4.html", "label": "Official site", "active": true },
@@ -306,8 +306,8 @@
 		{
             "category": "formula4",
             "name": "F4 India",
-            "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "resultsVerified": false,
+            "nextDate": "19 Sep 2026",
             "links": {
                 "official": { "url": "https://www.fiaindianf4.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.fiaindianf4.com/results_3", "label": "Results", "active": false },
@@ -373,7 +373,7 @@
             "category": "formula4",
             "name": "F4 NACAM",
             "resultsVerified": false,
-            "nextDate": "12 Sep 2026",
+            "nextDate": "3 Oct 2026",
             "links": {
                 "official": { "url": "https://www.f4nacam.com", "label": "Official site", "active": true },
                 "results": { "url": "https://speedhive.mylaps.com/organizations/3730", "label": "Results", "active": true },
@@ -548,12 +548,12 @@
             "category": "nonFIA",
             "name": "Eurocup-3",
             "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "nextDate": "26 Sep 2026",
             "links": {
                 "official": { "url": "https://eurocup3.org", "label": "Official site", "active": true },
                 "results": { "url": "http://f4spain-e3.alkamelsystems.com", "label": "Results", "active": true },
                 "standings": { "url": "https://eurocup3.org/standings-2026", "label": "Standings", "active": true },
-                "calendar": { "url": "https://eurocup3.org/article/eurocup-3-strengthens-its-european-presence-with-three-elms-rounds-in-the-2026-calendar", "label": "Calendar", "active": true }
+                "calendar": { "url": "https://eurocup3.org/calendar-2026", "label": "Calendar", "active": true }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/Eurocup_3" },
@@ -614,9 +614,9 @@
         },
 		{
             "category": "nonFIA",
-            "name": "Euroformula Open (2027)",
-            "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "name": "Euroformula Open",
+            "resultsVerified": false,
+            "nextDate": "26 Sep 2026",
             "links": {
                 "official": { "url": "https://www.euroformulaopen.net", "label": "Official site", "active": true },
                 "results": { "url": "https://www.cronococa.com/results", "label": "Results", "active": true },
@@ -630,7 +630,7 @@
         },
 		{
             "category": "nonFIA",
-            "name": "Euroformula Open",
+            "name": "Euroformula Open (2027)",
             "resultsVerified": true,
             "nextDate": "10 Apr 2027",
             "links": {
@@ -783,6 +783,42 @@
         },
 		{
             "category": "nonFIA",
+            "name": "GB4 (2027)",
+            "resultsVerified": true,
+            "nextDate": "11 Apr 2027",
+            "links": {
+                "official": { "url": "https://www.gb-4.net", "label": "Official site", "active": true },
+                "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2026", "label": "Results", "active": false },
+                "standings": { "url": "https://www.gb-4.net/standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.gb-4.net/news/2026/sept/10/gb4-championship-unveils-provisional-2027-calendar", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/GB4Championship" },
+                { "platform": "facebook", "url": "https://www.facebook.com/GB4Championship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/GB4Championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@msvcircuits"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "GB4 Autumn Trophy",
+            "resultsVerified": true,
+            "nextDate": "13 Nov 2027",
+            "links": {
+                "official": { "url": "https://www.gb-4.net", "label": "Official site", "active": true },
+                "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2026", "label": "Results", "active": false },
+                "standings": { "url": "https://www.gb-4.net/standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.gb-4.net/news/2026/sept/10/gb4-championship-unveils-provisional-2027-calendar", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/GB4Championship" },
+                { "platform": "facebook", "url": "https://www.facebook.com/GB4Championship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/GB4Championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@msvcircuits"}
+            ]
+        },
+		{
+            "category": "nonFIA",
             "name": "GB4 Winter Series",
             "resultsVerified": true,
             "nextDate": "24 Oct 2026",
@@ -856,8 +892,8 @@
         {
             "category": "nonFIA",
             "name": "SMP F4",
-            "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "resultsVerified": false,
+            "nextDate": "9 Oct 2026",
             "links": {
                 "official": { "url": "https://smpf4.ru", "label": "Official site", "active": true },
                 "results": { "url": "https://speedhive.mylaps.com/livetiming/69E97C4FD89D2491-2147484210", "label": "Results", "active": true },
@@ -874,12 +910,12 @@
             "category": "nonFIA",
             "name": "Super Formula Lights",
             "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://superformula-lights.com", "label": "Official site", "active": true },
-                "results": { "url": "https://superformula-lights.com", "label": "Results", "active": true },
-                "standings": { "url": "https://superformula-lights.com/wp-content/uploads/pdf/2026_rank.pdf", "label": "Standings", "active": true },
-                "calendar": { "url": "https://superformula-lights.com/race2026", "label": "Calendar", "active": true }
+                "results": { "url": "https://superformula-lights.com", "label": "Results", "active": false },
+                "standings": { "url": "https://superformula-lights.com/wp-content/uploads/pdf/2026_rank.pdf", "label": "Standings", "active": false },
+                "calendar": { "url": "https://superformula-lights.com/race2026", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/SFormulaLights" },
@@ -1065,8 +1101,8 @@
         {
             "category": "motorbikes",
             "name": "MotoGP",
-            "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "resultsVerified": false,
+            "nextDate": "19 Sep 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
@@ -1119,8 +1155,8 @@
 		{
             "category": "motorbikes",
             "name": "Moto2",
-            "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "resultsVerified": false,
+            "nextDate": "19 Sep 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
@@ -1173,8 +1209,8 @@
 		{
             "category": "motorbikes",
             "name": "Moto3",
-            "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "resultsVerified": false,
+            "nextDate": "19 Sep 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
@@ -1373,7 +1409,7 @@
             "category": "motorbikes",
             "name": "Red Bull MotoGP Rookies Cup",
             "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "nextDate": "19 Sep 2026",
             "links": {
                 "official": { "url": "https://www.redbull.com/int-en/rookiescup", "label": "Official site", "active": true },
                 "results": { "url": "https://www.redbull.com/int-en/rookiescup/races", "label": "Results", "active": true },
@@ -1882,12 +1918,12 @@
             "category": "karting",
             "name": "Karting A&D Asia (Junior)",
             "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
-                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": true },
-                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": true },
-                "calendar": { "url": "https://www.fiakarting.com/competition-list", "label": "Calendar", "active": true }
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/competition-list", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
@@ -1900,12 +1936,12 @@
             "category": "karting",
             "name": "Karting A&D Asia (Senior)",
             "resultsVerified": true,
-            "nextDate": "12 Sep 2026",
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
-                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": true },
-                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": true },
-                "calendar": { "url": "https://www.fiakarting.com/competition-list", "label": "Calendar", "active": true }
+                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiakarting.com/competition-list", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
