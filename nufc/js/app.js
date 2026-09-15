@@ -47,8 +47,14 @@ async function init() {
     // is published, so visitors see "worth a check" without the specifics.
     renderValidationPanel(issues, isLocalDev());
 
+    // The three age-banded squads, plus 'u19' if (and only if) this season's
+    // fixtures file actually has one — see CORE_SQUADS/OPTIONAL_SQUADS and
+    // squadKeysFor in data.js.
+    const squadKeys = squadKeysFor(fixtures);
+
     const fixtureIssuesMap = {}; // "squad::fixtureId" -> [messages]
-    const squadIssueCounts = { senior: 0, u21: 0, u18: 0 };
+    const squadIssueCounts = {};
+    squadKeys.forEach(k => { squadIssueCounts[k] = 0; });
     issues.forEach(iss => {
       if (squadIssueCounts[iss.squad] !== undefined) squadIssueCounts[iss.squad] += 1;
       if (iss.fixtureId) {
@@ -57,9 +63,16 @@ async function init() {
       }
     });
 
-    ['senior', 'u21', 'u18'].forEach(squadKey => {
+    squadKeys.forEach(squadKey => {
       const squadPlayers = players.filter(p => normSquad(p.squad) === squadKey);
-      const activeCount = squadPlayers.filter(p => (p.status || 'active') === 'active').length;
+      // A squad with a real computed roster (senior/u21/u18) shows its
+      // active-player count as before. An OPTIONAL_SQUADS entry like 'u19'
+      // never has a computed home roster at all — everyone on that page is
+      // a guest — so its count instead reflects how many players were
+      // actually named in a u19 matchday squad this season.
+      const activeCount = squadPlayers.length
+        ? squadPlayers.filter(p => (p.status || 'active') === 'active').length
+        : namedPlayerIdsFor(fixtures[squadKey]).length;
       document.getElementById('count-' + squadKey).textContent = activeCount;
       if (squadIssueCounts[squadKey] > 0) {
         const dot = document.createElement('span');
@@ -68,6 +81,15 @@ async function init() {
         document.querySelector(`nav.tabs a[href="#${squadKey}"]`).appendChild(dot);
       }
       main.appendChild(buildSquadSection(squadKey, squadPlayers, fixtures[squadKey] || { fixtures: [], appearances: {} }, playersById, fixtureIssuesMap));
+    });
+
+    // Hide the tab for any optional squad (currently just 'u19') that has
+    // no data this season, rather than leaving an empty tab in the nav —
+    // index.html's markup always includes it so it's ready for a season
+    // that does have it.
+    OPTIONAL_SQUADS.filter(k => !squadKeys.includes(k)).forEach(k => {
+      const tabLink = document.querySelector(`nav.tabs a[href="#${k}"]`);
+      if (tabLink) tabLink.style.display = 'none';
     });
 
     setupTabs();

@@ -5,7 +5,7 @@
             { "id": "s-f2", "date": "2025-08-23", "opponent": "Liverpool", "venue": "H", "competition": "Premier League", "result": "L 2-3", "subsUsed": 5, "subsUnused": 4, "xg": 0.98, "assistsTotal": 1, "yellowCardsTotal": 2, "redCardsTotal": 1, "redCardMinutesLost": 45 },
             { "id": "s-f3", "date": "2025-08-31", "opponent": "Leeds United", "venue": "A", "competition": "Premier League", "result": "D 0-0", "subsUsed": 4, "subsUnused": 5, "xg": 0.46, "assistsTotal": 0, "yellowCardsTotal": 1, "redCardsTotal": 0 },
             { "id": "s-f4", "date": "2025-09-14", "opponent": "Wolverhampton Wanderers", "venue": "H", "competition": "Premier League", "result": "W 1-0", "subsUsed": 4, "subsUnused": 5, "xg": 1.56, "assistsTotal": 1, "yellowCardsTotal": 1, "redCardsTotal": 0 },
-            { "id": "s-f5", "date": "2025-09-19", "opponent": "Barcelona", "venue": "H", "competition": "Champions League", "result": "L 1-2", "subsUsed": 5, "subsUnused": 7, "xg": 1.22, "assistsTotal": 1, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "s-f5", "date": "2025-09-19", "opponent": "FC Barcelona", "venue": "H", "competition": "Champions League", "result": "L 1-2", "subsUsed": 5, "subsUnused": 7, "xg": 1.22, "assistsTotal": 1, "yellowCardsTotal": 2, "redCardsTotal": 0 },
             { "id": "s-f6", "date": "2025-09-21", "opponent": "AFC Bournemouth", "venue": "A", "competition": "Premier League", "result": "D 0-0", "subsUsed": 4, "subsUnused": 5, "xg": 0.14, "assistsTotal": 0, "yellowCardsTotal": 1, "redCardsTotal": 0 },
             { "id": "s-f7", "date": "2025-09-25", "opponent": "Bradford City", "venue": "H", "competition": "EFL Cup", "result": "W 4-1", "subsUsed": 5, "subsUnused": 4, "xg": 4.73, "assistsTotal": 3, "yellowCardsTotal": 0, "redCardsTotal": 0 },
             { "id": "s-f8", "date": "2025-09-29", "opponent": "Arsenal", "venue": "H", "competition": "Premier League", "result": "L 1-2", "subsUsed": 5, "subsUnused": 4, "xg": 0.61, "assistsTotal": 1, "yellowCardsTotal": 2, "redCardsTotal": 0 },
@@ -873,7 +873,7 @@
                 "u21-f23": { "status": "loan" }, "u21-f24": { "status": "loan" }, "u21-f25": { "status": "loan" }, "u21-f26": { "status": "loan" }, "u21-f27": { "status": "loan" }, "u21-f28": { "status": "loan" }, "u21-f29": { "status": "loan" },
                 "u21-f30": { "status": "loan" }, "u21-f31": { "status": "loan" }, "u21-f32": { "status": "loan" }
             },
-            "u21-mason-miley": {
+            "s-mason-miley": {
                 "u21-f19": { "status": "sub_on" }, "u21-f21": { "status": "sub_on" }, "u21-f22": { "status": "start" }, "u21-f23": { "status": "start", "yellowCard": true }, "u21-f24": { "status": "start", "yellowCard": true },
                 "u21-f25": { "status": "sub_on" }, "u21-f26": { "status": "start" }, "u21-f27": { "status": "start" }, "u21-f28": { "status": "start" }, "u21-f29": { "status": "start" }, "u21-f30": { "status": "start", "assists": 1 },
                 "u21-f31": { "status": "start" }, "u21-f32": { "status": "start" }
@@ -983,7 +983,117 @@
         }
     },
 
-    "u18": {
+	"u19": {
+		"fixtures": [
+			{ "id": "u19-f1", "date": "2025-09-19", "opponent": "FC Barcelona U19", "venue": "H", "competition": "UEFA Youth League", "result": "L 2-3", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 1, "yellowCardsTotal": 3, "redCardsTotal": 0 },
+			{ "id": "u19-f2", "date": "2025-10-02", "opponent": "Royal Union Saint-Gilloise U19", "venue": "A", "competition": "UEFA Youth League", "result": "L 0-2", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 0, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+			{ "id": "u19-f3", "date": "2025-10-22", "opponent": "Benfica U19", "venue": "H", "competition": "UEFA Youth League", "result": "L 1-5", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 1, "yellowCardsTotal": 4, "redCardsTotal": 0 },
+			{ "id": "u19-f4", "date": "2025-11-06", "opponent": "Athletic Bilbao U19", "venue": "H", "competition": "UEFA Youth League", "result": "L 2-3", "subsUsed": 3, "subsUnused": 6, "assistsTotal": 0, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+			{ "id": "u19-f5", "date": "2025-11-26", "opponent": "Olympique Marseille U19", "venue": "A", "competition": "UEFA Youth League", "result": "L 0-2", "subsUsed": 4, "subsUnused": 5, "assistsTotal": 0, "yellowCardsTotal": 2, "redCardsTotal": 1 },
+			{ "id": "u19-f6", "date": "2025-12-11", "opponent": "Bayer Leverkusen U19", "venue": "A", "competition": "UEFA Youth League", "result": "L 1-2", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 0, "yellowCardsTotal": 3, "redCardsTotal": 0 }
+		],
+		"appearances": {
+			"u18-aaron-epia": {
+                "u19-f1": { "status": "sub_on" }, "u19-f2": { "status": "sub_on" }
+            },
+			"u21-alex-odonovan": {
+                "u19-f2": { "status": "unused_sub" }
+            },
+			"u18-alfie-seldon": {
+                "u19-f3": { "status": "sub_on" }, "u19-f4": { "status": "sub_on" }, "u19-f5": { "status": "start" }
+            },
+			"u21-anthony-munda": {
+                "u19-f1": { "status": "start" }, "u19-f2": { "status": "start" }, "u19-f3": { "status": "start" }, "u19-f4": { "status": "start" }, "u19-f5": { "status": "start", "redCard": true }
+            },
+			"u21-baran-yildiz": {
+                "u19-f1": { "status": "unused_sub" }, "u19-f2": { "status": "unused_sub" }, "u19-f3": { "status": "sub_on" }, "u19-f4": { "status": "unused_sub" }, "u19-f5": { "status": "unused_sub" }, "u19-f6": { "status": "unused_sub" }
+            },
+			"u21-dylan-charlton": {
+                "u19-f1": { "status": "start", "yellowCard": true }, "u19-f2": { "status": "start" }, "u19-f3": { "status": "start", "yellowCard": true }, "u19-f4": { "status": "start" }, "u19-f5": { "status": "start" },
+				"u19-f6": { "status": "sub_on" }
+            },
+			"u21-george-mair": {
+                "u19-f1": { "status": "start" }, "u19-f2": { "status": "start" }, "u19-f3": { "status": "start" }, "u19-f4": { "status": "unused_sub" }
+            },
+			"u21-guy-bloomer": {
+                "u19-f1": { "status": "unused_sub" }, "u19-f2": { "status": "sub_on" }, "u19-f3": { "status": "unused_sub" }, "u19-f4": { "status": "unused_sub" }
+            },
+			"u21-henry-johnson": {
+                "u19-f1": { "status": "start" }, "u19-f2": { "status": "start" }, "u19-f3": { "status": "start" }, "u19-f5": { "status": "sub_on" }, "u19-f6": { "status": "unused_sub" }
+            },
+			"u21-isaac-moran": {
+                "u19-f3": { "status": "unused_sub" }, "u19-f4": { "status": "unused_sub" }, "u19-f5": { "status": "unused_sub" }, "u19-f6": { "status": "start" }
+            },
+			"u21-jake-durrant": {
+                "u19-f4": { "status": "unused_sub" }, "u19-f5": { "status": "unused_sub" }
+            },
+			"u21-joe-brayson": {
+                "u19-f1": { "status": "start" }, "u19-f2": { "status": "unused_sub" }, "u19-f3": { "status": "sub_on", "goals": 1 },  "u19-f4": { "status": "start" }, "u19-f5": { "status": "sub_on" }, "u19-f6": { "status": "start" }
+            },
+			"u21-kacey-wooster": {
+                "u19-f1": { "status": "sub_on", "goals": 1 }, "u19-f2": { "status": "sub_on" }, "u19-f3": { "status": "start" }, "u19-f4": { "status": "sub_on" }, "u19-f5": { "status": "start" }, "u19-f6": { "status": "sub_on" }
+            },
+			"u21-kyle-fitzgerald": {
+                "u19-f1": { "status": "start" }, "u19-f6": { "status": "sub_on", "goals": 1 }
+			},
+			"s-leo-shahar": {
+                "u19-f1": { "status": "start", "goals": 1 }, "u19-f2": { "status": "start" }, "u19-f3": { "status": "start", "yellowCard": true }, "u19-f4": { "status": "start" }, "u19-f5": { "status": "start" }, "u19-f6": { "status": "start" }
+            },
+			"u21-logan-watts": {
+                "u19-f1": { "status": "start" }, "u19-f2": { "status": "start" }, "u19-f3": { "status": "start" }, "u19-f4": { "status": "start" }, "u19-f5": { "status": "start" }, "u19-f6": { "status": "start", "yellowCard": true }
+            },
+			"s-mason-miley": {
+                "u19-f6": { "status": "sub_on" }
+            },
+			"u21-matheos-ferreira": {
+                "u19-f4": { "status": "start" }, "u19-f5": { "status": "sub_on" }, "u19-f6": { "status": "start" }
+            },
+			"u18-matty-taylor": {
+                "u19-f4": { "status": "unused_sub" }, "u19-f5": { "status": "sub_on" }
+            },
+			"u21-mo-waddani": {
+                "u19-f1": { "status": "sub_on" }, "u19-f2": { "status": "start" }, "u19-f3": { "status": "sub_on" }, "u19-f4": { "status": "sub_on" }
+            },
+			"u18-oliver-goodbrand": {
+                "u19-f1": { "status": "unused_sub" }, "u19-f2": { "status": "sub_on" }, "u19-f3": { "status": "unused_sub" }
+            },
+			"s-park-seung-soo": {
+                "u19-f1": { "status": "sub_on" }, "u19-f2": { "status": "sub_on" }, "u19-f3": { "status": "start" }, "u19-f4": { "status": "start" }, "u19-f5": { "status": "start", "yellowCard": true },
+				"u19-f6": { "status": "start", "yellowCard": true }
+            },
+			"u21-roman-dowell": {
+                "u19-f1": { "status": "unused_sub" }, "u19-f2": { "status": "unused_sub" }, "u19-f3": { "status": "unused_sub" }, "u19-f4": { "status": "start" }, "u19-f5": { "status": "start" }, "u19-f6": { "status": "start" }
+            },
+			"u21-rory-finneran": {
+                "u19-f1": { "status": "start" }, "u19-f2": { "status": "start", "yellowCard": true }, "u19-f3": { "status": "sub_on", "assists": 1 }, "u19-f5": { "status": "start" }, "u19-f6": { "status": "start", "yellowCard": true }
+            },
+			"s-sam-alabi": {
+                "u19-f1": { "status": "sub_on" }, "u19-f2": { "status": "start", "yellowCard": true }, "u19-f3": { "status": "start" }, "u19-f6": { "status": "start" }
+            },
+			"u18-sammy-pinnington": {
+                "u19-f5": { "status": "unused_sub" }, "u19-f6": { "status": "sub_on" }
+            },
+			"u21-scott-bailey": {
+                "u19-f1": { "status": "start", "assists": 1, "yellowCard": true }, "u19-f2": { "status": "start" }, "u19-f3": { "status": "start", "yellowCard": true }, "u19-f4": { "status": "start", "goals": 1 },
+				"u19-f5": { "status": "start", "yellowCard": true }
+            },
+			"s-sean-neave": {
+                "u19-f1": { "status": "start", "yellowCard": true }, "u19-f2": { "status": "start" }, "u19-f3": { "status": "start", "yellowCard": true }, "u19-f4": { "status": "start", "goals": 1, "yellowCard": true },	"u19-f6": { "status": "start" }
+            },
+			"u21-thomas-bryant": {
+                "u19-f6": { "status": "start" }
+            },
+			"u18-thomas-old": {
+                "u19-f4": { "status": "start", "yellowCard": true }, "u19-f5": { "status": "start" }, "u19-f6": { "status": "unused_sub" }
+            },
+			"u21-tyler-jones": {
+                "u19-f5": { "status": "unused_sub" }, "u19-f6": { "status": "unused_sub" }
+            }
+		}
+	},
+
+
+	"u18": {
         "fixtures": [
             { "id": "u18-f1", "date": "2025-08-16", "opponent": "Blackburn U18", "venue": "H", "competition": "Premier League U18", "result": "W 3–0", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 1, "yellowCardsTotal": 3, "redCardsTotal": 1 },
             { "id": "u18-f2", "date": "2025-08-23", "opponent": "Wolverhampton Wanderers U18", "venue": "A", "competition": "Premier League U18", "result": "W 2–0", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 1, "yellowCardsTotal": 0, "redCardsTotal": 0 },
@@ -1133,7 +1243,7 @@
             "u18-will-mcpartland": {
                 "u18-f26": { "status": "start" }, "u18-f27": { "status": "start" }
             },
-            "u21-mason-miley": {
+            "s-mason-miley": {
                 "u18-f1": { "status": "start" }, "u18-f6": { "status": "start" }, "u18-f7": { "status": "start" }, "u18-f8": { "status": "start" }, "u18-f9": { "status": "start" }, "u18-f12": { "status": "start" },
                 "u18-f13": { "status": "start" }, "u18-f14": { "status": "sub_on" }, "u18-f15": { "status": "start" }, "u18-f16": { "status": "sub_on" }, "u18-f18": { "status": "start" },
                 "u18-f19": { "status": "start", "assists": 1 }, "u18-f27": { "status": "start", "yellowCard": true }, "u18-f29": { "status": "start", "yellowCard": true }, "u18-f31": { "status": "start" }

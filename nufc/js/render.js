@@ -70,13 +70,14 @@ function renderValidationPanel(issues, verbose) {
   panel.classList.remove('vp-concise');
   if (sub) sub.style.display = '';
 
-  const bySquad = { senior: [], u21: [], u18: [], _general: [] };
+  const bySquad = { _general: [] };
+  [...CORE_SQUADS, ...OPTIONAL_SQUADS].forEach(k => { bySquad[k] = []; });
   issues.forEach(iss => {
     (bySquad[iss.squad] || bySquad._general).push(iss);
   });
 
   list.innerHTML = '';
-  ['senior', 'u21', 'u18', '_general'].forEach(key => {
+  [...CORE_SQUADS, ...OPTIONAL_SQUADS, '_general'].forEach(key => {
     const group = bySquad[key];
     if (!group || group.length === 0) return;
     const wrap = document.createElement('div');
@@ -776,7 +777,7 @@ function buildSquadSection(squadKey, allSquadPlayers, fixtureData, playersById, 
   // already uses, but only for the statuses that mean "was actually part of
   // a squad", so an injured/loan/incoming/etc. record logged against this
   // squad on their behalf doesn't wrongly earn them a spot in the grid.
-  const NAMED_STATUSES = new Set(['start', 'sub_on', 'unused_sub']);
+  // NAMED_STATUSES is shared with app.js's tab-count logic — see data.js.
   const namedInSquad = (id) => {
     const recs = appearances[id];
     return !!recs && Object.values(recs).some(r => r && NAMED_STATUSES.has(r.status));

@@ -206,6 +206,37 @@ the *end* of its group rather than the front. Common for incoming
 signings, trialists, and young academy players who haven't been issued a
 squad number yet.
 
+## Competition-only squads (e.g. `u19`)
+
+Some seasons need a squad page for a one-off competition rather than a real
+age group — e.g. 2025/26, where Champions League qualification meant an
+Under-19 side entered the UEFA Youth League. That squad isn't computed from
+`dob`/`ageBands` like `senior`/`u21`/`u18` are (see "Squad is computed,
+not stored" above) — no age band ever produces it — so every player who
+appears in it is, by definition, a cross-squad guest there, badged with
+their real computed squad, exactly like any other guest appearance (see
+"Squads and guest appearances"). There's nothing to keep in sync: you don't
+add anyone to a roster file for it.
+
+To add one:
+
+1. Add a top-level key to that season's `fixtures-YYYY-YY.json` with the
+   usual `{ fixtures, appearances }` shape (e.g. `"u19": { ... }`).
+2. Add the key to `OPTIONAL_SQUADS` in `js/data.js` (once — it's a small,
+   fixed list, currently just `['u19']`) and give it an entry in
+   `SQUAD_LABEL` / `SQUAD_SHORT`.
+3. That's it. The tab and page appear automatically, and only for a season
+   whose fixtures file actually has that key — `squadKeysFor()` in
+   `js/data.js` checks for it, and `app.js` hides the tab when it's absent.
+   Because the squad has no roster of its own, its Player Info grid is
+   entirely guest cards, and its tab count reflects players actually named
+   in a matchday squad (start/sub-on/unused-sub) rather than an "active
+   roster" size.
+
+Don't add a genuinely recurring squad this way — `OPTIONAL_SQUADS` is for
+one-off competitions that come and go with qualification, not a substitute
+for a proper age band in `seasons.json`.
+
 ## seasons.json
 
 Lists every season and which roster/fixtures files belong to it. The first

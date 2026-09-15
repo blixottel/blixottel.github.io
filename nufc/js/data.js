@@ -5,11 +5,55 @@
 
 const POSITION_ORDER = ['GK', 'DEF', 'MID', 'FWD'];
 const POSITION_LABEL = { GK: 'Goalkeepers', DEF: 'Defenders', MID: 'Midfielders', FWD: 'Forwards' };
-const SQUAD_LABEL = { senior: 'First Team', u21: 'Under-21s', u18: 'Under-18s' };
+const SQUAD_LABEL = { senior: 'First Team', u21: 'Under-21s', u18: 'Under-18s', u19: 'Under-19s' };
 // u16 has no label of its own — it never gets a page/section (see mergePlayers
 // below) — but SQUAD_SHORT still needs an entry so a U16 player who's played
 // up for the U18s gets a readable "U16" pill rather than a blank one.
-const SQUAD_SHORT = { senior: 'Seniors', u21: 'U21', u18: 'U18', u16: 'U16' };
+const SQUAD_SHORT = { senior: 'Seniors', u21: 'U21', u18: 'U18', u16: 'U16', u19: 'U19' };
+
+// The three squads every season has, driven by that season's ageBands (see
+// ageBandForDob below) — always shown, even if a squad's roster ends up
+// empty. OPTIONAL_SQUADS lists squads that only exist for specific seasons
+// and are never produced by ageBandForDob at all — currently just 'u19',
+// used solely to hold fixtures for a one-off competition (the 2025/26 UEFA
+// Youth League run, entered because of Champions League qualification).
+// Because no player's *computed* squad is ever 'u19', anyone appearing in a
+// u19 fixtures file is automatically a cross-squad "guest" there — the same
+// guest mechanism already used for e.g. a U18 who plays up for the U21s
+// (see "Squads and guest appearances" in DATA-GUIDE.md) — regardless of
+// whether they're really a U18, a U21, or a senior fringe player. A season's
+// fixtures file simply omits the 'u19' key entirely in any year there's no
+// such campaign; squadKeysFor (below) and app.js use that to show or hide
+// the tab accordingly, rather than it needing a flag set anywhere else.
+const CORE_SQUADS = ['senior', 'u21', 'u18'];
+const OPTIONAL_SQUADS = ['u19'];
+
+/**
+ * Which squad tabs/sections should exist for a given season's fixtures
+ * data: the three age-banded squads always, plus any OPTIONAL_SQUADS key
+ * that's actually present (i.e. has real data) in this season's fixtures
+ * file.
+ */
+function squadKeysFor(fixturesData) {
+  return [...CORE_SQUADS, ...OPTIONAL_SQUADS.filter(k => fixturesData && fixturesData[k])];
+}
+
+// Statuses that mean "was actually named in a matchday squad" (started,
+// came on, or sat as an unused sub) — as opposed to e.g. an injured/loan/
+// incoming record logged against a squad for a day they weren't really
+// part of. Used both to decide who counts as a genuine cross-squad guest
+// (buildSquadSection in render.js) and, for a squad with no computed home
+// roster of its own (an OPTIONAL_SQUADS entry like 'u19'), to count how
+// many players are actually on that page at all (app.js).
+const NAMED_STATUSES = new Set(['start', 'sub_on', 'unused_sub']);
+
+function namedPlayerIdsFor(fixtureData) {
+  const appearances = (fixtureData && fixtureData.appearances) || {};
+  return Object.keys(appearances).filter(id => {
+    const recs = appearances[id];
+    return !!recs && Object.values(recs).some(r => r && NAMED_STATUSES.has(r.status));
+  });
+}
 // `squad` is computed, not read from JSON (see mergePlayers) — this just
 // normalizes the computed value/casing consistently everywhere it's compared.
 const normSquad = (s) => (s || '').trim().toLowerCase() === 'seniors' ? 'senior' : (s || '').trim().toLowerCase();
@@ -190,7 +234,10 @@ function isLocalDev() {
 
 // Order squads are checked in when looking for the next match, and the
 // tie-break order (see findNextMatch) if two squads share the earliest date.
-const SQUAD_ORDER = ['senior', 'u21', 'u18'];
+// 'u19' is included (via CORE_SQUADS + OPTIONAL_SQUADS) so a UEFA Youth
+// League date can win the "next match" banner too, but sorts last on a
+// tie since it's the least central of the four in a given week.
+const SQUAD_ORDER = [...CORE_SQUADS, ...OPTIONAL_SQUADS];
 
 /**
  * Finds the earliest fixture, across all three squads, that doesn't have a
