@@ -281,7 +281,6 @@
 				"s-f38": { "status": "transferred" }, "s-f39": { "status": "transferred" }, "s-f40": { "status": "transferred" }, "s-f41": { "status": "transferred" }, "s-f42": { "status": "transferred" }, "s-f43": { "status": "transferred" },
 				"s-f44": { "status": "transferred" }, "s-f45": { "status": "transferred" }, "s-f46": { "status": "transferred" }, "s-f47": { "status": "transferred" }, "s-f48": { "status": "transferred" }
             },
-            "s-nathan-carlyon": { },
             "s-nick-pope": {
                 "s-f1": { "status": "start" }, "s-f2": { "status": "start" }, "s-f3": { "status": "start" }, "s-f4": { "status": "start" }, "s-f5": { "status": "start" }, "s-f6": { "status": "start" }, "s-f7": { "status": "start" },
                 "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "start" }, "s-f12": { "status": "start", "yellowCard": true }, "s-f13": { "status": "start", "yellowCard": true }, "s-f14": { "status": "start" },
@@ -600,6 +599,7 @@
             "u21-mo-sedibeh": {
 				"u21-f14": { "status": "start", "goals": 2 }, "u21-f16": { "status": "sub_on" }
             },
+            "u21-nathan-carlyon": { },
             "u21-oliver-holland": {
 				"u21-f30": { "status": "unused_sub" }
             },

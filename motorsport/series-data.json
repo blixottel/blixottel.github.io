@@ -21,6 +21,25 @@
 		},
 		{
             "category": "formula1",
+            "name": "Formula 1 (2027)",
+            "resultsVerified": true,
+            "nextDate": "13 Mar 2027",
+            "links": {
+                "official": { "url": "https://www.formula1.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2025-2071", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.formula1.com/en/latest/article/formula-1-reveals-calendar-for-2027-season-with-10-sprint-events.5J8ePLyjRuMyWEIDNUKgY4", "label": "Calendar", "active": true }
+			},
+            "social": [
+                { "platform": "bluesky", "url": "https://bsky.app/profile/f1tv.bsky.social" },
+                { "platform": "x-twitter", "url": "https://x.com/f1" },
+                { "platform": "facebook", "url": "https://www.facebook.com/Formula1" },
+                { "platform": "instagram", "url": "https://www.instagram.com/f1" },
+                { "platform": "youtube", "url": "https://www.youtube.com/F1"}
+			]
+		},
+		{
+            "category": "formula1",
             "name": "Formula 2",
             "resultsVerified": true,
             "nextDate": "26 Sep 2026",
@@ -91,13 +110,13 @@
 		{
             "category": "formulaRegional",
             "name": "FR Europe",
-            "resultsVerified": false,
+            "resultsVerified": true,
             "nextDate": "2027",
             "links": {
                 "official": { "url": "https://fiafrec.com", "label": "Official site", "active": true },
-                "results": { "url": "https://fia-frec.vii-results.com/results", "label": "Results", "active": true },
-                "standings": { "url": "https://fiafrec.com/standings", "label": "Standings", "active": true },
-                "calendar": { "url": "https://fiafrec.com/calendar", "label": "Calendar", "active": true }
+                "results": { "url": "https://fia-frec.vii-results.com", "label": "Results", "active": false },
+                "standings": { "url": "https://fiafrec.com/standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://fiafrec.com/calendar", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "facebook", "url": "https://www.facebook.com/fiaformularegionaleu" },
@@ -216,7 +235,7 @@
 		{
             "category": "formula4",
             "name": "F4 CEZ",
-            "resultsVerified": false,
+            "resultsVerified": true,
             "nextDate": "24 Oct 2026",
             "links": {
                 "official": { "url": "https://www.f4-cez.com", "label": "Official site", "active": true },
@@ -290,12 +309,12 @@
             "category": "formula4",
             "name": "F4 Germany",
             "resultsVerified": true,
-            "nextDate": "2027",
+            "nextDate": "8 May 2027",
             "links": {
                 "official": { "url": "https://f4-germany.com", "label": "Official site", "active": true },
                 "results": { "url": null, "label": "Results", "active": false },
                 "standings": { "url": null, "label": "Standings", "active": false },
-                "calendar": { "url": null, "label": "Calendar", "active": false }
+                "calendar": { "url": "https://f4-germany.com/news/f4-germany-announces-provisional-calendar", "label": "Calendar", "active": true }
             },
             "social": [
 			    { "platform": "facebook", "url": "https://www.facebook.com/profile.php?id=61592154953372" },
@@ -306,7 +325,7 @@
 		{
             "category": "formula4",
             "name": "F4 India",
-            "resultsVerified": false,
+            "resultsVerified": true,
             "nextDate": "19 Sep 2026",
             "links": {
                 "official": { "url": "https://www.fiaindianf4.com", "label": "Official site", "active": true },
@@ -605,12 +624,16 @@
             "resultsVerified": true,
             "nextDate": "2027",
             "links": {
-                "official": { "url": "", "label": "Official site", "active": true },
+                "official": { "url": "https://eurocup5.org", "label": "Official site", "active": true },
                 "results": { "url": "", "label": "Results", "active": false },
                 "standings": { "url": "", "label": "Standings", "active": false },
                 "calendar": { "url": "", "label": "Calendar", "active": false }
             },
-            "social": [ ]
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/Eurocup_5" },
+                { "platform": "facebook", "url": "https://www.facebook.com/profile.php?id=61593067911927" },
+                { "platform": "instagram", "url": "https://www.instagram.com/eurocup_5" }
+			]
         },
 		{
             "category": "nonFIA",
@@ -624,7 +647,7 @@
                 "calendar": { "url": "https://euroformula.gtsport.es/blog/2026-calendar-of-the-euroformula-open-announced-misano-joins-as-a-new-track", "label": "Calendar", "active": true }
             },
             "social": [
-                { "platform": "instagram", "url": "https://www.instagram.com/euroformula_open" },
+                { "platform": "instagram", "url": "https://www.instagram.com/euroformula.official" },
                 { "platform": "youtube", "url": "https://www.youtube.com/user/EuroFormulaOpen"}
             ]
         },
@@ -892,8 +915,8 @@
         {
             "category": "nonFIA",
             "name": "SMP F4",
-            "resultsVerified": false,
-            "nextDate": "9 Oct 2026",
+            "resultsVerified": true,
+            "nextDate": "10 Oct 2026",
             "links": {
                 "official": { "url": "https://smpf4.ru", "label": "Official site", "active": true },
                 "results": { "url": "https://speedhive.mylaps.com/livetiming/69E97C4FD89D2491-2147484210", "label": "Results", "active": true },
@@ -1101,7 +1124,7 @@
         {
             "category": "motorbikes",
             "name": "MotoGP",
-            "resultsVerified": false,
+            "resultsVerified": true,
             "nextDate": "19 Sep 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
@@ -1155,7 +1178,7 @@
 		{
             "category": "motorbikes",
             "name": "Moto2",
-            "resultsVerified": false,
+            "resultsVerified": true,
             "nextDate": "19 Sep 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
@@ -1209,7 +1232,7 @@
 		{
             "category": "motorbikes",
             "name": "Moto3",
-            "resultsVerified": false,
+            "resultsVerified": true,
             "nextDate": "19 Sep 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },

@@ -67,7 +67,8 @@
                 "s-f3": { "status": "start", "minutes": 82, "goals": 1, "xg": 0.20 },
                 "s-f4": { "status": "start", "minutes": 77, "yellowCard": true },
                 "s-f5": { "status": "sub_on", "minutes": 24, "xg": 0.22 },
-				"s-f6": { "status": "injured" }
+				"s-f6": { "status": "injured" },
+				"s-f7": { "status": "injured" }
             },
             "s-bazoumana-toure": {
                 "s-f1": { "status": "unused_sub" },
@@ -85,7 +86,8 @@
                 "s-f1": { "status": "unused_sub" },
                 "s-f2": { "status": "start", "minutes": 90, "yellowCard": true },
                 "s-f3": { "status": "unused_sub" }, "s-f4": { "status": "injured" }, "s-f5": { "status": "injured" },
-				"s-f6": { "status": "injured" }
+				"s-f6": { "status": "injured" },
+				"s-f7": { "status": "injured" }
             },
             "s-fabian-schar": {
                 "s-f1": { "status": "sub_on", "minutes": 1 },
@@ -117,11 +119,13 @@
                 "s-f3": { "status": "sub_on", "minutes": 8 },
                 "s-f4": { "status": "sub_on", "minutes": 27, "goals": 1, "xg": 0.11 },
                 "s-f5": { "status": "start", "minutes": 83, "yellowCard": true, "xg": 0.06 },
-                "s-f6": { "status": "unused_sub" }
+                "s-f6": { "status": "unused_sub" },
+				"s-f7": { "status": "injured" }
             },
             "s-joelinton": {
                 "s-f1": { "status": "injured" }, "s-f2": { "status": "injured" }, "s-f3": { "status": "injured" }, "s-f4": { "status": "injured" }, "s-f5": { "status": "injured" },
-				"s-f6": { "status": "injured" }
+				"s-f6": { "status": "injured" },
+				"s-f7": { "status": "injured" }
             },
             "s-joe-willock": {
                 "s-f1": { "status": "sub_on", "minutes": 34 , "goals": 1, "xg": 0.09 },
@@ -184,7 +188,8 @@
                 "s-f3": { "status": "start", "minutes": 71, "yellowCard": true },
                 "s-f4": { "status": "start", "minutes": 77 },
                 "s-f5": { "status": "start", "minutes": 90, "xg": 0.08 },
-                "s-f6": { "status": "start", "minutes": 19 }
+                "s-f6": { "status": "start", "minutes": 19 },
+				"s-f7": { "status": "injured" }
             },
             "s-sean-steur": {
                 "s-f1": { "status": "start", "minutes": 56 },
@@ -284,7 +289,7 @@
             { "id": "u21-f2", "date": "2026-08-24", "opponent": "Tottenham Hotspur U21", "venue": "H", "competition": "Premier League 2", "result": "L 1-3", "subsUsed": 5, "subsUnused": 2, "assistsTotal": 1, "yellowCardsTotal": 2, "redCardsTotal": 0 },
             { "id": "u21-f3", "date": "2026-08-31", "opponent": "Fulham U21", "venue": "H", "competition": "Premier League 2", "result": "L 0-4", "subsUsed": 5, "subsUnused": 2, "assistsTotal": 0, "yellowCardsTotal": 1, "redCardsTotal": 0 },
             { "id": "u21-f4", "date": "2026-09-09", "opponent": "Boreham Wood", "venue": "A", "competition": "English National League Cup", "result": "L 1-2", "subsUsed": 4, "subsUnused": 3, "assistsTotal": 1, "yellowCardsTotal": 2, "redCardsTotal": 0 },
-            { "id": "u21-f5", "date": "2026-09-15", "opponent": "York City", "venue": "A", "competition": "EFL Trophy", "result": "" },
+            { "id": "u21-f5", "date": "2026-09-15", "opponent": "York City", "venue": "A", "competition": "EFL Trophy", "result": "W 3-1", "subsUsed": 5, "subsUnused": 2, "assistsTotal": 2, "yellowCardsTotal": 0, "redCardsTotal": 0 },
             { "id": "u21-f6", "date": "2026-09-19", "opponent": "Leeds United U21", "venue": "A", "competition": "Premier League 2", "result": "" },
             { "id": "u21-f7", "date": "2026-09-22", "opponent": "Bradford City", "venue": "A", "competition": "EFL Trophy", "result": "" },
             { "id": "u21-f8", "date": "2026-10-06", "opponent": "Solihull Moors", "venue": "A", "competition": "English National League Cup", "result": "" },
@@ -315,81 +320,81 @@
             { "id": "u21-f33", "date": "2027-04-03", "opponent": "West Bromwich Albion U21", "venue": "A", "competition": "Premier League 2", "result": "" }
         ],
         "appearances": {
-            "s-park-seung-soo": {
-                "u21-f1": { "status": "sub_on" },
-                "u21-f2": { "status": "sub_on" },
-                "u21-f3": { "status": "sub_on" }
-            },
-            "s-sam-alabi": {
-                "u21-f3": { "status": "sub_on", "yellowCard": true },
-                "u21-f4": { "status": "start" }
-            },
-            "s-trevan-sanusi": {
-                "u21-f1": { "status": "start", "goals": 1, "assists": 1 },
-                "u21-f2": { "status": "start", "assists": 1 },
-                "u21-f3": { "status": "start" }
-            },
             "u21-afner-ca": {
                 "u21-f1": { "status": "sub_on" },
                 "u21-f2": { "status": "sub_on" },
                 "u21-f3": { "status": "sub_on" },
-                "u21-f4": { "status": "sub_on" }
+                "u21-f4": { "status": "sub_on" },
+                "u21-f5": { "status": "sub_on", "goals": 1 }
             },
             "u21-alex-walpole": {
                 "u21-f1": { "status": "unused_sub" }
             },
+            "u21-alfie-seldon": {
+                "u21-f5": { "status": "sub_on" }
+            },
             "u21-dylan-charlton": {
                 "u21-f2": { "status": "start" },
                 "u21-f3": { "status": "start" },
-                "u21-f4": { "status": "start" }
+                "u21-f4": { "status": "start" },
+                "u21-f5": { "status": "start" }
             },
             "u21-fraser-harper": {
                 "u21-f1": { "status": "start" },
                 "u21-f2": { "status": "sub_on" },
                 "u21-f3": { "status": "start" },
-                "u21-f4": { "status": "unused_sub" }
+                "u21-f4": { "status": "unused_sub" },
+                "u21-f5": { "status": "sub_on" }
             },
             "u21-george-mair": {
                 "u21-f1": { "status": "start", "yellowCard": true },
                 "u21-f2": { "status": "start" },
                 "u21-f3": { "status": "start" },
-                "u21-f4": { "status": "unused_sub" }
+                "u21-f4": { "status": "unused_sub" },
+                "u21-f5": { "status": "unused_sub" }
             },
             "u21-henry-johnson": {
                 "u21-f1": { "status": "start" },
                 "u21-f2": { "status": "start" },
                 "u21-f3": { "status": "start" },
-                "u21-f4": { "status": "start" }
+                "u21-f4": { "status": "start" },
+                "u21-f5": { "status": "start" }
             },
             "u21-isaac-moran": {
                 "u21-f1": { "status": "start" }
             },
             "u21-jake-durrant": {
                 "u21-f1": { "status": "sub_on" },
-                "u21-f2": { "status": "unused_sub" }
+                "u21-f2": { "status": "unused_sub" },
+                "u21-f5": { "status": "unused_sub" }
             },
             "u21-johnny-emerson": {
                 "u21-f3": { "status": "unused_sub" },
-                "u21-f4": { "status": "sub_on" }
+                "u21-f4": { "status": "sub_on" },
+                "u21-f5": { "status": "sub_on" }
             },
             "u21-kacey-wooster": {
-                "u21-f4": { "status": "sub_on" }
+                "u21-f4": { "status": "sub_on" },
+                "u21-f5": { "status": "sub_on" }
             },
             "u21-kyle-fitzgerald": {
                 "u21-f1": { "status": "sub_on" }
             },
             "u21-kyran-thompson": {
-                "u21-f4": { "status": "sub_on" }
+                "u21-f4": { "status": "sub_on" },
+                "u21-f5": { "status": "start", "goals": 1, "assists": 1 }
             },
             "u21-logan-watts": {
                 "u21-f1": { "status": "unused_sub" },
-                "u21-f4": { "status": "start" }
+                "u21-f4": { "status": "start" },
+                "u21-f5": { "status": "start" }
             },
             "u21-luke-craggs": {
                 "u21-f1": { "status": "start" },
                 "u21-f2": { "status": "sub_on" },
                 "u21-f3": { "status": "sub_on" },
-                "u21-f4": { "status": "unused_sub" }
+                "u21-f4": { "status": "unused_sub" },
+                "u21-f5": { "status": "start" }
             },
             "s-mason-miley": {
                 "u21-f2": { "status": "start" },
@@ -400,7 +405,8 @@
                 "u21-f1": { "status": "start" },
                 "u21-f2": { "status": "start" },
                 "u21-f3": { "status": "start" },
-                "u21-f4": { "status": "start", "goals": 1 }
+                "u21-f4": { "status": "start", "goals": 1 },
+                "u21-f5": { "status": "start" }
             },
             "u21-michael-mills": {
                 "u21-f1": { "status": "start" },
@@ -412,16 +418,34 @@
                 "u21-f1": { "status": "start" },
                 "u21-f2": { "status": "start" },
                 "u21-f3": { "status": "start" },
-                "u21-f4": { "status": "start", "yellowCard": true }
+                "u21-f4": { "status": "start", "yellowCard": true },
+                "u21-f5": { "status": "start", "assists": 1 }
+            },
+            "s-park-seung-soo": {
+                "u21-f1": { "status": "sub_on" },
+                "u21-f2": { "status": "sub_on" },
+                "u21-f3": { "status": "sub_on" }
             },
             "u21-roman-dowell": {
-                "u21-f4": { "status": "start" }
+                "u21-f4": { "status": "start" },
+                "u21-f5": { "status": "start" }
+            },
+            "s-sam-alabi": {
+                "u21-f3": { "status": "sub_on", "yellowCard": true },
+                "u21-f4": { "status": "start" },
+                "u21-f5": { "status": "start" }
             },
             "u21-scott-bailey": {
                 "u21-f1": { "status": "start" },
                 "u21-f2": { "status": "start", "yellowCard": true },
                 "u21-f3": { "status": "start" },
-                "u21-f4": { "status": "start" }
+                "u21-f4": { "status": "start" },
+                "u21-f5": { "status": "start" }
+            },
+            "s-trevan-sanusi": {
+                "u21-f1": { "status": "start", "goals": 1, "assists": 1 },
+                "u21-f2": { "status": "start", "assists": 1 },
+                "u21-f3": { "status": "start" }
             },
             "u21-tyler-jones": {
                 "u21-f2": { "status": "unused_sub" },
@@ -431,7 +455,8 @@
                 "u21-f1": { "status": "sub_on", "goals": 1 },
                 "u21-f2": { "status": "start", "goals": 1 },
                 "u21-f3": { "status": "start" },
-                "u21-f4": { "status": "start" }
+                "u21-f4": { "status": "start" },
+                "u21-f5": { "status": "start", "goals": 1 }
             },
             "s-leo-shahar": {
                 "u21-f4": { "status": "loan" }, "u21-f5": { "status": "loan" }, "u21-f6": { "status": "loan" }, "u21-f7": { "status": "loan" }, "u21-f8": { "status": "loan" }, "u21-f9": { "status": "loan" },
@@ -524,7 +549,7 @@
                 "u18-f4": { "status": "start", "goals": 1, "assists": 2 },
                 "u18-f5": { "status": "start", "goals": 3 }
             },
-            "u18-alfie-seldon": {
+            "u21-alfie-seldon": {
                 "u18-f1": { "status": "start", "goals": 1, "yellowCard": true },
                 "u18-f2": { "status": "start", "goals": 2 },
                 "u18-f3": { "status": "start", "assists": 1 },

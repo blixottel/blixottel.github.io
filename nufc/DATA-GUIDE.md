@@ -96,6 +96,37 @@ they'll just show initials. `gallery.html` is the fastest way to see, at a
 glance, which players are missing photos or relying on a single shaky
 source — see below.
 
+**Shared sources.** A handful of source names are meant to resolve to the
+same URL for every player rather than being player-specific — currently
+just `placeholder`, the generic club-crest silhouette shown when no real
+photo exists yet. These live in a small `SHARED_PHOTO_SOURCES` registry —
+in `js/data.js`, duplicated in `gallery.html`'s own script since that page
+is self-contained — mapping a source name straight to one URL:
+
+```js
+const SHARED_PHOTO_SOURCES = {
+  placeholder: 'https://i.ibb.co/99RpQjTT/nufc-placeholder.png',
+};
+```
+
+Any key listed there is automatically available to *every* player as a
+fallback candidate, tried last, without needing to be mentioned in that
+player's own `photos` object in `players-master.json` at all — that's why
+you won't find `"placeholder"` in any player record even though every
+player effectively has it. Change the URL in the registry once and every
+player picks it up. A season roster file can still promote a shared source
+to the front of a specific player's fallback order with `photoSource`
+(e.g. `"photoSource": "placeholder"`), exactly as it would for a real
+per-player source — the promotion logic checks the same combined candidate
+list either way, so it doesn't matter that `placeholder` isn't literally
+sitting in that player's `photos`.
+
+To opt a specific player *out* of a shared source (skip it entirely rather
+than have it as a fallback), give it an explicit empty value in that
+player's own `photos`, e.g. `"placeholder": ""` — an explicit empty entry
+takes precedence over the automatic one. This should be rare; it's meant
+for a genuine edge case, not routine use.
+
 ### Squad is computed, not stored
 
 A player's squad (`senior` / `u21` / `u18` / `u16`) is worked out
@@ -129,6 +160,30 @@ auditing every player's photos regardless of squad.
   never consulted when `dob` is present, so it can't be used to override a
   known age.
 
+**Overriding a known age: `squadOverride`.** Occasionally a player should
+stay associated with a squad they've technically aged out of — e.g. a
+player contracted as an U21 who was injured, still rehabbing when they
+became too old for the U21 age band, and never actually in first-team
+contention. Setting `squadOverride` on that player's *season roster* entry
+pins their `squad` to that value outright, regardless of what `dob` +
+`ageBands` would otherwise produce:
+
+```json
+{ "id": "u21-nathan-carlyon", "number": 34, "status": "injured_season",
+  "squadOverride": "u21", "reasonNote": "Completing rehab with the U21s" }
+```
+
+Unlike `squadIfDobUnknown`, this works whether or not `dob` is known, and
+takes priority over everything else — it's an explicit "keep them here"
+instruction, not a fallback for missing data. Because it's set per season
+roster entry, it naturally stops applying the moment you don't carry it
+forward into the next season's roster file (or once it becomes redundant —
+see below).
+
+Use it sparingly, for genuine one-off exceptions — not as a routine way to
+keep a squad's numbers up, and not as a substitute for fixing `ageBands` if
+the *bands themselves* are wrong for a whole cohort.
+
 ## players-YYYY-YY.json (season roster files)
 
 One object per player who's part of that season — either on the books
@@ -153,9 +208,10 @@ stays in `players-master.json`).
 | `fromClub` | Only for `status: "incoming"`. |
 | `expectedDate` | Only for `status: "incoming"`, `YYYY-MM-DD`. |
 | `reasonNote` | Free text shown on the status card, for `injured_season` / `not_selected_season` / `trialist`. |
+| `squadOverride` | Optional. Pins `squad` to this value regardless of what `dob`/`ageBands` compute. See "Overriding a known age" above — use sparingly. |
 | `photoSource` | Optional. Names a key in that player's master `photos` object to try **first** this season — e.g. `"photoSource": "premierleague"` if the official club photo hasn't been shot yet for a new arrival. Falls through to the rest of `photos` as normal if that source 404s. |
 
-There's deliberately no `squad` field here — see "Squad is computed" above.
+There's deliberately no `squad` field here beyond the optional `squadOverride` above — squad is computed by default; see "Squad is computed" above.
 
 ## Squads and guest appearances
 

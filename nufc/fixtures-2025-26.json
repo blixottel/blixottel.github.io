@@ -999,7 +999,7 @@
 			"u21-alex-odonovan": {
                 "u19-f2": { "status": "unused_sub" }
             },
-			"u18-alfie-seldon": {
+			"u21-alfie-seldon": {
                 "u19-f3": { "status": "sub_on" }, "u19-f4": { "status": "sub_on" }, "u19-f5": { "status": "start" }
             },
 			"u21-anthony-munda": {
@@ -1298,7 +1298,7 @@
             "u18-charlie-robinson": {
                 "u18-f25": { "status": "sub_on" }
             },
-            "u18-alfie-seldon": {
+            "u21-alfie-seldon": {
                 "u18-f2": { "status": "sub_on", "assists": 1 }, "u18-f4": { "status": "start" }, "u18-f5": { "status": "start", "goals": 1 }, "u18-f6": { "status": "start", "goals": 1, "yellowCard": true },
                 "u18-f7": { "status": "start" }, "u18-f8": { "status": "start" }, "u18-f9": { "status": "start" }, "u18-f10": { "status": "sub_on" }, "u18-f11": { "status": "start", "goals": 1 },
                 "u18-f13": { "status": "sub_on", "goals": 1 }, "u18-f14": { "status": "sub_on" }, "u18-f15": { "status": "start", "goals": 1, "assists": 1 }, "u18-f16": { "status": "sub_on", "assists": 1 },

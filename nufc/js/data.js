@@ -6,6 +6,18 @@
 const POSITION_ORDER = ['GK', 'DEF', 'MID', 'FWD'];
 const POSITION_LABEL = { GK: 'Goalkeepers', DEF: 'Defenders', MID: 'Midfielders', FWD: 'Forwards' };
 const SQUAD_LABEL = { senior: 'First Team', u21: 'Under-21s', u18: 'Under-18s', u19: 'Under-19s' };
+
+// URLs that are shared across many players rather than specific to one of
+// them — currently just the generic silhouette used when no real photo of
+// a player exists yet. Rather than repeating the same URL in every one of
+// those players' `photos` entries in players-master.json, that entry is
+// set to `true` (a sentinel, not a URL) and resolved against this registry
+// by key — see resolvePhotoUrl / photoCandidates below. Update the URL here
+// once and every player using it picks up the change; gallery.html keeps
+// its own copy of this registry since it's deliberately self-contained.
+const SHARED_PHOTO_SOURCES = {
+  placeholder: 'https://i.ibb.co/99RpQjTT/nufc-placeholder.png',
+};
 // u16 has no label of its own — it never gets a page/section (see mergePlayers
 // below) — but SQUAD_SHORT still needs an entry so a U16 player who's played
 // up for the U18s gets a readable "U16" pill rather than a blank one.
@@ -123,11 +135,12 @@ const DEFAULT_UNKNOWN_DOB_SQUAD = 'u16';
  * name, nationality, dob, position, and the full set of photo sources) and
  * a per-season roster file (number, status, loanClub, and an optional
  * photoSource override — the things that can change year to year). Squad
- * membership is neither of these — it's computed (see ageBandForDob above).
- * mergePlayers joins master + season by `id` and attaches the computed
- * `squad`, producing the same flat player-object shape the rest of the app
- * has always expected, so buildSquadSection and friends don't need to know
- * any of this happened.
+ * membership is neither of these — it's computed (see ageBandForDob above),
+ * unless a season roster entry pins it explicitly via `squadOverride` (see
+ * below). mergePlayers joins master + season by `id` and attaches the
+ * computed `squad`, producing the same flat player-object shape the rest of
+ * the app has always expected, so buildSquadSection and friends don't need
+ * to know any of this happened.
  *
  * A season-roster id with no matching master entry is a data-entry mistake
  * (typo'd id, or a player never added to the master file — including a
@@ -137,6 +150,22 @@ const DEFAULT_UNKNOWN_DOB_SQUAD = 'u16';
  * true`, which validateFixtures (stats.js) turns into a proper entry in the
  * on-page "Data checks" panel — the console.warn below is a backup for
  * anyone watching DevTools, not the primary way this is meant to be caught.
+ *
+ * `squadOverride` (season-roster field, optional): pins a player to a given
+ * squad for that season regardless of what dob/ageBands would otherwise
+ * compute — for the rare case a player should stay associated with a squad
+ * they've aged out of on paper. E.g. a player who spent most of a season
+ * rehabbing an injury with the U21s, having turned too old for the U21s
+ * partway through, but was never actually in first-team contention:
+ *   { "id": "u21-nathan-carlyon", "status": "injured_season",
+ *     "squadOverride": "u21", "reasonNote": "Completing rehab with the U21s" }
+ * This takes priority over everything else, including `squadIfDobUnknown` —
+ * unlike that field (only ever a substitute for a *missing* dob), this is
+ * an explicit override of a *known* one. `_squadOverrideRedundant: true` is
+ * set on the merged player when the override is the same value the normal
+ * computation would've produced anyway (i.e. it can safely be removed) —
+ * a candidate for its own "Data checks" entry in stats.js, not yet wired up
+ * there.
  */
 function mergePlayers(masterList, seasonList, ageBands) {
   const masterById = {};
@@ -148,14 +177,24 @@ function mergePlayers(masterList, seasonList, ageBands) {
       return { id: s.id, name: s.id, nationality: '', dob: '', position: '', photos: {}, ...s, _unresolvedMaster: true, squad: 'senior' };
     }
     const merged = { ...master, ...s };
+    let computedSquad;
     if (merged.dob) {
-      merged.squad = ageBandForDob(merged.dob, ageBands);
+      computedSquad = ageBandForDob(merged.dob, ageBands);
       if (merged.squadIfDobUnknown) merged._squadIfDobUnknownUnused = true;
     } else if (merged.squadIfDobUnknown) {
-      merged.squad = merged.squadIfDobUnknown;
+      computedSquad = merged.squadIfDobUnknown;
     } else {
-      merged.squad = DEFAULT_UNKNOWN_DOB_SQUAD;
+      computedSquad = DEFAULT_UNKNOWN_DOB_SQUAD;
       merged._dobUnknownDefaulted = true;
+    }
+
+    if (merged.squadOverride) {
+      merged.squad = merged.squadOverride;
+      if (normSquad(merged.squadOverride) === normSquad(computedSquad)) {
+        merged._squadOverrideRedundant = true;
+      }
+    } else {
+      merged.squad = computedSquad;
     }
     return merged;
   });
@@ -277,22 +316,44 @@ function currentSeasonId(seasons) {
  * fallback priority; a season roster entry can override that per-player-
  * per-season with a `photoSource` key naming which source to try first.
  *
+ * Every key in SHARED_PHOTO_SOURCES (above) is automatically available to
+ * every player as a fallback, tried last, without needing to be listed in
+ * that player's own `photos` — so `placeholder` doesn't need repeating (or
+ * even mentioning) in every one of 140+ player records. A season file can
+ * still promote it to the front via `photoSource: "placeholder"` exactly as
+ * it would for a real per-player source; the promotion check just also
+ * looks in SHARED_PHOTO_SOURCES, not only in that player's own `photos`. A
+ * player can opt out of a given shared source by giving it an explicit
+ * empty value in their own `photos` (e.g. `"placeholder": ""`), which is
+ * how a genuinely photo-less-forever edge case could suppress it.
+ *
  * Also accepts the older array-of-URLs `photos` shape and the single-string
  * `photo` field, for any records that haven't been migrated yet. Empty/falsy
  * entries are dropped so a blank string doesn't count as a candidate.
  */
 function photoCandidates(p) {
   const photos = p.photos;
+  let candidates = [];
+
   if (photos && typeof photos === 'object' && !Array.isArray(photos)) {
     const keys = Object.keys(photos).filter(k => photos[k]);
-    if (keys.length === 0) return [];
-    let ordered = keys;
-    if (p.photoSource && photos[p.photoSource]) {
-      ordered = [p.photoSource, ...keys.filter(k => k !== p.photoSource)];
-    }
-    return ordered.map(k => photos[k]);
+    candidates = keys.map(k => ({ key: k, url: photos[k] }));
+    Object.keys(SHARED_PHOTO_SOURCES).forEach(k => {
+      if (!(k in photos)) candidates.push({ key: k, url: SHARED_PHOTO_SOURCES[k] });
+    });
+  } else if (Array.isArray(photos) && photos.length) {
+    candidates = photos.filter(Boolean).map(url => ({ key: null, url }));
+  } else if (p.photo) {
+    candidates = [{ key: null, url: p.photo }];
   }
-  if (Array.isArray(photos) && photos.length) return photos.filter(Boolean);
-  if (p.photo) return [p.photo];
-  return [];
+
+  if (p.photoSource) {
+    const idx = candidates.findIndex(c => c.key === p.photoSource);
+    if (idx > 0) {
+      const [chosen] = candidates.splice(idx, 1);
+      candidates.unshift(chosen);
+    }
+  }
+
+  return candidates.map(c => c.url);
 }

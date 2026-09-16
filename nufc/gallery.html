@@ -306,6 +306,62 @@
     font-family: 'Oswald', sans-serif;
     display: none;
   }
+
+  .source-summary {
+    background: var(--paper-raised);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    padding: 20px 22px 22px;
+    margin-top: 28px;
+  }
+  .source-summary-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 6px;
+  }
+  .source-summary-note {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--slate);
+    margin: 0 0 16px;
+  }
+  .source-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+  }
+  .source-table th,
+  .source-table td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .source-table th {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 10.5px;
+    color: var(--slate);
+    font-weight: 600;
+  }
+  .source-table td:nth-child(2), .source-table td:nth-child(3),
+  .source-table th:nth-child(2), .source-table th:nth-child(3) {
+    text-align: right;
+    width: 110px;
+  }
+  .source-table tbody tr:hover { background: var(--paper); }
+  .source-table-total td {
+    font-weight: 700;
+    border-top: 2px solid var(--ink);
+    border-bottom: none;
+  }
+  .source-summary-pending {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--slate);
+    font-style: italic;
+  }
 </style>
 </head>
 <body>
@@ -346,11 +402,31 @@
   <p class="season-note" id="season-note"></p>
   <div id="blocks"></div>
   <div id="empty-state">No players match that search.</div>
+
+  <section class="source-summary" id="source-summary">
+    <h2 class="source-summary-title">Photo sources</h2>
+    <p class="source-summary-note">Across every player in this season's roster (not affected by the filters above): how many photos are on record from each source, and how many are the one actually winning the fallback race right now.</p>
+    <table class="source-table">
+      <thead>
+        <tr><th>Source</th><th>Available</th><th>In use</th></tr>
+      </thead>
+      <tbody id="source-table-body">
+        <tr><td colspan="3" class="source-summary-pending">Loading images to determine what's in use…</td></tr>
+      </tbody>
+    </table>
+  </section>
 </main>
 
 <script>
 const SQUAD_LABEL = { senior: 'First Team', u21: 'Under-21s', u18: 'Under-18s', u16: 'Under-16s' };
 const normSquad = (s) => (s || '').trim().toLowerCase() === 'seniors' ? 'senior' : (s || '').trim().toLowerCase();
+
+// Kept in sync with the SHARED_PHOTO_SOURCES registry in js/data.js — see
+// the comment there. Duplicated rather than imported because this page is
+// deliberately self-contained (no js/*.js dependency).
+const SHARED_PHOTO_SOURCES = {
+  placeholder: 'https://i.ibb.co/99RpQjTT/nufc-placeholder.png',
+};
 
 /**
  * Same age-band computation as js/data.js — squad is derived from dob
@@ -378,23 +454,55 @@ const DEFAULT_UNKNOWN_DOB_SQUAD = 'u16';
  * which source it came from — useful for spotting e.g. "the transfermarkt
  * one is stale" at a glance. Also falls back to the legacy `photos` array
  * and single `photo` string field for anything not yet on the new schema.
+ *
+ * Every key in SHARED_PHOTO_SOURCES (above) is automatically available to
+ * every player as a fallback, tried last, without needing to be listed in
+ * that player's own `photos` — so `placeholder` doesn't need repeating in
+ * every player record. A season file's `photoSource: "placeholder"` still
+ * promotes it to the front exactly as it would a real per-player source.
  */
 function photoCandidates(p) {
   const photos = p.photos;
+  let candidates = [];
+
   if (photos && typeof photos === 'object' && !Array.isArray(photos)) {
     const keys = Object.keys(photos).filter(k => photos[k]);
-    if (keys.length === 0) return [];
-    let ordered = keys;
-    if (p.photoSource && photos[p.photoSource]) {
-      ordered = [p.photoSource, ...keys.filter(k => k !== p.photoSource)];
+    candidates = keys.map(k => ({ key: k, url: photos[k] }));
+    Object.keys(SHARED_PHOTO_SOURCES).forEach(k => {
+      if (!(k in photos)) candidates.push({ key: k, url: SHARED_PHOTO_SOURCES[k] });
+    });
+  } else if (Array.isArray(photos) && photos.length) {
+    candidates = photos.filter(Boolean).map(url => ({ key: null, url }));
+  } else if (p.photo) {
+    candidates = [{ key: null, url: p.photo }];
+  }
+
+  if (p.photoSource) {
+    const idx = candidates.findIndex(c => c.key === p.photoSource);
+    if (idx > 0) {
+      const [chosen] = candidates.splice(idx, 1);
+      candidates.unshift(chosen);
     }
-    return ordered.map(k => ({ key: k, url: photos[k] }));
   }
-  if (Array.isArray(photos) && photos.length) {
-    return photos.filter(Boolean).map(url => ({ key: null, url }));
-  }
-  if (p.photo) return [{ key: null, url: p.photo }];
-  return [];
+
+  return candidates;
+}
+
+/**
+ * What the gallery actually displays, as opposed to the full candidate list
+ * `photoCandidates` returns (which includes every SHARED_PHOTO_SOURCES entry
+ * for every player, since that's what the live site needs for a genuine
+ * last-resort fallback). The gallery's job is auditing what's really on
+ * record per player, so a source that was added automatically rather than
+ * being in that player's own `photos` is only shown if the player is
+ * actually configured to use it — i.e. their `photoSource` names it. A
+ * player's own real photo entries are always shown regardless.
+ */
+function visiblePhotoCandidates(p) {
+  return photoCandidates(p).filter(c => {
+    if (!(c.key in SHARED_PHOTO_SOURCES)) return true;
+    return p.photoSource === c.key;
+  });
 }
 
 /**
@@ -453,6 +561,7 @@ function buildPhotoTile(candidate, index) {
   const { key, url } = candidate;
   const tile = document.createElement('div');
   tile.className = 'photo-tile';
+  tile.dataset.source = key || '(unlabeled)';
 
   const frame = document.createElement('div');
   frame.className = 'photo-frame';
@@ -505,7 +614,7 @@ function buildPhotoTile(candidate, index) {
  * first one that actually loaded as "in use" (outlined + badged) — that's
  * the one the fallback chain on the main site would settle on.
  */
-function markInUse(tiles) {
+function markInUse(tiles, onSettled) {
   let settled = 0;
   const check = () => {
     settled++;
@@ -518,6 +627,7 @@ function markInUse(tiles) {
       badge.textContent = 'In use';
       winner.tile.querySelector('.photo-frame').appendChild(badge);
     }
+    if (onSettled) onSettled();
   };
   tiles.forEach(({ img, tile }) => {
     if (tile.classList.contains('failed')) { check(); return; }
@@ -528,8 +638,8 @@ function markInUse(tiles) {
   });
 }
 
-function buildPlayerBlock(p) {
-  const candidates = photoCandidates(p);
+function buildPlayerBlock(p, onSettled) {
+  const candidates = visiblePhotoCandidates(p);
   const block = document.createElement('div');
   block.className = 'player-block' + (candidates.length === 0 ? ' no-photos' : '');
   block.dataset.name = (p.name || '').toLowerCase();
@@ -559,11 +669,69 @@ function buildPlayerBlock(p) {
   } else {
     const tiles = candidates.map((c, i) => buildPhotoTile(c, i));
     tiles.forEach(({ tile }) => row.appendChild(tile));
-    markInUse(tiles);
+    markInUse(tiles, onSettled);
   }
 
   block.appendChild(row);
   return block;
+}
+
+/**
+ * Tallies, per photo source key, how many photos are on record across the
+ * whole roster ("available") versus how many are actually the one winning
+ * the fallback race on a player's card right now ("in use"). Available is
+ * known synchronously from the data; in-use depends on every image across
+ * every player having finished loading (or failing) first, so this is only
+ * called once markInUse has reported back for every player with photos.
+ */
+function renderSourceSummary(players) {
+  const available = {};
+  players.forEach(p => {
+    visiblePhotoCandidates(p).forEach(c => {
+      const key = c.key || '(unlabeled)';
+      available[key] = (available[key] || 0) + 1;
+    });
+  });
+
+  const inUse = {};
+  document.querySelectorAll('.photo-tile.in-use').forEach(tile => {
+    const key = tile.dataset.source || '(unlabeled)';
+    inUse[key] = (inUse[key] || 0) + 1;
+  });
+
+  const allKeys = Array.from(new Set([...Object.keys(available), ...Object.keys(inUse)]))
+    .sort((a, b) => (available[b] || 0) - (available[a] || 0));
+
+  const tbody = document.getElementById('source-table-body');
+  tbody.innerHTML = '';
+
+  if (allKeys.length === 0) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = '<td colspan="3" class="source-summary-pending">No photos on record for this season\'s roster.</td>';
+    tbody.appendChild(tr);
+    return;
+  }
+
+  allKeys.forEach(key => {
+    const tr = document.createElement('tr');
+    const nameEl = document.createElement('td');
+    nameEl.textContent = key;
+    const availEl = document.createElement('td');
+    availEl.textContent = String(available[key] || 0);
+    const useEl = document.createElement('td');
+    useEl.textContent = String(inUse[key] || 0);
+    tr.appendChild(nameEl);
+    tr.appendChild(availEl);
+    tr.appendChild(useEl);
+    tbody.appendChild(tr);
+  });
+
+  const totalAvailable = Object.values(available).reduce((a, b) => a + b, 0);
+  const totalInUse = Object.values(inUse).reduce((a, b) => a + b, 0);
+  const totalRow = document.createElement('tr');
+  totalRow.className = 'source-table-total';
+  totalRow.innerHTML = `<td>Total</td><td>${totalAvailable}</td><td>${totalInUse}</td>`;
+  tbody.appendChild(totalRow);
 }
 
 function applyFilters() {
@@ -617,9 +785,19 @@ async function init() {
     });
 
     const blocksWrap = document.getElementById('blocks');
-    sorted.forEach(p => blocksWrap.appendChild(buildPlayerBlock(p)));
+    const playersWithPhotos = sorted.filter(p => visiblePhotoCandidates(p).length > 0);
+    let settledPlayers = 0;
+    const onPlayerSettled = () => {
+      settledPlayers++;
+      if (settledPlayers === playersWithPhotos.length) renderSourceSummary(sorted);
+    };
+    sorted.forEach(p => {
+      const hasPhotos = visiblePhotoCandidates(p).length > 0;
+      blocksWrap.appendChild(buildPlayerBlock(p, hasPhotos ? onPlayerSettled : null));
+    });
+    if (playersWithPhotos.length === 0) renderSourceSummary(sorted);
 
-    const withPhotos = sorted.filter(p => photoCandidates(p).length > 0).length;
+    const withPhotos = playersWithPhotos.length;
     document.getElementById('stat-line').textContent = `${withPhotos} / ${sorted.length} players have at least one photo`;
 
     document.getElementById('search').addEventListener('input', applyFilters);
