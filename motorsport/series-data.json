@@ -86,7 +86,8 @@
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/f1academy" },
                 { "platform": "instagram", "url": "https://www.instagram.com/f1academy" },
-                { "platform": "youtube", "url": "https://www.youtube.com/@f1academy/featured"}
+                { "platform": "youtube", "url": "https://www.youtube.com/@f1academy/featured"},
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@f1academy" }
             ]
         },
 		{
@@ -284,8 +285,7 @@
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/formula4_china?lang=en" },
                 { "platform": "instagram", "url": "https://www.instagram.com/fia_f4_china" },
-                { "platform": "weibo", "url": "https://passport.weibo.com/visitor/visitor?entry=miniblog&a=enter&url=https%3A%2F%2Fweibo.com%2Fu%2F7744959716&domain=.weibo.com&" },
-                { "platform": "bilibili", "url": "https://space.bilibili.com/389555164" }
+                { "platform": "weibo", "url": "https://passport.weibo.com/visitor/visitor?entry=miniblog&a=enter&url=https%3A%2F%2Fweibo.com%2Fu%2F7744959716&domain=.weibo.com&" }
             ]
         },
 		{
@@ -456,8 +456,7 @@
                 { "platform": "facebook", "url": "https://www.facebook.com/F4SpanishChampionship" },
                 { "platform": "instagram", "url": "https://www.instagram.com/f4spanishchampionship" },
                 { "platform": "youtube", "url": "https://www.youtube.com/@F4SpanishChampionship" },
-                { "platform": "tiktok", "url": "https://www.tiktok.com/@f4spainofficial" },
-                { "platform": "linkedin", "url": "https://www.linkedin.com/company/f4spanish-championship"}
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@f4spainofficial" }
             ]
         },
 		{
@@ -509,7 +508,7 @@
             "social": [
                 { "platform": "facebook", "url": "https://www.facebook.com/profile.php?id=61589228726454" },
                 { "platform": "instagram", "url": "https://www.instagram.com/au4_championship" },
-                { "platform": "youtube", "url": "http://www.youtube.com/au4championship" }
+                { "platform": "youtube", "url": "https://www.youtube.com/@AU4Championship" }
             ]
         },
         {
@@ -578,8 +577,7 @@
                 { "platform": "x-twitter", "url": "https://x.com/Eurocup_3" },
                 { "platform": "facebook", "url": "https://www.facebook.com/profile.php?id=100087438867240" },
                 { "platform": "instagram", "url": "https://www.instagram.com/eurocup_3" },
-                { "platform": "youtube", "url": "https://www.youtube.com/@eurocup-3" },
-                { "platform": "linkedin", "url": "https://www.linkedin.com/company/eurocup3"}
+                { "platform": "youtube", "url": "https://www.youtube.com/@eurocup-3" }
             ]
         },
 		{
@@ -596,8 +594,7 @@
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/swchofficial" },
                 { "platform": "instagram", "url": "https://www.instagram.com/swchofficial" },
-                { "platform": "youtube", "url": "https://www.youtube.com/@SpanishWinterChampionship" },
-                { "platform": "linkedin", "url": "https://www.linkedin.com/company/spanish-winter-championship"}
+                { "platform": "youtube", "url": "https://www.youtube.com/@SpanishWinterChampionship" }
             ]
         },
 		{
@@ -614,8 +611,7 @@
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/swchofficial" },
                 { "platform": "instagram", "url": "https://www.instagram.com/swchofficial" },
-                { "platform": "youtube", "url": "https://www.youtube.com/@SpanishWinterChampionship" },
-                { "platform": "linkedin", "url": "https://www.linkedin.com/company/spanish-winter-championship"}
+                { "platform": "youtube", "url": "https://www.youtube.com/@SpanishWinterChampionship" }
             ]
         },
 		{
@@ -638,10 +634,10 @@
 		{
             "category": "nonFIA",
             "name": "Euroformula Open",
-            "resultsVerified": false,
+            "resultsVerified": true,
             "nextDate": "26 Sep 2026",
             "links": {
-                "official": { "url": "https://www.euroformulaopen.net", "label": "Official site", "active": true },
+                "official": { "url": "https://euroformula.gtsport.es", "label": "Official site", "active": true },
                 "results": { "url": "https://www.cronococa.com/results", "label": "Results", "active": true },
                 "standings": { "url": "https://euroformula.gtsport.es/resultados?categoria=OVERALL", "label": "Standings", "active": true },
                 "calendar": { "url": "https://euroformula.gtsport.es/blog/2026-calendar-of-the-euroformula-open-announced-misano-joins-as-a-new-track", "label": "Calendar", "active": true }
@@ -924,8 +920,6 @@
                 "calendar": { "url": "https://smpf4.ru/#calendar", "label": "Calendar", "active": true }
             },
             "social": [
-                { "platform": "facebook", "url": "https://www.facebook.com/smpracingrussia" },
-                { "platform": "instagram", "url": "https://www.instagram.com/smp_racing" },
                 { "platform": "vk", "url": "https://vk.com/smp_karting_f4" }
             ]
         },
@@ -959,6 +953,7 @@
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/SUPER_FORMULA" },
+				{ "platform": "facebook", "url": "https://www.facebook.com/japaneseformula" },
                 { "platform": "instagram", "url": "https://www.instagram.com/superformula_official" },
                 { "platform": "youtube", "url": "https://www.youtube.com/@superformula_official/featured"}
             ]
@@ -1091,14 +1086,12 @@
                 "calendar": { "url": "https://www.extremeh.co/home#more-calendar", "label": "Calendar", "active": false }
             },
             "social": [
-                { "platform": "x-twitter", "url": "https://x.com/extremexexh" },
-                { "platform": "facebook", "url": "https://www.facebook.com/ExtremeELive" },
-                { "platform": "instagram", "url": "https://www.instagram.com/ExtremeELive" },
-                { "platform": "youtube", "url": "https://www.youtube.com/@ExtremeELive" },
-                { "platform": "linkedin", "url": "https://www.linkedin.com/company/extremeelive" },
-                { "platform": "tiktok", "url": "https://www.tiktok.com/@extremeelive" },
-                { "platform": "snapchat", "url": "https://www.snapchat.com/add/ExtremeELive" },
-                { "platform": "threads", "url": "https://www.threads.net/@extremeelive"}
+                { "platform": "x-twitter", "url": "https://x.com/fiaextremeh" },
+                { "platform": "facebook", "url": "https://www.facebook.com/fiaextremeh" },
+                { "platform": "instagram", "url": "https://www.instagram.com/fia.extremeh" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@fiaextremeh" },
+                { "platform": "threads", "url": "https://www.threads.net/@extremeelive"},
+                { "platform": "snapchat", "url": "https://www.snapchat.com/@extremexexh" }
             ]
         },
 		{
@@ -1117,8 +1110,7 @@
                 { "platform": "facebook", "url": "https://www.facebook.com/fiaformulae" },
                 { "platform": "instagram", "url": "https://www.instagram.com/fiaformulae" },
                 { "platform": "youtube", "url": "https://www.youtube.com/@FIAFormulaE" },
-                { "platform": "tiktok", "url": "https://www.tiktok.com/@fiaformulae?lang=en" },
-                { "platform": "snapchat", "url": "https://t.snapchat.com/8PhuAY3n"}
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@fiaformulae?lang=en" }
             ]
         },
         {
@@ -1138,14 +1130,7 @@
                 { "platform": "instagram", "url": "https://instagram.com/motogp" },
                 { "platform": "youtube", "url": "https://www.youtube.com/user/MotoGP" },
                 { "platform": "tiktok", "url": "https://www.tiktok.com/@motogp" },
-                { "platform": "threads", "url": "https://www.threads.net/@motogp" },
-                { "platform": "snapchat", "url": "https://www.snapchat.com/add/motogp" },
-                { "platform": "linkedin", "url": "https://www.linkedin.com/showcase/motogp" },
-                { "platform": "podcast", "url": "https://podcasts.apple.com/us/podcast/the-official-motogp-podcast/id1504466576" },
-                { "platform": "whatsapp", "url": "https://whatsapp.com/channel/0029Va4R14Z1iUxYGtYvLg2M" },
-                { "platform": "telegram", "url": "https://t.me/motogp" },
-                { "platform": "twitch", "url": "https://www.twitch.tv/motogp" },
-                { "platform": "spotify", "url": "https://open.spotify.com/show/3t0SHu3AYrWOZZl72P9Gjs" }
+                { "platform": "threads", "url": "https://www.threads.net/@motogp" }
             ]
         },
         {
@@ -1165,14 +1150,7 @@
                 { "platform": "instagram", "url": "https://instagram.com/motogp" },
                 { "platform": "youtube", "url": "https://www.youtube.com/user/MotoGP" },
                 { "platform": "tiktok", "url": "https://www.tiktok.com/@motogp" },
-                { "platform": "threads", "url": "https://www.threads.net/@motogp" },
-                { "platform": "snapchat", "url": "https://www.snapchat.com/add/motogp" },
-                { "platform": "linkedin", "url": "https://www.linkedin.com/showcase/motogp" },
-                { "platform": "podcast", "url": "https://podcasts.apple.com/us/podcast/the-official-motogp-podcast/id1504466576" },
-                { "platform": "whatsapp", "url": "https://whatsapp.com/channel/0029Va4R14Z1iUxYGtYvLg2M" },
-                { "platform": "telegram", "url": "https://t.me/motogp" },
-                { "platform": "twitch", "url": "https://www.twitch.tv/motogp" },
-                { "platform": "spotify", "url": "https://open.spotify.com/show/3t0SHu3AYrWOZZl72P9Gjs" }
+                { "platform": "threads", "url": "https://www.threads.net/@motogp" }
             ]
         },
 		{
@@ -1192,14 +1170,7 @@
                 { "platform": "instagram", "url": "https://instagram.com/motogp" },
                 { "platform": "youtube", "url": "https://www.youtube.com/user/MotoGP" },
                 { "platform": "tiktok", "url": "https://www.tiktok.com/@motogp" },
-                { "platform": "threads", "url": "https://www.threads.net/@motogp" },
-                { "platform": "snapchat", "url": "https://www.snapchat.com/add/motogp" },
-                { "platform": "linkedin", "url": "https://www.linkedin.com/showcase/motogp" },
-                { "platform": "podcast", "url": "https://podcasts.apple.com/us/podcast/the-official-motogp-podcast/id1504466576" },
-                { "platform": "whatsapp", "url": "https://whatsapp.com/channel/0029Va4R14Z1iUxYGtYvLg2M" },
-                { "platform": "telegram", "url": "https://t.me/motogp" },
-                { "platform": "twitch", "url": "https://www.twitch.tv/motogp" },
-                { "platform": "spotify", "url": "https://open.spotify.com/show/3t0SHu3AYrWOZZl72P9Gjs"}
+                { "platform": "threads", "url": "https://www.threads.net/@motogp" }
             ]
         },
         {
@@ -1219,14 +1190,7 @@
                 { "platform": "instagram", "url": "https://instagram.com/motogp" },
                 { "platform": "youtube", "url": "https://www.youtube.com/user/MotoGP" },
                 { "platform": "tiktok", "url": "https://www.tiktok.com/@motogp" },
-                { "platform": "threads", "url": "https://www.threads.net/@motogp" },
-                { "platform": "snapchat", "url": "https://www.snapchat.com/add/motogp" },
-                { "platform": "linkedin", "url": "https://www.linkedin.com/showcase/motogp" },
-                { "platform": "podcast", "url": "https://podcasts.apple.com/us/podcast/the-official-motogp-podcast/id1504466576" },
-                { "platform": "whatsapp", "url": "https://whatsapp.com/channel/0029Va4R14Z1iUxYGtYvLg2M" },
-                { "platform": "telegram", "url": "https://t.me/motogp" },
-                { "platform": "twitch", "url": "https://www.twitch.tv/motogp" },
-                { "platform": "spotify", "url": "https://open.spotify.com/show/3t0SHu3AYrWOZZl72P9Gjs" }
+                { "platform": "threads", "url": "https://www.threads.net/@motogp" }
             ]
         },
 		{
@@ -1246,14 +1210,7 @@
                 { "platform": "instagram", "url": "https://instagram.com/motogp" },
                 { "platform": "youtube", "url": "https://www.youtube.com/user/MotoGP" },
                 { "platform": "tiktok", "url": "https://www.tiktok.com/@motogp" },
-                { "platform": "threads", "url": "https://www.threads.net/@motogp" },
-                { "platform": "snapchat", "url": "https://www.snapchat.com/add/motogp" },
-                { "platform": "linkedin", "url": "https://www.linkedin.com/showcase/motogp" },
-                { "platform": "podcast", "url": "https://podcasts.apple.com/us/podcast/the-official-motogp-podcast/id1504466576" },
-                { "platform": "whatsapp", "url": "https://whatsapp.com/channel/0029Va4R14Z1iUxYGtYvLg2M" },
-                { "platform": "telegram", "url": "https://t.me/motogp" },
-                { "platform": "twitch", "url": "https://www.twitch.tv/motogp" },
-                { "platform": "spotify", "url": "https://open.spotify.com/show/3t0SHu3AYrWOZZl72P9Gjs"}
+                { "platform": "threads", "url": "https://www.threads.net/@motogp" }
             ]
         },
         {
@@ -1273,14 +1230,7 @@
                 { "platform": "instagram", "url": "https://instagram.com/motogp" },
                 { "platform": "youtube", "url": "https://www.youtube.com/user/MotoGP" },
                 { "platform": "tiktok", "url": "https://www.tiktok.com/@motogp" },
-                { "platform": "threads", "url": "https://www.threads.net/@motogp" },
-                { "platform": "snapchat", "url": "https://www.snapchat.com/add/motogp" },
-                { "platform": "linkedin", "url": "https://www.linkedin.com/showcase/motogp" },
-                { "platform": "podcast", "url": "https://podcasts.apple.com/us/podcast/the-official-motogp-podcast/id1504466576" },
-                { "platform": "whatsapp", "url": "https://whatsapp.com/channel/0029Va4R14Z1iUxYGtYvLg2M" },
-                { "platform": "telegram", "url": "https://t.me/motogp" },
-                { "platform": "twitch", "url": "https://www.twitch.tv/motogp" },
-                { "platform": "spotify", "url": "https://open.spotify.com/show/3t0SHu3AYrWOZZl72P9Gjs" }
+                { "platform": "threads", "url": "https://www.threads.net/@motogp" }
             ]
         },
 		{

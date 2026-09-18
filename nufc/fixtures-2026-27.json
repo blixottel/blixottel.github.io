@@ -11,7 +11,7 @@
             { "id": "s-f8", "date": "2026-10-12", "opponent": "Coventry City", "venue": "A", "competition": "Premier League", "result": "" },
             { "id": "s-f9", "date": "2026-10-17", "opponent": "Aston Villa", "venue": "H", "competition": "Premier League", "result": "" },
             { "id": "s-f10", "date": "2026-10-25", "opponent": "Crystal Palace", "venue": "A", "competition": "Premier League", "result": "" },
-            { "id": "s-f11", "date": "2026-10-28", "opponent": "", "venue": "", "competition": "Carabao Cup", "result": "" },
+            { "id": "s-f11", "date": "2026-10-28", "opponent": "Everton", "venue": "A", "competition": "Carabao Cup", "result": "" },
             { "id": "s-f12", "date": "2026-11-02", "opponent": "Everton", "venue": "H", "competition": "Premier League", "result": "" },
             { "id": "s-f13", "date": "2026-11-07", "opponent": "Fulham", "venue": "A", "competition": "Premier League", "result": "" },
             { "id": "s-f14", "date": "2026-11-21", "opponent": "Arsenal", "venue": "H", "competition": "Premier League", "result": "" },
@@ -59,7 +59,8 @@
                 "s-f3": { "status": "start", "minutes": 90, "assists": 1 },
                 "s-f4": { "status": "start", "minutes": 90, "xg": 0.11 },
                 "s-f5": { "status": "start", "minutes": 45, "xg": 0.01 },
-                "s-f6": { "status": "start", "minutes": 58 }
+                "s-f6": { "status": "start", "minutes": 58 },
+                "s-f7": { "status": "injured" }
             },
             "s-anthony-elanga": {
                 "s-f1": { "status": "start", "minutes": 76, "goals": 1, "xg": 0.22 },
@@ -68,7 +69,11 @@
                 "s-f4": { "status": "start", "minutes": 77, "yellowCard": true },
                 "s-f5": { "status": "sub_on", "minutes": 24, "xg": 0.22 },
 				"s-f6": { "status": "injured" },
-				"s-f7": { "status": "injured" }
+				"s-f7": { "status": "injured" },
+				"s-f8": { "status": "injured" },
+				"s-f9": { "status": "injured" },
+				"s-f10": { "status": "injured" },
+				"s-f11": { "status": "injured" }
             },
             "s-bazoumana-toure": {
                 "s-f1": { "status": "unused_sub" },
