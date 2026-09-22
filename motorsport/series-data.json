@@ -94,7 +94,7 @@
             "category": "formulaRegional",
             "name": "FR Americas",
             "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
+            "nextDate": "17 Oct 2026",
             "links": {
                 "official": { "url": "https://www.framericas.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.framericas.com/pages/2026-results", "label": "Results", "active": true },
@@ -292,7 +292,7 @@
             "category": "formula4",
             "name": "F4 France",
             "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
+            "nextDate": "10 Oct 2026",
             "links": {
                 "official": { "url": "https://www.ffsaacademy.org/championnat-de-france-f4/?lang=en", "label": "Official site", "active": true },
                 "results": { "url": "https://www.its-results.com/gt4/2026/5eeb2dbe-3e5d-42fe-8753-3de74635fd58", "label": "Results", "active": true },
@@ -326,7 +326,7 @@
             "category": "formula4",
             "name": "F4 India",
             "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
+            "nextDate": "24 Oct 2026",
             "links": {
                 "official": { "url": "https://www.fiaindianf4.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.fiaindianf4.com/results_3", "label": "Results", "active": false },
@@ -343,7 +343,7 @@
             "category": "formula4",
             "name": "F4 Italy",
             "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
+            "nextDate": "24 Oct 2026",
             "links": {
                 "official": { "url": "https://www.f4championship.com", "label": "Official site", "active": true },
                 "results": { "url": "https://webapp.sportity.com/channel/ARW_26", "label": "Results", "active": true },
@@ -377,7 +377,7 @@
             "category": "formula4",
             "name": "F4 Japan",
             "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
+            "nextDate": "17 Oct 2026",
             "links": {
                 "official": { "url": "https://fiaf4.jp", "label": "Official site", "active": true },
                 "results": { "url": "https://fiaf4.jp/results", "label": "Results", "active": true },
@@ -391,7 +391,7 @@
         {
             "category": "formula4",
             "name": "F4 NACAM",
-            "resultsVerified": false,
+            "resultsVerified": true,
             "nextDate": "3 Oct 2026",
             "links": {
                 "official": { "url": "https://www.f4nacam.com", "label": "Official site", "active": true },
@@ -463,7 +463,7 @@
             "category": "formula4",
             "name": "F4 United States",
             "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
+            "nextDate": "17 Oct 2026",
             "links": {
                 "official": { "url": "https://www.f4uschampionship.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.f4uschampionship.com/pages/2026-results", "label": "Results", "active": true },
@@ -684,12 +684,12 @@
             "category": "nonFIA",
             "name": "Formula Nordic",
             "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://www.formulanordic.se", "label": "Official site", "active": true },
-                "results": { "url": "https://motorsport-events.se/camp/index.php?dir=resultsmw/01%20results%202026/03%20Racing/05%20FORMEL%20NORDIC/", "label": "Results", "active": true },
-                "standings": { "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3jkLEnll0KSQ4XNdrH6ocEn80Ejtc0OMBFGbYH5mcjUR9V0cj3xdJJ6kkmQZpps4yAJ_y4Q1BYs-0/pubhtml?gid=1247783834&single=true", "label": "Standings", "active": true },
-                "calendar": { "url": "https://www.formulanordic.se/okategoriserade/kalendern-2026", "label": "Calendar", "active": true }
+                "results": { "url": "https://motorsport-events.se/camp/index.php?dir=resultsmw/01%20results%202026/03%20Racing/05%20FORMEL%20NORDIC/", "label": "Results", "active": false },
+                "standings": { "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR3jkLEnll0KSQ4XNdrH6ocEn80Ejtc0OMBFGbYH5mcjUR9V0cj3xdJJ6kkmQZpps4yAJ_y4Q1BYs-0/pubhtml?gid=1247783834&single=true", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.formulanordic.se/okategoriserade/kalendern-2026", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "facebook", "url": "https://www.facebook.com/formulanordic" },
@@ -875,8 +875,8 @@
 		{
             "category": "nonFIA",
             "name": "Ligier Junior Formula Championship",
-            "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
+            "resultsVerified": false,
+            "nextDate": "17 Oct 2026",
             "links": {
                 "official": { "url": "https://ligierjuniorformulachampionship.com", "label": "Official site", "active": true },
                 "results": { "url": "https://ligierjuniorformulachampionship.com/race-results", "label": "Results", "active": true },
@@ -1117,7 +1117,7 @@
             "category": "motorbikes",
             "name": "MotoGP",
             "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
+            "nextDate": "3 Oct 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
@@ -1157,7 +1157,7 @@
             "category": "motorbikes",
             "name": "Moto2",
             "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
+            "nextDate": "3 Oct 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
@@ -1197,7 +1197,7 @@
             "category": "motorbikes",
             "name": "Moto3",
             "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
+            "nextDate": "3 Oct 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
@@ -1293,7 +1293,7 @@
             "category": "motorbikes",
             "name": "Moto4 British Cup",
             "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
+            "nextDate": "3 Oct 2026",
             "links": {
                 "official": { "url": "https://www.moto4britishcup.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.britishtalentcup.com/event/2026-2", "label": "Results", "active": true },
@@ -1346,11 +1346,11 @@
             "category": "motorbikes",
             "name": "Moto4 Northern Cup",
             "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://www.moto4northerncup.com", "label": "Official site", "active": true },
-                "results": { "url": "https://www.moto4northerncup.com/event/2026-2", "label": "Results", "active": true },
-                "standings": { "url": "https://www.moto4northerncup.com/results/2026-2", "label": "Standings", "active": true },
+                "results": { "url": "https://www.moto4northerncup.com/event/2026-2", "label": "Results", "active": false },
+                "standings": { "url": "https://www.moto4northerncup.com/results/2026-2", "label": "Standings", "active": false },
                 "calendar": { "url": "https://www.moto4northerncup.com/calendar", "label": "Calendar", "active": true }
             },
             "social": [
@@ -1382,11 +1382,11 @@
             "category": "motorbikes",
             "name": "Red Bull MotoGP Rookies Cup",
             "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://www.redbull.com/int-en/rookiescup", "label": "Official site", "active": true },
-                "results": { "url": "https://www.redbull.com/int-en/rookiescup/races", "label": "Results", "active": true },
-                "standings": { "url": "https://www.redbull.com/int-en/rookiescup/results", "label": "Standings", "active": true },
+                "results": { "url": "https://www.redbull.com/int-en/rookiescup/races", "label": "Results", "active": false },
+                "standings": { "url": "https://www.redbull.com/int-en/rookiescup/results", "label": "Standings", "active": false },
                 "calendar": { "url": "https://www.redbull.com/int-en/rookiescup/races", "label": "Calendar", "active": true }
             },
             "social": [
@@ -1603,24 +1603,6 @@
             "category": "karting",
             "name": "Karting Int'l SuperCup (KZ2-Masters)",
             "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
-            "links": {
-                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
-                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
-                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": true }
-            },
-            "social": [
-                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
-                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
-                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
-                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
-            ]
-        },
-		{
-            "category": "karting",
-            "name": "Karting Int'l SuperCup (KZ2-Masters) (2027)",
-            "resultsVerified": true,
             "nextDate": "2 Oct 2027",
             "links": {
                 "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
@@ -1638,24 +1620,6 @@
 		{
             "category": "karting",
             "name": "Karting World Championships (KZ)",
-            "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
-            "links": {
-                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
-                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
-                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": true }
-            },
-            "social": [
-                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
-                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
-                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
-                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
-            ]
-        },
-		{
-            "category": "karting",
-            "name": "Karting World Championships (KZ) (2027)",
             "resultsVerified": true,
             "nextDate": "2 Oct 2027",
             "links": {
@@ -1746,24 +1710,6 @@
 		{
             "category": "karting",
             "name": "Karting World Cup (KZ2)",
-            "resultsVerified": true,
-            "nextDate": "19 Sep 2026",
-            "links": {
-                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
-                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
-                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": true }
-            },
-            "social": [
-                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
-                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
-                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
-                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
-            ]
-        },
-		{
-            "category": "karting",
-            "name": "Karting World Cup (KZ2) (2027)",
             "resultsVerified": true,
             "nextDate": "2 Oct 2027",
             "links": {

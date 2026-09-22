@@ -22,6 +22,9 @@
     --fail-ink: #9A2A1E;
     --fail-bg: #FBEAE7;
     --fail-line: #D98B7D;
+    --warn-ink: #8A5A00;
+    --warn-bg: #FBF1DC;
+    --warn-line: #D9A441;
     --radius: 3px;
   }
 
@@ -71,7 +74,7 @@
     z-index: 20;
     background: var(--paper-raised);
     border-bottom: 3px solid var(--ink);
-    padding: 14px 24px;
+    padding: 14px 24px 10px;
   }
   .controls-inner {
     max-width: 1180px;
@@ -92,6 +95,31 @@
     flex: 1 1 220px;
   }
   #search:focus { outline: 2px solid var(--gold); outline-offset: -1px; }
+
+  .season-picker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+  .season-picker[hidden] { display: none; }
+  #season-select {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 28px 6px 10px;
+    border: 1px solid var(--ink);
+    border-radius: var(--radius);
+    background: var(--paper);
+    color: var(--ink);
+    cursor: pointer;
+  }
+  #season-select:focus { outline: 2px solid var(--gold); outline-offset: -1px; }
 
   .squad-filter { display: flex; gap: 6px; }
   .squad-filter button {
@@ -128,6 +156,38 @@
     margin-left: auto;
   }
 
+  .save-bar {
+    max-width: 1180px;
+    margin: 10px auto 0;
+    padding-top: 8px;
+    border-top: 1px solid var(--hairline);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--slate);
+  }
+  #save-status { flex: 1 1 320px; line-height: 1.4; }
+  .save-bar.connected #save-status { color: var(--pitch); }
+  .save-bar.error #save-status { color: var(--fail-ink); }
+  .save-bar.unsaved #save-status { color: var(--warn-ink); }
+  .save-bar button {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border: 1px solid var(--ink);
+    background: var(--paper-raised);
+    color: var(--ink);
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .save-bar button:hover:not(:disabled) { background: var(--ink); color: var(--paper); }
+  .save-bar button:disabled { opacity: 0.4; cursor: default; }
+  .save-bar button[hidden] { display: none; }
+
   main { max-width: 1180px; margin: 0 auto; padding: 28px 24px 80px; }
 
   .season-note {
@@ -145,6 +205,7 @@
     overflow: hidden;
   }
   .player-block.no-photos { border-color: var(--fail-line); }
+  .player-block.source-problem { border-color: var(--warn-line); box-shadow: 0 0 0 1px var(--warn-line); }
 
   .player-block-header {
     display: flex;
@@ -165,7 +226,6 @@
     font-size: 10.5px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--slate);
     background: var(--pitch-soft);
     border: 1px solid var(--pitch);
     color: var(--pitch);
@@ -177,6 +237,34 @@
     font-size: 10.5px;
     color: var(--slate);
   }
+  .source-chip {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    color: var(--slate);
+    border: 1px solid var(--hairline);
+    background: var(--paper);
+    border-radius: 2px;
+    padding: 1px 6px;
+  }
+  .source-chip[hidden] { display: none; }
+  .source-chip.problem {
+    color: var(--warn-ink);
+    background: var(--warn-bg);
+    border-color: var(--warn-line);
+    font-weight: 600;
+  }
+  .clear-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    padding: 1px 6px;
+    border: 1px solid var(--hairline);
+    background: var(--paper-raised);
+    color: var(--slate);
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .clear-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .clear-btn[hidden] { display: none; }
   .photo-count {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
@@ -214,7 +302,9 @@
     position: relative;
   }
   .photo-tile.in-use { border-color: var(--pitch); box-shadow: 0 0 0 1px var(--pitch); }
+  .photo-tile.fallback { border-color: var(--warn-line); box-shadow: 0 0 0 1px var(--warn-line); }
   .photo-tile.failed { border-color: var(--fail-line); }
+  .photo-tile.specified-bad { border-color: var(--fail-ink); box-shadow: 0 0 0 1px var(--fail-ink); }
 
   .photo-frame {
     width: 100%;
@@ -233,7 +323,7 @@
   .photo-tile.failed img { display: none; }
 
   .priority-badge {
-    position: absolute; top: 5px; left: 5px;
+    position: absolute; top: 5px; left: 5px; z-index: 1;
     background: var(--ink); color: var(--paper);
     font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600;
     width: 18px; height: 18px; border-radius: 50%;
@@ -241,12 +331,15 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.4);
   }
   .in-use-badge {
-    position: absolute; top: 5px; right: 5px;
+    position: absolute; top: 5px; right: 5px; z-index: 1;
     background: var(--pitch); color: var(--paper-raised);
     font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; font-weight: 700;
     letter-spacing: 0.04em; text-transform: uppercase;
     padding: 2px 5px; border-radius: 2px;
   }
+  .in-use-badge.auto { background: var(--paper-raised); color: var(--pitch); border: 1px solid var(--pitch); padding: 1px 4px; }
+  .in-use-badge.fallback { background: var(--warn-line); color: var(--ink); }
+  .in-use-badge.bad { background: var(--fail-ink); color: var(--paper-raised); }
 
   .photo-tile-foot {
     padding: 6px 8px 8px;
@@ -272,7 +365,7 @@
     overflow: hidden;
     margin-bottom: 5px;
   }
-  .copy-btn {
+  .copy-btn, .use-btn {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
     width: 100%;
@@ -285,6 +378,21 @@
   }
   .copy-btn:hover { border-color: var(--ink); }
   .copy-btn.copied { border-color: var(--pitch); color: var(--pitch); }
+  .use-btn {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .use-btn:hover:not(:disabled) { background: var(--pitch); border-color: var(--pitch); }
+  .use-btn.selected, .use-btn:disabled {
+    background: var(--pitch-soft);
+    border-color: var(--pitch);
+    color: var(--pitch);
+    cursor: default;
+  }
+  .photo-tile.failed .use-btn { display: none; }
 
   .empty-note {
     font-size: 12.5px;
@@ -306,6 +414,19 @@
     font-family: 'Oswald', sans-serif;
     display: none;
   }
+
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 8px 18px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--slate);
+    margin: 0 0 18px;
+  }
+  .legend span::before {
+    content: ''; display: inline-block; width: 10px; height: 10px; margin-right: 6px;
+    border: 2px solid var(--hairline); vertical-align: -1px; border-radius: 2px;
+  }
+  .legend .lg-use::before { border-color: var(--pitch); }
+  .legend .lg-fallback::before { border-color: var(--warn-line); }
+  .legend .lg-bad::before { border-color: var(--fail-ink); }
 
   .source-summary {
     background: var(--paper-raised);
@@ -370,12 +491,16 @@
   <div class="masthead-inner">
     <p class="eyebrow">The Teamsheet · Reference tool</p>
     <h1 class="title">Photo Gallery</h1>
-    <p class="subtitle">Every photo on record for every player, in fallback order. The one outlined in green is the one that's actually showing on the site right now.</p>
+    <p class="subtitle">Every photo on record for every player, in fallback order. The green outline marks the photo this season's roster file actually specifies — click "Use this photo" on any tile to change it.</p>
   </div>
 </div>
 
 <div class="controls">
   <div class="controls-inner">
+    <label class="season-picker" id="season-picker" hidden>
+      Season
+      <select id="season-select"></select>
+    </label>
     <input type="text" id="search" placeholder="Search by player name…">
     <div class="squad-filter" id="squad-filter">
       <button data-squad="all" class="active">All</button>
@@ -388,7 +513,16 @@
       <input type="checkbox" id="missing-only">
       Only players with no photos
     </label>
+    <label class="missing-toggle">
+      <input type="checkbox" id="problems-only">
+      Only photoSource problems
+    </label>
     <span class="stat-line" id="stat-line"></span>
+  </div>
+  <div class="save-bar" id="save-bar">
+    <span id="save-status"></span>
+    <button type="button" id="connect-btn" hidden>Connect site folder…</button>
+    <button type="button" id="download-btn" hidden>Download JSON</button>
   </div>
 </div>
 
@@ -396,16 +530,22 @@
   <strong>Couldn't load the data files.</strong> If you opened this page directly from disk (a <code>file://</code> link),
   most browsers block a local page from reading local JSON files. Run a tiny local server from this folder instead, e.g.
   <code>python3 -m http.server 8000</code>, then open <code>http://localhost:8000/gallery.html</code>.
+  <div id="load-error-detail" style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9A2A1E;"></div>
 </div>
 
 <main id="main">
   <p class="season-note" id="season-note"></p>
+  <div class="legend">
+    <span class="lg-use">In use (the roster's photoSource; "auto" = none specified, first that loads)</span>
+    <span class="lg-fallback">Fallback showing (photoSource is missing or broken)</span>
+    <span class="lg-bad">Specified but didn't load</span>
+  </div>
   <div id="blocks"></div>
   <div id="empty-state">No players match that search.</div>
 
   <section class="source-summary" id="source-summary">
     <h2 class="source-summary-title">Photo sources</h2>
-    <p class="source-summary-note">Across every player in this season's roster (not affected by the filters above): how many photos are on record from each source, and how many are the one actually winning the fallback race right now.</p>
+    <p class="source-summary-note">Across every player in this season's roster (not affected by the filters above): how many photos are on record from each source, and how many are actually showing on the site right now — the specified photoSource where it works, otherwise whichever fallback wins.</p>
     <table class="source-table">
       <thead>
         <tr><th>Source</th><th>Available</th><th>In use</th></tr>
@@ -451,15 +591,14 @@ const DEFAULT_UNKNOWN_DOB_SQUAD = 'u16';
  * players-master.json, with an optional per-season `photoSource` override
  * moving one source to the front. Returns {key, url} pairs (rather than
  * bare URLs, like the main site) so the gallery can label each tile with
- * which source it came from — useful for spotting e.g. "the transfermarkt
- * one is stale" at a glance. Also falls back to the legacy `photos` array
+ * which source it came from. Also falls back to the legacy `photos` array
  * and single `photo` string field for anything not yet on the new schema.
  *
  * Every key in SHARED_PHOTO_SOURCES (above) is automatically available to
  * every player as a fallback, tried last, without needing to be listed in
- * that player's own `photos` — so `placeholder` doesn't need repeating in
- * every player record. A season file's `photoSource: "placeholder"` still
- * promotes it to the front exactly as it would a real per-player source.
+ * that player's own `photos`. A season file's `photoSource: "placeholder"`
+ * still promotes it to the front exactly as it would a real per-player
+ * source.
  */
 function photoCandidates(p) {
   const photos = p.photos;
@@ -495,8 +634,7 @@ function photoCandidates(p) {
  * last-resort fallback). The gallery's job is auditing what's really on
  * record per player, so a source that was added automatically rather than
  * being in that player's own `photos` is only shown if the player is
- * actually configured to use it — i.e. their `photoSource` names it. A
- * player's own real photo entries are always shown regardless.
+ * actually configured to use it — i.e. their `photoSource` names it.
  */
 function visiblePhotoCandidates(p) {
   return photoCandidates(p).filter(c => {
@@ -535,7 +673,7 @@ function mergePlayers(masterList, seasonList, ageBands) {
 
 async function loadSeasons() {
   try {
-    const res = await fetch('seasons.json');
+    const res = await fetch('seasons.json', { cache: 'no-store' });
     if (!res.ok) return null;
     const seasons = await res.json();
     if (!Array.isArray(seasons) || seasons.length === 0) return null;
@@ -545,6 +683,225 @@ async function loadSeasons() {
   }
 }
 
+/* ------------------------------------------------------------------ *
+ * Page state
+ * ------------------------------------------------------------------ */
+let seasons = null;            // parsed seasons.json, or null in single-season fallback mode
+let activeSeason = null;       // the season entry currently displayed
+let current = null;            // per-load context: { token, players, summaryReady, settledPlayers, needed }
+let loadToken = 0;             // bumped on every season load so stale async callbacks can bail out
+
+/* ------------------------------------------------------------------ *
+ * Saving photo picks back to the roster JSON
+ *
+ * A static page can't write files by itself, so there are two routes:
+ *  1. File System Access API (Chrome / Edge): "Connect site folder…" once,
+ *     then every pick is written straight into players-YYYY-YY.json.
+ *  2. Anywhere else: picks are held in memory and "Download JSON" hands you
+ *     the updated roster file to drop over the old one.
+ * Either way the edit is a surgical text splice into the one roster entry,
+ * so the rest of the file's formatting and line endings are untouched.
+ * ------------------------------------------------------------------ */
+const CAN_WRITE_FILES = typeof window.showDirectoryPicker === 'function';
+let dirHandle = null;          // FileSystemDirectoryHandle once the folder is connected
+let unsaved = {};              // id -> photoSource string, or null meaning "remove photoSource"
+let baselineText = '';         // text of the roster file as last read/written (used for downloads)
+let saveChain = Promise.resolve();
+let flashMsg = null;
+let flashTimer = null;
+
+const stripBom = (t) => t.replace(/^\uFEFF/, '');
+const PS_VALUE_RE = '"photoSource"\\s*:\\s*"(?:[^"\\\\]|\\\\.)*"';
+
+/** [start, end) offsets of each top-level object inside the file's top-level array. */
+function findObjectRanges(text) {
+  const ranges = [];
+  let depth = 0, inStr = false, esc = false, start = -1;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (inStr) {
+      if (esc) esc = false;
+      else if (ch === '\\') esc = true;
+      else if (ch === '"') inStr = false;
+      continue;
+    }
+    if (ch === '"') inStr = true;
+    else if (ch === '[') depth++;
+    else if (ch === '{') { if (depth === 1) start = i; depth++; }
+    else if (ch === '}') { depth--; if (depth === 1 && start >= 0) { ranges.push([start, i + 1]); start = -1; } }
+    else if (ch === ']') depth--;
+  }
+  return ranges;
+}
+
+/** Sets (key = string) or removes (key = null) "photoSource" on the entry with this id. */
+function setPhotoSourceInText(text, id, key) {
+  for (const [s, e] of findObjectRanges(text)) {
+    const objText = text.slice(s, e);
+    let obj;
+    try { obj = JSON.parse(objText); } catch (err) { continue; }
+    if (obj.id !== id) continue;
+
+    const has = new RegExp(PS_VALUE_RE).test(objText);
+    let next;
+    if (key) {
+      const val = '"photoSource": ' + JSON.stringify(key);
+      if (has) {
+        next = objText.replace(new RegExp(PS_VALUE_RE), () => val);
+      } else {
+        const tail = objText.match(/\s*\}$/);
+        next = objText.slice(0, tail.index) + ', ' + val + tail[0];
+      }
+    } else if (has) {
+      next = objText.replace(new RegExp(',\\s*' + PS_VALUE_RE), '');
+      if (next === objText) next = objText.replace(new RegExp(PS_VALUE_RE + '\\s*,?\\s*'), '');
+    } else {
+      next = objText;
+    }
+    return text.slice(0, s) + next + text.slice(e);
+  }
+  throw new Error(`No entry with id "${id}" found in the roster file`);
+}
+
+/** Applies every pending edit, then re-parses the result to make sure nothing else changed shape. */
+function applyEdits(text, edits) {
+  let next = text;
+  for (const [id, key] of Object.entries(edits)) next = setPhotoSourceInText(next, id, key);
+  const before = JSON.parse(stripBom(text));
+  const after = JSON.parse(stripBom(next));
+  if (!Array.isArray(after) || after.length !== before.length) throw new Error('Safety check failed: entry count changed');
+  for (const [id, key] of Object.entries(edits)) {
+    const entry = after.find(x => x.id === id);
+    if (!entry || (entry.photoSource || null) !== (key || null)) throw new Error(`Safety check failed for "${id}"`);
+  }
+  return next;
+}
+
+async function fileHandleByPath(dir, path) {
+  const parts = path.split('/').filter(Boolean);
+  let d = dir;
+  for (const part of parts.slice(0, -1)) d = await d.getDirectoryHandle(part);
+  return d.getFileHandle(parts[parts.length - 1]);
+}
+
+const unsavedCount = () => Object.keys(unsaved).length;
+
+function flash(msg, isError) {
+  flashMsg = { msg, isError: !!isError };
+  updateSaveBar();
+  clearTimeout(flashTimer);
+  flashTimer = setTimeout(() => { flashMsg = null; updateSaveBar(); }, isError ? 9000 : 3500);
+}
+
+function updateSaveBar() {
+  const bar = document.getElementById('save-bar');
+  const status = document.getElementById('save-status');
+  const connectBtn = document.getElementById('connect-btn');
+  const downloadBtn = document.getElementById('download-btn');
+  const file = activeSeason ? activeSeason.playersFile : 'the roster file';
+  const n = unsavedCount();
+
+  bar.classList.remove('connected', 'error', 'unsaved');
+  connectBtn.hidden = !CAN_WRITE_FILES || !!dirHandle;
+  downloadBtn.hidden = !(n > 0 || !CAN_WRITE_FILES);
+  downloadBtn.disabled = n === 0;
+  downloadBtn.textContent = `Download ${file.split('/').pop()}`;
+
+  if (flashMsg) {
+    status.textContent = flashMsg.msg;
+    bar.classList.add(flashMsg.isError ? 'error' : 'connected');
+    return;
+  }
+  if (dirHandle) {
+    status.textContent = n
+      ? `Saving ${n} pick${n === 1 ? '' : 's'} to ${file}…`
+      : `Connected to “${dirHandle.name}” — each pick is written to ${file} as you click.`;
+    bar.classList.add(n ? 'unsaved' : 'connected');
+  } else if (CAN_WRITE_FILES) {
+    status.textContent = n
+      ? `${n} unsaved pick${n === 1 ? '' : 's'}. Connect the site folder to write them to ${file}, or download the updated file.`
+      : `Picks aren't saved anywhere until you connect the site folder (the one containing gallery.html).`;
+    if (n) bar.classList.add('unsaved');
+  } else {
+    status.textContent = n
+      ? `${n} unsaved pick${n === 1 ? '' : 's'}. This browser can't write files directly — download the updated JSON and replace ${file} with it.`
+      : `This browser can't write files directly (Chrome or Edge on localhost can). Picks are held here; download the updated JSON when you're done.`;
+    if (n) bar.classList.add('unsaved');
+  }
+}
+
+async function connectFolder() {
+  try {
+    const dir = await window.showDirectoryPicker({ mode: 'readwrite' });
+    try {
+      await fileHandleByPath(dir, activeSeason.playersFile);
+    } catch (err) {
+      flash(`“${dir.name}” doesn't contain ${activeSeason.playersFile} — pick the folder that holds gallery.html.`, true);
+      return;
+    }
+    dirHandle = dir;
+    updateSaveBar();
+    if (unsavedCount()) persist();
+  } catch (err) {
+    if (err && err.name === 'AbortError') return;
+    flash(`Couldn't open that folder: ${err && err.message ? err.message : err}`, true);
+  }
+}
+
+async function saveToDisk() {
+  if (!dirHandle || !unsavedCount()) return;
+  const season = activeSeason;
+  const mine = unsaved;
+  const snapshot = { ...mine };
+  const file = season.playersFile;
+  try {
+    const fh = await fileHandleByPath(dirHandle, file);
+    const text = await (await fh.getFile()).text();   // always edit what's on disk right now
+    const next = applyEdits(text, snapshot);
+    if (next !== text) {
+      const w = await fh.createWritable();
+      await w.write(next);
+      await w.close();
+    }
+    Object.keys(snapshot).forEach(id => { if (mine[id] === snapshot[id]) delete mine[id]; });
+    if (activeSeason === season) { baselineText = next; flash(`Saved to ${file}`); }
+  } catch (err) {
+    console.error(err);
+    if (activeSeason === season) flash(`Couldn't write ${file}: ${err && err.message ? err.message : err}. Your picks are still held here — use Download JSON.`, true);
+  }
+}
+
+function persist() {
+  updateSaveBar();
+  if (!dirHandle) return;
+  saveChain = saveChain.then(saveToDisk).then(updateSaveBar);
+}
+
+function downloadJson() {
+  if (!unsavedCount()) return;
+  try {
+    const next = applyEdits(baselineText, unsaved);
+    const name = activeSeason.playersFile.split('/').pop();
+    const blob = new Blob([next], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    baselineText = next;
+    unsaved = {};
+    flash(`Downloaded ${name} — replace the one in your site folder with it.`);
+  } catch (err) {
+    console.error(err);
+    flash(`Couldn't build the download: ${err.message}`, true);
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Rendering
+ * ------------------------------------------------------------------ */
 function copyText(text, btn) {
   navigator.clipboard.writeText(text).then(() => {
     const original = btn.textContent;
@@ -557,11 +914,19 @@ function copyText(text, btn) {
   });
 }
 
-function buildPhotoTile(candidate, index) {
+/**
+ * One tile per photo. `dataset.state` is 'pending' | 'loaded' | 'failed' and
+ * `onState` fires whenever it changes, so the in-use marking can be worked
+ * out incrementally instead of waiting for every image on the page.
+ * The tile for the player's specified photoSource loads eagerly (everything
+ * else stays lazy) so a broken specified photo is caught without scrolling.
+ */
+function buildPhotoTile(candidate, index, p, onState, onUse) {
   const { key, url } = candidate;
   const tile = document.createElement('div');
   tile.className = 'photo-tile';
   tile.dataset.source = key || '(unlabeled)';
+  tile.dataset.state = 'pending';
 
   const frame = document.createElement('div');
   frame.className = 'photo-frame';
@@ -572,10 +937,11 @@ function buildPhotoTile(candidate, index) {
   frame.appendChild(badge);
 
   const img = document.createElement('img');
-  img.src = url;
   img.alt = '';
-  img.loading = 'lazy';
-  img.addEventListener('error', () => { tile.classList.add('failed'); });
+  img.loading = (key && key === p.photoSource) ? 'eager' : 'lazy';
+  img.addEventListener('load', () => { tile.dataset.state = 'loaded'; tile.classList.remove('failed'); onState(); });
+  img.addEventListener('error', () => { tile.dataset.state = 'failed'; tile.classList.add('failed'); onState(); });
+  img.src = url;
   frame.appendChild(img);
 
   const failFill = document.createElement('div');
@@ -598,6 +964,16 @@ function buildPhotoTile(candidate, index) {
   urlEl.textContent = url;
   urlEl.title = url;
   foot.appendChild(urlEl);
+
+  if (key) {
+    const useBtn = document.createElement('button');
+    useBtn.className = 'use-btn';
+    useBtn.type = 'button';
+    useBtn.textContent = 'Use this photo';
+    useBtn.addEventListener('click', () => onUse(key));
+    foot.appendChild(useBtn);
+  }
+
   const btn = document.createElement('button');
   btn.className = 'copy-btn';
   btn.type = 'button';
@@ -606,56 +982,149 @@ function buildPhotoTile(candidate, index) {
   foot.appendChild(btn);
   tile.appendChild(foot);
 
-  return { tile, img };
+  return tile;
+}
+
+function markTile(tile, kind) {
+  const label = { specified: 'In use', auto: 'In use · auto', fallback: 'Fallback showing', bad: 'Specified · failed' }[kind];
+  if (kind === 'specified' || kind === 'auto') tile.classList.add('in-use');
+  if (kind === 'fallback') tile.classList.add('fallback');
+  if (kind === 'bad') tile.classList.add('specified-bad');
+  const badge = document.createElement('span');
+  badge.className = 'in-use-badge' + (kind === 'specified' ? '' : ' ' + kind);
+  badge.textContent = label;
+  tile.querySelector('.photo-frame').appendChild(badge);
 }
 
 /**
- * Once every tile in a player's row has resolved load/error, mark the
- * first one that actually loaded as "in use" (outlined + badged) — that's
- * the one the fallback chain on the main site would settle on.
+ * Works out which photo is in use for one player from what's currently known:
+ *  - photoSource set and that photo loads      -> it is "In use".
+ *  - photoSource set but no such photo on record, or it fails to load
+ *                                              -> flagged as a problem; whichever
+ *                                                 fallback the site would land on
+ *                                                 is marked "Fallback showing".
+ *  - no photoSource                            -> first photo that loads, "In use · auto"
+ *                                                 (what the main site does by default).
+ * Safe to call repeatedly (each tile settling, each pick); it starts by clearing old marks.
  */
-function markInUse(tiles, onSettled) {
-  let settled = 0;
-  const check = () => {
-    settled++;
-    if (settled < tiles.length) return;
-    const winner = tiles.find(t => !t.tile.classList.contains('failed'));
-    if (winner) {
-      winner.tile.classList.add('in-use');
-      const badge = document.createElement('span');
-      badge.className = 'in-use-badge';
-      badge.textContent = 'In use';
-      winner.tile.querySelector('.photo-frame').appendChild(badge);
-    }
-    if (onSettled) onSettled();
-  };
-  tiles.forEach(({ img, tile }) => {
-    if (tile.classList.contains('failed')) { check(); return; }
-    if (img.complete && img.naturalWidth > 0) { check(); return; }
-    if (img.complete) { check(); return; } // complete but broken (0-size)
-    img.addEventListener('load', check, { once: true });
-    img.addEventListener('error', check, { once: true });
+function updateInUse(block, p) {
+  const tiles = Array.from(block.querySelectorAll('.photo-tile'));
+  tiles.forEach(t => {
+    t.classList.remove('in-use', 'fallback', 'specified-bad');
+    t.querySelectorAll('.in-use-badge').forEach(b => b.remove());
   });
+
+  const spec = p.photoSource || '';
+  const specTile = spec ? tiles.find(t => t.dataset.source === spec) : null;
+  let problem = '';
+  let winner = null;
+  let mode = 'auto';
+
+  if (spec) {
+    if (!specTile) problem = 'missing';
+    else if (specTile.dataset.state === 'failed') problem = 'failed';
+    else if (specTile.dataset.state === 'loaded') { winner = specTile; mode = 'specified'; }
+  }
+  if (!winner && (!spec || problem)) {
+    mode = problem ? 'fallback' : 'auto';
+    for (const t of tiles) {                       // tiles are in fallback order
+      const s = t.dataset.state;
+      if (s === 'pending') break;                  // can't know yet what wins
+      if (s === 'loaded') { winner = t; break; }
+    }
+  }
+  if (winner) markTile(winner, mode);
+  if (problem === 'failed') markTile(specTile, 'bad');
+
+  tiles.forEach(t => {
+    const btn = t.querySelector('.use-btn');
+    if (!btn) return;
+    const selected = t.dataset.source === spec;
+    btn.textContent = selected ? '✓ Selected' : 'Use this photo';
+    btn.disabled = selected;
+    btn.classList.toggle('selected', selected);
+  });
+
+  const chip = block.querySelector('.source-chip');
+  const clearBtn = block.querySelector('.clear-btn');
+  chip.hidden = !spec;
+  clearBtn.hidden = !spec;
+  chip.classList.toggle('problem', !!problem);
+  if (problem === 'missing') chip.textContent = `photoSource “${spec}” — no photo on record for it`;
+  else if (problem === 'failed') chip.textContent = `photoSource “${spec}” — photo didn't load`;
+  else chip.textContent = `photoSource: ${spec}`;
+
+  block.classList.toggle('source-problem', !!problem);
+  block.dataset.problem = problem ? '1' : '0';
 }
 
-function buildPlayerBlock(p, onSettled) {
+/** Re-sorts an existing block's tiles after a pick, without re-requesting any images. */
+function refreshBlock(block, p) {
+  const cands = visiblePhotoCandidates(p);
+  if (cands.length && cands.every(c => c.key)) {
+    const row = block.querySelector('.photo-row');
+    const byKey = new Map(Array.from(row.querySelectorAll('.photo-tile')).map(t => [t.dataset.source, t]));
+    cands.forEach((c, i) => {
+      const tile = byKey.get(c.key);
+      if (!tile) return;
+      byKey.delete(c.key);
+      row.appendChild(tile);
+      tile.querySelector('.priority-badge').textContent = i + 1;
+      if (c.key === p.photoSource) tile.querySelector('img').loading = 'eager';
+    });
+    byKey.forEach(t => t.remove());   // e.g. a cleared "placeholder" that's no longer a visible candidate
+  }
+  updateInUse(block, p);
+}
+
+function choosePhoto(block, p, key) {
+  if (key) p.photoSource = key; else delete p.photoSource;
+  block.dataset.edited = '1';
+  unsaved[p.id] = key || null;
+  refreshBlock(block, p);
+  updateStatLine();
+  if (current && current.summaryReady) renderSourceSummary(current.players);
+  persist();
+}
+
+function buildPlayerBlock(p, ctx) {
   const candidates = visiblePhotoCandidates(p);
   const block = document.createElement('div');
   block.className = 'player-block' + (candidates.length === 0 ? ' no-photos' : '');
   block.dataset.name = (p.name || '').toLowerCase();
   block.dataset.squad = normSquad(p.squad);
   block.dataset.hasPhotos = candidates.length > 0 ? '1' : '0';
+  block.dataset.problem = '0';
 
   const header = document.createElement('div');
   header.className = 'player-block-header';
-  header.innerHTML = `
-    <h2>${p.name || '(unnamed)'}</h2>
-    <span class="squad-tag">${SQUAD_LABEL[normSquad(p.squad)] || p.squad || '—'}</span>
-    <span class="pos-tag">${p.position || ''}</span>
-    ${candidates.length === 0
-      ? '<span class="no-photos-badge">No photos on record</span>'
-      : `<span class="photo-count">${candidates.length} photo${candidates.length === 1 ? '' : 's'} on record</span>`}
-  `;
+  const h2 = document.createElement('h2');
+  h2.textContent = p.name || '(unnamed)';
+  const squadTag = document.createElement('span');
+  squadTag.className = 'squad-tag';
+  squadTag.textContent = SQUAD_LABEL[normSquad(p.squad)] || p.squad || '—';
+  const posTag = document.createElement('span');
+  posTag.className = 'pos-tag';
+  posTag.textContent = p.position || '';
+  const chip = document.createElement('span');
+  chip.className = 'source-chip';
+  chip.hidden = true;
+  const clearBtn = document.createElement('button');
+  clearBtn.type = 'button';
+  clearBtn.className = 'clear-btn';
+  clearBtn.hidden = true;
+  clearBtn.textContent = 'Clear photoSource';
+  clearBtn.title = 'Remove photoSource from this player\'s roster entry (falls back to the default order)';
+  clearBtn.addEventListener('click', () => choosePhoto(block, p, null));
+  const count = document.createElement('span');
+  if (candidates.length === 0) {
+    count.className = 'no-photos-badge';
+    count.textContent = 'No photos on record';
+  } else {
+    count.className = 'photo-count';
+    count.textContent = `${candidates.length} photo${candidates.length === 1 ? '' : 's'} on record`;
+  }
+  header.append(h2, squadTag, posTag, chip, clearBtn, count);
   block.appendChild(header);
 
   const row = document.createElement('div');
@@ -667,22 +1136,41 @@ function buildPlayerBlock(p, onSettled) {
     note.textContent = 'Add a "photos" entry for this player in players-master.json to see thumbnails here.';
     row.appendChild(note);
   } else {
-    const tiles = candidates.map((c, i) => buildPhotoTile(c, i));
-    tiles.forEach(({ tile }) => row.appendChild(tile));
-    markInUse(tiles, onSettled);
+    const onState = () => onTileState(block, p, ctx);
+    const onUse = (key) => choosePhoto(block, p, key);
+    candidates.forEach((c, i) => row.appendChild(buildPhotoTile(c, i, p, onState, onUse)));
   }
-
   block.appendChild(row);
+
+  updateInUse(block, p);   // catches a photoSource with no matching photo straight away
   return block;
+}
+
+function onTileState(block, p, ctx) {
+  if (!current || current.token !== ctx.token) return;
+  updateInUse(block, p);
+  updateStatLine();
+  if (document.getElementById('problems-only').checked) scheduleFilters();
+
+  if (block.dataset.settled) return;
+  const tiles = block.querySelectorAll('.photo-tile');
+  if (Array.from(tiles).some(t => t.dataset.state === 'pending')) return;
+  block.dataset.settled = '1';
+  ctx.settledPlayers++;
+  if (ctx.settledPlayers === ctx.needed) {
+    ctx.summaryReady = true;
+    renderSourceSummary(ctx.players);
+  }
 }
 
 /**
  * Tallies, per photo source key, how many photos are on record across the
- * whole roster ("available") versus how many are actually the one winning
- * the fallback race on a player's card right now ("in use"). Available is
- * known synchronously from the data; in-use depends on every image across
- * every player having finished loading (or failing) first, so this is only
- * called once markInUse has reported back for every player with photos.
+ * whole roster ("available") versus how many are actually showing on a
+ * player's card right now ("in use": the specified photo where it works,
+ * otherwise the fallback that wins). Available is known synchronously from
+ * the data; in-use depends on every image having finished loading (or
+ * failing), so this first runs once every player's tiles have settled and
+ * is then refreshed after each pick.
  */
 function renderSourceSummary(players) {
   const available = {};
@@ -694,7 +1182,7 @@ function renderSourceSummary(players) {
   });
 
   const inUse = {};
-  document.querySelectorAll('.photo-tile.in-use').forEach(tile => {
+  document.querySelectorAll('.photo-tile.in-use, .photo-tile.fallback').forEach(tile => {
     const key = tile.dataset.source || '(unlabeled)';
     inUse[key] = (inUse[key] || 0) + 1;
   });
@@ -734,18 +1222,37 @@ function renderSourceSummary(players) {
   tbody.appendChild(totalRow);
 }
 
+function updateStatLine() {
+  const blocks = Array.from(document.querySelectorAll('.player-block'));
+  const withPhotos = blocks.filter(b => b.dataset.hasPhotos === '1').length;
+  const problems = blocks.filter(b => b.dataset.problem === '1').length;
+  document.getElementById('stat-line').textContent =
+    `${withPhotos} / ${blocks.length} players have at least one photo` +
+    (problems ? ` · ${problems} with a photoSource problem` : '');
+}
+
+let filterQueued = false;
+function scheduleFilters() {
+  if (filterQueued) return;
+  filterQueued = true;
+  requestAnimationFrame(() => { filterQueued = false; applyFilters(); });
+}
+
 function applyFilters() {
   const q = document.getElementById('search').value.trim().toLowerCase();
   const activeSquadBtn = document.querySelector('.squad-filter button.active');
   const squad = activeSquadBtn ? activeSquadBtn.dataset.squad : 'all';
   const missingOnly = document.getElementById('missing-only').checked;
+  const problemsOnly = document.getElementById('problems-only').checked;
 
   let visibleCount = 0;
   document.querySelectorAll('.player-block').forEach(block => {
     const matchesName = !q || block.dataset.name.includes(q);
     const matchesSquad = squad === 'all' || block.dataset.squad === squad;
     const matchesMissing = !missingOnly || block.dataset.hasPhotos === '0';
-    const show = matchesName && matchesSquad && matchesMissing;
+    // A block you've just fixed stays put rather than vanishing under your cursor.
+    const matchesProblem = !problemsOnly || block.dataset.problem === '1' || block.dataset.edited === '1';
+    const show = matchesName && matchesSquad && matchesMissing && matchesProblem;
     block.style.display = show ? '' : 'none';
     if (show) visibleCount++;
   });
@@ -753,29 +1260,42 @@ function applyFilters() {
   document.getElementById('empty-state').style.display = visibleCount === 0 ? 'block' : 'none';
 }
 
-async function init() {
+/* ------------------------------------------------------------------ *
+ * Loading a season
+ * ------------------------------------------------------------------ */
+async function loadSeason(season) {
+  const token = ++loadToken;
+  activeSeason = season;
+  unsaved = {};
+  baselineText = '';
+  current = null;
+
+  document.getElementById('blocks').innerHTML = '';
+  document.getElementById('stat-line').textContent = '';
+  document.getElementById('empty-state').style.display = 'none';
+  document.getElementById('load-error').style.display = 'none';
+  document.getElementById('source-table-body').innerHTML =
+    '<tr><td colspan="3" class="source-summary-pending">Loading images to determine what\'s in use…</td></tr>';
+
+  const masterFile = season.playersMasterFile || 'players-master.json';
+  document.getElementById('season-note').textContent =
+    `${season.label ? 'Season ' + season.label + ' · ' : ''}roster: ${season.playersFile} · master: ${masterFile}`;
+  updateSaveBar();
+
   try {
-    const seasons = await loadSeasons();
-    let masterFile = 'players-master.json';
-    let playersFile = 'players-season.json';
-    let seasonNote = '';
-    let ageBands = [];
-
-    if (seasons) {
-      const requested = new URLSearchParams(location.search).get('season');
-      const active = seasons.find(s => s.id === requested) || seasons[0];
-      masterFile = active.playersMasterFile || masterFile;
-      playersFile = active.playersFile;
-      ageBands = active.ageBands || [];
-      seasonNote = `Season ${active.label || active.id}. Add ?season=<id> to the URL to check a different season.`;
-    }
-    document.getElementById('season-note').textContent = seasonNote;
-
-    const [masterRes, seasonRes] = await Promise.all([fetch(masterFile), fetch(playersFile)]);
-    if (!masterRes.ok || !seasonRes.ok) throw new Error('fetch failed');
+    // no-store: you'll be editing these files while auditing, so never show a cached copy.
+    const [masterRes, seasonRes] = await Promise.all([
+      fetch(masterFile, { cache: 'no-store' }),
+      fetch(season.playersFile, { cache: 'no-store' }),
+    ]);
+    if (!masterRes.ok || !seasonRes.ok) throw new Error(`fetch failed (${!masterRes.ok ? masterFile : season.playersFile})`);
     const master = await masterRes.json();
-    const season = await seasonRes.json();
-    const players = mergePlayers(master, season, ageBands);
+    const seasonText = await seasonRes.text();
+    const roster = JSON.parse(stripBom(seasonText));
+    if (token !== loadToken) return;
+
+    baselineText = seasonText;
+    const players = mergePlayers(master, roster, season.ageBands || []);
 
     const sorted = players.slice().sort((a, b) => {
       const sa = normSquad(a.squad), sb = normSquad(b.squad);
@@ -784,35 +1304,77 @@ async function init() {
       return (a.name || '').localeCompare(b.name || '');
     });
 
+    const needed = sorted.filter(p => visiblePhotoCandidates(p).length > 0).length;
+    const ctx = { token, players: sorted, summaryReady: false, settledPlayers: 0, needed };
+    current = ctx;
+
     const blocksWrap = document.getElementById('blocks');
-    const playersWithPhotos = sorted.filter(p => visiblePhotoCandidates(p).length > 0);
-    let settledPlayers = 0;
-    const onPlayerSettled = () => {
-      settledPlayers++;
-      if (settledPlayers === playersWithPhotos.length) renderSourceSummary(sorted);
-    };
-    sorted.forEach(p => {
-      const hasPhotos = visiblePhotoCandidates(p).length > 0;
-      blocksWrap.appendChild(buildPlayerBlock(p, hasPhotos ? onPlayerSettled : null));
-    });
-    if (playersWithPhotos.length === 0) renderSourceSummary(sorted);
+    sorted.forEach(p => blocksWrap.appendChild(buildPlayerBlock(p, ctx)));
+    if (needed === 0) { ctx.summaryReady = true; renderSourceSummary(sorted); }
 
-    const withPhotos = playersWithPhotos.length;
-    document.getElementById('stat-line').textContent = `${withPhotos} / ${sorted.length} players have at least one photo`;
-
-    document.getElementById('search').addEventListener('input', applyFilters);
-    document.getElementById('missing-only').addEventListener('change', applyFilters);
-    document.querySelectorAll('.squad-filter button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.squad-filter button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        applyFilters();
-      });
-    });
+    updateStatLine();
+    applyFilters();
+    updateSaveBar();
   } catch (err) {
+    if (token !== loadToken) return;
     console.error(err);
+    document.getElementById('load-error-detail').textContent = err && err.message ? err.message : '';
     document.getElementById('load-error').style.display = 'block';
   }
+}
+
+async function init() {
+  seasons = await loadSeasons();
+
+  document.getElementById('search').addEventListener('input', applyFilters);
+  document.getElementById('missing-only').addEventListener('change', applyFilters);
+  document.getElementById('problems-only').addEventListener('change', applyFilters);
+  document.querySelectorAll('.squad-filter button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.squad-filter button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilters();
+    });
+  });
+  document.getElementById('connect-btn').addEventListener('click', connectFolder);
+  document.getElementById('download-btn').addEventListener('click', downloadJson);
+  window.addEventListener('beforeunload', (e) => {
+    if (unsavedCount()) { e.preventDefault(); e.returnValue = ''; }
+  });
+
+  let first;
+  if (seasons) {
+    const select = document.getElementById('season-select');
+    seasons.forEach(s => {
+      const opt = document.createElement('option');
+      opt.value = s.id;
+      opt.textContent = s.label || s.id;
+      select.appendChild(opt);
+    });
+    // ?season=<id> still works as a deep link; an unknown id falls back to the first season.
+    const requested = new URLSearchParams(location.search).get('season');
+    first = seasons.find(s => s.id === requested) || seasons[0];
+    select.value = first.id;
+    document.getElementById('season-picker').hidden = false;
+
+    select.addEventListener('change', () => {
+      const next = seasons.find(s => s.id === select.value);
+      if (!next) return;
+      if (unsavedCount() && !confirm(`Discard ${unsavedCount()} unsaved photo pick(s) for ${activeSeason.label || activeSeason.id}?`)) {
+        select.value = activeSeason.id;
+        return;
+      }
+      const url = new URL(location.href);
+      url.searchParams.set('season', next.id);
+      history.replaceState(null, '', url);
+      loadSeason(next);
+    });
+  } else {
+    // No seasons.json: single-season fallback, same as the main site.
+    first = { id: '', label: '', playersFile: 'players-season.json', ageBands: [] };
+  }
+
+  await loadSeason(first);
 }
 
 init();

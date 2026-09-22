@@ -8,11 +8,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="next-match.css">
+<style>
+  .back-link {
+    display: inline-block;
+    margin: 0 0 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: inherit;
+    opacity: 0.6;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+  .back-link:hover { opacity: 1; text-decoration: underline; }
+  .back-link:focus-visible { opacity: 1; outline: 2px solid currentColor; outline-offset: 3px; }
+</style>
 </head>
 <body>
 
 <div class="masthead">
   <div class="masthead-inner">
+    <a class="back-link" href="../">&larr; blixottel</a>
     <div id="season-switcher-slot"></div>
     <p class="eyebrow" id="eyebrow">Est. manually · Season 2026/27</p>
     <h1 class="title">The Teamsheet</h1>

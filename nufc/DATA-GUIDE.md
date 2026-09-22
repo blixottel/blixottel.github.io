@@ -297,7 +297,10 @@ for a proper age band in `seasons.json`.
 
 Lists every season and which roster/fixtures files belong to it. The first
 entry is the default season shown on load; `?season=<id>` in the URL selects
-another one (works on both `index.html` and `gallery.html`).
+another one (works on both `index.html` and `gallery.html`). `gallery.html`
+also builds a Season drop-down from this file, so you don't have to edit the
+URL there — picking a season updates `?season=` for you, so the link stays
+shareable/bookmarkable.
 
 ```json
 [
@@ -370,18 +373,68 @@ documentation of the expected shape: `status` (`start` / `sub_on` /
 
 A standalone reference page (all HTML/CSS/JS in one file, no `js/*.js`
 dependency) for auditing player photos across a season: every photo on
-record for every player, in fallback order, with the one currently winning
-the fallback race on the main site outlined in green ("in use"). Each tile
-is labelled with its source key (`official-profile`, `zerozero`, etc.) so
-you can spot at a glance which source a photo came from — handy when
-deciding whether to trust it or replace it.
+record for every player, in fallback order, each tile labelled with its
+source key (`official`, `zerozero`, etc.) so you can spot at a glance which
+source a photo came from — handy when deciding whether to trust it or
+replace it.
 
 Reads the same `players-master.json` + season roster + `seasons.json` as
 `index.html`, via its own copies of `mergePlayers` and `photoCandidates`
 (kept deliberately self-contained rather than sharing `js/data.js`, so this
-page can be opened on its own). Search, squad filter, and a "missing photos
-only" toggle live in the sticky header; each URL has a one-click copy
-button for pasting into `players-master.json`.
+page can be opened on its own). A Season drop-down (built from
+`seasons.json`), search, squad filter, a "no photos" toggle and an "Only
+photoSource problems" toggle live in the sticky header; each URL has a
+one-click copy button for pasting into `players-master.json`. The roster and
+master files are always re-fetched fresh, so editing them and switching
+season (or refreshing) shows the change.
+
+### What "In use" means
+
+The tile outlined in green / badged **In use** is the photo the season
+roster's `photoSource` names — not simply whichever image happens to load
+first. Cases:
+
+| Situation | What you see |
+|---|---|
+| `photoSource` set, photo loads | That tile: green, **In use**. It's also moved to position 1. |
+| `photoSource` set, but the player's `photos` has no such key, or its URL is `""` | Amber chip in the player's header (`photoSource "x" — no photo on record for it`), amber outline on the player's block, and the photo the main site would actually fall back to is badged **Fallback showing**. |
+| `photoSource` set, photo exists but fails to load | Chip says it didn't load; that tile gets a red **Specified · failed** badge; the fallback that's really showing is badged **Fallback showing**. |
+| No `photoSource` | First photo that loads, badged **In use · auto** (this is what the main site does by default). |
+
+The header stat line counts how many players have a `photoSource` problem,
+and "Only photoSource problems" filters to them. A missing photoSource photo
+is known immediately; the specified photo is loaded eagerly so a broken one
+is caught without scrolling, but the *Fallback showing* marker for that
+player only appears once the other (lazy-loaded) tiles have loaded, i.e.
+when you scroll to them. The "Photo sources" table at the bottom counts what's
+actually showing (green + amber tiles).
+
+### Picking a photo and saving it
+
+Every tile has a **Use this photo** button. Clicking it sets that player's
+`photoSource` for the season you're viewing, immediately re-orders their tiles
+and re-marks "In use". **Clear photoSource** (in the player's header) removes
+the property so they revert to the default order. Only the roster file
+(`players-YYYY-YY.json`) is ever changed — never `players-master.json`.
+
+A static page can't write to disk by itself, so there are two routes:
+
+1. **Chrome / Edge (over `http://localhost`)** — click **Connect site
+   folder…** once per visit and choose the folder that contains
+   `gallery.html`. From then on each pick is written straight into that
+   season's roster file. The browser will ask you to allow editing that folder.
+2. **Any browser** — picks are held in the page; **Download
+   players-YYYY-YY.json** gives you the updated roster to drop over the old one.
+   (Also the fallback if a write fails.) Switching season or closing the tab
+   with unsaved picks asks for confirmation.
+
+Either way the change is a surgical text edit of just that one roster entry
+(adding or replacing `"photoSource": "..."`), so the rest of the file's
+formatting, indentation and line endings are left exactly as they were. The
+result is re-parsed before being written, and the write is refused if
+anything looks off. When saving to a connected folder, the file is re-read
+from disk each time, so edits you've made elsewhere in the meantime aren't
+overwritten.
 
 ## Adding a new season
 

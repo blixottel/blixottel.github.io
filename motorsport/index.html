@@ -9,11 +9,27 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Formula+Condensed&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 <link rel="stylesheet" href="motorsport.css">
+<style>
+  .back-link {
+    display: inline-block;
+    margin: 0 0 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: inherit;
+    opacity: 0.6;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+  .back-link:hover { opacity: 1; text-decoration: underline; }
+  .back-link:focus-visible { opacity: 1; outline: 2px solid currentColor; outline-offset: 3px; }
+</style>
 </head>
 <body>
 
   <header class="masthead">
     <div class="masthead-inner">
+      <a class="back-link" href="../">&larr; blixottel</a>
       <h1 class="title"><span class="flag">🏁</span>Pit Wall</h1>
       <p class="subtitle">Every series worth following in one place — official site, results, standings, calendar and next date at a glance.</p>
       <div class="legend" id="legend"></div>

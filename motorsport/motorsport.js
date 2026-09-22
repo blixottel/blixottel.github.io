@@ -58,6 +58,10 @@ const KIND_SUFFIX = {
   plain: '',
   tbs: ' : To be scheduled',
 };
+// How far ahead (in days, counting from today) a future series can be and
+// still show under "This week". Applied on top of the calendar-week rule.
+const THIS_WEEK_MAX_DAYS = 4;
+
 // Sections that start expanded; everything else starts collapsed.
 const OPEN_BY_DEFAULT = new Set(['this-week']);
 
@@ -118,14 +122,18 @@ function classify(series, now) {
   // Two independent rules, not one symmetric window:
   //  - Past + verified: always "this week", no matter how long ago —
   //    it stays there until the data is updated with the next round's date.
-  //  - Future: only surfaces under "this week" once the calendar week
-  //    containing it has started (i.e. from its Monday onward).
+  //  - Future: surfaces under "this week" only if it falls within the
+  //    current Monday-Sunday week AND is no more than THIS_WEEK_MAX_DAYS
+  //    days away (whichever cutoff comes first).
   let kind;
   if (date <= now) {
     kind = 'this-week';
   } else {
     const { weekEnd } = getWeekBounds(now);
-    kind = (date < weekEnd) ? 'this-week' : 'plain';
+    // Exclusive cutoff: midnight after the last allowed day.
+    const windowEnd = new Date(now.getFullYear(), now.getMonth(), now.getDate() + THIS_WEEK_MAX_DAYS + 1);
+    const cutoff = weekEnd < windowEnd ? weekEnd : windowEnd;
+    kind = (date < cutoff) ? 'this-week' : 'plain';
   }
 
   return { year, kind, sortDate: date };
