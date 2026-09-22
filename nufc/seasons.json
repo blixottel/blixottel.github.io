@@ -10,5 +10,9 @@
 	{
 		"id": "2024-25", "label": "2024/25", "playersFile": "players-2024-25.json", "fixturesFile": "fixtures-2024-25.json", "requireDetailedStats": false,
 		"ageBands": [ { "squad": "u16", "bornOnOrAfter": "2008-09-01" }, { "squad": "u18", "bornOnOrAfter": "2006-09-01", "bornBefore": "2008-09-01" }, { "squad": "u21", "bornOnOrAfter": "2003-01-01", "bornBefore": "2006-09-01" } ]
+	},
+	{
+		"id": "2023-24", "label": "2023/24", "playersFile": "players-2023-24.json", "fixturesFile": "fixtures-2023-24.json", "requireDetailedStats": false,
+		"ageBands": [ { "squad": "u16", "bornOnOrAfter": "2007-09-01" }, { "squad": "u18", "bornOnOrAfter": "2005-09-01", "bornBefore": "2007-09-01" }, { "squad": "u21", "bornOnOrAfter": "2002-01-01", "bornBefore": "2005-09-01" } ]
 	}
 ]

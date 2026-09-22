@@ -1351,7 +1351,7 @@
                 "official": { "url": "https://www.moto4northerncup.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.moto4northerncup.com/event/2026-2", "label": "Results", "active": false },
                 "standings": { "url": "https://www.moto4northerncup.com/results/2026-2", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.moto4northerncup.com/calendar", "label": "Calendar", "active": true }
+                "calendar": { "url": "https://www.moto4northerncup.com/calendar", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://twitter.com/moto4northern" },
@@ -1387,7 +1387,7 @@
                 "official": { "url": "https://www.redbull.com/int-en/rookiescup", "label": "Official site", "active": true },
                 "results": { "url": "https://www.redbull.com/int-en/rookiescup/races", "label": "Results", "active": false },
                 "standings": { "url": "https://www.redbull.com/int-en/rookiescup/results", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.redbull.com/int-en/rookiescup/races", "label": "Calendar", "active": true }
+                "calendar": { "url": "https://www.redbull.com/int-en/rookiescup/races", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "facebook", "url": "https://www.facebook.com/redbullrookiescup" },

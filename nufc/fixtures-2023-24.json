@@ -1,0 +1,348 @@
+{
+    "senior": {
+        "fixtures": [
+        ],
+        "appearances": {
+        }
+    },
+    "u21": {
+        "fixtures": [
+        ],
+        "appearances": {
+        }
+    },
+
+	"u19": {
+		"fixtures": [
+			{ "id": "u19-f1", "date": "2023-09-19", "opponent": "AC Milan U19", "venue": "A", "competition": "UEFA Youth League", "result": "L 0-4", "subsUsed": 4, "subsUnused": 3, "assistsTotal": 0, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+			{ "id": "u19-f2", "date": "2023-10-04", "opponent": "Paris Saint-Germain U19", "venue": "H", "competition": "UEFA Youth League", "result": "L 0-1", "subsUsed": 3, "subsUnused": 4, "assistsTotal": 0, "yellowCardsTotal": 5, "redCardsTotal": 0 },
+			{ "id": "u19-f3", "date": "2023-10-25", "opponent": "Borussia Dortmund U19", "venue": "H", "competition": "UEFA Youth League", "result": "L 1-2", "subsUsed": 4, "subsUnused": 3, "assistsTotal": 0, "yellowCardsTotal": 5, "redCardsTotal": 0 },
+			{ "id": "u19-f4", "date": "2023-11-07", "opponent": "Borussia Dortmund U19", "venue": "A", "competition": "UEFA Youth League", "result": "D 2-2", "subsUsed": 3, "subsUnused": 4, "assistsTotal": 2, "yellowCardsTotal": 3, "redCardsTotal": 0 },
+			{ "id": "u19-f5", "date": "2023-11-28", "opponent": "Paris Saint-Germain U19", "venue": "A", "competition": "UEFA Youth League", "result": "W 2-1", "subsUsed": 3, "subsUnused": 3, "assistsTotal": 1, "yellowCardsTotal": 3, "redCardsTotal": 0 },
+			{ "id": "u19-f6", "date": "2023-12-13", "opponent": "AC Milan U19", "venue": "H", "competition": "UEFA Youth League", "result": "W 3-1", "subsUsed": 3, "subsUnused": 4, "assistsTotal": 3, "yellowCardsTotal": 2, "redCardsTotal": 0 }
+		],
+		"appearances": {
+            "s-adam-harrison": {
+                "u19-f1": { "status": "start" }, "u19-f2": { "status": "unused_sub" }
+            },
+            "u21-adrian-janusz": {
+                "u19-f1": { "status": "unused_sub" }, "u19-f3": { "status": "unused_sub" }, "u19-f4": { "status": "unused_sub" }, "u19-f5": { "status": "start" }, "u19-f6": { "status": "start" }
+            },
+            "s-aidan-harris": {
+                "u19-f2": { "status": "start" }, "u19-f3": { "status": "start" }, "u19-f4": { "status": "start" }
+            },
+            "u21-anthony-munda": {
+                "u19-f1": { "status": "sub_on" }, "u19-f3": { "status": "sub_on", "yellowCard": true }, "u19-f4": { "status": "start" }
+            },
+            "s-ben-parkinson": {
+                "u19-f1": { "status": "start" }, "u19-f2": { "status": "start", "yellowCard": true }, "u19-f3": { "status": "start", "yellowCard": true }, "u19-f6": { "status": "start", "goals": 1, "yellowCard": true }
+            },
+            "u21-cathal-heffernan": {
+                "u19-f1": { "status": "start" }, "u19-f2": { "status": "start" }, "u19-f3": { "status": "start" }, "u19-f4": { "status": "start", "goals": 1 }, "u19-f5": { "status": "start", "yellowCard": true },
+				"u19-f6": { "status": "start", "goals": 1 }
+            },
+            "u21-charlie-mcarthur": {
+                "u19-f1": { "status": "start", "yellowCard": true }, "u19-f2": { "status": "start", "yellowCard": true }, "u19-f3": { "status": "sub_on" }, "u19-f4": { "status": "start" }, "u19-f5": { "status": "start" },
+				"u19-f6": { "status": "start", "assists": 1 }
+            },
+            "u21-ciaran-thompson": {
+                "u19-f1": { "status": "start" }, "u19-f2": { "status": "start" }, "u19-f3": { "status": "start" }, "u19-f4": { "status": "start", "yellowCard": true }, "u19-f6": { "status": "start" }
+            },
+            "u21-darren-palmer": {
+                "u19-f4": { "status": "sub_on" }, "u19-f5": { "status": "sub_on" }, "u19-f6": { "status": "unused_sub" }
+            },
+            "u21-dylan-charlton": {
+                "u19-f1": { "status": "start" }, "u19-f2": { "status": "start", "yellowCard": true }, "u19-f3": { "status": "start" }, "u19-f4": { "status": "start" }, "u19-f5": { "status": "start" },
+				"u19-f6": { "status": "start", "yellowCard": true }
+            },
+            "u21-ellis-stanton": {
+                "u19-f1": { "status": "unused_sub" }, "u19-f2": { "status": "start", "yellowCard": true }, "u19-f3": { "status": "start", "yellowCard": true }, "u19-f4": { "status": "sub_on" },
+				"u19-f5": { "status": "start", "yellowCard": true }
+            },
+            "s-james-huntley": {
+                "u19-f1": { "status": "start", "yellowCard": true }, "u19-f2": { "status": "start" }, "u19-f4": { "status": "start", "goals": 1 }, "u19-f6": { "status": "start" }
+            },
+            "u21-jamie-miley": {
+                "u19-f1": { "status": "start" }, "u19-f2": { "status": "start", "yellowCard": true }, "u19-f3": { "status": "start", "yellowCard": true }
+            },
+            "u21-joe-brayson": {
+                "u19-f4": { "status": "unused_sub" }, "u19-f5": { "status": "sub_on" }
+            },
+            "u21-johnny-emerson": {
+                "u19-f1": { "status": "start" }, "u19-f2": { "status": "start" }, "u19-f3": { "status": "start" }, "u19-f4": { "status": "start", "assists": 1, "yellowCard": true },
+				"u19-f5": { "status": "start", "goals": 1, "yellowCard": true }, "u19-f6": { "status": "start" }
+            },
+            "u21-josh-donaldson": {
+                "u19-f1": { "status": "start" }, "u19-f2": { "status": "start" }, "u19-f5": { "status": "start" }
+            },
+            "u21-kyle-crossley": {
+                "u19-f3": { "status": "start" }, "u19-f4": { "status": "start" }, "u19-f5": { "status": "sub_on" }, "u19-f6": { "status": "sub_on" }
+            },
+            "s-leo-shahar": {
+                "u19-f2": { "status": "sub_on" }, "u19-f3": { "status": "start", "yellowCard": true }, "u19-f5": { "status": "start" }, "u19-f6": { "status": "sub_on" }
+            },
+            "u21-luke-craggs": {
+                "u19-f1": { "status": "unused_sub" }, "u19-f2": { "status": "unused_sub" }, "u19-f5": { "status": "unused_sub" }
+            },
+            "u18-matty-taylor": {
+                "u19-f3": { "status": "unused_sub" }
+            },
+            "u21-rory-powell": {
+                "u19-f1": { "status": "sub_on" }, "u19-f2": { "status": "unused_sub" }, "u19-f3": { "status": "sub_on" }, "u19-f4": { "status": "unused_sub" }, "u19-f6": { "status": "unused_sub" }
+            },
+            "u21-scott-bailey": {
+                "u19-f5": { "status": "start", "goals": 1 }, "u19-f6": { "status": "start" }
+            },
+            "s-sean-neave": {
+                "u19-f1": { "status": "sub_on" }, "u19-f2": { "status": "sub_on" }, "u19-f3": { "status": "sub_on", "goals": 1 }, "u19-f4": { "status": "start" }, "u19-f6": { "status": "sub_on", "assists": 1 }
+            },
+            "u21-shaun-mavididi": {
+                "u19-f5": { "status": "unused_sub" }, "u19-f6": { "status": "unused_sub" }
+            },
+            "u21-thomas-bryant": {
+                "u19-f1": { "status": "sub_on" }, "u19-f2": { "status": "unused_sub" }, "u19-f3": { "status": "unused_sub" }, "u19-f4": { "status": "unused_sub" }
+            },
+            "s-travis-hernes": {
+                "u19-f1": { "status": "start" }, "u19-f3": { "status": "start" }, "u19-f4": { "status": "start", "yellowCard": true }, "u19-f5": { "status": "start", "assists": 1 },
+				"u19-f6": { "status": "start", "goals": 1, "assists": 1 }
+            },
+            "s-trevan-sanusi": {
+                "u19-f2": { "status": "sub_on" }, "u19-f4": { "status": "sub_on", "assists": 1 }, "u19-f5": { "status": "start" }, "u19-f6": { "status": "start" }
+            },
+            "u21-tyler-jones": {
+                "u19-f5": { "status": "unused_sub" }, "u19-f6": { "status": "unused_sub" }
+            }
+		}
+	},
+
+    "u18": {
+        "fixtures": [
+            { "id": "u18-f1", "date": "2023-08-12", "opponent": "Everton U18", "venue": "H", "competition": "U18 Premier League", "result": "W 4-2", "subsUsed": 3, "subsUnused": 2, "assistsTotal": 3, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "u18-f2", "date": "2023-08-19", "opponent": "Derby County U18", "venue": "A", "competition": "U18 Premier League", "result": "L 3-5", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 2, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "u18-f3", "date": "2023-08-26", "opponent": "Nottingham Forest U18", "venue": "H", "competition": "U18 Premier League", "result": "W 3-2", "subsUsed": 3, "subsUnused": 2, "assistsTotal": 3, "yellowCardsTotal": 5, "redCardsTotal": 0 },
+            { "id": "u18-f4", "date": "2023-09-02", "opponent": "Fulham U18", "venue": "A", "competition": "U18 Premier Cup", "result": "L 2-3", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 0, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "u18-f5", "date": "2023-09-16", "opponent": "Leeds United U18", "venue": "A", "competition": "U18 Premier League", "result": "D 1-1", "subsUsed": 3, "subsUnused": 2, "assistsTotal": 1, "yellowCardsTotal": 3, "redCardsTotal": 0 },
+            { "id": "u18-f6", "date": "2023-09-23", "opponent": "Blackburn Rovers U18", "venue": "H", "competition": "U18 Premier League", "result": "W 3-0", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 2, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "u18-f7", "date": "2023-09-30", "opponent": "Manchester United U18", "venue": "A", "competition": "U18 Premier League", "result": "L 1-5", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 1, "yellowCardsTotal": 4, "redCardsTotal": 0 },
+            { "id": "u18-f8", "date": "2023-10-07", "opponent": "Stoke City U18", "venue": "A", "competition": "U18 Premier League", "result": "L 1-4", "subsUsed": 5, "subsUnused": 0, "assistsTotal": 1, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "u18-f9", "date": "2023-10-28", "opponent": "Liverpool U18", "venue": "A", "competition": "U18 Premier League", "result": "W 2-1", "subsUsed": 3, "subsUnused": 2, "assistsTotal": 1, "yellowCardsTotal": 3, "redCardsTotal": 0 },
+            { "id": "u18-f10", "date": "2023-11-11", "opponent": "mackems U18", "venue": "H", "competition": "U18 Premier League", "result": "W 3-0", "subsUsed": 3, "subsUnused": 2, "assistsTotal": 3, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "u18-f11", "date": "2023-11-16", "opponent": "Crystal Palace U18", "venue": "H", "competition": "U18 Premier Cup", "result": "W 4-1", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 0, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "u18-f12", "date": "2023-11-25", "opponent": "Liverpool U18", "venue": "A", "competition": "U18 Premier Cup", "result": "L 1-5", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 0, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "u18-f13", "date": "2023-12-19", "opponent": "Leyton Orient U18", "venue": "H", "competition": "FA Youth Cup", "result": "W 7-2", "subsUsed": 3, "subsUnused": 4, "assistsTotal": 0, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "u18-f14", "date": "2024-01-06", "opponent": "Wolverhampton Wanderers U18", "venue": "H", "competition": "U18 Premier League", "result": "W 3-2", "subsUsed": 3, "subsUnused": 2, "assistsTotal": 1, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "u18-f15", "date": "2024-01-13", "opponent": "Manchester United U18", "venue": "H", "competition": "U18 Premier League", "result": "L 1-3", "subsUsed": 3, "subsUnused": 2, "assistsTotal": 0, "yellowCardsTotal": 0, "redCardsTotal": 0, "ownGoalsFor": 1 },
+            { "id": "u18-f16", "date": "2024-01-17", "opponent": "AFC Bournemouth U18", "venue": "H", "competition": "FA Youth Cup", "result": "L 0-5", "subsUsed": 3, "subsUnused": 4, "assistsTotal": 0, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "u18-f17", "date": "2024-01-27", "opponent": "mackems U18", "venue": "A", "competition": "U18 Premier League", "result": "D 2-2", "subsUsed": 3, "subsUnused": 2, "assistsTotal": 1, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "u18-f18", "date": "2024-02-10", "opponent": "Manchester City U18", "venue": "H", "competition": "U18 Premier League", "result": "L 1-2", "subsUsed": 3, "subsUnused": 2, "assistsTotal": 1, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "u18-f19", "date": "2024-02-17", "opponent": "Derby County U18", "venue": "H", "competition": "U18 Premier League", "result": "L 1-2", "subsUsed": 2, "subsUnused": 3, "assistsTotal": 1, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "u18-f20", "date": "2024-02-21", "opponent": "Manchester City U18", "venue": "A", "competition": "U18 Premier League", "result": "L 2-4", "subsUsed": 2, "subsUnused": 3, "assistsTotal": 2, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "u18-f21", "date": "2024-03-02", "opponent": "Middlesbrough U18", "venue": "H", "competition": "U18 Premier League", "result": "L 1-3", "subsUsed": 3, "subsUnused": 2, "assistsTotal": 0, "yellowCardsTotal": 1, "redCardsTotal": 1 },
+            { "id": "u18-f22", "date": "2024-03-09", "opponent": "Nottingham Forest U18", "venue": "A", "competition": "U18 Premier League", "result": "W 4-1", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 2, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "u18-f23", "date": "2024-03-16", "opponent": "Stoke City U18", "venue": "H", "competition": "U18 Premier League", "result": "L 2-4", "subsUsed": 5, "subsUnused": 0, "assistsTotal": 2, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "u18-f24", "date": "2024-04-06", "opponent": "Blackburn Rovers U18", "venue": "A", "competition": "U18 Premier League", "result": "L 1-2", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 0, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "u18-f25", "date": "2024-04-16", "opponent": "Liverpool U18", "venue": "H", "competition": "U18 Premier League", "result": "W 4-3", "subsUsed": 3, "subsUnused": 2, "assistsTotal": 2, "yellowCardsTotal": 1, "redCardsTotal": 1, "ownGoalsFor": 1 },
+            { "id": "u18-f26", "date": "2024-04-20", "opponent": "Wolverhampton Wanderers U18", "venue": "A", "competition": "U18 Premier League", "result": "L 0-1", "subsUsed": 3, "subsUnused": 2, "assistsTotal": 0, "yellowCardsTotal": 2, "redCardsTotal": 2 },
+            { "id": "u18-f27", "date": "2024-05-04", "opponent": "Leeds United U18", "venue": "H", "competition": "U18 Premier League", "result": "W 2-1", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 2, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "u18-f28", "date": "2024-05-07", "opponent": "Middlesbrough U18", "venue": "A", "competition": "U18 Premier League", "result": "W 4-3", "subsUsed": 2, "subsUnused": 3, "assistsTotal": 2, "yellowCardsTotal": 3, "redCardsTotal": 0 },
+            { "id": "u18-f29", "date": "2024-05-18", "opponent": "Everton U18", "venue": "A", "competition": "U18 Premier League", "result": "L 0-8", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 0, "yellowCardsTotal": 3, "redCardsTotal": 0 }
+        ],
+        "appearances": {
+            "u18-aaron-epia": {
+				"u18-f26": { "status": "sub_on", "yellowCard": true }, "u18-f27": { "status": "sub_on" }
+            },
+            "s-adam-harrison": {
+                "u18-f1": { "status": "start" }, "u18-f2": { "status": "start" }, "u18-f3": { "status": "start", "yellowCard": true }, "u18-f5": { "status": "start" }, "u18-f6": { "status": "unused_sub" },
+				"u18-f7": { "status": "unused_sub" }, "u18-f8": { "status": "start" }, "u18-f13": { "status": "start" }, "u18-f14": { "status": "start" }, "u18-f15": { "status": "start" }, "u18-f16": { "status": "start" },
+				"u18-f17": { "status": "unused_sub" }, "u18-f18": { "status": "unused_sub" }, "u18-f19": { "status": "unused_sub" }, "u18-f20": { "status": "unused_sub" }, "u18-f21": { "status": "unused_sub" },
+				"u18-f22": { "status": "start" }, "u18-f23": { "status": "start" }, "u18-f24": { "status": "unused_sub" }, "u18-f25": { "status": "unused_sub" }, "u18-f26": { "status": "start" },
+				"u18-f27": { "status": "start" }, "u18-f28": { "status": "start" }, "u18-f29": { "status": "start" }
+            },
+            "u21-adrian-janusz": {
+                "u18-f3": { "status": "unused_sub" }, "u18-f4": { "status": "unused_sub" }, "u18-f5": { "status": "unused_sub" }, "u18-f8": { "status": "sub_on" }, "u18-f9": { "status": "unused_sub" },
+				"u18-f12": { "status": "start" }, "u18-f13": { "status": "unused_sub" }, "u18-f14": { "status": "unused_sub" }, "u18-f15": { "status": "unused_sub" }, "u18-f16": { "status": "unused_sub" }
+            },
+            "s-aidan-harris": {
+                "u18-f1": { "status": "unused_sub" }, "u18-f2": { "status": "unused_sub" }, "u18-f4": { "status": "start" }, "u18-f6": { "status": "start" }, "u18-f7": { "status": "start" }, "u18-f9": { "status": "start" },
+				"u18-f10": { "status": "start" }, "u18-f11": { "status": "start" }, "u18-f17": { "status": "start" }, "u18-f18": { "status": "start" }, "u18-f19": { "status": "start", "yellowCard": true },
+				"u18-f20": { "status": "start" }, "u18-f21": { "status": "start" }, "u18-f25": { "status": "start" }
+            },
+            "u21-alex-odonovan": {
+                "u18-f1": { "status": "start" }, "u18-f2": { "status": "sub_on" }, "u18-f3": { "status": "start" }, "u18-f5": { "status": "sub_on", "yellowCard": true }, "u18-f12": { "status": "sub_on" },
+				"u18-f13": { "status": "unused_sub" }, "u18-f14": { "status": "sub_on" }, "u18-f18": { "status": "sub_on" }, "u18-f19": { "status": "start" }, "u18-f21": { "status": "sub_on" }, "u18-f22": { "status": "start" },
+				"u18-f23": { "status": "start" }, "u18-f24": { "status": "start" }, "u18-f25": { "status": "start" }, "u18-f26": { "status": "start" }, "u18-f27": { "status": "start", "goals": 1 },
+				"u18-f28": { "status": "start" }, "u18-f29": { "status": "sub_on" }
+            },
+            "u21-alfie-harrison": {
+				"u18-f1": { "status": "incoming" }, "u18-f2": { "status": "incoming" }, "u18-f3": { "status": "incoming" }, "u18-f4": { "status": "incoming" }, "u18-f5": { "status": "incoming" },
+				"u18-f6": { "status": "incoming" }, "u18-f7": { "status": "incoming" }, "u18-f8": { "status": "incoming" }, "u18-f9": { "status": "incoming" }, "u18-f10": { "status": "incoming" },
+				"u18-f11": { "status": "incoming" }, "u18-f12": { "status": "incoming" }, "u18-f13": { "status": "incoming" }, "u18-f14": { "status": "incoming" }, "u18-f15": { "status": "incoming" },
+				"u18-f16": { "status": "incoming" }, "u18-f17": { "status": "incoming" }, "u18-f20": { "status": "start", "goals": 1 }, "u18-f27": { "status": "start", "goals": 1 },
+				"u18-f28": { "status": "start", "goals": 1, "assists": 1 }
+            },
+            "u21-anthony-munda": {
+                "u18-f1": { "status": "start" }, "u18-f2": { "status": "start" }, "u18-f3": { "status": "start", "yellowCard": true }, "u18-f4": { "status": "start", "yellowCard": true },
+				"u18-f5": { "status": "start", "assists": 1, "yellowCard": true }, "u18-f6": { "status": "start" }, "u18-f7": { "status": "start" }, "u18-f8": { "status": "start" }, "u18-f9": { "status": "start" },
+				"u18-f10": { "status": "start" }, "u18-f13": { "status": "start", "goals": 1 }, "u18-f16": { "status": "sub_on" }, "u18-f17": { "status": "start" }, "u18-f18": { "status": "start" },
+				"u18-f20": { "status": "sub_on" }
+            },
+            "u18-brayden-clarke": {
+				"u18-f17": { "status": "start" }
+            },
+            "u21-carter-milmore": {
+                "u18-f1": { "status": "start" }, "u18-f2": { "status": "start" }, "u18-f3": { "status": "sub_on" }, "u18-f4": { "status": "start" }, "u18-f5": { "status": "unused_sub" }, "u18-f7": { "status": "start" },
+				"u18-f10": { "status": "unused_sub" }, "u18-f11": { "status": "start" }, "u18-f12": { "status": "sub_on" }, "u18-f13": { "status": "unused_sub" }, "u18-f15": { "status": "start" },
+				"u18-f16": { "status": "unused_sub" }, "u18-f17": { "status": "unused_sub" }, "u18-f18": { "status": "sub_on" }, "u18-f19": { "status": "start" }, "u18-f20": { "status": "unused_sub" },
+				"u18-f21": { "status": "start" }, "u18-f22": { "status": "start" }, "u18-f23": { "status": "start" }
+            },
+            "u21-darren-palmer": {
+                "u18-f2": { "status": "sub_on", "goals": 1 }, "u18-f3": { "status": "start" }, "u18-f4": { "status": "start", "goals": 1 }, "u18-f5": { "status": "start" }, "u18-f6": { "status": "start", "goals": 1 },
+				"u18-f7": { "status": "sub_on", "yellowCard": true }, "u18-f8": { "status": "start" }, "u18-f10": { "status": "start" }, "u18-f11": { "status": "start", "goals": 2 }, "u18-f12": { "status": "start" },
+				"u18-f13": { "status": "sub_on" }, "u18-f14": { "status": "start" }, "u18-f15": { "status": "start" }, "u18-f16": { "status": "start" }, "u18-f17": { "status": "start", "goals": 1 },
+				"u18-f18": { "status": "start", "goals": 1 }, "u18-f20": { "status": "start", "goals": 1 }, "u18-f21": { "status": "start" }, "u18-f22": { "status": "sub_on" }, "u18-f23": { "status": "start" },
+				"u18-f24": { "status": "start" }, "u18-f25": { "status": "start", "assists": 1 }, "u18-f26": { "status": "start" }, "u18-f27": { "status": "start", "yellowCard": true },
+				"u18-f28": { "status": "sub_on", "assists": 1 }, "u18-f29": { "status": "start", "yellowCard": true }
+            },
+            "u21-dylan-charlton": {
+                "u18-f6": { "status": "start" }, "u18-f9": { "status": "start" }, "u18-f10": { "status": "start" }, "u18-f13": { "status": "start", "goals": 1 }, "u18-f14": { "status": "start" },
+				"u18-f15": { "status": "start" }, "u18-f16": { "status": "start" }, "u18-f18": { "status": "start" }, "u18-f19": { "status": "start" }, "u18-f20": { "status": "start" }
+            },
+            "u21-guy-bloomer": {
+                "u18-f1": { "status": "start", "goals": 1 }, "u18-f2": { "status": "start" }, "u18-f3": { "status": "sub_on", "yellowCard": true }, "u18-f4": { "status": "sub_on" }, "u18-f12": { "status": "sub_on" },
+				"u18-f18": { "status": "unused_sub" }, "u18-f19": { "status": "sub_on" }, "u18-f21": { "status": "sub_on" }, "u18-f22": { "status": "sub_on" }, "u18-f23": { "status": "start" }, "u18-f24": { "status": "start" },
+				"u18-f25": { "status": "start" }, "u18-f26": { "status": "start" }, "u18-f27": { "status": "start", "assists": 2 }, "u18-f28": { "status": "start", "yellowCard": true },
+				"u18-f29": { "status": "start", "yellowCard": true }
+            },
+            "u21-harry-powell": {
+                "u18-f8": { "status": "start" }, "u18-f9": { "status": "sub_on", "yellowCard": true }, "u18-f10": { "status": "start" }, "u18-f12": { "status": "start" }, "u18-f13": { "status": "start" },
+				"u18-f14": { "status": "start" }, "u18-f15": { "status": "sub_on" }, "u18-f16": { "status": "start" }, "u18-f17": { "status": "sub_on" }, "u18-f18": { "status": "start" }, "u18-f20": { "status": "start" },
+				"u18-f21": { "status": "start", "redCard": true }, "u18-f23": { "status": "sub_on" }, "u18-f24": { "status": "start" }, "u18-f25": { "status": "start", "yellowCard": true },
+				"u18-f26": { "status": "start", "redCard": true }, "u18-f27": { "status": "start" }, "u18-f28": { "status": "start" }, "u18-f29": { "status": "start" }
+            },
+            "u21-henry-johnson": {
+                "u18-f1": { "status": "unused_sub" }, "u18-f19": { "status": "unused_sub" }, "u18-f22": { "status": "sub_on" }, "u18-f23": { "status": "sub_on" }, "u18-f25": { "status": "start" },
+				"u18-f26": { "status": "start" }, "u18-f27": { "status": "start" }, "u18-f28": { "status": "unused_sub" }, "u18-f29": { "status": "sub_on" }
+            },
+            "u18-jack-low": {
+                "u18-f4": { "status": "sub_on" }
+            },
+            "u21-jake-durrant": {
+                "u18-f1": { "status": "sub_on" }, "u18-f2": { "status": "sub_on" }, "u18-f14": { "status": "unused_sub" }, "u18-f24": { "status": "sub_on" }, "u18-f25": { "status": "sub_on" }, "u18-f26": { "status": "start" },
+				"u18-f27": { "status": "start", "yellowCard": true }, "u18-f28": { "status": "start", "yellowCard": true }, "u18-f29": { "status": "start" }
+            },
+            "u21-joe-brayson": {
+                "u18-f2": { "status": "sub_on", "goals": 1 }, "u18-f3": { "status": "start" }, "u18-f4": { "status": "start" }, "u18-f5": { "status": "sub_on" }, "u18-f6": { "status": "start", "goals": 1 },
+				"u18-f7": { "status": "sub_on" }, "u18-f8": { "status": "start", "assists": 1 }, "u18-f9": { "status": "sub_on" }, "u18-f10": { "status": "sub_on" }, "u18-f11": { "status": "start", "goals": 1 },
+				"u18-f12": { "status": "start" }, "u18-f13": { "status": "sub_on" }, "u18-f14": { "status": "start" }, "u18-f17": { "status": "start", "goals": 1 }, "u18-f18": { "status": "start" },
+				"u18-f19": { "status": "start", "goals": 1 }, "u18-f20": { "status": "start", "assists": 1 }, "u18-f21": { "status": "start" }, "u18-f22": { "status": "start", "goals": 1, "yellowCard": true },
+				"u18-f24": { "status": "sub_on", "goals": 1 }, "u18-f25": { "status": "start" }, "u18-f27": { "status": "start" }, "u18-f28": { "status": "start", "goals": 1 }, "u18-f29": { "status": "start" }
+            },
+            "u21-johnny-emerson": {
+                "u18-f1": { "status": "start", "goals": 1 }, "u18-f2": { "status": "start", "assists": 1 }, "u18-f3": { "status": "start" }, "u18-f4": { "status": "start", "yellowCard": true }, "u18-f6": { "status": "sub_on" },
+				"u18-f7": { "status": "start", "yellowCard": true }, "u18-f8": { "status": "sub_on" }, "u18-f9": { "status": "start" }, "u18-f13": { "status": "start" }, "u18-f14": { "status": "start", "goals": 1 },
+				"u18-f15": { "status": "sub_on" }, "u18-f16": { "status": "start" }, "u18-f21": { "status": "start" }, "u18-f22": { "status": "start", "assists": 1 }, "u18-f29": { "status": "start" }
+            },
+            "u21-josh-donaldson": {
+                "u18-f4": { "status": "start" }, "u18-f6": { "status": "sub_on" }, "u18-f7": { "status": "start" }, "u18-f10": { "status": "sub_on" }, "u18-f11": { "status": "sub_on" }, "u18-f12": { "status": "sub_on" },
+				"u18-f23": { "status": "sub_on" }, "u18-f24": { "status": "start" }, "u18-f25": { "status": "start", "goals": 2, "assists": 1 }, "u18-f26": { "status": "start" }, "u18-f29": { "status": "start" }
+            },
+            "u18-jude-cogdon": {
+                "u18-f1": { "status": "sub_on" }, "u18-f3": { "status": "unused_sub" }, "u18-f8": { "status": "sub_on" }, "u18-f19": { "status": "unused_sub" }, "u18-f21": { "status": "sub_on" },
+				"u18-f22": { "status": "start", "goals": 1, "assists": 1 }, "u18-f23": { "status": "start" }
+            },
+            "u21-kacey-wooster": {
+                "u18-f5": { "status": "sub_on" }, "u18-f11": { "status": "start" }, "u18-f12": { "status": "start" }, "u18-f15": { "status": "sub_on" }, "u18-f16": { "status": "unused_sub" }, "u18-f17": { "status": "sub_on" },
+				"u18-f19": { "status": "sub_on" }, "u18-f21": { "status": "unused_sub" }, "u18-f22": { "status": "sub_on" }, "u18-f23": { "status": "start" }, "u18-f24": { "status": "sub_on" },
+				"u18-f25": { "status": "sub_on" }, "u18-f26": { "status": "start" }, "u18-f27": { "status": "sub_on" }, "u18-f28": { "status": "sub_on" }, "u18-f29": { "status": "sub_on" }
+            },
+            "s-leo-shahar": {
+                "u18-f5": { "status": "start" }, "u18-f6": { "status": "start", "assists": 1 }, "u18-f7": { "status": "start" }, "u18-f8": { "status": "start" }, "u18-f9": { "status": "start", "yellowCard": true },
+				"u18-f11": { "status": "start" }, "u18-f13": { "status": "start" }, "u18-f16": { "status": "sub_on" }, "u18-f17": { "status": "start", "assists": 1 }, "u18-f18": { "status": "start" },
+				"u18-f20": { "status": "start" }, "u18-f23": { "status": "sub_on", "assists": 1 }, "u18-f28": { "status": "start" }
+            },
+            "s-lewis-miley": { },
+            "u21-logan-watts": {
+                "u18-f1": { "status": "start", "yellowCard": true }, "u18-f2": { "status": "start" }, "u18-f3": { "status": "start", "yellowCard": true }, "u18-f4": { "status": "sub_on" }, "u18-f5": { "status": "start" },
+				"u18-f6": { "status": "start" }, "u18-f7": { "status": "sub_on" }, "u18-f8": { "status": "start" }, "u18-f9": { "status": "start" }, "u18-f10": { "status": "sub_on" }, "u18-f11": { "status": "start" },
+				"u18-f12": { "status": "start" }, "u18-f13": { "status": "unused_sub" }, "u18-f14": { "status": "start", "yellowCard": true }, "u18-f15": { "status": "unused_sub" }, "u18-f16": { "status": "sub_on" },
+				"u18-f17": { "status": "start" }, "u18-f18": { "status": "start" }, "u18-f19": { "status": "start" }, "u18-f20": { "status": "start" }, "u18-f21": { "status": "start", "goals": 1 },
+				"u18-f22": { "status": "start", "goals": 2 }, "u18-f23": { "status": "start", "goals": 1 }, "u18-f24": { "status": "start", "yellowCard": true }, "u18-f25": { "status": "start", "redCard": true },
+				"u18-f27": { "status": "start" }, "u18-f28": { "status": "start" }, "u18-f29": { "status": "start" }
+            },
+            "u21-luke-craggs": {
+                "u18-f2": { "status": "start", "assists": 1 }, "u18-f3": { "status": "start" }, "u18-f4": { "status": "start", "goals": 1 }, "u18-f5": { "status": "start" }, "u18-f6": { "status": "start", "assists": 1 },
+				"u18-f7": { "status": "start", "yellowCard": true }, "u18-f8": { "status": "start" }, "u18-f9": { "status": "start", "yellowCard": true }, "u18-f10": { "status": "start", "goals": 1 },
+				"u18-f11": { "status": "sub_on", "goals": 1 }, "u18-f12": { "status": "start" }, "u18-f13": { "status": "start" }, "u18-f14": { "status": "sub_on" }, "u18-f15": { "status": "start" },
+				"u18-f16": { "status": "start" }, "u18-f17": { "status": "start" }, "u18-f19": { "status": "start" }, "u18-f20": { "status": "unused_sub" }, "u18-f21": { "status": "start", "yellowCard": true },
+				"u18-f22": { "status": "start" }, "u18-f23": { "status": "start" }
+            },
+            "u21-matheos-ferreira": {
+                "u18-f1": { "status": "start" }, "u18-f2": { "status": "start" }, "u18-f3": { "status": "sub_on", "goals": 1, "yellowCard": true }, "u18-f4": { "status": "sub_on" },
+				"u18-f5": { "status": "start", "goals": 1, "yellowCard": true }, "u18-f8": { "status": "sub_on" }, "u18-f14": { "status": "sub_on" }, "u18-f15": { "status": "start" }, "u18-f16": { "status": "unused_sub" },
+				"u18-f17": { "status": "sub_on" }, "u18-f18": { "status": "sub_on" }, "u18-f19": { "status": "start" }, "u18-f20": { "status": "sub_on" }, "u18-f21": { "status": "start" }, "u18-f22": { "status": "start" },
+				"u18-f23": { "status": "start" }, "u18-f24": { "status": "start" }, "u18-f25": { "status": "start" }, "u18-f26": { "status": "start", "yellowCard": true, "redCard": true }
+            },
+            "u18-matty-taylor": {
+                "u18-f1": { "status": "sub_on" }, "u18-f9": { "status": "unused_sub" }, "u18-f24": { "status": "start" }, "u18-f25": { "status": "sub_on", "goals": 1 }, "u18-f26": { "status": "start" },
+				"u18-f27": { "status": "start" }, "u18-f28": { "status": "start", "goals": 1 }, "u18-f29": { "status": "start" }
+            },
+            "s-michael-mills": {
+				"u18-f26": { "status": "sub_on" }
+            },
+            "u18-noah-cooper": {
+                "u18-f24": { "status": "start" }
+            },
+            "u21-rory-powell": {
+                "u18-f1": { "status": "start" }, "u18-f2": { "status": "start" }, "u18-f3": { "status": "start", "assists": 1 }, "u18-f4": { "status": "start" }, "u18-f5": { "status": "start" },
+				"u18-f6": { "status": "sub_on" }, "u18-f7": { "status": "start", "assists": 1 }, "u18-f8": { "status": "start" }, "u18-f9": { "status": "sub_on" }, "u18-f10": { "status": "start" },
+				"u18-f11": { "status": "start" }, "u18-f12": { "status": "start" }, "u18-f13": { "status": "sub_on", "goals": 1 }, "u18-f14": { "status": "start", "assists": 1 }, "u18-f15": { "status": "start" },
+				"u18-f16": { "status": "start" }, "u18-f17": { "status": "start" }, "u18-f18": { "status": "start" }, "u18-f19": { "status": "start", "yellowCard": true }, "u18-f20": { "status": "start" },
+				"u18-f21": { "status": "start" }, "u18-f22": { "status": "start" }
+            },
+            "s-sam-alabi": {
+				"u18-f24": { "status": "sub_on" }, "u18-f26": { "status": "sub_on" }, "u18-f27": { "status": "sub_on" }, "u18-f28": { "status": "unused_sub" }
+            },
+            "u21-scott-bailey": {
+                "u18-f11": { "status": "sub_on" }, "u18-f12": { "status": "start" }, "u18-f13": { "status": "start", "goals": 1 }, "u18-f14": { "status": "start" }, "u18-f15": { "status": "start" },
+				"u18-f16": { "status": "start" }, "u18-f17": { "status": "start" }
+            },
+            "s-sean-neave": {
+                "u18-f1": { "status": "start", "goals": 2, "yellowCard": true }, "u18-f2": { "status": "start", "goals": 1 }, "u18-f3": { "status": "start", "goals": 2 }, "u18-f4": { "status": "start" },
+				"u18-f5": { "status": "start" }, "u18-f6": { "status": "start" }, "u18-f7": { "status": "sub_on" }, "u18-f8": { "status": "start", "goals": 1, "yellowCard": true },
+				"u18-f9": { "status": "start", "goals": 1, "assists": 1 }, "u18-f10": { "status": "start", "goals": 1 }, "u18-f11": { "status": "sub_on" }, "u18-f13": { "status": "start", "goals": 2 },
+				"u18-f14": { "status": "start", "goals": 2 }, "u18-f15": { "status": "start" }, "u18-f16": { "status": "start" }, "u18-f17": { "status": "start" }, "u18-f18": { "status": "start", "assists": 1 },
+				"u18-f19": { "status": "start", "assists": 1 }, "u18-f20": { "status": "start", "assists": 1 }, "u18-f21": { "status": "start" }, "u18-f22": { "status": "start" },
+				"u18-f28": { "status": "start", "goals": 1, "yellowCard": true }, "u18-f29": { "status": "start", "yellowCard": true }
+            },
+            "u18-taylor-ross": {
+                "u18-f10": { "status": "unused_sub" }, "u18-f11": { "status": "unused_sub" }, "u18-f12": { "status": "unused_sub" }
+            },
+            "u18-theodore-adelusi": {
+                "u18-f24": { "status": "start" }
+            },
+            "u21-thomas-bryant": {
+                "u18-f1": { "status": "start", "assists": 3 }, "u18-f2": { "status": "start" }, "u18-f3": { "status": "start", "assists": 2 }, "u18-f4": { "status": "start" }, "u18-f5": { "status": "start" },
+				"u18-f6": { "status": "sub_on" }, "u18-f7": { "status": "start", "yellowCard": true }, "u18-f8": { "status": "start" }, "u18-f9": { "status": "start", "goals": 1 },
+				"u18-f10": { "status": "start", "assists": 1 }, "u18-f11": { "status": "start" }, "u18-f12": { "status": "start", "goals": 1 }, "u18-f23": { "status": "start", "assists": 1 }, "u18-f24": { "status": "start" },
+				"u18-f25": { "status": "start" }
+            },
+            "u18-thomas-old": {
+				"u18-f25": { "status": "unused_sub" }, "u18-f26": { "status": "unused_sub" }, "u18-f27": { "status": "sub_on" }
+            },
+            "s-travis-hernes": {
+                "u18-f1": { "status": "incoming" }, "u18-f2": { "status": "incoming" }, "u18-f3": { "status": "incoming" }, "u18-f6": { "status": "start" }, "u18-f7": { "status": "start", "goals": 1 },
+				"u18-f9": { "status": "start" }, "u18-f10": { "status": "start", "goals": 1, "assists": 1 }, "u18-f11": { "status": "start" }, "u18-f12": { "status": "start" }, "u18-f13": { "status": "start" },
+				"u18-f15": { "status": "start" }, "u18-f16": { "status": "start" }, "u18-f29": { "status": "sub_on" }
+            },
+            "s-trevan-sanusi": {
+                "u18-f5": { "status": "start" }, "u18-f6": { "status": "start", "goals": 1 }, "u18-f7": { "status": "start" }, "u18-f8": { "status": "sub_on" }, "u18-f9": { "status": "start" },
+				"u18-f10": { "status": "start", "assists": 1 }, "u18-f11": { "status": "start", "yellowCard": true }, "u18-f13": { "status": "start", "goals": 1 }, "u18-f14": { "status": "start" },
+				"u18-f15": { "status": "start" }, "u18-f16": { "status": "start" }, "u18-f18": { "status": "start" }, "u18-f19": { "status": "start" }, "u18-f20": { "status": "start" },
+				"u18-f23": { "status": "sub_on", "goals": 1 }
+            },
+            "u21-tyler-jones": {
+                "u18-f22": { "status": "unused_sub" }, "u18-f26": { "status": "unused_sub" }, "u18-f27": { "status": "unused_sub" }, "u18-f28": { "status": "unused_sub" }, "u18-f29": { "status": "unused_sub" }
+            }
+        }
+    }
+}

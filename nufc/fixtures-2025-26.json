@@ -1092,7 +1092,6 @@
 		}
 	},
 
-
 	"u18": {
         "fixtures": [
             { "id": "u18-f1", "date": "2025-08-16", "opponent": "Blackburn U18", "venue": "H", "competition": "Premier League U18", "result": "W 3–0", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 1, "yellowCardsTotal": 3, "redCardsTotal": 1 },
