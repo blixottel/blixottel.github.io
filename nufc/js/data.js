@@ -47,7 +47,7 @@ const OPTIONAL_SQUADS = ['u19'];
  * file.
  */
 function squadKeysFor(fixturesData) {
-  return [...CORE_SQUADS, ...OPTIONAL_SQUADS.filter(k => fixturesData && fixturesData[k])];
+  return SQUAD_ORDER.filter(k => CORE_SQUADS.includes(k) || (fixturesData && fixturesData[k]));
 }
 
 // Statuses that mean "was actually named in a matchday squad" (started,
@@ -88,10 +88,18 @@ function statColumnsFor(squadKey) {
 
 const APPEARANCE_STATUSES = new Set(['start', 'sub_on']);
 
+// Ages are as at AGE_AS_OF when set (a finished season -> its end, 30 June), otherwise today.
+let AGE_AS_OF = null;
+function seasonAgeDate(season) {
+  const m = season && /^(\d{4})-\d{2}$/.exec(season.id || '');
+  if (!m) return null;
+  const end = new Date(+m[1] + 1, 5, 30);
+  return end < new Date() ? end : null;
+}
 function calcAge(dob) {
   if (!dob) return '—';
   const d = new Date(dob);
-  const now = new Date();
+  const now = AGE_AS_OF || new Date();
   let age = now.getFullYear() - d.getFullYear();
   const m = now.getMonth() - d.getMonth();
   if (m < 0 || (m === 0 && now.getDate() < d.getDate())) age--;
@@ -207,7 +215,7 @@ async function loadData(masterFile, seasonFile, fixturesFile, ageBands) {
     fetch(fixturesFile),
   ]);
   if (!masterRes.ok || !seasonRes.ok || !fixturesRes.ok) throw new Error('fetch failed');
-  const master = await masterRes.json();
+  const master = await withArchive(await masterRes.json(), masterFile);
   const season = await seasonRes.json();
   const fixtures = await fixturesRes.json();
   const players = mergePlayers(master, season, ageBands);
@@ -250,7 +258,7 @@ async function loadData(masterFile, seasonFile, fixturesFile, ageBands) {
  */
 async function loadSeasons() {
   try {
-    const res = await fetch('seasons.json');
+    const res = await fetch('data/seasons.json');
     if (!res.ok) return null;
     const seasons = await res.json();
     if (!Array.isArray(seasons) || seasons.length === 0) return null;
@@ -276,7 +284,8 @@ function isLocalDev() {
 // 'u19' is included (via CORE_SQUADS + OPTIONAL_SQUADS) so a UEFA Youth
 // League date can win the "next match" banner too, but sorts last on a
 // tie since it's the least central of the four in a given week.
-const SQUAD_ORDER = [...CORE_SQUADS, ...OPTIONAL_SQUADS];
+// Display order everywhere (tabs, sections, summaries): First Team, U21s, U19s, U18s.
+const SQUAD_ORDER = ['senior', 'u21', 'u19', 'u18'];
 
 /**
  * Finds the earliest fixture, across all three squads, that doesn't have a
@@ -356,4 +365,22 @@ function photoCandidates(p) {
   }
 
   return candidates.map(c => c.url);
+}
+/**
+ * Appends players-archive.json (same folder as the master file) — players who
+ * have left. Each is tagged `_archived: true` (used by the local-only to-do
+ * borders). A missing archive file is treated as empty; an id present in both
+ * files keeps its master entry and logs a console warning.
+ */
+async function withArchive(master, masterFile) {
+  try {
+    const res = await fetch(masterFile.replace(/[^/]*$/, 'players-archive.json'));
+    if (!res.ok) return master;
+    const have = new Set(master.map(m => m.id));
+    (await res.json()).forEach(a => {
+      if (have.has(a.id)) { master.find(m => m.id === a.id)._alsoInArchive = true; console.warn(`"${a.id}" is in both players-master.json and players-archive.json — using the master entry.`); }
+      else master.push({ ...a, _archived: true });
+    });
+  } catch (e) { /* no archive file yet */ }
+  return master;
 }

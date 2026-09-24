@@ -132,6 +132,15 @@ function validateFixtures(fixturesData, playersById, options = {}) {
 
   Object.keys(playersById).forEach(pid => {
     const p = playersById[pid];
+    checkMovementDates(p, fixturesData).forEach(i => issues.push(i));
+    if (p._archived && !p.careerComplete) {
+      issues.push({ squad: normSquad(p.squad), fixtureId: null, fixtureLabel: null, severity: 'warning',
+        message: `${p.name} is in players-archive.json but isn't marked careerComplete.` });
+    }
+    if (p._alsoInArchive) {
+      issues.push({ squad: normSquad(p.squad), fixtureId: null, fixtureLabel: null, severity: 'warning',
+        message: `${p.name} is in both players-master.json and players-archive.json — the master entry is used. Remove one.` });
+    }
     if (p._unresolvedMaster) {
       issues.push({ squad: normSquad(p.squad), fixtureId: null, fixtureLabel: null, severity: 'error',
         message: `"${pid}" is in a season roster file but has no matching entry in players-master.json — showing "${pid}" as the name instead of a real one. Check for a typo, or a player id that was renamed in one file but not the other.` });
@@ -354,4 +363,59 @@ function validateFixtures(fixturesData, playersById, options = {}) {
   });
 
   return issues;
+}
+
+/**
+ * Cross-checks a player's matchday-squad records (start / sub_on / unused_sub) against their
+ * `movements` in players-master.json — only for players marked
+ * `careerComplete: true`, since only then do the movements describe the whole
+ * career. Flags an appearance that falls (a) inside a loan_out spell, or
+ * (b) outside every period he was with the club: joined -> left, plus any
+ * loan_in / trial_in window. The "with the club" check only runs if at least
+ * one joined / left / loan_in / trial_in movement exists. Dates are inclusive
+ * and partial dates ("2024-05") cover the whole month.
+ */
+function checkMovementDates(p, fixturesData) {
+  const out = [];
+  if (!p || !p.careerComplete || !Array.isArray(p.movements) || !p.movements.length) return out;
+  const OPEN = '9999-99-99';
+  const padEnd = e => (e ? (e.length < 10 ? e + '-99' : e) : OPEN);
+  const endOf = m => padEnd(m.endDate || m.enddate || m.end_date);
+  const dmy = d => d.split('-').reverse().join('/');
+
+  const allowed = [], loans = [];
+  let openFrom = null;
+  [...p.movements].sort((a, b) => (a.date || '').localeCompare(b.date || '')).forEach(m => {
+    if (m.type === 'joined') { if (openFrom === null) openFrom = m.date || '0000'; }
+    else if (m.type === 'left') { allowed.push([openFrom === null ? '0000' : openFrom, padEnd(m.date)]); openFrom = null; }
+    else if (m.type === 'loan_in' || m.type === 'trial_in') allowed.push([m.date || '0000', endOf(m)]);
+    else if (m.type === 'loan_out') loans.push({ from: m.date || '0000', to: endOf(m), club: m.club || 'another club' });
+  });
+  if (openFrom !== null) allowed.push([openFrom, OPEN]);
+  const firstStart = allowed.map(w => w[0]).sort()[0];
+
+  Object.keys(fixturesData || {}).forEach(sk => {
+    const sq = fixturesData[sk] || {};
+    const recs = (sq.appearances || {})[p.id];
+    if (!recs) return;
+    const byId = {};
+    (sq.fixtures || []).forEach(fx => { byId[fx.id] = fx; });
+    Object.keys(recs).forEach(fid => {
+      const r = recs[fid], fx = byId[fid];
+      if (!r || !NAMED_STATUSES.has(r.status) || !fx || !fx.date) return;
+      const d = fx.date;
+      const label = `${fmtDate(fx.date)} v ${fx.opponent} (${SQUAD_SHORT[sk] || sk})`;
+      const loan = loans.find(l => d >= l.from && d <= l.to);
+      const role = r.status === 'start' ? 'started' : r.status === 'sub_on' ? 'came on as a sub' : 'unused sub';
+      let why = null;
+      if (loan) why = `${p.name} is named in the matchday squad (${role}), but this is during his loan to ${loan.club}.`;
+      else if (allowed.length && !allowed.some(w => d >= w[0] && d <= w[1])) {
+        why = d < firstStart
+          ? `${p.name} is named in the matchday squad (${role}) before he joined (${dmy(firstStart)}).`
+          : `${p.name} is named in the matchday squad (${role}) after he left, or between spells at the club.`;
+      }
+      if (why) out.push({ squad: sk, fixtureId: fx.id, fixtureLabel: label, severity: 'error', message: `${label}: ${why}` });
+    });
+  });
+  return out;
 }

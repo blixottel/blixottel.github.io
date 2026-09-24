@@ -673,7 +673,7 @@ function mergePlayers(masterList, seasonList, ageBands) {
 
 async function loadSeasons() {
   try {
-    const res = await fetch('seasons.json', { cache: 'no-store' });
+    const res = await fetch('data/seasons.json', { cache: 'no-store' });
     if (!res.ok) return null;
     const seasons = await res.json();
     if (!Array.isArray(seasons) || seasons.length === 0) return null;
@@ -1277,7 +1277,7 @@ async function loadSeason(season) {
   document.getElementById('source-table-body').innerHTML =
     '<tr><td colspan="3" class="source-summary-pending">Loading images to determine what\'s in use…</td></tr>';
 
-  const masterFile = season.playersMasterFile || 'players-master.json';
+  const masterFile = season.playersMasterFile || 'data/players-master.json';
   document.getElementById('season-note').textContent =
     `${season.label ? 'Season ' + season.label + ' · ' : ''}roster: ${season.playersFile} · master: ${masterFile}`;
   updateSaveBar();
@@ -1290,6 +1290,10 @@ async function loadSeason(season) {
     ]);
     if (!masterRes.ok || !seasonRes.ok) throw new Error(`fetch failed (${!masterRes.ok ? masterFile : season.playersFile})`);
     const master = await masterRes.json();
+    try { // also include players who have left (players-archive.json, same folder)
+      const ar = await fetch(masterFile.replace(/[^/]*$/, 'players-archive.json'), { cache: 'no-store' });
+      if (ar.ok) (await ar.json()).forEach(a => { if (!master.some(m => m.id === a.id)) master.push(a); });
+    } catch (e) { /* no archive file yet */ }
     const seasonText = await seasonRes.text();
     const roster = JSON.parse(stripBom(seasonText));
     if (token !== loadToken) return;

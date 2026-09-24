@@ -6,8 +6,8 @@
 <title>The Teamsheet — NUFC Squad Tracker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="next-match.css">
+<link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="styles/next-match.css">
 <style>
   .back-link {
     display: inline-block;
@@ -39,8 +39,8 @@
 <nav class="tabs" id="tabs">
   <a href="#senior">First Team <span class="count" id="count-senior"></span></a>
   <a href="#u21">Under-21s <span class="count" id="count-u21"></span></a>
-  <a href="#u18">Under-18s <span class="count" id="count-u18"></span></a>
   <a href="#u19">Under-19s <span class="count" id="count-u19"></span></a>
+  <a href="#u18">Under-18s <span class="count" id="count-u18"></span></a>
 </nav>
 
 <div id="next-match-slot"></div>
@@ -60,7 +60,7 @@
 <main id="main"></main>
 
 <footer id="footer-note">
-  Data maintained by hand in <code>players-master.json</code>, a per-season roster file, and a per-season fixtures file. Appearance stats are calculated automatically from the fixture records. See <code>DATA-GUIDE.md</code> for field reference.
+  Data maintained by hand in <code>players-master.json</code>, <code>players-archive.json</code> (players who have left), a per-season roster file, and a per-season fixtures file. Appearance stats are calculated automatically from the fixture records. See <code>DATA-GUIDE.md</code> for field reference.
 </footer>
 
 <script src="js/data.js"></script>

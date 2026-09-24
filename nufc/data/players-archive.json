@@ -1,0 +1,215 @@
+[
+    {
+        "id": "s-aaron-ramsdale",
+        "name": "Aaron Ramsdale",
+        "nationality": "England",
+        "dob": "1998-05-14",
+        "position": "GK",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "loan_in", "date": "2025-08-02", "enddate": "2026-06-30", "club": "Southampton" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/225321.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/427568-1681828000.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/00/63/490063_aaron_ramsdale_20251227213501.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/839410/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/746395.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/325210.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/h8odn5YA-xnQDOCMF.png",
+            "statshub": "https://images.statshub.com/player/839410.png",
+            "fminside": "https://img.fminside.net/facesfm26/29137172.png"
+        }
+    },
+    {
+        "id": "s-john-ruddy",
+        "name": "John Ruddy",
+        "nationality": "England",
+        "dob": "1986-10-24",
+        "position": "GK",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-01", "club": "Birmingham City" },
+			{ "type": "left", "date": "2026-06-30", "club": "Wolverhampton Wanderers" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/19236.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/29712-1736421115.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/75/67/17567_john_ruddy_20240815235253.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1131/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/40602.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/48.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/WIKp6kCr-ldWvapb2.png",
+            "statshub": "https://images.statshub.com/player/1131.png",
+            "fminside": "https://img.fminside.net/facesfm26/5123017.png"
+        }
+    },
+    {
+        "id": "s-lloyd-kelly",
+        "name": "Lloyd Kelly",
+        "nationality": "England",
+        "dob": "1998-10-06",
+        "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-01", "club": "AFC Bournemouth" },
+			{ "type": "loan_out", "date": "2025-02-03", "enddate": "2025-06-30", "club": "Juventus" },
+			{ "type": "left", "date": "2025-06-30", "club": "Juventus" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/235530.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/480116-1739281396.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/01/18/490118_lloyd_kelly_20260104222922.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/865167/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/819215.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/357479.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/jVctfdWg-j9b29BhE.png",
+            "statshub": "https://images.statshub.com/player/865167.png",
+            "fminside": "https://img.fminside.net/facesfm26/29158244.png"
+        }
+    },
+    {
+        "id": "u18-brayden-clarke",
+        "name": "Brayden Clarke",
+        "nationality": "Wales",
+        "dob": "2007-07-03",
+        "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+ 			{ "type": "trial_in", "date": "2024-01-27", "enddate": "2024-01-27", "club": "Wolverhampton Wanderers" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1005844-1782978840.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/44/83/934483_brayden_clarke_20240525201226.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1424625/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1751837.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "u18-jack-low",
+        "name": "Jack Low",
+        "nationality": "England",
+        "dob": "",
+        "position": "MID",
+        "squadIfDobUnknown": "U18",
+        "careerComplete": true,
+        "movements": [
+ 			{ "type": "trial_in", "date": "2023-09-02", "enddate": "2023-09-02", "club": "Crystal Palace" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "",
+            "fotmob": "",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "u18-noah-cooper",
+        "name": "Noah Cooper",
+        "nationality": "England",
+        "dob": "2006-02-06",
+        "position": "GK",
+        "careerComplete": true,
+        "movements": [
+ 			{ "type": "trial_in", "date": "2024-04-06", "enddate": "2024-04-06", "club": "Arsenal" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/85/23/1048523_noah_cooper_20240605145440.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1468578/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1683925.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "u18-theodore-adelusi",
+        "name": "Theodore Adelusi",
+        "nationality": "England",
+        "dob": "2007-05-09",
+        "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+ 			{ "type": "trial_in", "date": "2024-04-06", "enddate": "2024-04-06", "club": "Tottenham Hotspur" }
+       ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/29/04/1242904_theodore_adelusi_20251001105458.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1899780/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1813326.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "u18-will-mcpartland",
+        "name": "Will McPartland",
+        "nationality": "England",
+        "dob": "2008-01-20",
+        "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+ 			{ "type": "trial_in", "date": "2026-04-11", "enddate": "2026-04-18", "club": "Wolverhampton Wanderers" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/04/18/1260418_will_mcpartland_20250321124610.png",
+            "sofascore": "",
+            "fotmob": "",
+            "besoccer": "",
+            "flashscore": "https://static.flashscore.com/res/image/data/IuKLghhl-jquRb5XD.png",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u-yankuba-minteh",
+        "name": "Yankuba Minteh",
+        "nationality": "Gambia",
+        "dob": "2004-07-22",
+        "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2023-07-01", "club": "Odense BK" },
+			{ "type": "loan_out", "date": "2023-07-01", "enddate": "2024-06-30", "club": "Feyenoord" },
+			{ "type": "left", "date": "2024-06-30", "club": "Brighton and Hove Albion" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/592031.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/31/25/1013125_yankuba_minteh_20251025173553.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1400106/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1400227.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    }
+]

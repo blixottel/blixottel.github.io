@@ -487,3 +487,34 @@ see "Squads and guest appearances" above), not in this muted section.
 | `js/stats.js` | Appearance-stat aggregation and the data-validation checks that power the "Data checks" panel. |
 | `js/render.js` | Every DOM-building function: player cards, the fixture matrix, fixtures list, leaderboards, side panels, the season switcher. |
 | `js/app.js` | Wiring: `init()` loads everything and calls the `render.js` builders; `setupTabs()` handles the squad tabs. Entry point. |
+## Player profile (`player.html?id=<player-id>`)
+
+Shows bio, career totals by squad, every season's fixture-by-fixture strips, then a season summary. It reads every season in `seasons.json`, so nothing needs listing per player.
+
+Two optional fields in `players-master.json` drive the extras:
+
+```json
+{
+  "id": "u21-example",
+  "careerComplete": true,
+  "movements": [
+    { "type": "joined",   "date": "2021-07-01", "club": "Team X" },
+    { "type": "loan_out", "date": "2025-08-01", "endDate": "2026-05-31", "club": "Team Y", "note": "Recalled early" },
+    { "type": "left",     "date": "2027-06-30", "club": "Team Z" }
+  ]
+}
+```
+
+- `careerComplete: true` means every season he played in is covered by the data files. Leave it out (or `false`) for anyone who may have played before the earliest season in `seasons.json`; his profile then shows "Partial record".
+- `movements`: `type` is `joined`, `left`, `loan_out`, `loan_in` or `trial_in`. `date` is `YYYY-MM-DD` (`YYYY-MM` or `YYYY` also work if the exact day is unknown); shown as dd/mm/yyyy. Loans take an optional `endDate` (no `endDate` shows "ongoing"). `note` is optional. `trial_in` also takes an optional `endDate`.
+- A `loan_out` spell also marks the profile: a band appears on any season it overlaps, and fixtures inside the loan dates with no appearance record show the ⇄ loan marker. Only Newcastle matches are tracked, so nothing from the loan club is shown.
+
+- **Movement checks:** for players with `careerComplete: true`, being named in a matchday squad (started, came on, or unused sub) on a date that falls inside a `loan_out` spell, before he joined, or after he left (outside any `joined`→`left`, `loan_in` or `trial_in` window) is flagged. These show in the "Data checks" panel on the squad page and on the player's profile. Players without `careerComplete` are not checked.
+
+- **Profile status:** worked out from `movements` and today's date (on loan, trialist, on loan from, left, incoming). A player with no movements uses his roster `status`; one with movements keeps only the roster's injured / not-selected statuses as a fallback.
+
+## players-archive.json
+
+Same format as `players-master.json`, for players who have left. Every page reads both files (the archive sits in the same folder as the master file), so old seasons and profiles still resolve names. If an id is in both files the master entry wins and a console warning is logged. A missing archive file is fine.
+
+On a local server only (never on a published copy): current players who aren't yet `careerComplete` get a small amber "To do" badge on their photo, and a line above the Data checks panel reads "Career data: X of Y current players complete" — click it for the list of who's left, each linking to their profile. Data checks also warn about an archived player without `careerComplete`, and about an id that's in both the master and archive files.

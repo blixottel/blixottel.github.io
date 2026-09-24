@@ -5,6 +5,10 @@
         "nationality": "England",
         "dob": "2006-12-16",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2025-08-10", "enddate": "2025-12-31", "club": "Coleraine" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/6TnqTKdu6kmTj4HFXomb7j/4916f069f32921ce62c8a0de3ad64954/Aidan_Harris-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/577980.png",
@@ -24,6 +28,10 @@
         "nationality": "Ivory Coast",
         "dob": "2006-07-14",
         "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-07-24", "club": "AS Monaco" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/632794.png",
@@ -43,6 +51,12 @@
         "nationality": "Ireland",
         "dob": "2004-06-25",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-07-01", "club": "Galway United" },
+			{ "type": "loan_out", "date": "2025-01-20", "enddate": "2025-06-30", "club": "Bolton Wanderers" },
+			{ "type": "loan_out", "date": "2026-08-11", "enddate": "2027-06-30", "club": "1. FC Kaiserslautern" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/3dfjTQYrx2TTDysx8jmrJL/646dc5bbca6276dd85b26138a43ccf41/26_04_08_NUFC_ECOMM_HOME_37_A_MURPHY_227_KNOX-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/545477.png",
@@ -62,6 +76,10 @@
         "nationality": "Bosnia-Hercegovina",
         "dob": "2002-08-18",
         "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-08-18", "club": "SL Benfica" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/1WEMKAOOx0uqpP0TB6oavt/b12ce47ceda2587ae7d6e35078b91df0/Amar_Dedic-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/463726.png",
@@ -81,6 +99,10 @@
         "nationality": "Sweden",
         "dob": "2002-04-27",
         "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2025-07-11", "club": "Nottingham Forest" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/38eaHGpK5FbMXfffkdF9wY/96a217d81b69043cf828ac74bd2bc0d4/Anthony_Elanga-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/449434.png",
@@ -100,6 +122,10 @@
         "nationality": "Ivory Coast",
         "dob": "2006-03-02",
         "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-07-05", "club": "TSG Hoffenheim" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/4bAyqievsQTOtW6G1w9uZm/d6ef4a2a693d575197d4b5fe5158fb12/Bazoumana_Toure-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/611665.png",
@@ -119,6 +145,10 @@
         "nationality": "England",
         "dob": "1992-05-09",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-01-31", "club": "Brighton & Hove Albion" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/2qMncKerumNScGBT98Lxy4/b5edd548f63b5de5f662d66cad296ade/Dan_Burn-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/78916.png",
@@ -138,6 +168,10 @@
         "nationality": "France",
         "dob": "2005-12-29",
         "position": "GK",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-06-15", "club": "Stade de Reims" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/69EZceQxDmL1qmjy55qYPy/4e0aab9b038df01a4c32cf89774a5007/Ewen_Jaouen-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/554578.png",
@@ -157,6 +191,10 @@
         "nationality": "Switzerland",
         "dob": "1991-12-20",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2018-07-26", "club": "Deportivo La Coruña" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/45zCQOkEvt0JPPZ4TDPmAg/37e103ad0ba3ba7d06e42cbcabe9606c/Fabian_Schar-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/119471.png",
@@ -176,6 +214,14 @@
         "nationality": "England",
         "dob": "2001-11-14",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2023-01-01", "club": "West Ham United" },
+			{ "type": "loan_out", "date": "2023-08-04", "enddate": "2024-06-30", "club": "Swansea City" },
+			{ "type": "loan_out", "date": "2024-08-30", "enddate": "2025-06-30", "club": "Queens Park Rangers" },
+			{ "type": "loan_out", "date": "2026-01-13", "enddate": "2026-06-30", "club": "Bradford City" },
+			{ "type": "loan_out", "date": "2026-07-09", "enddate": "2027-06-30", "club": "Luton Town" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/441024.png",
@@ -195,6 +241,10 @@
         "nationality": "England",
         "dob": "1997-12-09",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2023-07-23", "club": "Leicester City" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/1cCfiFaakdMzgkzzTcVm1k/d07f8b2c992c7d2fa0eae380e0485b11/Harvey_Barnes-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/201666.png",
@@ -214,6 +264,11 @@
         "nationality": "England",
         "dob": "1995-02-24",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2017-07-19", "club": "Norwich City" },
+			{ "type": "loan_out", "date": "2019-08-08", "enddate": "2020-06-30", "club": "Sheffield Wednesday" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/7E3kGHFzba2pQxbiM51Uz2/2ec88d95dede5f4dfcdfa18709e70f96/26_04_08_NUFC_ECOMM_HOME_23_MURPHY_255_EDIT-2-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/114243.png",
@@ -233,6 +288,10 @@
         "nationality": "England",
         "dob": "2001-05-28",
         "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2025-08-17", "club": "Aston Villa" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/3pvQwgBStuGScSONc5cVrw/77355c345430f679f137778629e7b2b4/Jacob_Ramsey-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/232653.png",
@@ -252,6 +311,10 @@
         "nationality": "Brazil",
         "dob": "1996-08-14",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2019-07-23", "club": "1899 Hoffenheim" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/7kYjgAEyoCtSk7GMPlVYE0/c909bd3dd48549cf5e2f6b7416edf309/Joelinton-2-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/180974.png",
@@ -271,6 +334,11 @@
         "nationality": "England",
         "dob": "1999-08-20",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_in", "date": "2021-02-01", "enddate": "2021-06-30", "club": "Arsenal" },
+			{ "type": "joined", "date": "2021-08-13", "club": "Arsenal" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/7F9lrZRpIACxGdhJqXve1K/dbbd7970cf31e26d1834fef4b8a2d520/Joe_Willock-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/200089.png",
@@ -285,11 +353,38 @@
         }
     },
     {
+        "id": "s-kyran-thompson",
+        "name": "Kyran Thompson",
+        "nationality": "England",
+        "dob": "2009-09-06",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-08-22", "club": "Arsenal" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1396386-1771439566.jpg?lm=4711",
+            "zerozero": "",
+            "sofascore": "https://img.sofascore.com/api/v1/player/2219229/image",
+            "fotmob": "",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3642843.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/86tGz3Yg-WUpUbPAH.png",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
         "id": "s-leo-shahar",
         "name": "Leo Shahar",
         "nationality": "England",
         "dob": "2007-03-18",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2026-09-04", "enddate": "2027-06-30", "club": "FC Arouca" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/553746.png",
@@ -309,6 +404,11 @@
         "nationality": "England",
         "dob": "2004-09-08",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_in", "date": "2023-08-22", "enddate": "2024-06-30", "club": "Chelsea" },
+			{ "type": "joined", "date": "2024-07-01", "club": "Chelsea" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/6pJQqtR0C6aUedQwc3UO07/5f37304cba9f4768f291ae6c26893814/Lewis_Hall-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/487838.png",
@@ -328,6 +428,9 @@
         "nationality": "England",
         "dob": "2006-05-01",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/3Tghd5hUohDJWfMTIUXPDT/fa2103d7049d2d2072ec61191c85353e/Lewis_Miley-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/547719.png",
@@ -347,6 +450,10 @@
         "nationality": "Czechia",
         "dob": "2002-07-13",
         "position": "GK",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-08-03", "club": "Sporting Braga" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/4H4zm1hcAlaLXAGV6004DH/fe0ec6fdcb82ef6996893764dc212c45/Lukas_Hornicek-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/470551.png",
@@ -366,6 +473,10 @@
         "nationality": "Germany",
         "dob": "2001-08-08",
         "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2025-08-12", "club": "AC Milan" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/1rqxaNIzTzlq5Tt7AvTZNL/1a90df0411ed727644b9ad2ff854fb35/Malick_Thiaw_-2-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/465642.png",
@@ -385,6 +496,10 @@
         "nationality": "England",
         "dob": "1992-03-27",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2020-07-03", "club": "Motherwell" }
+        ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/2Wj4o1mgJLyiAbq9BZ1rZM/eef75d19d2b113d1e03965bcab9e2b3d/Mark_Gillespie-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/81441.png",
@@ -399,619 +514,14 @@
         }
     },
     {
-        "id": "s-matias-fernandez-pardo",
-        "name": "Matias Fernandez-Pardo",
-        "nationality": "Belgium",
-        "dob": "2005-02-03",
-        "position": "FWD",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/724129-1780057362.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/40/69/914069_matias_fernandez_pardo_20260726150405.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1149144/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1444231.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/924449.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/A7W6UiAr-8Yd0uPSm.png",
-            "statshub": "https://images.statshub.com/player/1149144.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000107089.png"
-        }
-    },
-    {
-        "id": "s-nick-pope",
-        "name": "Nick Pope",
-        "nationality": "England",
-        "dob": "1992-04-19",
-        "position": "GK",
-        "photos": {
-            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/2ZjRJzZDC7AIvY4xGF8APE/6d65dbab44561e703d80fa41319c8a0e/26_04_08_NUFC_ECOMM_HOME_1_POPE_068-1-3.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
-            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/98747.png",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/192080-1663841362.jpg",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/02/27/210227_nick_pope_20251021194405.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/162653/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/280484.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/206005.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/n3QCn3jl-tjXVAHTk.png",
-            "statshub": "https://images.statshub.com/player/162653.png",
-            "fminside": "https://img.fminside.net/facesfm26/29083750.png"
-        }
-    },
-    {
-        "id": "s-nick-woltemade",
-        "name": "Nick Woltemade",
-        "nationality": "Germany",
-        "dob": "2002-02-14",
-        "position": "FWD",
-        "photos": {
-            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/3WIZhSqXFMieqRCuqxiyj/25e92943b3fbe417d55e65f90d0e84e7/Nick_Woltemade-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
-            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/470313.png",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/455661-1779983237.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/66/58/716658_nick_woltemade_20260614171524.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/980623/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1106563.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/621917.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/KUJaKnDr-tYaIs8pr.png",
-            "statshub": "https://images.statshub.com/player/980623.png",
-            "fminside": "https://img.fminside.net/facesfm26/91187791.png"
-        }
-    },
-    {
-        "id": "s-nico-gonzalez",
-        "name": "Nico González",
-        "nationality": "Spain",
-        "dob": "2002-01-03",
-        "position": "MID",
-        "photos": {
-            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/ul8YkNp3wjr80fKS1YVXS/69c90120dcefcddcee8930794707ced0/Nico-Prem-League0003-removebg-preview-2-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
-            "premierleague": "",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/466805-1743669968.jpg",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/27/88/662788_nico_gonzalez_20251110002355.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/954056/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1280132.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/776254.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/QFhqiqDr-0rbjs1Ir.png",
-            "statshub": "https://images.statshub.com/player/954056.png",
-            "fminside": "https://img.fminside.net/facesfm26/67276127.png"
-        }
-    },
-    {
-        "id": "s-odysseas-vlachodimos",
-        "name": "Odysseas Vlachodimos",
-        "nationality": "Greece",
-        "dob": "1994-04-26",
-        "position": "GK",
-        "photos": {
-            "official": "",
-            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/111452.png",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/124419-1706829687.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/71/06/197106_odysseas_vlachodimos_20251025141041.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/138149/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/304355.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/194167.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/jHhFFbZA-lAR9dix4.png",
-            "statshub": "https://images.statshub.com/player/138149.png",
-            "fminside": "https://img.fminside.net/facesfm26/92017506.png"
-        }
-    },
-    {
-        "id": "s-park-seung-soo",
-        "name": "Park Seung-soo",
-        "nationality": "South Korea",
-        "dob": "2007-03-17",
-        "position": "FWD",
-        "photos": {
-            "official": "",
-            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/623110.png",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1134717-1755456190.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/01/20/1810120_park_seung_soo_20260114154649.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1501498/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1656881.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3418471.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/Gp3NBjhl-G85ltrLL.png",
-            "statshub": "https://images.statshub.com/player/1501498.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000276958.png"
-        }
-    },
-    {
-        "id": "s-sam-alabi",
-        "name": "Sam Alabi",
-        "nationality": "England",
-        "dob": "2009-07-09",
-        "position": "MID",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/72/96/1547296_sam_alabi_20251227141852.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1899504/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1804258.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3546427.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/WKNzLFXg-xSPpNppC.png",
-            "statshub": "https://images.statshub.com/player/1899504.png",
-            "fminside": ""
-        }
-    },
-    {
-        "id": "s-sean-neave",
-        "name": "Sean Neave",
-        "nationality": "England",
-        "dob": "2007-05-27",
-        "position": "FWD",
-        "photos": {
-            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/3Gr2fHRv58uNUybKU3olT4/00ea9ec80ef625e1aa9f44b02c5bc00f/Sean_Neave-2-removebg-preview-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
-            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/599303.png",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1071818-1769071089.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/09/07/1030907_sean_neave_20250403171953.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1511675/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1443841.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3337489.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/4S8WrSfM-jHz6EnUn.png",
-            "statshub": "https://images.statshub.com/player/1511675.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000302080.png"
-        }
-    },
-    {
-        "id": "s-sean-steur",
-        "name": "Sean Steur",
-        "nationality": "Netherlands",
-        "dob": "2008-01-11",
-        "position": "MID",
-        "photos": {
-            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/6BJbLzecnUNRqxSfSpjjLK/27f83f1f2efa0a72551a148cff039f1c/Sean_Steur-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
-            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/636852.png",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1111063-1788281171.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/43/19/1634319_sean_steur_20260803092104.jpg",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1859920/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1643770.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3388130.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/pUrMaAHG-lYLPi23F.png",
-            "statshub": "https://images.statshub.com/player/1859920.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000350903.png"
-        }
-    },
-    {
-        "id": "s-sven-botman",
-        "name": "Sven Botman",
-        "nationality": "Netherlands",
-        "dob": "2000-01-12",
-        "position": "DEF",
-        "photos": {
-            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/7jijBzTTazGe71BoLOKGSk/e8aa77849932bcb02ea969fb7b14ac0a/Sven_Botman-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
-            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/220237.png",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/361093-1683290679.jpg",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/21/17/532117_sven_botman_20251021194313.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/910046/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/956682.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/429351.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/pAnJhByS-tjXVAHTk.png",
-            "statshub": "https://images.statshub.com/player/910046.png",
-            "fminside": "https://img.fminside.net/facesfm26/37063649.png"
-        }
-    },
-    {
-        "id": "s-tino-livramento",
-        "name": "Tino Livramento",
-        "nationality": "England",
-        "dob": "2002-11-12",
-        "position": "DEF",
-        "photos": {
-            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/2dipMzwjV4PUHVlAPy5U3V/f243e95e34867825ce96ce8beffa75a8/Tino_Livramento-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
-            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/441191.png",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/503981-1699383321.jpg",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/31/75/643175_tino_livramento_20260114154143.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/980634/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1107910.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/681160.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/IsPFaVwS-UastYDAA.png",
-            "statshub": "https://images.statshub.com/player/980634.png",
-            "fminside": "https://img.fminside.net/facesfm26/28124569.png"
-        }
-    },
-    {
-        "id": "s-trevan-sanusi",
-        "name": "Trevan Sanusi",
-        "nationality": "England",
-        "dob": "2007-04-25",
-        "position": "FWD",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1011152-1746640468.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/41/17/1044117_trevan_sanusi_20260801115023.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1492716/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1474503.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3269126.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/pW9IXidM-jclZtnol.png",
-            "statshub": "https://images.statshub.com/player/1492716.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000302092.png"
-        }
-    },
-    {
-        "id": "s-will-osula",
-        "name": "Will Osula",
-        "nationality": "Denmark",
-        "dob": "2003-08-04",
-        "position": "FWD",
-        "photos": {
-            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/8voggQvDbeuG5AgRo5Jqe/87a289d673fe7eb839471a1748d57b1e/William_Osula-01-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
-            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/538207.png",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/609556-1693217416.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/97/75/859775_will_osula_20250128142220.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1122603/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1258092.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3142430.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/Wr6aBZdM-pGcktxiU.png",
-            "statshub": "https://images.statshub.com/player/1122603.png",
-            "fminside": "https://img.fminside.net/facesfm26/28128173.png"
-        }
-    },
-    {
-        "id": "s-yoane-wissa",
-        "name": "Yoane Wissa",
-        "nationality": "DR Congo",
-        "dob": "1996-09-03",
-        "position": "FWD",
-        "photos": {
-            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/7futvkUcOpWYZbDTkMCXis/61e79dab670da75e7708fbee6c289b8a/Yoane_Wisse-2-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
-            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/216646.png",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/388165-1740646948.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/76/12/477612_yoane_wissa_20251206174242.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/805123/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/666857.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/227208.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/OlVXwke5-W4sdS7ng.png",
-            "statshub": "https://images.statshub.com/player/805123.png",
-            "fminside": "https://img.fminside.net/facesfm26/85140175.png"
-        }
-    },
-    {
-        "id": "u21-afner-ca",
-        "name": "Afner Cá",
-        "nationality": "Guinea-Bissau",
-        "dob": "2007-07-08",
-        "position": "FWD",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1428060-1765911835.png?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/53/66/1065366_afner_ca_20260718194741.jpg",
-            "sofascore": "https://img.sofascore.com/api/v1/player/2338529/image",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
-        "id": "u21-alex-walpole",
-        "name": "Alex Walpole",
-        "nationality": "England",
-        "dob": "2006-12-21",
-        "position": "GK",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/67/85/1296785_alex_walpole_20260613213636.jpg",
-            "sofascore": "https://img.sofascore.com/api/v1/player/2422476/image",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "",
-            "statshub": "https://images.statshub.com/player/2422476.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000321941.png"
-        }
-    },
-    {
-        "id": "u21-alfie-hutchison",
-        "name": "Alfie Hutchison",
-        "nationality": "Scotland",
-        "dob": "2009-01-22",
-        "position": "FWD",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1804256.png",
-            "besoccer": "",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
-        "id": "u21-anthony-munda",
-        "name": "Anthony Munda",
-        "nationality": "England",
-        "dob": "2006-09-08",
-        "position": "MID",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1019167-1699385849.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/78/94/1007894_anthony_munda_20251001201705.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1546058/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1418101.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3306052.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/OU4FlZdM-zRTHTIXt.png",
-            "statshub": "https://images.statshub.com/player/1546058.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000302060.png"
-        }
-    },
-    {
-        "id": "u21-antonio-cordero",
-        "name": "Antonio Cordero",
-        "nationality": "Spain",
-        "dob": "2006-11-14",
-        "position": "FWD",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1178393-1725885968.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/77/72/1247772_antonio_cordero_20260811170636.jpg",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1531384/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1654534.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3270636.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/dM1stExS-QZCiaxfd.png",
-            "statshub": "https://images.statshub.com/player/1531384.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000291513.png"
-        }
-    },
-    {
-        "id": "u21-baran-yildiz",
-        "name": "Baran Yıldız",
-        "nationality": "Turkey",
-        "dob": "2007-01-02",
-        "position": "MID",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1370686-1749021666.jpg?lm=4711",
-            "zerozero": "",
-            "sofascore": "https://img.sofascore.com/api/v1/player/2063621/image",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "https://static.flashscore.com/res/image/data/GMYzRvwS-dnVgMXq2.png",
-            "statshub": "https://images.statshub.com/player/2063621.png",
-            "fminside": ""
-        }
-    },
-    {
-        "id": "u21-dylan-charlton",
-        "name": "Dylan Charlton",
-        "nationality": "England",
-        "dob": "2006-07-02",
-        "position": "DEF",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/965725-1699386251.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/59/03/935903_dylan_charlton_20251001201613.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1542343/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1344589.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3227782.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/v5wCsCAr-MXfXrZCS.png",
-            "statshub": "https://images.statshub.com/player/1542343.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000189866.png"
-        }
-    },
-    {
-        "id": "u21-fraser-harper",
-        "name": "Fraser Harper",
-        "nationality": "England",
-        "dob": "2006-10-02",
-        "position": "MID",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/04/99/1150499_fraser_harper_20240722191406.jpg",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1441054/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1553128.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3220363.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/K2NcmPEG-Kd6FtDHJ.png",
-            "statshub": "https://images.statshub.com/player/1441054.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000292942.png"
-        }
-    },
-    {
-        "id": "u21-george-mair",
-        "name": "George Mair",
-        "nationality": "England",
-        "dob": "2009-09-28",
-        "position": "GK",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3533990.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/MgU4JjyS-KYXuwQ1f.png",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
-        "id": "u21-guy-bloomer",
-        "name": "Guy Bloomer",
-        "nationality": "England",
-        "dob": "2007-09-13",
-        "position": "MID",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1899467/image",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
-        "id": "u21-henry-johnson",
-        "name": "Henry Johnson",
-        "nationality": "England",
-        "dob": "2008-01-01",
-        "position": "DEF",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/38/02/1243802_henry_johnson_20260811215400.jpg",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1899470/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1712362.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3438968.jpg",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
-        "id": "u21-isaac-moran",
-        "name": "Isaac Moran",
-        "nationality": "England",
-        "dob": "2009-03-14",
-        "position": "MID",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1807422.png",
-            "besoccer": "",
-            "flashscore": "https://static.flashscore.com/res/image/data/KW8E31e5-8C9XL41O.png",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
-        "id": "u21-jake-durrant",
-        "name": "Jake Durrant",
-        "nationality": "England",
-        "dob": "2008-02-04",
-        "position": "DEF",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1899478/image",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "https://static.flashscore.com/res/image/data/0huMjMh5-n1wStbLT.png",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
-        "id": "u21-johnny-emerson",
-        "name": "Johnny Emerson",
-        "nationality": "Scotland",
-        "dob": "2005-11-30",
-        "position": "MID",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/953865-1699386383.jpg?lm=4711",
-            "zerozero": "",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1469898/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1683921.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3208519.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/xMYsu4Wg-GSudZHo9.png",
-            "statshub": "https://images.statshub.com/player/1469898.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000189872.png"
-        }
-    },
-    {
-        "id": "u21-kacey-wooster",
-        "name": "Kacey Wooster",
-        "nationality": "England",
-        "dob": "2008-04-04",
-        "position": "FWD",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/42/62/1274262_kacey_wooster_20250414162914.jpg",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1899491/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1720236.png",
-            "besoccer": "",
-            "flashscore": "https://static.flashscore.com/res/image/data/ttQZRkyS-thj3Iue6.png",
-            "statshub": "https://images.statshub.com/player/1899491.png",
-            "fminside": ""
-        }
-    },
-    {
-        "id": "u21-kyle-fitzgerald",
-        "name": "Kyle Fitzgerald",
-        "nationality": "Ireland",
-        "dob": "2007-01-28",
-        "position": "FWD",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/22/31/1242231_kyle_fitzgerald_20250331043113.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1566262/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1609323.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3343512.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/I11kdeAr-MXMawKqt.png",
-            "statshub": "",
-            "fminside": "https://img.fminside.net/facesfm26/2000313523.png"
-        }
-    },
-    {
-        "id": "u21-logan-watts",
-        "name": "Logan Watts",
-        "nationality": "England",
-        "dob": "2007-01-22",
-        "position": "DEF",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1610751/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1618029.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3358379.jpg",
-            "flashscore": "",
-            "statshub": "https://images.statshub.com/player/1610751.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000302083.png"
-        }
-    },
-    {
-        "id": "u21-luke-craggs",
-        "name": "Luke Craggs",
-        "nationality": "England",
-        "dob": "2007-07-14",
-        "position": "DEF",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1428136.png",
-            "besoccer": "",
-            "flashscore": "https://static.flashscore.com/res/image/data/0zSVdjDa-IilUkOMU.png",
-            "statshub": "",
-            "fminside": "https://img.fminside.net/facesfm26/2000302078.png"
-        }
-    },
-    {
         "id": "s-mason-miley",
         "name": "Mason Miley",
         "nationality": "England",
         "dob": "2008-09-29",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1026,22 +536,26 @@
         }
     },
     {
-        "id": "u21-matheos-ferreira",
-        "name": "Matheos Ferreira",
-        "nationality": "England",
-        "dob": "2008-08-02",
+        "id": "s-matias-fernandez-pardo",
+        "name": "Matias Fernandez-Pardo",
+        "nationality": "Belgium",
+        "dob": "2005-02-03",
         "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-09-01", "club": "Lille Olympique" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1899496/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1531976.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3438965.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/I9enicCr-bPYXTJsQ.png",
-            "statshub": "",
-            "fminside": ""
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/724129-1780057362.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/40/69/914069_matias_fernandez_pardo_20260726150405.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1149144/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1444231.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/924449.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/A7W6UiAr-8Yd0uPSm.png",
+            "statshub": "https://images.statshub.com/player/1149144.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000107089.png"
         }
     },
     {
@@ -1050,6 +564,9 @@
         "nationality": "England",
         "dob": "2009-02-18",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1069,6 +586,11 @@
         "nationality": "Serbia",
         "dob": "2005-05-17",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-20", "club": "FK Jedinstvo Ub" },
+			{ "type": "loan_out", "date": "2024-09-02", "enddate": "2025-06-30", "club": "Willem II Tilburg" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1083,11 +605,809 @@
         }
     },
     {
+        "id": "s-nick-pope",
+        "name": "Nick Pope",
+        "nationality": "England",
+        "dob": "1992-04-19",
+        "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-07-01", "club": "Burnley" }
+        ],
+        "photos": {
+            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/2ZjRJzZDC7AIvY4xGF8APE/6d65dbab44561e703d80fa41319c8a0e/26_04_08_NUFC_ECOMM_HOME_1_POPE_068-1-3.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/98747.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/192080-1663841362.jpg",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/02/27/210227_nick_pope_20251021194405.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/162653/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/280484.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/206005.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/n3QCn3jl-tjXVAHTk.png",
+            "statshub": "https://images.statshub.com/player/162653.png",
+            "fminside": "https://img.fminside.net/facesfm26/29083750.png"
+        }
+    },
+    {
+        "id": "s-nick-woltemade",
+        "name": "Nick Woltemade",
+        "nationality": "Germany",
+        "dob": "2002-02-14",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2025-08-30", "club": "VfB Stuttgart" },
+			{ "type": "loan_out", "date": "2026-09-01", "enddate": "2027-06-30", "club": "Juventus" }
+        ],
+        "photos": {
+            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/3WIZhSqXFMieqRCuqxiyj/25e92943b3fbe417d55e65f90d0e84e7/Nick_Woltemade-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/470313.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/455661-1779983237.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/66/58/716658_nick_woltemade_20260614171524.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/980623/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1106563.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/621917.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/KUJaKnDr-tYaIs8pr.png",
+            "statshub": "https://images.statshub.com/player/980623.png",
+            "fminside": "https://img.fminside.net/facesfm26/91187791.png"
+        }
+    },
+    {
+        "id": "s-nico-gonzalez",
+        "name": "Nico González",
+        "nationality": "Spain",
+        "dob": "2002-01-03",
+        "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-08-26", "club": "Manchester City" }
+        ],
+        "photos": {
+            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/ul8YkNp3wjr80fKS1YVXS/69c90120dcefcddcee8930794707ced0/Nico-Prem-League0003-removebg-preview-2-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/466805-1743669968.jpg",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/27/88/662788_nico_gonzalez_20251110002355.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/954056/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1280132.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/776254.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/QFhqiqDr-0rbjs1Ir.png",
+            "statshub": "https://images.statshub.com/player/954056.png",
+            "fminside": "https://img.fminside.net/facesfm26/67276127.png"
+        }
+    },
+    {
+        "id": "s-odysseas-vlachodimos",
+        "name": "Odysseas Vlachodimos",
+        "nationality": "Greece",
+        "dob": "1994-04-26",
+        "position": "GK",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-01", "club": "Nottingham Forest" },
+			{ "type": "loan_out", "date": "2025-08-12", "enddate": "2026-06-30", "club": "Sevilla FC" },
+			{ "type": "loan_out", "date": "2026-07-01", "enddate": "2027-06-30", "club": "Sevilla FC" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/111452.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/124419-1706829687.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/71/06/197106_odysseas_vlachodimos_20251025141041.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/138149/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/304355.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/194167.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/jHhFFbZA-lAR9dix4.png",
+            "statshub": "https://images.statshub.com/player/138149.png",
+            "fminside": "https://img.fminside.net/facesfm26/92017506.png"
+        }
+    },
+    {
+        "id": "s-park-seung-soo",
+        "name": "Park Seung-soo",
+        "nationality": "South Korea",
+        "dob": "2007-03-17",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2025-07-24", "club": "Suwon Samsung Bluewings" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/623110.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1134717-1755456190.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/01/20/1810120_park_seung_soo_20260114154649.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1501498/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1656881.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3418471.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/Gp3NBjhl-G85ltrLL.png",
+            "statshub": "https://images.statshub.com/player/1501498.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000276958.png"
+        }
+    },
+    {
+        "id": "s-sam-alabi",
+        "name": "Sam Alabi",
+        "nationality": "England",
+        "dob": "2009-07-09",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/72/96/1547296_sam_alabi_20251227141852.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1899504/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1804258.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3546427.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/WKNzLFXg-xSPpNppC.png",
+            "statshub": "https://images.statshub.com/player/1899504.png",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "s-sean-neave",
+        "name": "Sean Neave",
+        "nationality": "England",
+        "dob": "2007-05-27",
+        "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2026-09-02", "enddate": "2027-06-30", "club": "Wolverhampton Wanderers" }
+        ],
+        "photos": {
+            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/3Gr2fHRv58uNUybKU3olT4/00ea9ec80ef625e1aa9f44b02c5bc00f/Sean_Neave-2-removebg-preview-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/599303.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1071818-1769071089.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/09/07/1030907_sean_neave_20250403171953.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1511675/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1443841.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3337489.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/4S8WrSfM-jHz6EnUn.png",
+            "statshub": "https://images.statshub.com/player/1511675.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000302080.png"
+        }
+    },
+    {
+        "id": "s-sean-steur",
+        "name": "Sean Steur",
+        "nationality": "Netherlands",
+        "dob": "2008-01-11",
+        "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-07-09", "club": "Ajax Amsterdam" }
+        ],
+        "photos": {
+            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/6BJbLzecnUNRqxSfSpjjLK/27f83f1f2efa0a72551a148cff039f1c/Sean_Steur-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/636852.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1111063-1788281171.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/43/19/1634319_sean_steur_20260803092104.jpg",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1859920/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1643770.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3388130.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/pUrMaAHG-lYLPi23F.png",
+            "statshub": "https://images.statshub.com/player/1859920.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000350903.png"
+        }
+    },
+    {
+        "id": "s-sven-botman",
+        "name": "Sven Botman",
+        "nationality": "Netherlands",
+        "dob": "2000-01-12",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-07-01", "club": "Lille Olympique" }
+        ],
+        "photos": {
+            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/7jijBzTTazGe71BoLOKGSk/e8aa77849932bcb02ea969fb7b14ac0a/Sven_Botman-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/220237.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/361093-1683290679.jpg",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/21/17/532117_sven_botman_20251021194313.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/910046/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/956682.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/429351.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/pAnJhByS-tjXVAHTk.png",
+            "statshub": "https://images.statshub.com/player/910046.png",
+            "fminside": "https://img.fminside.net/facesfm26/37063649.png"
+        }
+    },
+    {
+        "id": "s-tino-livramento",
+        "name": "Tino Livramento",
+        "nationality": "England",
+        "dob": "2002-11-12",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2023-08-08", "club": "Southampton" }
+        ],
+        "photos": {
+            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/2dipMzwjV4PUHVlAPy5U3V/f243e95e34867825ce96ce8beffa75a8/Tino_Livramento-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/441191.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/503981-1699383321.jpg",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/31/75/643175_tino_livramento_20260114154143.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/980634/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1107910.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/681160.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/IsPFaVwS-UastYDAA.png",
+            "statshub": "https://images.statshub.com/player/980634.png",
+            "fminside": "https://img.fminside.net/facesfm26/28124569.png"
+        }
+    },
+    {
+        "id": "s-trevan-sanusi",
+        "name": "Trevan Sanusi",
+        "nationality": "England",
+        "dob": "2007-04-25",
+        "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2025-09-01", "enddate": "2026-06-30", "club": "FC Lorient" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1011152-1746640468.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/41/17/1044117_trevan_sanusi_20260801115023.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1492716/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1474503.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3269126.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/pW9IXidM-jclZtnol.png",
+            "statshub": "https://images.statshub.com/player/1492716.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000302092.png"
+        }
+    },
+    {
+        "id": "s-vakhtang-salia",
+        "name": "Vakhtang Salia",
+        "nationality": "Georgia",
+        "dob": "2007-08-30",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2025-08-30", "club": "Dinamo Tbilisi" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1077436-1713341685.png?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/66/22/1036622_vakhtang_salia_20250307142931.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1426358/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1622265.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3343337.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/MZJEl1yB-jcpBQOKt.png",
+            "statshub": "https://images.statshub.com/player/1426358.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000336547.png"
+        }
+    },
+    {
+        "id": "s-will-osula",
+        "name": "Will Osula",
+        "nationality": "Denmark",
+        "dob": "2003-08-04",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-08-08", "club": "Sheffield United" }
+        ],
+        "photos": {
+            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/8voggQvDbeuG5AgRo5Jqe/87a289d673fe7eb839471a1748d57b1e/William_Osula-01-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/538207.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/609556-1693217416.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/97/75/859775_will_osula_20250128142220.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1122603/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1258092.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3142430.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/Wr6aBZdM-pGcktxiU.png",
+            "statshub": "https://images.statshub.com/player/1122603.png",
+            "fminside": "https://img.fminside.net/facesfm26/28128173.png"
+        }
+    },
+    {
+        "id": "s-yoane-wissa",
+        "name": "Yoane Wissa",
+        "nationality": "DR Congo",
+        "dob": "1996-09-03",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2025-09-01", "club": "Brentford" }
+        ],
+        "photos": {
+            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/7futvkUcOpWYZbDTkMCXis/61e79dab670da75e7708fbee6c289b8a/Yoane_Wisse-2-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/216646.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/388165-1740646948.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/76/12/477612_yoane_wissa_20251206174242.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/805123/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/666857.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/227208.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/OlVXwke5-W4sdS7ng.png",
+            "statshub": "https://images.statshub.com/player/805123.png",
+            "fminside": "https://img.fminside.net/facesfm26/85140175.png"
+        }
+    },
+    {
+        "id": "u21-afner-ca",
+        "name": "Afner Cá",
+        "nationality": "Guinea-Bissau",
+        "dob": "2007-07-08",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-07-20", "club": "Levante UD" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1428060-1765911835.png?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/53/66/1065366_afner_ca_20260718194741.jpg",
+            "sofascore": "https://img.sofascore.com/api/v1/player/2338529/image",
+            "fotmob": "",
+            "besoccer": "",
+            "flashscore": "",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u21-alex-walpole",
+        "name": "Alex Walpole",
+        "nationality": "England",
+        "dob": "2006-12-21",
+        "position": "GK",
+        "careerComplete": true,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/67/85/1296785_alex_walpole_20260613213636.jpg",
+            "sofascore": "https://img.sofascore.com/api/v1/player/2422476/image",
+            "fotmob": "",
+            "besoccer": "",
+            "flashscore": "",
+            "statshub": "https://images.statshub.com/player/2422476.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000321941.png"
+        }
+    },
+    {
+        "id": "u21-alfie-hutchison",
+        "name": "Alfie Hutchison",
+        "nationality": "Scotland",
+        "dob": "2009-01-22",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2025-07-28", "club": "Rangers" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1804256.png",
+            "besoccer": "",
+            "flashscore": "",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u21-alfie-seldon",
+        "name": "Alfie Seldon",
+        "nationality": "England",
+        "dob": "2009-10-20",
+        "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "",
+            "fotmob": "",
+            "besoccer": "",
+            "flashscore": "https://static.flashscore.com/res/image/data/nNSOxVjl-SSz10Fzn.png",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u21-anthony-munda",
+        "name": "Anthony Munda",
+        "nationality": "England",
+        "dob": "2006-09-08",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2026-08-17", "enddate": "2027-06-30", "club": "Swindon Town" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1019167-1699385849.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/78/94/1007894_anthony_munda_20251001201705.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1546058/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1418101.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3306052.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/OU4FlZdM-zRTHTIXt.png",
+            "statshub": "https://images.statshub.com/player/1546058.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000302060.png"
+        }
+    },
+    {
+        "id": "u21-antonio-cordero",
+        "name": "Antonio Cordero",
+        "nationality": "Spain",
+        "dob": "2006-11-14",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2025-07-01", "club": "Málaga CF" },
+			{ "type": "loan_out", "date": "2025-08-01", "enddate": "2025-12-31", "club": "KVC Westerlo" },
+			{ "type": "loan_out", "date": "2026-01-01", "enddate": "2026-06-30", "club": "Cádiz CF" },
+			{ "type": "loan_out", "date": "2026-07-11", "enddate": "2027-06-30", "club": "Cádiz CF" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1178393-1725885968.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/77/72/1247772_antonio_cordero_20260811170636.jpg",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1531384/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1654534.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3270636.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/dM1stExS-QZCiaxfd.png",
+            "statshub": "https://images.statshub.com/player/1531384.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000291513.png"
+        }
+    },
+    {
+        "id": "u21-baran-yildiz",
+        "name": "Baran Yıldız",
+        "nationality": "Turkey",
+        "dob": "2007-01-02",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1370686-1749021666.jpg?lm=4711",
+            "zerozero": "",
+            "sofascore": "https://img.sofascore.com/api/v1/player/2063621/image",
+            "fotmob": "",
+            "besoccer": "",
+            "flashscore": "https://static.flashscore.com/res/image/data/GMYzRvwS-dnVgMXq2.png",
+            "statshub": "https://images.statshub.com/player/2063621.png",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u21-dylan-charlton",
+        "name": "Dylan Charlton",
+        "nationality": "England",
+        "dob": "2006-07-02",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/965725-1699386251.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/59/03/935903_dylan_charlton_20251001201613.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1542343/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1344589.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3227782.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/v5wCsCAr-MXfXrZCS.png",
+            "statshub": "https://images.statshub.com/player/1542343.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000189866.png"
+        }
+    },
+    {
+        "id": "u21-fraser-harper",
+        "name": "Fraser Harper",
+        "nationality": "England",
+        "dob": "2006-10-02",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/04/99/1150499_fraser_harper_20240722191406.jpg",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1441054/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1553128.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3220363.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/K2NcmPEG-Kd6FtDHJ.png",
+            "statshub": "https://images.statshub.com/player/1441054.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000292942.png"
+        }
+    },
+    {
+        "id": "u21-george-mair",
+        "name": "George Mair",
+        "nationality": "England",
+        "dob": "2009-09-28",
+        "position": "GK",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "",
+            "fotmob": "",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3533990.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/MgU4JjyS-KYXuwQ1f.png",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u21-guy-bloomer",
+        "name": "Guy Bloomer",
+        "nationality": "England",
+        "dob": "2007-09-13",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1899467/image",
+            "fotmob": "",
+            "besoccer": "",
+            "flashscore": "",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u21-henry-johnson",
+        "name": "Henry Johnson",
+        "nationality": "England",
+        "dob": "2008-01-01",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/38/02/1243802_henry_johnson_20260811215400.jpg",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1899470/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1712362.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3438968.jpg",
+            "flashscore": "",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u21-isaac-moran",
+        "name": "Isaac Moran",
+        "nationality": "England",
+        "dob": "2009-03-14",
+        "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2025-08-11", "club": "Liverpool" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1807422.png",
+            "besoccer": "",
+            "flashscore": "https://static.flashscore.com/res/image/data/KW8E31e5-8C9XL41O.png",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u21-jake-durrant",
+        "name": "Jake Durrant",
+        "nationality": "England",
+        "dob": "2008-02-04",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1899478/image",
+            "fotmob": "",
+            "besoccer": "",
+            "flashscore": "https://static.flashscore.com/res/image/data/0huMjMh5-n1wStbLT.png",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u21-jayden-kouossu",
+        "name": "Jayden Kouossu",
+        "nationality": "England",
+        "dob": "2010-04-28",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/63/25/2756325_jayden_kouossu_20250823133012.jpg",
+            "sofascore": "",
+            "fotmob": "",
+            "besoccer": "",
+            "flashscore": "",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u21-johnny-emerson",
+        "name": "Johnny Emerson",
+        "nationality": "Scotland",
+        "dob": "2005-11-30",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/953865-1699386383.jpg?lm=4711",
+            "zerozero": "",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1469898/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1683921.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3208519.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/xMYsu4Wg-GSudZHo9.png",
+            "statshub": "https://images.statshub.com/player/1469898.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000189872.png"
+        }
+    },
+    {
+        "id": "u21-kacey-wooster",
+        "name": "Kacey Wooster",
+        "nationality": "England",
+        "dob": "2008-04-04",
+        "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/42/62/1274262_kacey_wooster_20250414162914.jpg",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1899491/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1720236.png",
+            "besoccer": "",
+            "flashscore": "https://static.flashscore.com/res/image/data/ttQZRkyS-thj3Iue6.png",
+            "statshub": "https://images.statshub.com/player/1899491.png",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u21-kyle-fitzgerald",
+        "name": "Kyle Fitzgerald",
+        "nationality": "Ireland",
+        "dob": "2007-01-28",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2025-02-12", "club": "Galway United" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/22/31/1242231_kyle_fitzgerald_20250331043113.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1566262/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1609323.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3343512.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/I11kdeAr-MXMawKqt.png",
+            "statshub": "",
+            "fminside": "https://img.fminside.net/facesfm26/2000313523.png"
+        }
+    },
+    {
+        "id": "u21-logan-watts",
+        "name": "Logan Watts",
+        "nationality": "England",
+        "dob": "2007-01-22",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1610751/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1618029.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3358379.jpg",
+            "flashscore": "",
+            "statshub": "https://images.statshub.com/player/1610751.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000302083.png"
+        }
+    },
+    {
+        "id": "u21-luke-craggs",
+        "name": "Luke Craggs",
+        "nationality": "England",
+        "dob": "2007-07-14",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1428136.png",
+            "besoccer": "",
+            "flashscore": "https://static.flashscore.com/res/image/data/0zSVdjDa-IilUkOMU.png",
+            "statshub": "",
+            "fminside": "https://img.fminside.net/facesfm26/2000302078.png"
+        }
+    },
+    {
+        "id": "u21-matheos-ferreira",
+        "name": "Matheos Ferreira",
+        "nationality": "England",
+        "dob": "2008-08-02",
+        "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1899496/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1531976.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3438965.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/I9enicCr-bPYXTJsQ.png",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
         "id": "u21-mo-waddani",
         "name": "Mo Waddani",
         "nationality": "England",
         "dob": "2007-11-28",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1107,6 +1427,9 @@
         "nationality": "England",
         "dob": "2009-01-03",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1126,6 +1449,11 @@
         "nationality": "Guinea",
         "dob": "2007-09-24",
         "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-09-04", "club": "Gençlerbirliği SK" },
+			{ "type": "loan_out", "date": "2026-09-04", "enddate": "2027-06-30", "club": "Gençlerbirliği SK" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1145,6 +1473,9 @@
         "nationality": "England",
         "dob": "2009-12-03",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1164,6 +1495,10 @@
         "nationality": "Ireland",
         "dob": "2008-02-29",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2026-08-29", "enddate": "2027-06-30", "club": "Notts County" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1183,6 +1518,9 @@
         "nationality": "England",
         "dob": "2006-01-22",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1202,6 +1540,10 @@
         "nationality": "England",
         "dob": "2008-04-18",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2025-08-22", "enddate": "2025-11-15", "club": "Ashington" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1216,30 +1558,14 @@
         }
     },
     {
-        "id": "s-vakhtang-salia",
-        "name": "Vakhtang Salia",
-        "nationality": "Georgia",
-        "dob": "2007-08-30",
-        "position": "FWD",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1077436-1713341685.png?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/66/22/1036622_vakhtang_salia_20250307142931.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1426358/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1622265.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3343337.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/MZJEl1yB-jcpBQOKt.png",
-            "statshub": "https://images.statshub.com/player/1426358.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000336547.png"
-        }
-    },
-    {
         "id": "u18-aaron-epia",
         "name": "Aaron Epia",
         "nationality": "Poland",
         "dob": "2008-04-07",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1254,30 +1580,14 @@
         }
     },
     {
-        "id": "u21-alfie-seldon",
-        "name": "Alfie Seldon",
-        "nationality": "England",
-        "dob": "2009-10-20",
-        "position": "FWD",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "https://static.flashscore.com/res/image/data/nNSOxVjl-SSz10Fzn.png",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
         "id": "u18-charlie-robinson",
         "name": "Charlie Robinson",
         "nationality": "England",
         "dob": "2011-03-16",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1297,6 +1607,10 @@
         "nationality": "England",
         "dob": "2009-11-27",
         "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-08-28", "club": "Leicester City" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1316,6 +1630,9 @@
         "nationality": "Nigeria",
         "dob": "2009-10-21",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1335,6 +1652,9 @@
         "nationality": "England",
         "dob": "2008-09-17",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1352,9 +1672,12 @@
         "id": "u18-isaac-conway",
         "name": "Isaac Conway",
         "nationality": "England",
-        "dob": "",
-        "squadIfDobUnknown": "U16",
+        "dob": "2011-12-19",
         "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-09-19", "club": "Newcastle United U-16" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1374,6 +1697,9 @@
         "nationality": "England",
         "dob": "2008-12-06",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1393,6 +1719,9 @@
         "nationality": "England",
         "dob": "2008-09-19",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1412,6 +1741,10 @@
         "nationality": "England",
         "dob": "2010-09-07",
         "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-08-15", "club": "Newcastle United U-16" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1429,9 +1762,12 @@
         "id": "u18-jake-williams",
         "name": "Jake Williams",
         "nationality": "England",
-        "dob": "",
-        "squadIfDobUnknown": "U16",
+        "dob": "2010-11-09",
         "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-09-19", "club": "Newcastle United U-16" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1446,30 +1782,14 @@
         }
     },
     {
-        "id": "u21-jayden-kouossu",
-        "name": "Jayden Kouossu",
-        "nationality": "England",
-        "dob": "2010-04-28",
-        "position": "MID",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/63/25/2756325_jayden_kouossu_20250823133012.jpg",
-            "sofascore": "",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
         "id": "u18-johan-martinez",
         "name": "Johan Martinez",
         "nationality": "Ecuador",
         "dob": "2009-05-10",
         "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1489,6 +1809,10 @@
         "nationality": "England",
         "dob": "2009-11-25",
         "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-08-15", "club": "West Ham United" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1503,31 +1827,15 @@
         }
     },
     {
-        "id": "s-kyran-thompson",
-        "name": "Kyran Thompson",
-        "nationality": "England",
-        "dob": "2009-09-06",
-        "position": "FWD",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1396386-1771439566.jpg?lm=4711",
-            "zerozero": "",
-            "sofascore": "https://img.sofascore.com/api/v1/player/2219229/image",
-            "fotmob": "",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3642843.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/86tGz3Yg-WUpUbPAH.png",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
         "id": "u18-lennon-barber",
         "name": "Lennon Barber",
         "nationality": "England",
-        "dob": "",
-        "squadIfDobUnknown": "U16",
+        "dob": "2010-12-26",
         "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-09-19", "club": "Newcastle United U-16" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1545,9 +1853,12 @@
         "id": "u18-leo-harper",
         "name": "Leo Harper",
         "nationality": "England",
-        "dob": "",
-        "squadIfDobUnknown": "U16",
+        "dob": "2011-01-24",
         "position": "GK",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-08-22", "club": "Newcastle United U-16" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1567,6 +1878,9 @@
         "nationality": "England",
         "dob": "2009-12-07",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1586,6 +1900,9 @@
         "nationality": "England",
         "dob": "2010-01-01",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1605,6 +1922,9 @@
         "nationality": "England",
         "dob": "2011-07-02",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1624,6 +1944,9 @@
         "nationality": "England",
         "dob": "2008-12-14",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1643,6 +1966,9 @@
         "nationality": "England",
         "dob": "2010-12-23",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1662,6 +1988,9 @@
         "nationality": "England",
         "dob": "2008-10-06",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1681,6 +2010,10 @@
         "nationality": "Scotland",
         "dob": "2009-02-09",
         "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2025-07-28", "club": "Rangers" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1700,6 +2033,9 @@
         "nationality": "England",
         "dob": "2008-11-17",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1719,6 +2055,9 @@
         "nationality": "England",
         "dob": "2010-08-01",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1738,6 +2077,10 @@
         "nationality": "England",
         "dob": "2010-11-23",
         "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-09-12", "club": "Newcastle United U-16" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1757,6 +2100,9 @@
         "nationality": "England",
         "dob": "2008-09-19",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1771,30 +2117,15 @@
         }
     },
     {
-        "id": "s-aaron-ramsdale",
-        "name": "Aaron Ramsdale",
-        "nationality": "England",
-        "dob": "1998-05-14",
-        "position": "GK",
-        "photos": {
-            "official": "",
-            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/225321.png",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/427568-1681828000.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/00/63/490063_aaron_ramsdale_20251227213501.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/839410/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/746395.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/325210.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/h8odn5YA-xnQDOCMF.png",
-            "statshub": "https://images.statshub.com/player/839410.png",
-            "fminside": "https://img.fminside.net/facesfm26/29137172.png"
-        }
-    },
-    {
         "id": "s-adam-harrison",
         "name": "Adam Harrison",
         "nationality": "England",
         "dob": "2006-10-20",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2026-06-30", "club": "Wolverhampton Wanderers" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1814,6 +2145,11 @@
         "nationality": "England",
         "dob": "2003-02-15",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-07-04", "club": "West Ham United" },
+			{ "type": "left", "date": "2024-06-30", "club": "Girondins de Bordeaux" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1833,6 +2169,11 @@
         "nationality": "England",
         "dob": "2001-02-24",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2023-01-29", "club": "Everton" },
+			{ "type": "left", "date": "2026-07-01", "club": "FC Barcelona" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/232826.png",
@@ -1852,6 +2193,10 @@
         "nationality": "England",
         "dob": "2005-03-10",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2026-01-10", "club": "Falkirk" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1871,6 +2216,11 @@
         "nationality": "Brazil",
         "dob": "1997-11-16",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-01-30", "club": "Olympique Lyonnais" },
+			{ "type": "left", "date": "2026-08-08", "club": "Arsenal" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/208706.png",
@@ -1890,6 +2240,11 @@
         "nationality": "England",
         "dob": "1992-02-27",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2020-07-07", "club": "AFC Bournemouth" },
+			{ "type": "left", "date": "2025-06-30", "club": "West Ham United" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/75115.png",
@@ -1909,6 +2264,11 @@
         "nationality": "England",
         "dob": "2002-11-06",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2022-01-31", "enddate": "2022-06-30", "club": "Bristol Rovers" },
+			{ "type": "left", "date": "2024-06-30", "club": "Manchester City" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/215379.png",
@@ -1928,6 +2288,11 @@
         "nationality": "Sweden",
         "dob": "1994-08-02",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2019-08-08", "club": "Amiens SC" },
+			{ "type": "left", "date": "2026-06-30", "club": "" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/111773.png",
@@ -1947,6 +2312,14 @@
         "nationality": "Jamaica",
         "dob": "1995-03-22",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2022-07-01", "enddate": "2023-06-30", "club": "Norwich City" },
+			{ "type": "loan_out", "date": "2023-09-01", "enddate": "2024-01-31", "club": "Standard Liège" },
+			{ "type": "loan_out", "date": "2024-02-01", "enddate": "2024-06-30", "club": "Queens Park Rangers" },
+			{ "type": "loan_out", "date": "2025-01-10", "enddate": "2025-06-30", "club": "Portsmouth" },
+			{ "type": "left", "date": "2025-08-02", "club": "Queens Park Rangers" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -1966,6 +2339,10 @@
         "nationality": "England",
         "dob": "1993-11-11",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2025-02-03", "club": "Leicester City" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/101148.png",
@@ -1985,6 +2362,13 @@
         "nationality": "Northern Ireland",
         "dob": "1998-01-25",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2020-09-08", "club": "Norwich City" },
+			{ "type": "loan_out", "date": "2023-07-27", "enddate": "2024-06-30", "club": "Watford" },
+			{ "type": "loan_out", "date": "2024-09-03", "enddate": "2025-01-01", "club": "São Paulo FC" },
+			{ "type": "left", "date": "2025-06-30", "club": "Preston North End" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/194799.png",
@@ -2004,6 +2388,11 @@
         "nationality": "England",
         "dob": "2004-03-02",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2025-02-04", "enddate": "2025-06-30", "club": "Spennymoor Town" },
+			{ "type": "left", "date": "2025-06-30", "club": "Morpeth Town" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2023,6 +2412,10 @@
         "nationality": "Spain",
         "dob": "1994-05-05",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+ 			{ "type": "joined", "date": "2017-07-21", "club": "Atlético Madrid" }
+       ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/109528.png",
@@ -2042,6 +2435,14 @@
         "nationality": "Ireland",
         "dob": "1992-01-31",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2020-08-24", "club": "Burnley" },
+			{ "type": "loan_out", "date": "2022-01-31", "enddate": "2022-06-30", "club": "Queens Park Rangers" },
+			{ "type": "loan_out", "date": "2022-07-12", "enddate": "2023-06-30", "club": "Reading" },
+			{ "type": "loan_out", "date": "2023-09-01", "enddate": "2024-06-30", "club": "Sheffield Wednesday" },
+			{ "type": "left", "date": "2024-06-30", "club": "Derby County" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/83314.png",
@@ -2061,6 +2462,16 @@
         "nationality": "England",
         "dob": "2002-10-01",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2022-01-29", "enddate": "2022-06-30", "club": "Hartlepool United" },
+			{ "type": "loan_out", "date": "2023-01-06", "enddate": "2023-06-30", "club": "Exeter City" },
+			{ "type": "loan_out", "date": "2023-08-31", "enddate": "2024-01-14", "club": "Crewe Alexandra" },
+			{ "type": "loan_out", "date": "2024-08-30", "enddate": "2025-06-30", "club": "Milton Keynes Dons" },
+			{ "type": "loan_out", "date": "2025-07-29", "enddate": "2026-01-05", "club": "Leyton Orient" },
+			{ "type": "loan_out", "date": "2026-01-13", "enddate": "2026-06-30", "club": "Bradford City" },
+			{ "type": "left", "date": "2026-07-16", "club": "Crewe Alexandra" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/461484.png",
@@ -2075,30 +2486,21 @@
         }
     },
     {
-        "id": "s-john-ruddy",
-        "name": "John Ruddy",
-        "nationality": "England",
-        "dob": "1986-10-24",
-        "position": "GK",
-        "photos": {
-            "official": "",
-            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/19236.png",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/29712-1736421115.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/75/67/17567_john_ruddy_20240815235253.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1131/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/40602.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/48.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/WIKp6kCr-ldWvapb2.png",
-            "statshub": "https://images.statshub.com/player/1131.png",
-            "fminside": "https://img.fminside.net/facesfm26/5123017.png"
-        }
-    },
-    {
         "id": "s-kelland-watts",
         "name": "Kelland Watts",
         "nationality": "England",
         "dob": "1999-11-03",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2019-08-16", "enddate": "2020-01-10", "club": "Stevenage" },
+			{ "type": "loan_out", "date": "2020-01-28", "enddate": "2020-06-30", "club": "Mansfield Town" },
+			{ "type": "loan_out", "date": "2020-08-24", "enddate": "2021-06-30", "club": "Plymouth Argyle" },
+			{ "type": "loan_out", "date": "2021-08-09", "enddate": "2022-06-30", "club": "Wigan Athletic" },
+			{ "type": "loan_out", "date": "2022-09-01", "enddate": "2023-06-30", "club": "Peterborough United" },
+			{ "type": "loan_out", "date": "2023-07-27", "enddate": "2024-06-30", "club": "Wigan Athletic" },
+			{ "type": "left", "date": "2024-06-30", "club": "Cambridge United" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/232977.png",
@@ -2118,6 +2520,11 @@
         "nationality": "England",
         "dob": "1990-09-19",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-01-07", "club": "Atlético Madrid" },
+			{ "type": "left", "date": "2026-06-30", "club": "Wolverhampton Wanderers" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/77794.png",
@@ -2137,6 +2544,11 @@
         "nationality": "Germany",
         "dob": "1993-06-22",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-07-11", "club": "Liverpool" },
+			{ "type": "left", "date": "2024-06-30", "club": "Schalke 04" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/104542.png",
@@ -2151,30 +2563,16 @@
         }
     },
     {
-        "id": "s-lloyd-kelly",
-        "name": "Lloyd Kelly",
-        "nationality": "England",
-        "dob": "1998-10-06",
-        "position": "DEF",
-        "photos": {
-            "official": "",
-            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/235530.png",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/480116-1739281396.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/01/18/490118_lloyd_kelly_20260104222922.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/865167/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/819215.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/357479.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/jVctfdWg-j9b29BhE.png",
-            "statshub": "https://images.statshub.com/player/865167.png",
-            "fminside": "https://img.fminside.net/facesfm26/29158244.png"
-        }
-    },
-    {
         "id": "s-lucas-de-bolle",
         "name": "Lucas De Bolle",
         "nationality": "Scotland",
         "dob": "2002-10-22",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2022-09-01", "enddate": "2023-06-30", "club": "Hamilton Academical" },
+			{ "type": "left", "date": "2024-06-30", "club": "South Shields" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2194,6 +2592,12 @@
         "nationality": "Slovakia",
         "dob": "1989-01-15",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2018-07-01", "club": "Sparta Prague" },
+			{ "type": "loan_out", "date": "2022-09-01", "enddate": "2023-01-01", "club": "Manchester United" },
+			{ "type": "left", "date": "2025-08-07", "club": "Burnley" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/67089.png",
@@ -2213,6 +2617,10 @@
         "nationality": "Scotland",
         "dob": "1989-09-10",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2024-06-30", "club": "Portsmouth" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/56983.png",
@@ -2232,6 +2640,13 @@
         "nationality": "England",
         "dob": "1995-09-18",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_in", "date": "2022-01-31", "enddate": "2022-06-30", "club": "Aston Villa" },
+			{ "type": "joined", "date": "2022-07-01", "club": "Aston Villa" },
+			{ "type": "loan_out", "date": "2025-08-26", "enddate": "2026-06-30", "club": "Middlesbrough" },
+			{ "type": "left", "date": "2026-07-01", "club": "Hull City" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/169359.png",
@@ -2251,6 +2666,13 @@
         "nationality": "England",
         "dob": "2004-08-01",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2024-08-07", "enddate": "2023-12-31", "club": "Northampton Town" },
+			{ "type": "loan_out", "date": "2024-08-29", "enddate": "2025-06-30", "club": "Chesterfield" },
+			{ "type": "loan_out", "date": "2026-01-26", "enddate": "2026-06-30", "club": "Ayr United" },
+			{ "type": "left", "date": "2026-06-30", "club": "" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/478922.png",
@@ -2270,6 +2692,11 @@
         "nationality": "England",
         "dob": "2003-12-02",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2024-02-01", "enddate": "2024-06-30", "club": "Annan Athletic" },
+			{ "type": "left", "date": "2024-06-30", "club": "Ashington" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2289,6 +2716,11 @@
         "nationality": "Paraguay",
         "dob": "1994-02-10",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2019-01-31", "club": "Atlanta United" },
+			{ "type": "left", "date": "2025-01-30", "club": "Atlanta United" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/179018.png",
@@ -2308,6 +2740,10 @@
         "nationality": "Wales",
         "dob": "1991-09-26",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2024-06-30", "club": "Wigan Athletic" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/106618.png",
@@ -2327,6 +2763,12 @@
         "nationality": "Scotland",
         "dob": "1994-02-24",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2020-07-07", "club": "AFC Bournemouth" },
+			{ "type": "loan_out", "date": "2023-08-25", "enddate": "2024-06-30", "club": "Southampton" },
+			{ "type": "left", "date": "2024-08-30", "club": "Southampton" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/90105.png",
@@ -2346,6 +2788,11 @@
         "nationality": "Italy",
         "dob": "2000-05-08",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2023-07-03", "club": "AC Milan" },
+			{ "type": "left", "date": "2026-07-06", "club": "Tottenham Hotspur" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/432422.png",
@@ -2365,6 +2812,11 @@
         "nationality": "England",
         "dob": "1997-10-30",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2017-07-21", "enddate": "2018-06-30", "club": "Blackpool" },
+			{ "type": "left", "date": "2025-07-18", "club": "Leeds United" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/180135.png",
@@ -2384,6 +2836,11 @@
         "nationality": "Sweden",
         "dob": "1999-12-21",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-08-26", "club": "Real Sociedad" },
+			{ "type": "left", "date": "2025-07-01", "club": "Liverpool" }
+        ],
         "photos": {
             "official": "https://i.ibb.co/xSGBsg2n/The-Rat.png",
             "premierleague": "https://i.ibb.co/xSGBsg2n/The-Rat.png",
@@ -2403,6 +2860,13 @@
         "nationality": "Norway",
         "dob": "2005-11-04",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2023-09-01", "club": "Shrewsbury Town" },
+			{ "type": "loan_out", "date": "2025-01-17", "enddate": "2025-06-30", "club": "AaB" },
+			{ "type": "loan_out", "date": "2025-09-02", "enddate": "2026-06-30", "club": "FC Groningen" },
+			{ "type": "left", "date": "2026-06-15", "club": "FC Groningen" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/592436.png",
@@ -2417,30 +2881,15 @@
         }
     },
     {
-        "id": "s-yankuba-minteh",
-        "name": "Yankuba Minteh",
-        "nationality": "Gambia",
-        "dob": "2004-07-22",
-        "position": "DEF",
-        "photos": {
-            "official": "",
-            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/592031.png",
-            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/31/25/1013125_yankuba_minteh_20251025173553.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1400106/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1400227.png",
-            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
-        }
-    },
-    {
         "id": "u21-adrian-janusz",
         "name": "Adrian Janusz",
         "nationality": "Poland",
         "dob": "2006-06-30",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2025-01-22", "club": "Brentford" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2460,6 +2909,10 @@
         "nationality": "England",
         "dob": "2007-10-03",
         "position": "MF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2026-06-30", "club": "" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2479,6 +2932,11 @@
         "nationality": "England",
         "dob": "2005-11-28",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2024-02-01", "club": "Manchester City" },
+			{ "type": "left", "date": "2026-06-30", "club": "" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2498,6 +2956,12 @@
         "nationality": "Scotland",
         "dob": "2003-03-24",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2021-07-01", "club": "Tranmere Rovers" },
+			{ "type": "loan_out", "date": "2023-08-26", "enddate": "2024-01-13", "club": "Forfar Athletic" },
+			{ "type": "left", "date": "2024-01-25", "club": "Forres Mechanics" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2517,6 +2981,10 @@
         "nationality": "England",
         "dob": "2005-11-04",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2024-06-30", "club": "Gateshead" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2536,6 +3004,11 @@
         "nationality": "Ireland",
         "dob": "2005-04-27",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2023-08-24", "club": "AC Milan" },
+			{ "type": "left", "date": "2026-01-15", "club": "Harrogate Town" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2555,6 +3028,13 @@
         "nationality": "Scotland",
         "dob": "2005-05-12",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-07-06", "club": "Kilmarnock" },
+			{ "type": "loan_out", "date": "2025-01-16", "enddate": "2025-06-30", "club": "Carlisle United" },
+			{ "type": "loan_out", "date": "2026-01-23", "enddate": "2026-06-30", "club": "Airdrieonians" },
+			{ "type": "left", "date": "2026-06-30", "club": "York City" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2574,6 +3054,10 @@
         "nationality": "England",
         "dob": "2002-11-02",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2021-07-01", "club": "Chelsea" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2593,6 +3077,10 @@
         "nationality": "England",
         "dob": "2004-10-16",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2026-06-30", "club": "Darlington" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2612,6 +3100,10 @@
         "nationality": "England",
         "dob": "2005-09-24",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2026-06-30", "club": "" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2631,6 +3123,12 @@
         "nationality": "England",
         "dob": "2002-12-10",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2023-01-26", "enddate": "2023-06-30", "club": "Hamilton Academical" },
+			{ "type": "loan_out", "date": "2024-01-25", "enddate": "2024-06-30", "club": "South Shields" },
+			{ "type": "left", "date": "2024-06-30", "club": "Dagenham & Redbridge" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2650,6 +3148,10 @@
         "nationality": "England",
         "dob": "2005-02-19",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2025-06-30", "club": "Darlington" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2669,6 +3171,13 @@
         "nationality": "Australia",
         "dob": "2004-09-15",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2023-01-01", "club": "Central Coast Mariners" },
+			{ "type": "loan_out", "date": "2023-01-12", "enddate": "2023-06-30", "club": "Heart of Midlothian" },
+			{ "type": "loan_out", "date": "2023-08-08", "enddate": "2024-06-30", "club": "Volendam" },
+			{ "type": "left", "date": "2025-08-29", "club": "Sparta Prague" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2688,6 +3197,10 @@
         "nationality": "England",
         "dob": "2005-12-31",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2025-06-30", "club": "Ashington" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2707,6 +3220,10 @@
         "nationality": "England",
         "dob": "2006-07-11",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2026-06-30", "club": "Hemel Hempstead Town" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2726,6 +3243,11 @@
         "nationality": "England",
         "dob": "2004-01-14",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2024-08-29", "enddate": "2025-01-13", "club": "Newport County" },
+			{ "type": "left", "date": "2025-01-30", "club": "Hartlepool United" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2745,6 +3267,13 @@
         "nationality": "England",
         "dob": "2003-12-31",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2021-01-08", "club": "mackems" },
+			{ "type": "loan_out", "date": "2023-01-31", "enddate": "2023-06-30", "club": "Tranmere Rovers" },
+			{ "type": "loan_out", "date": "2023-08-24", "enddate": "2024-02-01", "club": "St Johnstone" },
+			{ "type": "left", "date": "2025-06-30", "club": "FC Halifax Town" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2764,6 +3293,11 @@
         "nationality": "England",
         "dob": "2007-04-21",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2026-01-01", "enddate": "2026-01-29", "club": "Morpeth Town" },
+			{ "type": "left", "date": "2026-06-30", "club": "George Washington Colonials" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2783,6 +3317,11 @@
         "nationality": "England",
         "dob": "2004-02-20",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-07-04", "club": "Tottenham Hotspur" },
+			{ "type": "left", "date": "2024-06-30", "club": "Mousehole AFC" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2802,6 +3341,10 @@
         "nationality": "England",
         "dob": "2005-09-25",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2025-06-30", "club": "Hartlepool United" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2821,6 +3364,9 @@
         "nationality": "England",
         "dob": "2002-09-13",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2840,6 +3386,11 @@
         "nationality": "Scotland",
         "dob": "2003-05-29",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-07-04", "club": "East Fife" },
+			{ "type": "left", "date": "2024-06-30", "club": "Carlisle United" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2859,6 +3410,11 @@
         "nationality": "England",
         "dob": "2004-07-24",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2020-02-21", "club": "Morecambe" },
+			{ "type": "left", "date": "2024-06-30", "club": "South Shields" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2878,6 +3434,12 @@
         "nationality": "England",
         "dob": "2002-04-18",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_out", "date": "2022-01-31", "enddate": "2022-03-28", "club": "Shrewsbury Town" },
+			{ "type": "loan_out", "date": "2023-07-01", "enddate": "2024-06-30", "club": "Newport County" },
+			{ "type": "left", "date": "2024-06-30", "club": "Hartlepool United" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2897,6 +3459,9 @@
         "nationality": "Spain",
         "dob": "2005-11-26",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2916,6 +3481,9 @@
         "nationality": "England",
         "dob": "2002-09-14",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2935,6 +3503,9 @@
         "nationality": "Ireland",
         "dob": "2004-11-20",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2954,6 +3525,10 @@
         "nationality": "England",
         "dob": "2001-10-26",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2021-07-01", "club": "Liverpool" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2973,6 +3548,14 @@
         "nationality": "Peru",
         "dob": "1999-03-12",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2020-10-05", "club": "Deportivo Municipal" },
+			{ "type": "loan_out", "date": "2021-08-31", "enddate": "2021-12-31", "club": "Doncaster Rovers" },
+			{ "type": "loan_out", "date": "2022-03-12", "enddate": "2023-01-31", "club": "Universitario" },
+			{ "type": "loan_out", "date": "2023-09-05", "enddate": "2024-06-30", "club": "Voždovac" },
+			{ "type": "left", "date": "2024-06-30", "club": "Atlético Grau" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -2992,6 +3575,10 @@
         "nationality": "England",
         "dob": "2005-12-31",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2025-06-30", "club": "Ashington" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -3011,6 +3598,10 @@
         "nationality": "England",
         "dob": "2005-08-13",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2024-06-30", "club": "Fleetwood Town" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -3030,6 +3621,10 @@
         "nationality": "England",
         "dob": "2006-12-11",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2026-06-30", "club": "Darlington" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -3049,6 +3644,10 @@
         "nationality": "England",
         "dob": "2008-07-15",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2026-06-30", "club": "South Shields" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -3068,6 +3667,10 @@
         "nationality": "England",
         "dob": "2002-01-10",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2024-06-30", "club": "" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -3082,30 +3685,14 @@
         }
     },
     {
-        "id": "u18-brayden-clarke",
-        "name": "Brayden Clarke",
-        "nationality": "Wales",
-        "dob": "2007-07-03",
-        "position": "DEF",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1005844-1782978840.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/44/83/934483_brayden_clarke_20240525201226.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1424625/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1751837.png",
-            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
-        }
-    },
-    {
         "id": "u18-eden-page",
         "name": "Eden Page",
         "nationality": "England",
         "dob": "2004-09-19",
         "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -3125,6 +3712,10 @@
         "nationality": "England",
         "dob": "2007-11-07",
         "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2026-06-30", "club": "Middlesbrough" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -3139,31 +3730,15 @@
         }
     },
     {
-        "id": "u18-jack-low",
-        "name": "Jack Low",
-        "nationality": "England",
-        "dob": "",
-        "position": "MID",
-        "squadIfDobUnknown": "U18",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "",
-            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
-        }
-    },
-    {
         "id": "u18-jude-cogdon",
         "name": "Jude Cogdon",
         "nationality": "England",
         "dob": "2007-12-19",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2026-06-30", "club": "" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -3183,6 +3758,10 @@
         "nationality": "England",
         "dob": "2007-10-30",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2026-06-30", "club": "West Bromwich Albion" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -3202,6 +3781,10 @@
         "nationality": "England",
         "dob": "2008-03-31",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2026-06-30", "club": "" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -3216,30 +3799,14 @@
         }
     },
     {
-        "id": "u18-noah-cooper",
-        "name": "Noah Cooper",
-        "nationality": "England",
-        "dob": "2006-02-06",
-        "position": "GK",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/85/23/1048523_noah_cooper_20240605145440.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1468578/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1683925.png",
-            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
-        }
-    },
-    {
         "id": "u18-oliver-best",
         "name": "Oliver Best",
         "nationality": "England",
         "dob": "2009-02-08",
         "position": "MID",
+        "careerComplete": false,
+        "movements": [
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -3259,6 +3826,10 @@
         "nationality": "England",
         "dob": "2006-03-10",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2024-06-30", "club": "" }
+        ],
         "photos": {
             "official": "",
             "premierleague": "",
@@ -3270,44 +3841,6 @@
             "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
-        }
-    },
-    {
-        "id": "u18-theodore-adelusi",
-        "name": "Theodore Adelusi",
-        "nationality": "England",
-        "dob": "2007-05-09",
-        "position": "DEF",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/29/04/1242904_theodore_adelusi_20251001105458.png",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1899780/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1813326.png",
-            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
-        }
-    },
-    {
-        "id": "u18-will-mcpartland",
-        "name": "Will McPartland",
-        "nationality": "England",
-        "dob": "2008-01-20",
-        "position": "DEF",
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/04/18/1260418_will_mcpartland_20250321124610.png",
-            "sofascore": "",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "https://static.flashscore.com/res/image/data/IuKLghhl-jquRb5XD.png",
-            "statshub": "",
-            "fminside": ""
         }
     }
 ]

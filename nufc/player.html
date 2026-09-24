@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Player — The Teamsheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="styles/player.css">
+</head>
+<body>
+<div class="masthead">
+  <div class="masthead-inner">
+    <a class="back-link" href="index.html">&larr; The Teamsheet</a>
+    <p class="eyebrow" id="eyebrow">Player profile</p>
+    <h1 class="title" id="player-title">Loading…</h1>
+    <p class="subtitle" id="player-subtitle">Newcastle United</p>
+  </div>
+</div>
+<div id="load-error">
+  <strong>Couldn't load this player.</strong> Check the <code>?id=</code> in the address matches an id in
+  <code>players-master.json</code>, and that you're running a local server (<code>python3 -m http.server 8000</code>).
+</div>
+<main id="player-root"></main>
+<footer id="footer-note">Built from the same JSON files as the squad tracker. Stats are calculated per squad from the fixture records.</footer>
+<script src="js/data.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/render.js"></script>
+<script src="js/player.js"></script>
+</body>
+</html>

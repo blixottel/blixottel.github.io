@@ -71,13 +71,13 @@ function renderValidationPanel(issues, verbose) {
   if (sub) sub.style.display = '';
 
   const bySquad = { _general: [] };
-  [...CORE_SQUADS, ...OPTIONAL_SQUADS].forEach(k => { bySquad[k] = []; });
+  SQUAD_ORDER.forEach(k => { bySquad[k] = []; });
   issues.forEach(iss => {
     (bySquad[iss.squad] || bySquad._general).push(iss);
   });
 
   list.innerHTML = '';
-  [...CORE_SQUADS, ...OPTIONAL_SQUADS, '_general'].forEach(key => {
+  [...SQUAD_ORDER, '_general'].forEach(key => {
     const group = bySquad[key];
     if (!group || group.length === 0) return;
     const wrap = document.createElement('div');
@@ -181,8 +181,9 @@ function initialsFor(name) {
 }
 
 function buildPlayerCard(p, badges) {
-  const card = document.createElement('div');
-  card.className = 'player-card';
+  const card = document.createElement('a');
+  card.href = playerHref(p.id);
+  card.className = 'player-card ' + todoState(p);
   const pillsHtml = (badges && badges.length)
     ? `<div class="status-pills">${badges.map(b =>
         `<span class="status-pill pill-${b.kind}"${b.title ? ` title="${b.title}"` : ''}>${b.text}</span>`
@@ -438,9 +439,9 @@ function buildMatrix(rosterPlayers, fixtureData, playersById, squadKey, fixtureI
       const badges = playerBadges(p, squadKey);
       tr.className = 'guest-row guest-row-' + (badges.length ? badges[0].kind : 'cross');
       const tagsHtml = badges.map(b => `<span class="${b.cls}">${b.text}</span>`).join(' ');
-      nameTd.innerHTML = badges.length ? `${p.name} ${tagsHtml}` : p.name;
+      nameTd.innerHTML = badges.length ? `${playerLinkHtml(p)} ${tagsHtml}` : playerLinkHtml(p);
     } else {
-      nameTd.innerHTML = p.name;
+      nameTd.innerHTML = playerLinkHtml(p);
     }
     tr.appendChild(nameTd);
 
@@ -512,7 +513,7 @@ function buildMatrix(rosterPlayers, fixtureData, playersById, squadKey, fixtureI
   return wrap;
 }
 
-function buildLegend() {
+function buildLegendBody() {
   const div = document.createElement('div');
   div.className = 'legend';
   div.innerHTML = `
@@ -569,8 +570,9 @@ function statusDetailLine(p, kind) {
 }
 
 function buildStatusCard(p, kind) {
-  const card = document.createElement('div');
-  card.className = `player-card status-card status-card-${kind}`;
+  const card = document.createElement('a');
+  card.href = playerHref(p.id);
+  card.className = `player-card status-card status-card-${kind} ${todoState(p)}`;
   card.innerHTML = `
     <div class="photo-wrap">
       <div class="photo-fallback">${initialsFor(p.name)}</div>
@@ -674,7 +676,7 @@ function buildLeaderboards(playersById, squadStats, squadKey) {
       const val = def.decimals != null ? stat[def.key].toFixed(def.decimals) : stat[def.key];
       const badges = playerBadges(p, squadKey);
       const tagsHtml = badges.map(b => `<span class="${b.cls}">${b.text}</span>`).join(' ');
-      const nameHtml = badges.length ? `${p.name} ${tagsHtml}` : p.name;
+      const nameHtml = badges.length ? `${playerLinkHtml(p)} ${tagsHtml}` : playerLinkHtml(p);
       tr.innerHTML = `<td class="lb-name">${nameHtml}</td><td class="lb-val">${val}</td>`;
       tbody.appendChild(tr);
     });
@@ -885,4 +887,39 @@ function buildSquadSection(squadKey, allSquadPlayers, fixtureData, playersById, 
   section.appendChild(buildLeaderboardsBlock(playersById, fixtureData, squadKey));
 
   return section;
+}
+
+/** Link helpers — every player name/card on the squad page points at their profile. */
+function playerHref(id) { return 'player.html?id=' + encodeURIComponent(id); }
+function playerLinkHtml(p) { return `<a class="player-link" href="${playerHref(p.id)}">${p.name}</a>`; }
+
+/** The fixture-matrix legend, collapsed by default behind a "Legend" toggle. */
+function buildLegend() {
+  const details = document.createElement('details');
+  details.className = 'legend-details';
+  details.innerHTML = '<summary>Legend</summary>';
+  details.appendChild(buildLegendBody());
+  return details;
+}
+
+/**
+ * LOCAL-ONLY to-do marker (never on a published copy): current players whose
+ * career data isn't finished (no careerComplete) get a small "To do" badge on
+ * their photo, via the .todo-open class (see styles.css). Everyone else looks normal.
+ */
+function todoState(p) {
+  return isLocalDev() && !p._archived && !p._unresolvedMaster && !p.careerComplete ? 'todo-open' : '';
+}
+
+/** LOCAL-ONLY progress line above the Data checks panel, expandable to the to-do list. */
+function renderTodoProgress(players) {
+  const panel = document.getElementById('validation-panel');
+  if (!panel) return;
+  const current = players.filter(p => !p._archived && !p._unresolvedMaster);
+  const todo = current.filter(p => !p.careerComplete).sort((a, b) => a.name.localeCompare(b.name));
+  const el = document.createElement('details');
+  el.className = 'todo-progress';
+  el.innerHTML = `<summary>Career data: <b>${current.length - todo.length}</b> of <b>${current.length}</b> current players complete${todo.length ? ` · ${todo.length} to do` : ' ✓'}</summary>` +
+    (todo.length ? `<ul>${todo.map(p => `<li>${playerLinkHtml(p)} <span>${SQUAD_SHORT[normSquad(p.squad)] || ''}</span></li>`).join('')}</ul>` : '');
+  panel.parentNode.insertBefore(el, panel);
 }

@@ -13,7 +13,7 @@ async function init() {
     // defaults to players-master.json unless a season entry overrides it
     // with its own playersMasterFile. Squad membership isn't read from
     // either file — see mergePlayers in data.js.
-    let masterFile = 'players-master.json';
+    let masterFile = 'data/players-master.json';
     let playersFile = 'players-season.json';
     let fixturesFile = 'fixtures.json';
     let activeSeason = null;
@@ -21,16 +21,17 @@ async function init() {
     if (seasons) {
       const activeId = currentSeasonId(seasons);
       activeSeason = seasons.find(s => s.id === activeId) || seasons[0];
+      AGE_AS_OF = seasonAgeDate(activeSeason);
       masterFile = activeSeason.playersMasterFile || masterFile;
       playersFile = activeSeason.playersFile;
       fixturesFile = activeSeason.fixturesFile;
 
       document.getElementById('season-switcher-slot').appendChild(buildSeasonSwitcher(seasons, activeSeason.id));
       const eyebrow = document.getElementById('eyebrow');
-      if (eyebrow) eyebrow.textContent = `Est. manually · Season ${activeSeason.label || activeSeason.id}`;
+      if (eyebrow) eyebrow.textContent = `Est. manually · Season ${activeSeason.label || activeSeason.id}${AGE_AS_OF ? ' · Ages as at ' + AGE_AS_OF.toLocaleDateString('en-GB') : ''}`;
       const footerNote = document.getElementById('footer-note');
       if (footerNote) {
-        footerNote.innerHTML = `Data maintained by hand in <code>${masterFile}</code>, <code>${playersFile}</code> and <code>${fixturesFile}</code> (season ${activeSeason.label || activeSeason.id} — see <code>seasons.json</code> for the full list). Appearance stats are calculated automatically from the fixture records. See <code>DATA-GUIDE.md</code> for field reference.`;
+        footerNote.innerHTML = `Data maintained by hand in <code>${masterFile}</code>, <code>players-archive.json</code>, <code>${playersFile}</code> and <code>${fixturesFile}</code> (season ${activeSeason.label || activeSeason.id} — see <code>seasons.json</code> for the full list). Appearance stats are calculated automatically from the fixture records. See <code>DATA-GUIDE.md</code> for field reference.`;
       }
     }
 
@@ -46,6 +47,7 @@ async function init() {
     // Full breakdown on a local dev server; a single concise line once this
     // is published, so visitors see "worth a check" without the specifics.
     renderValidationPanel(issues, isLocalDev());
+    if (isLocalDev()) renderTodoProgress(players);
 
     // The three age-banded squads, plus 'u19' if (and only if) this season's
     // fixtures file actually has one — see CORE_SQUADS/OPTIONAL_SQUADS and

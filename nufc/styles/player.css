@@ -1,0 +1,62 @@
+.back-link{display:inline-block;margin:0 0 14px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:inherit;opacity:.6;text-decoration:none}
+.back-link:hover{opacity:1;text-decoration:underline}
+#player-root{max-width:1180px;margin:0 auto;padding:32px 24px 60px}
+
+.bio{display:grid;grid-template-columns:170px 1fr;gap:28px;align-items:start}
+.bio-photo{position:relative;width:170px;aspect-ratio:1;background:linear-gradient(160deg,var(--ink),var(--ink-soft));overflow:hidden;border-radius:var(--radius)}
+.bio-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bio-photo .photo-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black',sans-serif;font-size:46px;color:rgba(255,255,255,.28)}
+.bio-photo .number-badge{position:absolute;top:8px;left:8px;background:var(--gold);color:var(--ink);font-family:'Archivo Black',sans-serif;font-size:15px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.bio-facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px 24px;margin:0}
+.bio-facts dt{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate)}
+.bio-facts dd{margin:2px 0 0;font-weight:600;font-size:15px}
+
+.career{display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));border:1px solid var(--hairline);background:var(--paper-raised);margin-top:24px}
+.career div{padding:12px 10px;text-align:center;border-right:1px solid var(--hairline)}
+.career div:last-child{border-right:0}
+.career b{display:block;font-family:'Archivo Black',sans-serif;font-size:26px;line-height:1}
+.career span{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate)}
+
+.timeline{margin:12px 0 0 6px}
+.tl-season{position:relative;padding:0 0 34px 28px;border-left:3px solid var(--ink)}
+.tl-season:last-child{border-left-color:transparent;padding-bottom:0}
+.tl-season::before{content:"";position:absolute;left:-9px;top:4px;width:15px;height:15px;background:var(--gold);border:3px solid var(--ink);border-radius:50%}
+.tl-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:12px}
+.tl-head h3{font-family:'Archivo Black',sans-serif;font-size:24px;margin:0}
+.tl-head .guest-tag{margin-left:0}
+.tl-squad{margin:0 0 18px}
+.tl-squad h4{font-family:'Oswald',sans-serif;font-size:15px;margin:0 0 2px;display:flex;align-items:center;gap:8px}
+.tl-empty{font-size:13px;color:var(--slate);font-style:italic}
+
+table.matrix.solo{min-width:0}
+table.matrix.solo td.cell{vertical-align:top;padding-top:6px;height:44px}
+table.matrix.solo td.player-col{font-weight:500;font-size:11px;color:var(--slate)}
+.ev{display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:3px}
+.ev i{display:block;font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;line-height:12px;min-width:12px;text-align:center;border-radius:6px}
+.ev .g{background:var(--gold);color:var(--ink)}
+.ev .a{background:var(--pitch);color:#fff}
+.ev .y{background:#E4B937;color:var(--ink);border-radius:1px}
+.ev .r{background:#C0392B;color:#fff;border-radius:1px}
+.ev-key{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--slate);margin:10px 0 4px}
+.ev-key span{display:inline-flex;align-items:center;gap:6px}
+
+table.season-totals{width:100%;border-collapse:collapse;font-size:13px;background:var(--paper-raised);border:1px solid var(--hairline);margin-top:10px}
+table.season-totals th,table.season-totals td{padding:6px 10px;text-align:center;border-bottom:1px solid var(--hairline)}
+table.season-totals th{font-family:'IBM Plex Mono',monospace;font-size:10.5px;text-transform:uppercase;color:var(--slate);background:var(--pitch-soft);border-bottom:2px solid var(--ink)}
+table.season-totals td:first-child,table.season-totals th:first-child{text-align:left;font-weight:600}
+table.season-totals tr.total td{font-weight:700;background:var(--pitch-soft);border-top:2px solid var(--ink)}
+.totals-wrap{overflow-x:auto}
+
+@media (max-width:640px){.bio{grid-template-columns:1fr}.bio-photo{width:130px}}
+
+table.season-totals tr.start td{border-top:2px solid var(--hairline-dark)}
+table.season-totals tbody tr:first-child td{border-top:0}
+.moves{list-style:none;margin:12px 0 0;padding:0;border:1px solid var(--hairline);background:var(--paper-raised)}
+.moves li{display:grid;grid-template-columns:190px 84px 1fr;gap:10px;align-items:center;padding:8px 12px;border-bottom:1px solid var(--hairline);font-size:13.5px}
+.moves li:last-child{border-bottom:0}
+.moves .guest-tag{margin-left:0;justify-self:start}
+.moves .mv-date{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--slate)}
+.moves em{color:var(--slate);font-size:12.5px}
+@media (max-width:640px){.moves li{grid-template-columns:1fr;gap:4px}}
+
+.loan-band{background:var(--amber-bg);border-left:3px solid var(--amber-line);color:#8A6414;font-size:12.5px;padding:6px 12px;margin:0 0 12px}
