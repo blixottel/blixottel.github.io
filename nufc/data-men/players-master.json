@@ -381,8 +381,9 @@
         "nationality": "England",
         "dob": "2007-03-18",
         "position": "DEF",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2023-09-01", "club": "Wolverhampton Wanderers" },
 			{ "type": "loan_out", "date": "2026-09-04", "enddate": "2027-06-30", "club": "FC Arouca" }
         ],
         "photos": {
@@ -519,8 +520,9 @@
         "nationality": "England",
         "dob": "2008-09-29",
         "position": "MID",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-08-17", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -564,8 +566,9 @@
         "nationality": "England",
         "dob": "2009-02-18",
         "position": "FWD",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2023-07-01", "club": "Port Vale" }
         ],
         "photos": {
             "official": "",
@@ -586,7 +589,7 @@
         "nationality": "Serbia",
         "dob": "2005-05-17",
         "position": "DEF",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
 			{ "type": "joined", "date": "2024-07-20", "club": "FK Jedinstvo Ub" },
 			{ "type": "loan_out", "date": "2024-09-02", "enddate": "2025-06-30", "club": "Willem II Tilburg" }
@@ -728,8 +731,9 @@
         "nationality": "England",
         "dob": "2009-07-09",
         "position": "MID",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2023-07-01", "club": "Oldham Athletic" }
         ],
         "photos": {
             "official": "",
@@ -842,8 +846,9 @@
         "nationality": "England",
         "dob": "2007-04-25",
         "position": "FWD",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2023-09-01", "club": "Birmingham City" },
 			{ "type": "loan_out", "date": "2025-09-01", "enddate": "2026-06-30", "club": "FC Lorient" }
         ],
         "photos": {
@@ -1002,8 +1007,9 @@
         "nationality": "England",
         "dob": "2009-10-20",
         "position": "FWD",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2025-08-23", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1073,8 +1079,9 @@
         "nationality": "Turkey",
         "dob": "2007-01-02",
         "position": "MID",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2025-02-04", "club": "Gençlerbirliği SK" }
         ],
         "photos": {
             "official": "",
@@ -1117,8 +1124,9 @@
         "nationality": "England",
         "dob": "2006-10-02",
         "position": "MID",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-10-16", "club": "Wolverhampton Wanderers" }
         ],
         "photos": {
             "official": "",
@@ -1139,8 +1147,9 @@
         "nationality": "England",
         "dob": "2009-09-28",
         "position": "GK",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2025-04-30", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1183,8 +1192,9 @@
         "nationality": "England",
         "dob": "2008-01-01",
         "position": "DEF",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2023-08-12", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1228,8 +1238,9 @@
         "nationality": "England",
         "dob": "2008-02-04",
         "position": "DEF",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2023-08-12", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1250,8 +1261,9 @@
         "nationality": "England",
         "dob": "2010-04-28",
         "position": "MID",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-07-01", "club": "West Bromwich Albion" }
         ],
         "photos": {
             "official": "",
@@ -1294,8 +1306,9 @@
         "nationality": "England",
         "dob": "2008-04-04",
         "position": "FWD",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2023-07-01", "club": "Southend United" }
         ],
         "photos": {
             "official": "",
@@ -1383,8 +1396,9 @@
         "nationality": "England",
         "dob": "2008-08-02",
         "position": "FWD",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2023-08-12", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1405,8 +1419,9 @@
         "nationality": "England",
         "dob": "2007-11-28",
         "position": "MID",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-08-17", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1427,8 +1442,9 @@
         "nationality": "England",
         "dob": "2009-01-03",
         "position": "GK",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-02-22", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1473,8 +1489,9 @@
         "nationality": "England",
         "dob": "2009-12-03",
         "position": "GK",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-10-05", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1495,8 +1512,9 @@
         "nationality": "Ireland",
         "dob": "2008-02-29",
         "position": "MID",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-07-01", "club": "Blackburn Rovers" },
 			{ "type": "loan_out", "date": "2026-08-29", "enddate": "2027-06-30", "club": "Notts County" }
         ],
         "photos": {
@@ -1540,9 +1558,11 @@
         "nationality": "England",
         "dob": "2008-04-18",
         "position": "GK",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
-			{ "type": "loan_out", "date": "2025-08-22", "enddate": "2025-11-15", "club": "Ashington" }
+			{ "type": "joined", "date": "2023-10-10", "club": "Newcastle United Under-16" },
+			{ "type": "loan_out", "date": "2025-08-22", "enddate": "2025-11-15", "club": "Ashington" },
+			{ "type": "loan_out_dual", "date": "2026-01-22", "enddate": "2026-06-30", "club": "Dunston UTS" }
         ],
         "photos": {
             "official": "",
@@ -1563,8 +1583,10 @@
         "nationality": "Poland",
         "dob": "2008-04-07",
         "position": "DEF",
-        "careerComplete": false,
+		"careerComplete": true,
         "movements": [
+ 			{ "type": "trial_in", "date": "2024-04-20", "enddate": "2024-05-04", "club": "Everton" },
+			{ "type": "joined", "date": "2024-07-01", "club": "Everton" }
         ],
         "photos": {
             "official": "",
@@ -1585,8 +1607,9 @@
         "nationality": "England",
         "dob": "2011-03-16",
         "position": "FWD",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2026-03-21", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1630,8 +1653,9 @@
         "nationality": "Nigeria",
         "dob": "2009-10-21",
         "position": "MID",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-07-01", "club": "Portsmouth" }
         ],
         "photos": {
             "official": "",
@@ -1652,8 +1676,9 @@
         "nationality": "England",
         "dob": "2008-09-17",
         "position": "FWD",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-09-21", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1676,7 +1701,7 @@
         "position": "MID",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2026-09-19", "club": "Newcastle United U-16" }
+			{ "type": "joined", "date": "2026-09-19", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1697,8 +1722,9 @@
         "nationality": "England",
         "dob": "2008-12-06",
         "position": "MID",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2025-07-01", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1719,8 +1745,9 @@
         "nationality": "England",
         "dob": "2008-09-19",
         "position": "MID",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-09-14", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1743,7 +1770,7 @@
         "position": "FWD",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2026-08-15", "club": "Newcastle United U-16" }
+			{ "type": "joined", "date": "2026-08-15", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1766,7 +1793,7 @@
         "position": "DEF",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2026-09-19", "club": "Newcastle United U-16" }
+			{ "type": "joined", "date": "2026-09-19", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1834,7 +1861,7 @@
         "position": "MID",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2026-09-19", "club": "Newcastle United U-16" }
+			{ "type": "joined", "date": "2026-09-19", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1857,7 +1884,7 @@
         "position": "GK",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2026-08-22", "club": "Newcastle United U-16" }
+			{ "type": "joined", "date": "2026-08-22", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1878,8 +1905,9 @@
         "nationality": "England",
         "dob": "2009-12-07",
         "position": "FWD",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-07-01", "club": "Peterborough United" }
         ],
         "photos": {
             "official": "",
@@ -1900,8 +1928,9 @@
         "nationality": "England",
         "dob": "2010-01-01",
         "position": "DEF",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-07-01", "club": "Charlton Athletic" }
         ],
         "photos": {
             "official": "",
@@ -1922,8 +1951,9 @@
         "nationality": "England",
         "dob": "2011-07-02",
         "position": "GK",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2025-02-01", "club": "Leyton Orient" }
         ],
         "photos": {
             "official": "",
@@ -1944,8 +1974,9 @@
         "nationality": "England",
         "dob": "2008-12-14",
         "position": "MID",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-09-14", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -1966,8 +1997,9 @@
         "nationality": "England",
         "dob": "2010-12-23",
         "position": "MID",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2025-07-01", "club": "West Bromwich Albion" }
         ],
         "photos": {
             "official": "",
@@ -1988,8 +2020,9 @@
         "nationality": "England",
         "dob": "2008-10-06",
         "position": "DEF",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-08-31", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -2033,8 +2066,9 @@
         "nationality": "England",
         "dob": "2008-11-17",
         "position": "FWD",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2023-07-01", "club": "Luton Town" }
         ],
         "photos": {
             "official": "",
@@ -2055,8 +2089,9 @@
         "nationality": "England",
         "dob": "2010-08-01",
         "position": "FWD",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2026-04-18", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -2079,7 +2114,7 @@
         "position": "FWD",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2026-09-12", "club": "Newcastle United U-16" }
+			{ "type": "joined", "date": "2026-09-12", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -2100,8 +2135,9 @@
         "nationality": "England",
         "dob": "2008-09-19",
         "position": "DEF",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2024-04-16", "club": "Newcastle United Under-16" }
         ],
         "photos": {
             "official": "",
@@ -2904,53 +2940,6 @@
         }
     },
     {
-        "id": "u21-alex-odonovan",
-        "name": "Alex O'Donovan",
-        "nationality": "England",
-        "dob": "2007-10-03",
-        "position": "MF",
-        "careerComplete": false,
-        "movements": [
-			{ "type": "left", "date": "2026-06-30", "club": "" }
-        ],
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
-        "id": "u21-alfie-harrison",
-        "name": "Alfie Harrison",
-        "nationality": "England",
-        "dob": "2005-11-28",
-        "position": "MID",
-        "careerComplete": false,
-        "movements": [
-			{ "type": "joined", "date": "2024-02-01", "club": "Manchester City" },
-			{ "type": "left", "date": "2026-06-30", "club": "" }
-        ],
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/00/1007900_20240201161538_alfie_harrison_1706804138.jpg",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1402916/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1418100.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3306041.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/A7Wk6QXg-GWg3CyOQ.png",
-            "statshub": "https://images.statshub.com/player/1402916.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000189438.png"
-        }
-    },
-    {
         "id": "u21-cameron-ferguson",
         "name": "Cameron Ferguson",
         "nationality": "Scotland",
@@ -2996,30 +2985,6 @@
             "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
-        }
-    },
-    {
-        "id": "u21-cathal-heffernan",
-        "name": "Cathal Heffernan",
-        "nationality": "Ireland",
-        "dob": "2005-04-27",
-        "position": "DEF",
-        "careerComplete": false,
-        "movements": [
-			{ "type": "joined", "date": "2023-08-24", "club": "AC Milan" },
-			{ "type": "left", "date": "2026-01-15", "club": "Harrogate Town" }
-        ],
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/741268-1699385751.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/44/32/914432_cathal_heffernan_20241005135626.jpg",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1134333/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1578910.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3201733.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/YqtmNNxS-j1QJXyEt.png",
-            "statshub": "https://images.statshub.com/player/1134333.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000109016.png"
         }
     },
     {
@@ -3212,29 +3177,6 @@
             "flashscore": "https://static.flashscore.com/res/image/data/OjEZ4iFa-rHbVFlXn.png",
             "statshub": "https://images.statshub.com/player/1610748.png",
             "fminside": "https://img.fminside.net/facesfm26/2000189869.png"
-        }
-    },
-    {
-        "id": "u21-james-taylor",
-        "name": "James Taylor",
-        "nationality": "England",
-        "dob": "2006-07-11",
-        "position": "GK",
-        "careerComplete": false,
-        "movements": [
-			{ "type": "left", "date": "2026-06-30", "club": "Hemel Hempstead Town" }
-        ],
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1683913.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3455354.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/Iq47SDil-2ajjJkMu.png",
-            "statshub": "",
-            "fminside": ""
         }
     },
     {
@@ -3454,28 +3396,6 @@
         }
     },
     {
-        "id": "u21-mo-sedibeh",
-        "name": "Mo Sedibeh",
-        "nationality": "Spain",
-        "dob": "2005-11-26",
-        "position": "MID",
-        "careerComplete": false,
-        "movements": [
-        ],
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3588333.jpg",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": "https://img.fminside.net/facesfm26/2000201577.png"
-        }
-    },
-    {
         "id": "u21-nathan-carlyon",
         "name": "Nathan Carlyon",
         "nationality": "England",
@@ -3495,28 +3415,6 @@
             "flashscore": "https://static.flashscore.com/res/image/data/IXDMl7Cr-YaCfI3fK.png",
             "statshub": "https://images.statshub.com/player/1067953.png",
             "fminside": "https://img.fminside.net/facesfm26/28128052.png"
-        }
-    },
-    {
-        "id": "u21-reece-byrne",
-        "name": "Reece Byrne",
-        "nationality": "Ireland",
-        "dob": "2004-11-20",
-        "position": "MID",
-        "careerComplete": false,
-        "movements": [
-        ],
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/08/67/990867_reece_byrne_20260129133254.jpg",
-            "sofascore": "",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1375410.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/917907.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/6yBuIMEG-dILmE4Bl.png",
-            "statshub": "",
-            "fminside": "https://img.fminside.net/facesfm26/2000216337.png"
         }
     },
     {
@@ -3639,29 +3537,6 @@
         }
     },
     {
-        "id": "u21-will-anderson",
-        "name": "Will Anderson",
-        "nationality": "England",
-        "dob": "2008-07-15",
-        "position": "GK",
-        "careerComplete": false,
-        "movements": [
-			{ "type": "left", "date": "2026-06-30", "club": "South Shields" }
-        ],
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1899507/image",
-            "fotmob": "",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3604013.jpg",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
         "id": "u21-will-brown",
         "name": "Will Brown",
         "nationality": "England",
@@ -3682,51 +3557,6 @@
             "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
-        }
-    },
-    {
-        "id": "u18-eden-page",
-        "name": "Eden Page",
-        "nationality": "England",
-        "dob": "2004-09-19",
-        "position": "FWD",
-        "careerComplete": false,
-        "movements": [
-        ],
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "",
-            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
-            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
-        }
-    },
-    {
-        "id": "u18-ezra-tika-lemba",
-        "name": "Ezra Tika-Lemba",
-        "nationality": "England",
-        "dob": "2007-11-07",
-        "position": "DEF",
-        "careerComplete": false,
-        "movements": [
-			{ "type": "left", "date": "2026-06-30", "club": "Middlesbrough" }
-        ],
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1975731.png",
-            "besoccer": "",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
         }
     },
     {
@@ -3753,79 +3583,34 @@
         }
     },
     {
-        "id": "u18-kayden-lucas",
-        "name": "Kayden Lucas",
-        "nationality": "England",
-        "dob": "2007-10-30",
-        "position": "MID",
-        "careerComplete": false,
-        "movements": [
-			{ "type": "left", "date": "2026-06-30", "club": "West Bromwich Albion" }
-        ],
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/2146872.png",
-            "besoccer": "",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
-        "id": "u18-matty-taylor",
-        "name": "Matty Taylor",
-        "nationality": "England",
-        "dob": "2008-03-31",
-        "position": "MID",
-        "careerComplete": false,
-        "movements": [
-			{ "type": "left", "date": "2026-06-30", "club": "" }
-        ],
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "https://static.flashscore.com/res/image/data/tlQ4KrGG-67PmSEAe.png",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
-        "id": "u18-oliver-best",
-        "name": "Oliver Best",
-        "nationality": "England",
-        "dob": "2009-02-08",
-        "position": "MID",
-        "careerComplete": false,
-        "movements": [
-        ],
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
-        }
-    },
-    {
         "id": "u18-taylor-ross",
         "name": "Taylor Ross",
         "nationality": "England",
         "dob": "2006-03-10",
         "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2024-06-30", "club": "" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "",
+            "fotmob": "",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "u-eden-page",
+        "name": "Eden Page",
+        "nationality": "England",
+        "dob": "2004-09-19",
+        "position": "FWD",
         "careerComplete": false,
         "movements": [
 			{ "type": "left", "date": "2024-06-30", "club": "" }

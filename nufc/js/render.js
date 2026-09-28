@@ -4,6 +4,34 @@
  * validation panel.
  */
 
+/** Team dropdown (Men's / Women's). Switching reloads with ?team=..., dropping ?season= (each team has its own seasons). */
+function buildTeamSwitcher() {
+  const wrap = document.createElement('div');
+  wrap.className = 'season-switcher team-switcher';
+  const label = document.createElement('label');
+  label.setAttribute('for', 'team-select');
+  label.className = 'season-switcher-label';
+  label.textContent = 'Team';
+  wrap.appendChild(label);
+  const select = document.createElement('select');
+  select.id = 'team-select';
+  TEAMS.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t.id;
+    opt.textContent = t.label;
+    if (t === TEAM) opt.selected = true;
+    select.appendChild(opt);
+  });
+  select.addEventListener('change', () => {
+    const params = new URLSearchParams(location.search);
+    params.delete('season');
+    if (select.value === DEFAULT_TEAM.id) params.delete('team'); else params.set('team', select.value);
+    location.search = params.toString();
+  });
+  wrap.appendChild(select);
+  return wrap;
+}
+
 function buildSeasonSwitcher(seasons, activeId) {
   const wrap = document.createElement('div');
   wrap.className = 'season-switcher';
@@ -890,7 +918,7 @@ function buildSquadSection(squadKey, allSquadPlayers, fixtureData, playersById, 
 }
 
 /** Link helpers — every player name/card on the squad page points at their profile. */
-function playerHref(id) { return 'player.html?id=' + encodeURIComponent(id); }
+function playerHref(id) { return withTeam('player.html?id=' + encodeURIComponent(id)); }
 function playerLinkHtml(p) { return `<a class="player-link" href="${playerHref(p.id)}">${p.name}</a>`; }
 
 /** The fixture-matrix legend, collapsed by default behind a "Legend" toggle. */

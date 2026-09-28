@@ -92,22 +92,31 @@ function fmtDMY(iso) { return iso ? iso.split('-').reverse().join('/') : ''; }
 
 // Loan spells (loan_out movements) — used to mark the fixture strip and season header.
 let LOANS = [];
+let DUALS = []; // dual-registration spells: shown, but don't mark fixtures as "on loan"
 const endKey = d => (d && d.length < 10 ? d + '-99' : d);
+// Only used as a fallback when there's no appearance record for the fixture, so a
+// dual-registration spell shows the loan marker on matches he wasn't named for,
+// while any match he was named for still shows his real record.
 function loanAt(date) {
-  const m = LOANS.find(l => date && date >= l.date && (!l.endDate || date <= endKey(l.endDate)));
-  return m ? { status: 'loan', reasonNote: `On loan · ${m.club}` } : null;
+  const within = l => date && date >= l.date && (!l.endDate || date <= endKey(l.endDate));
+  const m = LOANS.find(within);
+  if (m) return { status: 'loan', reasonNote: `On loan · ${m.club}` };
+  const d = DUALS.find(within);
+  return d ? { status: 'loan', reasonNote: `Dual registration · ${d.club}` } : null;
 }
-function loansIn(range) {
-  return range ? LOANS.filter(l => l.date <= range[1] && (!l.endDate || endKey(l.endDate) >= range[0])) : [];
+function loansIn(range, list = LOANS) {
+  return range ? list.filter(l => l.date <= range[1] && (!l.endDate || endKey(l.endDate) >= range[0])) : [];
 }
 function loanBand(m) {
-  return `<div class="loan-band">On loan · <b>${m.club}</b> · ${fmtDMY(m.date)} – ${m.endDate ? fmtDMY(m.endDate) : 'ongoing'}${m.note ? ' · ' + m.note : ''}</div>`;
+  const label = m.type === 'loan_out_dual' ? 'Dual registration' : 'On loan';
+  return `<div class="loan-band">${label} · <b>${m.club}</b> · ${fmtDMY(m.date)} – ${m.endDate ? fmtDMY(m.endDate) : 'ongoing'}${m.note ? ' · ' + m.note : ''}</div>`;
 }
 
 const MOVE_TYPES = {
   joined:   { label: 'Joined',  cls: 'guest-tag', prep: 'from' },
   left:     { label: 'Left',    cls: 'guest-tag left-tag', prep: 'to' },
   loan_out: { label: 'Loan',    cls: 'guest-tag loan-tag', prep: 'to' },
+  loan_out_dual: { label: 'Dual reg.', cls: 'guest-tag loan-tag', prep: 'to' },
   loan_in:  { label: 'Loan in', cls: 'guest-tag incoming-tag', prep: 'from' },
   trial_in: { label: 'Trial',   cls: 'guest-tag trialist-tag', prep: 'from' },
 };
@@ -116,7 +125,7 @@ function movementsBlock(list) {
   if (!list || !list.length) return '';
   const rows = [...list].sort((a, b) => (a.date || '').localeCompare(b.date || '')).map(m => {
     const t = MOVE_TYPES[m.type] || { label: m.type, cls: 'guest-tag', prep: '' };
-    const loan = m.type === 'loan_out' || m.type === 'loan_in' || m.type === 'trial_in';
+    const loan = m.type === 'loan_out' || m.type === 'loan_out_dual' || m.type === 'loan_in' || m.type === 'trial_in';
     const dates = loan && m.endDate !== m.date ? `${fmtDMY(m.date)} – ${m.endDate ? fmtDMY(m.endDate) : 'ongoing'}` : fmtDMY(m.date);
     return `<li><span class="mv-date">${dates || 'Date unknown'}</span><span class="${t.cls}">${t.label}</span><span>${t.prep} <b>${m.club || '—'}</b>${m.note ? ` <em>${m.note}</em>` : ''}</span></li>`;
   }).join('');
@@ -132,7 +141,7 @@ function seasonBlock(entry, id) {
   const loans = loansIn(entry.range);
   if (merged) playerBadges(merged, home).filter(b => !(loans.length && b.kind === 'loan')).forEach(b => pills.push(`<span class="${b.cls}">${b.text}${b.kind === 'loan' && merged.loanClub ? ' · ' + merged.loanClub : ''}</span>`));
 
-  let html = `<div class="tl-season"><div class="tl-head"><h3>${season.label || season.id}</h3>${pills.join('')}</div>${loans.map(loanBand).join('')}`;
+  let html = `<div class="tl-season"><div class="tl-head"><h3>${season.label || season.id}</h3>${pills.join('')}</div>${[...loans, ...loansIn(entry.range, DUALS)].sort((a, b) => a.date.localeCompare(b.date)).map(loanBand).join('')}`;
   if (!squads.length) {
     html += '<p class="tl-empty">No matchday-squad appearances logged this season.</p>';
   } else {
@@ -160,6 +169,8 @@ function statusPills(p, hasRoster) {
   const pill = (cls, text) => `<span class="guest-tag ${cls}" style="margin-left:0">${text}</span>`;
   const loanOut = mv.find(m => m.type === 'loan_out' && live(m));
   if (loanOut) return pill('loan-tag', `On loan · ${loanOut.club}`);
+  const dual = mv.find(m => m.type === 'loan_out_dual' && live(m));
+  if (dual) return pill('loan-tag', `Dual registration · ${dual.club}`);
   const trial = mv.find(m => m.type === 'trial_in' && live(m));
   if (trial) return pill('trialist-tag', `Trialist${trial.club ? ' · ' + trial.club : ''}`);
   const loanIn = mv.find(m => m.type === 'loan_in' && live(m));
@@ -175,11 +186,13 @@ function statusPills(p, hasRoster) {
 
 async function initPlayer() {
   const root = document.getElementById('player-root');
+  const back = document.querySelector('.back-link');
+  if (back) back.href = withTeam('index.html');
   try {
     const id = new URLSearchParams(location.search).get('id');
     if (!id) throw new Error('no id');
     const seasons = (await loadSeasons()) || [];
-    const masterPath = (seasons[0] && seasons[0].playersMasterFile) || 'data/players-master.json';
+    const masterPath = (seasons[0] && seasons[0].playersMasterFile) || TEAM.dataDir + 'players-master.json';
     const master = await withArchive(await (await fetch(masterPath)).json(), masterPath);
     if (!master.some(p => p.id === id)) throw new Error('unknown id');
 
@@ -205,11 +218,12 @@ async function initPlayer() {
     // Be forgiving about key casing (e.g. "enddate" vs "endDate").
     p.movements = (p.movements || []).map(m => ({ ...m, endDate: m.endDate || m.enddate || m.end_date || '' }));
     LOANS = (p.movements || []).filter(m => m.type === 'loan_out');
+    DUALS = (p.movements || []).filter(m => m.type === 'loan_out_dual');
     document.title = `${p.name} — The Teamsheet`;
     document.getElementById('player-title').textContent = p.name;
     const firstL = entries.length ? entries[0].season.label : '', lastL = entries.length ? entries[entries.length - 1].season.label : '';
     const span = firstL === lastL ? firstL : `${firstL} – ${lastL}`;
-    document.getElementById('player-subtitle').textContent = `Newcastle United${span ? ' · ' + span : ''}`;
+    document.getElementById('player-subtitle').textContent = `${TEAM.clubName}${span ? ' · ' + span : ''}`;
 
     const bornLong = p.dob ? new Date(p.dob + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : '—';
     const status = statusPills(p, !!latest);

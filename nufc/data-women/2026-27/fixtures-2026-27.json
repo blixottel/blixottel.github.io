@@ -1,0 +1,170 @@
+{
+    "senior": {
+        "fixtures": [
+            { "id": "s-f1", "date": "2026-09-06", "opponent": "Wolverhampton Wanderers", "venue": "H", "competition": "WSL2", "result": "W 2-0", "subsUsed": 4, "subsUnused": 5, "xg": 1.49, "assistsTotal": 1, "yellowCardsTotal": 1, "redCardsTotal": 0, "ownGoalsFor": 1 },
+            { "id": "s-f2", "date": "2026-09-13", "opponent": "Bristol City", "venue": "A", "competition": "WSL2", "result": "W 1-0", "subsUsed": 4, "subsUnused": 5, "xg": 1.30, "assistsTotal": 0, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "s-f3", "date": "2026-09-20", "opponent": "Sheffield United", "venue": "H", "competition": "WSL2", "result": "W 4-1", "subsUsed": 5, "subsUnused": 4, "xg": 1.86, "assistsTotal": 4, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "s-f4", "date": "2026-09-27", "opponent": "Leicester City", "venue": "H", "competition": "WSL2", "result": "W 4-0", "subsUsed": 5, "subsUnused": 4, "xg": 2.41, "assistsTotal": 3, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "s-f5", "date": "2026-10-01", "opponent": "Aston Villa", "venue": "A", "competition": "WSL Players Cup", "result": "" },
+            { "id": "s-f6", "date": "2026-10-04", "opponent": "Durham", "venue": "A", "competition": "WSL2", "result": "" },
+            { "id": "s-f7", "date": "2026-10-19", "opponent": "mackems", "venue": "H", "competition": "WSL Players Cup", "result": "" },
+            { "id": "s-f8", "date": "2026-10-22", "opponent": "Everton", "venue": "A", "competition": "WSL Players Cup", "result": "" },
+            { "id": "s-f9", "date": "2026-10-26", "opponent": "Nottingham Forest", "venue": "A", "competition": "WSL2", "result": "" },
+            { "id": "s-f10", "date": "2026-11-01", "opponent": "Durham", "venue": "A", "competition": "WSL Players Cup", "result": "" },
+            { "id": "s-f11", "date": "2026-11-09", "opponent": "Burnley", "venue": "H", "competition": "WSL2", "result": "" },
+            { "id": "s-f12", "date": "2026-11-16", "opponent": "mackems", "venue": "A", "competition": "WSL2", "result": "" },
+            { "id": "s-f13", "date": "2026-11-23", "opponent": "Nottingham Forest", "venue": "H", "competition": "WSL Players Cup", "result": "" },
+            { "id": "s-f14", "date": "2026-12-13", "opponent": "", "venue": "", "competition": "FA Cup", "result": "" },
+            { "id": "s-f15", "date": "2026-12-17", "opponent": "Manchester United", "venue": "H", "competition": "WSL Players Cup", "result": "" },
+            { "id": "s-f16", "date": "2026-12-21", "opponent": "Watford", "venue": "H", "competition": "WSL2", "result": "" },
+            { "id": "s-f17", "date": "2027-01-11", "opponent": "Ipswich Town", "venue": "A", "competition": "WSL2", "result": "" },
+            { "id": "s-f18", "date": "2027-01-25", "opponent": "Southampton", "venue": "H", "competition": "WSL2", "result": "" },
+            { "id": "s-f19", "date": "2027-01-28", "opponent": "Wolverhampton Wanderers", "venue": "A", "competition": "WSL2", "result": "" },
+            { "id": "s-f20", "date": "2027-02-01", "opponent": "Leicester City", "venue": "A", "competition": "WSL2", "result": "" },
+            { "id": "s-f21", "date": "2027-02-08", "opponent": "Nottingham Forest", "venue": "H", "competition": "WSL2", "result": "" },
+            { "id": "s-f22", "date": "2027-02-15", "opponent": "Southampton", "venue": "A", "competition": "WSL2", "result": "" },
+            { "id": "s-f23", "date": "2027-03-15", "opponent": "Durham", "venue": "H", "competition": "WSL2", "result": "" },
+            { "id": "s-f24", "date": "2027-03-21", "opponent": "Sheffield United", "venue": "A", "competition": "WSL2", "result": "" },
+            { "id": "s-f25", "date": "2027-03-29", "opponent": "mackems", "venue": "H", "competition": "WSL2", "result": "" },
+            { "id": "s-f26", "date": "2027-04-04", "opponent": "Watford", "venue": "A", "competition": "WSL2", "result": "" },
+            { "id": "s-f27", "date": "2027-04-11", "opponent": "Ipswich Town", "venue": "H", "competition": "WSL2", "result": "" },
+            { "id": "s-f28", "date": "2027-05-02", "opponent": "Burnley", "venue": "A", "competition": "WSL2", "result": "" },
+            { "id": "s-f29", "date": "2027-05-08", "opponent": "Bristol City", "venue": "H", "competition": "WSL2", "result": "" }
+        ],
+        "appearances": {
+            "s-anna-tamminen": {
+                "s-f1": { "status": "start", "minutes": 90 },
+                "s-f2": { "status": "start", "minutes": 90 },
+                "s-f3": { "status": "start", "minutes": 90 },
+                "s-f4": { "status": "start", "minutes": 90 }
+            },
+            "s-aoife-mannion": {
+                "s-f1": { "status": "start", "minutes": 90 },
+                "s-f2": { "status": "start", "minutes": 90, "xg": 0.04 },
+                "s-f3": { "status": "start", "minutes": 90 },
+                "s-f4": { "status": "start", "minutes": 90, "goals": 1, "xg": 0.40 }
+            },
+            "s-beth-lumsden": {
+                "s-f1": { "status": "start", "minutes": 58, "goals": 1, "yellowCard": true, "xg": 0.38 },
+                "s-f2": { "status": "start", "minutes": 90, "xg": 0.26 },
+                "s-f3": { "status": "start", "minutes": 83, "goals": 1, "assists": 1, "xg": 0.05 },
+                "s-f4": { "status": "start", "minutes": 82, "assists": 1, "xg": 0.04 }
+            },
+            "s-charlotte-wardlaw": {
+                "s-f1": { "status": "unused_sub" },
+                "s-f2": { "status": "unused_sub" },
+                "s-f3": { "status": "unused_sub" },
+                "s-f4": { "status": "start", "minutes": 82, "goals": 1, "yellowCard": true, "xg": 0.16 }
+            },
+            "s-demi-stokes": {
+                "s-f1": { "status": "unused_sub" },
+                "s-f2": { "status": "unused_sub" }
+            },
+            "s-emilia-larsson": {
+                "s-f1": { "status": "sub_on", "minutes": 13, "xg": 0.04 },
+                "s-f2": { "status": "unused_sub" }
+            },
+            "s-freya-gregory": {
+                "s-f3": { "status": "sub_on", "minutes": 6, "xg": 0.03 },
+                "s-f4": { "status": "unused_sub" }
+            },
+            "s-gemma-evans": {
+                "s-f1": { "status": "unused_sub" },
+                "s-f2": { "status": "sub_on", "minutes": 1 },
+                "s-f3": { "status": "unused_sub" },
+                "s-f4": { "status": "unused_sub" }
+            },
+            "s-hanna-nemeth": {
+                "s-f1": { "status": "unused_sub" },
+                "s-f2": { "status": "unused_sub" },
+                "s-f3": { "status": "unused_sub" },
+                "s-f4": { "status": "sub_on", "minutes": 8, "xg": 0.16 }
+            },
+            "s-hildur-antonsdottir": {
+                "s-f1": { "status": "start", "minutes": 77, "xg": 0.03 },
+                "s-f2": { "status": "start", "minutes": 64 },
+                "s-f3": { "status": "sub_on", "minutes": 22, "xg": 0.27 },
+                "s-f4": { "status": "start", "minutes": 75, "yellowCard": true, "xg": 0.03 }
+            },
+            "s-jemma-purfield": {
+                "s-f1": { "status": "start", "minutes": 90 },
+                "s-f2": { "status": "start", "minutes": 90 },
+                "s-f3": { "status": "start", "minutes": 90, "xg": 0.03 },
+                "s-f4": { "status": "start", "minutes": 90, "xg": 0.18 }
+            },
+            "s-jessie-gale": {
+                "s-f4": { "status": "sub_on", "minutes": 8 }
+            },
+            "s-jordan-nobbs": {
+                "s-f3": { "status": "sub_on", "minutes": 28, "xg": 0.02 },
+                "s-f4": { "status": "sub_on", "minutes": 35, "assists": 1, "xg": 0.11 }
+            },
+            "s-kaitlyn-torpey": {
+                "s-f1": { "status": "start", "minutes": 90, "xg": 0.04 },
+                "s-f2": { "status": "start", "minutes": 90 },
+                "s-f3": { "status": "start", "minutes": 90, "goals": 1, "assists": 1, "xg": 0.13 },
+                "s-f4": { "status": "start", "minutes": 90, "xg": 0.13 }
+            },
+            "s-kathleen-mcgovern": {
+                "s-f1": { "status": "start", "minutes": 77, "assists": 1, "xg": 0.49 },
+                "s-f2": { "status": "start", "minutes": 80, "goals": 1, "xg": 0.72 },
+                "s-f3": { "status": "start", "minutes": 62 },
+                "s-f4": { "status": "start", "minutes": 55, "assists": 1, "xg": 0.48 }
+            },
+            "s-katie-bradley": {
+                "s-f1": { "status": "sub_on", "minutes": 13 },
+                "s-f2": { "status": "start", "minutes": 89 },
+                "s-f3": { "status": "start", "minutes": 90 },
+                "s-f4": { "status": "start", "minutes": 90, "xg": 0.03 }
+            },
+            "s-kayla-rendell": {
+                "s-f1": { "status": "unused_sub" },
+                "s-f2": { "status": "unused_sub" },
+                "s-f3": { "status": "unused_sub" },
+                "s-f4": { "status": "unused_sub" }
+            },
+            "s-leanne-kiernan": {
+                "s-f1": { "status": "sub_on", "minutes": 32, "xg": 0.02 },
+                "s-f2": { "status": "sub_on", "minutes": 1, "xg": 0.06 },
+                "s-f3": { "status": "sub_on", "minutes": 23 },
+                "s-f4": { "status": "sub_on", "minutes": 8 }
+            },
+            "s-lois-joel": {
+                "s-f1": { "status": "start", "minutes": 90 },
+                "s-f2": { "status": "sub_on", "minutes": 26, "xg": 0.02 },
+                "s-f3": { "status": "start", "minutes": 68, "xg": 0.04 },
+                "s-f4": { "status": "sub_on", "minutes": 15, "xg": 0.05 }
+            },
+            "s-martha-thomas": {
+                "s-f1": { "status": "start", "minutes": 90, "xg": 0.04 },
+                "s-f2": { "status": "start", "minutes": 90, "xg": 0.20 },
+                "s-f3": { "status": "start", "minutes": 84, "goals": 2, "assists": 1, "xg": 1.29 },
+                "s-f4": { "status": "start", "minutes": 90, "goals": 2, "xg": 0.64 }
+            },
+            "s-mollie-lambert": {
+                "s-f1": { "status": "start", "minutes": 89, "xg": 0.46 },
+                "s-f2": { "status": "start", "minutes": 89, "yellowCard": true },
+                "s-f3": { "status": "start", "minutes": 67, "assists": 1 },
+                "s-f4": { "status": "start", "minutes": 82 }
+            },
+            "s-oona-sevenius": {
+                "s-f1": { "status": "sub_on", "minutes": 1 },
+                "s-f2": { "status": "sub_on", "minutes": 10 },
+                "s-f3": { "status": "sub_on", "minutes": 7 },
+                "s-f4": { "status": "unused_sub" }
+            },
+            "s-rachel-mclauchlan": {
+                "s-f1": { "status": "start", "minutes": 90 },
+                "s-f2": { "status": "start", "minutes": 90 },
+                "s-f3": { "status": "start", "minutes": 90 }
+            },
+            "s-jasmine-mcquade": {
+                "s-f1": { "status": "loan" }, "s-f2": { "status": "loan" }, "s-f3": { "status": "loan" }, "s-f4": { "status": "loan" }, "s-f5": { "status": "loan" }, "s-f6": { "status": "loan" },
+                "s-f7": { "status": "loan" }, "s-f8": { "status": "loan" }, "s-f9": { "status": "loan" }, "s-f10": { "status": "loan" }, "s-f11": { "status": "loan" }, "s-f12": { "status": "loan" },
+                "s-f13": { "status": "loan" }, "s-f14": { "status": "loan" }, "s-f15": { "status": "loan" }, "s-f16": { "status": "loan" }, "s-f17": { "status": "loan" }, "s-f18": { "status": "loan" },
+                "s-f19": { "status": "loan" }, "s-f20": { "status": "loan" }, "s-f21": { "status": "loan" }, "s-f22": { "status": "loan" }, "s-f23": { "status": "loan" }, "s-f24": { "status": "loan" },
+                "s-f25": { "status": "loan" }, "s-f26": { "status": "loan" }, "s-f27": { "status": "loan" }, "s-f28": { "status": "loan" }
+            }
+        }
+    }
+}

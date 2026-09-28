@@ -29,19 +29,14 @@
 <div class="masthead">
   <div class="masthead-inner">
     <a class="back-link" href="../">&larr; blixottel</a>
-    <div id="season-switcher-slot"></div>
+    <div id="season-switcher-slot" class="switchers"></div>
     <p class="eyebrow" id="eyebrow">Est. manually · Season 2026/27</p>
     <h1 class="title">The Teamsheet</h1>
     <p class="subtitle">Newcastle United — Seniors, U21s &amp; U18s, appearance by appearance</p>
   </div>
 </div>
 
-<nav class="tabs" id="tabs">
-  <a href="#senior">First Team <span class="count" id="count-senior"></span></a>
-  <a href="#u21">Under-21s <span class="count" id="count-u21"></span></a>
-  <a href="#u19">Under-19s <span class="count" id="count-u19"></span></a>
-  <a href="#u18">Under-18s <span class="count" id="count-u18"></span></a>
-</nav>
+<nav class="tabs" id="tabs"></nav>
 
 <div id="next-match-slot"></div>
 
@@ -63,6 +58,7 @@
   Data maintained by hand in <code>players-master.json</code>, <code>players-archive.json</code> (players who have left), a per-season roster file, and a per-season fixtures file. Appearance stats are calculated automatically from the fixture records. See <code>DATA-GUIDE.md</code> for field reference.
 </footer>
 
+<script src="js/teams.js"></script>
 <script src="js/data.js"></script>
 <script src="js/stats.js"></script>
 <script src="js/render.js"></script>

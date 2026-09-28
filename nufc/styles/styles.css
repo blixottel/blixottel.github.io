@@ -101,6 +101,13 @@
   @media (max-width: 640px) {
     .season-switcher { position: static; margin-top: 14px; }
   }
+  /* Team + season switchers share the slot, side by side. */
+  .switchers { position: absolute; top: 0; right: 0; display: flex; align-items: center; gap: 18px; }
+  .switchers .season-switcher { position: static; margin-top: 0; }
+  @media (max-width: 640px) {
+    .switchers { position: static; margin-top: 14px; flex-wrap: wrap; }
+  }
+  nav.tabs:empty { display: none; }
 
   nav.tabs {
     position: sticky;

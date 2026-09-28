@@ -108,7 +108,7 @@
     color: var(--slate);
   }
   .season-picker[hidden] { display: none; }
-  #season-select {
+  #season-select, #team-select {
     font-family: 'Oswald', sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -119,9 +119,10 @@
     color: var(--ink);
     cursor: pointer;
   }
-  #season-select:focus { outline: 2px solid var(--gold); outline-offset: -1px; }
+  #season-select:focus, #team-select:focus { outline: 2px solid var(--gold); outline-offset: -1px; }
 
   .squad-filter { display: flex; gap: 6px; }
+  .squad-filter[hidden] { display: none; }
   .squad-filter button {
     font-family: 'Oswald', sans-serif;
     font-size: 12.5px;
@@ -489,7 +490,7 @@
 
 <div class="masthead">
   <div class="masthead-inner">
-    <p class="eyebrow">The Teamsheet · Reference tool</p>
+    <p class="eyebrow" id="eyebrow">The Teamsheet · Reference tool</p>
     <h1 class="title">Photo Gallery</h1>
     <p class="subtitle">Every photo on record for every player, in fallback order. The green outline marks the photo this season's roster file actually specifies — click "Use this photo" on any tile to change it.</p>
   </div>
@@ -497,18 +498,16 @@
 
 <div class="controls">
   <div class="controls-inner">
+    <label class="season-picker" id="team-picker" hidden>
+      Team
+      <select id="team-select"></select>
+    </label>
     <label class="season-picker" id="season-picker" hidden>
       Season
       <select id="season-select"></select>
     </label>
     <input type="text" id="search" placeholder="Search by player name…">
-    <div class="squad-filter" id="squad-filter">
-      <button data-squad="all" class="active">All</button>
-      <button data-squad="senior">First Team</button>
-      <button data-squad="u21">Under-21s</button>
-      <button data-squad="u18">Under-18s</button>
-      <button data-squad="u16">Under-16s</button>
-    </div>
+    <div class="squad-filter" id="squad-filter" hidden></div>
     <label class="missing-toggle">
       <input type="checkbox" id="missing-only">
       Only players with no photos
@@ -557,15 +556,18 @@
   </section>
 </main>
 
+<script src="js/teams.js"></script>
 <script>
-const SQUAD_LABEL = { senior: 'First Team', u21: 'Under-21s', u18: 'Under-18s', u16: 'Under-16s' };
+const SQUAD_LABEL = { senior: 'First Team', u21: 'Under-21s', u19: 'Under-19s', u18: 'Under-18s', u16: 'Under-16s' };
+const SQUAD_ORDER_G = ['senior', 'u21', 'u19', 'u18', 'u16'];
 const normSquad = (s) => (s || '').trim().toLowerCase() === 'seniors' ? 'senior' : (s || '').trim().toLowerCase();
 
 // Kept in sync with the SHARED_PHOTO_SOURCES registry in js/data.js — see
-// the comment there. Duplicated rather than imported because this page is
-// deliberately self-contained (no js/*.js dependency).
+// the comment there. Duplicated rather than imported because this page
+// doesn't load data.js; it does load js/teams.js (the active team, from
+// ?team=..., decides which data folder to read).
 const SHARED_PHOTO_SOURCES = {
-  placeholder: 'https://i.ibb.co/99RpQjTT/nufc-placeholder.png',
+  placeholder: TEAM.placeholderPhoto || 'https://i.ibb.co/99RpQjTT/nufc-placeholder.png',
 };
 
 /**
@@ -583,7 +585,7 @@ function ageBandForDob(dob, ageBands) {
   }
   return 'senior';
 }
-const DEFAULT_UNKNOWN_DOB_SQUAD = 'u16';
+const DEFAULT_UNKNOWN_DOB_SQUAD = TEAM.unknownDobSquad || 'u16';
 
 /**
  * Same candidate-resolution logic as the main site (js/data.js): `photos` is
@@ -673,7 +675,7 @@ function mergePlayers(masterList, seasonList, ageBands) {
 
 async function loadSeasons() {
   try {
-    const res = await fetch('data/seasons.json', { cache: 'no-store' });
+    const res = await fetch(TEAM.dataDir + 'seasons.json', { cache: 'no-store' });
     if (!res.ok) return null;
     const seasons = await res.json();
     if (!Array.isArray(seasons) || seasons.length === 0) return null;
@@ -1222,6 +1224,29 @@ function renderSourceSummary(players) {
   tbody.appendChild(totalRow);
 }
 
+/** Squad filter buttons: this team's squads plus any other squad with players in the season (e.g. U16). Hidden when there's only one. */
+function buildSquadFilter(players) {
+  const present = new Set([...TEAM.squads, ...players.map(p => normSquad(p.squad))]);
+  const keys = [...SQUAD_ORDER_G.filter(k => present.has(k)), ...[...present].filter(k => !SQUAD_ORDER_G.includes(k))];
+  const wrap = document.getElementById('squad-filter');
+  wrap.innerHTML = '';
+  wrap.hidden = keys.length <= 1;
+  if (wrap.hidden) return;
+  [['all', 'All'], ...keys.map(k => [k, SQUAD_LABEL[k] || k])].forEach(([key, label], i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.dataset.squad = key;
+    btn.textContent = label;
+    if (i === 0) btn.classList.add('active');
+    btn.addEventListener('click', () => {
+      wrap.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilters();
+    });
+    wrap.appendChild(btn);
+  });
+}
+
 function updateStatLine() {
   const blocks = Array.from(document.querySelectorAll('.player-block'));
   const withPhotos = blocks.filter(b => b.dataset.hasPhotos === '1').length;
@@ -1277,7 +1302,7 @@ async function loadSeason(season) {
   document.getElementById('source-table-body').innerHTML =
     '<tr><td colspan="3" class="source-summary-pending">Loading images to determine what\'s in use…</td></tr>';
 
-  const masterFile = season.playersMasterFile || 'data/players-master.json';
+  const masterFile = season.playersMasterFile || TEAM.dataDir + 'players-master.json';
   document.getElementById('season-note').textContent =
     `${season.label ? 'Season ' + season.label + ' · ' : ''}roster: ${season.playersFile} · master: ${masterFile}`;
   updateSaveBar();
@@ -1303,8 +1328,7 @@ async function loadSeason(season) {
 
     const sorted = players.slice().sort((a, b) => {
       const sa = normSquad(a.squad), sb = normSquad(b.squad);
-      const order = ['senior', 'u21', 'u18', 'u16'];
-      if (sa !== sb) return order.indexOf(sa) - order.indexOf(sb);
+      if (sa !== sb) return SQUAD_ORDER_G.indexOf(sa) - SQUAD_ORDER_G.indexOf(sb);
       return (a.name || '').localeCompare(b.name || '');
     });
 
@@ -1312,6 +1336,7 @@ async function loadSeason(season) {
     const ctx = { token, players: sorted, summaryReady: false, settledPlayers: 0, needed };
     current = ctx;
 
+    buildSquadFilter(sorted);
     const blocksWrap = document.getElementById('blocks');
     sorted.forEach(p => blocksWrap.appendChild(buildPlayerBlock(p, ctx)));
     if (needed === 0) { ctx.summaryReady = true; renderSourceSummary(sorted); }
@@ -1327,19 +1352,38 @@ async function loadSeason(season) {
   }
 }
 
+function setupTeamPicker() {
+  document.title = `Photo Gallery — ${TEAM.label} — The Teamsheet`;
+  document.getElementById('eyebrow').textContent = `The Teamsheet · Reference tool · ${TEAM.label}`;
+  if (TEAMS.length < 2) return;
+  const select = document.getElementById('team-select');
+  TEAMS.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t.id;
+    opt.textContent = t.label;
+    select.appendChild(opt);
+  });
+  select.value = TEAM.id;
+  document.getElementById('team-picker').hidden = false;
+  // Full reload: each team has its own seasons and files. (A reload also drops the
+  // connected site folder, so it needs connecting again after switching.)
+  select.addEventListener('change', () => {
+    if (unsavedCount() && !confirm(`Discard ${unsavedCount()} unsaved photo pick(s)?`)) { select.value = TEAM.id; return; }
+    unsaved = {};   // already confirmed, so don't also trigger the beforeunload prompt
+    const params = new URLSearchParams(location.search);
+    params.delete('season');
+    if (select.value === DEFAULT_TEAM.id) params.delete('team'); else params.set('team', select.value);
+    location.search = params.toString();
+  });
+}
+
 async function init() {
+  setupTeamPicker();
   seasons = await loadSeasons();
 
   document.getElementById('search').addEventListener('input', applyFilters);
   document.getElementById('missing-only').addEventListener('change', applyFilters);
   document.getElementById('problems-only').addEventListener('change', applyFilters);
-  document.querySelectorAll('.squad-filter button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.squad-filter button').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      applyFilters();
-    });
-  });
   document.getElementById('connect-btn').addEventListener('click', connectFolder);
   document.getElementById('download-btn').addEventListener('click', downloadJson);
   window.addEventListener('beforeunload', (e) => {

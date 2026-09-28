@@ -369,7 +369,9 @@ function validateFixtures(fixturesData, playersById, options = {}) {
  * Cross-checks a player's matchday-squad records (start / sub_on / unused_sub) against their
  * `movements` in players-master.json — only for players marked
  * `careerComplete: true`, since only then do the movements describe the whole
- * career. Flags an appearance that falls (a) inside a loan_out spell, or
+ * career. (A loan_out_dual spell — dual registration — is deliberately not
+ * treated as a conflict: the player may appear for both clubs.)
+ * Flags an appearance that falls (a) inside a loan_out spell, or
  * (b) outside every period he was with the club: joined -> left, plus any
  * loan_in / trial_in window. The "with the club" check only runs if at least
  * one joined / left / loan_in / trial_in movement exists. Dates are inclusive
@@ -390,6 +392,7 @@ function checkMovementDates(p, fixturesData) {
     else if (m.type === 'left') { allowed.push([openFrom === null ? '0000' : openFrom, padEnd(m.date)]); openFrom = null; }
     else if (m.type === 'loan_in' || m.type === 'trial_in') allowed.push([m.date || '0000', endOf(m)]);
     else if (m.type === 'loan_out') loans.push({ from: m.date || '0000', to: endOf(m), club: m.club || 'another club' });
+    // 'loan_out_dual' (dual registration) is intentionally ignored here: he can still be named for us.
   });
   if (openFrom !== null) allowed.push([openFrom, OPEN]);
   const firstStart = allowed.map(w => w[0]).sort()[0];

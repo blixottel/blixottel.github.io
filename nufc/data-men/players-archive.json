@@ -72,6 +72,174 @@
         }
     },
     {
+        "id": "u21-alex-odonovan",
+        "name": "Alex O'Donovan",
+        "nationality": "England",
+        "dob": "2007-10-03",
+        "position": "MF",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2023-08-12", "club": "Newcastle United Under-16" },
+			{ "type": "left", "date": "2026-06-30", "club": "" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "",
+            "fotmob": "",
+            "besoccer": "",
+            "flashscore": "",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u21-alfie-harrison",
+        "name": "Alfie Harrison",
+        "nationality": "England",
+        "dob": "2005-11-28",
+        "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-02-01", "club": "Manchester City" },
+			{ "type": "left", "date": "2026-06-30", "club": "" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/00/1007900_20240201161538_alfie_harrison_1706804138.jpg",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1402916/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1418100.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3306041.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/A7Wk6QXg-GWg3CyOQ.png",
+            "statshub": "https://images.statshub.com/player/1402916.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000189438.png"
+        }
+    },
+    {
+        "id": "u21-cathal-heffernan",
+        "name": "Cathal Heffernan",
+        "nationality": "Ireland",
+        "dob": "2005-04-27",
+        "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2023-08-24", "club": "AC Milan" },
+			{ "type": "left", "date": "2026-01-15", "club": "Harrogate Town" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/741268-1699385751.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/44/32/914432_cathal_heffernan_20241005135626.jpg",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1134333/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1578910.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3201733.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/YqtmNNxS-j1QJXyEt.png",
+            "statshub": "https://images.statshub.com/player/1134333.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000109016.png"
+        }
+    },
+    {
+        "id": "u21-james-taylor",
+        "name": "James Taylor",
+        "nationality": "England",
+        "dob": "2006-07-11",
+        "position": "GK",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-18", "club": "Hemel Hempstead Town" },
+			{ "type": "left", "date": "2026-06-30", "club": "Hemel Hempstead Town" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1683913.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3455354.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/Iq47SDil-2ajjJkMu.png",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u21-mo-sedibeh",
+        "name": "Mo Sedibeh",
+        "nationality": "Spain",
+        "dob": "2005-11-26",
+        "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-01", "club": "Bradford City" },
+			{ "type": "left", "date": "2025-08-10", "club": "UB Conquense" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "",
+            "fotmob": "",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3588333.jpg",
+            "flashscore": "",
+            "statshub": "",
+            "fminside": "https://img.fminside.net/facesfm26/2000201577.png"
+        }
+    },
+    {
+        "id": "u21-reece-byrne",
+        "name": "Reece Byrne",
+        "nationality": "Ireland",
+        "dob": "2004-11-20",
+        "position": "GK",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2023-07-01", "club": "Bohemians" },
+			{ "type": "left", "date": "2025-06-30", "club": "West Ham United" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/08/67/990867_reece_byrne_20260129133254.jpg",
+            "sofascore": "",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1375410.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/917907.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/6yBuIMEG-dILmE4Bl.png",
+            "statshub": "",
+            "fminside": "https://img.fminside.net/facesfm26/2000216337.png"
+        }
+    },
+    {
+        "id": "u21-will-anderson",
+        "name": "Will Anderson",
+        "nationality": "England",
+        "dob": "2008-07-15",
+        "position": "GK",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-01", "club": "Newcastle United Under-16" },
+			{ "type": "left", "date": "2026-06-30", "club": "South Shields" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1899507/image",
+            "fotmob": "",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3604013.jpg",
+            "flashscore": "",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
         "id": "u18-brayden-clarke",
         "name": "Brayden Clarke",
         "nationality": "Wales",
@@ -92,6 +260,30 @@
             "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "u18-ezra-tika-lemba",
+        "name": "Ezra Tika-Lemba",
+        "nationality": "England",
+        "dob": "2007-11-07",
+        "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-01", "club": "West Ham United" },
+			{ "type": "left", "date": "2026-06-30", "club": "Middlesbrough" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1975731.png",
+            "besoccer": "",
+            "flashscore": "",
+            "statshub": "",
+            "fminside": ""
         }
     },
     {
@@ -119,6 +311,54 @@
         }
     },
     {
+        "id": "u18-kayden-lucas",
+        "name": "Kayden Lucas",
+        "nationality": "England",
+        "dob": "2007-10-30",
+        "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-01", "club": "Clevedon Town" },
+			{ "type": "left", "date": "2026-06-30", "club": "West Bromwich Albion" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/2146872.png",
+            "besoccer": "",
+            "flashscore": "",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
+        "id": "u18-matty-taylor",
+        "name": "Matty Taylor",
+        "nationality": "England",
+        "dob": "2008-03-31",
+        "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2023-08-12", "club": "Newcastle United Under-16" },
+			{ "type": "left", "date": "2026-06-30", "club": "" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "",
+            "fotmob": "",
+            "besoccer": "",
+            "flashscore": "https://static.flashscore.com/res/image/data/tlQ4KrGG-67PmSEAe.png",
+            "statshub": "",
+            "fminside": ""
+        }
+    },
+    {
         "id": "u18-noah-cooper",
         "name": "Noah Cooper",
         "nationality": "England",
@@ -139,6 +379,30 @@
             "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "u18-oliver-best",
+        "name": "Oliver Best",
+        "nationality": "England",
+        "dob": "2009-02-08",
+        "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-09-28", "club": "Newcastle United Under-16" },
+			{ "type": "left", "date": "2025-07-01", "club": "Bolton Wanderers" }
+        ],
+        "photos": {
+            "official": "",
+            "premierleague": "",
+            "transfermarkt": "",
+            "zerozero": "",
+            "sofascore": "",
+            "fotmob": "",
+            "besoccer": "",
+            "flashscore": "",
+            "statshub": "",
+            "fminside": ""
         }
     },
     {

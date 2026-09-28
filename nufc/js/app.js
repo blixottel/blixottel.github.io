@@ -4,8 +4,26 @@
  * at the bottom.
  */
 
+// Team-specific page chrome: title, subtitle and the team switcher. Done before
+// any data loads, so the switcher still works if this team's data is missing.
+function applyTeamChrome() {
+  document.title = TEAM.title;
+  const sub = document.querySelector('.masthead .subtitle');
+  if (sub) sub.textContent = TEAM.subtitle;
+  if (TEAMS.length > 1) document.getElementById('season-switcher-slot').appendChild(buildTeamSwitcher());
+}
+
+// Tabs are generated from the squads this team/season actually has, so the
+// same index.html serves every team.
+function buildTabs(squadKeys) {
+  document.getElementById('tabs').innerHTML = squadKeys
+    .map(k => `<a href="#${k}">${SQUAD_LABEL[k] || k} <span class="count" id="count-${k}"></span></a>`)
+    .join('');
+}
+
 async function init() {
   const main = document.getElementById('main');
+  applyTeamChrome();
   try {
     const seasons = await loadSeasons();
     // playersFile here is the season *roster* file (number/status/etc.) —
@@ -13,7 +31,7 @@ async function init() {
     // defaults to players-master.json unless a season entry overrides it
     // with its own playersMasterFile. Squad membership isn't read from
     // either file — see mergePlayers in data.js.
-    let masterFile = 'data/players-master.json';
+    let masterFile = TEAM.dataDir + 'players-master.json';
     let playersFile = 'players-season.json';
     let fixturesFile = 'fixtures.json';
     let activeSeason = null;
@@ -53,6 +71,7 @@ async function init() {
     // fixtures file actually has one — see CORE_SQUADS/OPTIONAL_SQUADS and
     // squadKeysFor in data.js.
     const squadKeys = squadKeysFor(fixtures);
+    buildTabs(squadKeys);
 
     const fixtureIssuesMap = {}; // "squad::fixtureId" -> [messages]
     const squadIssueCounts = {};
@@ -83,15 +102,6 @@ async function init() {
         document.querySelector(`nav.tabs a[href="#${squadKey}"]`).appendChild(dot);
       }
       main.appendChild(buildSquadSection(squadKey, squadPlayers, fixtures[squadKey] || { fixtures: [], appearances: {} }, playersById, fixtureIssuesMap));
-    });
-
-    // Hide the tab for any optional squad (currently just 'u19') that has
-    // no data this season, rather than leaving an empty tab in the nav —
-    // index.html's markup always includes it so it's ready for a season
-    // that does have it.
-    OPTIONAL_SQUADS.filter(k => !squadKeys.includes(k)).forEach(k => {
-      const tabLink = document.querySelector(`nav.tabs a[href="#${k}"]`);
-      if (tabLink) tabLink.style.display = 'none';
     });
 
     setupTabs();

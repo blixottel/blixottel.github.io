@@ -15,8 +15,11 @@ const SQUAD_LABEL = { senior: 'First Team', u21: 'Under-21s', u18: 'Under-18s', 
 // by key — see resolvePhotoUrl / photoCandidates below. Update the URL here
 // once and every player using it picks up the change; gallery.html keeps
 // its own copy of this registry since it's deliberately self-contained.
+// The active team (js/teams.js) can override a few defaults; without it (e.g.
+// a page that doesn't load teams.js) everything behaves as the men's site did.
+const ACTIVE_TEAM = (typeof TEAM !== 'undefined') ? TEAM : {};
 const SHARED_PHOTO_SOURCES = {
-  placeholder: 'https://i.ibb.co/99RpQjTT/nufc-placeholder.png',
+  placeholder: ACTIVE_TEAM.placeholderPhoto || 'https://i.ibb.co/99RpQjTT/nufc-placeholder.png',
 };
 // u16 has no label of its own — it never gets a page/section (see mergePlayers
 // below) — but SQUAD_SHORT still needs an entry so a U16 player who's played
@@ -37,7 +40,8 @@ const SQUAD_SHORT = { senior: 'Seniors', u21: 'U21', u18: 'U18', u16: 'U16', u19
 // fixtures file simply omits the 'u19' key entirely in any year there's no
 // such campaign; squadKeysFor (below) and app.js use that to show or hide
 // the tab accordingly, rather than it needing a flag set anywhere else.
-const CORE_SQUADS = ['senior', 'u21', 'u18'];
+// Per-team: see `squads` in js/teams.js (women's = senior only).
+const CORE_SQUADS = ACTIVE_TEAM.squads || ['senior', 'u21', 'u18'];
 const OPTIONAL_SQUADS = ['u19'];
 
 /**
@@ -136,7 +140,7 @@ function ageBandForDob(dob, ageBands) {
 // falls back to squadIfDobUnknown if the master record sets one (for the
 // occasional case that's known to be older than the blanket default, e.g.
 // "this one's U18 despite no confirmed dob"), or to this default otherwise.
-const DEFAULT_UNKNOWN_DOB_SQUAD = 'u16';
+const DEFAULT_UNKNOWN_DOB_SQUAD = ACTIVE_TEAM.unknownDobSquad || 'u16';
 
 /**
  * Player data lives in two files: a master file (one row per player, ever —
@@ -258,7 +262,7 @@ async function loadData(masterFile, seasonFile, fixturesFile, ageBands) {
  */
 async function loadSeasons() {
   try {
-    const res = await fetch('data/seasons.json');
+    const res = await fetch((ACTIVE_TEAM.dataDir || 'data/') + 'seasons.json');
     if (!res.ok) return null;
     const seasons = await res.json();
     if (!Array.isArray(seasons) || seasons.length === 0) return null;
