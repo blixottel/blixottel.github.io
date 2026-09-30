@@ -377,6 +377,11 @@ function validateFixtures(fixturesData, playersById, options = {}) {
  * one joined / left / loan_in / trial_in movement exists. Dates are inclusive
  * and partial dates ("2024-05") cover the whole month.
  */
+// Movement types that end a spell at the club. "retired" counts the same as "left"
+// everywhere the checks care about someone no longer being with the club.
+const LEAVING_MOVEMENT_TYPES = new Set(['left', 'retired']);
+const isLeavingMovement = t => LEAVING_MOVEMENT_TYPES.has(t);
+
 function checkMovementDates(p, fixturesData) {
   const out = [];
   if (!p || !p.careerComplete || !Array.isArray(p.movements) || !p.movements.length) return out;
@@ -389,7 +394,7 @@ function checkMovementDates(p, fixturesData) {
   let openFrom = null;
   [...p.movements].sort((a, b) => (a.date || '').localeCompare(b.date || '')).forEach(m => {
     if (m.type === 'joined') { if (openFrom === null) openFrom = m.date || '0000'; }
-    else if (m.type === 'left') { allowed.push([openFrom === null ? '0000' : openFrom, padEnd(m.date)]); openFrom = null; }
+    else if (isLeavingMovement(m.type)) { allowed.push([openFrom === null ? '0000' : openFrom, padEnd(m.date)]); openFrom = null; }
     else if (m.type === 'loan_in' || m.type === 'trial_in') allowed.push([m.date || '0000', endOf(m)]);
     else if (m.type === 'loan_out') loans.push({ from: m.date || '0000', to: endOf(m), club: m.club || 'another club' });
     // 'loan_out_dual' (dual registration) is intentionally ignored here: he can still be named for us.
@@ -421,4 +426,175 @@ function checkMovementDates(p, fixturesData) {
     });
   });
   return out;
+}
+
+/* ------------------------------------------------------------------ *
+ * Cross-season checks
+ *
+ * Unlike validateFixtures (one season at a time), these look at a player's
+ * whole history: every season's roster file plus the movements in
+ * players-master.json / players-archive.json. The result is the same list
+ * whichever season is being viewed, so it shows in all of them.
+ * Issues use squad '_cross' (shown under "Across seasons" in the panel).
+ * ------------------------------------------------------------------ */
+
+// A season only "requires" a player in its roster file if the player was with
+// the club for MORE than this many days of it. Stops a 1 June arrival or a
+// 30 June departure from demanding a roster entry in the season that's ending.
+const SEASON_OVERLAP_GRACE_DAYS = 45;
+
+// "2024-05-20" -> that day; "2024-05" -> 1st (or last, asEnd) of the month; "2024" -> 1 Jan (or 31 Dec). Returns ms (UTC) or null.
+function looseDate(s, asEnd) {
+  const m = /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/.exec((s || '').trim());
+  if (!m) return null;
+  const y = +m[1];
+  if (m[3]) return Date.UTC(y, +m[2] - 1, +m[3]);
+  if (m[2]) return asEnd ? Date.UTC(y, +m[2], 0) : Date.UTC(y, +m[2] - 1, 1);
+  return asEnd ? Date.UTC(y, 11, 31) : Date.UTC(y, 0, 1);
+}
+
+// Football season "2025-26" runs 1 Jul 2025 – 30 Jun 2026 (same convention as seasonAgeDate). null if the id isn't in that shape.
+function seasonRange(season) {
+  const m = /^(\d{4})-\d{2}$/.exec((season && season.id) || '');
+  return m ? { start: Date.UTC(+m[1], 6, 1), end: Date.UTC(+m[1] + 1, 5, 30) } : null;
+}
+
+// joined -> left periods from a player's movements (a joined with no later left stays open-ended).
+function clubSpells(movements) {
+  const spells = [];
+  let open = null;
+  [...movements].sort((a, b) => (a.date || '').localeCompare(b.date || '')).forEach(m => {
+    if (m.type === 'joined') {
+      if (open === null) { const d = looseDate(m.date, false); open = d === null ? -Infinity : d; }
+    } else if (isLeavingMovement(m.type) && open !== null) {
+      const d = looseDate(m.date, true);
+      spells.push({ from: open, to: d === null ? Infinity : d, leftDate: m.date });
+      open = null;
+    }
+  });
+  if (open !== null) spells.push({ from: open, to: Infinity, leftDate: '' });
+  return spells;
+}
+
+// The photo a player would show in a given season (roster photoSource applied), as { url, label }.
+function effectivePhoto(p) {
+  const url = photoCandidates(p)[0];
+  if (!url) return { url: '', label: 'no photo' };
+  let label = 'default';
+  const photos = p.photos;
+  if (photos && typeof photos === 'object' && !Array.isArray(photos)) {
+    label = Object.keys(photos).find(k => photos[k] === url)
+      || Object.keys(SHARED_PHOTO_SOURCES).find(k => SHARED_PHOTO_SOURCES[k] === url) || 'default';
+  }
+  return { url, label };
+}
+
+/**
+ * masterList  – active master (+archive) player list, as loaded by withArchive.
+ * seasonData  – [{ season, roster (array or null if it failed to load), master (array or null) }],
+ *               in seasons.json order (first entry = latest season).
+ *
+ * Checks (errors unless noted):
+ *  1. Photo — a player must show the same photo in every season they're on a roster (warning).
+ *  2. Movements — anyone with movements (or marked careerComplete) needs a "joined" record.
+ *  3. Movements — anyone not on the latest season's roster needs a "left" (or "retired") record.
+ *  4. Roster — a player must be on the roster file of every season between joined and left.
+ *  (For careerComplete players, 2-4 also cover: joined before the earliest season file, and a missing "left" even if they're on no roster at all.)
+ *  5. Archive — a player who has left and is careerComplete belongs in players-archive.json, not players-master.json (warning).
+ * Players whose only movements are loan_in / trial_in (visitors who never joined) are exempt from 2–4.
+ */
+function validateAcrossSeasons(masterList, seasonData) {
+  const issues = [];
+  const add = (severity, message) => issues.push({ squad: '_cross', fixtureId: null, fixtureLabel: null, severity, crossSeason: true, message });
+  const dmy = d => (d || '').split('-').reverse().join('/');
+  const label = s => s.label || s.id;
+  const usable = seasonData.filter(sd => sd.roster);
+  if (!usable.length) return issues;
+
+  const rosterIdx = seasonData.map(sd => {
+    const byId = {};
+    (sd.roster || []).forEach(r => { byId[r.id] = r; });
+    return byId;
+  });
+  const masterIdx = seasonData.map(sd => {
+    const byId = {};
+    (sd.master || []).forEach(m => { byId[m.id] = m; });
+    return byId;
+  });
+  const latest = seasonData[0];
+
+  masterList.forEach(p => {
+    const name = p.name || p.id;
+
+    // 1. Photo consistency
+    const groups = []; // { url, label, seasons[] }
+    seasonData.forEach((sd, i) => {
+      const entry = rosterIdx[i][p.id];
+      if (!entry) return;
+      const ph = effectivePhoto({ ...(masterIdx[i][p.id] || p), ...entry });
+      let g = groups.find(x => x.url === ph.url);
+      if (!g) { g = { url: ph.url, label: ph.label, seasons: [] }; groups.push(g); }
+      g.seasons.push(label(sd.season));
+    });
+    if (groups.length > 1) {
+      add('warning', `${name} uses different photos in different seasons: ${groups.map(g => `${g.label} (${g.seasons.join(', ')})`).join(' vs ')}. Use the same photoSource in every season file.`);
+    }
+
+    // 2-5. Movements
+    const mv = Array.isArray(p.movements) ? p.movements : [];
+
+    // 5. Left + careerComplete => should live in the archive file. "Left" = the most
+    // recent joined/left/retired movement is a leaving one whose date has passed (or has no usable date).
+    if (p.careerComplete && !p._archived && !p._alsoInArchive) {
+      const last = [...mv].filter(m => m.type === 'joined' || isLeavingMovement(m.type))
+        .sort((a, b) => (a.date || '').localeCompare(b.date || '')).pop();
+      const leftMs = last && isLeavingMovement(last.type) ? looseDate(last.date, true) : undefined;
+      if (last && isLeavingMovement(last.type) && (leftMs === null || leftMs <= Date.now())) {
+        add('warning', `${name} has left${last.date ? ' (' + dmy(last.date) + ')' : ''} and is marked careerComplete, so should be moved from players-master.json to players-archive.json.`);
+      }
+    }
+    if (!mv.length && !p.careerComplete) return;
+    const has = t => mv.some(m => m.type === t);
+    const hasLeft = mv.some(m => isLeavingMovement(m.type));
+    if (!has('joined') && (has('loan_in') || has('trial_in'))) return; // visitor, never joined
+
+    if (!has('joined')) {
+      add('error', `${name} has no "joined" movement in players-master.json${mv.length ? '' : ' (marked careerComplete but has no movements at all)'}.`);
+    }
+
+    const inAnyRoster = seasonData.some((sd, i) => rosterIdx[i][p.id]);
+    if (latest.roster && (inAnyRoster || p.careerComplete) && !rosterIdx[0][p.id] && !hasLeft) {
+      add('error', `${name} isn't in the ${label(latest.season)} season file, so needs a "left" (or "retired") movement in players-master.json.`);
+    }
+
+    const spells = clubSpells(mv);
+    if (spells.length && p.careerComplete) {
+      // careerComplete means every season is in the data, so they can't have joined before the earliest season file.
+      const starts = seasonData.map(sd => seasonRange(sd.season)).filter(Boolean).map(r => r.start);
+      const earliest = starts.length ? Math.min(...starts) : null;
+      const from = Math.min(...spells.map(sp => sp.from));
+      if (earliest !== null && isFinite(from) && (earliest - from) / 86400000 > SEASON_OVERLAP_GRACE_DAYS) {
+        const eSeason = seasonData.filter(sd => seasonRange(sd.season) && seasonRange(sd.season).start === earliest)[0].season;
+        add('error', `${name} is marked careerComplete but joined ${dmy(mv.filter(m => m.type === 'joined').map(m => m.date).sort()[0])}, before the earliest season file (${label(eSeason)}), so the earlier seasons have no data.`);
+      }
+    }
+    if (spells.length) {
+      const missing = [];
+      seasonData.forEach((sd, i) => {
+        const range = seasonRange(sd.season);
+        if (!sd.roster || !range || rosterIdx[i][p.id]) return;
+        const covered = spells.some(sp => {
+          const days = (Math.min(sp.to, range.end) - Math.max(sp.from, range.start)) / 86400000 + 1;
+          return days > SEASON_OVERLAP_GRACE_DAYS;
+        });
+        if (covered) missing.push(label(sd.season));
+      });
+      if (missing.length) {
+        const first = mv.filter(m => m.type === 'joined').map(m => m.date).sort()[0];
+        add('error', `${name} is missing from the season file${missing.length === 1 ? '' : 's'} for ${missing.join(', ')}, but was with the club then (joined ${dmy(first) || 'date unknown'}${spells[spells.length - 1].leftDate ? ', left ' + dmy(spells[spells.length - 1].leftDate) : ''}).`);
+      }
+    }
+  });
+
+  return issues;
 }

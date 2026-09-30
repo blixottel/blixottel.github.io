@@ -59,13 +59,18 @@ async function init() {
 
     buildNextMatchBanner(findNextMatch(fixtures));
 
+    // Per-season checks, plus the checks that look across every season
+    // (photo consistency, movements vs season files) — these appear in all seasons.
+    const crossIssues = seasons ? await loadCrossSeasonIssues(seasons, masterFile) : [];
     const issues = validateFixtures(fixtures, playersById, {
       requireDetailedStats: activeSeason ? activeSeason.requireDetailedStats !== false : true,
-    });
-    // Full breakdown on a local dev server; a single concise line once this
-    // is published, so visitors see "worth a check" without the specifics.
-    renderValidationPanel(issues, isLocalDev());
-    if (isLocalDev()) renderTodoProgress(players);
+    }).concat(crossIssues);
+    // The full list of checks now lives on validation.html; here we just
+    // show the count as a badge on the "Data checks" nav link.
+    setNavBadge('validation', issues.length);
+    // Shown on published copies too: a plain heads-up (no specifics) whenever
+    // this team/season has any outstanding data checks.
+    document.getElementById('wip-notice').style.display = issues.length ? 'block' : 'none';
 
     // The three age-banded squads, plus 'u19' if (and only if) this season's
     // fixtures file actually has one — see CORE_SQUADS/OPTIONAL_SQUADS and

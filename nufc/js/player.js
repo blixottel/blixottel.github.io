@@ -115,6 +115,7 @@ function loanBand(m) {
 const MOVE_TYPES = {
   joined:   { label: 'Joined',  cls: 'guest-tag', prep: 'from' },
   left:     { label: 'Left',    cls: 'guest-tag left-tag', prep: 'to' },
+  retired:  { label: 'Retired', cls: 'guest-tag left-tag', prep: 'at' },
   loan_out: { label: 'Loan',    cls: 'guest-tag loan-tag', prep: 'to' },
   loan_out_dual: { label: 'Dual reg.', cls: 'guest-tag loan-tag', prep: 'to' },
   loan_in:  { label: 'Loan in', cls: 'guest-tag incoming-tag', prep: 'from' },
@@ -175,7 +176,8 @@ function statusPills(p, hasRoster) {
   if (trial) return pill('trialist-tag', `Trialist${trial.club ? ' · ' + trial.club : ''}`);
   const loanIn = mv.find(m => m.type === 'loan_in' && live(m));
   if (loanIn) return pill('incoming-tag', `On loan from ${loanIn.club}`);
-  const last = [...mv].reverse().find(m => (m.type === 'left' || m.type === 'joined') && started(m));
+  const last = [...mv].reverse().find(m => (m.type === 'left' || m.type === 'retired' || m.type === 'joined') && started(m));
+  if (last && last.type === 'retired') return pill('left-tag', 'Retired');
   if (last && last.type === 'left') return pill('left-tag', `Left${last.club ? ' · ' + last.club : ''}`);
   if (mv.some(m => m.type === 'joined' && m.date > t)) return pill('incoming-tag', 'Incoming');
   if (!hasRoster) return '';

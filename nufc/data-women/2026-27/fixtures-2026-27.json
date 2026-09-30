@@ -158,6 +158,15 @@
                 "s-f2": { "status": "start", "minutes": 90 },
                 "s-f3": { "status": "start", "minutes": 90 }
             },
+            "s-abbie-richardson": { },
+            "s-ashanti-akpan": { },
+            "s-ava-chapman": { },
+            "s-ella-baker": { },
+            "s-elysia-boddy": { },
+            "s-emma-kelly": { },
+            "s-lia-cataldo": { },
+            "s-lucy-gilbert": { },
+            "s-morgan-gautrat": { },
             "s-jasmine-mcquade": {
                 "s-f1": { "status": "loan" }, "s-f2": { "status": "loan" }, "s-f3": { "status": "loan" }, "s-f4": { "status": "loan" }, "s-f5": { "status": "loan" }, "s-f6": { "status": "loan" },
                 "s-f7": { "status": "loan" }, "s-f8": { "status": "loan" }, "s-f9": { "status": "loan" }, "s-f10": { "status": "loan" }, "s-f11": { "status": "loan" }, "s-f12": { "status": "loan" },

@@ -388,3 +388,34 @@ async function withArchive(master, masterFile) {
   } catch (e) { /* no archive file yet */ }
   return master;
 }
+
+/**
+ * Loads every season's roster (and master) file, then runs validateAcrossSeasons
+ * (stats.js). `masterFile` is the active season's master file — used for the
+ * players' movements. Returns [] (never throws) if the files can't be read, so
+ * a problem here can't stop the page from loading.
+ */
+async function loadCrossSeasonIssues(seasons, masterFile) {
+  if (!seasons || !seasons.length) return [];
+  try {
+    const defaultMaster = (ACTIVE_TEAM.dataDir || 'data/') + 'players-master.json';
+    const cache = {};
+    const getMaster = file => cache[file] || (cache[file] = fetch(file)
+      .then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); })
+      .then(m => withArchive(m, file))
+      .catch(() => null));
+    const getJson = file => fetch(file).then(r => (r.ok ? r.json() : null)).catch(() => null);
+
+    const seasonData = await Promise.all(seasons.map(async s => ({
+      season: s,
+      roster: await getJson(s.playersFile),
+      master: await getMaster(s.playersMasterFile || defaultMaster),
+    })));
+    const active = await getMaster(masterFile);
+    if (!active) return [];
+    return validateAcrossSeasons(active, seasonData);
+  } catch (err) {
+    console.warn('Cross-season checks skipped:', err);
+    return [];
+  }
+}

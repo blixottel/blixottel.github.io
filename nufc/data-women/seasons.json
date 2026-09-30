@@ -1,3 +1,5 @@
 [
-	{ "id": "2026-27", "label": "2026/27", "playersFile": "data-women/2026-27/players-2026-27.json", "fixturesFile": "data-women/2026-27/fixtures-2026-27.json" }
+	{ "id": "2026-27", "label": "2026/27", "playersFile": "data-women/2026-27/players-2026-27.json", "fixturesFile": "data-women/2026-27/fixtures-2026-27.json" },
+	{ "id": "2025-26", "label": "2025/26", "playersFile": "data-women/2025-26/players-2025-26.json", "fixturesFile": "data-women/2025-26/fixtures-2025-26.json", "requireDetailedStats": false },
+	{ "id": "2024-25", "label": "2024/25", "playersFile": "data-women/2024-25/players-2024-25.json", "fixturesFile": "data-women/2024-25/fixtures-2024-25.json", "requireDetailedStats": false }
 ]

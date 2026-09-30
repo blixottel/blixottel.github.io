@@ -490,6 +490,7 @@
 
 <div class="masthead">
   <div class="masthead-inner">
+    <div id="site-nav"></div>
     <p class="eyebrow" id="eyebrow">The Teamsheet · Reference tool</p>
     <h1 class="title">Photo Gallery</h1>
     <p class="subtitle">Every photo on record for every player, in fallback order. The green outline marks the photo this season's roster file actually specifies — click "Use this photo" on any tile to change it.</p>
@@ -557,6 +558,8 @@
 </main>
 
 <script src="js/teams.js"></script>
+<script src="js/nav.js"></script>
+<script>buildSiteNav('gallery');</script>
 <script>
 const SQUAD_LABEL = { senior: 'First Team', u21: 'Under-21s', u19: 'Under-19s', u18: 'Under-18s', u16: 'Under-16s' };
 const SQUAD_ORDER_G = ['senior', 'u21', 'u19', 'u18', 'u16'];

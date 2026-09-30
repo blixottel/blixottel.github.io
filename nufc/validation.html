@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Teamsheet — NUFC Squad Tracker</title>
+<title>Data checks — The Teamsheet</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles/styles.css">
-<link rel="stylesheet" href="styles/next-match.css">
 <style>
   .back-link {
     display: inline-block;
@@ -22,19 +21,12 @@
   }
   .back-link:hover { opacity: 1; text-decoration: underline; }
   .back-link:focus-visible { opacity: 1; outline: 2px solid currentColor; outline-offset: 3px; }
-  #wip-notice {
+  #all-clear {
     display: none;
-    max-width: 1180px;
-    margin: 16px auto 0;
-    padding: 12px 16px;
-    background: #FBF1DC;
-    border: 1px solid #D9A441;
-    border-radius: 3px;
-    color: #8A5A00;
-    font-size: 13.5px;
-    line-height: 1.45;
+    max-width: 1180px; margin: 24px auto; padding: 16px 20px;
+    background: #E6EDE7; border: 1px solid #2F5233; border-radius: 3px;
+    color: #2F5233; font-size: 14px;
   }
-  @media (max-width: 1220px) { #wip-notice { margin-left: 16px; margin-right: 16px; } }
 </style>
 </head>
 <body>
@@ -44,28 +36,28 @@
     <a class="back-link" href="../">&larr; blixottel</a>
     <div id="site-nav"></div>
     <div id="season-switcher-slot" class="switchers"></div>
-    <p class="eyebrow" id="eyebrow">Est. manually · Season 2026/27</p>
-    <h1 class="title">The Teamsheet</h1>
-    <p class="subtitle">Newcastle United — Seniors, U21s &amp; U18s, appearance by appearance</p>
+    <p class="eyebrow" id="eyebrow">Data checks</p>
+    <h1 class="title">Data Checks</h1>
+    <p class="subtitle" id="page-subtitle">Things worth double-checking in the JSON data files</p>
   </div>
 </div>
-
-<nav class="tabs" id="tabs"></nav>
-
-<div id="next-match-slot"></div>
-
-<div id="wip-notice" role="note"><strong>Work in progress.</strong> The data for this team and season is still being completed, so this page may contain errors or gaps.</div>
 
 <div id="load-error">
   <strong>Couldn't load the data files.</strong> If you opened this page directly from disk (a <code>file://</code> link),
   most browsers block a local page from reading local JSON files. Run a tiny local server from this folder instead, e.g.
-  <code>python3 -m http.server 8000</code>, then open <code>http://localhost:8000</code>. See DATA-GUIDE.md for details.
+  <code>python3 -m http.server 8000</code>, then open <code>http://localhost:8000/validation.html</code>.
 </div>
 
-<main id="main"></main>
+<div id="all-clear"><strong>All clear.</strong> No data issues found for this team and season.</div>
+
+<div id="validation-panel">
+  <h2>Data checks</h2>
+  <p class="vp-sub">These don't stop the pages from working — just things worth double-checking in the JSON.</p>
+  <div id="validation-list"></div>
+</div>
 
 <footer id="footer-note">
-  Data maintained by hand in <code>players-master.json</code>, <code>players-archive.json</code> (players who have left), a per-season roster file, and a per-season fixtures file. Appearance stats are calculated automatically from the fixture records. See <code>DATA-GUIDE.md</code> for field reference.
+  Checks run automatically against the same data files as the squad tracker. Use the team and season switchers above to check other seasons.
 </footer>
 
 <script src="js/teams.js"></script>
@@ -73,8 +65,7 @@
 <script src="js/stats.js"></script>
 <script src="js/render.js"></script>
 <script src="js/nav.js"></script>
-<script>buildSiteNav('teamsheet');</script>
-<script src="js/app.js"></script>
-
+<script>buildSiteNav('validation');</script>
+<script src="js/validation.js"></script>
 </body>
 </html>

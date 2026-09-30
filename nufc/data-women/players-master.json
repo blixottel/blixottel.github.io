@@ -1,12 +1,28 @@
 [
     {
+        "id": "s-abbie-richardson",
+        "name": "Abbie Richardson",
+        "nationality": "England",
+        "dob": "",
+        "position": "MID",
+		"squadIfDobUnknown": "seniors",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2025-10-20", "club": "Newcastle United Under-21" }
+        ],
+        "photos": {
+            "official": ""
+        }
+    },
+    {
         "id": "s-aoife-mannion",
         "name": "Aoife Mannion",
         "nationality": "Ireland",
         "dob": "1995-09-24",
         "position": "DEF",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2025-08-01", "club": "Manchester United" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/1gZrU8tRDKeCl2UPXU4grd/5be821d2274ad912f8f5bd14ef6a9dd3/Aoifa_Manning617-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
@@ -18,8 +34,9 @@
         "nationality": "Finland",
         "dob": "1994-10-31",
         "position": "GK",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2025-08-01", "club": "Hammarby" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/6pxZ031ioknLk5V8yntm2R/81975b8b0875242dd79b1d27d1925e73/Anna_Tamminen417-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
@@ -31,11 +48,26 @@
         "nationality": "England",
         "dob": "2005-11-24",
         "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2026-01-23", "club": "Birmingham City" }
+        ],
+        "photos": {
+            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/hWECj4fum97ZvJqS2E45Z/2cebeaaf9e6999ebe4f0dc1c3ae604fb/Ashanti_Akpan275-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
+        }
+    },
+    {
+        "id": "s-ava-chapman",
+        "name": "Ava Chapman",
+        "nationality": "England",
+        "dob": "",
+        "position": "DEF",
+		"squadIfDobUnknown": "seniors",
         "careerComplete": false,
         "movements": [
         ],
         "photos": {
-            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/hWECj4fum97ZvJqS2E45Z/2cebeaaf9e6999ebe4f0dc1c3ae604fb/Ashanti_Akpan275-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
+            "official": ""
         }
     },
     {
@@ -46,6 +78,7 @@
         "position": "FWD",
         "careerComplete": false,
         "movements": [
+			{ "type": "joined", "date": "2024-02-17", "club": "Portsmouth" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/26DsASC0P2aYPiNVBsgzUT/3dcc7287b99477c88f0b01e166e520dd/Beth_Lumsden373-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
@@ -59,9 +92,40 @@
         "position": "DEF",
         "careerComplete": false,
         "movements": [
+			{ "type": "joined", "date": "2025-01-17", "club": "Chelsea" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/1LvedhiBIrMgI1szKxTfc1/2cdcaf3f5406bcd445e46449dfc46ed3/Charlotte_Wardlaw805-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
+        }
+    },
+    {
+        "id": "s-claudia-moan",
+        "name": "Claudia Moan",
+        "nationality": "England",
+        "dob": "1999-01-06",
+        "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-09", "club": "Chelsea" },
+			{ "type": "left", "date": "2026-06-30", "club": "" }
+        ],
+        "photos": {
+            "official": ""
+        }
+    },
+    {
+        "id": "s-deanna-cooper",
+        "name": "Deanna Cooper",
+        "nationality": "England",
+        "dob": "1993-06-20",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-05", "club": "Reading" },
+			{ "type": "left", "date": "2026-06-30", "club": "Burnley" }
+        ],
+        "photos": {
+            "official": ""
         }
     },
     {
@@ -72,9 +136,25 @@
         "position": "DEF",
         "careerComplete": false,
         "movements": [
+			{ "type": "joined", "date": "2024-07-10", "club": "Manchester City" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/5wYAQXvYDKtcqPw1pSnBLV/1704c0b5df8831ac213579783c1cc9d3/Demi_Stokes8-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
+        }
+    },
+    {
+        "id": "s-ella-baker",
+        "name": "Ella Baker",
+        "nationality": "England",
+        "dob": "",
+        "position": "DEF",
+		"squadIfDobUnknown": "seniors",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "left", "date": "2026-06-30", "club": "Thornaby" }
+        ],
+        "photos": {
+            "official": ""
         }
     },
     {
@@ -85,6 +165,7 @@
         "position": "MID",
         "careerComplete": false,
         "movements": [
+			{ "type": "joined", "date": "2023-07-12", "club": "Bristol City" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/1DtAjMYFGu3Wq30eOmD4lj/22264728d86f73b09152ad7a5daaf925/Elysia_Boddy878-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
@@ -96,11 +177,27 @@
         "nationality": "Sweden",
         "dob": "1998-07-13",
         "position": "FWD",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2026-01-19", "club": "Rosengard" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/3y1VuyasyIknxichN4gFul/0e25ac65397645d730ebee5cd0f95c20/Martha_Thomas52-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
+        }
+    },
+    {
+        "id": "s-emily-murphy",
+        "name": "Emily Murphy",
+        "nationality": "Ireland",
+        "dob": "2003-03-02",
+        "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2025-01-31", "club": "Birmingham City" },
+			{ "type": "left", "date": "2026-07-29", "club": "Brighton and Hove Albion" }
+        ],
+        "photos": {
+            "official": ""
         }
     },
     {
@@ -111,6 +208,7 @@
         "position": "MID",
         "careerComplete": false,
         "movements": [
+			{ "type": "joined", "date": "2023-07-12", "club": "mackems" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/6Deg7lqX0anynRenUiTV8P/72c7460754c4ef9806a6091cf315e545/Emma_Kelly595-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
@@ -124,6 +222,7 @@
         "position": "MID",
         "careerComplete": false,
         "movements": [
+			{ "type": "joined", "date": "2025-01-20", "club": "mackems" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/4TW7zcRQ9BJiGRjkcvu6Xp/ec949e4b615bd34157e71271462a4b4b/Freya_Gregory670-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
@@ -155,6 +254,21 @@
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/1zMr4KfCjCismvyZOZVIyF/22279bdeae718b4087d21fdfa608ac33/Hannah_Nemeth1316-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
+        }
+    },
+    {
+        "id": "s-hannah-hawkins",
+        "name": "Hannah Hawkins",
+        "nationality": "Scotland",
+        "dob": "1994-08-20",
+        "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2024-01-01", "club": "Durham" },
+			{ "type": "left", "date": "2026-06-30", "club": "" }
+        ],
+        "photos": {
+            "official": ""
         }
     },
     {
@@ -190,8 +304,9 @@
         "nationality": "England",
         "dob": "1997-02-21",
         "position": "DEF",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2025-07-02", "club": "Southampton" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/6aSmeTGVluTPqBq3kNhown/d784324f274668699c2c31d3c43580b3/Jemma_Purfield704-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
@@ -217,8 +332,9 @@
         "nationality": "England",
         "dob": "1992-12-08",
         "position": "MID",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2025-07-15", "club": "Aston Villa" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/5NfbQqkeBnmPx3hOhOcUct/59c6afb7bf47864ecc2b2a3d55322971/Jordan_Nobbs62-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
@@ -230,8 +346,9 @@
         "nationality": "Australia",
         "dob": "2000-03-17",
         "position": "DEF",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2026-01-15", "club": "Portland Thorns" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/6myB6lnLQRrYG2IBx2e1bH/80217a6da8a5d31869fa8d93997c1039/Kaitlyn_Torpey448-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
@@ -301,6 +418,7 @@
         "position": "DEF",
         "careerComplete": false,
         "movements": [
+			{ "type": "joined", "date": "2024-02-01", "club": "Crystal Palace" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/1tO6a6drwH6b0cD3TLBnWC/198b9b45bad836f18e207d8535fbadab/Lia_Cataldo1356-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
@@ -314,9 +432,24 @@
         "position": "DEF",
         "careerComplete": false,
         "movements": [
+			{ "type": "joined", "date": "2024-09-04", "club": "London City Lionesses" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/5RSoXtkYe1XofJ7hYN95hC/1c4e2ce3879a9cdaf261959cb832f9cd/Lois_Joel185-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
+        }
+    },
+    {
+        "id": "s-lucy-gilbert",
+        "name": "Lucy Gilbert",
+        "nationality": "England",
+        "dob": "",
+        "position": "MID",
+		"squadIfDobUnknown": "seniors",
+        "careerComplete": false,
+        "movements": [
+        ],
+        "photos": {
+            "official": ""
         }
     },
     {
@@ -353,8 +486,9 @@
         "nationality": "United States",
         "dob": "1993-02-26",
         "position": "MID",
-        "careerComplete": false,
+        "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2025-08-25", "club": "Orlando Pride" }
         ],
         "photos": {
             "official": ""
@@ -368,6 +502,7 @@
         "position": "FWD",
         "careerComplete": true,
         "movements": [
+			{ "type": "joined", "date": "2025-08-29", "club": "Rosengard" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/Uwl9t9Yi6cfFBtdJoMz9W/ecf4dcf94795050b3113297bc2793116/Oona_Sevenius_106-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
@@ -385,6 +520,21 @@
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/17icgMg2Kw9lfsZeWQECa5/8fef51660f56bb675f4948116c007784/Rachel_McLauchlan85-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
+        }
+    },
+    {
+        "id": "s-shania-hayles",
+        "name": "Shania Hayles",
+        "nationality": "Jamaica",
+        "dob": "1999-12-22",
+        "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-03", "club": "Bristol City" },
+			{ "type": "left", "date": "2026-06-30", "club": "Nottingham Forest" }
+        ],
+        "photos": {
+            "official": ""
         }
     }
 ]

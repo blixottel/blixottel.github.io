@@ -1,0 +1,138 @@
+{
+    "senior": {
+        "fixtures": [
+            { "id": "s-f1", "date": "2024-09-08", "opponent": "London City Lionesses", "venue": "A", "competition": "Women's Championship", "result": "D 1-1", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 1, "yellowCardsTotal": 3, "redCardsTotal": 0 },
+            { "id": "s-f2", "date": "2024-09-22", "opponent": "Sheffield United", "venue": "H", "competition": "Women's Championship", "result": "W 2-0", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 2, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "s-f3", "date": "2024-09-29", "opponent": "Portsmouth", "venue": "A", "competition": "Women's Championship", "result": "W 2-0", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 2, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "s-f4", "date": "2024-10-03", "opponent": "Everton", "venue": "H", "competition": "Women's League Cup", "result": "D 1-1", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 1, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "s-f5", "date": "2024-10-07", "opponent": "Durham", "venue": "H", "competition": "Women's Championship", "result": "L 0-1", "subsUsed": 3, "subsUnused": 6, "assistsTotal": 0, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "s-f6", "date": "2024-10-14", "opponent": "mackems", "venue": "A", "competition": "Women's Championship", "result": "W 2-1", "subsUsed": 4, "subsUnused": 5, "assistsTotal": 1, "yellowCardsTotal": 2, "redCardsTotal": 0 },
+            { "id": "s-f7", "date": "2024-10-20", "opponent": "Charlton Athletic", "venue": "H", "competition": "Women's Championship", "result": "D 3-3", "subsUsed": 4, "subsUnused": 5, "assistsTotal": 2, "yellowCardsTotal": 2, "redCardsTotal": 1 },
+            { "id": "s-f8", "date": "2024-11-04", "opponent": "Birmingham City", "venue": "A", "competition": "Women's Championship", "result": "W 2-0", "subsUsed": 3, "subsUnused": 5, "assistsTotal": 1, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "s-f9", "date": "2024-11-11", "opponent": "Bristol City", "venue": "A", "competition": "Women's Championship", "result": "L 0-2", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 0, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "s-f10", "date": "2024-11-18", "opponent": "Southampton", "venue": "H", "competition": "Women's Championship", "result": "D 1-1", "subsUsed": 4, "subsUnused": 5, "assistsTotal": 0, "yellowCardsTotal": 1, "redCardsTotal": 0 },
+            { "id": "s-f11", "date": "2024-11-25", "opponent": "Liverpool", "venue": "H", "competition": "Women's League Cup", "result": "L 1-6", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 0, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "s-f12", "date": "2024-12-09", "opponent": "Middlesbrough", "venue": "H", "competition": "FA Cup", "result": "W 2-0", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 0, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "s-f13", "date": "2024-12-12", "opponent": "Manchester United", "venue": "A", "competition": "Women's League Cup", "result": "L 3-5", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 0, "yellowCardsTotal": 0, "redCardsTotal": 0 },
+            { "id": "s-f14", "date": "2025-01-13", "opponent": "Nottingham Forest", "venue": "H", "competition": "FA Cup", "result": "" },
+            { "id": "s-f15", "date": "2025-01-20", "opponent": "Sheffield United", "venue": "A", "competition": "Women's Championship", "result": "" },
+            { "id": "s-f16", "date": "2025-01-27", "opponent": "Portsmouth", "venue": "H", "competition": "Women's Championship", "result": "" },
+            { "id": "s-f17", "date": "2025-02-03", "opponent": "Southampton", "venue": "A", "competition": "Women's Championship", "result": "" },
+            { "id": "s-f18", "date": "2025-02-10", "opponent": "Crystal Palace", "venue": "A", "competition": "FA Cup", "result": "" },
+            { "id": "s-f19", "date": "2025-03-03", "opponent": "Bristol City", "venue": "H", "competition": "Women's Championship", "result": "" },
+            { "id": "s-f20", "date": "2025-03-16", "opponent": "Durham", "venue": "A", "competition": "Women's Championship", "result": "" },
+            { "id": "s-f21", "date": "2025-03-24", "opponent": "mackems", "venue": "H", "competition": "Women's Championship", "result": "" },
+            { "id": "s-f22", "date": "2025-03-31", "opponent": "London City Lionesses", "venue": "H", "competition": "Women's Championship", "result": "" },
+            { "id": "s-f23", "date": "2025-04-13", "opponent": "Blackburn Rovers", "venue": "H", "competition": "Women's Championship", "result": "" },
+            { "id": "s-f24", "date": "2025-04-20", "opponent": "Charlton Athletic", "venue": "A", "competition": "Women's Championship", "result": "" },
+            { "id": "s-f25", "date": "2025-04-27", "opponent": "Birmingham City", "venue": "H", "competition": "Women's Championship", "result": "" },
+            { "id": "s-f26", "date": "2025-05-04", "opponent": "Blackburn Rovers", "venue": "A", "competition": "Women's Championship", "result": "" }
+        ],
+        "appearances": {
+            "s-amber-stobbs": {
+                "s-f1": { "status": "sub_on", "yellowCard": true }, "s-f2": { "status": "start", "yellowCard": true }, "s-f3": { "status": "start" }, "s-f4": { "status": "start" }, "s-f5": { "status": "start" },
+				"s-f6": { "status": "start", "yellowCard": true }, "s-f7": { "status": "start", "assists": 1, "yellowCard": true, "redCard": true }, "s-f9": { "status": "sub_on" }, "s-f10": { "status": "start" }, "s-f11": { "status": "sub_on" },
+				"s-f12": { "status": "start" }, "s-f13": { "status": "start" }
+            },
+            "s-amy-andrews": {
+                "s-f1": { "status": "start" }, "s-f2": { "status": "start" }, "s-f3": { "status": "start", "goals": 1 }, "s-f4": { "status": "sub_on" }, "s-f5": { "status": "start" }, "s-f6": { "status": "unused_sub" },
+				"s-f7": { "status": "start", "assists": 1 }, "s-f8": { "status": "start" }, "s-f9": { "status": "start" }, "s-f10": { "status": "sub_on" }, "s-f11": { "status": "start", "goals": 1 }, "s-f12": { "status": "start" },
+				"s-f13": { "status": "start", "goals": 1 } 
+            },
+            "s-ava-chapman": {
+                "s-f11": { "status": "unused_sub" }
+            },
+            "s-beth-lumsden": {
+                "s-f1": { "status": "sub_on" }, "s-f2": { "status": "start", "goals": 1 }, "s-f3": { "status": "start" }, "s-f5": { "status": "sub_on" }, "s-f6": { "status": "start", "goals": 2 }, "s-f7": { "status": "start" },
+				"s-f8": { "status": "start" }, "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f12": { "status": "start" }, "s-f13": { "status": "sub_on" }
+            },
+            "s-charlotte-potts": {
+                "s-f1": { "status": "start" }, "s-f2": { "status": "start" }, "s-f3": { "status": "sub_on" }, "s-f4": { "status": "start" }, "s-f5": { "status": "unused_sub" }, "s-f6": { "status": "start" }, "s-f7": { "status": "start" },
+				"s-f8": { "status": "start", "assists": 1 }, "s-f9": { "status": "start" }, "s-f10": { "status": "start" }
+            },
+			"s-charlotte-wardlaw": { },
+            "s-claudia-moan": {
+                "s-f1": { "status": "start" }, "s-f2": { "status": "start" }, "s-f3": { "status": "start" }, "s-f5": { "status": "start" }, "s-f6": { "status": "start" }, "s-f7": { "status": "start" }, "s-f8": { "status": "start" },
+				"s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "unused_sub" }, "s-f12": { "status": "start" }, "s-f13": { "status": "start" }
+            },
+            "s-deanna-cooper": {
+                "s-f1": { "status": "start" }, "s-f2": { "status": "start" }, "s-f3": { "status": "start" }, "s-f4": { "status": "unused_sub" }, "s-f5": { "status": "start" }, "s-f7": { "status": "sub_on" }, "s-f8": { "status": "start" },
+				"s-f9": { "status": "start" }, "s-f10": { "status": "start", "goals": 1 }, "s-f12": { "status": "start" }, "s-f13": { "status": "start", "goals": 1 }
+            },
+            "s-demi-stokes": {
+                "s-f1": { "status": "start", "yellowCard": true }, "s-f2": { "status": "start" }, "s-f3": { "status": "start", "yellowCard": true }, "s-f4": { "status": "start", "goals": 1 }, "s-f5": { "status": "start" }, "s-f6": { "status": "start" },
+				"s-f7": { "status": "start" }, "s-f8": { "status": "start" }, "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "start" }, "s-f12": { "status": "start" }, "s-f13": { "status": "start" }
+            },
+            "s-ella-baker": {
+                "s-f11": { "status": "unused_sub" }, "s-f12": { "status": "sub_on" }, "s-f13": { "status": "unused_sub" }
+            },
+            "s-elysia-boddy": {
+                "s-f1": { "status": "start" }, "s-f2": { "status": "start" }, "s-f3": { "status": "start" }, "s-f4": { "status": "sub_on" }, "s-f5": { "status": "start" }, "s-f6": { "status": "start", "yellowCard": true }, "s-f7": { "status": "start" },
+				"s-f8": { "status": "start" }, "s-f9": { "status": "start" }, "s-f10": { "status": "sub_on" }, "s-f11": { "status": "start" }
+            },
+            "s-emma-kelly": {
+                "s-f4": { "status": "sub_on" }, "s-f5": { "status": "sub_on" }, "s-f8": { "status": "unused_sub" }, "s-f9": { "status": "sub_on" }, "s-f10": { "status": "unused_sub" }, "s-f11": { "status": "start" }, "s-f12": { "status": "start" },
+				"s-f13": { "status": "start" }
+			},
+            "s-freya-gregory": { },
+            "s-georgia-gibson": {
+                "s-f1": { "status": "unused_sub" }, "s-f2": { "status": "unused_sub" }, "s-f3": { "status": "unused_sub" }, "s-f4": { "status": "sub_on" }, "s-f5": { "status": "unused_sub" }, "s-f6": { "status": "unused_sub" },
+				"s-f7": { "status": "unused_sub" }, "s-f8": { "status": "sub_on" }, "s-f9": { "status": "unused_sub" }, "s-f10": { "status": "unused_sub" }, "s-f11": { "status": "sub_on" }, "s-f12": { "status": "sub_on" },
+				"s-f13": { "status": "unused_sub" }
+            },
+            "s-grace-donnelly": {
+                "s-f4": { "status": "unused_sub" }, "s-f6": { "status": "unused_sub" }, "s-f7": { "status": "unused_sub" }, "s-f8": { "status": "unused_sub" }, "s-f9": { "status": "unused_sub" }, "s-f10": { "status": "unused_sub" },
+				"s-f11": { "status": "unused_sub" }, "s-f12": { "status": "unused_sub" }, "s-f13": { "status": "unused_sub" }
+            },
+            "s-hannah-greenwood": {
+                "s-f1": { "status": "unused_sub" }, "s-f2": { "status": "sub_on" }, "s-f3": { "status": "unused_sub" }, "s-f4": { "status": "start" }, "s-f5": { "status": "unused_sub" }, "s-f6": { "status": "sub_on" },
+				"s-f7": { "status": "start", "yellowCard": true }, "s-f8": { "status": "unused_sub" }, "s-f9": { "status": "unused_sub" }, "s-f10": { "status": "unused_sub" }, "s-f11": { "status": "start" }, "s-f12": { "status": "start", "goals": 2 },
+				"s-f13": { "status": "start" }
+            },
+            "s-hannah-hawkins": {
+                "s-f1": { "status": "unused_sub" }, "s-f2": { "status": "unused_sub" }, "s-f3": { "status": "unused_sub" }, "s-f4": { "status": "start" }, "s-f5": { "status": "unused_sub" }, "s-f6": { "status": "unused_sub" },
+				"s-f7": { "status": "unused_sub" }, "s-f11": { "status": "start" }, "s-f12": { "status": "unused_sub" }, "s-f13": { "status": "unused_sub" }
+            },
+            "s-isabella-sibley": {
+                "s-f1": { "status": "sub_on", "yellowCard": true }, "s-f2": { "status": "unused_sub" }, "s-f3": { "status": "sub_on" }, "s-f4": { "status": "start" }, "s-f5": { "status": "sub_on" }, "s-f6": { "status": "start" },
+				"s-f7": { "status": "start" }, "s-f8": { "status": "sub_on", "goals": 1 }, "s-f9": { "status": "sub_on" }, "s-f10": { "status": "start", "yellowCard": true }, "s-f11": { "status": "start" }, "s-f12": { "status": "unused_sub" },
+				"s-f13": { "status": "start" }
+            },
+            "s-jasmine-mcquade": {
+                "s-f1": { "status": "start", "assists": 1 }, "s-f2": { "status": "start" }, "s-f3": { "status": "start", "goals": 1, "assists": 1 }, "s-f4": { "status": "start" }, "s-f5": { "status": "start" }, "s-f6": { "status": "start" },
+				"s-f7": { "status": "unused_sub" }, "s-f8": { "status": "start" }, "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "sub_on" }, "s-f12": { "status": "start" }, "s-f13": { "status": "start" }
+            },
+            "s-kacie-elson": {
+                "s-f2": { "status": "unused_sub" }, "s-f3": { "status": "unused_sub" }, "s-f4": { "status": "unused_sub" }, "s-f6": { "status": "unused_sub" }, "s-f7": { "status": "sub_on" }, "s-f8": { "status": "unused_sub" },
+				"s-f9": { "status": "unused_sub" }, "s-f10": { "status": "unused_sub" }, "s-f11": { "status": "sub_on" }, "s-f12": { "status": "sub_on" }, "s-f13": { "status": "sub_on" }
+            },
+            "s-katie-barker": {
+                "s-f1": { "status": "start" }, "s-f2": { "status": "sub_on" }, "s-f3": { "status": "sub_on" }, "s-f4": { "status": "start" }, "s-f5": { "status": "unused_sub" }, "s-f6": { "status": "sub_on" }, "s-f7": { "status": "sub_on" },
+				"s-f8": { "status": "sub_on" }, "s-f9": { "status": "sub_on" }, "s-f10": { "status": "start" }, "s-f11": { "status": "start" }, "s-f12": { "status": "start" }, "s-f13": { "status": "start" }
+            },
+            "s-lia-cataldo": {
+                "s-f1": { "status": "start" }, "s-f12": { "status": "start" }, "s-f13": { "status": "start" }
+            },
+            "s-lois-joel": {
+                "s-f1": { "status": "sub_on" }, "s-f2": { "status": "start", "assists": 1 }, "s-f3": { "status": "start" }, "s-f4": { "status": "sub_on" }, "s-f5": { "status": "start", "yellowCard": true }, "s-f6": { "status": "sub_on" },
+				"s-f7": { "status": "start" }, "s-f8": { "status": "start" }, "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "start" }, "s-f12": { "status": "sub_on" }, "s-f13": { "status": "sub_on", "goals": 1 }
+            },
+            "s-olivia-watt": {
+                "s-f1": { "status": "unused_sub" }, "s-f2": { "status": "sub_on" }, "s-f3": { "status": "sub_on" }, "s-f4": { "status": "start" }, "s-f5": { "status": "unused_sub" }, "s-f6": { "status": "start" }, "s-f7": { "status": "unused_sub" },
+				"s-f8": { "status": "start" }, "s-f9": { "status": "start" }, "s-f10": { "status": "sub_on" }, "s-f11": { "status": "start" }, "s-f12": { "status": "unused_sub" }, "s-f13": { "status": "sub_on" }
+            },
+            "s-rachel-furness": {
+                "s-f1": { "status": "start" }, "s-f2": { "status": "sub_on" }, "s-f3": { "status": "start" }, "s-f4": { "status": "start" }, "s-f5": { "status": "start" }, "s-f6": { "status": "start", "assists": 1 }
+            },
+            "s-shania-hayles": {
+                "s-f1": { "status": "start", "goals": 1 }, "s-f2": { "status": "start", "goals": 1, "assists": 1 }, "s-f3": { "status": "start" }, "s-f4": { "status": "unused_sub" }, "s-f5": { "status": "start" }, "s-f6": { "status": "start" },
+				"s-f7": { "status": "start", "goals": 3 }, "s-f8": { "status": "start", "goals": 1 }, "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "sub_on" }, "s-f12": { "status": "sub_on" },
+				"s-f13": { "status": "sub_on" }
+            },
+            "s-sophie-haywood": {
+                "s-f1": { "status": "sub_on" }, "s-f2": { "status": "sub_on" }, "s-f3": { "status": "sub_on", "assists": 1 }, "s-f4": { "status": "start", "assists": 1 }, "s-f5": { "status": "start" }, "s-f6": { "status": "sub_on" },
+				"s-f7": { "status": "sub_on" }, "s-f8": { "status": "unused_sub" }, "s-f9": { "status": "sub_on" }, "s-f10": { "status": "sub_on" }, "s-f11": { "status": "start" }
+            }
+        }
+    }
+}

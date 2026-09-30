@@ -98,21 +98,21 @@ function renderValidationPanel(issues, verbose) {
   panel.classList.remove('vp-concise');
   if (sub) sub.style.display = '';
 
-  const bySquad = { _general: [] };
+  const bySquad = { _cross: [], _general: [] };
   SQUAD_ORDER.forEach(k => { bySquad[k] = []; });
   issues.forEach(iss => {
     (bySquad[iss.squad] || bySquad._general).push(iss);
   });
 
   list.innerHTML = '';
-  [...SQUAD_ORDER, '_general'].forEach(key => {
+  [...SQUAD_ORDER, '_cross', '_general'].forEach(key => {
     const group = bySquad[key];
     if (!group || group.length === 0) return;
     const wrap = document.createElement('div');
     wrap.className = 'vp-squad';
     const heading = document.createElement('p');
     heading.className = 'vp-squad-name';
-    heading.textContent = key === '_general' ? 'General' : SQUAD_LABEL[key];
+    heading.textContent = key === '_general' ? 'General' : key === '_cross' ? 'Across seasons' : SQUAD_LABEL[key];
     wrap.appendChild(heading);
     const ul = document.createElement('ul');
     group.forEach(iss => {
@@ -939,15 +939,21 @@ function todoState(p) {
   return isLocalDev() && !p._archived && !p._unresolvedMaster && !p.careerComplete ? 'todo-open' : '';
 }
 
-/** LOCAL-ONLY progress line above the Data checks panel, expandable to the to-do list. */
+/** LOCAL-ONLY "Career data" group in the Data checks list: progress line plus the players still to do. */
 function renderTodoProgress(players) {
   const panel = document.getElementById('validation-panel');
   if (!panel) return;
   const current = players.filter(p => !p._archived && !p._unresolvedMaster);
   const todo = current.filter(p => !p.careerComplete).sort((a, b) => a.name.localeCompare(b.name));
-  const el = document.createElement('details');
-  el.className = 'todo-progress';
-  el.innerHTML = `<summary>Career data: <b>${current.length - todo.length}</b> of <b>${current.length}</b> current players complete${todo.length ? ` · ${todo.length} to do` : ' ✓'}</summary>` +
+  // A "Career data" group at the end of the list, same look as "Across seasons".
+  // These are to-dos, not data errors, so they aren't counted in the issue totals.
+  const wrap = document.createElement('div');
+  wrap.className = 'vp-squad';
+  wrap.innerHTML = `<p class="vp-squad-name">Career data</p>` +
+    `<p class="vp-sub" style="margin:0 0 6px"><b>${current.length - todo.length}</b> of <b>${current.length}</b> current players complete${todo.length ? ` · ${todo.length} to do` : ' ✓'}</p>` +
     (todo.length ? `<ul>${todo.map(p => `<li>${playerLinkHtml(p)} <span>${SQUAD_SHORT[normSquad(p.squad)] || ''}</span></li>`).join('')}</ul>` : '');
-  panel.parentNode.insertBefore(el, panel);
+  const list = document.getElementById('validation-list');
+  (list || panel).appendChild(wrap);
+  // Keep the box visible even when there are no issues to list.
+  panel.style.display = 'block';
 }
