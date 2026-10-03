@@ -42,9 +42,16 @@ async function initValidation() {
     const crossIssues = seasons ? await loadCrossSeasonIssues(seasons, masterFile) : [];
     const issues = validateFixtures(fixtures, playersById, {
       requireDetailedStats: activeSeason ? activeSeason.requireDetailedStats !== false : true,
+      season: activeSeason,
     }).concat(crossIssues);
+    // Nudge to mark this season "dataComplete" once every fixture has a result and there are no errors.
+    const completeIssue = seasonCompleteIssue(activeSeason, fixtures, issues);
+    if (completeIssue) issues.push(completeIssue);
+    // ...and the reverse: a season flagged complete that still has fixtures without results, or errors.
+    const staleIssue = seasonStaleCompleteIssue(activeSeason, fixtures, issues);
+    if (staleIssue) issues.push(staleIssue);
 
-    renderValidationPanel(issues, isLocalDev());
+    renderValidationPanel(issues, isLocalDev(), await loadPlayerNames(masterFile));
     if (isLocalDev()) renderTodoProgress(players);
     document.getElementById('all-clear').style.display = issues.length === 0 ? 'block' : 'none';
     setNavBadge('validation', issues.length);

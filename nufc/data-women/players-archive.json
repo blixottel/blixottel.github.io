@@ -7,11 +7,103 @@
         "position": "DEF",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2025-07-01", "club": "Cheadle Town" },
+			{ "type": "youth", "date": "2025-07-01", "enddate": "2026-06-30", "club": "Cheadle Town" },
 			{ "type": "left", "date": "2026-06-30", "club": "Treaty United" }
         ],
         "photos": {
-            "official": ""
+			"flashscore": "https://static.flashscore.com/res/image/data/b9lOelGG-pIxkZCbj.png"
+        }
+    },
+    {
+        "id": "s-amy-andrews",
+        "name": "Amy Andrews",
+        "nationality": "England",
+        "dob": "1999-12-09",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-05", "club": "Durham" },
+			{ "type": "left", "date": "2025-06-30", "club": "Sheffield United" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/1PtImRsRN2kHAUQVRbosr2/238606407c4f54208b690c6935ac16d8/Amy_Andrews_profile_image.png"
+        }
+    },
+    {
+        "id": "s-ava-chapman",
+        "name": "Ava Chapman",
+        "nationality": "England",
+        "dob": "",
+        "position": "DEF",
+		"squadIfDobUnknown": "u21",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "youth", "date": "2024-11-25", "endDate": "2026-06-30" },
+			{ "type": "left", "date": "2026-07-01", "club": "Middlesbrough" }
+        ],
+        "photos": {
+			"flashscore": "https://static.flashscore.com/res/image/data/trHbmYWg-CAoblJZ0.png"
+        }
+    },
+    {
+        "id": "s-claudia-moan",
+        "name": "Claudia Moan",
+        "nationality": "England",
+        "dob": "1999-01-06",
+        "position": "GK",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-09", "club": "Chelsea" },
+			{ "type": "left", "date": "2026-06-30", "club": "" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/6U7J8ntYFj3RlQfhSg7JEK/2c16dc83cf53c4234c73239345f57629/Claudia_Moan_profile_image.png"
+        }
+    },
+    {
+        "id": "s-deanna-cooper",
+        "name": "Deanna Cooper",
+        "nationality": "England",
+        "dob": "1993-06-20",
+        "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-05", "club": "Reading" },
+			{ "type": "left", "date": "2026-06-30", "club": "Burnley" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/3XYyZ4jp5hZZH6HdmihKaH/8bbbe02924bac6617d52b7021201f50e/Deanna_Cooper_profile_image.png"
+        }
+    },
+    {
+        "id": "s-ella-baker",
+        "name": "Ella Baker",
+        "nationality": "England",
+        "dob": "",
+        "position": "DEF",
+		"squadIfDobUnknown": "u21",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "youth", "date": "2024-11-25", "endDate": "2026-06-30" },
+			{ "type": "left", "date": "2026-07-01", "club": "Thornaby" }
+        ],
+        "photos": {
+			"flashscore": "https://static.flashscore.com/res/image/data/6a3PfxXg-hWTsdwMI.png"
+        }
+    },
+    {
+        "id": "s-emily-murphy",
+        "name": "Emily Murphy",
+        "nationality": "Ireland",
+        "dob": "2003-03-02",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2025-01-31", "club": "Birmingham City" },
+			{ "type": "left", "date": "2026-07-29", "club": "Brighton and Hove Albion" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/4omuLtsfy3XVIF6GSLMaXG/7825ea20dbccc7d45794e5e14f1acb63/Emily_Murphy_Soldier.png"
         }
     },
     {
@@ -25,7 +117,21 @@
 			{ "type": "loan_in", "date": "2025-09-04", "enddate": "2026-06-30", "club": "Chelsea" }
         ],
         "photos": {
-            "official": ""
+            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/7g5CAFNFnbNdkLjFJO1lJn/7809bf690655441e4a60a1b47171d5b2/Femke_2400px.png"
+        }
+    },
+    {
+        "id": "s-isabella-sibley",
+        "name": "Isabella Sibley",
+        "nationality": "England",
+        "dob": "1999-10-26",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "loan_in", "date": "2024-08-31", "enddate": "2025-06-30", "club": "Crystal Palace" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/20WlJhHyIcuyM95K1bzim5/986bc2ff1766c5fa737f32d886062407/Isabella_Sibley_profile.png"
         }
     },
     {
@@ -39,7 +145,7 @@
 			{ "type": "loan_in", "date": "2025-09-04", "enddate": "2026-06-30", "club": "Chelsea" }
         ],
         "photos": {
-            "official": ""
+            "official": "https://images.ctfassets.net/9ec6988xevcz/IM3fMXKK4NXgGmRWNKXZ5/6272ca9d523c4545abd2cbd4e9bf4830/JorjaFox.png"
         }
     },
     {
@@ -54,7 +160,7 @@
 			{ "type": "left", "date": "2026-07-29", "club": "" }
         ],
         "photos": {
-            "official": ""
+            "official": "https://images.ctfassets.net/9ec6988xevcz/67lLoTexU7a6qyQR2w2e7S/fab3283a0964fcd5feb09eba74ddccd4/Malgorzata_Grec.png"
         }
     },
     {
@@ -69,7 +175,51 @@
 			{ "type": "retired", "date": "2026-06-30" }
         ],
         "photos": {
-            "official": ""
+            "official": "https://images.ctfassets.net/9ec6988xevcz/SdkWJTTTjrS6WpAGmNtwR/180b093108459760840b8a9a6299f0b7/Molly_Pike.png"
+        }
+    },
+    {
+        "id": "s-poppy-pritchard",
+        "name": "Poppy Pritchard",
+        "nationality": "England",
+        "dob": "2005-12-03",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "loan_in", "date": "2025-01-18", "enddate": "2025-06-30", "club": "Manchester City" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/1l4q8XdCJUzpTX4p24eHDC/8129e71bbcd47fa899a3fc8bb20fd7ce/PoppyPritchard_Soldier.png"
+        }
+    },
+    {
+        "id": "s-rachel-furness",
+        "name": "Rachel Furness",
+        "nationality": "Northern Ireland",
+        "dob": "1988-06-19",
+        "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-19", "club": "Bristol City" },
+			{ "type": "retired", "date": "2025-06-30" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/6CGv1e0b5ljwX8nWN5rSOu/08e1fb297706579ca3d2ceb9048a5331/Rachel_Furness_profile_image.png"
+        }
+    },
+    {
+        "id": "s-shania-hayles",
+        "name": "Shania Hayles",
+        "nationality": "Jamaica",
+        "dob": "1999-12-22",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-03", "club": "Bristol City" },
+			{ "type": "left", "date": "2026-06-30", "club": "Nottingham Forest" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/1EDGKA2KTKbSLI3WMxG55U/035aff49ab0132e3325d97414bae0d36/Shania_Hayles_profile_image.png"
         }
     },
     {
@@ -84,7 +234,23 @@
 			{ "type": "left", "date": "2026-06-30", "club": "Chicago" }
        ],
         "photos": {
-            "official": ""
+ 			"flashscore": "https://static.flashscore.com/res/image/data/61CkxzXg-GSeDxilC.png"
+       }
+    },
+    {
+        "id": "s-sophie-haywood",
+        "name": "Sophie Haywood",
+        "nationality": "England",
+        "dob": "1996-01-10",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2024-07-01", "club": "Sheffield United" },
+			{ "type": "loan_out", "date": "2025-01-31", "enddate": "2025-06-30", "club": "Nottingham Forest" },
+			{ "type": "left", "date": "2025-06-30", "club": "Hull City" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/7cN71azKsa8dRxnXM4RvKE/16592404e07987962b52369e5f2351f6/Sophie_Haywood_profile_image.png"
         }
     }
 ]

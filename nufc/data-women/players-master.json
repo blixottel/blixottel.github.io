@@ -5,13 +5,29 @@
         "nationality": "England",
         "dob": "",
         "position": "MID",
-		"squadIfDobUnknown": "seniors",
+		"squadIfDobUnknown": "u21",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2025-10-20", "club": "Newcastle United Under-21" }
+			{ "type": "youth", "date": "2025-10-20", "endDate": "2026-09-22" },
+			{ "type": "joined", "date": "2026-09-23", "club": "Newcastle United Youth" }
         ],
         "photos": {
-            "official": ""
+			"flashscore": "https://static.flashscore.com/res/image/data/EVXX8MzB-OSotXse4.png"
+        }
+    },
+    {
+        "id": "s-amber-stobbs",
+        "name": "Amber-Keegan Stobbs",
+        "nationality": "England",
+        "dob": "1992-10-21",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2023-07-13", "club": "Lewes" },
+			{ "type": "left", "date": "2025-06-30", "club": "Durham" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/6GCtwP2F021DkbutYOPFcc/1f1526f117093cb5e82e5fd1757eda19/Amber-Keegan_Stobbs_0370-2cropped.png"
         }
     },
     {
@@ -50,24 +66,11 @@
         "position": "MID",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2026-01-23", "club": "Birmingham City" }
+			{ "type": "youth", "date": "2026-01-23", "enddate": "2026-06-30", "club": "Birmingham City" },
+			{ "type": "joined", "date": "2026-07-01", "club": "Newcastle United Youth" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/hWECj4fum97ZvJqS2E45Z/2cebeaaf9e6999ebe4f0dc1c3ae604fb/Ashanti_Akpan275-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
-        }
-    },
-    {
-        "id": "s-ava-chapman",
-        "name": "Ava Chapman",
-        "nationality": "England",
-        "dob": "",
-        "position": "DEF",
-		"squadIfDobUnknown": "seniors",
-        "careerComplete": false,
-        "movements": [
-        ],
-        "photos": {
-            "official": ""
         }
     },
     {
@@ -85,6 +88,35 @@
         }
     },
     {
+        "id": "s-casi-gregson",
+        "name": "Casi Gregson",
+        "nationality": "Wales",
+        "dob": "2007-11-03",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "youth", "date": "2026-02-17", "enddate": "2027-06-30", "club": "Gwalia United" }
+        ],
+        "photos": {
+			"flashscore": "https://static.flashscore.com/res/image/data/OpaaeXGG-0I88UUHp.png"
+        }
+    },
+    {
+        "id": "s-charlotte-potts",
+        "name": "Charlotte Potts",
+        "nationality": "England",
+        "dob": "1994-09-23",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-10-01", "club": "Lugano" },
+			{ "type": "retired", "date": "2026-06-30" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/2MjZV41qnWA7ChdckGUz6N/ce10702276ade40a9aed47428ae2a243/Charlotte_Potts_0390-2cropped.png"
+        }
+    },
+    {
         "id": "s-charlotte-wardlaw",
         "name": "Charlotte Wardlaw",
         "nationality": "Scotland",
@@ -99,36 +131,6 @@
         }
     },
     {
-        "id": "s-claudia-moan",
-        "name": "Claudia Moan",
-        "nationality": "England",
-        "dob": "1999-01-06",
-        "position": "GK",
-        "careerComplete": false,
-        "movements": [
-			{ "type": "joined", "date": "2024-07-09", "club": "Chelsea" },
-			{ "type": "left", "date": "2026-06-30", "club": "" }
-        ],
-        "photos": {
-            "official": ""
-        }
-    },
-    {
-        "id": "s-deanna-cooper",
-        "name": "Deanna Cooper",
-        "nationality": "England",
-        "dob": "1993-06-20",
-        "position": "DEF",
-        "careerComplete": false,
-        "movements": [
-			{ "type": "joined", "date": "2024-07-05", "club": "Reading" },
-			{ "type": "left", "date": "2026-06-30", "club": "Burnley" }
-        ],
-        "photos": {
-            "official": ""
-        }
-    },
-    {
         "id": "s-demi-stokes",
         "name": "Demi Stokes",
         "nationality": "England",
@@ -140,21 +142,6 @@
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/5wYAQXvYDKtcqPw1pSnBLV/1704c0b5df8831ac213579783c1cc9d3/Demi_Stokes8-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
-        }
-    },
-    {
-        "id": "s-ella-baker",
-        "name": "Ella Baker",
-        "nationality": "England",
-        "dob": "",
-        "position": "DEF",
-		"squadIfDobUnknown": "seniors",
-        "careerComplete": false,
-        "movements": [
-			{ "type": "left", "date": "2026-06-30", "club": "Thornaby" }
-        ],
-        "photos": {
-            "official": ""
         }
     },
     {
@@ -183,21 +170,6 @@
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/3y1VuyasyIknxichN4gFul/0e25ac65397645d730ebee5cd0f95c20/Martha_Thomas52-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
-        }
-    },
-    {
-        "id": "s-emily-murphy",
-        "name": "Emily Murphy",
-        "nationality": "Ireland",
-        "dob": "2003-03-02",
-        "position": "FWD",
-        "careerComplete": false,
-        "movements": [
-			{ "type": "joined", "date": "2025-01-31", "club": "Birmingham City" },
-			{ "type": "left", "date": "2026-07-29", "club": "Brighton and Hove Albion" }
-        ],
-        "photos": {
-            "official": ""
         }
     },
     {
@@ -243,6 +215,37 @@
         }
     },
     {
+        "id": "s-georgia-gibson",
+        "name": "Georgia Gibson",
+        "nationality": "United Arab Emirates",
+        "dob": "1998-09-02",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2020-07-01", "club": "mackems" },
+			{ "type": "loan_out", "date": "2025-01-08", "enddate": "2025-06-30", "club": "Middlesbrough" },
+			{ "type": "left", "date": "2025-06-30", "club": "Chester-Le-Street Town" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/3YyJBLYQPktxQThcwVRM2d/bd7623290388bade032af5abbf9b7e54/Georgia_Gibson_0476-2cropped.png"
+        }
+    },
+    {
+        "id": "s-grace-donnelly",
+        "name": "Grace Donnelly",
+        "nationality": "England",
+        "dob": "1998-08-20",
+        "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2017-07-01", "club": "mackems" },
+			{ "type": "left", "date": "2025-06-30", "club": "mackems" }
+		],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/6h8zlgXP9RijXj4kS3MW2c/f792c02cdf96ab3dbc2333c0e1534b07/Grace_Donnelly_24_25.png"
+        }
+    },
+    {
         "id": "s-hanna-nemeth",
         "name": "Hanna Németh",
         "nationality": "Hungary",
@@ -257,6 +260,21 @@
         }
     },
     {
+        "id": "s-hannah-greenwood",
+        "name": "Hannah Greenwood",
+        "nationality": "England",
+        "dob": "1999-02-02",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2023-07-15", "club": "Durham" },
+			{ "type": "left", "date": "2025-06-30", "club": "mackems" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/4VD0kHAqY7oijib62PFHoH/e28ccbfb436c33e04ce7f8f09c6d9230/Hannah_Greenwood_0588-2cropped.png"
+        }
+    },
+    {
         "id": "s-hannah-hawkins",
         "name": "Hannah Hawkins",
         "nationality": "Scotland",
@@ -268,7 +286,7 @@
 			{ "type": "left", "date": "2026-06-30", "club": "" }
         ],
         "photos": {
-            "official": ""
+            "official": "https://images.ctfassets.net/9ec6988xevcz/6IbbFYsFQxpuJRfGEiw9lu/6cd93b085aa72f35b5b0499e31d41446/Hannah_Reid0001_Cropped.png"
         }
     },
     {
@@ -293,6 +311,8 @@
         "position": "MID",
         "careerComplete": false,
         "movements": [
+			{ "type": "joined", "date": "2022-07-01", "club": "Middlesbrough" },
+			{ "type": "loan_out", "date": "2026-08-21", "enddate": "2027-06-30", "club": "Hibernian" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/5q3Eef9IrjqtUaKojusVHg/c20912bb32deaec44e723809933279a5/Jasmine_McQuade945-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
@@ -341,6 +361,21 @@
         }
     },
     {
+        "id": "s-kacie-elson",
+        "name": "Kacie Elson",
+        "nationality": "England",
+        "dob": "2000-05-26",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2019-07-01", "club": "Chester-le-Street" },
+			{ "type": "left", "date": "2025-01-08", "club": "Middlesbrough" }
+        ],
+        "photos": {
+			"flashscore": "https://static.flashscore.com/res/image/data/QLqjPiAr-2cH2YErf.png"
+        }
+    },
+    {
         "id": "s-kaitlyn-torpey",
         "name": "Kaitlyn Torpey",
         "nationality": "Australia",
@@ -366,6 +401,21 @@
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/7gWnHhpetXGqhcv6uKV67h/3428c22cd90c9ced373f85865f9c3a9b/Kathleen_McGovern741-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
+        }
+    },
+    {
+        "id": "s-katie-barker",
+        "name": "Katie Barker",
+        "nationality": "England",
+        "dob": "2000-12-23",
+        "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2021-07-01", "club": "mackems" },
+			{ "type": "left", "date": "2025-07-01", "club": "Wrexham" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/4Zic8l6jU6875bWYmooRft/8f692139c149d7f99277da53113bcd7a/Katie_Barker_0482-2cropped.png"
         }
     },
     {
@@ -444,12 +494,14 @@
         "nationality": "England",
         "dob": "",
         "position": "MID",
-		"squadIfDobUnknown": "seniors",
+		"squadIfDobUnknown": "u21",
         "careerComplete": false,
         "movements": [
+			{ "type": "youth", "date": "2025-10-20", "enddate": "2026-06-30" },
+			{ "type": "left", "date": "2026-07-01", "club": "" }
         ],
         "photos": {
-            "official": ""
+			"flashscore": "https://static.flashscore.com/res/image/data/YRGgFODa-KnVSjbDq.png"
         }
     },
     {
@@ -491,7 +543,22 @@
 			{ "type": "joined", "date": "2025-08-25", "club": "Orlando Pride" }
         ],
         "photos": {
-            "official": ""
+            "official": "https://images.ctfassets.net/9ec6988xevcz/7bqlfIvnXPw45gOQgR9DK6/487cdbba174c3cfa90c20ac839aa0904/Morgan_Gautrat.png"
+        }
+    },
+    {
+        "id": "s-olivia-watt",
+        "name": "Olivia Watt",
+        "nationality": "England",
+        "dob": "1999-07-05",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2021-07-01", "club": "mackems" },
+			{ "type": "left", "date": "2025-07-01", "club": "Middlesbrough" }
+        ],
+        "photos": {
+            "official": "https://images.ctfassets.net/9ec6988xevcz/6JEvgmukfMpNni8L7bWipO/97e52718ab1175a790e8415b388da793/Olivia_Watt_0523-2cropped.png"
         }
     },
     {
@@ -520,21 +587,6 @@
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/17icgMg2Kw9lfsZeWQECa5/8fef51660f56bb675f4948116c007784/Rachel_McLauchlan85-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
-        }
-    },
-    {
-        "id": "s-shania-hayles",
-        "name": "Shania Hayles",
-        "nationality": "Jamaica",
-        "dob": "1999-12-22",
-        "position": "FWD",
-        "careerComplete": false,
-        "movements": [
-			{ "type": "joined", "date": "2024-07-03", "club": "Bristol City" },
-			{ "type": "left", "date": "2026-06-30", "club": "Nottingham Forest" }
-        ],
-        "photos": {
-            "official": ""
         }
     }
 ]

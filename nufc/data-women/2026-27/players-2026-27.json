@@ -5,7 +5,7 @@
     { "number": 4, "id": "s-jordan-nobbs", "status": "active", "photoSource": "official" },
     { "number": 5, "id": "s-jemma-purfield", "status": "active", "photoSource": "official" },
     { "number": 6, "id": "s-elysia-boddy", "status": "not_selected_season", "photoSource": "official" },
-    { "number": 7, "id": "s-morgan-gautrat", "status": "not_selected_season", "photoSource": "placeholder" },
+    { "number": 7, "id": "s-morgan-gautrat", "status": "not_selected_season", "photoSource": "official" },
     { "number": 8, "id": "s-emma-kelly", "status": "not_selected_season", "photoSource": "official" },
     { "number": 9, "id": "s-kathleen-mcgovern", "status": "active", "photoSource": "official" },
     { "number": 10, "id": "s-mollie-lambert", "status": "active", "photoSource": "official" },
@@ -27,9 +27,7 @@
     { "number": 27, "id": "s-rachel-mclauchlan", "status": "active", "photoSource": "official" },
     { "number": 30, "id": "s-jessie-gale", "status": "active", "photoSource": "official" },
     { "number": 33, "id": "s-leanne-kiernan", "status": "active", "photoSource": "official" },
-    { "number": 0, "id": "s-abbie-richardson", "status": "not_selected_season", "photoSource": "official" },
-    { "number": 0, "id": "s-ava-chapman", "status": "not_selected_season", "photoSource": "official" },
-    { "number": 0, "id": "s-ella-baker", "status": "not_selected_season", "photoSource": "official" },
-    { "number": 0, "id": "s-lucy-gilbert", "status": "not_selected_season", "photoSource": "official" },
-    { "number": 99, "id": "s-lia-cataldo", "status": "not_selected_season", "photoSource": "official" }
+    { "number": 45, "id": "s-casi-gregson", "status": "active", "photoSource": "flashscore" },
+    { "number": 53, "id": "s-abbie-richardson", "status": "active", "photoSource": "flashscore" },
+    { "number": 99, "id": "s-lia-cataldo", "status": "active", "photoSource": "official" }
 ]

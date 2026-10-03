@@ -10,7 +10,6 @@
 			{ "type": "loan_in", "date": "2025-08-02", "enddate": "2026-06-30", "club": "Southampton" }
         ],
         "photos": {
-            "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/225321.png",
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/427568-1681828000.jpg?lm=4711",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/00/63/490063_aaron_ramsdale_20251227213501.png",
@@ -34,7 +33,6 @@
 			{ "type": "left", "date": "2026-06-30", "club": "Wolverhampton Wanderers" }
         ],
         "photos": {
-            "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/19236.png",
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/29712-1736421115.jpg?lm=4711",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/75/67/17567_john_ruddy_20240815235253.png",
@@ -59,7 +57,6 @@
 			{ "type": "left", "date": "2025-06-30", "club": "Juventus" }
         ],
         "photos": {
-            "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/235530.png",
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/480116-1739281396.jpg?lm=4711",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/01/18/490118_lloyd_kelly_20260104222922.png",
@@ -72,6 +69,54 @@
         }
     },
     {
+        "id": "s-sandro-tonali",
+        "name": "Sandro Tonali",
+        "nationality": "Italy",
+        "dob": "2000-05-08",
+        "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2023-07-03", "club": "AC Milan" },
+			{ "type": "left", "date": "2026-07-06", "club": "Tottenham Hotspur" }
+        ],
+        "photos": {
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/432422.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/397033-1688389270.jpg?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/63/04/586304_sandro_tonali_20260114154428.png",
+            "sofascore": "https://img.sofascore.com/api/v1/player/892673/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/867414.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/423351.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/pEvgl0Fa-YsVKntOo.png",
+            "statshub": "https://images.statshub.com/player/892673.png",
+            "fminside": "https://img.fminside.net/facesfm26/43298481.png"
+        }
+    },
+    {
+        "id": "s-travis-hernes",
+        "name": "Travis Hernes",
+        "nationality": "Norway",
+        "dob": "2005-11-04",
+        "position": "MID",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2023-09-01", "club": "Shrewsbury Town" },
+			{ "type": "loan_out", "date": "2025-01-17", "enddate": "2025-06-30", "club": "AaB" },
+			{ "type": "loan_out", "date": "2025-09-02", "enddate": "2026-06-30", "club": "FC Groningen" },
+			{ "type": "left", "date": "2026-06-15", "club": "FC Groningen" }
+        ],
+        "photos": {
+            "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/592436.png",
+            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1053908-1764057302.png?lm=4711",
+            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/20/1011820_20220911131153_travis_hearnes.jpg",
+            "sofascore": "https://img.sofascore.com/api/v1/player/1400656/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1400979.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3309870.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/nJ2fFQg5-GhoJNaZD.png",
+            "statshub": "https://images.statshub.com/player/1400656.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000190514.png"
+        }
+    },
+    {
         "id": "u21-alex-odonovan",
         "name": "Alex O'Donovan",
         "nationality": "England",
@@ -79,21 +124,11 @@
         "position": "MF",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2023-08-12", "club": "Newcastle United Under-16" },
+			{ "type": "youth", "date": "2023-08-12", "endDate": "2024-06-30" },
+			{ "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" },
 			{ "type": "left", "date": "2026-06-30", "club": "" }
         ],
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
-        }
+        "photos": { }
     },
     {
         "id": "u21-alfie-harrison",
@@ -107,9 +142,6 @@
 			{ "type": "left", "date": "2026-06-30", "club": "" }
         ],
         "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/00/1007900_20240201161538_alfie_harrison_1706804138.jpg",
             "sofascore": "https://img.sofascore.com/api/v1/player/1402916/image",
             "fotmob": "https://images.fotmob.com/image_resources/playerimages/1418100.png",
@@ -131,8 +163,6 @@
 			{ "type": "left", "date": "2026-01-15", "club": "Harrogate Town" }
         ],
         "photos": {
-            "official": "",
-            "premierleague": "",
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/741268-1699385751.jpg?lm=4711",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/44/32/914432_cathal_heffernan_20241005135626.jpg",
             "sofascore": "https://img.sofascore.com/api/v1/player/1134333/image",
@@ -155,16 +185,30 @@
 			{ "type": "left", "date": "2026-06-30", "club": "Hemel Hempstead Town" }
         ],
         "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
             "fotmob": "https://images.fotmob.com/image_resources/playerimages/1683913.png",
             "besoccer": "https://cdn.resfu.com/img_data/players/medium/3455354.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/Iq47SDil-2ajjJkMu.png",
-            "statshub": "",
-            "fminside": ""
+            "flashscore": "https://static.flashscore.com/res/image/data/Iq47SDil-2ajjJkMu.png"
+        }
+    },
+    {
+        "id": "u21-joe-brayson",
+        "name": "Joe Brayson",
+        "nationality": "England",
+        "dob": "2007-04-21",
+        "position": "FWD",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2023-07-01", "club": "Newcastle United Youth" },
+			{ "type": "loan_out", "date": "2026-01-01", "enddate": "2026-01-29", "club": "Morpeth Town" },
+			{ "type": "left", "date": "2026-06-30", "club": "George Washington Colonials" }
+        ],
+        "photos": {
+            "sofascore": "https://img.sofascore.com/api/v1/player/1601606/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1529397.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3346470.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/fo3IUGXg-dfVW2dki.png",
+            "statshub": "https://images.statshub.com/player/1601606.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000302062.png"
         }
     },
     {
@@ -179,15 +223,7 @@
 			{ "type": "left", "date": "2025-08-10", "club": "UB Conquense" }
         ],
         "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "",
             "besoccer": "https://cdn.resfu.com/img_data/players/medium/3588333.jpg",
-            "flashscore": "",
-            "statshub": "",
             "fminside": "https://img.fminside.net/facesfm26/2000201577.png"
         }
     },
@@ -203,16 +239,30 @@
 			{ "type": "left", "date": "2025-06-30", "club": "West Ham United" }
         ],
         "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/08/67/990867_reece_byrne_20260129133254.jpg",
-            "sofascore": "",
             "fotmob": "https://images.fotmob.com/image_resources/playerimages/1375410.png",
             "besoccer": "https://cdn.resfu.com/img_data/players/medium/917907.jpg",
             "flashscore": "https://static.flashscore.com/res/image/data/6yBuIMEG-dILmE4Bl.png",
-            "statshub": "",
             "fminside": "https://img.fminside.net/facesfm26/2000216337.png"
+        }
+    },
+    {
+        "id": "u21-thomas-bryant",
+        "name": "Thomas Bryant",
+        "nationality": "England",
+        "dob": "2006-12-11",
+        "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "joined", "date": "2023-07-01", "club": "Newcastle United Youth" },
+			{ "type": "left", "date": "2026-06-30", "club": "Darlington" }
+        ],
+        "photos": {
+            "sofascore": "https://img.sofascore.com/api/v1/player/1511676/image",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1575671.png",
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3346472.jpg",
+            "flashscore": "https://static.flashscore.com/res/image/data/IXLxiscM-M3qwRG0T.png",
+            "fminside": "https://img.fminside.net/facesfm26/2000302077.png"
         }
     },
     {
@@ -223,20 +273,12 @@
         "position": "GK",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2024-07-01", "club": "Newcastle United Under-16" },
+			{ "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" },
 			{ "type": "left", "date": "2026-06-30", "club": "South Shields" }
         ],
         "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
             "sofascore": "https://img.sofascore.com/api/v1/player/1899507/image",
-            "fotmob": "",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3604013.jpg",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
+            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3604013.jpg"
         }
     },
     {
@@ -250,8 +292,6 @@
  			{ "type": "trial_in", "date": "2024-01-27", "enddate": "2024-01-27", "club": "Wolverhampton Wanderers" }
         ],
         "photos": {
-            "official": "",
-            "premierleague": "",
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1005844-1782978840.jpg?lm=4711",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/44/83/934483_brayden_clarke_20240525201226.png",
             "sofascore": "https://img.sofascore.com/api/v1/player/1424625/image",
@@ -274,16 +314,7 @@
 			{ "type": "left", "date": "2026-06-30", "club": "Middlesbrough" }
         ],
         "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1975731.png",
-            "besoccer": "",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1975731.png"
         }
     },
     {
@@ -298,12 +329,6 @@
  			{ "type": "trial_in", "date": "2023-09-02", "enddate": "2023-09-02", "club": "Crystal Palace" }
         ],
         "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "",
             "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
@@ -322,16 +347,7 @@
 			{ "type": "left", "date": "2026-06-30", "club": "West Bromwich Albion" }
         ],
         "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/2146872.png",
-            "besoccer": "",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/2146872.png"
         }
     },
     {
@@ -342,20 +358,12 @@
         "position": "MID",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2023-08-12", "club": "Newcastle United Under-16" },
+			{ "type": "youth", "date": "2023-08-12", "endDate": "2024-06-30" },
+			{ "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" },
 			{ "type": "left", "date": "2026-06-30", "club": "" }
         ],
         "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "https://static.flashscore.com/res/image/data/tlQ4KrGG-67PmSEAe.png",
-            "statshub": "",
-            "fminside": ""
+            "flashscore": "https://static.flashscore.com/res/image/data/tlQ4KrGG-67PmSEAe.png"
         }
     },
     {
@@ -369,9 +377,6 @@
  			{ "type": "trial_in", "date": "2024-04-06", "enddate": "2024-04-06", "club": "Arsenal" }
         ],
         "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/85/23/1048523_noah_cooper_20240605145440.png",
             "sofascore": "https://img.sofascore.com/api/v1/player/1468578/image",
             "fotmob": "https://images.fotmob.com/image_resources/playerimages/1683925.png",
@@ -389,21 +394,10 @@
         "position": "MID",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2024-09-28", "club": "Newcastle United Under-16" },
+			{ "type": "youth", "date": "2024-09-28", "endDate": "2025-06-30" },
 			{ "type": "left", "date": "2025-07-01", "club": "Bolton Wanderers" }
         ],
-        "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
-            "zerozero": "",
-            "sofascore": "",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "",
-            "statshub": "",
-            "fminside": ""
-        }
+        "photos": { }
     },
     {
         "id": "u18-theodore-adelusi",
@@ -416,9 +410,6 @@
  			{ "type": "trial_in", "date": "2024-04-06", "enddate": "2024-04-06", "club": "Tottenham Hotspur" }
        ],
         "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/29/04/1242904_theodore_adelusi_20251001105458.png",
             "sofascore": "https://img.sofascore.com/api/v1/player/1899780/image",
             "fotmob": "https://images.fotmob.com/image_resources/playerimages/1813326.png",
@@ -439,16 +430,8 @@
  			{ "type": "trial_in", "date": "2026-04-11", "enddate": "2026-04-18", "club": "Wolverhampton Wanderers" }
         ],
         "photos": {
-            "official": "",
-            "premierleague": "",
-            "transfermarkt": "",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/04/18/1260418_will_mcpartland_20250321124610.png",
-            "sofascore": "",
-            "fotmob": "",
-            "besoccer": "",
-            "flashscore": "https://static.flashscore.com/res/image/data/IuKLghhl-jquRb5XD.png",
-            "statshub": "",
-            "fminside": ""
+            "flashscore": "https://static.flashscore.com/res/image/data/IuKLghhl-jquRb5XD.png"
         }
     },
     {
@@ -464,7 +447,6 @@
 			{ "type": "left", "date": "2024-06-30", "club": "Brighton and Hove Albion" }
         ],
         "photos": {
-            "official": "",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/592031.png",
             "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/31/25/1013125_yankuba_minteh_20251025173553.png",

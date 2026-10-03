@@ -73,7 +73,27 @@ function buildSeasonSwitcher(seasons, activeId) {
  * that something's worth checking in the source data, without airing the
  * specifics to site visitors.
  */
-function renderValidationPanel(issues, verbose) {
+/**
+ * Turns a validation message into HTML in which every player name that's in `nameToId` (name -> id,
+ * ambiguous names already removed) becomes a link to that player's page.
+ */
+function linkifyPlayerNames(message, nameToId) {
+  const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const html = esc(message);
+  const names = Object.keys(nameToId || {}).sort((a, b) => b.length - a.length);
+  if (!names.length) return html;
+  const pattern = names.map(n => esc(n).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  const byEscaped = {};
+  names.forEach(n => { byEscaped[esc(n)] = nameToId[n]; });
+  return html.replace(new RegExp('(?<![\\p{L}\\p{N}_])(' + pattern + ')(?![\\p{L}\\p{N}_])', 'gu'),
+    (m, name) => byEscaped[name] ? `<a class="player-link" href="${playerHref(byEscaped[name])}">${name}</a>` : m);
+}
+
+/**
+ * `players` (optional) = [{ id, name }] for every player — when given, player names in the messages
+ * become links to their player pages.
+ */
+function renderValidationPanel(issues, verbose, players) {
   const panel = document.getElementById('validation-panel');
   const list = document.getElementById('validation-list');
   const sub = panel.querySelector('.vp-sub');
@@ -104,6 +124,15 @@ function renderValidationPanel(issues, verbose) {
     (bySquad[iss.squad] || bySquad._general).push(iss);
   });
 
+  // name -> id for the links; a name shared by two players is left unlinked rather than guessed.
+  const nameToId = {}, ambiguous = new Set();
+  (players || []).forEach(p => {
+    if (!p || !p.name || p.name === p.id) return;
+    if (p.name in nameToId && nameToId[p.name] !== p.id) ambiguous.add(p.name);
+    nameToId[p.name] = p.id;
+  });
+  ambiguous.forEach(n => { delete nameToId[n]; });
+
   list.innerHTML = '';
   [...SQUAD_ORDER, '_cross', '_general'].forEach(key => {
     const group = bySquad[key];
@@ -118,7 +147,7 @@ function renderValidationPanel(issues, verbose) {
     group.forEach(iss => {
       const li = document.createElement('li');
       li.className = iss.severity;
-      li.textContent = iss.message;
+      if (players) li.innerHTML = linkifyPlayerNames(iss.message, nameToId); else li.textContent = iss.message;
       ul.appendChild(li);
     });
     wrap.appendChild(ul);
@@ -726,6 +755,24 @@ function buildLeaderboards(playersById, squadStats, squadKey) {
 }
 
 /**
+ * For the senior squad (the only one with minutes / xG leaderboards): if any of the fixtures in view are
+ * flagged "noDetailedStats", returns the grid wrapped with a footnote saying those totals are understated.
+ * Otherwise returns the grid untouched. `ids` limits the count to one competition's fixtures.
+ */
+function withNoStatsNote(grid, fixtureData, ids, squadKey) {
+  if (squadKey !== 'senior') return grid;
+  const n = countNoDetailedStats(fixtureData, ids);
+  if (!n) return grid;
+  const box = document.createElement('div');
+  box.appendChild(grid);
+  const note = document.createElement('p');
+  note.style.cssText = 'font-size:12px;opacity:0.7;margin:10px 0 0';
+  note.textContent = `Minutes and xG aren't available for ${n} match${n === 1 ? '' : 'es'}, so those totals are understated.`;
+  box.appendChild(note);
+  return box;
+}
+
+/**
  * Wraps buildLeaderboards with an "Overall" view plus one view per
  * competition (League, cups, Europe, etc.), switchable via a small tab bar.
  * Every view is pre-built up front and toggled with display:none, so
@@ -742,13 +789,13 @@ function buildLeaderboardsBlock(playersById, fixtureData, squadKey) {
   wrap.className = 'leaderboards-block';
 
   if (groups.length <= 1) {
-    wrap.appendChild(buildLeaderboards(playersById, computeStatsForSquad(fixtureData), squadKey));
+    wrap.appendChild(withNoStatsNote(buildLeaderboards(playersById, computeStatsForSquad(fixtureData), squadKey), fixtureData, null, squadKey));
     return wrap;
   }
 
-  const views = [{ key: '__overall__', label: 'Overall', grid: buildLeaderboards(playersById, computeStatsForSquad(fixtureData), squadKey) }];
+  const views = [{ key: '__overall__', label: 'Overall', grid: withNoStatsNote(buildLeaderboards(playersById, computeStatsForSquad(fixtureData), squadKey), fixtureData, null, squadKey) }];
   groups.forEach(g => {
-    views.push({ key: g.label, label: g.label, grid: buildLeaderboards(playersById, computeStatsForFixtureIds(fixtureData, g.fixtureIds), squadKey) });
+    views.push({ key: g.label, label: g.label, grid: withNoStatsNote(buildLeaderboards(playersById, computeStatsForFixtureIds(fixtureData, g.fixtureIds), squadKey), fixtureData, g.fixtureIds, squadKey) });
   });
 
   const tabBar = document.createElement('div');

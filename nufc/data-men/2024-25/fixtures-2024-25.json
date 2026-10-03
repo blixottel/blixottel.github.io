@@ -296,6 +296,17 @@
 				"s-f21": { "status": "unused_sub" }, "s-f22": { "status": "unused_sub" }, "s-f23": { "status": "unused_sub" }, "s-f24": { "status": "unused_sub" }, "s-f25": { "status": "unused_sub" }, "s-f26": { "status": "unused_sub" },
 				"s-f27": { "status": "unused_sub" }, "s-f28": { "status": "unused_sub" }
             },
+            "s-ryan-fraser": {
+				"s-f4": { "status": "transferred" }, "s-f5": { "status": "transferred" }, "s-f6": { "status": "transferred" }, "s-f7": { "status": "transferred" }, "s-f8": { "status": "transferred" },
+				"s-f9": { "status": "transferred" }, "s-f10": { "status": "transferred" }, "s-f11": { "status": "transferred" }, "s-f12": { "status": "transferred" }, "s-f13": { "status": "transferred" },
+				"s-f14": { "status": "transferred" }, "s-f15": { "status": "transferred" }, "s-f16": { "status": "transferred" }, "s-f17": { "status": "transferred" }, "s-f18": { "status": "transferred" },
+				"s-f19": { "status": "transferred" }, "s-f20": { "status": "transferred" }, "s-f21": { "status": "transferred" }, "s-f22": { "status": "transferred" }, "s-f23": { "status": "transferred" },
+				"s-f24": { "status": "transferred" }, "s-f25": { "status": "transferred" }, "s-f26": { "status": "transferred" }, "s-f27": { "status": "transferred" }, "s-f28": { "status": "transferred" },
+				"s-f29": { "status": "transferred" }, "s-f30": { "status": "transferred" }, "s-f31": { "status": "transferred" }, "s-f32": { "status": "transferred" }, "s-f33": { "status": "transferred" },
+				"s-f34": { "status": "transferred" }, "s-f35": { "status": "transferred" }, "s-f36": { "status": "transferred" }, "s-f37": { "status": "transferred" }, "s-f38": { "status": "transferred" },
+				"s-f39": { "status": "transferred" }, "s-f40": { "status": "transferred" }, "s-f41": { "status": "transferred" }, "s-f42": { "status": "transferred" }, "s-f43": { "status": "transferred" },
+				"s-f44": { "status": "transferred" }, "s-f45": { "status": "transferred" }, "s-f46": { "status": "transferred" }, "s-f47": { "status": "transferred" }, "s-f48": { "status": "transferred" }
+            },
             "s-sandro-tonali": {
                 "s-f1": { "status": "suspended" }, "s-f2": { "status": "suspended" }, "s-f3": { "status": "start" }, "s-f4": { "status": "sub_on" }, "s-f5": { "status": "sub_on" }, "s-f6": { "status": "sub_on" },
 				"s-f7": { "status": "start", "yellowCard": true }, "s-f8": { "status": "unused_sub" }, "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "start", "yellowCard": true },
@@ -490,7 +501,8 @@
 				"u21-f26": { "status": "sub_on" }, "u21-f27": { "status": "start" }
             },
             "u21-fraser-harper": {
-				"u21-f18": { "status": "sub_on" }, "u21-f21": { "status": "sub_on" }
+				"u21-f1": { "status": "incoming" }, "u21-f2": { "status": "incoming" }, "u21-f3": { "status": "incoming" }, "u21-f4": { "status": "incoming" }, "u21-f5": { "status": "incoming" }, "u21-f6": { "status": "incoming" },
+				"u21-f7": { "status": "incoming" }, "u21-f8": { "status": "incoming" }, "u21-f9": { "status": "incoming" }, "u21-f18": { "status": "sub_on" }, "u21-f21": { "status": "sub_on" }
 			},
             "u21-garang-kuol": {
 				"u21-f11": { "status": "start" }, "u21-f13": { "status": "start", "yellowCard": true }, "u21-f18": { "status": "start", "goals": 1 }, "u21-f19": { "status": "start", "goals": 1, "assists": 1 },
@@ -521,10 +533,13 @@
 				"u21-f20": { "status": "unused_sub" }, "u21-f21": { "status": "start" }, "u21-f22": { "status": "start" }, "u21-f23": { "status": "start" }, "u21-f24": { "status": "start" }, "u21-f25": { "status": "start" },
 				"u21-f27": { "status": "unused_sub" }, "u21-f28": { "status": "unused_sub" }, "u21-f29": { "status": "unused_sub" }, "u21-f31": { "status": "unused_sub" }
             },
-            "u21-jamie-miley": {
+            "s-jamie-miley": {
 				"u21-f1": { "status": "start" }, "u21-f2": { "status": "start", "assists": 1 }, "u21-f3": { "status": "loan" }, "u21-f4": { "status": "loan" }, "u21-f5": { "status": "loan" }, "u21-f6": { "status": "loan" },
 				"u21-f7": { "status": "loan" }, "u21-f8": { "status": "loan" }, "u21-f9": { "status": "loan" }, "u21-f10": { "status": "loan" }, "u21-f11": { "status": "loan" }, "u21-f12": { "status": "loan" },
-				"u21-f13": { "status": "loan" }, "u21-f14": { "status": "loan" }, "u21-f15": { "status": "loan" }, "u21-f16": { "status": "loan" }, "u21-f17": { "status": "loan" }, "u21-f18": { "status": "start" }
+				"u21-f13": { "status": "loan" }, "u21-f14": { "status": "loan" }, "u21-f15": { "status": "loan" }, "u21-f16": { "status": "loan" }, "u21-f17": { "status": "loan" }, "u21-f18": { "status": "start" },
+				"u21-f21": { "status": "transferred" }, "u21-f22": { "status": "transferred" }, "u21-f23": { "status": "transferred" }, "u21-f24": { "status": "transferred" }, "u21-f25": { "status": "transferred" },
+				"u21-f26": { "status": "transferred" }, "u21-f27": { "status": "transferred" }, "u21-f28": { "status": "transferred" }, "u21-f29": { "status": "transferred" }, "u21-f30": { "status": "transferred" },
+				"u21-f31": { "status": "transferred" }
             },
             "u21-jay-turner-cooke": {
 				"u21-f1": { "status": "start" }, "u21-f2": { "status": "start" }, "u21-f3": { "status": "start" }, "u21-f4": { "status": "start" }, "u21-f5": { "status": "start" }, "u21-f6": { "status": "start", "goals": 2 },
@@ -708,6 +723,9 @@
 				"u18-f29": { "status": "start" }
 			},
 			"u21-baran-yildiz": {
+				"u18-f1": { "status": "incoming" }, "u18-f2": { "status": "incoming" }, "u18-f3": { "status": "incoming" }, "u18-f4": { "status": "incoming" }, "u18-f5": { "status": "incoming" }, "u18-f6": { "status": "incoming" },
+				"u18-f7": { "status": "incoming" }, "u18-f8": { "status": "incoming" }, "u18-f9": { "status": "incoming" }, "u18-f10": { "status": "incoming" }, "u18-f11": { "status": "incoming" }, "u18-f12": { "status": "incoming" },
+				"u18-f13": { "status": "incoming" }, "u18-f14": { "status": "incoming" }, "u18-f15": { "status": "incoming" }, "u18-f16": { "status": "incoming" }, "u18-f17": { "status": "incoming" }, "u18-f18": { "status": "incoming" },
 				"u18-f23": { "status": "sub_on", "assists": 1 }, "u18-f26": { "status": "sub_on" }, "u18-f27": { "status": "sub_on" }, "u18-f28": { "status": "start" }
 			},
 			"u18-ethan-ndiweni": {
@@ -718,9 +736,10 @@
 				"u18-f9": { "status": "sub_on", "assists": 1 }, "u18-f10": { "status": "start" }, "u18-f25": { "status": "sub_on" }
 			},
 			"u21-fraser-harper": {
-				"u18-f11": { "status": "sub_on" }, "u18-f14": { "status": "start", "goals": 1 }, "u18-f17": { "status": "start", "assists": 1 }, "u18-f18": { "status": "start", "goals": 1, "assists": 1 }, "u18-f19": { "status": "start" },
-				"u18-f20": { "status": "start" }, "u18-f21": { "status": "start" }, "u18-f22": { "status": "start" }, "u18-f23": { "status": "start", "assists": 1 }, "u18-f24": { "status": "start", "yellowCard": true }, "u18-f25": { "status": "start" },
-				"u18-f27": { "status": "start" }
+				"u18-f1": { "status": "incoming" }, "u18-f2": { "status": "incoming" }, "u18-f3": { "status": "incoming" }, "u18-f4": { "status": "incoming" }, "u18-f5": { "status": "incoming" }, "u18-f6": { "status": "incoming" },
+				"u18-f7": { "status": "incoming" }, "u18-f8": { "status": "incoming" }, "u18-f11": { "status": "sub_on" }, "u18-f14": { "status": "start", "goals": 1 }, "u18-f17": { "status": "start", "assists": 1 },
+				"u18-f18": { "status": "start", "goals": 1, "assists": 1 }, "u18-f19": { "status": "start" }, "u18-f20": { "status": "start" }, "u18-f21": { "status": "start" }, "u18-f22": { "status": "start" },
+				"u18-f23": { "status": "start", "assists": 1 }, "u18-f24": { "status": "start", "yellowCard": true }, "u18-f25": { "status": "start" }, "u18-f27": { "status": "start" }
 			},
 			"u21-george-mair": {
 				"u18-f28": { "status": "start", "yellowCard": true }

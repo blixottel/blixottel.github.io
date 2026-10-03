@@ -5,7 +5,9 @@
 
 const POSITION_ORDER = ['GK', 'DEF', 'MID', 'FWD'];
 const POSITION_LABEL = { GK: 'Goalkeepers', DEF: 'Defenders', MID: 'Midfielders', FWD: 'Forwards' };
-const SQUAD_LABEL = { senior: 'First Team', u21: 'Under-21s', u18: 'Under-18s', u19: 'Under-19s' };
+// u16 has a label purely so the player page's "Current squad" reads "Under-16s"; it still never gets a tab or
+// section (those come from SQUAD_ORDER / CORE_SQUADS, not from this list).
+const SQUAD_LABEL = { senior: 'First Team', u21: 'Under-21s', u18: 'Under-18s', u19: 'Under-19s', u16: 'Under-16s' };
 
 // URLs that are shared across many players rather than specific to one of
 // them — currently just the generic silhouette used when no real photo of
@@ -25,6 +27,8 @@ const SHARED_PHOTO_SOURCES = {
 // below) — but SQUAD_SHORT still needs an entry so a U16 player who's played
 // up for the U18s gets a readable "U16" pill rather than a blank one.
 const SQUAD_SHORT = { senior: 'Seniors', u21: 'U21', u18: 'U18', u16: 'U16', u19: 'U19' };
+// The team's youth age group (TEAM.youthSquad in teams.js) shows as "Youth" on pills rather than its squad name.
+if (typeof TEAM !== 'undefined' && TEAM.youthSquad) SQUAD_SHORT[TEAM.youthSquad] = 'Youth';
 
 // The three squads every season has, driven by that season's ageBands (see
 // ageBandForDob below) — always shown, even if a squad's roster ends up
@@ -95,9 +99,15 @@ const APPEARANCE_STATUSES = new Set(['start', 'sub_on']);
 // Ages are as at AGE_AS_OF when set (a finished season -> its end, 30 June), otherwise today.
 let AGE_AS_OF = null;
 function seasonAgeDate(season) {
-  const m = season && /^(\d{4})-\d{2}$/.exec(season.id || '');
-  if (!m) return null;
-  const end = new Date(+m[1] + 1, 5, 30);
+  if (!season) return null;
+  let end = null;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(season.endDate || '')) {
+    end = new Date(season.endDate + 'T00:00:00'); // explicit season end date in seasons.json
+  } else {
+    const m = /^(\d{4})-\d{2}$/.exec(season.id || '');
+    if (!m) return null;
+    end = new Date(+m[1] + 1, 5, 30); // default: 30 June
+  }
   return end < new Date() ? end : null;
 }
 function calcAge(dob) {
@@ -260,12 +270,16 @@ async function loadData(masterFile, seasonFile, fixturesFile, ageBands) {
  * (everyone resolves to 'senior' unless that single-season setup is later
  * given its own seasons.json entry).
  */
+// Set by loadSeasons(): the seasons.json list (used to derive the data cut-off when TEAM.dataFrom isn't set).
+let LOADED_SEASONS = null;
+
 async function loadSeasons() {
   try {
     const res = await fetch((ACTIVE_TEAM.dataDir || 'data/') + 'seasons.json');
     if (!res.ok) return null;
     const seasons = await res.json();
     if (!Array.isArray(seasons) || seasons.length === 0) return null;
+    LOADED_SEASONS = seasons; // so the checks can work out the data cut-off from the oldest season
     return seasons;
   } catch (err) {
     return null;
@@ -416,6 +430,21 @@ async function loadCrossSeasonIssues(seasons, masterFile) {
     return validateAcrossSeasons(active, seasonData);
   } catch (err) {
     console.warn('Cross-season checks skipped:', err);
+    return [];
+  }
+}
+
+/**
+ * Every player's { id, name } from the master + archive files (used to turn player names into links on
+ * the Data checks page). Returns [] if the files can't be read.
+ */
+async function loadPlayerNames(masterFile) {
+  try {
+    const r = await fetch(masterFile);
+    if (!r.ok) return [];
+    const all = await withArchive(await r.json(), masterFile);
+    return (all || []).map(p => ({ id: p.id, name: p.name }));
+  } catch (err) {
     return [];
   }
 }

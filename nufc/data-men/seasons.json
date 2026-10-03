@@ -1,18 +1,22 @@
 [
 	{
-		"id": "2026-27", "label": "2026/27", "playersFile": "data-men/2026-27/players-2026-27.json", "fixturesFile": "data-men/2026-27/fixtures-2026-27.json",
+		"id": "2026-27", "label": "2026/27", "startDate": "2026-07-01", "endDate": "2027-06-30",
+		"playersFile": "data-men/2026-27/players-2026-27.json", "fixturesFile": "data-men/2026-27/fixtures-2026-27.json",
 		"ageBands": [ { "squad": "u16", "bornOnOrAfter": "2010-09-01" }, { "squad": "u18", "bornOnOrAfter": "2008-09-01", "bornBefore": "2010-09-01" }, { "squad": "u21", "bornOnOrAfter": "2005-01-01", "bornBefore": "2008-09-01" } ]
 	},
 	{
-		"id": "2025-26", "label": "2025/26", "playersFile": "data-men/2025-26/players-2025-26.json", "fixturesFile": "data-men/2025-26/fixtures-2025-26.json",
+		"id": "2025-26", "label": "2025/26", "startDate": "2025-07-01", "endDate": "2026-06-30",
+		"playersFile": "data-men/2025-26/players-2025-26.json", "fixturesFile": "data-men/2025-26/fixtures-2025-26.json", "dataComplete": true,
 		"ageBands": [ { "squad": "u16", "bornOnOrAfter": "2009-09-01" }, { "squad": "u18", "bornOnOrAfter": "2007-09-01", "bornBefore": "2009-09-01" }, { "squad": "u21", "bornOnOrAfter": "2004-01-01", "bornBefore": "2007-09-01" } ]
 	},
 	{
-		"id": "2024-25", "label": "2024/25", "playersFile": "data-men/2024-25/players-2024-25.json", "fixturesFile": "data-men/2024-25/fixtures-2024-25.json", "requireDetailedStats": false,
+		"id": "2024-25", "label": "2024/25", "startDate": "2024-07-01", "endDate": "2025-06-30",
+		"playersFile": "data-men/2024-25/players-2024-25.json", "fixturesFile": "data-men/2024-25/fixtures-2024-25.json", "requireDetailedStats": false, "dataComplete": true,
 		"ageBands": [ { "squad": "u16", "bornOnOrAfter": "2008-09-01" }, { "squad": "u18", "bornOnOrAfter": "2006-09-01", "bornBefore": "2008-09-01" }, { "squad": "u21", "bornOnOrAfter": "2003-01-01", "bornBefore": "2006-09-01" } ]
 	},
 	{
-		"id": "2023-24", "label": "2023/24", "playersFile": "data-men/2023-24/players-2023-24.json", "fixturesFile": "data-men/2023-24/fixtures-2023-24.json", "requireDetailedStats": false,
+		"id": "2023-24", "label": "2023/24", "startDate": "2023-07-01", "endDate": "2024-06-30",
+		"playersFile": "data-men/2023-24/players-2023-24.json", "fixturesFile": "data-men/2023-24/fixtures-2023-24.json", "requireDetailedStats": false, "dataComplete": false,
 		"ageBands": [ { "squad": "u16", "bornOnOrAfter": "2007-09-01" }, { "squad": "u18", "bornOnOrAfter": "2005-09-01", "bornBefore": "2007-09-01" }, { "squad": "u21", "bornOnOrAfter": "2002-01-01", "bornBefore": "2005-09-01" } ]
 	}
 ]

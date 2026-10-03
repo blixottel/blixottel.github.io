@@ -50,7 +50,10 @@
 				"s-f26": { "status": "start" }, "s-f27": { "status": "start" }
             },
             "s-ashanti-akpan": {
-                "s-f17": { "status": "start" }, "s-f18": { "status": "unused_sub" }, "s-f19": { "status": "sub_on" }, "s-f26": { "status": "unused_sub" }, "s-f27": { "status": "unused_sub" }
+                "s-f1": { "status": "incoming" }, "s-f2": { "status": "incoming" }, "s-f3": { "status": "incoming" }, "s-f4": { "status": "incoming" }, "s-f5": { "status": "incoming" }, "s-f6": { "status": "incoming" },
+                "s-f7": { "status": "incoming" }, "s-f8": { "status": "incoming" }, "s-f9": { "status": "incoming" }, "s-f10": { "status": "incoming" }, "s-f11": { "status": "incoming" }, "s-f12": { "status": "incoming" },
+                "s-f13": { "status": "incoming" }, "s-f14": { "status": "incoming" }, "s-f15": { "status": "incoming" }, "s-f16": { "status": "incoming" }, "s-f17": { "status": "start" }, "s-f18": { "status": "unused_sub" },
+				"s-f19": { "status": "sub_on" }, "s-f26": { "status": "unused_sub" }, "s-f27": { "status": "unused_sub" }
             },
             "s-ava-chapman": {
                 "s-f8": { "status": "unused_sub" }, "s-f14": { "status": "unused_sub" }
@@ -62,6 +65,7 @@
 				"s-f20": { "status": "sub_on", "goals": 1 }, "s-f21": { "status": "start" }, "s-f22": { "status": "sub_on", "goals": 1 }, "s-f23": { "status": "start" }, "s-f24": { "status": "sub_on", "assists": 1 }, "s-f25": { "status": "sub_on" },
 				"s-f26": { "status": "start", "goals": 1 }, "s-f27": { "status": "start" }
             },
+            "s-charlotte-potts": { },
             "s-charlotte-wardlaw": {
                 "s-f1": { "status": "start" }, "s-f2": { "status": "start" }, "s-f3": { "status": "start" }, "s-f4": { "status": "start" }, "s-f5": { "status": "sub_on" }, "s-f6": { "status": "unused_sub" }, "s-f7": { "status": "unused_sub" },
 				"s-f8": { "status": "start" }, "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "start" }, "s-f12": { "status": "unused_sub" }, "s-f13": { "status": "start", "assists": 1 },
@@ -95,8 +99,10 @@
 				"s-f10": { "status": "start" }, "s-f11": { "status": "start" }, "s-f15": { "status": "sub_on" }, "s-f16": { "status": "sub_on" }
             },
             "s-emilia-larsson": {
-                "s-f18": { "status": "sub_on" }, "s-f19": { "status": "unused_sub" }, "s-f20": { "status": "start" }, "s-f21": { "status": "start" }, "s-f22": { "status": "start" }, "s-f25": { "status": "sub_on" }, "s-f26": { "status": "sub_on" },
-				"s-f27": { "status": "sub_on" }
+                "s-f1": { "status": "incoming" }, "s-f2": { "status": "incoming" }, "s-f3": { "status": "incoming" }, "s-f4": { "status": "incoming" }, "s-f5": { "status": "incoming" }, "s-f6": { "status": "incoming" },
+                "s-f7": { "status": "incoming" }, "s-f8": { "status": "incoming" }, "s-f9": { "status": "incoming" }, "s-f10": { "status": "incoming" }, "s-f11": { "status": "incoming" }, "s-f12": { "status": "incoming" },
+                "s-f13": { "status": "incoming" }, "s-f14": { "status": "incoming" }, "s-f15": { "status": "incoming" }, "s-f16": { "status": "incoming" }, "s-f18": { "status": "sub_on" }, "s-f19": { "status": "unused_sub" },
+				"s-f20": { "status": "start" }, "s-f21": { "status": "start" }, "s-f22": { "status": "start" }, "s-f25": { "status": "sub_on" }, "s-f26": { "status": "sub_on" }, "s-f27": { "status": "sub_on" }
             },
             "s-emily-murphy": {
                 "s-f1": { "status": "start", "goals": 1, "yellowCard": true }, "s-f2": { "status": "start" }, "s-f3": { "status": "start" }, "s-f4": { "status": "start", "assists": 1 }, "s-f5": { "status": "sub_on" }, "s-f6": { "status": "sub_on" },
@@ -147,7 +153,10 @@
 				"s-f26": { "status": "sub_on" }, "s-f27": { "status": "unused_sub" }
             },
             "s-kaitlyn-torpey": {
-                "s-f17": { "status": "start" }, "s-f18": { "status": "start" }, "s-f19": { "status": "start" }, "s-f20": { "status": "start" }, "s-f24": { "status": "sub_on" }, "s-f25": { "status": "start", "yellowCard": true }
+                "s-f1": { "status": "incoming" }, "s-f2": { "status": "incoming" }, "s-f3": { "status": "incoming" }, "s-f4": { "status": "incoming" }, "s-f5": { "status": "incoming" }, "s-f6": { "status": "incoming" },
+                "s-f7": { "status": "incoming" }, "s-f8": { "status": "incoming" }, "s-f9": { "status": "incoming" }, "s-f10": { "status": "incoming" }, "s-f11": { "status": "incoming" }, "s-f12": { "status": "incoming" },
+                "s-f13": { "status": "incoming" }, "s-f14": { "status": "incoming" }, "s-f15": { "status": "incoming" }, "s-f17": { "status": "start" }, "s-f18": { "status": "start" }, "s-f19": { "status": "start" },
+				"s-f20": { "status": "start" }, "s-f24": { "status": "sub_on" }, "s-f25": { "status": "start", "yellowCard": true }
             },
             "s-lia-cataldo": {
                 "s-f1": { "status": "sub_on" }, "s-f2": { "status": "sub_on" }, "s-f3": { "status": "start" }, "s-f4": { "status": "sub_on" }, "s-f5": { "status": "start" }, "s-f6": { "status": "start" }, "s-f7": { "status": "start", "yellowCard": true },
@@ -193,7 +202,10 @@
 				"s-f25": { "status": "unused_sub" }, "s-f26": { "status": "unused_sub" }, "s-f27": { "status": "sub_on" }
             },
             "s-simone-charley": {
-                "s-f20": { "status": "sub_on" }
+                "s-f1": { "status": "incoming" }, "s-f2": { "status": "incoming" }, "s-f3": { "status": "incoming" }, "s-f4": { "status": "incoming" }, "s-f5": { "status": "incoming" }, "s-f6": { "status": "incoming" },
+                "s-f7": { "status": "incoming" }, "s-f8": { "status": "incoming" }, "s-f9": { "status": "incoming" }, "s-f10": { "status": "incoming" }, "s-f11": { "status": "incoming" }, "s-f12": { "status": "incoming" },
+                "s-f13": { "status": "incoming" }, "s-f14": { "status": "incoming" }, "s-f15": { "status": "incoming" }, "s-f16": { "status": "incoming" }, "s-f17": { "status": "incoming" }, "s-f18": { "status": "incoming" },
+				"s-f19": { "status": "incoming" }, "s-f20": { "status": "sub_on" }
             }
         }
     }

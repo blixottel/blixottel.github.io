@@ -36,6 +36,7 @@ function recTitle(fx, rec) {
   const bits = [`${fmtDate(fx.date)} v ${fx.opponent}${fx.venue ? ' (' + fx.venue + ')' : ''}`];
   if (fx.competition) bits.push(fx.competition);
   if (fx.result) bits.push(fx.result);
+  if (fx.noDetailedStats === true) bits.push('xG & minutes not available');
   if (rec) {
     bits.push(rec.status.replace('_', ' '));
     if (typeof rec.minutes === 'number') bits.push(rec.minutes + "'");
@@ -68,6 +69,12 @@ function totalsTable(rows, heads) {
   const cols = STAT_COLUMNS.filter(c => !c.seniorOnly || showSenior);
   const body = rows.map(r => `<tr class="${r.total ? 'total' : ''} ${r.start ? 'start' : ''}">${r.cells.map(c => `<td>${c}</td>`).join('')}${cols.map(c => `<td>${statVal(r.stat, c, r.key)}</td>`).join('')}</tr>`).join('');
   return `<div class="totals-wrap"><table class="season-totals"><thead><tr>${heads.map(h => `<th>${h}</th>`).join('')}${cols.map(c => `<th>${c.label}</th>`).join('')}</tr></thead><tbody>${body}</tbody></table></div>`;
+}
+
+// Footnote for the totals tables: how many of this player's senior matches have no xG / minutes.
+function noStatsNote(entries, id) {
+  const n = entries.reduce((sum, e) => sum + e.squads.filter(s => s.key === 'senior').reduce((s2, sq) => s2 + countNoDetailedStats(sq.fd, null, id), 0), 0);
+  return n ? `<p class="note">Minutes and xG aren't available for ${n} of this player's matches, so those totals are understated.</p>` : '';
 }
 
 function careerTable(entries) {
@@ -120,15 +127,16 @@ const MOVE_TYPES = {
   loan_out_dual: { label: 'Dual reg.', cls: 'guest-tag loan-tag', prep: 'to' },
   loan_in:  { label: 'Loan in', cls: 'guest-tag incoming-tag', prep: 'from' },
   trial_in: { label: 'Trial',   cls: 'guest-tag trialist-tag', prep: 'from' },
+  youth:    { label: 'Youth',   cls: 'guest-tag', prep: 'from' },
 };
 
 function movementsBlock(list) {
   if (!list || !list.length) return '';
   const rows = [...list].sort((a, b) => (a.date || '').localeCompare(b.date || '')).map(m => {
     const t = MOVE_TYPES[m.type] || { label: m.type, cls: 'guest-tag', prep: '' };
-    const loan = m.type === 'loan_out' || m.type === 'loan_out_dual' || m.type === 'loan_in' || m.type === 'trial_in';
+    const loan = m.type === 'loan_out' || m.type === 'loan_out_dual' || m.type === 'loan_in' || m.type === 'trial_in' || m.type === 'youth';
     const dates = loan && m.endDate !== m.date ? `${fmtDMY(m.date)} – ${m.endDate ? fmtDMY(m.endDate) : 'ongoing'}` : fmtDMY(m.date);
-    return `<li><span class="mv-date">${dates || 'Date unknown'}</span><span class="${t.cls}">${t.label}</span><span>${t.prep} <b>${m.club || '—'}</b>${m.note ? ` <em>${m.note}</em>` : ''}</span></li>`;
+    return `<li><span class="mv-date">${dates || 'Date unknown'}</span><span class="${t.cls}">${t.label}</span><span>${(m.type === 'youth' && !m.club) ? '' : `${t.prep} <b>${m.club || '—'}</b>`}${m.note ? ` <em>${m.note}</em>` : ''}</span></li>`;
   }).join('');
   return `<h3 class="block-heading">Movements</h3><ol class="moves">${rows}</ol>`;
 }
@@ -234,8 +242,9 @@ async function initPlayer() {
     const issues = entries.flatMap(e => checkMovementDates(p, e.fixtures).map(i => ({ ...i, season: e.season.label })));
     const issuesHtml = !issues.length ? '' : `<div id="validation-panel" style="display:block;margin:0 0 24px"><h2>Data checks — ${issues.length} issue${issues.length === 1 ? '' : 's'}</h2>${
       isLocalDev() ? `<ul>${issues.map(i => `<li class="error">${i.season}: ${i.message}</li>`).join('')}</ul>` : '<p class="vp-concise-note">There are inconsistencies in the underlying data for this player.</p>'}</div>`;
-    const trackedFrom = seasons.length ? seasons[seasons.length - 1].label : '';
-    const partial = !p.careerComplete;
+    // Data starts at TEAM.dataFrom; anyone who joined before it can only ever have a partial record.
+    const trackedFrom = dataCutoffLabel() || (seasons.length ? seasons[seasons.length - 1].label : '');
+    const partial = !p.careerComplete || joinedBeforeCutoff(p);
     const evKey = '<div class="ev-key"><span><span class="ev"><i class="g">1</i></span> Goals</span><span><span class="ev"><i class="a">1</i></span> Assists</span><span><span class="ev"><i class="y">&nbsp;</i></span> Yellow card</span><span><span class="ev"><i class="r">&nbsp;</i></span> Red card</span></div>';
     const legend = buildLegend();
     legend.insertAdjacentHTML('beforeend', evKey);
@@ -255,11 +264,12 @@ async function initPlayer() {
       <h3 class="block-heading">Career totals</h3>
       <p class="note">${partial ? `Partial record: figures cover ${trackedFrom} onwards only, so earlier seasons aren't included.` : 'Complete record: every season this player has played in is in the data.'}</p>
       ${careerTable(entries)}
+      ${noStatsNote(entries, id)}
       ${movementsBlock(p.movements)}
       <h3 class="block-heading">Fixture-by-fixture</h3>
       ${entries.length ? legend.outerHTML : '<p class="note">No seasons found for this player yet.</p>'}
       <div class="timeline">${entries.map(e => seasonBlock(e, id)).join('')}</div>
-      ${entries.some(e => e.squads.length) ? `<h3 class="block-heading">Season summary</h3>${summaryTable(entries)}` : ''}`;
+      ${entries.some(e => e.squads.length) ? `<h3 class="block-heading">Season summary</h3>${summaryTable(entries)}${noStatsNote(entries, id)}` : ''}`;
   } catch (err) {
     console.error(err);
     document.getElementById('player-title').textContent = 'Player not found';

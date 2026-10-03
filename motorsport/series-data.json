@@ -21,7 +21,7 @@
 		},
 		{
             "category": "formula1",
-            "name": "Formula 1 (2027)",
+            "name": "Formula 1",
             "resultsVerified": true,
             "nextDate": "13 Mar 2027",
             "links": {
@@ -48,6 +48,23 @@
                 "results": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/formula-2-championship-44", "label": "Results", "active": true },
                 "standings": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/formula-2-championship-44", "label": "Standings", "active": true },
                 "calendar": { "url": "https://www.fiaformula2.com/Latest/28OvYB98ektUm0D8vrUgYS/fia-formula-2-championship-2026-season-calendar-revealed", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/Formula2" },
+                { "platform": "facebook", "url": "https://www.facebook.com/formula2" },
+                { "platform": "instagram", "url": "https://www.instagram.com/formula2"}
+            ]
+        },
+		{
+            "category": "formula1",
+            "name": "Formula 2",
+            "resultsVerified": true,
+            "nextDate": "2027",
+            "links": {
+                "official": { "url": "https://www.fiaformula2.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/formula-2-championship-44", "label": "Results", "active": false },
+                "standings": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/formula-2-championship-44", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.fiaformula2.com/Latest/28OvYB98ektUm0D8vrUgYS/fia-formula-2-championship-2026-season-calendar-revealed", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/Formula2" },
@@ -128,7 +145,7 @@
 		{
             "category": "formulaRegional",
             "name": "FR Japan",
-            "resultsVerified": false,
+            "resultsVerified": true,
             "nextDate": "10 Oct 2026",
             "links": {
                 "official": { "url": "https://frj.jp", "label": "Official site", "active": true },
@@ -198,7 +215,7 @@
 		{
             "category": "formula4",
             "name": "F4 Brazil",
-            "resultsVerified": false,
+            "resultsVerified": true,
             "nextDate": "17 Oct 2026",
             "links": {
                 "official": { "url": "https://velocigroup.com.br/#/fia-f4-brasil", "label": "Official site", "active": true },
@@ -254,7 +271,7 @@
         },
 		{
             "category": "formula4",
-            "name": "F4 CEZ (2027)",
+            "name": "F4 CEZ",
             "resultsVerified": true,
             "nextDate": "17 Apr 2027",
             "links": {
@@ -298,6 +315,23 @@
                 "results": { "url": "https://www.its-results.com/gt4/2026/5eeb2dbe-3e5d-42fe-8753-3de74635fd58", "label": "Results", "active": true },
                 "standings": { "url": "https://www.ffsaacademy.org/results-f4/?lang=en", "label": "Standings", "active": true },
                 "calendar": { "url": "https://www.ffsaacademy.org/championnat-de-france-f4/calendrier-f4/?lang=en", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "facebook", "url": "https://www.facebook.com/ffsaacademy" },
+                { "platform": "instagram", "url": "https://www.instagram.com/ffsaacademy" },
+                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCUWV6YsuDBWO5sYxmwSQUQQ"}
+            ]
+        },
+		{
+            "category": "formula4",
+            "name": "F4 France",
+            "resultsVerified": true,
+            "nextDate": "2027",
+            "links": {
+                "official": { "url": "https://www.ffsaacademy.org/championnat-de-france-f4/?lang=en", "label": "Official site", "active": true },
+                "results": { "url": "https://www.its-results.com/gt4/2026/5eeb2dbe-3e5d-42fe-8753-3de74635fd58", "label": "Results", "active": false },
+                "standings": { "url": "https://www.ffsaacademy.org/results-f4/?lang=en", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.ffsaacademy.org/championnat-de-france-f4/calendrier-f4/?lang=en", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "facebook", "url": "https://www.facebook.com/ffsaacademy" },
@@ -358,7 +392,7 @@
         },
 		{
             "category": "formula4",
-            "name": "F4 Italy (2027)",
+            "name": "F4 Italy",
             "resultsVerified": true,
             "nextDate": "8 May 2027",
             "links": {
@@ -413,8 +447,8 @@
             "nextDate": "3 Oct 2026",
             "links": {
                 "official": { "url": "https://f4saudiarabia.com", "label": "Official site", "active": true },
-                "results": { "url": "https://www.its-results.com/f4sac/2025/18879dad-9569-47ce-a1a5-fbd20724f2a7", "label": "Results", "active": false },
-                "standings": { "url": "https://www.its-results.com/f4sac/2025/18879dad-9569-47ce-a1a5-fbd20724f2a7", "label": "Standings", "active": false },
+                "results": { "url": "https://www.its-results.com/f4sac/2026/61d79f24-1c92-409d-b152-c8cb62d826d6", "label": "Results", "active": true },
+                "standings": { "url": "https://www.its-results.com/f4sac/2026/61d79f24-1c92-409d-b152-c8cb62d826d6", "label": "Standings", "active": false },
                 "calendar": { "url": "http://instagram.com/p/DbDk3QoFXyH", "label": "Calendar", "active": true }
             },
             "social": [
@@ -422,22 +456,6 @@
                 { "platform": "instagram", "url": "https://www.instagram.com/f4_saudiarabia" },
                 { "platform": "youtube", "url": "https://www.youtube.com/@F4_SaudiArabia" },
                 { "platform": "linktree", "url": "https://linktr.ee/F4SaudiArabianChampionship"}
-            ]
-        },
-		{
-            "category": "formula4",
-            "name": "F4 South East Asia",
-            "resultsVerified": true,
-            "nextDate": "2027",
-            "links": {
-                "official": { "url": "https://www.f4sea.com", "label": "Official site", "active": true },
-                "results": { "url": "https://timingresult.com", "label": "Results", "active": false },
-                "standings": { "url": "https://www.f4sea.com/2025Y", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.facebook.com/photo?fbid=122290708136025557&set=a.122137316522025557", "label": "Calendar", "active": false }
-            },
-            "social": [
-                { "platform": "facebook", "url": "https://www.facebook.com/F4SEA" },
-                { "platform": "instagram", "url": "https://www.instagram.com/f4seasia"}
             ]
         },
 		{
@@ -461,7 +479,7 @@
         },
 		{
             "category": "formula4",
-            "name": "F4 Spain (2027)",
+            "name": "F4 Spain",
             "resultsVerified": true,
             "nextDate": "10 Apr 2027",
             "links": {
@@ -516,8 +534,8 @@
         {
             "category": "nonFIA",
             "name": "AU4",
-            "resultsVerified": true,
-            "nextDate": "26 Sep 2026",
+            "resultsVerified": false,
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://au4championship.com", "label": "Official site", "active": true },
                 "results": { "url": "http://racing.natsoft.com.au/results/#1", "label": "Results", "active": true },
@@ -566,7 +584,7 @@
         },
 		{
             "category": "nonFIA",
-            "name": "E4 (2027)",
+            "name": "E4",
             "resultsVerified": true,
             "nextDate": "29 May 2027",
             "links": {
@@ -601,7 +619,7 @@
         },
 		{
             "category": "nonFIA",
-            "name": "Eurocup-3 (2027)",
+            "name": "Eurocup-3",
             "resultsVerified": true,
             "nextDate": "1 May 2027",
             "links": {
@@ -672,7 +690,7 @@
             "category": "nonFIA",
             "name": "Euroformula Open",
             "resultsVerified": true,
-            "nextDate": "26 Sep 2026",
+            "nextDate": "25 Oct 2026",
             "links": {
                 "official": { "url": "https://euroformula.gtsport.es", "label": "Official site", "active": true },
                 "results": { "url": "https://www.cronococa.com/results", "label": "Results", "active": true },
@@ -686,7 +704,7 @@
         },
 		{
             "category": "nonFIA",
-            "name": "Euroformula Open (2027)",
+            "name": "Euroformula Open",
             "resultsVerified": true,
             "nextDate": "10 Apr 2027",
             "links": {
@@ -740,7 +758,7 @@
             "resultsVerified": true,
             "nextDate": "2027",
             "links": {
-                "official": { "url": "https://www.formulamideast.com", "label": "Official site", "active": true },
+                "official": { "url": "https://www.formulatrophy.com", "label": "Official site", "active": true },
                 "results": { "url": "https://cloud.topspeedchina.net/d/s/15nNXmoHwbIZ8m7fizwOE3hSnhmKe1Kw/sUyUw-HoB2dH47Po3vwvEly8tc8-kkCu-8rWgXDOUvAw", "label": "Results", "active": false },
                 "standings": { "url": "https://cloud.topspeedchina.net/d/s/15nNXmoHwbIZ8m7fizwOE3hSnhmKe1Kw/sUyUw-HoB2dH47Po3vwvEly8tc8-kkCu-8rWgXDOUvAw", "label": "Standings", "active": false },
                 "calendar": { "url": "https://www.instagram.com/p/DQ3aQyxERCY", "label": "Calendar", "active": false }
@@ -756,7 +774,7 @@
             "resultsVerified": true,
             "nextDate": "3 Oct 2026",
             "links": {
-                "official": { "url": "https://www.f4sea.com", "label": "Official site", "active": true },
+                "official": { "url": "https://www.formulatrophy.com", "label": "Official site", "active": true },
                 "results": { "url": "https://timingresult.com", "label": "Results", "active": false },
                 "standings": { "url": "https://www.f4sea.com/2025Y", "label": "Standings", "active": false },
                 "calendar": { "url": "https://www.facebook.com/photo/?fbid=122315059484025557&set=a.122137316522025557", "label": "Calendar", "active": true }
@@ -772,15 +790,12 @@
             "resultsVerified": true,
             "nextDate": "24 Jan 2027",
             "links": {
-                "official": { "url": "", "label": "Official site", "active": false },
+                "official": { "url": "https://www.formulatrophy.com", "label": "Official site", "active": true },
                 "results": { "url": "", "label": "Results", "active": false },
                 "standings": { "url": "", "label": "Standings", "active": false },
                 "calendar": { "url": "", "label": "Calendar", "active": false }
             },
             "social": [
-                { "platform": "facebook", "url": "" },
-                { "platform": "instagram", "url": "" },
-                { "platform": "youtube", "url": ""}
             ]
         },
 		{
@@ -804,7 +819,7 @@
             "category": "nonFIA",
             "name": "GB3",
             "resultsVerified": true,
-            "nextDate": "26 Sep 2026",
+            "nextDate": "7 Nov 2026",
             "links": {
                 "official": { "url": "https://www.gb-3.net", "label": "Official site", "active": true },
                 "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2026", "label": "Results", "active": true },
@@ -820,7 +835,7 @@
         },
 		{
             "category": "nonFIA",
-            "name": "GB3 (2027)",
+            "name": "GB3",
             "resultsVerified": true,
             "nextDate": "1 May 2027",
             "links": {
@@ -858,28 +873,10 @@
             "category": "nonFIA",
             "name": "GB4",
             "resultsVerified": true,
-            "nextDate": "26 Sep 2026",
-            "links": {
-                "official": { "url": "https://www.gb-4.net", "label": "Official site", "active": true },
-                "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2026", "label": "Results", "active": true },
-                "standings": { "url": "https://www.gb-4.net/standings", "label": "Standings", "active": true },
-                "calendar": { "url": "https://www.gb-4.net/news/2025/sept/25/gb4-championship-confirms-provisional-2026-calendar-and-winter-series-plans", "label": "Calendar", "active": true }
-            },
-            "social": [
-                { "platform": "x-twitter", "url": "https://x.com/GB4Championship" },
-                { "platform": "facebook", "url": "https://www.facebook.com/GB4Championship" },
-                { "platform": "instagram", "url": "https://www.instagram.com/GB4Championship" },
-                { "platform": "youtube", "url": "https://www.youtube.com/@msvcircuits"}
-            ]
-        },
-		{
-            "category": "nonFIA",
-            "name": "GB4 (2027)",
-            "resultsVerified": true,
             "nextDate": "11 Apr 2027",
             "links": {
                 "official": { "url": "https://www.gb-4.net", "label": "Official site", "active": true },
-                "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2026", "label": "Results", "active": false },
+                "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2027", "label": "Results", "active": false },
                 "standings": { "url": "https://www.gb-4.net/standings", "label": "Standings", "active": false },
                 "calendar": { "url": "https://www.gb-4.net/news/2026/sept/10/gb4-championship-unveils-provisional-2027-calendar", "label": "Calendar", "active": true }
             },
@@ -897,7 +894,7 @@
             "nextDate": "13 Nov 2027",
             "links": {
                 "official": { "url": "https://www.gb-4.net", "label": "Official site", "active": true },
-                "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2026", "label": "Results", "active": false },
+                "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2027", "label": "Results", "active": false },
                 "standings": { "url": "https://www.gb-4.net/standings", "label": "Standings", "active": false },
                 "calendar": { "url": "https://www.gb-4.net/news/2026/sept/10/gb4-championship-unveils-provisional-2027-calendar", "label": "Calendar", "active": true }
             },
@@ -1113,12 +1110,12 @@
             "category": "usaSeries",
             "name": "USF2000",
             "resultsVerified": true,
-            "nextDate": "26 Sep 2026",
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://www.usf2000.com", "label": "Official site", "active": true },
-                "results": { "url": "https://www.usf2000.com/schedule", "label": "Results", "active": true },
-                "standings": { "url": "https://www.usf2000.com/results/standings", "label": "Standings", "active": true },
-                "calendar": { "url": "https://www.usf2000.com/news/usf-pro-championships-announces-2026-schedules", "label": "Calendar", "active": true }
+                "results": { "url": "https://www.usf2000.com/schedule", "label": "Results", "active": false },
+                "standings": { "url": "https://www.usf2000.com/results/standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.usf2000.com/news/usf-pro-championships-announces-2026-schedules", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/USF2000" },
@@ -1208,7 +1205,7 @@
         },
         {
             "category": "motorbikes",
-            "name": "MotoGP (2027)",
+            "name": "MotoGP",
             "resultsVerified": true,
             "nextDate": "6 Mar 2027",
             "links": {
@@ -1248,7 +1245,7 @@
         },
         {
             "category": "motorbikes",
-            "name": "Moto2 (2027)",
+            "name": "Moto2",
             "resultsVerified": true,
             "nextDate": "6 Mar 2027",
             "links": {
@@ -1288,7 +1285,7 @@
         },
         {
             "category": "motorbikes",
-            "name": "Moto3 (2027)",
+            "name": "Moto3",
             "resultsVerified": true,
             "nextDate": "6 Mar 2027",
             "links": {
@@ -1329,7 +1326,7 @@
             "category": "motorbikes",
             "name": "Moto3 Junior World Championship",
             "resultsVerified": true,
-            "nextDate": "26 Sep 2026",
+            "nextDate": "17 Oct 2026",
             "links": {
                 "official": { "url": "https://fimmotojunior.com/", "label": "Official site", "active": true },
                 "results": { "url": "https://fimmotojunior.com/results/2026/results-by-round", "label": "Results", "active": true },
@@ -1384,7 +1381,7 @@
             "category": "motorbikes",
             "name": "Moto4 European Cup",
             "resultsVerified": true,
-            "nextDate": "26 Sep 2026",
+            "nextDate": "17 Oct 2026",
             "links": {
                 "official": { "url": "https://fimmotojunior.com", "label": "Official site", "active": true },
                 "results": { "url": "https://fimmotojunior.com/results/2026/results-by-round", "label": "Results", "active": true },
@@ -1491,6 +1488,25 @@
         },
 		{
             "category": "motorbikes",
+            "name": "WorldSBK",
+            "resultsVerified": true,
+            "nextDate": "20 Feb 2027",
+            "links": {
+                "official": { "url": "https://www.worldsbk.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": false },
+                "standings": { "url": "https://www.worldsbk.com/en/standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.worldsbk.com/en/news/2026/10/01/provisional-2027-worldsbk-calendar-revealed-china-to-debut-and-valencia-returns/1144887", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/WorldSBK" },
+                { "platform": "facebook", "url": "https://www.facebook.com/WorldSBK" },
+                { "platform": "instagram", "url": "https://www.instagram.com/WorldSBK" },
+                { "platform": "youtube", "url": "https://www.youtube.com/WorldSBK" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@WorldSBK"}
+            ]
+        },
+		{
+            "category": "motorbikes",
             "name": "WorldSSP",
             "resultsVerified": true,
             "nextDate": "10 Oct 2026",
@@ -1499,6 +1515,25 @@
                 "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": true },
                 "standings": { "url": "https://www.worldsbk.com/en/standings", "label": "Standings", "active": true },
                 "calendar": { "url": "https://resources.worldsbk.com/newsdesk/2026/Calendar/MOTUL-FIM-Superbike-World-Championship-2026-Calendar.pdf", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/WorldSBK" },
+                { "platform": "facebook", "url": "https://www.facebook.com/WorldSBK" },
+                { "platform": "instagram", "url": "https://www.instagram.com/WorldSBK" },
+                { "platform": "youtube", "url": "https://www.youtube.com/WorldSBK" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@WorldSBK"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "WorldSSP",
+            "resultsVerified": true,
+            "nextDate": "20 Feb 2027",
+            "links": {
+                "official": { "url": "https://www.worldsbk.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": false },
+                "standings": { "url": "https://www.worldsbk.com/en/standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.worldsbk.com/en/news/2026/10/01/provisional-2027-worldsbk-calendar-revealed-china-to-debut-and-valencia-returns/1144887", "label": "Calendar", "active": true }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/WorldSBK" },
@@ -1529,6 +1564,25 @@
         },
 		{
             "category": "motorbikes",
+            "name": "WorldSPB",
+            "resultsVerified": true,
+            "nextDate": "20 Mar 2027",
+            "links": {
+                "official": { "url": "https://www.worldsbk.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": false },
+                "standings": { "url": "https://www.worldsbk.com/en/standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.worldsbk.com/en/news/2026/10/01/provisional-2027-worldsbk-calendar-revealed-china-to-debut-and-valencia-returns/1144887", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/WorldSBK" },
+                { "platform": "facebook", "url": "https://www.facebook.com/WorldSBK" },
+                { "platform": "instagram", "url": "https://www.instagram.com/WorldSBK" },
+                { "platform": "youtube", "url": "https://www.youtube.com/WorldSBK" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@WorldSBK"}
+            ]
+        },
+		{
+            "category": "motorbikes",
             "name": "WorldWCR",
             "resultsVerified": true,
             "nextDate": "17 Oct 2026",
@@ -1543,6 +1597,25 @@
                 { "platform": "facebook", "url": "https://www.facebook.com/profile.php?id=61558836968822" },
                 { "platform": "instagram", "url": "https://www.instagram.com/worldwcr" },
                 { "platform": "youtube", "url": "https://www.youtube.com/@WorldWCR/videos" },
+                { "platform": "tiktok", "url": "https://www.tiktok.com/@WorldSBK"}
+            ]
+        },
+		{
+            "category": "motorbikes",
+            "name": "WorldWCR",
+            "resultsVerified": true,
+            "nextDate": "20 Mar 2027",
+            "links": {
+                "official": { "url": "https://www.worldsbk.com", "label": "Official site", "active": true },
+                "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": false },
+                "standings": { "url": "https://www.worldsbk.com/en/standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.worldsbk.com/en/news/2026/10/01/provisional-2027-worldsbk-calendar-revealed-china-to-debut-and-valencia-returns/1144887", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/WorldSBK" },
+                { "platform": "facebook", "url": "https://www.facebook.com/WorldSBK" },
+                { "platform": "instagram", "url": "https://www.instagram.com/WorldSBK" },
+                { "platform": "youtube", "url": "https://www.youtube.com/WorldSBK" },
                 { "platform": "tiktok", "url": "https://www.tiktok.com/@WorldSBK"}
             ]
         },
@@ -1566,7 +1639,7 @@
         },
 		{
             "category": "karting",
-            "name": "Karting Academy Trophy (Junior) (2027)",
+            "name": "Karting Academy Trophy (Junior)",
             "resultsVerified": true,
             "nextDate": "24 Apr 2027",
             "links": {
@@ -1728,7 +1801,7 @@
         },
 		{
             "category": "karting",
-            "name": "Karting World Championships (OK) (2027)",
+            "name": "Karting World Championships (OK)",
             "resultsVerified": true,
             "nextDate": "6 Nov 2027",
             "links": {
@@ -1764,7 +1837,7 @@
         },
 		{
             "category": "karting",
-            "name": "Karting World Championships (OK-Junior) (2027)",
+            "name": "Karting World Championships (OK-Junior)",
             "resultsVerified": true,
             "nextDate": "6 Nov 2027",
             "links": {
@@ -1818,7 +1891,7 @@
         },
 		{
             "category": "karting",
-            "name": "Karting World Cup (OK-N) (2027)",
+            "name": "Karting World Cup (OK-N)",
             "resultsVerified": true,
             "nextDate": "4 Sep 2027",
             "links": {
@@ -1854,7 +1927,7 @@
         },
 		{
             "category": "karting",
-            "name": "Karting World Cup (OK-NJ) (2027)",
+            "name": "Karting World Cup (OK-NJ)",
             "resultsVerified": true,
             "nextDate": "4 Sep 2027",
             "links": {

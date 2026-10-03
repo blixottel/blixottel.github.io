@@ -62,7 +62,7 @@
     { "number": 74, "id": "u21-oliver-holland", "status": "active", "photoSource": "placeholder" },
     { "number": 75, "id": "u21-alfie-hutchison", "status": "active", "photoSource": "official" },
     { "number": 76, "id": "s-mason-miley", "status": "not_selected_season", "photoSource": "official" },
-    { "number": 77, "id": "s-michael-mills", "status": "not_selected_season", "photoSource": "sofascore" },
+    { "number": 77, "id": "s-michael-mills", "status": "not_selected_season", "photoSource": "flashscore" },
     { "number": 78, "id": "u21-isaac-moran", "status": "active", "photoSource": "official" },
     { "number": 79, "id": "u18-noah-morgan", "status": "active", "photoSource": "placeholder" },
     { "number": 80, "id": "u18-ethan-ndiweni", "status": "active", "photoSource": "zerozero" },

@@ -64,13 +64,20 @@ async function init() {
     const crossIssues = seasons ? await loadCrossSeasonIssues(seasons, masterFile) : [];
     const issues = validateFixtures(fixtures, playersById, {
       requireDetailedStats: activeSeason ? activeSeason.requireDetailedStats !== false : true,
+      season: activeSeason,
     }).concat(crossIssues);
+    // Nudge to mark this season "dataComplete" once every fixture has a result and there are no errors.
+    const completeIssue = seasonCompleteIssue(activeSeason, fixtures, issues);
+    if (completeIssue) issues.push(completeIssue);
+    // ...and the reverse: a season flagged complete that still has fixtures without results, or errors.
+    const staleIssue = seasonStaleCompleteIssue(activeSeason, fixtures, issues);
+    if (staleIssue) issues.push(staleIssue);
     // The full list of checks now lives on validation.html; here we just
     // show the count as a badge on the "Data checks" nav link.
     setNavBadge('validation', issues.length);
     // Shown on published copies too: a plain heads-up (no specifics) whenever
     // this team/season has any outstanding data checks.
-    document.getElementById('wip-notice').style.display = issues.length ? 'block' : 'none';
+    document.getElementById('wip-notice').style.display = issues.some(i => !i.ignoreInBanner) ? 'block' : 'none';
 
     // The three age-banded squads, plus 'u19' if (and only if) this season's
     // fixtures file actually has one — see CORE_SQUADS/OPTIONAL_SQUADS and
