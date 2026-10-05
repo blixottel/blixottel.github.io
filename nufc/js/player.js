@@ -165,7 +165,7 @@ function seasonBlock(entry, id) {
 // Bio status, worked out from movements and today's date. Order of precedence:
 // on loan out > trialist > on loan in > left > incoming. With no movements at
 // all it falls back to the roster status; with movements, only the roster's
-// "injured" / "not selected" statuses are kept as a fallback.
+// "injured" / "pregnancy leave" / "not selected" statuses are kept as a fallback.
 function todayISO() {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -190,7 +190,7 @@ function statusPills(p, hasRoster) {
   if (mv.some(m => m.type === 'joined' && m.date > t)) return pill('incoming-tag', 'Incoming');
   if (!hasRoster) return '';
   return playerBadges(p, normSquad(p.squad))
-    .filter(b => !mv.length || b.kind === 'injured-season' || b.kind === 'not-selected-season')
+    .filter(b => !mv.length || b.kind === 'injured-season' || b.kind === 'pregnancy-leave' || b.kind === 'not-selected-season')
     .map(b => `<span class="${b.cls}" style="margin-left:0">${b.text}${b.kind === 'loan' && p.loanClub ? ' · ' + p.loanClub : ''}</span>`).join('');
 }
 

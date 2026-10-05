@@ -269,7 +269,7 @@
 			{ "type": "loan_out", "date": "2019-08-08", "enddate": "2020-06-30", "club": "Sheffield Wednesday" }
         ],
         "photos": {
-            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/7E3kGHFzba2pQxbiM51Uz2/2ec88d95dede5f4dfcdfa18709e70f96/26_04_08_NUFC_ECOMM_HOME_23_MURPHY_255_EDIT-2-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
+            "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/2exOqRMPYvbMPySFixOR02/0ba482f924c1777d33d78c32341e9164/26_04_08_NUFC_ECOMM_HOME_23_MURPHY_255_EDIT-3-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/114243.png",
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/199527-1674210561.jpg?lm=4711",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/20/62/392062_jacob_murphy_20251021193930.png",
@@ -537,6 +537,7 @@
 			{ "type": "joined", "date": "2026-09-01", "club": "Lille Olympique" }
         ],
         "photos": {
+			"official": "https://contentfulproxy.stadion.io/9ec6988xevcz/24e288iQ7ff3Z5H8ZWeWjE/dd74442ab99f479b92457fa6a7b923b6/nufc-prem-4-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/724129-1780057362.jpg?lm=4711",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/40/69/914069_matias_fernandez_pardo_20260726150405.png",
             "sofascore": "https://img.sofascore.com/api/v1/player/1149144/image",

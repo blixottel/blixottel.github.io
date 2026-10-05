@@ -590,3 +590,19 @@
   .todo-progress summary { cursor: pointer; }
   .todo-progress ul { margin: 8px 0 0; padding-left: 20px; columns: 3 200px; }
   .todo-progress li span { color: var(--slate); font-size: 12px; }
+
+/* Pregnancy leave — add to styles/styles.css (or link as its own file).
+   Colours are deliberately distinct from the injured amber; adjust to taste.
+   If your .mk-injured rule sets size/shape/font, copy those properties here so the markers line up. */
+
+	/* Fixture-matrix marker (♡) */
+	.mk-pregnancy {
+	  display: inline-flex; align-items: center; justify-content: center;
+	  width: 16px; height: 16px; line-height: 1;
+	  font-size: 13px; font-weight: 700; color: #8E4A7D;
+	}
+
+	/* Pill on cards / player page */
+	.pregnancy-leave-tag {
+	  background: #F3E6F0; color: #8E4A7D; border-color: #C9A0BE;
+	}

@@ -294,6 +294,7 @@ function statusMarker(rec) {
     case 'sub_on': return '<span class="mk"><span class="mk-sub"></span></span>';
     case 'unused_sub': return '<span class="mk"><span class="mk-unused"></span></span>';
     case 'injured': return '<span class="mk"><span class="mk-injured">+</span></span>';
+    case 'pregnancy_leave': return '<span class="mk"><span class="mk-pregnancy">♡</span></span>';
     case 'suspended': return '<span class="mk"><span class="mk-suspended">⊘</span></span>';
     case 'loan': return '<span class="mk"><span class="mk-loan">⇄</span></span>';
     case 'transferred': return '<span class="mk"><span class="mk-transferred">→</span></span>';
@@ -321,6 +322,7 @@ function playerBadges(p, squadKey) {
     incoming: { text: 'Incoming', cls: 'guest-tag incoming-tag', kind: 'incoming' },
     left: { text: 'Left', cls: 'guest-tag left-tag', kind: 'left' },
     injured_season: { text: 'Injured', cls: 'guest-tag injured-season-tag', kind: 'injured-season' },
+    pregnancy_leave: { text: 'Pregnancy leave', cls: 'guest-tag pregnancy-leave-tag', kind: 'pregnancy-leave' },
     not_selected_season: { text: 'Not selected', cls: 'guest-tag not-selected-season-tag', kind: 'not-selected-season' },
     trialist: { text: 'Trialist', cls: 'guest-tag trialist-tag', kind: 'trialist' },
   };
@@ -509,7 +511,7 @@ function buildMatrix(rosterPlayers, fixtureData, playersById, squadKey, fixtureI
       if (colourClass) td.classList.add('fx-' + colourClass + '-col');
       const rec = (appearances[p.id] || {})[fx.id];
       td.innerHTML = statusMarker(rec);
-      if (rec && (rec.status === 'injured' || rec.status === 'suspended' || rec.status === 'loan' || rec.status === 'transferred' || rec.status === 'incoming') && rec.reasonNote) {
+      if (rec && (rec.status === 'injured' || rec.status === 'pregnancy_leave' || rec.status === 'suspended' || rec.status === 'loan' || rec.status === 'transferred' || rec.status === 'incoming') && rec.reasonNote) {
         td.title = rec.reasonNote;
       }
       tr.appendChild(td);
@@ -578,6 +580,7 @@ function buildLegendBody() {
     <span><span class="mk"><span class="mk-sub"></span></span> Sub appearance</span>
     <span><span class="mk"><span class="mk-unused"></span></span> Unused sub</span>
     <span><span class="mk"><span class="mk-injured">+</span></span> Injured</span>
+    <span><span class="mk"><span class="mk-pregnancy">♡</span></span> Pregnancy leave</span>
     <span><span class="mk"><span class="mk-suspended">⊘</span></span> Suspended</span>
     <span><span class="mk"><span class="mk-loan">⇄</span></span> Unavailable (on loan)</span>
     <span><span class="mk"><span class="mk-transferred">→</span></span> Unavailable (transferred out)</span>
@@ -589,6 +592,7 @@ function buildLegendBody() {
     <span><span class="guest-tag incoming-tag">Incoming</span> Own squad, incoming signing</span>
     <span><span class="guest-tag left-tag">Left</span> Own squad, left the club</span>
     <span><span class="guest-tag injured-season-tag">Injured</span> Season-long injury</span>
+    <span><span class="guest-tag pregnancy-leave-tag">Pregnancy leave</span> Long-term pregnancy leave</span>
     <span><span class="guest-tag not-selected-season-tag">Not selected</span> Season-long non-selection</span>
     <span><span class="guest-tag trialist-tag">Trialist</span> On trial</span>
     <span><span class="fx-swatch league"></span> League fixture</span>
@@ -618,6 +622,9 @@ function statusDetailLine(p, kind) {
   }
   if (kind === 'injured-season') {
     return p.reasonNote ? `Injured · ${p.reasonNote}` : 'Injured — out for the season';
+  }
+  if (kind === 'pregnancy-leave') {
+    return p.reasonNote ? `Pregnancy leave · ${p.reasonNote}` : 'On pregnancy leave';
   }
   if (kind === 'not-selected-season') {
     return p.reasonNote ? `Not selected · ${p.reasonNote}` : 'Not selected all season';
@@ -828,6 +835,7 @@ function buildSquadSection(squadKey, allSquadPlayers, fixtureData, playersById, 
   const incomingPlayers = allSquadPlayers.filter(p => p.status === 'incoming');
   const leftPlayers = allSquadPlayers.filter(p => p.status === 'left');
   const injuredSeasonPlayers = allSquadPlayers.filter(p => p.status === 'injured_season');
+  const pregnancyLeavePlayers = allSquadPlayers.filter(p => p.status === 'pregnancy_leave');
   const notSelectedPlayers = allSquadPlayers.filter(p => p.status === 'not_selected_season');
   const trialistPlayers = allSquadPlayers.filter(p => p.status === 'trialist');
 
@@ -919,6 +927,7 @@ function buildSquadSection(squadKey, allSquadPlayers, fixtureData, playersById, 
     { kind: 'loan', players: loanOutPlayers },
     { kind: 'incoming', players: incomingPlayers },
     { kind: 'injured-season', players: injuredSeasonPlayers },
+    { kind: 'pregnancy-leave', players: pregnancyLeavePlayers },
     { kind: 'not-selected-season', players: notSelectedPlayers },
     { kind: 'trialist', players: trialistPlayers },
   ]);

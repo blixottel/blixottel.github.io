@@ -138,7 +138,7 @@ function parseResult(resultStr) {
  * effect on the tally checks (minutes-sum-vs-90×11, xG-sum-vs-fixture-xG),
  * which only run when the relevant data is already present either way.
  */
-const KNOWN_PLAYER_STATUSES = new Set(['active', 'loan', 'incoming', 'left', 'injured_season', 'not_selected_season', 'trialist']);
+const KNOWN_PLAYER_STATUSES = new Set(['active', 'loan', 'incoming', 'left', 'injured_season', 'pregnancy_leave', 'not_selected_season', 'trialist']);
 
 function validateFixtures(fixturesData, playersById, options = {}) {
   const issues = []; // { squad, fixtureId, fixtureLabel, severity, message }
@@ -174,7 +174,7 @@ function validateFixtures(fixturesData, playersById, options = {}) {
     }
     if (p.status && !KNOWN_PLAYER_STATUSES.has(p.status)) {
       issues.push({ squad: normSquad(p.squad), fixtureId: null, fixtureLabel: null, severity: 'error',
-        message: `${p.name} has an unrecognized status "${p.status}" in players.json (expected "active", "loan", "incoming", "left", "injured_season", "not_selected_season", "trialist", or omitted).` });
+        message: `${p.name} has an unrecognized status "${p.status}" in players.json (expected "active", "loan", "incoming", "left", "injured_season", "pregnancy_leave", "not_selected_season", "trialist", or omitted).` });
     }
   });
 
@@ -267,11 +267,11 @@ function validateFixtures(fixturesData, playersById, options = {}) {
         return; // nothing else to check until at least one appearance is logged
       }
 
-      const KNOWN_STATUSES = new Set(['start', 'sub_on', 'unused_sub', 'injured', 'suspended', 'loan', 'transferred', 'incoming', 'unavailable']);
+      const KNOWN_STATUSES = new Set(['start', 'sub_on', 'unused_sub', 'injured', 'pregnancy_leave', 'suspended', 'loan', 'transferred', 'incoming', 'unavailable']);
       records.forEach(({ pid, rec }) => {
         if (!KNOWN_STATUSES.has(rec.status)) {
           const name = (playersById[pid] || {}).name || pid;
-          flag('error', `${name} has an unrecognized status "${rec.status}" (expected "start", "sub_on", "unused_sub", "injured", "suspended", "loan", "transferred", "incoming", or "unavailable") — this record won't be counted anywhere until it's fixed.`);
+          flag('error', `${name} has an unrecognized status "${rec.status}" (expected "start", "sub_on", "unused_sub", "injured", "pregnancy_leave", "suspended", "loan", "transferred", "incoming", or "unavailable") — this record won't be counted anywhere until it's fixed.`);
         }
       });
 
@@ -443,9 +443,9 @@ function validateFixtures(fixturesData, playersById, options = {}) {
 /**
  * Per-player consistency checks within one season. "Home squad" = the squad the player belongs to
  * (from their age band); the squad's own fixtures are what its page shows.
- *  A. injured_season / not_selected_season but named in their HOME squad's matchday squads (error).
+ *  A. injured_season / pregnancy_leave / not_selected_season but named in their HOME squad's matchday squads (error).
  *     Guest appearances in other squads are fine.
- *  H. injured_season / not_selected_season but no entry at all in the home squad's appearances, so they
+ *  H. injured_season / pregnancy_leave / not_selected_season but no entry at all in the home squad's appearances, so they
  *     won't show in the fixture-by-fixture listing (warning).
  *  F. Left (or retired) during the season but the season status is still "active" (warning).
  *  B. Joined after a squad's first match (and by its last) with no "incoming" status in that squad's
@@ -510,7 +510,7 @@ function validatePlayerSeasonConsistency(fixturesData, playersById, season) {
     }
 
     // A + H. season-long status
-    if (p.status === 'injured_season' || p.status === 'not_selected_season') {
+    if (p.status === 'injured_season' || p.status === 'pregnancy_leave' || p.status === 'not_selected_season') {
       const named = homeFixtures.filter(fx => homeRecs && homeRecs[fx.id] && NAMED_STATUSES.has(homeRecs[fx.id].status))
         .sort((a, b) => (a.date || '').localeCompare(b.date || ''));
       if (named.length) {
@@ -1194,7 +1194,7 @@ function validateAcrossSeasons(masterList, seasonData) {
     let merged = [];
     try { merged = mergePlayers(sd.master || [], sd.roster, sd.season.ageBands || []); } catch (e) { merged = []; }
     { const seenIds = new Set(); merged = merged.filter(p => !seenIds.has(p.id) && seenIds.add(p.id)); } // one entry per player
-    const current = s => !s || s === 'active' || s === 'injured_season' || s === 'not_selected_season' || s === 'trialist';
+    const current = s => !s || s === 'active' || s === 'injured_season' || s === 'pregnancy_leave' || s === 'not_selected_season' || s === 'trialist';
     const bySquad = {};
     merged.filter(p => current(p.status)).forEach(p => { const k = normSquad(p.squad); (bySquad[k] = bySquad[k] || []).push(p); });
     Object.keys(bySquad).forEach(k => {

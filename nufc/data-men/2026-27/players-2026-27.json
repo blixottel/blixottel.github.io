@@ -14,7 +14,7 @@
     { "number": 14, "id": "s-sean-steur", "status": "not_selected_season", "photoSource": "official" },
     { "number": 17, "id": "s-bazoumana-toure", "status": "not_selected_season", "photoSource": "official" },
     { "number": 19, "id": "s-anthony-elanga", "status": "active", "photoSource": "official" },
-    { "number": 20, "id": "s-matias-fernandez-pardo", "status": "not_selected_season", "photoSource": "zerozero" },
+    { "number": 20, "id": "s-matias-fernandez-pardo", "status": "not_selected_season", "photoSource": "official" },
     { "number": 21, "id": "s-lukas-hornicek", "status": "active", "photoSource": "official" },
     { "number": 23, "id": "s-jacob-murphy", "status": "active", "photoSource": "official" },
     { "number": 24, "id": "s-ewen-jaouen", "status": "not_selected_season", "photoSource": "official" },

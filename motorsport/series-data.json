@@ -4,7 +4,7 @@
             "category": "formula1",
             "name": "Formula 1",
             "resultsVerified": true,
-            "nextDate": "3 Oct 2026",
+            "nextDate": "10 Oct 2026",
             "links": {
                 "official": { "url": "https://www.formula1.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072", "label": "Results", "active": true },
@@ -425,8 +425,8 @@
         {
             "category": "formula4",
             "name": "F4 NACAM",
-            "resultsVerified": true,
-            "nextDate": "3 Oct 2026",
+            "resultsVerified": false,
+            "nextDate": "31 Oct 2026",
             "links": {
                 "official": { "url": "https://www.f4nacam.com", "label": "Official site", "active": true },
                 "results": { "url": "https://speedhive.mylaps.com/organizations/3730", "label": "Results", "active": true },
@@ -444,7 +444,7 @@
             "category": "formula4",
             "name": "F4 Saudi Arabia",
             "resultsVerified": true,
-            "nextDate": "3 Oct 2026",
+            "nextDate": "10 Oct 2026",
             "links": {
                 "official": { "url": "https://f4saudiarabia.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.its-results.com/f4sac/2026/61d79f24-1c92-409d-b152-c8cb62d826d6", "label": "Results", "active": true },
@@ -759,7 +759,7 @@
             "nextDate": "2027",
             "links": {
                 "official": { "url": "https://www.formulatrophy.com", "label": "Official site", "active": true },
-                "results": { "url": "https://cloud.topspeedchina.net/d/s/15nNXmoHwbIZ8m7fizwOE3hSnhmKe1Kw/sUyUw-HoB2dH47Po3vwvEly8tc8-kkCu-8rWgXDOUvAw", "label": "Results", "active": false },
+                "results": { "url": "https://timingresult.com", "label": "Results", "active": false },
                 "standings": { "url": "https://cloud.topspeedchina.net/d/s/15nNXmoHwbIZ8m7fizwOE3hSnhmKe1Kw/sUyUw-HoB2dH47Po3vwvEly8tc8-kkCu-8rWgXDOUvAw", "label": "Standings", "active": false },
                 "calendar": { "url": "https://www.instagram.com/p/DQ3aQyxERCY", "label": "Calendar", "active": false }
             },
@@ -771,8 +771,8 @@
 		{
             "category": "nonFIA",
             "name": "Formula Trophy Malaysia",
-            "resultsVerified": true,
-            "nextDate": "3 Oct 2026",
+            "resultsVerified": false,
+            "nextDate": "7 Nov 2026",
             "links": {
                 "official": { "url": "https://www.formulatrophy.com", "label": "Official site", "active": true },
                 "results": { "url": "https://timingresult.com", "label": "Results", "active": false },
@@ -1187,7 +1187,7 @@
             "category": "motorbikes",
             "name": "MotoGP",
             "resultsVerified": true,
-            "nextDate": "3 Oct 2026",
+            "nextDate": "10 Oct 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
@@ -1212,7 +1212,7 @@
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": false },
                 "standings": { "url": "https://www.motogp.com/en/gp-results", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.motogp.com/en/news/2026/09/25/2027-motogp-calendar-revealed/1092589", "label": "Calendar", "active": true }
+                "calendar": { "url": "https://www.motogp.com/en/calendar/2027", "label": "Calendar", "active": true }
         },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/MotoGP" },
@@ -1227,7 +1227,7 @@
             "category": "motorbikes",
             "name": "Moto2",
             "resultsVerified": true,
-            "nextDate": "3 Oct 2026",
+            "nextDate": "10 Oct 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
@@ -1252,7 +1252,7 @@
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": false },
                 "standings": { "url": "https://www.motogp.com/en/gp-results", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.motogp.com/en/news/2026/09/25/2027-motogp-calendar-revealed/1092589", "label": "Calendar", "active": true }
+                "calendar": { "url": "https://www.motogp.com/en/calendar/2027", "label": "Calendar", "active": true }
         },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/MotoGP" },
@@ -1267,7 +1267,7 @@
             "category": "motorbikes",
             "name": "Moto3",
             "resultsVerified": true,
-            "nextDate": "3 Oct 2026",
+            "nextDate": "10 Oct 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
@@ -1292,7 +1292,7 @@
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": false },
                 "standings": { "url": "https://www.motogp.com/en/gp-results", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.motogp.com/en/news/2026/09/25/2027-motogp-calendar-revealed/1092589", "label": "Calendar", "active": true }
+                "calendar": { "url": "https://www.motogp.com/en/calendar/2027", "label": "Calendar", "active": true }
         },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/MotoGP" },
@@ -1345,7 +1345,7 @@
             "category": "motorbikes",
             "name": "Moto4 Asia Cup",
             "resultsVerified": true,
-            "nextDate": "3 Oct 2026",
+            "nextDate": "10 Oct 2026",
             "links": {
                 "official": { "url": "https://www.moto4asiacup.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.moto4asiacup.com/event/2026-2", "label": "Results", "active": true },
@@ -1363,12 +1363,12 @@
             "category": "motorbikes",
             "name": "Moto4 British Cup",
             "resultsVerified": true,
-            "nextDate": "3 Oct 2026",
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://www.moto4britishcup.com", "label": "Official site", "active": true },
-                "results": { "url": "https://www.britishtalentcup.com/event/2026-2", "label": "Results", "active": true },
-                "standings": { "url": "https://www.moto4britishcup.com/results", "label": "Standings", "active": true },
-                "calendar": { "url": "https://www.moto4britishcup.com/calendar", "label": "Calendar", "active": true }
+                "results": { "url": "https://www.britishtalentcup.com/event/2026-2", "label": "Results", "active": false },
+                "standings": { "url": "https://www.moto4britishcup.com/results", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.moto4britishcup.com/calendar", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://twitter.com/Moto4British" },
@@ -2055,7 +2055,7 @@
             "category": "karting",
             "name": "Karting A&D South America (Senior)",
             "resultsVerified": true,
-            "nextDate": "3 Oct 2026",
+            "nextDate": "17 Apr 2027",
             "links": {
                 "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
                 "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
@@ -2073,7 +2073,7 @@
             "category": "karting",
             "name": "Karting A&D South America (Junior)",
             "resultsVerified": true,
-            "nextDate": "3 Oct 2026",
+            "nextDate": "17 Apr 2027",
             "links": {
                 "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
                 "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
