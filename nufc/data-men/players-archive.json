@@ -7,7 +7,7 @@
         "position": "GK",
         "careerComplete": true,
         "movements": [
-			{ "type": "loan_in", "date": "2025-08-02", "enddate": "2026-06-30", "club": "Southampton" }
+            { "type": "loan_in", "date": "2025-08-02", "enddate": "2026-06-30", "club": "Southampton" }
         ],
         "photos": {
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/225321.png",
@@ -29,8 +29,8 @@
         "position": "GK",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2024-07-01", "club": "Birmingham City" },
-			{ "type": "left", "date": "2026-06-30", "club": "Wolverhampton Wanderers" }
+            { "type": "joined", "date": "2024-07-01", "club": "Birmingham City" },
+            { "type": "left", "date": "2026-06-30", "club": "Wolverhampton Wanderers" }
         ],
         "photos": {
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/19236.png",
@@ -52,9 +52,9 @@
         "position": "DEF",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2024-07-01", "club": "AFC Bournemouth" },
-			{ "type": "loan_out", "date": "2025-02-03", "enddate": "2025-06-30", "club": "Juventus" },
-			{ "type": "left", "date": "2025-06-30", "club": "Juventus" }
+            { "type": "joined", "date": "2024-07-01", "club": "AFC Bournemouth" },
+            { "type": "loan_out", "date": "2025-02-03", "enddate": "2025-06-30", "club": "Juventus" },
+            { "type": "left", "date": "2025-06-30", "club": "Juventus" }
         ],
         "photos": {
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/235530.png",
@@ -76,8 +76,8 @@
         "position": "MID",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2023-07-03", "club": "AC Milan" },
-			{ "type": "left", "date": "2026-07-06", "club": "Tottenham Hotspur" }
+            { "type": "joined", "date": "2023-07-03", "club": "AC Milan" },
+            { "type": "left", "date": "2026-07-06", "club": "Tottenham Hotspur" }
         ],
         "photos": {
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/432422.png",
@@ -99,10 +99,10 @@
         "position": "MID",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2023-09-01", "club": "Shrewsbury Town" },
-			{ "type": "loan_out", "date": "2025-01-17", "enddate": "2025-06-30", "club": "AaB" },
-			{ "type": "loan_out", "date": "2025-09-02", "enddate": "2026-06-30", "club": "FC Groningen" },
-			{ "type": "left", "date": "2026-06-15", "club": "FC Groningen" }
+            { "type": "joined", "date": "2023-09-01", "club": "Shrewsbury Town" },
+            { "type": "loan_out", "date": "2025-01-17", "enddate": "2025-06-30", "club": "AaB" },
+            { "type": "loan_out", "date": "2025-09-02", "enddate": "2026-06-30", "club": "FC Groningen" },
+            { "type": "left", "date": "2026-06-15", "club": "FC Groningen" }
         ],
         "photos": {
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/592436.png",
@@ -124,9 +124,9 @@
         "position": "MF",
         "careerComplete": true,
         "movements": [
-			{ "type": "youth", "date": "2023-08-12", "endDate": "2024-06-30" },
-			{ "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" },
-			{ "type": "left", "date": "2026-06-30", "club": "" }
+            { "type": "youth", "date": "2023-08-12", "endDate": "2024-06-30" },
+            { "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" },
+            { "type": "left", "date": "2026-06-30", "club": "" }
         ],
         "photos": { }
     },
@@ -138,8 +138,8 @@
         "position": "MID",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2024-02-01", "club": "Manchester City" },
-			{ "type": "left", "date": "2026-06-30", "club": "" }
+            { "type": "joined", "date": "2024-02-01", "club": "Manchester City" },
+            { "type": "left", "date": "2026-06-30", "club": "" }
         ],
         "photos": {
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/00/1007900_20240201161538_alfie_harrison_1706804138.jpg",
@@ -159,8 +159,8 @@
         "position": "DEF",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2023-08-24", "club": "AC Milan" },
-			{ "type": "left", "date": "2026-01-15", "club": "Harrogate Town" }
+            { "type": "joined", "date": "2023-08-24", "club": "AC Milan" },
+            { "type": "left", "date": "2026-01-15", "club": "Harrogate Town" }
         ],
         "photos": {
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/741268-1699385751.jpg?lm=4711",
@@ -181,8 +181,8 @@
         "position": "GK",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2024-07-18", "club": "Hemel Hempstead Town" },
-			{ "type": "left", "date": "2026-06-30", "club": "Hemel Hempstead Town" }
+            { "type": "joined", "date": "2024-07-18", "club": "Hemel Hempstead Town" },
+            { "type": "left", "date": "2026-06-30", "club": "Hemel Hempstead Town" }
         ],
         "photos": {
             "fotmob": "https://images.fotmob.com/image_resources/playerimages/1683913.png",
@@ -198,9 +198,9 @@
         "position": "FWD",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2023-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2026-01-01", "enddate": "2026-01-29", "club": "Morpeth Town" },
-			{ "type": "left", "date": "2026-06-30", "club": "George Washington Colonials" }
+            { "type": "joined", "date": "2023-07-01", "club": "Newcastle United Youth" },
+            { "type": "loan_out", "date": "2026-01-01", "enddate": "2026-01-29", "club": "Morpeth Town" },
+            { "type": "left", "date": "2026-06-30", "club": "George Washington Colonials" }
         ],
         "photos": {
             "sofascore": "https://img.sofascore.com/api/v1/player/1601606/image",
@@ -219,8 +219,8 @@
         "position": "MID",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2024-07-01", "club": "Bradford City" },
-			{ "type": "left", "date": "2025-08-10", "club": "UB Conquense" }
+            { "type": "joined", "date": "2024-07-01", "club": "Bradford City" },
+            { "type": "left", "date": "2025-08-10", "club": "UB Conquense" }
         ],
         "photos": {
             "besoccer": "https://cdn.resfu.com/img_data/players/medium/3588333.jpg",
@@ -235,8 +235,8 @@
         "position": "GK",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2023-07-01", "club": "Bohemians" },
-			{ "type": "left", "date": "2025-06-30", "club": "West Ham United" }
+            { "type": "joined", "date": "2023-07-01", "club": "Bohemians" },
+            { "type": "left", "date": "2025-06-30", "club": "West Ham United" }
         ],
         "photos": {
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/08/67/990867_reece_byrne_20260129133254.jpg",
@@ -254,8 +254,8 @@
         "position": "DEF",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2023-07-01", "club": "Newcastle United Youth" },
-			{ "type": "left", "date": "2026-06-30", "club": "Darlington" }
+            { "type": "joined", "date": "2023-07-01", "club": "Newcastle United Youth" },
+            { "type": "left", "date": "2026-06-30", "club": "Darlington" }
         ],
         "photos": {
             "sofascore": "https://img.sofascore.com/api/v1/player/1511676/image",
@@ -273,8 +273,8 @@
         "position": "GK",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" },
-			{ "type": "left", "date": "2026-06-30", "club": "South Shields" }
+            { "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" },
+            { "type": "left", "date": "2026-06-30", "club": "South Shields" }
         ],
         "photos": {
             "sofascore": "https://img.sofascore.com/api/v1/player/1899507/image",
@@ -289,7 +289,7 @@
         "position": "DEF",
         "careerComplete": true,
         "movements": [
- 			{ "type": "trial_in", "date": "2024-01-27", "enddate": "2024-01-27", "club": "Wolverhampton Wanderers" }
+             { "type": "trial_in", "date": "2024-01-27", "enddate": "2024-01-27", "club": "Wolverhampton Wanderers" }
         ],
         "photos": {
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1005844-1782978840.jpg?lm=4711",
@@ -310,8 +310,8 @@
         "position": "DEF",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2024-07-01", "club": "West Ham United" },
-			{ "type": "left", "date": "2026-06-30", "club": "Middlesbrough" }
+            { "type": "joined", "date": "2024-07-01", "club": "West Ham United" },
+            { "type": "left", "date": "2026-06-30", "club": "Middlesbrough" }
         ],
         "photos": {
             "fotmob": "https://images.fotmob.com/image_resources/playerimages/1975731.png"
@@ -326,7 +326,7 @@
         "squadIfDobUnknown": "U18",
         "careerComplete": true,
         "movements": [
- 			{ "type": "trial_in", "date": "2023-09-02", "enddate": "2023-09-02", "club": "Crystal Palace" }
+             { "type": "trial_in", "date": "2023-09-02", "enddate": "2023-09-02", "club": "Crystal Palace" }
         ],
         "photos": {
             "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
@@ -336,6 +336,20 @@
         }
     },
     {
+        "id": "u18-jude-cogdon",
+        "name": "Jude Cogdon",
+        "nationality": "England",
+        "dob": "2007-12-19",
+        "position": "MID",
+        "careerComplete": true,
+        "movements": [
+            { "type": "youth", "date": "2023-08-12", "endDate": "2024-06-30" },
+            { "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" },
+            { "type": "left", "date": "2026-06-30", "club": "" }
+        ],
+        "photos": { }
+    },
+    {
         "id": "u18-kayden-lucas",
         "name": "Kayden Lucas",
         "nationality": "England",
@@ -343,8 +357,8 @@
         "position": "MID",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2024-07-01", "club": "Clevedon Town" },
-			{ "type": "left", "date": "2026-06-30", "club": "West Bromwich Albion" }
+            { "type": "joined", "date": "2024-07-01", "club": "Clevedon Town" },
+            { "type": "left", "date": "2026-06-30", "club": "West Bromwich Albion" }
         ],
         "photos": {
             "fotmob": "https://images.fotmob.com/image_resources/playerimages/2146872.png"
@@ -358,9 +372,9 @@
         "position": "MID",
         "careerComplete": true,
         "movements": [
-			{ "type": "youth", "date": "2023-08-12", "endDate": "2024-06-30" },
-			{ "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" },
-			{ "type": "left", "date": "2026-06-30", "club": "" }
+            { "type": "youth", "date": "2023-08-12", "endDate": "2024-06-30" },
+            { "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" },
+            { "type": "left", "date": "2026-06-30", "club": "" }
         ],
         "photos": {
             "flashscore": "https://static.flashscore.com/res/image/data/tlQ4KrGG-67PmSEAe.png"
@@ -374,7 +388,7 @@
         "position": "GK",
         "careerComplete": true,
         "movements": [
- 			{ "type": "trial_in", "date": "2024-04-06", "enddate": "2024-04-06", "club": "Arsenal" }
+             { "type": "trial_in", "date": "2024-04-06", "enddate": "2024-04-06", "club": "Arsenal" }
         ],
         "photos": {
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/85/23/1048523_noah_cooper_20240605145440.png",
@@ -394,8 +408,8 @@
         "position": "MID",
         "careerComplete": true,
         "movements": [
-			{ "type": "youth", "date": "2024-09-28", "endDate": "2025-06-30" },
-			{ "type": "left", "date": "2025-07-01", "club": "Bolton Wanderers" }
+            { "type": "youth", "date": "2024-09-28", "endDate": "2025-06-30" },
+            { "type": "left", "date": "2025-07-01", "club": "Bolton Wanderers" }
         ],
         "photos": { }
     },
@@ -407,7 +421,7 @@
         "position": "DEF",
         "careerComplete": true,
         "movements": [
- 			{ "type": "trial_in", "date": "2024-04-06", "enddate": "2024-04-06", "club": "Tottenham Hotspur" }
+             { "type": "trial_in", "date": "2024-04-06", "enddate": "2024-04-06", "club": "Tottenham Hotspur" }
        ],
         "photos": {
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/29/04/1242904_theodore_adelusi_20251001105458.png",
@@ -427,7 +441,7 @@
         "position": "DEF",
         "careerComplete": true,
         "movements": [
- 			{ "type": "trial_in", "date": "2026-04-11", "enddate": "2026-04-18", "club": "Wolverhampton Wanderers" }
+             { "type": "trial_in", "date": "2026-04-11", "enddate": "2026-04-18", "club": "Wolverhampton Wanderers" }
         ],
         "photos": {
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/04/18/1260418_will_mcpartland_20250321124610.png",
@@ -442,9 +456,9 @@
         "position": "DEF",
         "careerComplete": true,
         "movements": [
-			{ "type": "joined", "date": "2023-07-01", "club": "Odense BK" },
-			{ "type": "loan_out", "date": "2023-07-01", "enddate": "2024-06-30", "club": "Feyenoord" },
-			{ "type": "left", "date": "2024-06-30", "club": "Brighton and Hove Albion" }
+            { "type": "joined", "date": "2023-07-01", "club": "Odense BK" },
+            { "type": "loan_out", "date": "2023-07-01", "enddate": "2024-06-30", "club": "Feyenoord" },
+            { "type": "left", "date": "2024-06-30", "club": "Brighton and Hove Albion" }
         ],
         "photos": {
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/592031.png",

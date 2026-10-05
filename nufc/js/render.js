@@ -999,15 +999,22 @@ function todoState(p) {
 function renderTodoProgress(players) {
   const panel = document.getElementById('validation-panel');
   if (!panel) return;
-  const current = players.filter(p => !p._archived && !p._unresolvedMaster);
+  const current = players.filter(p => !p._archived && !p._former && !p._unresolvedMaster);
   const todo = current.filter(p => !p.careerComplete).sort((a, b) => a.name.localeCompare(b.name));
+  // Former players (players-former.json): gone from the club, but their career data still needs work.
+  const former = players.filter(p => p._former);
+  const formerTodo = former.filter(p => !p.careerComplete).sort((a, b) => a.name.localeCompare(b.name));
+  const ul = arr => arr.length ? `<ul>${arr.map(p => `<li>${playerLinkHtml(p)} <span>${SQUAD_SHORT[normSquad(p.squad)] || ''}</span></li>`).join('')}</ul>` : '';
   // A "Career data" group at the end of the list, same look as "Across seasons".
   // These are to-dos, not data errors, so they aren't counted in the issue totals.
   const wrap = document.createElement('div');
   wrap.className = 'vp-squad';
   wrap.innerHTML = `<p class="vp-squad-name">Career data</p>` +
     `<p class="vp-sub" style="margin:0 0 6px"><b>${current.length - todo.length}</b> of <b>${current.length}</b> current players complete${todo.length ? ` · ${todo.length} to do` : ' ✓'}</p>` +
-    (todo.length ? `<ul>${todo.map(p => `<li>${playerLinkHtml(p)} <span>${SQUAD_SHORT[normSquad(p.squad)] || ''}</span></li>`).join('')}</ul>` : '');
+    ul(todo) +
+    (former.length
+      ? `<p class="vp-sub" style="margin:10px 0 6px"><b>${former.length - formerTodo.length}</b> of <b>${former.length}</b> former players complete${formerTodo.length ? ` · ${formerTodo.length} to do` : ' ✓'}</p>` + ul(formerTodo)
+      : '');
   const list = document.getElementById('validation-list');
   (list || panel).appendChild(wrap);
   // Keep the box visible even when there are no issues to list.

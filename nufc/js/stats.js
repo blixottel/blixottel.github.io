@@ -24,11 +24,13 @@ function computeStatsForSquad(fixtureData) {
 function computeStatsForFixtureIds(fixtureData, fixtureIdSet) {
   const stats = {};
   const minutesTracked = {};
+  const xgTracked = {};
 
   const ensure = (id) => {
     if (!stats[id]) {
       stats[id] = { appearances: 0, starts: 0, subApps: 0, unusedSubs: 0, goals: 0, xg: 0, assists: 0, yellowCards: 0, redCards: 0, minutes: 0 };
       minutesTracked[id] = false;
+      xgTracked[id] = false;
     }
     return stats[id];
   };
@@ -48,7 +50,10 @@ function computeStatsForFixtureIds(fixtureData, fixtureIdSet) {
       }
       if (rec.status === 'unused_sub') s.unusedSubs += 1;
       s.goals += rec.goals || 0;
-      s.xg += rec.xg || 0;
+      if (typeof rec.xg === 'number') {
+        s.xg += rec.xg;
+        xgTracked[playerId] = true;
+      }
       s.assists += rec.assists || 0;
       if (rec.yellowCard) s.yellowCards += 1;
       if (rec.redCard) s.redCards += 1;
@@ -61,6 +66,8 @@ function computeStatsForFixtureIds(fixtureData, fixtureIdSet) {
 
   Object.keys(stats).forEach(id => {
     if (!minutesTracked[id]) stats[id].minutes = null;
+    // Same for xG: no recorded value at all means "not available" (null), not 0.00.
+    if (!xgTracked[id]) stats[id].xg = null;
   });
 
   return stats;
@@ -156,9 +163,9 @@ function validateFixtures(fixturesData, playersById, options = {}) {
       issues.push({ squad: normSquad(p.squad), fixtureId: null, fixtureLabel: null, severity: 'warning',
         message: `${p.name} is in players-archive.json but isn't marked careerComplete.` });
     }
-    if (p._alsoInArchive) {
+    if (p._alsoInArchive || p._alsoInFormer) {
       issues.push({ squad: normSquad(p.squad), fixtureId: null, fixtureLabel: null, severity: 'warning',
-        message: `${p.name} is in both players-master.json and players-archive.json — the master entry is used. Remove one.` });
+        message: `${p.name} is in more than one of players-master.json, players-former.json and players-archive.json — the first of those is used. Remove the duplicate.` });
     }
     if (p._unresolvedMaster) {
       issues.push({ squad: normSquad(p.squad), fixtureId: null, fixtureLabel: null, severity: 'error',
@@ -870,7 +877,9 @@ function validateAcrossSeasons(masterList, seasonData) {
   // before the data cut-off means part of their career predates the data, so never suggested.
   function suggestCareerComplete(p, mv) {
     if (p.careerComplete || maxYear === null) return;
-    if (mv.some(m => m.type === 'youth')) return; // a youth spell isn't a full career with the club
+    // A youth spell on its own isn't a full career with the club. Once they've joined, the usual rules apply
+    // (the youth period is ignored here: only the joined -> left spell(s) decide which seasons are required).
+    if (mv.some(m => m.type === 'youth') && !mv.some(m => m.type === 'joined')) return;
     const spells = clubSpells(mv);
     const visits = mv.filter(m => m.type === 'loan_in' || m.type === 'trial_in').map(m => {
       const s = looseDate(m.date, false), e = looseDate(endOf(m), true);
@@ -1052,13 +1061,15 @@ function validateAcrossSeasons(masterList, seasonData) {
           if (recMs !== null && endMs > recMs) {
             add('error', `${name}'s youth period ends ${dmy(endRaw)}, after the last season they're in the ${ysLabel} age group — it should be no later than ${dmy(recStr)}.`);
           }
+          // Once a youth period has ended (its end date is before today) there must be a "joined" or
+          // "left"/"retired" record dated on or after that end date, saying what happened next.
           const concluded = mv.some(x => {
             if (x.type !== 'joined' && !isLeavingMovement(x.type)) return false;
             const xs = looseDate(x.date, false);
-            return xs !== null && (startMs === null || xs >= startMs);
+            return xs !== null && xs >= endMs;
           });
           if (endMs < Date.now() && !concluded) {
-            add('warning', `${name}'s youth period ended ${dmy(endRaw)} — scholarship date has passed, add a "joined" or "left" record.`);
+            add('error', `${name}'s youth period ended ${dmy(endRaw)} but there is no "joined" or "left" record on or after that date — add one.`);
           }
           const early = mv.find(x => { const xs = x.type === 'joined' ? looseDate(x.date, false) : null; return xs !== null && xs <= endMs; });
           if (early && !overlapFlagged) {
@@ -1069,24 +1080,42 @@ function validateAcrossSeasons(masterList, seasonData) {
       }
     }
 
-    // 5. Left + careerComplete => should live in the archive file. "Left" = the most
-    // recent joined/left/retired movement is a leaving one whose date has passed (or has no usable date).
-    if (p.careerComplete && !p._archived && !p._alsoInArchive) {
+    // 5. Which player file a player belongs in. "Gone" = the most recent joined/left/retired movement is a
+    // leaving one whose date has passed (or has no usable date), or — for a loan-in / trial player who
+    // never joined — every such spell has an end date that has passed.
+    //   current                      -> players-master.json
+    //   gone, careerComplete         -> players-archive.json (finished; never touched again)
+    //   gone, not careerComplete     -> players-former.json  (gone, but still needs data entering)
+    if (!p._archived && mv.length) {
       const last = [...mv].filter(m => m.type === 'joined' || isLeavingMovement(m.type))
         .sort((a, b) => (a.date || '').localeCompare(b.date || '')).pop();
       const leftMs = last && isLeavingMovement(last.type) ? looseDate(last.date, true) : undefined;
+      let subject = null; // e.g. "Name has left (01/07/2024)"
       if (last && isLeavingMovement(last.type) && (leftMs === null || leftMs <= Date.now())) {
-        add('warning', `${name} has left${last.date ? ' (' + dmy(last.date) + ')' : ''} and is marked careerComplete, so should be moved from players-master.json to players-archive.json.`);
+        subject = `${name} has left${last.date ? ' (' + dmy(last.date) + ')' : ''}`;
       } else if (!mv.some(m => m.type === 'joined')) {
-        // Never "joined" (a loan-in / trial player): they've gone once every such spell has an end date that's passed.
         const visits = mv.filter(m => m.type === 'loan_in' || m.type === 'trial_in');
         if (visits.length && visits.every(m => { const e = looseDate(endOf(m), true); return e !== null && e <= Date.now(); })) {
           const lastEnd = visits.map(endOf).sort().pop();
-          add('warning', `${name}'s ${visits.length > 1 ? 'loan/trial spells' : visits[0].type === 'trial_in' ? 'trial' : 'loan'} ended (${dmy(lastEnd)}) and they're marked careerComplete, so should be moved from players-master.json to players-archive.json.`);
+          subject = `${name}'s ${visits.length > 1 ? 'loan/trial spells' : visits[0].type === 'trial_in' ? 'trial' : 'loan'} ended (${dmy(lastEnd)})`;
         }
       }
+      const here = p._former ? 'players-former.json' : 'players-master.json';
+      if (subject && p.careerComplete && !p._alsoInArchive) {
+        add('warning', `${subject} and careerComplete is set, so should be moved from ${here} to players-archive.json.`);
+      } else if (subject && !p.careerComplete && !p._former && !p._alsoInFormer) {
+        add('warning', `${subject} but careerComplete isn't set yet, so should be moved from players-master.json to players-former.json (players who have gone but still need data entering).`);
+      } else if (!subject && p._former) {
+        add('warning', `${name} is in players-former.json but hasn't left the club (no leaving movement dated in the past) — move them back to players-master.json.`);
+      }
     }
-    if (!mv.length && !p.careerComplete) return;
+    // Every player needs at least one movement saying how they came to the club: "joined", "loan_in",
+    // "trial_in" or "youth". With none at all, flag it and skip the rest (nothing else can be checked).
+    // (Players who have movements but none of these are caught by the "no joined movement" error below.)
+    if (!mv.length && !p.careerComplete) {
+      add('error', `${name} has no movements in players-master.json — add a "joined" (or "loan_in", "trial_in" or "youth") movement.`);
+      return;
+    }
     const has = t => mv.some(m => m.type === t);
     const hasLeft = mv.some(m => isLeavingMovement(m.type));
     if (!has('joined') && (has('loan_in') || has('trial_in') || has('youth'))) { suggestCareerComplete(p, mv); return; } // visitor / youth player, never joined
@@ -1220,7 +1249,7 @@ function validateAcrossSeasons(masterList, seasonData) {
     masterList.forEach(p => {
       const inAny = seasonData.some((sd, i) => rosterIdx[i][p.id]);
       const youthOnly = !(p.movements || []).some(m => m.type === 'joined') && (p.movements || []).some(m => m.type === 'youth');
-      if (!p._archived && !inAny && !youthOnly) add('warning', `${p.name || p.id} is in players-master.json but isn't on any season file.`);
+      if (!p._archived && !inAny && !youthOnly) add('warning', `${p.name || p.id} is in ${p._former ? 'players-former.json' : 'players-master.json'} but isn't on any season file.`);
       if (p._archived && rosterIdx[0][p.id]) add('warning', `${p.name || p.id} is in players-archive.json but is on the latest season file (${label(latest.season)}) — move them back to players-master.json.`);
     });
   }

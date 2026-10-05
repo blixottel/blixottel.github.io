@@ -1,0 +1,66 @@
+/**
+ * transfers.css — the transfer history page (transfers.html): filter bar,
+ * summary line and the movements table. Needs base.css and components.css
+ * (for the .guest-tag pills).
+ */
+
+#transfers-root { padding-top: 28px; }
+
+/* ===== Filters ===== */
+.tr-filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tr-filters select, .tr-filters input[type="search"], .tr-filters > button {
+  font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 500;
+  color: var(--ink); background: var(--paper-raised);
+  border: 1px solid var(--hairline); border-radius: var(--radius);
+  padding: 6px 10px; cursor: pointer;
+}
+.tr-filters input[type="search"] { font-family: 'Inter', sans-serif; font-weight: 400; cursor: text; min-width: 190px; }
+.tr-filters select:hover, .tr-filters > button:hover, .tr-filters input:focus { border-color: var(--ink); outline: none; }
+
+.tr-dir { display: inline-flex; }
+.tr-dir button {
+  font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--slate); background: var(--paper-raised);
+  border: 1px solid var(--hairline); margin-left: -1px; padding: 6px 14px; cursor: pointer;
+}
+.tr-dir button:first-child { margin-left: 0; border-radius: var(--radius) 0 0 var(--radius); }
+.tr-dir button:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+.tr-dir button:hover { color: var(--ink); border-color: var(--ink); position: relative; }
+.tr-dir button.active { color: var(--paper-raised); background: var(--ink); border-color: var(--ink); }
+
+.tr-summary { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--slate); margin: 14px 0 10px; }
+
+/* ===== Table ===== */
+.tr-wrap { overflow-x: auto; border: 1px solid var(--hairline); background: var(--paper-raised); }
+table.tr-table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 13px; }
+.tr-table th, .tr-table td { padding: 7px 12px; text-align: left; border-bottom: 1px solid var(--hairline); vertical-align: middle; }
+.tr-table thead th {
+  font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--slate); background: var(--pitch-soft); border-bottom: 2px solid var(--ink);
+  position: sticky; top: 0;
+}
+.tr-table tbody tr.tr-row:hover td { background: var(--pitch-soft); }
+.tr-table .guest-tag { margin-left: 0; }
+
+.tr-group td {
+  font-family: 'Archivo Black', sans-serif; font-size: 15px; background: var(--paper);
+  border-bottom: 2px solid var(--ink); padding: 14px 12px 6px;
+}
+.tr-date { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--slate); white-space: nowrap; }
+.tr-player { font-weight: 600; }
+.tr-prep { color: var(--slate); font-size: 12px; }
+.tr-details { color: var(--slate); font-size: 12.5px; }
+.tr-details em { font-style: normal; }
+.tr-none { color: var(--slate); opacity: 0.6; }
+.tr-empty { text-align: center; color: var(--slate); font-style: italic; padding: 22px; }
+
+/* In / Out */
+.tr-dir-pill {
+  display: inline-block; min-width: 34px; text-align: center;
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 2px 6px; border-radius: 2px; color: #fff;
+}
+.tr-dir-pill.tr-in { background: var(--pitch); }
+.tr-dir-pill.tr-out { background: var(--claret-ink); }
+tr.tr-row.tr-in td:first-child { box-shadow: inset 3px 0 0 var(--pitch); }
+tr.tr-row.tr-out td:first-child { box-shadow: inset 3px 0 0 var(--claret-line); }

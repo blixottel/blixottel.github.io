@@ -1,0 +1,334 @@
+/**
+ * squad.css — the squad tracker (index.html): squad tabs, section headers,
+ * player cards, status cards, leaderboards, the fixtures list, and the
+ * next-match banner. Needs base.css and components.css.
+ */
+
+/* ===== Squad tabs ===== */
+nav.tabs:empty { display: none; }
+
+nav.tabs {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: 3px solid var(--ink);
+  display: flex;
+  gap: 0;
+  max-width: 1180px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+nav.tabs a {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--slate);
+  text-decoration: none;
+  padding: 14px 22px;
+  white-space: nowrap;
+  border-right: 1px solid var(--hairline);
+  transition: color 0.15s ease, background 0.15s ease;
+}
+nav.tabs a:hover { color: var(--ink); background: var(--paper-raised); }
+nav.tabs a.active {
+  color: var(--ink);
+  background: var(--paper-raised);
+  box-shadow: inset 0 -3px 0 var(--pitch);
+}
+nav.tabs a .count {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--gold);
+  margin-left: 6px;
+}
+
+/* ===== Squad sections ===== */
+section.squad { padding-top: 40px; display: none; }
+section.squad.active-squad { display: block; }
+
+.squad-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 4px solid var(--ink);
+  padding-bottom: 10px;
+  margin-bottom: 24px;
+}
+.squad-header h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 28px;
+  margin: 0;
+}
+.squad-header .meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--slate);
+}
+
+.section-subhead {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--paper-raised);
+  background: var(--pitch);
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 18px 0 10px;
+  border-radius: var(--radius);
+}
+.position-group:first-of-type .section-subhead,
+h3.block-heading + .section-subhead { margin-top: 0; }
+
+/* ===== Player cards ===== */
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.player-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 9px;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.player-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.12); transform: translateY(-2px); }
+.player-card .photo-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(160deg, var(--ink) 0%, var(--ink-soft) 100%);
+  overflow: hidden;
+}
+.player-card .photo-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.player-card .photo-fallback {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: 'Archivo Black', sans-serif; font-size: 30px; color: rgba(255,255,255,0.28);
+}
+.player-card .number-badge {
+  position: absolute; top: 6px; left: 6px;
+  background: var(--gold); color: var(--ink);
+  font-family: 'Archivo Black', sans-serif; font-size: 13px;
+  width: 24px; height: 24px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+.player-card .card-name {
+  font-weight: 700; font-size: 13px; margin-top: 8px; padding: 0 6px;
+  line-height: 1.25;
+}
+.player-card .card-meta { font-size: 10.5px; color: var(--slate); margin-top: 2px; padding: 0 6px; }
+a.player-card { display: block; color: inherit; text-decoration: none; }
+a.player-card:focus-visible { outline: 2px solid var(--pitch); outline-offset: 2px; }
+
+/* Pill(s) overlaid on a card's photo */
+/* Small pill(s) overlaid on a player-card's photo, used in the main
+   Player Info grid to flag a player who left mid-season, is out on loan
+   but has appeared, or is guesting from another squad. A card can carry
+   more than one at once (e.g. a U21 guesting for the seniors who's since
+   gone out on loan) — .status-pills stacks them instead of overlapping. */
+.player-card .status-pills {
+  position: absolute; top: 6px; right: 6px;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 3px;
+}
+.player-card .status-pill {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8.5px; font-weight: 700; letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 2px 5px; border-radius: 2px;
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  cursor: default;
+}
+.status-pill.pill-cross { background: var(--pitch); }
+.status-pill.pill-loan { background: #8A6414; }
+.status-pill.pill-left { background: var(--claret-ink); }
+.status-pill.pill-incoming { background: #3D6E88; }
+.status-pill.pill-injured-season { background: var(--injury-ink); }
+.status-pill.pill-not-selected-season { background: var(--slate); }
+.status-pill.pill-trialist { background: var(--cup-ink); }
+
+/* ===== "Not in the matchday squad" status cards ===== */
+.status-grid { margin-top: 14px; }
+.player-card.status-card { text-align: center; }
+.status-card .card-detail {
+  font-size: 10.5px;
+  font-weight: 600;
+  margin-top: 4px;
+  padding: 3px 6px 0;
+  line-height: 1.3;
+}
+.status-card-loan { border-top: 3px solid var(--amber-line); }
+.status-card-loan .card-detail { color: #8A6414; }
+.status-card-incoming { border-top: 3px solid var(--sky-line); }
+.status-card-incoming .card-detail { color: #3D6E88; }
+.status-card-injured-season { border-top: 3px solid var(--injury-line); }
+.status-card-injured-season .card-detail { color: var(--injury-ink); }
+.status-card-not-selected-season { border-top: 3px solid var(--slate-line); }
+.status-card-not-selected-season .card-detail { color: var(--slate); }
+.status-card-trialist { border-top: 3px solid var(--cup-gold); }
+.status-card-trialist .card-detail { color: var(--cup-ink); }
+
+/* "Not in the matchday squad" grid — same cards, visually receded so the
+   eye reads them as separate from the actively-playing squad above
+   without losing the colour-coded top border or the reason text. Full
+   colour/opacity on hover, for a closer look. */
+.status-grid-muted .player-card {
+  opacity: 0.62;
+  filter: saturate(0.35);
+  box-shadow: none;
+}
+.status-grid-muted .player-card:hover {
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+.status-grid-muted .player-card .photo-wrap img { filter: grayscale(0.7); }
+.status-grid-muted .player-card:hover .photo-wrap img { filter: none; }
+
+/* ===== Leaderboards ===== */
+.leaderboard-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--lb-cols, 4), 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+.leaderboard-card { border: 1px solid var(--hairline); background: var(--paper-raised); padding: 10px 12px 6px; }
+.leaderboard-card h4 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin: 0 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--ink);
+}
+.leaderboard-card table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.leaderboard-card td { padding: 4px 0; border-bottom: 1px solid var(--hairline); }
+.leaderboard-card tr:last-child td { border-bottom: none; }
+.leaderboard-card td.lb-name { font-weight: 600; }
+.leaderboard-card td.lb-val {
+  text-align: right; font-family: 'IBM Plex Mono', monospace; font-weight: 700; color: var(--pitch);
+  width: 40px;
+}
+
+.lb-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+.lb-tab {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--slate);
+  background: var(--paper-raised);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 6px 14px;
+  cursor: pointer;
+}
+.lb-tab:hover { color: var(--ink); border-color: var(--ink); }
+.lb-tab.active { color: var(--paper-raised); background: var(--ink); border-color: var(--ink); }
+
+/* ===== Compact fixtures list ===== */
+.fixtures-list-wrap { margin-top: 14px; overflow-x: auto; border: 1px solid var(--hairline); background: var(--paper-raised); }
+table.fixtures-list { border-collapse: collapse; width: 100%; min-width: 480px; font-size: 12.5px; }
+table.fixtures-list th, table.fixtures-list td {
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--hairline);
+  text-align: left;
+  white-space: nowrap;
+}
+table.fixtures-list thead th {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  background: var(--pitch-soft);
+  border-bottom: 2px solid var(--ink);
+}
+table.fixtures-list td.fl-num, table.fixtures-list td.fl-date {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--slate);
+  font-size: 11.5px;
+}
+table.fixtures-list td.fl-comp { color: var(--slate); font-size: 11.5px; }
+table.fixtures-list td.fl-fixture { font-weight: 600; white-space: normal; }
+table.fixtures-list td.fl-score {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+  text-align: right;
+}
+table.fixtures-list td.fl-score.fx-res-W { color: var(--pitch); }
+table.fixtures-list td.fl-score.fx-res-D { color: var(--slate); }
+table.fixtures-list td.fl-score.fx-res-L { color: var(--claret-ink); }
+table.fixtures-list tbody tr:hover td { background: var(--pitch-soft); }
+table.fixtures-list tbody tr.fl-cup td { background: var(--cup-col-bg); }
+table.fixtures-list tbody tr.fl-euro td { background: var(--euro-col-bg); }
+table.fixtures-list tbody tr.fl-cup:hover td { background: var(--cup-col-bg); }
+table.fixtures-list tbody tr.fl-euro:hover td { background: var(--euro-col-bg); }
+table.fixtures-list tbody tr.fl-flagged td.fl-fixture::after { content: " ⚠"; color: #C0392B; }
+
+/* ===== Next-match banner ===== */
+#next-match-slot:empty {
+  display: none;
+}
+
+.next-match {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  max-width: 960px;
+  margin: 1.1rem auto 0;
+  padding: 0.6rem 1.1rem;
+  background: #111315;
+  border: 1px solid #2b2e31;
+  border-left: 4px solid #f2b134;
+  border-radius: 4px;
+  color: #f4f4f4;
+}
+
+.next-match-label {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #f2b134;
+}
+
+.next-match-squad {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  background: #24272a;
+  color: #cfcfcf;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+}
+
+.next-match-details {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  color: #e6e6e6;
+}
+
+/* ===== Small screens ===== */
+@media (max-width: 640px) {
+  .player-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; }
+  .leaderboard-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
+  .lb-tab { padding: 5px 10px; font-size: 11px; }
+  table.fixtures-list td.fl-comp { display: none; }
+  table.fixtures-list thead th:nth-child(3) { display: none; }
+}

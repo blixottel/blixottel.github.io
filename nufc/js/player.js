@@ -12,10 +12,11 @@ function statVal(stat, col, squadKey) {
 }
 
 function sumStats(list) {
-  const t = { appearances: 0, starts: 0, subApps: 0, goals: 0, xg: 0, assists: 0, yellowCards: 0, redCards: 0, minutes: null };
+  const t = { appearances: 0, starts: 0, subApps: 0, goals: 0, xg: null, assists: 0, yellowCards: 0, redCards: 0, minutes: null };
   list.forEach(s => {
     Object.keys(t).forEach(k => {
-      if (k === 'minutes') { if (typeof s.minutes === 'number') t.minutes = (t.minutes || 0) + s.minutes; }
+      // minutes and xG stay null (shown as "—") unless at least one squad has a real value
+      if (k === 'minutes' || k === 'xg') { if (typeof s[k] === 'number') t[k] = (t[k] || 0) + s[k]; }
       else t[k] += s[k] || 0;
     });
   });

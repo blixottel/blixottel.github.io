@@ -385,21 +385,39 @@ function photoCandidates(p) {
   return candidates.map(c => c.url);
 }
 /**
- * Appends players-archive.json (same folder as the master file) — players who
- * have left. Each is tagged `_archived: true` (used by the local-only to-do
- * borders). A missing archive file is treated as empty; an id present in both
- * files keeps its master entry and logs a console warning.
+ * Appends the two extra player files that sit next to the master file (same folder):
+ *   players-former.json  — players who have gone but whose career data still needs work (e.g. they
+ *                          played in seasons not yet fully entered). Each is tagged `_former: true`.
+ *   players-archive.json — players who have gone and are finished (careerComplete). Each is tagged
+ *                          `_archived: true`.
+ * A missing file is treated as empty. An id that appears in more than one file keeps its entry from
+ * the first of master -> former -> archive, gets an `_alsoInFormer` / `_alsoInArchive` flag, and
+ * logs a console warning.
  */
+const EXTRA_PLAYER_FILES = [
+  { file: 'players-former.json',  tag: '_former',   also: '_alsoInFormer' },
+  { file: 'players-archive.json', tag: '_archived', also: '_alsoInArchive' },
+];
 async function withArchive(master, masterFile) {
-  try {
-    const res = await fetch(masterFile.replace(/[^/]*$/, 'players-archive.json'));
-    if (!res.ok) return master;
-    const have = new Set(master.map(m => m.id));
-    (await res.json()).forEach(a => {
-      if (have.has(a.id)) { master.find(m => m.id === a.id)._alsoInArchive = true; console.warn(`"${a.id}" is in both players-master.json and players-archive.json — using the master entry.`); }
-      else master.push({ ...a, _archived: true });
-    });
-  } catch (e) { /* no archive file yet */ }
+  const byId = {};
+  master.forEach(m => { byId[m.id] = m; });
+  for (const x of EXTRA_PLAYER_FILES) {
+    try {
+      const res = await fetch(masterFile.replace(/[^/]*$/, x.file));
+      if (!res.ok) continue;
+      (await res.json()).forEach(a => {
+        const existing = byId[a.id];
+        if (existing) {
+          existing[x.also] = true;
+          console.warn(`"${a.id}" is in ${x.file} and in an earlier player file — using the earlier entry.`);
+        } else {
+          const p = { ...a, [x.tag]: true };
+          master.push(p);
+          byId[a.id] = p;
+        }
+      });
+    } catch (e) { /* no such file yet */ }
+  }
   return master;
 }
 

@@ -6,36 +6,10 @@
 <title>The Teamsheet — NUFC Squad Tracker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/styles.css">
-<link rel="stylesheet" href="styles/next-match.css">
-<style>
-  .back-link {
-    display: inline-block;
-    margin: 0 0 14px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    color: inherit;
-    opacity: 0.6;
-    text-decoration: none;
-    transition: opacity 0.15s ease;
-  }
-  .back-link:hover { opacity: 1; text-decoration: underline; }
-  .back-link:focus-visible { opacity: 1; outline: 2px solid currentColor; outline-offset: 3px; }
-  #wip-notice {
-    display: none;
-    max-width: 1180px;
-    margin: 16px auto 0;
-    padding: 12px 16px;
-    background: #FBF1DC;
-    border: 1px solid #D9A441;
-    border-radius: 3px;
-    color: #8A5A00;
-    font-size: 13.5px;
-    line-height: 1.45;
-  }
-  @media (max-width: 1220px) { #wip-notice { margin-left: 16px; margin-right: 16px; } }
-</style>
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/squad.css">
+<link rel="stylesheet" href="styles/checks.css">
 </head>
 <body>
 
@@ -65,7 +39,7 @@
 <main id="main"></main>
 
 <footer id="footer-note">
-  Data maintained by hand in <code>players-master.json</code>, <code>players-archive.json</code> (players who have left), a per-season roster file, and a per-season fixtures file. Appearance stats are calculated automatically from the fixture records. See <code>DATA-GUIDE.md</code> for field reference.
+  Data maintained by hand in <code>players-master.json</code>, <code>players-former.json</code> (players who have left but still need data entering), <code>players-archive.json</code> (players who have left and are finished), a per-season roster file, and a per-season fixtures file. Appearance stats are calculated automatically from the fixture records. See <code>DATA-GUIDE.md</code> for field reference.
 </footer>
 
 <script src="js/teams.js"></script>

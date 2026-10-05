@@ -28,9 +28,9 @@ data differs, and each team's data lives in its own folder:
 
 ```
 site folder/
-  index.html  player.html  gallery.html  DATA-GUIDE.md
-  js/         teams.js  data.js  stats.js  render.js  app.js  player.js
-  styles/     styles.css  (plus next-match.css, player.css)
+  index.html  player.html  transfers.html  validation.html  gallery.html  DATA-GUIDE.md
+  js/         teams.js  data.js  stats.js  render.js  nav.js  app.js  player.js  transfers.js  validation.js
+  styles/     base.css  components.css  squad.css  player.css  transfers.css  checks.css
   data-men/   seasons.json, players-master.json, players-archive.json,
               players-YYYY-YY.json, fixtures-YYYY-YY.json, ...
   data-women/ the same set of files, for the women's team
@@ -565,7 +565,17 @@ see "Squads and guest appearances" above), not in this muted section.
 | `index.html` | Markup only, for the squad tracker — shared by every team. The tab bar and team-specific text are filled in by `js/app.js`. |
 | `player.html` | Markup for the player profile, also shared. |
 | `gallery.html` | Standalone photo-audit page — self-contained apart from loading `js/teams.js`. |
-| `styles/styles.css` | Styling shared by all pages (`next-match.css` and `player.css` sit alongside it). |
+| `transfers.html` | Markup for the transfer history page, also shared. |
+| `validation.html` | Markup for the Data checks page. |
+| `styles/base.css` | Loaded by every page (except `gallery.html`): design tokens, reset, masthead, team/season switchers, back link, footer and other page furniture. |
+| `styles/components.css` | Pieces used on more than one page: the status tags/pills, the fixture matrix, matchday markers and the legend. |
+| `styles/squad.css` | Squad tracker only: tabs, player/status cards, leaderboards, fixtures list, next-match banner. |
+| `styles/player.css` | Player profile only. |
+| `styles/transfers.css` | Transfer history only. |
+| `styles/checks.css` | Data checks panel, work-in-progress / all-clear notices, and the local-only "To do" badge. |
+| `js/nav.js` | The page-link row in the masthead (Squad tracker · Transfer history · Data checks · Photo gallery). |
+| `js/transfers.js` | Entry point for `transfers.html`. |
+| `js/validation.js` | Entry point for `validation.html`. |
 | `js/teams.js` | The list of teams, which one is active (`?team=`), and each team's data folder and squad settings. Loaded first. |
 | `js/data.js` | Fetching, master/season merging, photo-candidate resolution, and small pure helpers (`calcAge`, `fmtDate`, `normSquad`). |
 | `js/stats.js` | Appearance-stat aggregation and the data-validation checks that power the "Data checks" panel. |
@@ -600,6 +610,15 @@ Two optional fields in `players-master.json` drive the extras:
 - **Movement checks:** for players with `careerComplete: true`, being named in a matchday squad (started, came on, or unused sub) on a date that falls inside a `loan_out` spell (but not a `loan_out_dual` one), before he joined, or after he left (outside any `joined`→`left`, `loan_in` or `trial_in` window) is flagged. These show in the "Data checks" panel on the squad page and on the player's profile. Players without `careerComplete` are not checked.
 
 - **Profile status:** worked out from `movements` and today's date (on loan, dual registration, trialist, on loan from, left, incoming). A player with no movements uses his roster `status`; one with movements keeps only the roster's injured / not-selected statuses as a fallback.
+
+## Transfer history (`transfers.html`, plus `?team=women` for the women's team)
+
+One list of every entry in every player's `movements` (from `players-master.json` and `players-archive.json`), grouped by season and ordered by date (newest first; the button reverses it). Each row shows the date, an **In** / **Out** marker, the player (linked to their profile), their **squad at the time**, the movement type, the club, and any loan dates or `note`.
+
+- **In** = `joined`, `youth`, `loan_in`, `trial_in`. **Out** = `left`, `retired`, `loan_out`, `loan_out_dual`.
+- **Squad at the time** is the player's squad in the season the movement date falls in: from that season's roster file if they're listed there (so `squadOverride` is respected), otherwise worked out from their `dob` and that season's `ageBands`. A date that no season in `seasons.json` covers (e.g. before the data starts) shows "—".
+- Filters: direction, movement type, squad, season, and a search box (player or club). Movements with no date sort to the bottom.
+- Unlike the other pages it shows every season at once, so it has a Season filter rather than the Season drop-down.
 
 ## players-archive.json
 

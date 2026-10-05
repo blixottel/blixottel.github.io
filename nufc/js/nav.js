@@ -7,7 +7,7 @@
  * The current ?team= and ?season= are carried across every link, so hopping
  * between pages keeps you on the same team and season.
  *
- *   buildSiteNav('teamsheet' | 'validation' | 'gallery')   // marks the current page
+ *   buildSiteNav('teamsheet' | 'transfers' | 'validation' | 'gallery')   // marks the current page
  *   setNavBadge('validation', 3)                            // optional count next to a link (0 or null clears it)
  *
  * To add another page later, add a line to SITE_PAGES. Pages marked
@@ -18,6 +18,7 @@
  */
 const SITE_PAGES = [
   { id: 'teamsheet',  label: 'Squad tracker', href: 'index.html' },
+  { id: 'transfers',  label: 'Transfer history', href: 'transfers.html' },
   { id: 'validation', label: 'Data checks',   href: 'validation.html', localOnly: true },
   { id: 'gallery',    label: 'Photo gallery', href: 'gallery.html',    localOnly: true },
 ];

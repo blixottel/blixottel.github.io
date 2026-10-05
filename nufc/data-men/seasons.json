@@ -1,7 +1,7 @@
 [
 	{
 		"id": "2026-27", "label": "2026/27", "startDate": "2026-07-01", "endDate": "2027-06-30",
-		"playersFile": "data-men/2026-27/players-2026-27.json", "fixturesFile": "data-men/2026-27/fixtures-2026-27.json",
+		"playersFile": "data-men/2026-27/players-2026-27.json", "fixturesFile": "data-men/2026-27/fixtures-2026-27.json", "dataComplete": false,
 		"ageBands": [ { "squad": "u16", "bornOnOrAfter": "2010-09-01" }, { "squad": "u18", "bornOnOrAfter": "2008-09-01", "bornBefore": "2010-09-01" }, { "squad": "u21", "bornOnOrAfter": "2005-01-01", "bornBefore": "2008-09-01" } ]
 	},
 	{

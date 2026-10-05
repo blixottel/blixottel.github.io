@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transfer history — The Teamsheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/transfers.css">
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <a class="back-link" href="../">&larr; blixottel</a>
+    <div id="site-nav"></div>
+    <div id="season-switcher-slot" class="switchers"></div>
+    <p class="eyebrow">Movements · All seasons</p>
+    <h1 class="title">Transfer History</h1>
+    <p class="subtitle" id="page-subtitle">Every incoming and outgoing movement, by date</p>
+  </div>
+</div>
+
+<div id="load-error">
+  <strong>Couldn't load the data files.</strong> If you opened this page directly from disk (a <code>file://</code> link),
+  most browsers block a local page from reading local JSON files. Run a tiny local server from this folder instead, e.g.
+  <code>python3 -m http.server 8000</code>, then open <code>http://localhost:8000/transfers.html</code>.
+</div>
+
+<main id="transfers-root" hidden>
+  <div class="tr-filters" id="tr-filters">
+    <div class="tr-dir" id="tr-dir" role="group" aria-label="Direction">
+      <button type="button" data-dir="all" class="active">All</button>
+      <button type="button" data-dir="in">Incoming</button>
+      <button type="button" data-dir="out">Outgoing</button>
+    </div>
+    <input type="search" id="tr-search" placeholder="Search player or club…" aria-label="Search player or club">
+    <select id="tr-type" aria-label="Movement type"></select>
+    <select id="tr-squad" aria-label="Squad"></select>
+    <select id="tr-season" aria-label="Season"></select>
+    <button type="button" id="tr-sort" title="Reverse the order">Newest first ↓</button>
+  </div>
+  <p class="tr-summary" id="tr-summary"></p>
+  <div class="tr-wrap"><table class="tr-table">
+    <thead><tr><th>Date</th><th></th><th>Player</th><th>Squad</th><th>Movement</th><th>Club</th><th>Details</th></tr></thead>
+    <tbody id="tr-body"></tbody>
+  </table></div>
+</main>
+
+<footer id="footer-note">
+  Built from the <code>movements</code> recorded in <code>players-master.json</code> and <code>players-archive.json</code>. The squad shown is the player's squad in the season the movement date falls in (from that season's roster file, or worked out from their date of birth if they aren't on it). “—” means no season in <code>seasons.json</code> covers that date.
+</footer>
+
+<script src="js/teams.js"></script>
+<script src="js/data.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/render.js"></script>
+<script src="js/nav.js"></script>
+<script>buildSiteNav('transfers');</script>
+<script src="js/transfers.js"></script>
+</body>
+</html>

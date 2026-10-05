@@ -1,5 +1,8 @@
-.back-link{display:inline-block;margin:0 0 14px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:inherit;opacity:.6;text-decoration:none}
-.back-link:hover{opacity:1;text-decoration:underline}
+/**
+ * player.css — the player profile (player.html): bio, career totals, movements,
+ * the season timeline and its totals tables. Needs base.css and components.css.
+ */
+
 #player-root{max-width:1180px;margin:0 auto;padding:32px 24px 60px}
 
 .bio{display:grid;grid-template-columns:170px 1fr;gap:28px;align-items:start}

@@ -49,7 +49,7 @@ async function init() {
       if (eyebrow) eyebrow.textContent = `Est. manually · Season ${activeSeason.label || activeSeason.id}${AGE_AS_OF ? ' · Ages as at ' + AGE_AS_OF.toLocaleDateString('en-GB') : ''}`;
       const footerNote = document.getElementById('footer-note');
       if (footerNote) {
-        footerNote.innerHTML = `Data maintained by hand in <code>${masterFile}</code>, <code>players-archive.json</code>, <code>${playersFile}</code> and <code>${fixturesFile}</code> (season ${activeSeason.label || activeSeason.id} — see <code>seasons.json</code> for the full list). Appearance stats are calculated automatically from the fixture records. See <code>DATA-GUIDE.md</code> for field reference.`;
+        footerNote.innerHTML = `Data maintained by hand in <code>${masterFile}</code>, <code>players-former.json</code>, <code>players-archive.json</code>, <code>${playersFile}</code> and <code>${fixturesFile}</code> (season ${activeSeason.label || activeSeason.id} — see <code>seasons.json</code> for the full list). Appearance stats are calculated automatically from the fixture records. See <code>DATA-GUIDE.md</code> for field reference.`;
       }
     }
 

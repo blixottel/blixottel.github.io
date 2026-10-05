@@ -9,7 +9,7 @@
  *   title, subtitle      page <title> and masthead subtitle
  *   clubName             shown on player pages
  *   dataDir              folder (with trailing slash) holding that team's
- *                        seasons.json, players-master.json, players-archive.json.
+ *                        seasons.json, players-master.json, players-former.json, players-archive.json.
  *                        Paths INSIDE seasons.json are page-relative, so they
  *                        need to include this folder, e.g. "data-women/players-2026-27.json".
  *   squads               squads that always get a tab (see CORE_SQUADS in data.js)
