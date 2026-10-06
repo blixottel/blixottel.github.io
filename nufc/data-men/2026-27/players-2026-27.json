@@ -43,7 +43,7 @@
     { "number": 53, "id": "u21-baran-yildiz", "status": "not_selected_season", "photoSource": "flashscore" },
     { "number": 54, "id": "u21-afner-ca", "status": "active", "photoSource": "official" },
     { "number": 56, "id": "u21-henry-johnson", "status": "active", "photoSource": "official" },
-    { "number": 57, "id": "u21-guy-bloomer", "status": "not_selected_season", "photoSource": "official" },
+    { "number": 57, "id": "u21-guy-bloomer", "status": "active", "photoSource": "official" },
     { "number": 58, "id": "u21-jake-durrant", "status": "active", "photoSource": "official" },
     { "number": 59, "id": "u18-aaron-epia", "status": "not_selected_season", "photoSource": "official" },
     { "number": 60, "id": "u21-matheos-ferreira", "status": "active", "photoSource": "official" },
