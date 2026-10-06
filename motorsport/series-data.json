@@ -59,12 +59,12 @@
             "category": "formula1",
             "name": "Formula 2",
             "resultsVerified": true,
-            "nextDate": "2027",
+            "nextDate": "13 Mar 2027",
             "links": {
                 "official": { "url": "https://www.fiaformula2.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/formula-2-championship-44", "label": "Results", "active": false },
                 "standings": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/formula-2-championship-44", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.fiaformula2.com/Latest/28OvYB98ektUm0D8vrUgYS/fia-formula-2-championship-2026-season-calendar-revealed", "label": "Calendar", "active": false }
+                "calendar": { "url": "https://www.fiaformula2.com/en/latest/article/fia-formula-2-championship-announce-2027-season-calendar.4wnKwYRPord5JXNqtqUefN", "label": "Calendar", "active": true }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/Formula2" },
@@ -76,12 +76,12 @@
             "category": "formula1",
             "name": "Formula 3",
             "resultsVerified": true,
-            "nextDate": "2027",
+            "nextDate": "13 Mar 2027",
             "links": {
                 "official": { "url": "https://www.fiaformula3.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/fia-formula-3-championship-1012", "label": "Results", "active": false },
                 "standings": { "url": "https://www.fia.com/documents/season/season-2026-2072/championships/fia-formula-3-championship-1012", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.fiaformula3.com/Latest/16F8XBnz2PSr8Rn29WCsIs/fia-formula-3-championship-2026-season-calendar-revealed", "label": "Calendar", "active": false }
+                "calendar": { "url": "https://www.fiaformula3.com/en/latest/article/fia-formula-3-unveils-2027-calendar.2byRPUZdMVH5gh7ida48qF", "label": "Calendar", "active": true }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/Formula3" },

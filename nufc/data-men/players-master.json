@@ -109,7 +109,7 @@
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/583189-1700739021.jpg?lm=4711",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/00/96/660096_anthony_elanga_20260114154142.png",
             "sofascore": "https://img.sofascore.com/api/v1/player/979232/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/958010.png",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1050166.png",
             "besoccer": "https://cdn.resfu.com/img_data/players/medium/671483.jpg",
             "flashscore": "https://static.flashscore.com/res/image/data/27zkwSHG-2ZrooEL0.png",
             "statshub": "https://images.statshub.com/player/979232.png",
@@ -201,7 +201,7 @@
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/135343-1667990394.jpg",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/16/69/121669_fabian_schar_20260114154547.png",
             "sofascore": "https://img.sofascore.com/api/v1/player/101882/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1438570.png",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/189982.png",
             "besoccer": "https://cdn.resfu.com/img_data/players/medium/138775.jpg",
             "flashscore": "https://static.flashscore.com/res/image/data/dClJuaFa-0jn0Gw6S.png",
             "statshub": "https://images.statshub.com/player/101882.png",
@@ -456,7 +456,7 @@
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/629773-1732826321.jpg",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/25/63/702563_lukas_hornicek_20260727173713.jpg",
             "sofascore": "https://img.sofascore.com/api/v1/player/963744/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1296763.png",
+            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1186978.png",
             "besoccer": "https://cdn.resfu.com/img_data/players/medium/808716.jpg",
             "flashscore": "https://static.flashscore.com/res/image/data/fHoQ8EHG-ADySrc6p.png",
             "statshub": "https://images.statshub.com/player/963744.png",
@@ -1325,7 +1325,8 @@
         "careerComplete": true,
         "movements": [
 			{ "type": "youth", "date": "2024-02-22", "endDate": "2025-06-30" },
-			{ "type": "joined", "date": "2025-07-01", "club": "Newcastle United Youth" }
+			{ "type": "joined", "date": "2025-07-01", "club": "Newcastle United Youth" },
+			{ "type": "loan_out", "date": "2026-10-03", "enddate": "2026-10-17", "club": "Newcastle Blue Star" }
         ],
         "photos": { }
     },

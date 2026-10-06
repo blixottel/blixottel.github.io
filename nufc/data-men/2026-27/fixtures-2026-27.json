@@ -782,7 +782,9 @@
             "u21-oliver-holland": {
                 "u18-f1": { "status": "unused_sub" },
                 "u18-f6": { "status": "unused_sub" },
-                "u18-f7": { "status": "unused_sub" }
+                "u18-f7": { "status": "unused_sub" },
+				"u18-f8": { "status": "loan" },
+				"u18-f9": { "status": "loan" }
             },
             "u21-roman-dowell": {
                 "u18-f1": { "status": "start" },
