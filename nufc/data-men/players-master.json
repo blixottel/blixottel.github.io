@@ -1311,6 +1311,7 @@
 			{ "type": "joined", "date": "2024-08-17", "club": "Newcastle United Youth" }
         ],
         "photos": {
+			"official": "https://contentfulproxy.stadion.io/9ec6988xevcz/38JGEE0leYoTrOOSRaw8aW/d2de622f031608e93345c97aff8419b8/Mohamed_Waddani_2400px.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/98/36/1179836_mohamed_waddani_20250817164940.jpg",
             "sofascore": "https://img.sofascore.com/api/v1/player/1899499/image",
             "statshub": "https://images.statshub.com/player/1899499.png"
@@ -1770,6 +1771,19 @@
         "movements": [
 			{ "type": "youth", "date": "2024-04-16", "endDate": "2025-06-30" },
 			{ "type": "joined", "date": "2025-07-01", "club": "Newcastle United Youth" }
+        ],
+        "photos": { }
+    },
+    {
+        "id": "u-abdulmalik-bamgbola",
+        "name": "Abdulmalik Bamgbola",
+        "nationality": "England",
+        "dob": "",
+		"squadIfDobUnknown": "Youth",
+        "position": "DEF",
+        "careerComplete": true,
+        "movements": [
+			{ "type": "youth", "date": "2026-10-07", "endDate": "2028-06-30", "club": "Watford" }
         ],
         "photos": { }
     }

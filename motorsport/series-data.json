@@ -771,7 +771,7 @@
 		{
             "category": "nonFIA",
             "name": "Formula Trophy Malaysia",
-            "resultsVerified": false,
+            "resultsVerified": true,
             "nextDate": "7 Nov 2026",
             "links": {
                 "official": { "url": "https://www.formulatrophy.com", "label": "Official site", "active": true },

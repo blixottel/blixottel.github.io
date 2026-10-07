@@ -856,7 +856,7 @@
         "careerComplete": false,
         "movements": [
 			{ "type": "joined", "date": "2022-07-01", "club": "Newcastle United Youth" },
-			{ "type": "left", "date": "2026-06-30", "club": "" }
+			{ "type": "left", "date": "2026-06-30", "club": "Spennymoor Town" }
         ],
         "photos": {
             "sofascore": "https://img.sofascore.com/api/v1/player/1546059/image",

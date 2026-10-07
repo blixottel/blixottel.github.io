@@ -943,7 +943,10 @@ function buildPhotoTile(candidate, index, p, onState, onUse) {
 
   const img = document.createElement('img');
   img.alt = '';
-  img.loading = (key && key === p.photoSource) ? 'eager' : 'lazy';
+  // Eager for every tile: the Photo sources summary needs every image to settle, and a
+  // lazy image below the fold (or in a filtered-out block) never starts loading, which left
+  // the summary stuck on "Loading images…" until you scrolled.
+  img.loading = 'eager';
   img.addEventListener('load', () => { tile.dataset.state = 'loaded'; tile.classList.remove('failed'); onState(); });
   img.addEventListener('error', () => { tile.dataset.state = 'failed'; tile.classList.add('failed'); onState(); });
   img.src = url;
@@ -1162,10 +1165,20 @@ function onTileState(block, p, ctx) {
   if (Array.from(tiles).some(t => t.dataset.state === 'pending')) return;
   block.dataset.settled = '1';
   ctx.settledPlayers++;
-  if (ctx.settledPlayers === ctx.needed) {
+  scheduleSummary(ctx);
+}
+
+// Re-draws the summary (debounced) as players settle, so it fills in progressively and
+// one slow or hung image can't hold it back. A pending note shows until all have settled.
+let summaryTimer = null;
+function scheduleSummary(ctx) {
+  if (summaryTimer) return;
+  summaryTimer = setTimeout(() => {
+    summaryTimer = null;
+    if (!current || current.token !== ctx.token) return;
     ctx.summaryReady = true;
     renderSourceSummary(ctx.players);
-  }
+  }, 150);
 }
 
 /**
@@ -1218,6 +1231,13 @@ function renderSourceSummary(players) {
     tr.appendChild(useEl);
     tbody.appendChild(tr);
   });
+
+  const waiting = current ? current.needed - current.settledPlayers : 0;
+  if (waiting > 0) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td colspan="3" class="source-summary-pending">Still loading images for ${waiting} player${waiting === 1 ? '' : 's'} — "in use" counts are provisional.</td>`;
+    tbody.appendChild(tr);
+  }
 
   const totalAvailable = Object.values(available).reduce((a, b) => a + b, 0);
   const totalInUse = Object.values(inUse).reduce((a, b) => a + b, 0);
@@ -1342,7 +1362,8 @@ async function loadSeason(season) {
     buildSquadFilter(sorted);
     const blocksWrap = document.getElementById('blocks');
     sorted.forEach(p => blocksWrap.appendChild(buildPlayerBlock(p, ctx)));
-    if (needed === 0) { ctx.summaryReady = true; renderSourceSummary(sorted); }
+    ctx.summaryReady = true;
+    renderSourceSummary(sorted);   // provisional; refreshed as images settle (scheduleSummary)
 
     updateStatLine();
     applyFilters();

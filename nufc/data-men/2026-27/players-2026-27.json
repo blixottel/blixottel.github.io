@@ -90,6 +90,6 @@
     { "number": 0, "id": "u18-muawiya-ghanem", "status": "active", "photoSource": "placeholder" },
     { "number": 0, "id": "u18-thomas-bowness", "status": "active", "photoSource": "placeholder" },
     { "number": 0, "id": "u21-antonio-cordero", "status": "loan", "loanClub": "Cádiz", "photoSource": "zerozero" },
-    { "number": 0, "id": "u21-mo-waddani", "status": "not_selected_season", "photoSource": "sofascore" },
+    { "number": 0, "id": "u21-mo-waddani", "status": "not_selected_season", "photoSource": "official" },
     { "number": 0, "id": "u21-ousmane-diabate", "status": "loan", "loanClub": "Gençlerbirliği", "photoSource": "zerozero" }
 ]

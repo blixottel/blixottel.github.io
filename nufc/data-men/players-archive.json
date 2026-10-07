@@ -128,7 +128,9 @@
             { "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" },
             { "type": "left", "date": "2026-06-30", "club": "" }
         ],
-        "photos": { }
+        "photos": {
+			"official": "https://contentfulproxy.stadion.io/9ec6988xevcz/61ThmpBeHkfHMK9LLVsS2I/f2d1550fd238572bc2c624d291a7f656/Alex_O_Donovan_2400px.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
+		}
     },
     {
         "id": "u21-alfie-harrison",
@@ -139,7 +141,7 @@
         "careerComplete": true,
         "movements": [
             { "type": "joined", "date": "2024-02-01", "club": "Manchester City" },
-            { "type": "left", "date": "2026-06-30", "club": "" }
+            { "type": "left", "date": "2026-06-30", "club": "Dundee" }
         ],
         "photos": {
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/00/1007900_20240201161538_alfie_harrison_1706804138.jpg",
@@ -314,6 +316,7 @@
             { "type": "left", "date": "2026-06-30", "club": "Middlesbrough" }
         ],
         "photos": {
+			"official": "https://contentfulproxy.stadion.io/9ec6988xevcz/4d68FTwAuIQREXvT9SeqH7/7eb20bba3003059770413ba5a2dfb1da/Ezra_Tika-Lemba_2400px.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "fotmob": "https://images.fotmob.com/image_resources/playerimages/1975731.png"
         }
     },
@@ -347,7 +350,9 @@
             { "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" },
             { "type": "left", "date": "2026-06-30", "club": "" }
         ],
-        "photos": { }
+        "photos": {
+			"official": "https://contentfulproxy.stadion.io/9ec6988xevcz/58CWv4bEQEBkXg6HsHsKes/7c53032918c5347cf709bd0093644999/Jude_Cogdon_2400px.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
+		}
     },
     {
         "id": "u18-kayden-lucas",
@@ -361,6 +366,7 @@
             { "type": "left", "date": "2026-06-30", "club": "West Bromwich Albion" }
         ],
         "photos": {
+			"official": "https://contentfulproxy.stadion.io/9ec6988xevcz/4JQvfJOi8fToT6llDbobTp/a57949338c8087e989b841bd6eb8fb68/Kayden_Lucas_2400px.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "fotmob": "https://images.fotmob.com/image_resources/playerimages/2146872.png"
         }
     },
@@ -377,6 +383,7 @@
             { "type": "left", "date": "2026-06-30", "club": "" }
         ],
         "photos": {
+			"official": "https://contentfulproxy.stadion.io/9ec6988xevcz/1wuQYceiI2gVVdOKHCq7FI/6f433a24cf4f04bf96eeaa3787f8cf07/Matthew_Taylor_2400px.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "flashscore": "https://static.flashscore.com/res/image/data/tlQ4KrGG-67PmSEAe.png"
         }
     },
