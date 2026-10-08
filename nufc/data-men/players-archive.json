@@ -80,6 +80,7 @@
             { "type": "left", "date": "2026-07-06", "club": "Tottenham Hotspur" }
         ],
         "photos": {
+			"official": "https://images.ctfassets.net/9ec6988xevcz/2PFXvt01SEWOGswvDTapvz/c84a4ce385fb8e04252bc9208f8cc50c/Sandro_Tonali_profile_image.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/432422.png",
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/397033-1688389270.jpg?lm=4711",
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/new/63/04/586304_sandro_tonali_20260114154428.png",

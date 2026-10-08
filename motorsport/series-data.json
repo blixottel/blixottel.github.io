@@ -129,12 +129,12 @@
             "category": "formulaRegional",
             "name": "FR Europe",
             "resultsVerified": true,
-            "nextDate": "2027",
+            "nextDate": "10 Apr 2027",
             "links": {
                 "official": { "url": "https://fiafrec.com", "label": "Official site", "active": true },
                 "results": { "url": "https://fia-frec.vii-results.com", "label": "Results", "active": false },
                 "standings": { "url": "https://fiafrec.com/standings", "label": "Standings", "active": false },
-                "calendar": { "url": "https://fiafrec.com/calendar", "label": "Calendar", "active": false }
+                "calendar": { "url": "https://fiafrec.com/calendar", "label": "Calendar", "active": true }
             },
             "social": [
                 { "platform": "facebook", "url": "https://www.facebook.com/fiaformularegionaleu" },
@@ -448,7 +448,7 @@
             "links": {
                 "official": { "url": "https://f4saudiarabia.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.its-results.com/f4sac/2026/61d79f24-1c92-409d-b152-c8cb62d826d6", "label": "Results", "active": true },
-                "standings": { "url": "https://www.its-results.com/f4sac/2026/61d79f24-1c92-409d-b152-c8cb62d826d6", "label": "Standings", "active": false },
+                "standings": { "url": "https://www.its-results.com/f4sac/2026/61d79f24-1c92-409d-b152-c8cb62d826d6", "label": "Standings", "active": true },
                 "calendar": { "url": "http://instagram.com/p/DbDk3QoFXyH", "label": "Calendar", "active": true }
             },
             "social": [
@@ -897,6 +897,24 @@
                 "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2027", "label": "Results", "active": false },
                 "standings": { "url": "https://www.gb-4.net/standings", "label": "Standings", "active": false },
                 "calendar": { "url": "https://www.gb-4.net/news/2026/sept/10/gb4-championship-unveils-provisional-2027-calendar", "label": "Calendar", "active": true }
+            },
+            "social": [
+                { "platform": "x-twitter", "url": "https://x.com/GB4Championship" },
+                { "platform": "facebook", "url": "https://www.facebook.com/GB4Championship" },
+                { "platform": "instagram", "url": "https://www.instagram.com/GB4Championship" },
+                { "platform": "youtube", "url": "https://www.youtube.com/@msvcircuits"}
+            ]
+        },
+		{
+            "category": "nonFIA",
+            "name": "GB4 Copa del Sol",
+            "resultsVerified": true,
+            "nextDate": "13 Feb 2027",
+            "links": {
+                "official": { "url": "https://www.gb-4.net", "label": "Official site", "active": true },
+                "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2027", "label": "Results", "active": false },
+                "standings": { "url": "https://www.gb-4.net/standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.gb-4.net/news/2026/oct/7/gb4-championship-to-race-at-copa-del-sol-across-spain-in-february-2027", "label": "Calendar", "active": true }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/GB4Championship" },
