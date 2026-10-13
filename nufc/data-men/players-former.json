@@ -22,6 +22,30 @@
         }
     },
     {
+        "id": "s-allan-saint-maximin",
+        "name": "Allan Saint-Maximin",
+        "nationality": "France",
+        "dob": "1997-03-12",
+        "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2019-08-02", "club": "OGC Nice" },
+			{ "type": "left", "date": "2023-07-30", "club": "Al-Ahli" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
         "id": "s-amadou-diallo",
         "name": "Amadou Diallo",
         "nationality": "England",
@@ -138,6 +162,82 @@
         }
     },
     {
+        "id": "s-chris-wood",
+        "name": "Chris Wood",
+        "nationality": "New Zealand",
+        "dob": "1991-12-07",
+        "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-01-13", "club": "Burnley" },
+			{ "type": "loan_out", "date": "2023-01-20", "enddate": "2023-06-30", "club": "Nottingham Forest" },
+			{ "type": "left", "date": "2023-06-30", "club": "Nottingham Forest" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "s-ciaran-clark",
+        "name": "Ciaran Clark",
+        "nationality": "Ireland",
+        "dob": "1989-09-26",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2016-08-03", "club": "Aston Villa" },
+			{ "type": "loan_out", "date": "2022-07-13", "enddate": "2023-06-30", "club": "Sheffield United" },
+			{ "type": "left", "date": "2023-06-30", "club": "Stoke City" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "s-dan-langley",
+        "name": "Dan Langley",
+        "nationality": "England",
+        "dob": "2000-12-28",
+        "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2017-07-01", "club": "Newcastle United Youth" },
+			{ "type": "loan_out", "date": "2022-07-02", "enddate": "2023-01-04", "club": "Gateshead" },
+			{ "type": "loan_out", "date": "2023-01-05", "enddate": "2023-06-30", "club": "Spennymoor Town" },
+			{ "type": "left", "date": "2023-07-01", "club": "Blyth Spartans" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
         "id": "s-elliot-anderson",
         "name": "Elliot Anderson",
         "nationality": "England",
@@ -184,6 +284,30 @@
             "flashscore": "https://static.flashscore.com/res/image/data/d4WYqOil-0jn0Gw6S.png",
             "statshub": "https://images.statshub.com/player/150396.png",
             "fminside": "https://img.fminside.net/facesfm26/93031462.png"
+        }
+    },
+    {
+        "id": "s-federico-fernandez",
+        "name": "Federico Fernández",
+        "nationality": "Argentina",
+        "dob": "1989-02-21",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2018-08-09", "club": "Swansea City" },
+			{ "type": "left", "date": "2022-09-01", "club": "Elche FC" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
         }
     },
     {
@@ -391,6 +515,56 @@
         }
     },
     {
+        "id": "s-jonjo-shelvey",
+        "name": "Jonjo Shelvey",
+        "nationality": "England",
+        "dob": "1992-02-27",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2016-01-12", "club": "Swansea City" },
+			{ "type": "left", "date": "2023-01-31", "club": "Nottingham Forest" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "s-karl-darlow",
+        "name": "Karl Darlow",
+        "nationality": "England",
+        "dob": "1990-10-08",
+        "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2014-08-09", "club": "Nottingham Forest" },
+			{ "type": "loan_out", "date": "2014-08-09", "enddate": "2015-06-30", "club": "Nottingham Forest" },
+			{ "type": "loan_out", "date": "2023-01-31", "enddate": "2023-06-30", "club": "Hull City" },
+			{ "type": "left", "date": "2023-07-29", "club": "Leeds United" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
         "id": "s-kelland-watts",
         "name": "Kelland Watts",
         "nationality": "England",
@@ -565,6 +739,33 @@
             "flashscore": "https://static.flashscore.com/res/image/data/0v6n85g5-tjXVAHTk.png",
             "statshub": "https://images.statshub.com/player/368134.png",
             "fminside": "https://img.fminside.net/facesfm26/28084863.png"
+        }
+    },
+    {
+        "id": "s-matty-longstaff",
+        "name": "Matty Longstaff",
+        "nationality": "England",
+        "dob": "2000-03-21",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2016-07-01", "club": "Newcastle United Youth" },
+			{ "type": "loan_out", "date": "2021-08-27", "enddate": "2021-12-31", "club": "Aberdeen" },
+			{ "type": "loan_out", "date": "2022-01-31", "enddate": "2022-06-30", "club": "Mansfield Town" },
+			{ "type": "loan_out", "date": "2022-09-01", "enddate": "2022-12-31", "club": "Colchester United" },
+			{ "type": "left", "date": "2023-06-30", "club": "Toronto" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
         }
     },
     {
@@ -960,6 +1161,31 @@
         }
     },
     {
+        "id": "u21-harry-barclay",
+        "name": "Harry Barclay",
+        "nationality": "England",
+        "dob": "2004-06-09",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "youth", "date": "2019-08-10", "endDate": "2020-06-30" },
+			{ "type": "joined", "date": "2020-07-01", "club": "Newcastle United Youth" },
+			{ "type": "left", "date": "2023-06-30", "club": "AFC Blyth" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
         "id": "u21-harry-powell",
         "name": "Harry Powell",
         "nationality": "England",
@@ -978,6 +1204,30 @@
             "flashscore": "https://static.flashscore.com/res/image/data/OjEZ4iFa-rHbVFlXn.png",
             "statshub": "https://images.statshub.com/player/1610748.png",
             "fminside": "https://img.fminside.net/facesfm26/2000189869.png"
+        }
+    },
+    {
+        "id": "u21-isaac-westendorf",
+        "name": "Isaac Westendorf",
+        "nationality": "England",
+        "dob": "2001-02-18",
+        "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2022-01-24", "club": "Barking" },
+			{ "type": "left", "date": "2023-06-30", "club": "Larne" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
         }
     },
     {
@@ -1001,6 +1251,30 @@
             "flashscore": "https://static.flashscore.com/res/image/data/zk8p9cZg-0xJXvxQH.png",
             "statshub": "https://images.statshub.com/player/1390175.png",
             "fminside": "https://img.fminside.net/facesfm26/2000061148.png"
+        }
+    },
+    {
+        "id": "u21-joe-oliver",
+        "name": "Joe Oliver",
+        "nationality": "England",
+        "dob": "2002-11-13",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2019-07-01", "club": "Newcastle United Youth" },
+			{ "type": "left", "date": "2023-07-01", "club": "Blyth Spartans" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
         }
     },
     {
@@ -1058,6 +1332,30 @@
         "photos": {
             "zerozero": "https://cdn-img.staticzz.com/img/jogadores/22/659822_20230529122528_joshua_scott.png",
             "sofascore": "https://img.sofascore.com/api/v1/player/1005730/image",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "u21-josh-stewart",
+        "name": "Josh Stewart",
+        "nationality": "England",
+        "dob": "2004-01-27",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2020-07-01", "club": "Newcastle United Youth" },
+			{ "type": "left", "date": "2023-06-30", "club": "West Allotment Celtic" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
@@ -1154,6 +1452,31 @@
         }
     },
     {
+        "id": "u21-niall-brookwell",
+        "name": "Niall Brookwell",
+        "nationality": "England",
+        "dob": "2002-03-22",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2020-08-20", "club": "Liverpool" },
+			{ "type": "loan_out", "date": "2023-01-30", "enddate": "2023-06-30", "club": "Darlington" },
+			{ "type": "left", "date": "2023-06-30", "club": "Workington AFC" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
         "id": "u21-remi-savage",
         "name": "Remi Savage",
         "nationality": "England",
@@ -1223,6 +1546,29 @@
         }
     },
     {
+        "id": "u21-santiago-munoz",
+        "name": "Santiago Muñóz",
+        "nationality": "Mexico",
+        "dob": "2002-08-14",
+        "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "loan_in", "date": "2021-08-31", "enddate": "2022-12-31", "club": "Santos Laguna" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
         "id": "u21-shaun-mavididi",
         "name": "Shaun Mavididi",
         "nationality": "England",
@@ -1236,6 +1582,31 @@
         "photos": {
             "sofascore": "https://img.sofascore.com/api/v1/player/1533811/image",
             "fotmob": "https://images.fotmob.com/image_resources/playerimages/1428128.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+        }
+    },
+    {
+        "id": "u21-steven-bessent",
+        "name": "Steven Bessent",
+        "nationality": "England",
+        "dob": "2004-11-12",
+        "position": "GK",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "youth", "date": "2021-04-21", "endDate": "2021-06-30" },
+			{ "type": "joined", "date": "2021-07-01", "club": "Newcastle United Youth" },
+			{ "type": "left", "date": "2023-06-30", "club": "Loughborough Students" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
             "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
@@ -1264,6 +1635,174 @@
         }
     },
     {
+        "id": "u18-archie-dodds",
+        "name": "Archie Dodds",
+        "nationality": "England",
+        "dob": "2007-11-03",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "youth", "date": "2023-04-01", "endDate": "2023-06-30" },
+			{ "type": "left", "date": "2023-07-23", "club": "Spennymoor Town" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+       }
+    },
+    {
+        "id": "u18-beau-beresford",
+        "name": "Beau Beresford",
+        "nationality": "England",
+        "dob": "2004-09-30",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2021-07-01", "club": "Newcastle United Youth" },
+			{ "type": "left", "date": "2023-06-30", "club": "Washington" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+       }
+    },
+    {
+        "id": "u18-callum-mcnally",
+        "name": "Callum McNally",
+        "nationality": "England",
+        "dob": "2004-10-11",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2021-07-01", "club": "Newcastle United Youth" },
+			{ "type": "left", "date": "2023-06-30", "club": "" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+       }
+    },
+    {
+        "id": "u18-lucas-cooper",
+        "name": "Lucas Cooper",
+        "nationality": "England",
+        "dob": "2004-12-23",
+        "position": "DEF",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2021-07-01", "club": "Newcastle United Youth" },
+			{ "type": "left", "date": "2023-06-30", "club": "Blyth Town" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+       }
+    },
+    {
+        "id": "u18-nathan-nkunku",
+        "name": "Nathan Nkunku",
+        "nationality": "DR Congo",
+        "dob": "2005-05-30",
+        "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "joined", "date": "2021-07-01", "club": "Newcastle United Youth" },
+			{ "type": "left", "date": "2023-07-01", "club": "Morpeth Town" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+       }
+    },
+    {
+        "id": "u18-ollie-harrison",
+        "name": "Ollie Harrison",
+        "nationality": "England",
+        "dob": "2007-08-07",
+        "position": "MID",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "youth", "date": "2022-10-15", "endDate": "2023-06-30" },
+			{ "type": "left", "date": "2023-07-01", "club": "Chelsea" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+       }
+    },
+     {
+        "id": "u18-ryan-ndiweni",
+        "name": "Ryan Ndiweni",
+        "nationality": "England",
+        "dob": "2007-01-19",
+        "position": "FWD",
+        "careerComplete": false,
+        "movements": [
+			{ "type": "youth", "date": "2022-10-29", "endDate": "2023-06-30" },
+			{ "type": "left", "date": "2023-07-01", "club": "Blyth Spartans" }
+        ],
+        "photos": {
+            "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "premierleague": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "transfermarkt": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "zerozero": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "sofascore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fotmob": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "besoccer": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "flashscore": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "statshub": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
+            "fminside": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png"
+       }
+    },
+   {
         "id": "u18-taylor-ross",
         "name": "Taylor Ross",
         "nationality": "England",

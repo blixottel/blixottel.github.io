@@ -4,7 +4,7 @@
             "category": "formula1",
             "name": "Formula 1",
             "resultsVerified": true,
-            "nextDate": "10 Oct 2026",
+            "nextDate": "24 Oct 2026",
             "links": {
                 "official": { "url": "https://www.formula1.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072", "label": "Results", "active": true },
@@ -146,12 +146,12 @@
             "category": "formulaRegional",
             "name": "FR Japan",
             "resultsVerified": true,
-            "nextDate": "10 Oct 2026",
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://frj.jp", "label": "Official site", "active": true },
-                "results": { "url": "https://frj.jp/2026/index.html", "label": "Results", "active": true },
-                "standings": { "url": "https://frj.jp/2026/standings/2026FRJpoint.pdf", "label": "Standings", "active": true },
-                "calendar": { "url": "https://frj.jp", "label": "Calendar", "active": true }
+                "results": { "url": "https://frj.jp/2026/index.html", "label": "Results", "active": false },
+                "standings": { "url": "https://frj.jp/2026/standings/2026FRJpoint.pdf", "label": "Standings", "active": false },
+                "calendar": { "url": "https://frj.jp", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/FRJapanese" },
@@ -234,12 +234,12 @@
             "category": "formula4",
             "name": "F4 Britain",
             "resultsVerified": true,
-            "nextDate": "10 Oct 2026",
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://fiaformula4.com", "label": "Official site", "active": true },
-                "results": { "url": "https://www.tsl-timing.com/results/toca/2026", "label": "Results", "active": true },
-                "standings": { "url": "https://www.tsl-timing.com/results/toca/2026", "label": "Standings", "active": true },
-                "calendar": { "url": "https://fiaformula4.com/british-f4-reveals-calendar-for-2026-season", "label": "Calendar", "active": true }
+                "results": { "url": "https://www.tsl-timing.com/results/toca/2026", "label": "Results", "active": false },
+                "standings": { "url": "https://www.tsl-timing.com/results/toca/2026", "label": "Standings", "active": false },
+                "calendar": { "url": "https://fiaformula4.com/british-f4-reveals-calendar-for-2026-season", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/BritishF4" },
@@ -444,7 +444,7 @@
             "category": "formula4",
             "name": "F4 Saudi Arabia",
             "resultsVerified": true,
-            "nextDate": "10 Oct 2026",
+            "nextDate": "31 Oct 2026",
             "links": {
                 "official": { "url": "https://f4saudiarabia.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.its-results.com/f4sac/2026/61d79f24-1c92-409d-b152-c8cb62d826d6", "label": "Results", "active": true },
@@ -945,7 +945,7 @@
             "category": "nonFIA",
             "name": "Kyojo Cup",
             "resultsVerified": true,
-            "nextDate": "10 Oct 2026",
+            "nextDate": "31 Oct 2026",
             "links": {
                 "official": { "url": "https://kyojocup.jp", "label": "Official site", "active": true },
                 "results": { "url": "https://kyojocup.jp/result", "label": "Results", "active": true },
@@ -1031,7 +1031,7 @@
             "category": "nonFIA",
             "name": "Super Formula",
             "resultsVerified": true,
-            "nextDate": "10 Oct 2026",
+            "nextDate": "21 Nov 2026",
             "links": {
                 "official": { "url": "https://superformula.net/sf3/?lang=en", "label": "Official site", "active": true },
                 "results": { "url": "https://superformula.net/sf3/live_timing", "label": "Results", "active": true },
@@ -1245,7 +1245,7 @@
             "category": "motorbikes",
             "name": "Moto2",
             "resultsVerified": true,
-            "nextDate": "10 Oct 2026",
+            "nextDate": "24 Oct 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
@@ -1285,7 +1285,7 @@
             "category": "motorbikes",
             "name": "Moto3",
             "resultsVerified": true,
-            "nextDate": "10 Oct 2026",
+            "nextDate": "24 Oct 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
@@ -1363,7 +1363,7 @@
             "category": "motorbikes",
             "name": "Moto4 Asia Cup",
             "resultsVerified": true,
-            "nextDate": "10 Oct 2026",
+            "nextDate": "31 Oct 2026",
             "links": {
                 "official": { "url": "https://www.moto4asiacup.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.moto4asiacup.com/event/2026-2", "label": "Results", "active": true },
@@ -1452,12 +1452,12 @@
             "name": "R3 bLU cRU World Cup",
             "category": "motorbikes",
             "resultsVerified": true,
-            "nextDate": "10 Oct 2026",
+            "nextDate": "2027",
             "links": {
                 "official": { "url": "https://www.yamaha-racing.com/blu-cru/r3-fim-world-cup", "label": "Official site", "active": true },
-                "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": true },
-                "standings": { "url": "https://www.worldsbk.com/en/standings", "label": "Standings", "active": true },
-                "calendar": { "url": "https://www.worldsbk.com/en/calendar", "label": "Calendar", "active": true }
+                "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": false },
+                "standings": { "url": "https://www.worldsbk.com/en/standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.worldsbk.com/en/calendar", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/WorldSBK" },
@@ -1489,7 +1489,7 @@
             "category": "motorbikes",
             "name": "WorldSBK",
             "resultsVerified": true,
-            "nextDate": "10 Oct 2026",
+            "nextDate": "17 Oct 2026",
             "links": {
                 "official": { "url": "https://www.worldsbk.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": true },
@@ -1527,7 +1527,7 @@
             "category": "motorbikes",
             "name": "WorldSSP",
             "resultsVerified": true,
-            "nextDate": "10 Oct 2026",
+            "nextDate": "17 Oct 2026",
             "links": {
                 "official": { "url": "https://www.worldsbk.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": true },
@@ -1565,7 +1565,7 @@
             "category": "motorbikes",
             "name": "WorldSPB",
             "resultsVerified": true,
-            "nextDate": "18 Oct 2026",
+            "nextDate": "17 Oct 2026",
             "links": {
                 "official": { "url": "https://www.worldsbk.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.worldsbk.com/en/results", "label": "Results", "active": true },
