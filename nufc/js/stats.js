@@ -159,9 +159,9 @@ function validateFixtures(fixturesData, playersById, options = {}) {
   Object.keys(playersById).forEach(pid => {
     const p = playersById[pid];
     checkMovementDates(p, fixturesData).forEach(i => issues.push(i));
-    if (p._archived && !p.careerComplete) {
+    if (p._archived && careerStatusOf(p) !== 'complete') {
       issues.push({ squad: normSquad(p.squad), fixtureId: null, fixtureLabel: null, severity: 'warning',
-        message: `${p.name} is in players-archive.json but isn't marked careerComplete.` });
+        message: `${p.name} is in players-archive.json but careerStatus isn't "complete".` });
     }
     if (p._alsoInArchive || p._alsoInFormer) {
       issues.push({ squad: normSquad(p.squad), fixtureId: null, fixtureLabel: null, severity: 'warning',
@@ -613,9 +613,9 @@ function validatePlayerSeasonConsistency(fixturesData, playersById, season) {
 
 /**
  * Cross-checks a player's matchday-squad records (start / sub_on / unused_sub) against their
- * `movements` in players-master.json — only for players marked
- * `careerComplete: true`, since only then do the movements describe the whole
- * career. (A loan_out_dual spell — dual registration — is deliberately not
+ * `movements` in players-master.json — only for players whose careerStatus is
+ * "ongoing" or "complete" (or who have a "joined" record), since only then do the
+ * movements describe the whole career. (A loan_out_dual spell — dual registration — is deliberately not
  * treated as a conflict: the player may appear for both clubs.)
  * Flags an appearance that falls (a) inside a loan_out spell, or
  * (b) outside every period he was with the club: joined -> left, plus any
@@ -631,8 +631,9 @@ const isLeavingMovement = t => LEAVING_MOVEMENT_TYPES.has(t);
 function checkMovementDates(p, fixturesData) {
   const out = [];
   if (!p || !Array.isArray(p.movements) || !p.movements.length) return out;
-  // Complete careers, or anyone with a "joined" record (otherwise their movements are too patchy to judge by).
-  if (!p.careerComplete && !p.movements.some(m => m.type === 'joined' || m.type === 'youth')) return out;
+  // Ongoing / complete careers, or anyone with a "joined" record (otherwise their movements are too patchy to judge by).
+  const cs = careerStatusOf(p);
+  if (cs !== 'complete' && cs !== 'ongoing' && !p.movements.some(m => m.type === 'joined' || m.type === 'youth')) return out;
   const OPEN = '9999-99-99';
   const padEnd = e => (e ? (e.length < 10 ? e + '-99' : e) : OPEN);
   const endOf = m => padEnd(m.endDate || m.enddate || m.end_date);
@@ -691,6 +692,17 @@ function checkMovementDates(p, fixturesData) {
 // 30 June departure from demanding a roster entry in the season that's ending.
 const SEASON_OVERLAP_GRACE_DAYS = 45;
 
+// A player's career status, as recorded in players-master / -former / -archive.json:
+//   "partial"  — part of their career isn't in the data (joined before TEAM.dataFrom, or a season is missing / unfinished)
+//   "ongoing"  — every season so far is in the data and they're still at the club (the latest season is still in progress)
+//   "complete" — every season is in the data and they've left the club
+// Returns the recorded value (lower-cased), or null if it's missing or isn't one of those three.
+const CAREER_STATUSES = ['partial', 'ongoing', 'complete'];
+function careerStatusOf(p) {
+  const s = p && typeof p.careerStatus === 'string' ? p.careerStatus.trim().toLowerCase() : '';
+  return CAREER_STATUSES.includes(s) ? s : null;
+}
+
 // The earliest date this team has data from (TEAM.dataFrom in teams.js) as ms, or null if not set.
 // Nothing before it is ever expected to have data, so player-level checks ignore earlier seasons.
 function dataCutoffMs() {
@@ -713,11 +725,12 @@ function dataCutoffLabel() {
 }
 
 // True if the player's (earliest) "joined" date is before the data cut-off, i.e. part of their career predates the data.
+// Uses the same SEASON_OVERLAP_GRACE_DAYS slack as the validations, so an arrival just before the cut-off doesn't count.
 function joinedBeforeCutoff(p) {
   const cut = dataCutoffMs();
   if (cut === null) return false;
   const joined = (p.movements || []).filter(m => m.type === 'joined').map(m => looseDate(m.date, false)).filter(x => x !== null);
-  return joined.length > 0 && Math.min(...joined) < cut;
+  return joined.length > 0 && Math.min(...joined) < cut - SEASON_OVERLAP_GRACE_DAYS * 86400000;
 }
 
 /**
@@ -827,19 +840,22 @@ function effectivePhoto(p) {
  *
  * Checks (errors unless noted):
  *  1. Photo — a player must show the same photo in every season they're on a roster (warning).
- *  2. Movements — anyone with movements (or marked careerComplete) needs a "joined" record.
+ *  2. Movements — anyone with movements needs a "joined" record.
  *  3. Movements — anyone not on the latest season's roster needs a "left" (or "retired") record.
  *  4. Roster — a player must be on the roster file of every season between joined and left.
- *  (For careerComplete players, 2-4 also cover: joined before the earliest season file, and a missing "left" even if they're on no roster at all.)
  *  4b. Roster — a player must NOT be on the roster file of a season that starts after they left (or retired).
- *  4c. careerComplete — a player NOT marked careerComplete, but who is on the roster of every season that started after
- *      they joined (or after the data cut-off, if later) and before they left (or up to the latest season, if still here),
- *      where each of those seasons is marked "dataComplete": true in seasons.json, should be marked careerComplete (warning).
+ *  4c. careerStatus — every player needs a careerStatus ("partial", "ongoing" or "complete"), and it must match what the
+ *      data supports (see expectedCareerStatus): "ongoing" = still at the club, joined on/after the data cut-off, on the
+ *      roster of every season they've been here, every one marked "dataComplete": true in seasons.json except the latest
+ *      (still in progress); "complete" = the same but they've left; otherwise "partial". A missing status, or one that
+ *      should be upgraded / swapped, is a warning; a status that claims more than the data supports is an error.
  *  A season in which the player's age band (per that season's ageBands in seasons.json) is an untracked squad such as
  *  U16 is left out of checks 3, 4 and 4c for that player.
  *  Seasons before the team's data cut-off (TEAM.dataFrom in teams.js) are never expected to have data.
+ *  7. dataFrom — TEAM.dataFrom shouldn't be later than the end of a season marked "dataComplete": true (it would wrongly make everyone
+ *     from that season "partial"), nor more than the grace period earlier than the first season in seasons.json.
  *  6. Movements — a movement's end date can't be before its start date.
- *  5. Archive — a player who has left and is careerComplete belongs in players-archive.json, not players-master.json (warning).
+ *  5. Archive — a player who has left and has careerStatus "complete" belongs in players-archive.json, not players-master.json (warning).
  * Players whose only movements are loan_in / trial_in (visitors who never joined) are exempt from 2–4.
  */
 function validateAcrossSeasons(masterList, seasonData) {
@@ -871,30 +887,48 @@ function validateAcrossSeasons(masterList, seasonData) {
   const maxYear = Object.keys(byYear).length ? Math.max(...Object.keys(byYear).map(Number)) : null;
   const seasonYearOf = ms => { const d = new Date(ms); return d.getUTCMonth() >= 6 ? d.getUTCFullYear() : d.getUTCFullYear() - 1; };
 
-  // Suggest careerComplete for a player who isn't marked yet. Every season they were with the club
-  // — permanent spells (from their first full season) and any loan_in / trial_in period (any overlap
-  // counts) — must be a season file that lists them and is marked dataComplete. Anything starting
-  // before the data cut-off means part of their career predates the data, so never suggested.
-  function suggestCareerComplete(p, mv) {
-    if (p.careerComplete || maxYear === null) return;
-    // A youth spell on its own isn't a full career with the club. Once they've joined, the usual rules apply
-    // (the youth period is ignored here: only the joined -> left spell(s) decide which seasons are required).
-    if (mv.some(m => m.type === 'youth') && !mv.some(m => m.type === 'joined')) return;
+  // Works out what a player's careerStatus should be from their movements, the season files and seasons.json.
+  // Every season they were with the club — permanent spells (from their first full season) and any loan_in /
+  // trial_in period (any overlap counts) — must be a season file that lists them. Anything starting before the
+  // data cut-off means part of their career predates the data, so it can only be "partial".
+  //   partial  — returns { status, kind, why }; kind: 'unknown' | 'predates' | 'nofile' | 'roster' | 'incomplete'
+  //   ongoing  — still at the club; every required season is dataComplete except the latest (still in progress)
+  //   complete — has left (all spells and loan / trial periods ended); every required season is dataComplete
+  function expectedCareerStatus(p, mv) {
+    const partial = (kind, why) => ({ status: 'partial', kind, why });
+    if (maxYear === null) return partial('unknown', 'there are no season dates to check against');
+    if (mv.some(m => m.type === 'youth') && !mv.some(m => m.type === 'joined')) {
+      // Youth-only player (e.g. in an untracked age group such as the U16s): nothing about the youth period needs
+      // covering by season files, so the record is complete to date while they're in the youth set-up ("ongoing"),
+      // or "complete" once they've left. Any season file they ARE on (e.g. they played up) must still be dataComplete,
+      // apart from the latest season while they're still here.
+      const now = Date.now();
+      const gone = mv.some(m => { if (!isLeavingMovement(m.type)) return false; const d = looseDate(m.date, true); return d === null || d <= now; });
+      const inYouth = mv.some(m => { if (m.type !== 'youth') return false; const e = looseDate(endOf(m), true); return e === null || e > now; });
+      if (!gone && !inYouth) return partial('unknown', 'their youth period ended with no "joined" or "left" record after it');
+      const need = [];
+      for (let i = 0; i < seasonData.length; i++) {
+        const sd = seasonData[i], r = seasonRange(sd.season);
+        if (!sd.roster || !r || !rosterIdx[i][p.id]) continue;
+        if (sd.season.dataComplete !== true && !(!gone && i === 0)) return partial('incomplete', `${label(sd.season)} isn't marked dataComplete`);
+        need.push(label(sd.season));
+      }
+      return { status: gone ? 'complete' : 'ongoing', need, youthOnly: true };
+    }
     const spells = clubSpells(mv);
     const visits = mv.filter(m => m.type === 'loan_in' || m.type === 'trial_in').map(m => {
       const s = looseDate(m.date, false), e = looseDate(endOf(m), true);
       return { from: s === null ? -Infinity : s, to: e === null ? Infinity : e };
     });
-    if (!spells.length && !visits.length) return;
+    if (!spells.length && !visits.length) return partial('unknown', 'they have no joined / loan_in / trial_in movement');
     const firstStart = Math.min(...spells.map(s => s.from), ...visits.map(v => v.from));
-    if (!isFinite(firstStart)) return; // a start date is unknown
-    // Anything before the data starts means there may be appearances that aren't recorded, so the career
-    // can't be called complete (with a little slack, SEASON_OVERLAP_GRACE_DAYS, for an arrival just before).
+    if (!isFinite(firstStart)) return partial('unknown', 'a start date is unknown');
+    const iso = ms => new Date(ms).toISOString().slice(0, 10);
     const dataStart = cutoff !== null ? cutoff : Math.min(...Object.values(byYear).map(s => s.range.start));
-    if (firstStart < dataStart - SEASON_OVERLAP_GRACE_DAYS * DAY) return;
+    if (firstStart < dataStart - SEASON_OVERLAP_GRACE_DAYS * DAY) {
+      return partial('predates', `they joined ${dmy(iso(firstStart))}, before the data starts (${dmy(iso(dataStart))})`);
+    }
 
-    // Every season they were with the club needs a season file: permanent spells need more than the grace
-    // period of overlap with the season, loan-in / trial periods any overlap at all.
     const lastEnd = Math.max(...spells.map(s => s.to), ...visits.map(v => v.to));
     const required = [];
     for (let y = seasonYearOf(Math.max(firstStart, dataStart)); y <= maxYear; y++) {
@@ -904,19 +938,58 @@ function validateAcrossSeasons(masterList, seasonData) {
       const days = (from, to) => (Math.min(to, b) - Math.max(from, a)) / DAY + 1;
       if (spells.some(sp => days(sp.from, sp.to) > SEASON_OVERLAP_GRACE_DAYS) || visits.some(v => days(v.from, v.to) > 0)) required.push(y);
     }
-    if (!required.length) return;
+    if (!required.length) return partial('unknown', 'no season file covers the time they were with the club');
+
+    // Still with the club? An open spell, a leaving date still in the future, or a loan / trial with no end or a future end.
+    const now = Date.now();
+    const stillHere = spells.some(sp => !sp.leftType || (isFinite(sp.to) && sp.to > now)) || visits.some(v => v.to > now);
 
     const need = [];
-    let ok = true;
-    required.forEach(y => {
+    for (const y of required) {
       const s = byYear[y];
-      if (!s || !s.sd.roster) { ok = false; return; }
-      if (!rosterIdx[s.i][p.id]) { if (!untrackedSquadIn(p, s.sd.season)) ok = false; return; } // untracked age group: not applicable
-      if (s.sd.season.dataComplete !== true) { ok = false; return; }
-      need.push(label(s.sd.season));
-    });
-    if (ok && need.length) {
-      add('warning', `${p.name || p.id} is on the season file for every season they were with the club (${need.join(', ')}), all marked dataComplete, so careerComplete can be set to true.`);
+      const lab = s ? label(s.sd.season) : `${y}/${String((y + 1) % 100).padStart(2, '0')}`;
+      if (!s || !s.sd.roster) return partial('nofile', `there is no season file for ${lab}`);
+      if (!rosterIdx[s.i][p.id]) {
+        if (untrackedSquadIn(p, s.sd.season)) continue; // untracked age group: not applicable
+        return partial('roster', `they aren't on the ${lab} season file`);
+      }
+      if (s.sd.season.dataComplete !== true && !(stillHere && y === maxYear)) return partial('incomplete', `${lab} isn't marked dataComplete`);
+      need.push(lab);
+    }
+    if (!need.length) return partial('unknown', "they aren't on any tracked season file");
+    return { status: stillHere ? 'ongoing' : 'complete', need };
+  }
+
+  // Compares a player's recorded careerStatus with expectedCareerStatus and reports the difference.
+  // `missingFlagged` = the "missing from the season file" error has already been raised for them (avoids saying it twice).
+  function checkCareerStatus(p, mv, missingFlagged) {
+    const name = p.name || p.id;
+    const file = p._archived ? 'players-archive.json' : p._former ? 'players-former.json' : 'players-master.json';
+    const exp = expectedCareerStatus(p, mv);
+    const raw = p.careerStatus;
+    if (raw === undefined || raw === null || raw === '') {
+      add('warning', `${name} has no careerStatus in ${file} — set it to "${exp.status}"${exp.status === 'partial' ? ` (${exp.why})` : ''}.`);
+      return;
+    }
+    const cur = careerStatusOf(p);
+    if (!cur) {
+      add('error', `${name} has an unrecognised careerStatus ${JSON.stringify(raw)} in ${file} (expected one of: ${CAREER_STATUSES.join(', ')}).`);
+      return;
+    }
+    if (cur === exp.status) return;
+    if (exp.status === 'partial') {
+      // Claims more than the data supports. (A missing roster entry already has its own error.)
+      if (exp.kind === 'roster' && missingFlagged) return;
+      const sev = ['predates', 'nofile', 'incomplete'].includes(exp.kind) ? 'error' : 'warning';
+      add(sev, `${name} has careerStatus "${cur}" but ${exp.why}, so it should be "partial" until that's sorted out.`);
+    } else if (cur === 'partial' && exp.youthOnly) {
+      add('warning', `${name} only has a youth period${exp.status === 'ongoing' ? ' and is still in the youth set-up' : ' and has left'}, so careerStatus can be set to "${exp.status}".`);
+    } else if (cur === 'partial') {
+      add('warning', `${name} is on the season file for every season they were with the club (${exp.need.join(', ')}), ${exp.status === 'ongoing' ? "all marked dataComplete apart from the season still in progress, and they're still at the club" : 'all marked dataComplete, and they have left'}, so careerStatus can be set to "${exp.status}".`);
+    } else if (cur === 'ongoing') {
+      add('warning', `${name} has left the club and every season is complete — change careerStatus from "ongoing" to "complete".`);
+    } else {
+      add('warning', `${name} is still at the club — change careerStatus from "complete" to "ongoing" (it becomes "complete" once they have left).`);
     }
   }
 
@@ -939,6 +1012,7 @@ function validateAcrossSeasons(masterList, seasonData) {
 
     // 2-5. Movements
     const mv = Array.isArray(p.movements) ? p.movements : [];
+    let missingFlagged = false; // set below if the "missing from the season file" error is raised
 
     // 6. A movement's end date can't be before its start date (e.g. a loan that "ends" before it begins).
     mv.forEach(m => {
@@ -1084,8 +1158,8 @@ function validateAcrossSeasons(masterList, seasonData) {
     // leaving one whose date has passed (or has no usable date), or — for a loan-in / trial player who
     // never joined — every such spell has an end date that has passed.
     //   current                      -> players-master.json
-    //   gone, careerComplete         -> players-archive.json (finished; never touched again)
-    //   gone, not careerComplete     -> players-former.json  (gone, but still needs data entering)
+    //   gone, careerStatus complete  -> players-archive.json (finished; never touched again)
+    //   gone, any other status       -> players-former.json  (gone, but still needs data entering)
     if (!p._archived && mv.length) {
       const last = [...mv].filter(m => m.type === 'joined' || isLeavingMovement(m.type))
         .sort((a, b) => (a.date || '').localeCompare(b.date || '')).pop();
@@ -1101,10 +1175,11 @@ function validateAcrossSeasons(masterList, seasonData) {
         }
       }
       const here = p._former ? 'players-former.json' : 'players-master.json';
-      if (subject && p.careerComplete && !p._alsoInArchive) {
-        add('warning', `${subject} and careerComplete is set, so should be moved from ${here} to players-archive.json.`);
-      } else if (subject && !p.careerComplete && !p._former && !p._alsoInFormer) {
-        add('warning', `${subject} but careerComplete isn't set yet, so should be moved from players-master.json to players-former.json (players who have gone but still need data entering).`);
+      const isComplete = careerStatusOf(p) === 'complete';
+      if (subject && isComplete && !p._alsoInArchive) {
+        add('warning', `${subject} and careerStatus is "complete", so should be moved from ${here} to players-archive.json.`);
+      } else if (subject && !isComplete && !p._former && !p._alsoInFormer) {
+        add('warning', `${subject} but careerStatus isn't "complete" yet, so should be moved from players-master.json to players-former.json (players who have gone but still need data entering).`);
       } else if (!subject && p._former) {
         add('warning', `${name} is in players-former.json but hasn't left the club (no leaving movement dated in the past) — move them back to players-master.json.`);
       }
@@ -1112,36 +1187,25 @@ function validateAcrossSeasons(masterList, seasonData) {
     // Every player needs at least one movement saying how they came to the club: "joined", "loan_in",
     // "trial_in" or "youth". With none at all, flag it and skip the rest (nothing else can be checked).
     // (Players who have movements but none of these are caught by the "no joined movement" error below.)
-    if (!mv.length && !p.careerComplete) {
+    if (!mv.length) {
+      checkCareerStatus(p, mv, false);
       add('error', `${name} has no movements in players-master.json — add a "joined" (or "loan_in", "trial_in" or "youth") movement.`);
       return;
     }
     const has = t => mv.some(m => m.type === t);
     const hasLeft = mv.some(m => isLeavingMovement(m.type));
-    if (!has('joined') && (has('loan_in') || has('trial_in') || has('youth'))) { suggestCareerComplete(p, mv); return; } // visitor / youth player, never joined
+    if (!has('joined') && (has('loan_in') || has('trial_in') || has('youth'))) { checkCareerStatus(p, mv, false); return; } // visitor / youth player, never joined
 
     if (!has('joined')) {
-      add('error', `${name} has no "joined" movement in players-master.json${mv.length ? '' : ' (marked careerComplete but has no movements at all)'}.`);
+      add('error', `${name} has no "joined" movement in players-master.json.`);
     }
 
     const inAnyRoster = seasonData.some((sd, i) => rosterIdx[i][p.id]);
-    if (latest.roster && (inAnyRoster || p.careerComplete) && !rosterIdx[0][p.id] && !hasLeft && !untrackedSquadIn(p, latest.season)) {
+    if (latest.roster && (inAnyRoster || ['ongoing', 'complete'].includes(careerStatusOf(p))) && !rosterIdx[0][p.id] && !hasLeft && !untrackedSquadIn(p, latest.season)) {
       add('error', `${name} isn't in the ${label(latest.season)} season file, so needs a "left" (or "retired") movement in players-master.json.`);
     }
 
     const spells = clubSpells(mv);
-    if (spells.length && p.careerComplete) {
-      // careerComplete means every season is in the data, so a whole season (one starting after they
-      // joined) can't fall before the earliest season file. A part-season on arrival doesn't count.
-      const starts = seasonData.map(sd => seasonRange(sd.season)).filter(Boolean).map(r => r.start);
-      const earliest = starts.length ? Math.min(...starts) : null;
-      let from = Math.min(...spells.map(sp => sp.from));
-      if (cutoff !== null) from = Math.max(from, cutoff); // earlier history is outside the data, by design (the player page says so)
-      if (earliest !== null && isFinite(from) && firstFullSeasonStart(from) < earliest) {
-        const eSeason = seasonData.filter(sd => seasonRange(sd.season) && seasonRange(sd.season).start === earliest)[0].season;
-        add('error', `${name} is marked careerComplete but joined ${dmy(mv.filter(m => m.type === 'joined').map(m => m.date).sort()[0])}, before the earliest season file (${label(eSeason)}), so the earlier seasons have no data.`);
-      }
-    }
     if (spells.length) {
       const missing = [];
       seasonData.forEach((sd, i) => {
@@ -1156,6 +1220,7 @@ function validateAcrossSeasons(masterList, seasonData) {
         if (covered) missing.push(label(sd.season));
       });
       if (missing.length) {
+        missingFlagged = true;
         const first = mv.filter(m => m.type === 'joined').map(m => m.date).sort()[0];
         add('error', `${name} is missing from the season file${missing.length === 1 ? '' : 's'} for ${missing.join(', ')}, but was with the club then (joined ${dmy(first) || 'date unknown'}${spells[spells.length - 1].leftDate ? ', left ' + dmy(spells[spells.length - 1].leftDate) : ''}).`);
       }
@@ -1187,8 +1252,8 @@ function validateAcrossSeasons(masterList, seasonData) {
       }
     }
 
-    // 4c. Suggest careerComplete (see suggestCareerComplete above).
-    suggestCareerComplete(p, mv);
+    // 4c. careerStatus present and matching the data (see expectedCareerStatus above).
+    checkCareerStatus(p, mv, missingFlagged);
   });
 
   // ---- seasons.json: start / end dates ----
@@ -1207,6 +1272,32 @@ function validateAcrossSeasons(masterList, seasonData) {
     ranges.sort((a, b) => a.r.start - b.r.start).forEach((x, i, arr) => {
       if (i && x.r.start <= arr[i - 1].r.end) add('error', `${x.name} overlaps ${arr[i - 1].name} in seasons.json — check the start / end dates.`);
     });
+  }
+
+  // ---- teams.js: dataFrom ----
+  // TEAM.dataFrom says where the data starts; every career-status check trusts it. Too late and seasons that
+  // do have data are treated as missing (everyone from then is "partial"); too early and players who joined
+  // in a season with no file look like they have a full record.
+  if (typeof TEAM !== 'undefined' && TEAM.dataFrom) {
+    if (!validDateStr(TEAM.dataFrom, true)) {
+      add('error', `dataFrom "${TEAM.dataFrom}" in teams.js isn't a valid date (expected YYYY-MM-DD).`);
+    } else if (cutoff !== null) {
+      const iso = ms => new Date(ms).toISOString().slice(0, 10);
+      const ranged = seasonData.map(sd => ({ sd, r: seasonRange(sd.season) })).filter(x => x.r);
+      // Completed seasons ("dataComplete": true) that finished before dataFrom. Seasons still being filled in are ignored.
+      const early = ranged.filter(x => x.r.end < cutoff && x.sd.season.dataComplete === true);
+      if (early.length) {
+        const first = early.reduce((m, x) => x.r.start < m.r.start ? x : m);
+        add('error', `dataFrom in teams.js is ${dmy(TEAM.dataFrom)}, but ${early.map(x => label(x.sd.season)).join(', ')} ${early.length === 1 ? 'is' : 'are'} marked dataComplete and ended before then. Set dataFrom to ${dmy(iso(first.r.start))} (or remove it to use the first season in seasons.json), otherwise players from ${early.length === 1 ? 'that season' : 'those seasons'} are wrongly treated as having missing data.`);
+      }
+      // dataFrom more than a grace period before the first season we actually have a file for.
+      if (ranged.length) {
+        const firstS = ranged.reduce((m, x) => x.r.start < m.r.start ? x : m);
+        if (firstS.r.start - cutoff > SEASON_OVERLAP_GRACE_DAYS * DAY) {
+          add('warning', `dataFrom in teams.js is ${dmy(TEAM.dataFrom)}, but the first season in seasons.json is ${label(firstS.sd.season)} (starts ${dmy(iso(firstS.r.start))}), so nothing covers the time in between. Set dataFrom to ${dmy(iso(firstS.r.start))} (or add the missing seasons).`);
+        }
+      }
+    }
   }
 
   // ---- Season roster files (one season at a time) ----

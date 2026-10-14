@@ -5,7 +5,7 @@
         "nationality": "England",
         "dob": "1992-10-21",
         "position": "MID",
-        "careerComplete": false,
+        "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2023-07-13", "club": "Lewes" },
 			{ "type": "left", "date": "2025-06-30", "club": "Durham" }
@@ -20,7 +20,7 @@
         "nationality": "England",
         "dob": "1994-09-23",
         "position": "DEF",
-        "careerComplete": false,
+        "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2022-10-01", "club": "Lugano" },
 			{ "type": "retired", "date": "2026-06-30" }
@@ -35,7 +35,7 @@
         "nationality": "United Arab Emirates",
         "dob": "1998-09-02",
         "position": "MID",
-        "careerComplete": false,
+        "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2020-07-01", "club": "mackems" },
 			{ "type": "loan_out", "date": "2025-01-08", "enddate": "2025-06-30", "club": "Middlesbrough" },
@@ -51,7 +51,7 @@
         "nationality": "England",
         "dob": "1998-08-20",
         "position": "GK",
-        "careerComplete": false,
+        "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2017-07-01", "club": "mackems" },
 			{ "type": "left", "date": "2025-06-30", "club": "mackems" }
@@ -66,7 +66,7 @@
         "nationality": "England",
         "dob": "1999-02-02",
         "position": "DEF",
-        "careerComplete": false,
+        "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2023-07-15", "club": "Durham" },
 			{ "type": "left", "date": "2025-06-30", "club": "mackems" }
@@ -81,7 +81,7 @@
         "nationality": "Scotland",
         "dob": "1994-08-20",
         "position": "GK",
-        "careerComplete": false,
+        "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2024-01-01", "club": "Durham" },
 			{ "type": "left", "date": "2026-06-30", "club": "" }
@@ -96,7 +96,7 @@
         "nationality": "England",
         "dob": "2000-05-26",
         "position": "MID",
-        "careerComplete": false,
+        "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2019-07-01", "club": "Chester-le-Street" },
 			{ "type": "left", "date": "2025-01-08", "club": "Middlesbrough" }
@@ -111,7 +111,7 @@
         "nationality": "England",
         "dob": "2000-12-23",
         "position": "FWD",
-        "careerComplete": false,
+        "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2021-07-01", "club": "mackems" },
 			{ "type": "left", "date": "2025-07-01", "club": "Wrexham" }
@@ -121,28 +121,12 @@
         }
     },
     {
-        "id": "s-lucy-gilbert",
-        "name": "Lucy Gilbert",
-        "nationality": "England",
-        "dob": "",
-        "position": "MID",
-		"squadIfDobUnknown": "u21",
-        "careerComplete": false,
-        "movements": [
-			{ "type": "youth", "date": "2025-10-20", "enddate": "2026-06-30" },
-			{ "type": "left", "date": "2026-07-01", "club": "" }
-        ],
-        "photos": {
-			"flashscore": "https://static.flashscore.com/res/image/data/YRGgFODa-KnVSjbDq.png"
-        }
-    },
-    {
         "id": "s-olivia-watt",
         "name": "Olivia Watt",
         "nationality": "England",
         "dob": "1999-07-05",
         "position": "DEF",
-        "careerComplete": false,
+        "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2021-07-01", "club": "mackems" },
 			{ "type": "left", "date": "2025-07-01", "club": "Middlesbrough" }

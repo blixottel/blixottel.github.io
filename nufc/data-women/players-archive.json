@@ -5,7 +5,7 @@
         "nationality": "England",
         "dob": "2007-04-28",
         "position": "DEF",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "youth", "date": "2025-07-01", "enddate": "2026-06-30", "club": "Cheadle Town" },
 			{ "type": "left", "date": "2026-06-30", "club": "Treaty United" }
@@ -20,7 +20,7 @@
         "nationality": "England",
         "dob": "1999-12-09",
         "position": "FWD",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "joined", "date": "2024-07-05", "club": "Durham" },
 			{ "type": "left", "date": "2025-06-30", "club": "Sheffield United" }
@@ -36,7 +36,7 @@
         "dob": "",
         "position": "DEF",
 		"squadIfDobUnknown": "u21",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "youth", "date": "2024-11-25", "endDate": "2026-06-30" },
 			{ "type": "left", "date": "2026-07-01", "club": "Middlesbrough" }
@@ -51,7 +51,7 @@
         "nationality": "England",
         "dob": "1999-01-06",
         "position": "GK",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "joined", "date": "2024-07-09", "club": "Chelsea" },
 			{ "type": "left", "date": "2026-06-30", "club": "" }
@@ -66,7 +66,7 @@
         "nationality": "England",
         "dob": "1993-06-20",
         "position": "DEF",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "joined", "date": "2024-07-05", "club": "Reading" },
 			{ "type": "left", "date": "2026-06-30", "club": "Burnley" }
@@ -82,7 +82,7 @@
         "dob": "",
         "position": "DEF",
 		"squadIfDobUnknown": "u21",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "youth", "date": "2024-11-25", "endDate": "2026-06-30" },
 			{ "type": "left", "date": "2026-07-01", "club": "Thornaby" }
@@ -97,7 +97,7 @@
         "nationality": "Ireland",
         "dob": "2003-03-02",
         "position": "FWD",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "joined", "date": "2025-01-31", "club": "Birmingham City" },
 			{ "type": "left", "date": "2026-07-29", "club": "Brighton and Hove Albion" }
@@ -112,7 +112,7 @@
         "nationality": "Netherlands",
         "dob": "2005-01-02",
         "position": "GK",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "loan_in", "date": "2025-09-04", "enddate": "2026-06-30", "club": "Chelsea" }
         ],
@@ -126,7 +126,7 @@
         "nationality": "England",
         "dob": "1999-10-26",
         "position": "FWD",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "loan_in", "date": "2024-08-31", "enddate": "2025-06-30", "club": "Crystal Palace" }
         ],
@@ -140,7 +140,7 @@
         "nationality": "England",
         "dob": "2003-08-28",
         "position": "DEF",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "loan_in", "date": "2025-09-04", "enddate": "2026-06-30", "club": "Chelsea" }
         ],
@@ -149,12 +149,28 @@
         }
     },
     {
+        "id": "s-lucy-gilbert",
+        "name": "Lucy Gilbert",
+        "nationality": "England",
+        "dob": "",
+        "position": "MID",
+		"squadIfDobUnknown": "u21",
+        "careerStatus": "complete",
+        "movements": [
+			{ "type": "youth", "date": "2025-10-20", "enddate": "2026-06-30" },
+			{ "type": "left", "date": "2026-07-01", "club": "" }
+        ],
+        "photos": {
+			"flashscore": "https://static.flashscore.com/res/image/data/YRGgFODa-KnVSjbDq.png"
+        }
+    },
+    {
         "id": "s-malgorzata-grec",
         "name": "Małgorzata Grec",
         "nationality": "Poland",
         "dob": "1999-09-11",
         "position": "DEF",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "joined", "date": "2025-07-30", "club": "Dijon" },
 			{ "type": "left", "date": "2026-07-29", "club": "" }
@@ -169,7 +185,7 @@
         "nationality": "England",
         "dob": "2001-01-22",
         "position": "MID",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "joined", "date": "2025-07-11", "club": "Southampton" },
 			{ "type": "retired", "date": "2026-06-30" }
@@ -184,7 +200,7 @@
         "nationality": "England",
         "dob": "2005-12-03",
         "position": "FWD",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "loan_in", "date": "2025-01-18", "enddate": "2025-06-30", "club": "Manchester City" }
         ],
@@ -198,7 +214,7 @@
         "nationality": "Northern Ireland",
         "dob": "1988-06-19",
         "position": "MID",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "joined", "date": "2024-07-19", "club": "Bristol City" },
 			{ "type": "retired", "date": "2025-06-30" }
@@ -213,7 +229,7 @@
         "nationality": "Jamaica",
         "dob": "1999-12-22",
         "position": "FWD",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "joined", "date": "2024-07-03", "club": "Bristol City" },
 			{ "type": "left", "date": "2026-06-30", "club": "Nottingham Forest" }
@@ -228,7 +244,7 @@
         "nationality": "United States",
         "dob": "1995-02-04",
         "position": "FWD",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
  			{ "type": "joined", "date": "2026-02-14", "club": "Orlando Pride" },
 			{ "type": "left", "date": "2026-06-30", "club": "Chicago" }
@@ -243,7 +259,7 @@
         "nationality": "England",
         "dob": "1996-01-10",
         "position": "FWD",
-        "careerComplete": true,
+        "careerStatus": "complete",
         "movements": [
 			{ "type": "joined", "date": "2024-07-01", "club": "Sheffield United" },
 			{ "type": "loan_out", "date": "2025-01-31", "enddate": "2025-06-30", "club": "Nottingham Forest" },

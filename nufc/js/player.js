@@ -244,8 +244,10 @@ async function initPlayer() {
     const issuesHtml = !issues.length ? '' : `<div id="validation-panel" style="display:block;margin:0 0 24px"><h2>Data checks — ${issues.length} issue${issues.length === 1 ? '' : 's'}</h2>${
       isLocalDev() ? `<ul>${issues.map(i => `<li class="error">${i.season}: ${i.message}</li>`).join('')}</ul>` : '<p class="vp-concise-note">There are inconsistencies in the underlying data for this player.</p>'}</div>`;
     // Data starts at TEAM.dataFrom; anyone who joined before it can only ever have a partial record.
+    // careerStatus: partial (data missing), ongoing (complete so far, still at the club) or complete (all data, has left).
     const trackedFrom = dataCutoffLabel() || (seasons.length ? seasons[seasons.length - 1].label : '');
-    const partial = !p.careerComplete || joinedBeforeCutoff(p);
+    const predatesData = joinedBeforeCutoff(p);
+    const careerStatus = predatesData ? 'partial' : (careerStatusOf(p) || 'partial');
     const evKey = '<div class="ev-key"><span><span class="ev"><i class="g">1</i></span> Goals</span><span><span class="ev"><i class="a">1</i></span> Assists</span><span><span class="ev"><i class="y">&nbsp;</i></span> Yellow card</span><span><span class="ev"><i class="r">&nbsp;</i></span> Red card</span></div>';
     const legend = buildLegend();
     legend.insertAdjacentHTML('beforeend', evKey);
@@ -259,11 +261,11 @@ async function initPlayer() {
           ${fact('Nationality', p.nationality || '—')}
           ${latest ? fact('Current squad', SQUAD_LABEL[normSquad(p.squad)] || p.squad) : ''}
           ${status ? fact('Status', status) : ''}
-          ${fact('Career record', partial ? '<span class="guest-tag loan-tag" style="margin-left:0">Partial</span>' : '<span class="guest-tag" style="margin-left:0">Complete</span>')}
+          ${fact('Career record', careerStatus === 'partial' ? '<span class="guest-tag loan-tag" style="margin-left:0">Partial</span>' : `<span class="guest-tag" style="margin-left:0">${careerStatus === 'ongoing' ? 'Ongoing' : 'Complete'}</span>`)}
         </dl>
       </section>
       <h3 class="block-heading">Career totals</h3>
-      <p class="note">${partial ? `Partial record: figures cover ${trackedFrom} onwards only, so earlier seasons aren't included.` : 'Complete record: every season this player has played in is in the data.'}</p>
+      <p class="note">${careerStatus === 'ongoing' ? 'Complete record to date: every season since this player joined is in the data. The current season is still in progress, so these figures will keep growing.' : careerStatus === 'complete' ? 'Complete record: every season this player has played in is in the data.' : predatesData ? `Partial record: figures cover ${trackedFrom} onwards only, so earlier seasons aren't included.` : "Partial record: some of this player's seasons haven't been fully entered yet, so these figures may be incomplete."}</p>
       ${careerTable(entries)}
       ${noStatsNote(entries, id)}
       ${movementsBlock(p.movements)}

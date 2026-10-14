@@ -987,12 +987,13 @@ function buildLegend() {
 }
 
 /**
- * LOCAL-ONLY to-do marker (never on a published copy): current players whose
- * career data isn't finished (no careerComplete) get a small "To do" badge on
- * their photo, via the .todo-open class (see styles.css). Everyone else looks normal.
+ * LOCAL-ONLY to-do marker (never on a published copy): players whose careerStatus is
+ * "partial" (career data still needs entering) get a small "To do" badge on their photo,
+ * via the .todo-open class (see styles.css). Everyone else looks normal. A missing or
+ * invalid careerStatus isn't a to-do here — the Data checks page flags it instead.
  */
 function todoState(p) {
-  return isLocalDev() && !p._archived && !p._unresolvedMaster && !p.careerComplete ? 'todo-open' : '';
+  return isLocalDev() && !p._archived && !p._unresolvedMaster && careerStatusOf(p) === 'partial' ? 'todo-open' : '';
 }
 
 /** LOCAL-ONLY "Career data" group in the Data checks list: progress line plus the players still to do. */
@@ -1000,20 +1001,20 @@ function renderTodoProgress(players) {
   const panel = document.getElementById('validation-panel');
   if (!panel) return;
   const current = players.filter(p => !p._archived && !p._former && !p._unresolvedMaster);
-  const todo = current.filter(p => !p.careerComplete).sort((a, b) => a.name.localeCompare(b.name));
+  const todo = current.filter(p => careerStatusOf(p) === 'partial').sort((a, b) => a.name.localeCompare(b.name));
   // Former players (players-former.json): gone from the club, but their career data still needs work.
   const former = players.filter(p => p._former);
-  const formerTodo = former.filter(p => !p.careerComplete).sort((a, b) => a.name.localeCompare(b.name));
+  const formerTodo = former.filter(p => careerStatusOf(p) === 'partial').sort((a, b) => a.name.localeCompare(b.name));
   const ul = arr => arr.length ? `<ul>${arr.map(p => `<li>${playerLinkHtml(p)} <span>${SQUAD_SHORT[normSquad(p.squad)] || ''}</span></li>`).join('')}</ul>` : '';
   // A "Career data" group at the end of the list, same look as "Across seasons".
   // These are to-dos, not data errors, so they aren't counted in the issue totals.
   const wrap = document.createElement('div');
   wrap.className = 'vp-squad';
   wrap.innerHTML = `<p class="vp-squad-name">Career data</p>` +
-    `<p class="vp-sub" style="margin:0 0 6px"><b>${current.length - todo.length}</b> of <b>${current.length}</b> current players complete${todo.length ? ` · ${todo.length} to do` : ' ✓'}</p>` +
+    `<p class="vp-sub" style="margin:0 0 6px"><b>${current.length - todo.length}</b> of <b>${current.length}</b> current players have no career data to do${todo.length ? ` · ${todo.length} to do` : ' ✓'}</p>` +
     ul(todo) +
     (former.length
-      ? `<p class="vp-sub" style="margin:10px 0 6px"><b>${former.length - formerTodo.length}</b> of <b>${former.length}</b> former players complete${formerTodo.length ? ` · ${formerTodo.length} to do` : ' ✓'}</p>` + ul(formerTodo)
+      ? `<p class="vp-sub" style="margin:10px 0 6px"><b>${former.length - formerTodo.length}</b> of <b>${former.length}</b> former players have no career data to do${formerTodo.length ? ` · ${formerTodo.length} to do` : ' ✓'}</p>` + ul(formerTodo)
       : '');
   const list = document.getElementById('validation-list');
   (list || panel).appendChild(wrap);

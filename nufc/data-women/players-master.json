@@ -6,7 +6,7 @@
         "dob": "",
         "position": "MID",
 		"squadIfDobUnknown": "u21",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "youth", "date": "2025-10-20", "endDate": "2026-09-22" },
 			{ "type": "joined", "date": "2026-09-23", "club": "Newcastle United Youth" }
@@ -21,7 +21,7 @@
         "nationality": "Ireland",
         "dob": "1995-09-24",
         "position": "DEF",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2025-08-01", "club": "Manchester United" }
         ],
@@ -35,7 +35,7 @@
         "nationality": "Finland",
         "dob": "1994-10-31",
         "position": "GK",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2025-08-01", "club": "Hammarby" }
         ],
@@ -49,7 +49,7 @@
         "nationality": "England",
         "dob": "2005-11-24",
         "position": "MID",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "youth", "date": "2026-01-23", "enddate": "2026-06-30", "club": "Birmingham City" },
 			{ "type": "joined", "date": "2026-07-01", "club": "Newcastle United Youth" }
@@ -64,7 +64,7 @@
         "nationality": "England",
         "dob": "1999-07-26",
         "position": "FWD",
-        "careerComplete": false,
+        "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2024-02-17", "club": "Portsmouth" }
         ],
@@ -78,7 +78,7 @@
         "nationality": "Wales",
         "dob": "2007-11-03",
         "position": "FWD",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "youth", "date": "2026-02-17", "enddate": "2027-06-30", "club": "Gwalia United" }
         ],
@@ -92,7 +92,7 @@
         "nationality": "Scotland",
         "dob": "2003-02-20",
         "position": "DEF",
-        "careerComplete": false,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2025-01-17", "club": "Chelsea" }
         ],
@@ -106,7 +106,7 @@
         "nationality": "England",
         "dob": "1991-12-12",
         "position": "DEF",
-        "careerComplete": false,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2024-07-10", "club": "Manchester City" }
         ],
@@ -120,7 +120,7 @@
         "nationality": "England",
         "dob": "2004-01-20",
         "position": "MID",
-        "careerComplete": false,
+        "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2023-07-12", "club": "Bristol City" }
         ],
@@ -134,7 +134,7 @@
         "nationality": "Sweden",
         "dob": "1998-07-13",
         "position": "FWD",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2026-01-19", "club": "Rosengard" }
         ],
@@ -148,7 +148,7 @@
         "nationality": "England",
         "dob": "1997-01-26",
         "position": "MID",
-        "careerComplete": false,
+        "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2023-07-12", "club": "mackems" }
         ],
@@ -162,7 +162,7 @@
         "nationality": "Scotland",
         "dob": "2003-01-12",
         "position": "MID",
-        "careerComplete": false,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2025-01-20", "club": "mackems" }
         ],
@@ -176,7 +176,7 @@
         "nationality": "Wales",
         "dob": "1996-08-01",
         "position": "DEF",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2026-07-03", "club": "Liverpool" }
 		],
@@ -190,7 +190,7 @@
         "nationality": "Hungary",
         "dob": "1998-09-17",
         "position": "DEF",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2026-07-10", "club": "Werder Bremen" }
         ],
@@ -204,7 +204,7 @@
         "nationality": "Iceland",
         "dob": "1995-09-18",
         "position": "MID",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2026-07-08", "club": "Madrid CFF" }
         ],
@@ -218,7 +218,7 @@
         "nationality": "England",
         "dob": "2002-09-18",
         "position": "MID",
-        "careerComplete": false,
+        "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2022-07-01", "club": "Middlesbrough" },
 			{ "type": "loan_out", "date": "2026-08-21", "enddate": "2027-06-30", "club": "Hibernian" }
@@ -233,7 +233,7 @@
         "nationality": "England",
         "dob": "1997-02-21",
         "position": "DEF",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2025-07-02", "club": "Southampton" }
         ],
@@ -247,7 +247,7 @@
         "nationality": "England",
         "dob": "2006-08-22",
         "position": "FWD",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "loan_in", "date": "2026-08-06", "enddate": "2027-06-30", "club": "Arsenal" }
         ],
@@ -261,7 +261,7 @@
         "nationality": "England",
         "dob": "1992-12-08",
         "position": "MID",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2025-07-15", "club": "Aston Villa" }
         ],
@@ -275,7 +275,7 @@
         "nationality": "Australia",
         "dob": "2000-03-17",
         "position": "DEF",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2026-01-15", "club": "Portland Thorns" }
         ],
@@ -289,7 +289,7 @@
         "nationality": "Scotland",
         "dob": "2002-06-27",
         "position": "FWD",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2026-07-14", "club": "Hibernian" }
         ],
@@ -303,7 +303,7 @@
         "nationality": "England",
         "dob": "2001-12-31",
         "position": "MID",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2026-07-28", "club": "Charlton Athletic" }
         ],
@@ -317,7 +317,7 @@
         "nationality": "England",
         "dob": "2001-06-29",
         "position": "GK",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "loan_in", "date": "2026-07-27", "enddate": "2027-06-30", "club": "Manchester United" }
         ],
@@ -331,7 +331,7 @@
         "nationality": "Ireland",
         "dob": "1999-04-27",
         "position": "FWD",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2026-07-28", "club": "Liverpool" }
         ],
@@ -345,7 +345,7 @@
         "nationality": "England",
         "dob": "2001-02-11",
         "position": "DEF",
-        "careerComplete": false,
+        "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2024-02-01", "club": "Crystal Palace" }
         ],
@@ -359,7 +359,7 @@
         "nationality": "Wales",
         "dob": "1999-06-02",
         "position": "DEF",
-        "careerComplete": false,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2024-09-04", "club": "London City Lionesses" }
         ],
@@ -373,7 +373,7 @@
         "nationality": "Scotland",
         "dob": "1996-05-31",
         "position": "FWD",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2026-07-29", "club": "Tottenham Hotspur" }
         ],
@@ -387,7 +387,7 @@
         "nationality": "England",
         "dob": "1998-06-14",
         "position": "MID",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2026-07-25", "club": "Durham" }
         ],
@@ -401,7 +401,7 @@
         "nationality": "United States",
         "dob": "1993-02-26",
         "position": "MID",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2025-08-25", "club": "Orlando Pride" }
         ],
@@ -415,7 +415,7 @@
         "nationality": "Finland",
         "dob": "2004-04-28",
         "position": "FWD",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2025-08-29", "club": "Rosengard" }
         ],
@@ -429,7 +429,7 @@
         "nationality": "Scotland",
         "dob": "1997-07-07",
         "position": "DEF",
-        "careerComplete": true,
+        "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2026-07-14", "club": "Brighton and Hove Albion" }
         ],
