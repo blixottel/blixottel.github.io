@@ -257,6 +257,7 @@
         "position": "DEF",
         "careerStatus": "complete",
         "movements": [
+			{ "type": "youth", "date": "2022-10-23", "endDate": "2023-06-30" },
             { "type": "joined", "date": "2023-07-01", "club": "Newcastle United Youth" },
             { "type": "left", "date": "2026-06-30", "club": "Darlington" }
         ],
@@ -292,7 +293,7 @@
         "position": "DEF",
         "careerStatus": "complete",
         "movements": [
-             { "type": "trial_in", "date": "2024-01-27", "enddate": "2024-01-27", "club": "Wolverhampton Wanderers" }
+            { "type": "trial_in", "date": "2024-01-27", "enddate": "2024-01-27", "club": "Wolverhampton Wanderers" }
         ],
         "photos": {
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1005844-1782978840.jpg?lm=4711",
