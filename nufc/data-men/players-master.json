@@ -1330,7 +1330,7 @@
         "movements": [
 			{ "type": "youth", "date": "2024-02-22", "endDate": "2025-06-30" },
 			{ "type": "joined", "date": "2025-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2026-10-03", "enddate": "2026-10-17", "club": "Newcastle Blue Star" }
+			{ "type": "loan_out", "date": "2026-10-03", "enddate": "2026-10-15", "club": "Newcastle Blue Star" }
         ],
         "photos": { }
     },
@@ -1774,6 +1774,19 @@
         "movements": [
 			{ "type": "youth", "date": "2024-04-16", "endDate": "2025-06-30" },
 			{ "type": "joined", "date": "2025-07-01", "club": "Newcastle United Youth" }
+        ],
+        "photos": { }
+    },
+    {
+        "id": "u-eli-hall",
+        "name": "Eli Hall",
+        "nationality": "England",
+        "dob": "2011-09-25",
+		"squadIfDobUnknown": "Youth",
+        "position": "DEF",
+        "careerStatus": "ongoing",
+        "movements": [
+			{ "type": "youth", "date": "2026-07-24", "endDate": "2028-06-30", "club": "Ipswich Town" }
         ],
         "photos": { }
     },
