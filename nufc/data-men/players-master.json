@@ -7,7 +7,7 @@
         "position": "GK",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "youth", "date": "2022-10-23", "endDate": "2023-06-30" },
+			{ "type": "youth", "date": "2022-08-20", "endDate": "2023-06-30" },
 			{ "type": "joined", "date": "2023-07-01", "club": "Newcastle United Youth" },
 			{ "type": "loan_out", "date": "2025-08-10", "enddate": "2025-12-31", "club": "Coleraine" }
         ],
@@ -982,9 +982,10 @@
         "nationality": "England",
         "dob": "2006-09-08",
         "position": "MID",
-        "careerStatus": "partial",
+        "careerStatus": "ongoing",
         "movements": [
-			{ "type": "joined", "date": "2022-08-20", "club": "Newcastle United Youth" },
+			{ "type": "youth", "date": "2022-08-20", "endDate": "2023-06-30" },
+			{ "type": "joined", "date": "2023-07-01", "club": "Newcastle United Youth" },
 			{ "type": "loan_out", "date": "2026-08-17", "enddate": "2027-06-30", "club": "Swindon Town" }
         ],
         "photos": {

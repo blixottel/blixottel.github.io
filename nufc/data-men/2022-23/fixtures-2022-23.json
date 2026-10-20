@@ -630,8 +630,103 @@
 
     "u18": {
         "fixtures": [
-        ],
+             { "id": "u18-f1", "date": "2022-08-20", "opponent": "Manchester City U18", "venue": "H", "competition": "U18 Premier League", "result": "D 2-2", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 0, "yellowCardsTotal": 0, "redCardsTotal": 0, "ownGoalsFor": 1 },
+             { "id": "u18-f2", "date": "2022-08-27", "opponent": "Blackburn Rovers U18", "venue": "A", "competition": "U18 Premier League", "result": "W 4-0", "subsUsed": 4, "subsUnused": 1, "assistsTotal": 2, "yellowCardsTotal": 4, "redCardsTotal": 0 },
+             { "id": "u18-f3", "date": "2022-09-03", "opponent": "Arsenal U18", "venue": "H", "competition": "U18 Premier League Cup", "result": "" },
+             { "id": "u18-f4", "date": "2022-09-17", "opponent": "mackems U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f5", "date": "2022-10-01", "opponent": "Stoke City U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f6", "date": "2022-10-08", "opponent": "Manchester United U18", "venue": "A", "competition": "U18 Premier League Cup", "result": "" },
+             { "id": "u18-f7", "date": "2022-10-15", "opponent": "Derby County U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f8", "date": "2022-10-22", "opponent": "Everton U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f9", "date": "2022-10-29", "opponent": "Manchester United U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f10", "date": "2022-11-05", "opponent": "Aston Villa U18", "venue": "A", "competition": "U18 Premier League Cup", "result": "" },
+             { "id": "u18-f11", "date": "2022-11-19", "opponent": "Leeds United U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f12", "date": "2022-11-26", "opponent": "Wolverhampton Wanderers U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f13", "date": "2022-12-06", "opponent": "Charlton Athletic U18", "venue": "A", "competition": "FA Youth Cup", "result": "" },
+             { "id": "u18-f14", "date": "2022-12-21", "opponent": "Middlesbrough U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f15", "date": "2023-01-07", "opponent": "Manchester City U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f16", "date": "2023-01-17", "opponent": "Arsenal U18", "venue": "H", "competition": "FA Youth Cup", "result": "" },
+             { "id": "u18-f17", "date": "2023-01-28", "opponent": "Leeds United U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f18", "date": "2023-02-11", "opponent": "Manchester United U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f19", "date": "2023-02-18", "opponent": "Wolverhampton Wanderers U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f20", "date": "2023-02-25", "opponent": "Blackburn Rovers U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f21", "date": "2023-03-04", "opponent": "Derby County U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f22", "date": "2023-03-25", "opponent": "mackems U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f23", "date": "2023-04-01", "opponent": "Nottingham Forest U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f24", "date": "2023-04-07", "opponent": "Stoke City U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f25", "date": "2023-04-11", "opponent": "Liverpool U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f26", "date": "2023-04-15", "opponent": "Middlesbrough U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f27", "date": "2023-04-22", "opponent": "Everton U18", "venue": "H", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f28", "date": "2023-04-29", "opponent": "Liverpool U18", "venue": "A", "competition": "U18 Premier League", "result": "" },
+             { "id": "u18-f29", "date": "2023-05-06", "opponent": "Nottingham Forest U18", "venue": "A", "competition": "U18 Premier League", "result": "" }
+       ],
         "appearances": {
+            "s-aidan-harris": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start" }
+            },
+            "u21-anthony-munda": {
+                "u18-f1": { "status": "sub_on" },
+                "u18-f2": { "status": "sub_on" }
+            },
+            "u18-beau-beresford": {
+                "u18-f1": { "status": "sub_on" },
+                "u18-f2": { "status": "sub_on" }
+            },
+            "s-ben-parkinson": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start", "goals": 2, "yellowCard": true }
+            },
+            "u18-callum-mcnally": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start" }
+            },
+            "u21-charlie-mcarthur": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start" }
+            },
+            "u21-ciaran-thompson": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start", "assists": 1 }
+            },
+            "u21-dylan-charlton": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start", "yellowCard": true }
+            },
+            "u21-ellis-stanton": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start", "goals": 1, "assists": 1, "yellowCard": true }
+            },
+            "u21-harry-powell": {
+                "u18-f1": { "status": "sub_on" },
+                "u18-f2": { "status": "sub_on" }
+            },
+            "u21-johnny-emerson": {
+                "u18-f1": { "status": "start", "goals": 1 },
+                "u18-f2": { "status": "start" }
+            },
+            "s-lewis-miley": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start", "goals": 1 }
+            },
+            "u18-lucas-cooper": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start", "yellowCard": true }
+            },
+            "u21-nathan-nkunku": {
+                "u18-f2": { "status": "sub_on" }
+            },
+            "u21-scott-bailey": {
+                "u18-f1": { "status": "start" },
+                "u18-f2": { "status": "start" }
+            },
+            "u21-shaun-mavididi": {
+                "u18-f1": { "status": "sub_on" }
+            },
+            "u18-taylor-ross": {
+                "u18-f1": { "status": "unused_sub" },
+                "u18-f2": { "status": "unused_sub" }
+            }
         }
     }
 }
