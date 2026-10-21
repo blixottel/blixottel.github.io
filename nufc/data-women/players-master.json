@@ -51,7 +51,7 @@
         "position": "MID",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "youth", "date": "2026-01-23", "enddate": "2026-06-30", "club": "Birmingham City" },
+			{ "type": "youth", "date": "2026-01-23", "endDate": "2026-06-30", "club": "Birmingham City" },
 			{ "type": "joined", "date": "2026-07-01", "club": "Newcastle United Youth" }
         ],
         "photos": {
@@ -80,7 +80,7 @@
         "position": "FWD",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "youth", "date": "2026-02-17", "enddate": "2027-06-30", "club": "Gwalia United" }
+			{ "type": "youth", "date": "2026-02-17", "endDate": "2027-06-30", "club": "Gwalia United" }
         ],
         "photos": {
 			"flashscore": "https://static.flashscore.com/res/image/data/OpaaeXGG-0I88UUHp.png"
@@ -221,7 +221,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2022-07-01", "club": "Middlesbrough" },
-			{ "type": "loan_out", "date": "2026-08-21", "enddate": "2027-06-30", "club": "Hibernian" }
+			{ "type": "loan_out", "date": "2026-08-21", "endDate": "2027-06-30", "club": "Hibernian" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/5q3Eef9IrjqtUaKojusVHg/c20912bb32deaec44e723809933279a5/Jasmine_McQuade945-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
@@ -249,7 +249,7 @@
         "position": "FWD",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "loan_in", "date": "2026-08-06", "enddate": "2027-06-30", "club": "Arsenal" }
+			{ "type": "loan_in", "date": "2026-08-06", "endDate": "2027-06-30", "club": "Arsenal" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/64iKLVjlqFBaf7jlVpyvri/8523e494a452e058c0f8257f04766ed2/NUFC_womens_sign_24-07-262280__1_-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
@@ -319,7 +319,7 @@
         "position": "GK",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "loan_in", "date": "2026-07-27", "enddate": "2027-06-30", "club": "Manchester United" }
+			{ "type": "loan_in", "date": "2026-07-27", "endDate": "2027-06-30", "club": "Manchester United" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/5mV8Ap8Tan95L171UdkmXZ/deec3b98760c35e59796fa746966b02b/Kayla_Rendell782-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"

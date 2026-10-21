@@ -443,6 +443,7 @@ function validateFixtures(fixturesData, playersById, options = {}) {
   });
 
   validatePlayerSeasonConsistency(fixturesData, playersById, options.season).forEach(i => issues.push(i));
+  validateRecordShapes(fixturesData, playersById).forEach(i => issues.push(i));
 
   return issues;
 }
@@ -468,9 +469,9 @@ function validatePlayerSeasonConsistency(fixturesData, playersById, season) {
   const issues = [];
   // Seasons used to work out a youth player's recommended end date: every season in seasons.json if known, else just this one.
   const allSeasons = (typeof LOADED_SEASONS !== 'undefined' && LOADED_SEASONS) ? LOADED_SEASONS : (season ? [season] : []);
-  const dmy = d => (d || '').split('-').reverse().join('/');
+  const dmy = d => String(d || '').split('-').reverse().join('/');
   const push = (squad, severity, message) => issues.push({ squad, fixtureId: null, fixtureLabel: null, severity, message });
-  const endOf = m => m.endDate || m.enddate || m.end_date;
+  const endOf = m => m.endDate;
   const windowFor = sq => {
     const dates = ((sq && sq.fixtures) || []).map(f => f.date).filter(Boolean).sort();
     return dates.length ? { firstMs: looseDate(dates[0], false), lastMs: looseDate(dates[dates.length - 1], true) } : null;
@@ -510,8 +511,8 @@ function validatePlayerSeasonConsistency(fixturesData, playersById, season) {
         const f = named[0];
         const recMs = lastYouthSeasonEndMs(p, allSeasons);
         const endText = recMs !== null
-          ? `enddate = ${dmy(new Date(recMs).toISOString().slice(0, 10))} (the end of the last season they're in the ${homeLabel} age group)`
-          : `enddate = the end of the last season they're in the ${homeLabel} age group`;
+          ? `endDate = ${dmy(new Date(recMs).toISOString().slice(0, 10))} (the end of the last season they're in the ${homeLabel} age group)`
+          : `endDate = the end of the last season they're in the ${homeLabel} age group`;
         push(home, 'error', `${name} is in the ${homeLabel} age group (too young for the lowest squad) but was named in ${named.length} matchday squad${named.length === 1 ? '' : 's'} (first: ${SQUAD_LABEL[f.k] || f.k} v ${f.fx.opponent}, ${dmy(f.fx.date)}), so needs a "youth" movement: date = their first appearance (no later than ${dmy(f.fx.date)}), ${endText}.`);
       }
     }
@@ -519,7 +520,7 @@ function validatePlayerSeasonConsistency(fixturesData, playersById, season) {
     // A + H. season-long status
     if (p.status === 'injured_season' || p.status === 'pregnancy_leave' || p.status === 'not_selected_season') {
       const named = homeFixtures.filter(fx => homeRecs && homeRecs[fx.id] && NAMED_STATUSES.has(homeRecs[fx.id].status))
-        .sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+        .sort((a, b) => String(a.date || '').localeCompare(String(b.date || '')));
       if (named.length) {
         push(home, 'error', `${name} is marked "${p.status}" but was named in ${named.length} ${homeLabel} matchday squad${named.length === 1 ? '' : 's'} (first: v ${named[0].opponent}, ${dmy(named[0].date)}).`);
       }
@@ -587,6 +588,82 @@ function validatePlayerSeasonConsistency(fixturesData, playersById, season) {
       });
     }
 
+    // T + S. Trialist consistency, and roster status against movements. Both need the season.
+    //  T1. status "trialist" but no trial_in movement overlapping the season.
+    //  T2. a trial_in overlapping the season, named in a matchday squad during it, never followed by a "joined"
+    //      that season, yet the roster status isn't "trialist" (or "left").
+    //  T3. status "trialist" but never named in any matchday squad.
+    //  S1. status "loan" but no loan_out / loan_out_dual overlapping the season.
+    //  S2. on loan to a club today (per movements), today falls in this season, yet the status isn't "loan".
+    //  S3. status "loan" with a loanClub that matches none of the overlapping loans' clubs.
+    //  S4. status "left" with no left / retired movement by the end of the season.
+    {
+      const range = season ? seasonRange(season) : null;
+      const sLabel = season ? (season.label || season.id) : 'this season';
+      const sNorm = x => String(x || '').trim().toLowerCase();
+      const overlaps = m => {
+        if (!range) return true;
+        const s = looseDate(m.date, false), e = looseDate(endOf(m), true);
+        return (s === null || s <= range.end) && (e === null || e >= range.start);
+      };
+      const trials = mv.filter(m => m.type === 'trial_in');
+      const loansOut = mv.filter(m => m.type === 'loan_out' || m.type === 'loan_out_dual');
+      const namedOn = []; // dates (ISO) of every matchday squad they're named in, any squad
+      Object.keys(fixturesData).forEach(k => {
+        const sq = fixturesData[k] || {};
+        const recs = (sq.appearances || {})[pid] || {};
+        (sq.fixtures || []).forEach(fx => { const r = recs[fx.id]; if (r && NAMED_STATUSES.has(r.status)) namedOn.push(fx.date || ''); });
+      });
+
+      if (p.status === 'trialist') {
+        if (!trials.some(overlaps)) {
+          push(home, 'warning', `${name} is marked "trialist" in the ${sLabel} season file, but has no "trial_in" movement covering that season.`);
+        }
+        if (!namedOn.length) {
+          push(home, 'warning', `${name} is marked "trialist" but isn't named in any matchday squad — trialists are only on the roster because they were in one. Remove them, or log their appearance.`);
+        }
+      } else if (p.status !== 'left' && range) {
+        trials.filter(overlaps).forEach(tr => {
+          const ts = looseDate(tr.date, false);
+          const te = looseDate(endOf(tr), true);
+          const signed = mv.some(j => { const jm = j.type === 'joined' ? looseDate(j.date, false) : null; return jm !== null && ts !== null && jm >= ts && jm <= range.end; });
+          const during = namedOn.filter(d => { const dm = d ? looseDate(d, false) : null; return dm !== null && (ts === null || dm >= ts) && (te === null || dm <= te); });
+          if (!signed && during.length) {
+            push(home, 'warning', `${name} was named in ${during.length} matchday squad${during.length === 1 ? '' : 's'} during their trial (${dmy(tr.date)}${endOf(tr) ? ' – ' + dmy(endOf(tr)) : ''}) and never joined in ${sLabel}, but their roster status is "${p.status || 'active'}" (expected "trialist").`);
+          }
+        });
+      }
+
+      if (p.status === 'loan') {
+        const live = loansOut.filter(overlaps);
+        if (!live.length) {
+          push(home, 'warning', `${name} has roster status "loan" in the ${sLabel} season file, but no loan_out (or loan_out_dual) movement overlaps that season.`);
+        } else if (p.loanClub && !live.some(m => sNorm(m.club) === sNorm(p.loanClub))) {
+          push(home, 'warning', `${name}'s roster loanClub is "${p.loanClub}", but their loan movement${live.length === 1 ? '' : 's'} in ${sLabel} ${live.length === 1 ? 'is' : 'are'} to ${live.map(m => m.club || 'an unnamed club').join(' / ')}.`);
+        }
+      }
+
+      const nowMs = Date.now();
+      if (range && nowMs >= range.start && nowMs <= range.end && p.status !== 'loan' && p.status !== 'left') {
+        const cur = mv.find(m => {
+          if (m.type !== 'loan_out') return false;
+          const s = looseDate(m.date, false), e = looseDate(endOf(m), true);
+          return s !== null && s <= nowMs && (e === null || e >= nowMs);
+        });
+        if (cur) {
+          push(home, 'warning', `${name} is on loan to ${cur.club || 'another club'} (${dmy(cur.date)}${endOf(cur) ? ' – ' + dmy(endOf(cur)) : ''}) according to their movements, but their roster status is "${p.status || 'active'}" (expected "loan").`);
+        }
+      }
+
+      if (p.status === 'left') {
+        const limit = range ? range.end + SEASON_OVERLAP_GRACE_DAYS * 86400000 : Infinity;
+        const gone = mv.some(m => { const d = isLeavingMovement(m.type) ? looseDate(m.date, true) : null; return d !== null && d <= limit; });
+        if (!gone) {
+          push(home, 'warning', `${name} has roster status "left" in the ${sLabel} season file, but no "left" or "retired" movement is dated by the end of that season.`);
+        }
+      }
+    }
+
     // D. named in two squads on the same date
     const byDate = {};
     Object.keys(fixturesData).forEach(k => {
@@ -617,6 +694,7 @@ function validatePlayerSeasonConsistency(fixturesData, playersById, season) {
  * "ongoing" or "complete" (or who have a "joined" record), since only then do the
  * movements describe the whole career. (A loan_out_dual spell — dual registration — is deliberately not
  * treated as a conflict: the player may appear for both clubs.)
+ * Also flags a "loan" status on a fixture that falls outside every loan_out / loan_out_dual period.
  * Flags an appearance that falls (a) inside a loan_out spell, or
  * (b) outside every period he was with the club: joined -> left, plus any
  * loan_in / trial_in window. The "with the club" check only runs if at least
@@ -636,16 +714,19 @@ function checkMovementDates(p, fixturesData) {
   if (cs !== 'complete' && cs !== 'ongoing' && !p.movements.some(m => m.type === 'joined' || m.type === 'youth')) return out;
   const OPEN = '9999-99-99';
   const padEnd = e => (e ? (e.length < 10 ? e + '-99' : e) : OPEN);
-  const endOf = m => padEnd(m.endDate || m.enddate || m.end_date);
-  const dmy = d => d.split('-').reverse().join('/');
+  const endOf = m => padEnd(m.endDate);
+  const dmy = d => String(d).split('-').reverse().join('/');
 
   const allowed = [], loans = [];
+  // Every period in which a "loan" status is legitimate: loan_out, plus loan_out_dual (dual registration).
+  const loanCover = [];
   let openFrom = null;
-  [...p.movements].sort((a, b) => (a.date || '').localeCompare(b.date || '')).forEach(m => {
+  [...p.movements].sort((a, b) => String(a.date || '').localeCompare(String(b.date || ''))).forEach(m => {
     if (m.type === 'joined') { if (openFrom === null) openFrom = m.date || '0000'; }
     else if (isLeavingMovement(m.type)) { allowed.push([openFrom === null ? '0000' : openFrom, padEnd(m.date)]); openFrom = null; }
     else if (m.type === 'loan_in' || m.type === 'trial_in' || m.type === 'youth') allowed.push([m.date || '0000', endOf(m)]);
     else if (m.type === 'loan_out') loans.push({ from: m.date || '0000', to: endOf(m), club: m.club || 'another club' });
+    if (m.type === 'loan_out' || m.type === 'loan_out_dual') loanCover.push({ from: m.date || '0000', to: endOf(m) });
     // 'loan_out_dual' (dual registration) is intentionally ignored here: he can still be named for us.
   });
   if (openFrom !== null) allowed.push([openFrom, OPEN]);
@@ -659,6 +740,15 @@ function checkMovementDates(p, fixturesData) {
     (sq.fixtures || []).forEach(fx => { byId[fx.id] = fx; });
     Object.keys(recs).forEach(fid => {
       const r = recs[fid], fx = byId[fid];
+      // A "loan" status on a fixture that isn't inside any loan_out / loan_out_dual period.
+      if (r && r.status === 'loan' && fx && fx.date) {
+        if (!loanCover.some(l => fx.date >= l.from && fx.date <= l.to)) {
+          const lbl = `${fmtDate(fx.date)} v ${fx.opponent} (${SQUAD_SHORT[sk] || sk})`;
+          out.push({ squad: sk, fixtureId: fx.id, fixtureLabel: lbl, severity: 'error',
+            message: `${lbl}: ${p.name} is marked "loan" for this fixture, but none of their loan_out periods covers ${dmy(fx.date)}.` });
+        }
+        return;
+      }
       if (!r || !NAMED_STATUSES.has(r.status) || !fx || !fx.date) return;
       const d = fx.date;
       const label = `${fmtDate(fx.date)} v ${fx.opponent} (${SQUAD_SHORT[sk] || sk})`;
@@ -691,6 +781,9 @@ function checkMovementDates(p, fixturesData) {
 // the club for MORE than this many days of it. Stops a 1 June arrival or a
 // 30 June departure from demanding a roster entry in the season that's ending.
 const SEASON_OVERLAP_GRACE_DAYS = 45;
+
+// A trial_in ending and the "joined" that follows it can be this many days apart before it's worth a warning.
+const TRIAL_JOIN_GAP_DAYS = 7;
 
 // A player's career status, as recorded in players-master / -former / -archive.json:
 //   "partial"  — part of their career isn't in the data (joined before TEAM.dataFrom, or a season is missing / unfinished)
@@ -729,7 +822,7 @@ function dataCutoffLabel() {
 function joinedBeforeCutoff(p) {
   const cut = dataCutoffMs();
   if (cut === null) return false;
-  const joined = (p.movements || []).filter(m => m.type === 'joined').map(m => looseDate(m.date, false)).filter(x => x !== null);
+  const joined = (Array.isArray(p.movements) ? p.movements : []).filter(m => m.type === 'joined').map(m => looseDate(m.date, false)).filter(x => x !== null);
   return joined.length > 0 && Math.min(...joined) < cut - SEASON_OVERLAP_GRACE_DAYS * 86400000;
 }
 
@@ -757,7 +850,7 @@ function seasonCompleteIssue(season, fixtures, issues) {
 
 // "2024-05-20" -> that day; "2024-05" -> 1st (or last, asEnd) of the month; "2024" -> 1 Jan (or 31 Dec). Returns ms (UTC) or null.
 function looseDate(s, asEnd) {
-  const m = /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/.exec((s || '').trim());
+  const m = /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/.exec(typeof s === 'string' ? s.trim() : '');
   if (!m) return null;
   const y = +m[1];
   if (m[3]) return Date.UTC(y, +m[2] - 1, +m[3]);
@@ -807,7 +900,7 @@ function firstFullSeasonStart(joinedMs) {
 function clubSpells(movements) {
   const spells = [];
   let open = null;
-  [...movements].sort((a, b) => (a.date || '').localeCompare(b.date || '')).forEach(m => {
+  [...movements].sort((a, b) => String(a.date || '').localeCompare(String(b.date || ''))).forEach(m => {
     if (m.type === 'joined') {
       if (open === null) { const d = looseDate(m.date, false); open = d === null ? -Infinity : d; }
     } else if (isLeavingMovement(m.type) && open !== null) {
@@ -861,7 +954,7 @@ function effectivePhoto(p) {
 function validateAcrossSeasons(masterList, seasonData) {
   const issues = [];
   const add = (severity, message) => issues.push({ squad: '_cross', fixtureId: null, fixtureLabel: null, severity, crossSeason: true, message });
-  const dmy = d => (d || '').split('-').reverse().join('/');
+  const dmy = d => String(d || '').split('-').reverse().join('/');
   const label = s => s.label || s.id;
   const usable = seasonData.filter(sd => sd.roster);
   if (!usable.length) return issues;
@@ -879,7 +972,7 @@ function validateAcrossSeasons(masterList, seasonData) {
   const latest = seasonData[0];
   const cutoff = dataCutoffMs(); // null = no cut-off configured
   const DAY = 86400000;
-  const endOf = m => m.endDate || m.enddate || m.end_date;
+  const endOf = m => m.endDate;
   const nameOf = id => ((seasonData.map(sd => (sd.master || []).find(m => m.id === id)).find(Boolean)) || {}).name || id;
 
   const byYear = {}; // season start year -> { sd, i, range }
@@ -996,6 +1089,18 @@ function validateAcrossSeasons(masterList, seasonData) {
   masterList.forEach(p => {
     const name = p.name || p.id;
 
+    // Field names: a near-miss of a known field ("nationalty", "dpb") is almost certainly a typo.
+    {
+      const file = p._archived ? 'players-archive.json' : p._former ? 'players-former.json' : 'players-master.json';
+      Object.keys(p).filter(k => k.charAt(0) !== '_' && !PLAYER_FIELDS.includes(k)).forEach(k => {
+        const hint = closestField(k, PLAYER_FIELDS);
+        if (hint) add('warning', `${name} has a field "${k}" in ${file} that the site doesn't read — did you mean "${hint}"?`);
+      });
+      if (p.movements !== undefined && !Array.isArray(p.movements)) {
+        add('error', `${name}'s "movements" in ${file} isn't a list, so all of their movements are being ignored.`);
+      }
+    }
+
     // 1. Photo consistency
     const groups = []; // { url, label, seasons[] }
     seasonData.forEach((sd, i) => {
@@ -1011,12 +1116,25 @@ function validateAcrossSeasons(masterList, seasonData) {
     }
 
     // 2-5. Movements
-    const mv = Array.isArray(p.movements) ? p.movements : [];
+    const rawMv = Array.isArray(p.movements) ? p.movements : [];
+    const mv = rawMv.filter(m => m && typeof m === 'object' && !Array.isArray(m)); // non-objects are reported below
     let missingFlagged = false; // set below if the "missing from the season file" error is raised
+
+    // Movement fields: unknown / misspelt fields, wrong value types, and the retired "enddate" / "end_date"
+    // spellings (the site only reads "endDate", so a loan using those is being treated as open-ended).
+    rawMv.forEach(m => {
+      if (!m || typeof m !== 'object' || Array.isArray(m)) { add('error', `${name} has a movement that isn't an object, so it is ignored.`); return; }
+      const what = `${name}'s ${m.type || 'unnamed'} movement${m.date ? ' (' + dmy(String(m.date)) + ')' : ''}`;
+      recordProblems(m, FIELD_SPECS.movement, MOVEMENT_RENAMES).forEach(pr => {
+        if (pr.problem === 'renamed') add('error', `${what} uses "${pr.field}" — the site only reads "${pr.hint}", so its end date is being ignored. Rename it to "${pr.hint}".`);
+        else if (pr.problem === 'type') add('error', `${what} has "${pr.field}" as ${pr.got}, but it should be ${pr.expected}.`);
+        else add('warning', `${what} has a field "${pr.field}" that the site doesn't read${pr.hint ? ` — did you mean "${pr.hint}"?` : '.'}`);
+      });
+    });
 
     // 6. A movement's end date can't be before its start date (e.g. a loan that "ends" before it begins).
     mv.forEach(m => {
-      const endRaw = m.endDate || m.enddate || m.end_date;
+      const endRaw = m.endDate;
       const s = looseDate(m.date, false), e = looseDate(endRaw, true);
       if (s !== null && e !== null && e < s) {
         add('error', `${name} has a ${m.type || 'movement'}${m.club ? ' (' + m.club + ')' : ''} that ends (${dmy(endRaw)}) before it starts (${dmy(m.date)}).`);
@@ -1040,7 +1158,7 @@ function validateAcrossSeasons(masterList, seasonData) {
     });
     {
       const seq = mv.filter(m => (m.type === 'joined' || isLeavingMovement(m.type)) && validDateStr(m.date, true))
-        .sort((a, b) => (a.date || '').localeCompare(b.date || '') || ((a.type === 'joined' ? 0 : 1) - (b.type === 'joined' ? 0 : 1)));
+        .sort((a, b) => String(a.date || '').localeCompare(String(b.date || '')) || ((a.type === 'joined' ? 0 : 1) - (b.type === 'joined' ? 0 : 1)));
       const hasJoin = seq.some(x => x.type === 'joined');
       let inClub = false, seenJoin = false;
       seq.forEach(m => {
@@ -1126,8 +1244,8 @@ function validateAcrossSeasons(masterList, seasonData) {
           const startMs = looseDate(m.date, false);
           if (!endRaw) {
             add('warning', recStr
-              ? `${name} has an open-ended youth period — set its enddate to ${dmy(recStr)} (the end of the last season they're in the ${ysLabel} age group).`
-              : `${name} has an open-ended youth period — set its enddate (the end of the last season they're in the youth age group).`);
+              ? `${name} has an open-ended youth period — set its endDate to ${dmy(recStr)} (the end of the last season they're in the ${ysLabel} age group).`
+              : `${name} has an open-ended youth period — set its endDate (the end of the last season they're in the youth age group).`);
             return;
           }
           if (!validDateStr(endRaw, true)) return; // reported above
@@ -1148,11 +1266,33 @@ function validateAcrossSeasons(masterList, seasonData) {
           const early = mv.find(x => { const xs = x.type === 'joined' ? looseDate(x.date, false) : null; return xs !== null && xs <= endMs; });
           if (early && !overlapFlagged) {
             overlapFlagged = true;
-            add('warning', `${name} has a "joined" date (${dmy(early.date)}) on or before the end of their youth period (${dmy(endRaw)}) — shorten the youth enddate, or check the dates.`);
+            add('warning', `${name} has a "joined" date (${dmy(early.date)}) on or before the end of their youth period (${dmy(endRaw)}) — shorten the youth endDate, or check the dates.`);
           }
         });
       }
     }
+
+    // Trial -> signing: a trial_in should run up to the "joined" that follows it. Flags an open-ended trial,
+    // a trial that overlaps the joining date, and a gap of more than TRIAL_JOIN_GAP_DAYS between the two.
+    mv.filter(m => m && m.type === 'trial_in' && validDateStr(m.date, true)).forEach(tr => {
+      const ts = looseDate(tr.date, false);
+      const joined = mv.filter(m => m && m.type === 'joined' && validDateStr(m.date, true) && looseDate(m.date, false) >= ts)
+        .sort((a, b) => a.date.localeCompare(b.date))[0];
+      if (!joined) return;
+      const what = `${name}'s trial${tr.club ? ' at ' + tr.club : ''} (from ${dmy(tr.date)})`;
+      const endRaw = endOf(tr);
+      if (!endRaw) {
+        add('warning', `${what} has no endDate, but they joined on ${dmy(joined.date)} — set the trial's endDate to the day before.`);
+        return;
+      }
+      if (!validDateStr(endRaw, true)) return; // reported above
+      const days = Math.round((looseDate(joined.date, false) - looseDate(endRaw, true)) / DAY);
+      if (days < 0) {
+        add('warning', `${what} ends ${dmy(endRaw)}, after they joined (${dmy(joined.date)}) — the trial should end before joining.`);
+      } else if (days - 1 > TRIAL_JOIN_GAP_DAYS) {
+        add('warning', `${what} ends ${dmy(endRaw)} but they didn't join until ${dmy(joined.date)} — ${days - 1} days with no movement covering them. Fine if intended; otherwise check the dates.`);
+      }
+    });
 
     // 5. Which player file a player belongs in. "Gone" = the most recent joined/left/retired movement is a
     // leaving one whose date has passed (or has no usable date), or — for a loan-in / trial player who
@@ -1162,7 +1302,7 @@ function validateAcrossSeasons(masterList, seasonData) {
     //   gone, any other status       -> players-former.json  (gone, but still needs data entering)
     if (!p._archived && mv.length) {
       const last = [...mv].filter(m => m.type === 'joined' || isLeavingMovement(m.type))
-        .sort((a, b) => (a.date || '').localeCompare(b.date || '')).pop();
+        .sort((a, b) => String(a.date || '').localeCompare(String(b.date || ''))).pop();
       const leftMs = last && isLeavingMovement(last.type) ? looseDate(last.date, true) : undefined;
       let subject = null; // e.g. "Name has left (01/07/2024)"
       if (last && isLeavingMovement(last.type) && (leftMs === null || leftMs <= Date.now())) {
@@ -1232,7 +1372,7 @@ function validateAcrossSeasons(masterList, seasonData) {
     {
       const intervals = spells.map(sp => ({ to: sp.to, from: sp.from, date: sp.leftDate, type: sp.leftType, ended: isFinite(sp.to) }));
       if (!has('joined')) {
-        const lv = mv.filter(m => isLeavingMovement(m.type)).sort((a, b) => (a.date || '').localeCompare(b.date || '')).pop();
+        const lv = mv.filter(m => isLeavingMovement(m.type)).sort((a, b) => String(a.date || '').localeCompare(String(b.date || ''))).pop();
         const to = lv ? looseDate(lv.date, true) : null;
         if (lv && to !== null) intervals.push({ from: -Infinity, to, date: lv.date, type: lv.type, ended: true });
       }
@@ -1305,6 +1445,15 @@ function validateAcrossSeasons(masterList, seasonData) {
     if (!sd.roster) return;
     const season = label(sd.season);
 
+    // Field names on roster entries: near-misses of a known field only (same rule as the master files).
+    sd.roster.forEach(r => {
+      if (!r || typeof r !== 'object') return;
+      Object.keys(r).filter(k => k.charAt(0) !== '_' && !PLAYER_FIELDS.includes(k)).forEach(k => {
+        const hint = closestField(k, PLAYER_FIELDS);
+        if (hint) add('warning', `${nameOf(r.id)} has a field "${k}" in the ${season} season file that the site doesn't read — did you mean "${hint}"?`);
+      });
+    });
+
     // Same player listed twice in one roster file
     const seen = {}, dup = new Set();
     sd.roster.forEach(r => { if (!r || !r.id) return; if (seen[r.id]) dup.add(r.id); seen[r.id] = true; });
@@ -1339,7 +1488,7 @@ function validateAcrossSeasons(masterList, seasonData) {
   if (seasonData.every(sd => sd.roster)) {
     masterList.forEach(p => {
       const inAny = seasonData.some((sd, i) => rosterIdx[i][p.id]);
-      const youthOnly = !(p.movements || []).some(m => m.type === 'joined') && (p.movements || []).some(m => m.type === 'youth');
+      const youthOnly = !(Array.isArray(p.movements) ? p.movements : []).some(m => m.type === 'joined') && (Array.isArray(p.movements) ? p.movements : []).some(m => m.type === 'youth');
       if (!p._archived && !inAny && !youthOnly) add('warning', `${p.name || p.id} is in ${p._former ? 'players-former.json' : 'players-master.json'} but isn't on any season file.`);
       if (p._archived && rosterIdx[0][p.id]) add('warning', `${p.name || p.id} is in players-archive.json but is on the latest season file (${label(latest.season)}) — move them back to players-master.json.`);
     });
@@ -1350,6 +1499,132 @@ function validateAcrossSeasons(masterList, seasonData) {
 
 // Movement types the site understands (see MOVE_TYPES in player.js). Anything else is probably a typo.
 const KNOWN_MOVEMENT_TYPES = new Set(['joined', 'left', 'retired', 'loan_out', 'loan_out_dual', 'loan_in', 'trial_in', 'youth']);
+
+/* ------------------------------------------------------------------ *
+ * Record shapes: field names and value types the site actually reads.
+ *
+ * A misspelt field ("yelowCard") or a value of the wrong kind ("goals": "1") is silently ignored or mangled,
+ * so the stat just goes missing. These lists are what records are compared against — if you start using a
+ * new field, add it here. A movement's end date is "endDate" and nothing else.
+ * ------------------------------------------------------------------ */
+const T_TEXT = 'text', T_FLAG = 'flag', T_COUNT = 'count', T_NUM = 'num';
+const FIELD_SPECS = {
+  fixture: {
+    id: T_TEXT, date: T_TEXT, opponent: T_TEXT, venue: T_TEXT, competition: T_TEXT, result: T_TEXT,
+    gameweek: [T_COUNT, T_TEXT], subsUsed: T_COUNT, subsUnused: T_COUNT, assistsTotal: T_COUNT,
+    yellowCardsTotal: T_COUNT, redCardsTotal: T_COUNT, xg: T_NUM, noDetailedStats: T_FLAG,
+    wentToExtraTime: T_FLAG, redCardMinutesLost: T_COUNT, ownGoalsFor: T_COUNT,
+  },
+  appearance: {
+    status: T_TEXT, goals: T_COUNT, assists: T_COUNT, minutes: T_COUNT, xg: T_NUM,
+    yellowCard: T_FLAG, redCard: T_FLAG, verified: T_FLAG, allowNonPlayingStats: T_FLAG,
+  },
+  movement: { type: T_TEXT, date: T_TEXT, endDate: T_TEXT, club: T_TEXT, note: T_TEXT },
+};
+// Old spellings of a movement's end date, which the site no longer reads.
+const MOVEMENT_RENAMES = { enddate: 'endDate', end_date: 'endDate' };
+// Fields on a player in players-master / -former / -archive.json or a season roster file. Players are only
+// checked for near-misses of these (a field that is nothing like any of them is assumed to be deliberate).
+const PLAYER_FIELDS = ['id', 'name', 'nationality', 'dob', 'position', 'careerStatus', 'movements', 'photos', 'photo',
+  'photoSource', 'squadIfDobUnknown', 'squadOverride', 'number', 'status', 'loanClub', 'fromClub', 'expectedDate', 'reasonNote'];
+
+const TYPE_WORDS = { text: 'text', flag: 'true or false', count: 'a whole number (0 or more)', num: 'a number (0 or more)' };
+function fieldTypeOk(v, t) {
+  if (t === T_TEXT) return typeof v === 'string';
+  if (t === T_FLAG) return typeof v === 'boolean';
+  if (t === T_COUNT) return typeof v === 'number' && Number.isInteger(v) && v >= 0;
+  if (t === T_NUM) return typeof v === 'number' && isFinite(v) && v >= 0;
+  return true;
+}
+function describeValue(v) {
+  if (typeof v === 'string') return `the text "${v}"`;
+  if (typeof v === 'number') return v < 0 ? `a negative number (${v})` : Number.isInteger(v) ? `${v}` : `the decimal ${v}`;
+  if (typeof v === 'boolean') return String(v);
+  return Array.isArray(v) ? 'a list' : 'an object';
+}
+function editDistance(a, b) {
+  const d = [];
+  for (let i = 0; i <= a.length; i++) { d[i] = [i]; }
+  for (let j = 1; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) {
+    d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+  }
+  return d[a.length][b.length];
+}
+// The known field a mistyped one is probably meant to be (case-insensitive, within a couple of typos), or null.
+function closestField(key, names) {
+  const lk = key.toLowerCase().replace(/[_\s-]/g, '');
+  let best = null, bestD = Infinity;
+  names.forEach(n => { const dist = editDistance(lk, n.toLowerCase()); if (dist < bestD) { best = n; bestD = dist; } });
+  return bestD <= (lk.length <= 4 ? 1 : 2) ? best : null;
+}
+// [{ field, problem: 'unknown' | 'type' | 'renamed', hint?, expected?, got? }] for one record against a spec.
+function recordProblems(rec, spec, renames) {
+  const out = [];
+  Object.keys(rec).forEach(k => {
+    if (k.charAt(0) === '_') return; // internal / comment keys
+    if (renames && renames[k]) { out.push({ field: k, problem: 'renamed', hint: renames[k] }); return; }
+    if (!Object.prototype.hasOwnProperty.call(spec, k)) { out.push({ field: k, problem: 'unknown', hint: closestField(k, Object.keys(spec)) }); return; }
+    const v = rec[k];
+    if (v === null || v === undefined) return;
+    const want = [].concat(spec[k]);
+    if (!want.some(w => fieldTypeOk(v, w))) out.push({ field: k, problem: 'type', expected: want.map(w => TYPE_WORDS[w]).join(' or '), got: describeValue(v) });
+  });
+  return out;
+}
+
+/**
+ * Unknown fields and wrong value types in the fixtures file: every fixture and every player's appearance
+ * record. Grouped by squad / field / problem (with a count and up to three examples) so one systematic
+ * mistake is one line, not hundreds. Unknown field = warning; wrong value type = error.
+ */
+function validateRecordShapes(fixturesData, playersById) {
+  const issues = [], groups = {}, order = [];
+  const record = (squad, kind, pr, example, fixtureId, fixtureLabel) => {
+    const key = [squad, kind, pr.field, pr.problem].join('|');
+    let g = groups[key];
+    if (!g) { g = groups[key] = { squad, kind, pr, examples: [], count: 0, fixtureId, fixtureLabel }; order.push(key); }
+    g.count += 1;
+    if (g.examples.length < 3) g.examples.push(example);
+  };
+  Object.keys(fixturesData || {}).forEach(sk => {
+    const sq = fixturesData[sk] || {};
+    const byId = {};
+    (sq.fixtures || []).forEach(fx => {
+      if (!fx || typeof fx !== 'object') return;
+      byId[fx.id] = fx;
+      const lbl = `${fx.date ? fmtDate(fx.date) : 'undated'} v ${fx.opponent || '(no opponent)'}`;
+      recordProblems(fx, FIELD_SPECS.fixture).forEach(pr => record(sk, 'fixture', pr, lbl, fx.id, lbl));
+    });
+    Object.keys(sq.appearances || {}).forEach(pid => {
+      const name = (playersById[pid] || {}).name || pid;
+      Object.keys(sq.appearances[pid] || {}).forEach(fid => {
+        const rec = sq.appearances[pid][fid];
+        const fx = byId[fid];
+        const lbl = fx ? `${fx.date ? fmtDate(fx.date) : 'undated'} v ${fx.opponent || '(no opponent)'}` : fid;
+        if (!rec || typeof rec !== 'object' || Array.isArray(rec)) {
+          issues.push({ squad: sk, fixtureId: fx ? fx.id : null, fixtureLabel: lbl, severity: 'error',
+            message: `${lbl}: ${name}'s appearance record isn't an object like { "status": "start" } — it will be ignored.` });
+          return;
+        }
+        recordProblems(rec, FIELD_SPECS.appearance).forEach(pr => record(sk, 'appearance', pr, `${name}, ${lbl}`, fx ? fx.id : null, lbl));
+      });
+    });
+  });
+  order.forEach(key => {
+    const g = groups[key], pr = g.pr;
+    const where = SQUAD_LABEL[g.squad] || g.squad;
+    const detail = `${g.count} ${g.kind}${g.count === 1 ? '' : 's'}; e.g. ${g.examples.join('; ')}`;
+    if (pr.problem === 'type') {
+      issues.push({ squad: g.squad, fixtureId: g.fixtureId, fixtureLabel: g.fixtureLabel, severity: 'error',
+        message: `${where}: ${g.kind} field "${pr.field}" should be ${pr.expected} but is ${pr.got} (${detail}) — it won't be counted properly.` });
+    } else {
+      issues.push({ squad: g.squad, fixtureId: g.fixtureId, fixtureLabel: g.fixtureLabel, severity: 'warning',
+        message: `${where}: ${g.kind} field "${pr.field}" isn't one the site reads${pr.hint ? ` — did you mean "${pr.hint}"?` : ''} It's being ignored (${detail}).` });
+    }
+  });
+  return issues;
+}
 
 // Ages outside this range on a season file are flagged as a probable dob mistake.
 const MIN_PLAUSIBLE_AGE = 13;
@@ -1422,4 +1697,64 @@ function lastYouthSeasonEndMs(p, seasonsNewestFirst) {
   }
   const wasYouth = banded.filter(s => ageBandForDob(p.dob, s.ageBands) === ys);
   return wasYouth.length ? seasonRange(wasYouth[0]).end : null;
+}
+
+/**
+ * Finds duplicate keys inside any one JSON object in raw file text. JSON.parse silently keeps only the
+ * LAST copy of a repeated key, so this can't be done on parsed data — it has to read the text.
+ * Returns [{ path, key, count }], where path locates the object (e.g. "u21 › appearances › s-joe-white").
+ * Returns [] if the text isn't valid JSON (other checks already report that).
+ */
+function findDuplicateJsonKeys(text) {
+  const found = [];
+  let i = 0;
+  const n = text.length;
+  const ws = () => { while (i < n && ' \t\r\n\ufeff'.includes(text[i])) i++; };
+  const str = () => {
+    const start = i;
+    i++;
+    while (i < n && text[i] !== '"') { if (text[i] === '\\') i++; i++; }
+    i++;
+    return JSON.parse(text.slice(start, i));
+  };
+  const value = path => {
+    ws();
+    const c = text[i];
+    if (c === '{') {
+      i++;
+      const seen = Object.create(null);
+      ws();
+      if (text[i] === '}') { i++; return; }
+      for (;;) {
+        ws();
+        const key = str();
+        ws();
+        i++; // the colon
+        seen[key] = (seen[key] || 0) + 1;
+        value(path.concat(key));
+        ws();
+        if (text[i] === ',') { i++; continue; }
+        i++; // the closing brace
+        break;
+      }
+      Object.keys(seen).forEach(k => { if (seen[k] > 1) found.push({ path: path.join(' › '), key: k, count: seen[k] }); });
+    } else if (c === '[') {
+      i++;
+      ws();
+      if (text[i] === ']') { i++; return; }
+      for (let idx = 0; ; idx++) {
+        value(path.concat('[' + idx + ']'));
+        ws();
+        if (text[i] === ',') { i++; continue; }
+        i++; // the closing bracket
+        break;
+      }
+    } else if (c === '"') {
+      str();
+    } else {
+      while (i < n && !',]} \t\r\n'.includes(text[i])) i++;
+    }
+  };
+  try { value([]); } catch (e) { return []; }
+  return found;
 }

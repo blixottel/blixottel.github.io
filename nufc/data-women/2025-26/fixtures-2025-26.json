@@ -81,8 +81,8 @@
             "s-deanna-cooper": {
                 "s-f1": { "status": "start" }, "s-f2": { "status": "start" }, "s-f3": { "status": "start" }, "s-f4": { "status": "unused_sub" }, "s-f5": { "status": "start" }, "s-f6": { "status": "start" }, "s-f7": { "status": "start" },
 				"s-f8": { "status": "sub_on" }, "s-f9": { "status": "start" }, "s-f10": { "status": "start" }, "s-f11": { "status": "start", "goals": 1 }, "s-f12": { "status": "start" }, "s-f13": { "status": "start" }, "s-f14": { "status": "start" },
-				"s-f15": { "status": "start" }, "s-f21": { "status": "start" }, "s-f21": { "status": "sub_on" }, "s-f22": { "status": "start" }, "s-f23": { "status": "start" }, "s-f24": { "status": "start" }, "s-f25": { "status": "start" },
-				"s-f26": { "status": "start" }, "s-f27": { "status": "start" } 
+				"s-f15": { "status": "start" }, "s-f21": { "status": "sub_on" }, "s-f22": { "status": "start" }, "s-f23": { "status": "start" }, "s-f24": { "status": "start" }, "s-f25": { "status": "start" }, "s-f26": { "status": "start" },
+				"s-f27": { "status": "start" } 
             },
             "s-demi-stokes": {
                 "s-f1": { "status": "sub_on" }, "s-f2": { "status": "sub_on", "assists": 1 }, "s-f3": { "status": "start" }, "s-f4": { "status": "start" }, "s-f5": { "status": "start" }, "s-f6": { "status": "start" }, "s-f7": { "status": "start" },

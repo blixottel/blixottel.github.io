@@ -1,27 +1,5 @@
 [
     {
-        "id": "s-adam-harrison",
-        "name": "Adam Harrison",
-        "nationality": "England",
-        "dob": "2006-10-20",
-        "position": "GK",
-        "careerStatus": "partial",
-        "movements": [
-			{ "type": "joined", "date": "2022-05-07", "club": "Newcastle United Youth" },
-			{ "type": "left", "date": "2026-06-30", "club": "Wolverhampton Wanderers" }
-        ],
-        "photos": {
-            "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1019169-1765877409.jpg?lm=4711",
-            "zerozero": "https://cdn-img.staticzz.com/img/jogadores/55/1048755_20231219194823_adam_harrison_1703015303.jpg",
-            "sofascore": "https://img.sofascore.com/api/v1/player/1542342/image",
-            "fotmob": "https://images.fotmob.com/image_resources/playerimages/1593872.png",
-            "besoccer": "https://cdn.resfu.com/img_data/players/medium/3441353.jpg",
-            "flashscore": "https://static.flashscore.com/res/image/data/phmVlPHG-tIBZR6hA.png",
-            "statshub": "https://images.statshub.com/player/1542342.png",
-            "fminside": "https://img.fminside.net/facesfm26/2000302079.png"
-        }
-    },
-    {
         "id": "s-allan-saint-maximin",
         "name": "Allan Saint-Maximin",
         "nationality": "France",
@@ -53,7 +31,7 @@
         "position": "FWD",
         "careerStatus": "partial",
         "movements": [
-            { "type": "trial_in", "date": "2022-07-04", "enddate": "2022-10-16", "club": "West Ham United" },
+            { "type": "trial_in", "date": "2022-07-04", "endDate": "2022-10-16", "club": "West Ham United" },
 			{ "type": "joined", "date": "2022-10-17", "club": "West Ham United" },
 			{ "type": "left", "date": "2024-06-30", "club": "Girondins de Bordeaux" }
         ],
@@ -171,7 +149,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2022-01-13", "club": "Burnley" },
-			{ "type": "loan_out", "date": "2023-01-20", "enddate": "2023-06-30", "club": "Nottingham Forest" },
+			{ "type": "loan_out", "date": "2023-01-20", "endDate": "2023-06-30", "club": "Nottingham Forest" },
 			{ "type": "left", "date": "2023-06-30", "club": "Nottingham Forest" }
         ],
         "photos": {
@@ -196,7 +174,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2016-08-03", "club": "Aston Villa" },
-			{ "type": "loan_out", "date": "2022-07-13", "enddate": "2023-06-30", "club": "Sheffield United" },
+			{ "type": "loan_out", "date": "2022-07-13", "endDate": "2023-06-30", "club": "Sheffield United" },
 			{ "type": "left", "date": "2023-06-30", "club": "Stoke City" }
         ],
         "photos": {
@@ -221,8 +199,8 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2017-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2022-07-02", "enddate": "2023-01-04", "club": "Gateshead" },
-			{ "type": "loan_out", "date": "2023-01-05", "enddate": "2023-06-30", "club": "Spennymoor Town" },
+			{ "type": "loan_out", "date": "2022-07-02", "endDate": "2023-01-04", "club": "Gateshead" },
+			{ "type": "loan_out", "date": "2023-01-05", "endDate": "2023-06-30", "club": "Spennymoor Town" },
 			{ "type": "left", "date": "2023-07-01", "club": "Blyth Spartans" }
         ],
         "photos": {
@@ -247,7 +225,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2018-08-11", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2022-01-31", "enddate": "2022-06-30", "club": "Bristol Rovers" },
+			{ "type": "loan_out", "date": "2022-01-31", "endDate": "2022-06-30", "club": "Bristol Rovers" },
 			{ "type": "left", "date": "2024-06-30", "club": "Manchester City" }
         ],
         "photos": {
@@ -320,10 +298,10 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2016-07-11", "club": "Arsenal" },
-			{ "type": "loan_out", "date": "2022-07-01", "enddate": "2023-06-30", "club": "Norwich City" },
-			{ "type": "loan_out", "date": "2023-09-01", "enddate": "2024-01-31", "club": "Standard Liège" },
-			{ "type": "loan_out", "date": "2024-02-01", "enddate": "2024-06-30", "club": "Queens Park Rangers" },
-			{ "type": "loan_out", "date": "2025-01-10", "enddate": "2025-06-30", "club": "Portsmouth" },
+			{ "type": "loan_out", "date": "2022-07-01", "endDate": "2023-06-30", "club": "Norwich City" },
+			{ "type": "loan_out", "date": "2023-09-01", "endDate": "2024-01-31", "club": "Standard Liège" },
+			{ "type": "loan_out", "date": "2024-02-01", "endDate": "2024-06-30", "club": "Queens Park Rangers" },
+			{ "type": "loan_out", "date": "2025-01-10", "endDate": "2025-06-30", "club": "Portsmouth" },
 			{ "type": "left", "date": "2025-08-02", "club": "Queens Park Rangers" }
         ],
         "photos": {
@@ -347,7 +325,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2014-08-09", "club": "Nottingham Forest" },
-			{ "type": "loan_out", "date": "2014-08-09", "enddate": "2015-06-30", "club": "Nottingham Forest" },
+			{ "type": "loan_out", "date": "2014-08-09", "endDate": "2015-06-30", "club": "Nottingham Forest" },
 			{ "type": "left", "date": "2026-02-03", "club": "Leicester City" }
         ],
         "photos": {
@@ -372,8 +350,8 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2020-09-08", "club": "Norwich City" },
-			{ "type": "loan_out", "date": "2023-07-27", "enddate": "2024-06-30", "club": "Watford" },
-			{ "type": "loan_out", "date": "2024-09-03", "enddate": "2025-01-01", "club": "São Paulo FC" },
+			{ "type": "loan_out", "date": "2023-07-27", "endDate": "2024-06-30", "club": "Watford" },
+			{ "type": "loan_out", "date": "2024-09-03", "endDate": "2025-01-01", "club": "São Paulo FC" },
 			{ "type": "left", "date": "2025-06-30", "club": "Preston North End" }
         ],
         "photos": {
@@ -398,7 +376,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2020-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2025-02-04", "enddate": "2025-06-30", "club": "Spennymoor Town" },
+			{ "type": "loan_out", "date": "2025-02-04", "endDate": "2025-06-30", "club": "Spennymoor Town" },
 			{ "type": "left", "date": "2025-06-30", "club": "Morpeth Town" }
         ],
         "photos": {
@@ -420,7 +398,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2020-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2024-08-29", "enddate": "2025-01-13", "club": "Newport County" },
+			{ "type": "loan_out", "date": "2024-08-29", "endDate": "2025-01-13", "club": "Newport County" },
 			{ "type": "left", "date": "2025-01-30", "club": "Hartlepool United" }
         ],
         "photos": {
@@ -467,9 +445,9 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2020-08-24", "club": "Burnley" },
-			{ "type": "loan_out", "date": "2022-01-31", "enddate": "2022-06-30", "club": "Queens Park Rangers" },
-			{ "type": "loan_out", "date": "2022-07-12", "enddate": "2023-06-30", "club": "Reading" },
-			{ "type": "loan_out", "date": "2023-09-01", "enddate": "2024-06-30", "club": "Sheffield Wednesday" },
+			{ "type": "loan_out", "date": "2022-01-31", "endDate": "2022-06-30", "club": "Queens Park Rangers" },
+			{ "type": "loan_out", "date": "2022-07-12", "endDate": "2023-06-30", "club": "Reading" },
+			{ "type": "loan_out", "date": "2023-09-01", "endDate": "2024-06-30", "club": "Sheffield Wednesday" },
 			{ "type": "left", "date": "2024-06-30", "club": "Derby County" }
         ],
         "photos": {
@@ -494,12 +472,12 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2019-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2022-01-29", "enddate": "2022-06-30", "club": "Hartlepool United" },
-			{ "type": "loan_out", "date": "2023-01-06", "enddate": "2023-06-30", "club": "Exeter City" },
-			{ "type": "loan_out", "date": "2023-08-31", "enddate": "2024-01-14", "club": "Crewe Alexandra" },
-			{ "type": "loan_out", "date": "2024-08-30", "enddate": "2025-06-30", "club": "Milton Keynes Dons" },
-			{ "type": "loan_out", "date": "2025-07-29", "enddate": "2026-01-05", "club": "Leyton Orient" },
-			{ "type": "loan_out", "date": "2026-01-13", "enddate": "2026-06-30", "club": "Bradford City" },
+			{ "type": "loan_out", "date": "2022-01-29", "endDate": "2022-06-30", "club": "Hartlepool United" },
+			{ "type": "loan_out", "date": "2023-01-06", "endDate": "2023-06-30", "club": "Exeter City" },
+			{ "type": "loan_out", "date": "2023-08-31", "endDate": "2024-01-14", "club": "Crewe Alexandra" },
+			{ "type": "loan_out", "date": "2024-08-30", "endDate": "2025-06-30", "club": "Milton Keynes Dons" },
+			{ "type": "loan_out", "date": "2025-07-29", "endDate": "2026-01-05", "club": "Leyton Orient" },
+			{ "type": "loan_out", "date": "2026-01-13", "endDate": "2026-06-30", "club": "Bradford City" },
 			{ "type": "left", "date": "2026-07-16", "club": "Crewe Alexandra" }
         ],
         "photos": {
@@ -548,8 +526,8 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2014-08-09", "club": "Nottingham Forest" },
-			{ "type": "loan_out", "date": "2014-08-09", "enddate": "2015-06-30", "club": "Nottingham Forest" },
-			{ "type": "loan_out", "date": "2023-01-31", "enddate": "2023-06-30", "club": "Hull City" },
+			{ "type": "loan_out", "date": "2014-08-09", "endDate": "2015-06-30", "club": "Nottingham Forest" },
+			{ "type": "loan_out", "date": "2023-01-31", "endDate": "2023-06-30", "club": "Hull City" },
 			{ "type": "left", "date": "2023-07-29", "club": "Leeds United" }
         ],
         "photos": {
@@ -574,12 +552,12 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2016-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2019-08-16", "enddate": "2020-01-10", "club": "Stevenage" },
-			{ "type": "loan_out", "date": "2020-01-28", "enddate": "2020-06-30", "club": "Mansfield Town" },
-			{ "type": "loan_out", "date": "2020-08-24", "enddate": "2021-06-30", "club": "Plymouth Argyle" },
-			{ "type": "loan_out", "date": "2021-08-09", "enddate": "2022-06-30", "club": "Wigan Athletic" },
-			{ "type": "loan_out", "date": "2022-09-01", "enddate": "2023-06-30", "club": "Peterborough United" },
-			{ "type": "loan_out", "date": "2023-07-27", "enddate": "2024-06-30", "club": "Wigan Athletic" },
+			{ "type": "loan_out", "date": "2019-08-16", "endDate": "2020-01-10", "club": "Stevenage" },
+			{ "type": "loan_out", "date": "2020-01-28", "endDate": "2020-06-30", "club": "Mansfield Town" },
+			{ "type": "loan_out", "date": "2020-08-24", "endDate": "2021-06-30", "club": "Plymouth Argyle" },
+			{ "type": "loan_out", "date": "2021-08-09", "endDate": "2022-06-30", "club": "Wigan Athletic" },
+			{ "type": "loan_out", "date": "2022-09-01", "endDate": "2023-06-30", "club": "Peterborough United" },
+			{ "type": "loan_out", "date": "2023-07-27", "endDate": "2024-06-30", "club": "Wigan Athletic" },
 			{ "type": "left", "date": "2024-06-30", "club": "Cambridge United" }
         ],
         "photos": {
@@ -652,7 +630,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2019-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2022-09-01", "enddate": "2023-06-30", "club": "Hamilton Academical" },
+			{ "type": "loan_out", "date": "2022-09-01", "endDate": "2023-06-30", "club": "Hamilton Academical" },
 			{ "type": "left", "date": "2024-06-30", "club": "South Shields" }
         ],
         "photos": {
@@ -676,7 +654,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2018-07-01", "club": "Sparta Prague" },
-			{ "type": "loan_out", "date": "2022-09-01", "enddate": "2023-01-01", "club": "Manchester United" },
+			{ "type": "loan_out", "date": "2022-09-01", "endDate": "2023-01-01", "club": "Manchester United" },
 			{ "type": "left", "date": "2025-08-07", "club": "Burnley" }
         ],
         "photos": {
@@ -724,9 +702,9 @@
         "position": "DEF",
         "careerStatus": "partial",
         "movements": [
-			{ "type": "loan_in", "date": "2022-01-31", "enddate": "2022-06-30", "club": "Aston Villa" },
+			{ "type": "loan_in", "date": "2022-01-31", "endDate": "2022-06-30", "club": "Aston Villa" },
 			{ "type": "joined", "date": "2022-07-01", "club": "Aston Villa" },
-			{ "type": "loan_out", "date": "2025-08-26", "enddate": "2026-06-30", "club": "Middlesbrough" },
+			{ "type": "loan_out", "date": "2025-08-26", "endDate": "2026-06-30", "club": "Middlesbrough" },
 			{ "type": "left", "date": "2026-07-01", "club": "Hull City" }
         ],
         "photos": {
@@ -751,9 +729,9 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2016-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2021-08-27", "enddate": "2021-12-31", "club": "Aberdeen" },
-			{ "type": "loan_out", "date": "2022-01-31", "enddate": "2022-06-30", "club": "Mansfield Town" },
-			{ "type": "loan_out", "date": "2022-09-01", "enddate": "2022-12-31", "club": "Colchester United" },
+			{ "type": "loan_out", "date": "2021-08-27", "endDate": "2021-12-31", "club": "Aberdeen" },
+			{ "type": "loan_out", "date": "2022-01-31", "endDate": "2022-06-30", "club": "Mansfield Town" },
+			{ "type": "loan_out", "date": "2022-09-01", "endDate": "2022-12-31", "club": "Colchester United" },
 			{ "type": "left", "date": "2023-06-30", "club": "Toronto" }
         ],
         "photos": {
@@ -778,9 +756,9 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2020-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2023-08-07", "enddate": "2023-12-31", "club": "Northampton Town" },
-			{ "type": "loan_out", "date": "2024-08-29", "enddate": "2025-06-30", "club": "Chesterfield" },
-			{ "type": "loan_out", "date": "2026-01-26", "enddate": "2026-06-30", "club": "Ayr United" },
+			{ "type": "loan_out", "date": "2023-08-07", "endDate": "2023-12-31", "club": "Northampton Town" },
+			{ "type": "loan_out", "date": "2024-08-29", "endDate": "2025-06-30", "club": "Chesterfield" },
+			{ "type": "loan_out", "date": "2026-01-26", "endDate": "2026-06-30", "club": "Ayr United" },
 			{ "type": "left", "date": "2026-06-30", "club": "Hartlepool United" }
         ],
         "photos": {
@@ -804,7 +782,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2020-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2024-02-01", "enddate": "2024-06-30", "club": "Annan Athletic" },
+			{ "type": "loan_out", "date": "2024-02-01", "endDate": "2024-06-30", "club": "Annan Athletic" },
 			{ "type": "left", "date": "2024-06-30", "club": "Ashington" }
         ],
         "photos": {
@@ -851,9 +829,9 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2008-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2012-03-05", "enddate": "2012-06-30", "club": "Gateshead" },
-			{ "type": "loan_out", "date": "2012-08-31", "enddate": "2013-01-04", "club": "St Mirren" },
-			{ "type": "loan_out", "date": "2013-01-31", "enddate": "2013-06-30", "club": "St Mirren" },
+			{ "type": "loan_out", "date": "2012-03-05", "endDate": "2012-06-30", "club": "Gateshead" },
+			{ "type": "loan_out", "date": "2012-08-31", "endDate": "2013-01-04", "club": "St Mirren" },
+			{ "type": "loan_out", "date": "2013-01-31", "endDate": "2013-06-30", "club": "St Mirren" },
 			{ "type": "left", "date": "2024-06-30", "club": "Wigan Athletic" }
         ],
         "photos": {
@@ -878,7 +856,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2020-07-07", "club": "AFC Bournemouth" },
-			{ "type": "loan_out", "date": "2023-08-25", "enddate": "2024-06-30", "club": "Southampton" },
+			{ "type": "loan_out", "date": "2023-08-25", "endDate": "2024-06-30", "club": "Southampton" },
 			{ "type": "left", "date": "2024-08-30", "club": "Southampton" }
         ],
         "photos": {
@@ -903,8 +881,8 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2014-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2017-01-09", "enddate": "2017-06-30", "club": "Kilmarnock" },
-			{ "type": "loan_out", "date": "2017-07-21", "enddate": "2018-06-30", "club": "Blackpool" },
+			{ "type": "loan_out", "date": "2017-01-09", "endDate": "2017-06-30", "club": "Kilmarnock" },
+			{ "type": "loan_out", "date": "2017-07-21", "endDate": "2018-06-30", "club": "Blackpool" },
 			{ "type": "left", "date": "2025-07-18", "club": "Leeds United" }
         ],
         "photos": {
@@ -973,7 +951,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2021-07-01", "club": "Tranmere Rovers" },
-			{ "type": "loan_out", "date": "2023-08-26", "enddate": "2024-01-13", "club": "Forfar Athletic" },
+			{ "type": "loan_out", "date": "2023-08-26", "endDate": "2024-01-13", "club": "Forfar Athletic" },
 			{ "type": "left", "date": "2024-01-25", "club": "Forres Mechanics" }
         ],
         "photos": {
@@ -1015,8 +993,8 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2022-07-06", "club": "Kilmarnock" },
-			{ "type": "loan_out", "date": "2025-01-16", "enddate": "2025-06-30", "club": "Carlisle United" },
-			{ "type": "loan_out", "date": "2026-01-23", "enddate": "2026-06-30", "club": "Airdrieonians" },
+			{ "type": "loan_out", "date": "2025-01-16", "endDate": "2025-06-30", "club": "Carlisle United" },
+			{ "type": "loan_out", "date": "2026-01-23", "endDate": "2026-06-30", "club": "Airdrieonians" },
 			{ "type": "left", "date": "2026-06-30", "club": "York City" }
         ],
         "photos": {
@@ -1102,8 +1080,8 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2019-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2023-01-26", "enddate": "2023-06-30", "club": "Hamilton Academical" },
-			{ "type": "loan_out", "date": "2024-01-25", "enddate": "2024-04-24", "club": "South Shields" },
+			{ "type": "loan_out", "date": "2023-01-26", "endDate": "2023-06-30", "club": "Hamilton Academical" },
+			{ "type": "loan_out", "date": "2024-01-25", "endDate": "2024-04-24", "club": "South Shields" },
 			{ "type": "left", "date": "2024-06-30", "club": "Dagenham & Redbridge" }
         ],
         "photos": {
@@ -1146,8 +1124,8 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2023-01-01", "club": "Central Coast Mariners" },
-			{ "type": "loan_out", "date": "2023-01-12", "enddate": "2023-06-30", "club": "Heart of Midlothian" },
-			{ "type": "loan_out", "date": "2023-08-08", "enddate": "2024-06-30", "club": "Volendam" },
+			{ "type": "loan_out", "date": "2023-01-12", "endDate": "2023-06-30", "club": "Heart of Midlothian" },
+			{ "type": "loan_out", "date": "2023-08-08", "endDate": "2024-06-30", "club": "Volendam" },
 			{ "type": "left", "date": "2025-08-29", "club": "Sparta Prague" }
         ],
         "photos": {
@@ -1240,8 +1218,8 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2021-01-08", "club": "mackems" },
-			{ "type": "loan_out_dual", "date": "2023-01-31", "enddate": "2023-06-30", "club": "Tranmere Rovers" },
-			{ "type": "loan_out", "date": "2023-08-24", "enddate": "2024-02-01", "club": "St Johnstone" },
+			{ "type": "loan_out_dual", "date": "2023-01-31", "endDate": "2023-06-30", "club": "Tranmere Rovers" },
+			{ "type": "loan_out", "date": "2023-08-24", "endDate": "2024-02-01", "club": "St Johnstone" },
 			{ "type": "left", "date": "2025-06-30", "club": "FC Halifax Town" }
         ],
         "photos": {
@@ -1415,8 +1393,8 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2021-03-19", "club": "RB Leipzig" },
-			{ "type": "loan_out", "date": "2022-01-31", "enddate": "2022-03-28", "club": "Shrewsbury Town" },
-			{ "type": "loan_out", "date": "2023-07-01", "enddate": "2024-06-30", "club": "Newport County" },
+			{ "type": "loan_out", "date": "2022-01-31", "endDate": "2022-03-28", "club": "Shrewsbury Town" },
+			{ "type": "loan_out", "date": "2023-07-01", "endDate": "2024-06-30", "club": "Newport County" },
 			{ "type": "left", "date": "2024-06-30", "club": "Hartlepool United" }
         ],
         "photos": {
@@ -1461,7 +1439,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2020-08-20", "club": "Liverpool" },
-			{ "type": "loan_out", "date": "2023-01-30", "enddate": "2023-06-30", "club": "Darlington" },
+			{ "type": "loan_out", "date": "2023-01-30", "endDate": "2023-06-30", "club": "Darlington" },
 			{ "type": "left", "date": "2023-06-30", "club": "Workington AFC" }
         ],
         "photos": {
@@ -1508,9 +1486,9 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2020-10-05", "club": "Deportivo Municipal" },
-			{ "type": "loan_out", "date": "2021-08-31", "enddate": "2021-12-31", "club": "Doncaster Rovers" },
-			{ "type": "loan_out", "date": "2022-03-12", "enddate": "2022-12-31", "club": "Universitario" },
-			{ "type": "loan_out", "date": "2023-09-05", "enddate": "2024-06-30", "club": "Voždovac" },
+			{ "type": "loan_out", "date": "2021-08-31", "endDate": "2021-12-31", "club": "Doncaster Rovers" },
+			{ "type": "loan_out", "date": "2022-03-12", "endDate": "2022-12-31", "club": "Universitario" },
+			{ "type": "loan_out", "date": "2023-09-05", "endDate": "2024-06-30", "club": "Voždovac" },
 			{ "type": "left", "date": "2024-06-30", "club": "Atlético Grau" }
         ],
         "photos": {
@@ -1554,7 +1532,7 @@
         "position": "FWD",
         "careerStatus": "partial",
         "movements": [
-			{ "type": "loan_in", "date": "2021-08-31", "enddate": "2022-12-31", "club": "Santos Laguna" }
+			{ "type": "loan_in", "date": "2021-08-31", "endDate": "2022-12-31", "club": "Santos Laguna" }
         ],
         "photos": {
             "official": "https://i.ibb.co/99RpQjTT/nufc-placeholder.png",
@@ -1636,8 +1614,8 @@
         }
     },
     {
-        "id": "u18-archie-dodds",
-        "name": "Archie Dodds",
+        "id": "u18-archie-podds",
+        "name": "Archie Podds",
         "nationality": "England",
         "dob": "2007-11-03",
         "position": "MID",

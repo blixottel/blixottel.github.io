@@ -38,7 +38,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2020-07-01", "club": "mackems" },
-			{ "type": "loan_out", "date": "2025-01-08", "enddate": "2025-06-30", "club": "Middlesbrough" },
+			{ "type": "loan_out", "date": "2025-01-08", "endDate": "2025-06-30", "club": "Middlesbrough" },
 			{ "type": "left", "date": "2025-06-30", "club": "Chester-Le-Street Town" }
         ],
         "photos": {

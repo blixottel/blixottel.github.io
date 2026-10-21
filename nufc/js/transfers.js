@@ -23,9 +23,19 @@ const TRANSFER_TYPES = {
 };
 const SPELL_TYPES = new Set(['loan_out', 'loan_out_dual', 'loan_in', 'trial_in', 'youth']);
 
+// The end of a loan, shown as its own row (switchable with the "Show loan returns" toggle).
+// from = the movement type that produces it. The club is the same club as the loan's.
+const RETURN_TYPES = {
+  loan_return:   { from: 'loan_out',      label: 'Loan return',    dir: 'in',  cls: 'guest-tag loan-tag',     prep: 'from' },
+  dual_return:   { from: 'loan_out_dual', label: 'Dual reg. ended', dir: 'in', cls: 'guest-tag loan-tag',     prep: 'from' },
+  loan_in_end:   { from: 'loan_in',       label: 'Loan ended',     dir: 'out', cls: 'guest-tag incoming-tag', prep: 'to' },
+};
+const RETURN_BY_SOURCE = {};
+Object.keys(RETURN_TYPES).forEach(k => { RETURN_BY_SOURCE[RETURN_TYPES[k].from] = k; });
+
 const trEsc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const trDMY = iso => (iso ? iso.split('-').reverse().join('/') : '');
-const trState = { rows: [], seasons: [], dir: 'all', newestFirst: true };
+const trState = { rows: [], seasons: [], dir: 'all', newestFirst: true, showReturns: true };
 
 function seasonFor(ms, seasons) {
   if (ms === null) return null;
@@ -41,14 +51,38 @@ function squadAt(player, season, rosterMerged) {
   return normSquad(squad);
 }
 
+// True if the player permanently left (or, for a loan_in, signed permanently) during the loan, so they
+// never actually went back: no return row is wanted then.
+function endedByExit(p, m, endMs) {
+  const startMs = looseDate(m.date, false);
+  const exits = m.type === 'loan_in' ? ['joined'] : ['left', 'retired'];
+  return (p.movements || []).some(x => {
+    if (!exits.includes(x.type)) return false;
+    const d = looseDate(x.date, false);
+    return d !== null && (startMs === null || d >= startMs) && d <= endMs;
+  });
+}
+
 function buildRows(master, seasons, rosterMerged) {
   const rows = [];
   master.forEach(p => {
     (p.movements || []).forEach(m => {
+      const retKey = RETURN_BY_SOURCE[m.type];
+      const retEnd = m.endDate || '';
+      const retMs = retKey && retEnd ? looseDate(retEnd, true) : null;
+      if (retMs !== null && !endedByExit(p, m, retMs)) {
+        const rt = RETURN_TYPES[retKey];
+        const season = seasonFor(retMs, seasons);
+        rows.push({
+          player: p, type: retKey, t: rt, date: retEnd, ms: retMs, season, isReturn: true,
+          squad: squadAt(p, season, rosterMerged), club: m.club || '', note: '',
+          details: `Began ${trDMY(m.date)}`,
+        });
+      }
       const t = TRANSFER_TYPES[m.type] || { label: m.type || 'Movement', dir: 'other', cls: 'guest-tag', prep: '' };
       const ms = looseDate(m.date, false);
       const season = seasonFor(ms, seasons);
-      const endDate = m.endDate || m.enddate || m.end_date || '';
+      const endDate = m.endDate || '';
       rows.push({
         player: p, type: m.type, t, date: m.date || '', ms, season,
         squad: squadAt(p, season, rosterMerged), club: m.club || '', note: m.note || '',
@@ -74,6 +108,7 @@ function renderTransfers() {
   const seasonId = document.getElementById('tr-season').value;
 
   const list = trState.rows.filter(r =>
+    (trState.showReturns || !r.isReturn) &&
     (trState.dir === 'all' || r.t.dir === trState.dir) &&
     (!type || r.type === type) &&
     (!squad || r.squad === squad) &&
@@ -136,8 +171,9 @@ async function initTransfers() {
     trState.seasons = seasons;
     trState.rows = buildRows(master, seasons, rosterMerged);
 
-    const types = Object.keys(TRANSFER_TYPES).filter(k => trState.rows.some(r => r.type === k));
-    fillSelect('tr-type', 'All movements', types.map(k => [k, TRANSFER_TYPES[k].label]));
+    const ALL_TYPES = Object.assign({}, TRANSFER_TYPES, RETURN_TYPES);
+    const types = Object.keys(ALL_TYPES).filter(k => trState.rows.some(r => r.type === k));
+    fillSelect('tr-type', 'All movements', types.map(k => [k, ALL_TYPES[k].label]));
     const squads = SQUAD_ORDER.concat(Object.keys(SQUAD_LABEL)).filter((k, i, a) => a.indexOf(k) === i && trState.rows.some(r => r.squad === k));
     fillSelect('tr-squad', 'All squads', squads.map(k => [k, SQUAD_LABEL[k] || k]));
     fillSelect('tr-season', 'All seasons', seasons.map(s => [s.id, s.label || s.id]));
@@ -151,7 +187,18 @@ async function initTransfers() {
     });
     ['tr-type', 'tr-squad', 'tr-season'].forEach(id => document.getElementById(id).addEventListener('change', renderTransfers));
     document.getElementById('tr-search').addEventListener('input', renderTransfers);
-    document.getElementById('tr-sort').addEventListener('click', e => {
+    // "Show loan returns" toggle, added next to the sort button. On by default, not remembered between visits.
+    const sortBtn = document.getElementById('tr-sort');
+    const toggle = document.createElement('label');
+    toggle.className = 'tr-toggle';
+    toggle.style.cssText = 'display:inline-flex;align-items:center;gap:6px;margin-left:12px;cursor:pointer;white-space:nowrap';
+    toggle.innerHTML = '<input type="checkbox" id="tr-returns" checked> Show loan returns';
+    sortBtn.insertAdjacentElement('afterend', toggle);
+    toggle.querySelector('input').addEventListener('change', e => {
+      trState.showReturns = e.target.checked;
+      renderTransfers();
+    });
+    sortBtn.addEventListener('click', e => {
       trState.newestFirst = !trState.newestFirst;
       e.currentTarget.textContent = trState.newestFirst ? 'Newest first ↓' : 'Oldest first ↑';
       renderTransfers();
