@@ -901,7 +901,9 @@ function buildSquadSection(squadKey, allSquadPlayers, fixtureData, playersById, 
     }
     return { p, badges };
   };
-  const regularTop = [...activePlayers, ...leftPlayers];
+  // Trialists are in the matchday squad (that's why they're on the roster at all), so they sit with the
+  // main players, marked by their "Trialist" pill — not in "Not in the matchday squad".
+  const regularTop = [...activePlayers, ...leftPlayers, ...trialistPlayers];
   const positionEntries = {};
   POSITION_ORDER.forEach(pos => {
     const regular = regularTop.filter(p => p.position === pos).sort(byNumber);
@@ -919,8 +921,7 @@ function buildSquadSection(squadKey, allSquadPlayers, fixtureData, playersById, 
   section.appendChild(buildPlayerInfoGrid(positionEntries));
 
   // Everyone who isn't part of the current matchday picture — on loan (with
-  // no appearances yet), incoming, season-long injured, not selected, or a
-  // trialist — shown together, muted, right after the active squad and
+  // no appearances yet), incoming, season-long injured or not selected — shown together, muted, right after the active squad and
   // before the fixture-by-fixture detail, rather than buried at the very
   // bottom of the page.
   const notPlaying = buildNotPlayingSection([
@@ -929,7 +930,6 @@ function buildSquadSection(squadKey, allSquadPlayers, fixtureData, playersById, 
     { kind: 'injured-season', players: injuredSeasonPlayers },
     { kind: 'pregnancy-leave', players: pregnancyLeavePlayers },
     { kind: 'not-selected-season', players: notSelectedPlayers },
-    { kind: 'trialist', players: trialistPlayers },
   ]);
   if (notPlaying) section.appendChild(notPlaying);
 

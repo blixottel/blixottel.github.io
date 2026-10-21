@@ -9,7 +9,7 @@
         "movements": [
 			{ "type": "youth", "date": "2022-08-20", "endDate": "2023-06-30" },
 			{ "type": "joined", "date": "2023-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2025-08-10", "enddate": "2025-12-31", "club": "Coleraine" }
+			{ "type": "loan_out", "date": "2025-08-10", "endDate": "2025-12-31", "club": "Coleraine" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/6TnqTKdu6kmTj4HFXomb7j/4916f069f32921ce62c8a0de3ad64954/Aidan_Harris-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
@@ -55,8 +55,8 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2022-07-01", "club": "Galway United" },
-			{ "type": "loan_out", "date": "2025-01-20", "enddate": "2025-06-30", "club": "Bolton Wanderers" },
-			{ "type": "loan_out", "date": "2026-08-11", "enddate": "2027-06-30", "club": "1. FC Kaiserslautern" }
+			{ "type": "loan_out", "date": "2025-01-20", "endDate": "2025-06-30", "club": "Bolton Wanderers" },
+			{ "type": "loan_out", "date": "2026-08-11", "endDate": "2027-06-30", "club": "1. FC Kaiserslautern" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/3dfjTQYrx2TTDysx8jmrJL/646dc5bbca6276dd85b26138a43ccf41/26_04_08_NUFC_ECOMM_HOME_37_A_MURPHY_227_KNOX-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
@@ -218,10 +218,10 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2023-01-01", "club": "West Ham United" },
-			{ "type": "loan_out", "date": "2023-08-04", "enddate": "2024-06-30", "club": "Swansea City" },
-			{ "type": "loan_out", "date": "2024-08-30", "enddate": "2025-06-30", "club": "Queens Park Rangers" },
-			{ "type": "loan_out", "date": "2026-01-13", "enddate": "2026-06-30", "club": "Bradford City" },
-			{ "type": "loan_out", "date": "2026-07-09", "enddate": "2027-06-30", "club": "Luton Town" }
+			{ "type": "loan_out", "date": "2023-08-04", "endDate": "2024-06-30", "club": "Swansea City" },
+			{ "type": "loan_out", "date": "2024-08-30", "endDate": "2025-06-30", "club": "Queens Park Rangers" },
+			{ "type": "loan_out", "date": "2026-01-13", "endDate": "2026-06-30", "club": "Bradford City" },
+			{ "type": "loan_out", "date": "2026-07-09", "endDate": "2027-06-30", "club": "Luton Town" }
         ],
         "photos": {
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/441024.png",
@@ -267,7 +267,7 @@
         "careerStatus": "partial",
         "movements": [
 			{ "type": "joined", "date": "2017-07-19", "club": "Norwich City" },
-			{ "type": "loan_out", "date": "2019-08-08", "enddate": "2020-06-30", "club": "Sheffield Wednesday" }
+			{ "type": "loan_out", "date": "2019-08-08", "endDate": "2020-06-30", "club": "Sheffield Wednesday" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/2exOqRMPYvbMPySFixOR02/0ba482f924c1777d33d78c32341e9164/26_04_08_NUFC_ECOMM_HOME_23_MURPHY_255_EDIT-3-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
@@ -336,7 +336,7 @@
         "position": "MID",
         "careerStatus": "partial",
         "movements": [
-			{ "type": "loan_in", "date": "2021-02-01", "enddate": "2021-06-30", "club": "Arsenal" },
+			{ "type": "loan_in", "date": "2021-02-01", "endDate": "2021-06-30", "club": "Arsenal" },
 			{ "type": "joined", "date": "2021-08-13", "club": "Arsenal" }
         ],
         "photos": {
@@ -379,7 +379,7 @@
         "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2023-09-01", "club": "Wolverhampton Wanderers" },
-			{ "type": "loan_out", "date": "2026-09-04", "enddate": "2027-06-30", "club": "FC Arouca" }
+			{ "type": "loan_out", "date": "2026-09-04", "endDate": "2027-06-30", "club": "FC Arouca" }
         ],
         "photos": {
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/553746.png",
@@ -401,7 +401,7 @@
         "position": "DEF",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "loan_in", "date": "2023-08-22", "enddate": "2024-06-30", "club": "Chelsea" },
+			{ "type": "loan_in", "date": "2023-08-22", "endDate": "2024-06-30", "club": "Chelsea" },
 			{ "type": "joined", "date": "2024-07-01", "club": "Chelsea" }
         ],
         "photos": {
@@ -576,7 +576,7 @@
         "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2024-07-20", "club": "FK Jedinstvo Ub" },
-			{ "type": "loan_out", "date": "2024-09-02", "enddate": "2025-06-30", "club": "Willem II Tilburg" }
+			{ "type": "loan_out", "date": "2024-09-02", "endDate": "2025-06-30", "club": "Willem II Tilburg" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/NqUGVs2kR3UMtoLr0gaBu/70135aff70bff08a5456206f88f9fdac/Miodrag_Pivas536-removebg-preview-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
@@ -622,7 +622,7 @@
         "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2025-08-30", "club": "VfB Stuttgart" },
-			{ "type": "loan_out", "date": "2026-09-01", "enddate": "2027-06-30", "club": "Juventus" }
+			{ "type": "loan_out", "date": "2026-09-01", "endDate": "2027-06-30", "club": "Juventus" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/3WIZhSqXFMieqRCuqxiyj/25e92943b3fbe417d55e65f90d0e84e7/Nick_Woltemade-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
@@ -668,8 +668,8 @@
         "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2024-07-01", "club": "Nottingham Forest" },
-			{ "type": "loan_out", "date": "2025-08-12", "enddate": "2026-06-30", "club": "Sevilla FC" },
-			{ "type": "loan_out", "date": "2026-07-01", "enddate": "2027-06-30", "club": "Sevilla FC" }
+			{ "type": "loan_out", "date": "2025-08-12", "endDate": "2026-06-30", "club": "Sevilla FC" },
+			{ "type": "loan_out", "date": "2026-07-01", "endDate": "2027-06-30", "club": "Sevilla FC" }
         ],
         "photos": {
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/111452.png",
@@ -734,9 +734,9 @@
         "position": "FWD",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "youth", "date": "2022-10-23", "endDate": "2023-06-30" },
+			{ "type": "youth", "date": "2022-10-15", "endDate": "2023-06-30" },
 			{ "type": "joined", "date": "2023-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2026-09-02", "enddate": "2027-06-30", "club": "Wolverhampton Wanderers" }
+			{ "type": "loan_out", "date": "2026-09-02", "endDate": "2027-06-30", "club": "Wolverhampton Wanderers" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/3Gr2fHRv58uNUybKU3olT4/00ea9ec80ef625e1aa9f44b02c5bc00f/Sean_Neave-2-removebg-preview-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
@@ -829,7 +829,7 @@
         "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2023-09-01", "club": "Birmingham City" },
-			{ "type": "loan_out", "date": "2025-09-01", "enddate": "2026-06-30", "club": "FC Lorient" }
+			{ "type": "loan_out", "date": "2025-09-01", "endDate": "2026-06-30", "club": "FC Lorient" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/1x5iagWf0mpQdrbBjbTl4f/1d600d5e91bc28d9887700d304626f21/Trevan_Sanusi758-2-2-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
@@ -986,7 +986,7 @@
         "movements": [
 			{ "type": "youth", "date": "2022-08-20", "endDate": "2023-06-30" },
 			{ "type": "joined", "date": "2023-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2026-08-17", "enddate": "2027-06-30", "club": "Swindon Town" }
+			{ "type": "loan_out", "date": "2026-08-17", "endDate": "2027-06-30", "club": "Swindon Town" }
         ],
         "photos": {
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1019167-1699385849.jpg?lm=4711",
@@ -1008,9 +1008,9 @@
         "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2025-07-01", "club": "Málaga CF" },
-			{ "type": "loan_out", "date": "2025-08-01", "enddate": "2025-12-31", "club": "KVC Westerlo" },
-			{ "type": "loan_out", "date": "2026-01-01", "enddate": "2026-06-30", "club": "Cádiz CF" },
-			{ "type": "loan_out", "date": "2026-07-11", "enddate": "2027-06-30", "club": "Cádiz CF" }
+			{ "type": "loan_out", "date": "2025-08-01", "endDate": "2025-12-31", "club": "KVC Westerlo" },
+			{ "type": "loan_out", "date": "2026-01-01", "endDate": "2026-06-30", "club": "Cádiz CF" },
+			{ "type": "loan_out", "date": "2026-07-11", "endDate": "2027-06-30", "club": "Cádiz CF" }
         ],
         "photos": {
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1178393-1725885968.jpg?lm=4711",
@@ -1108,7 +1108,7 @@
         "position": "MID",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "youth", "date": "2023-08-12", "endDate": "2024-06-30" },
+			{ "type": "youth", "date": "2023-04-01", "endDate": "2024-06-30" },
 			{ "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" }
         ],
         "photos": {
@@ -1311,7 +1311,8 @@
         "position": "MID",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "joined", "date": "2024-08-17", "club": "Newcastle United Youth" }
+			{ "type": "youth", "date": "2023-01-07", "endDate": "2024-06-30" },
+			{ "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" }
         ],
         "photos": {
 			"official": "https://contentfulproxy.stadion.io/9ec6988xevcz/38JGEE0leYoTrOOSRaw8aW/d2de622f031608e93345c97aff8419b8/Mohamed_Waddani_2400px.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
@@ -1330,7 +1331,7 @@
         "movements": [
 			{ "type": "youth", "date": "2024-02-22", "endDate": "2025-06-30" },
 			{ "type": "joined", "date": "2025-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2026-10-03", "enddate": "2026-10-15", "club": "Newcastle Blue Star" }
+			{ "type": "loan_out", "date": "2026-10-03", "endDate": "2026-10-15", "club": "Newcastle Blue Star" }
         ],
         "photos": { }
     },
@@ -1343,7 +1344,7 @@
         "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2026-09-04", "club": "Gençlerbirliği SK" },
-			{ "type": "loan_out", "date": "2026-09-04", "enddate": "2027-06-30", "club": "Gençlerbirliği SK" }
+			{ "type": "loan_out", "date": "2026-09-04", "endDate": "2027-06-30", "club": "Gençlerbirliği SK" }
         ],
         "photos": {
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1489506-1776792881.jpeg?lm=4711",
@@ -1380,7 +1381,7 @@
         "careerStatus": "ongoing",
         "movements": [
 			{ "type": "joined", "date": "2024-07-01", "club": "Blackburn Rovers" },
-			{ "type": "loan_out", "date": "2026-08-29", "enddate": "2027-06-30", "club": "Notts County" }
+			{ "type": "loan_out", "date": "2026-08-29", "endDate": "2027-06-30", "club": "Notts County" }
         ],
         "photos": {
             "transfermarkt": "https://img.a.transfermarkt.technology/portrait/header/1081165-1762419106.jpg?lm=4711",
@@ -1423,8 +1424,8 @@
         "movements": [
 			{ "type": "youth", "date": "2023-10-10", "endDate": "2024-06-30" },
 			{ "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2025-08-22", "enddate": "2025-11-15", "club": "Ashington" },
-			{ "type": "loan_out_dual", "date": "2026-01-22", "enddate": "2026-06-30", "club": "Dunston UTS" }
+			{ "type": "loan_out", "date": "2025-08-22", "endDate": "2025-11-15", "club": "Ashington" },
+			{ "type": "loan_out_dual", "date": "2026-01-22", "endDate": "2026-06-30", "club": "Dunston UTS" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/5hy1ZGvGJ2n6NmUPat5Tg7/a6e3d02ee5ff9fe7c93f7fa433b1fa3a/Untitled_design-35-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
@@ -1443,7 +1444,7 @@
         "position": "DEF",
 		"careerStatus": "ongoing",
         "movements": [
- 			{ "type": "trial_in", "date": "2024-04-20", "enddate": "2024-05-04", "club": "Everton" },
+ 			{ "type": "trial_in", "date": "2024-04-20", "endDate": "2024-05-04", "club": "Everton" },
 			{ "type": "joined", "date": "2024-07-01", "club": "Everton" }
         ],
         "photos": {

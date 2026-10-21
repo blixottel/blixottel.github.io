@@ -299,12 +299,12 @@
                 "s-f8": { "status": "loan" }, "s-f9": { "status": "loan" }, "s-f10": { "status": "loan" }, "s-f11": { "status": "loan" }, "s-f12": { "status": "loan" }, "s-f13": { "status": "loan" },
                 "s-f14": { "status": "loan" }, "s-f15": { "status": "loan" }, "s-f16": { "status": "loan" }, "s-f17": { "status": "loan" }, "s-f18": { "status": "loan" }, "s-f19": { "status": "loan" },
                 "s-f20": { "status": "loan" }, "s-f21": { "status": "loan" }, "s-f22": { "status": "loan" }, "s-f23": { "status": "loan" }, "s-f24": { "status": "loan" }, "s-f25": { "status": "loan" },
-                "s-f26": { "status": "loan" }, "s-f27": { "status": "loan" }, "s-f28": { "status": "loan" }, "s-f29": { "status": "loan" }, "s-f30": { "status": "loan" }, "s-f31": { "status": "loan" },
-                "s-f32": { "status": "loan" }, "s-f33": { "status": "loan" }, "s-f34": { "status": "loan" }, "s-f35": { "status": "loan" }, "s-f36": { "status": "loan" }, "s-f37": { "status": "loan" },
-                "s-f38": { "status": "loan" }, "s-f39": { "status": "loan" }, "s-f40": { "status": "loan" }, "s-f41": { "status": "loan" }, "s-f42": { "status": "loan" }, "s-f43": { "status": "loan" },
-                "s-f44": { "status": "loan" }, "s-f45": { "status": "loan" }, "s-f46": { "status": "loan" }, "s-f47": { "status": "loan" }, "s-f48": { "status": "loan" }, "s-f49": { "status": "loan" },
-                "s-f50": { "status": "loan" }, "s-f51": { "status": "loan" }, "s-f52": { "status": "loan" }, "s-f53": { "status": "loan" }, "s-f54": { "status": "loan" }, "s-f55": { "status": "loan" },
-                "s-f56": { "status": "loan" }, "s-f57": { "status": "loan" }, "s-f58": { "status": "loan" }
+                "s-f26": { "status": "loan" }, "s-f27": { "status": "loan" }, "s-f28": { "status": "loan" }, "s-f29": { "status": "loan" }, "s-f32": { "status": "loan" }, "s-f33": { "status": "loan" },
+				"s-f34": { "status": "loan" }, "s-f35": { "status": "loan" }, "s-f36": { "status": "loan" }, "s-f37": { "status": "loan" }, "s-f38": { "status": "loan" }, "s-f39": { "status": "loan" },
+				"s-f40": { "status": "loan" }, "s-f41": { "status": "loan" }, "s-f42": { "status": "loan" }, "s-f43": { "status": "loan" }, "s-f44": { "status": "loan" }, "s-f45": { "status": "loan" },
+				"s-f46": { "status": "loan" }, "s-f47": { "status": "loan" }, "s-f48": { "status": "loan" }, "s-f49": { "status": "loan" }, "s-f50": { "status": "loan" }, "s-f51": { "status": "loan" },
+				"s-f52": { "status": "loan" }, "s-f53": { "status": "loan" }, "s-f54": { "status": "loan" }, "s-f55": { "status": "loan" }, "s-f56": { "status": "loan" }, "s-f57": { "status": "loan" },
+				"s-f58": { "status": "loan" }
             },
             "s-joe-willock": {
                 "s-f1": { "status": "injured" }, "s-f2": { "status": "unused_sub" }, "s-f3": { "status": "unused_sub" }, "s-f4": { "status": "sub_on", "minutes": 25, "xg": 0.09 }, "s-f5": { "status": "sub_on", "minutes": 28 },
@@ -408,16 +408,14 @@
             },
             "s-mark-gillespie": { },
             "s-matt-targett": {
-                "s-f1": { "status": "loan" }, "s-f2": { "status": "loan" }, "s-f3": { "status": "loan" }, "s-f4": { "status": "loan" }, "s-f5": { "status": "loan" }, "s-f6": { "status": "loan" }, "s-f7": { "status": "loan" },
-                "s-f8": { "status": "loan" }, "s-f9": { "status": "loan" }, "s-f10": { "status": "loan" }, "s-f11": { "status": "loan" }, "s-f12": { "status": "loan" }, "s-f13": { "status": "loan" },
-                "s-f14": { "status": "loan" }, "s-f15": { "status": "loan" }, "s-f16": { "status": "loan" }, "s-f17": { "status": "loan" }, "s-f18": { "status": "loan" }, "s-f19": { "status": "loan" },
-                "s-f20": { "status": "loan" }, "s-f21": { "status": "loan" }, "s-f22": { "status": "loan" }, "s-f23": { "status": "loan" }, "s-f24": { "status": "loan" }, "s-f25": { "status": "loan" },
-                "s-f26": { "status": "loan" }, "s-f27": { "status": "loan" }, "s-f28": { "status": "loan" }, "s-f29": { "status": "loan" }, "s-f30": { "status": "loan" }, "s-f31": { "status": "loan" },
-                "s-f32": { "status": "loan" }, "s-f33": { "status": "loan" }, "s-f34": { "status": "loan" }, "s-f35": { "status": "loan" }, "s-f36": { "status": "loan" }, "s-f37": { "status": "loan" },
-                "s-f38": { "status": "loan" }, "s-f39": { "status": "loan" }, "s-f40": { "status": "loan" }, "s-f41": { "status": "loan" }, "s-f42": { "status": "loan" }, "s-f43": { "status": "loan" },
-                "s-f44": { "status": "loan" }, "s-f45": { "status": "loan" }, "s-f46": { "status": "loan" }, "s-f47": { "status": "loan" }, "s-f48": { "status": "loan" }, "s-f49": { "status": "loan" },
-                "s-f50": { "status": "loan" }, "s-f51": { "status": "loan" }, "s-f52": { "status": "loan" }, "s-f53": { "status": "loan" }, "s-f54": { "status": "loan" }, "s-f55": { "status": "loan" },
-                "s-f56": { "status": "loan" }, "s-f57": { "status": "loan" }, "s-f58": { "status": "loan" }
+                "s-f3": { "status": "loan" }, "s-f4": { "status": "loan" }, "s-f5": { "status": "loan" }, "s-f6": { "status": "loan" }, "s-f7": { "status": "loan" }, "s-f8": { "status": "loan" }, "s-f9": { "status": "loan" },
+				"s-f10": { "status": "loan" }, "s-f11": { "status": "loan" }, "s-f12": { "status": "loan" }, "s-f13": { "status": "loan" }, "s-f14": { "status": "loan" }, "s-f15": { "status": "loan" }, "s-f16": { "status": "loan" },
+				"s-f17": { "status": "loan" }, "s-f18": { "status": "loan" }, "s-f19": { "status": "loan" }, "s-f20": { "status": "loan" }, "s-f21": { "status": "loan" }, "s-f22": { "status": "loan" }, "s-f23": { "status": "loan" },
+				"s-f24": { "status": "loan" }, "s-f25": { "status": "loan" }, "s-f26": { "status": "loan" }, "s-f27": { "status": "loan" }, "s-f28": { "status": "loan" }, "s-f29": { "status": "loan" }, "s-f30": { "status": "loan" },
+				"s-f31": { "status": "loan" }, "s-f32": { "status": "loan" }, "s-f33": { "status": "loan" }, "s-f34": { "status": "loan" }, "s-f35": { "status": "loan" }, "s-f36": { "status": "loan" }, "s-f37": { "status": "loan" },
+				"s-f38": { "status": "loan" }, "s-f39": { "status": "loan" }, "s-f40": { "status": "loan" }, "s-f41": { "status": "loan" }, "s-f42": { "status": "loan" }, "s-f43": { "status": "loan" }, "s-f44": { "status": "loan" },
+				"s-f45": { "status": "loan" }, "s-f46": { "status": "loan" }, "s-f47": { "status": "loan" }, "s-f48": { "status": "loan" }, "s-f49": { "status": "loan" }, "s-f50": { "status": "loan" }, "s-f51": { "status": "loan" },
+				"s-f52": { "status": "loan" }, "s-f53": { "status": "loan" }, "s-f54": { "status": "loan" }, "s-f55": { "status": "loan" }, "s-f56": { "status": "loan" }, "s-f57": { "status": "loan" }, "s-f58": { "status": "loan" }
             },
             "s-max-thompson": {
                 "s-f5": { "status": "unused_sub" }, "s-f9": { "status": "unused_sub" }, "s-f12": { "status": "unused_sub" }, "s-f16": { "status": "unused_sub" }, "s-f19": { "status": "unused_sub" },
@@ -538,7 +536,7 @@
                 "s-f4": { "status": "sub_on", "minutes": 25 }, "s-f5": { "status": "unused_sub" }, "s-f6": { "status": "sub_on", "minutes": 6 }, "s-f7": { "status": "start", "minutes": 90, "goals": 2, "xg": 1.99 },
                 "s-f8": { "status": "sub_on", "minutes": 23 }, "s-f9": { "status": "sub_on", "minutes": 17, "assists": 1, "xg": 0.05 }, "s-f10": { "status": "sub_on", "minutes": 1 },
                 "s-f11": { "status": "sub_on", "minutes": 4 }, "s-f12": { "status": "sub_on", "minutes": 5 }, "s-f13": { "status": "sub_on", "minutes": 4, "xg": 0.13 }, "s-f14": { "status": "sub_on", "minutes": 19 },
-                "s-f15": { "status": "sub_on", "minutes": 45, "xg": 0.11 }, "s-f23": { "status": "injured" }, "s-f17": { "status": "injured" }, "s-f18": { "status": "injured" }, "s-f19": { "status": "injured" },
+                "s-f15": { "status": "sub_on", "minutes": 45, "xg": 0.11 }, "s-f16": { "status": "injured" }, "s-f17": { "status": "injured" }, "s-f18": { "status": "injured" }, "s-f19": { "status": "injured" },
                 "s-f20": { "status": "injured" }, "s-f21": { "status": "injured" }, "s-f22": { "status": "injured" }, "s-f23": { "status": "injured" }, "s-f24": { "status": "injured" }, "s-f25": { "status": "injured" },
                 "s-f26": { "status": "injured" }, "s-f27": { "status": "injured" }, "s-f28": { "status": "injured" }, "s-f29": { "status": "injured" }, "s-f30": { "status": "injured" }, "s-f31": { "status": "injured" },
                 "s-f32": { "status": "injured" }, "s-f33": { "status": "injured" }, "s-f34": { "status": "injured" }, "s-f35": { "status": "unused_sub" }, "s-f36": { "status": "unused_sub" },

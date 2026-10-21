@@ -7,7 +7,7 @@
         "position": "DEF",
         "careerStatus": "complete",
         "movements": [
-			{ "type": "youth", "date": "2025-07-01", "enddate": "2026-06-30", "club": "Cheadle Town" },
+			{ "type": "youth", "date": "2025-07-01", "endDate": "2026-06-30", "club": "Cheadle Town" },
 			{ "type": "left", "date": "2026-06-30", "club": "Treaty United" }
         ],
         "photos": {
@@ -114,7 +114,7 @@
         "position": "GK",
         "careerStatus": "complete",
         "movements": [
-			{ "type": "loan_in", "date": "2025-09-04", "enddate": "2026-06-30", "club": "Chelsea" }
+			{ "type": "loan_in", "date": "2025-09-04", "endDate": "2026-06-30", "club": "Chelsea" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/7g5CAFNFnbNdkLjFJO1lJn/7809bf690655441e4a60a1b47171d5b2/Femke_2400px.png"
@@ -128,7 +128,7 @@
         "position": "FWD",
         "careerStatus": "complete",
         "movements": [
-			{ "type": "loan_in", "date": "2024-08-31", "enddate": "2025-06-30", "club": "Crystal Palace" }
+			{ "type": "loan_in", "date": "2024-08-31", "endDate": "2025-06-30", "club": "Crystal Palace" }
         ],
         "photos": {
             "official": "https://images.ctfassets.net/9ec6988xevcz/20WlJhHyIcuyM95K1bzim5/986bc2ff1766c5fa737f32d886062407/Isabella_Sibley_profile.png"
@@ -142,7 +142,7 @@
         "position": "DEF",
         "careerStatus": "complete",
         "movements": [
-			{ "type": "loan_in", "date": "2025-09-04", "enddate": "2026-06-30", "club": "Chelsea" }
+			{ "type": "loan_in", "date": "2025-09-04", "endDate": "2026-06-30", "club": "Chelsea" }
         ],
         "photos": {
             "official": "https://images.ctfassets.net/9ec6988xevcz/IM3fMXKK4NXgGmRWNKXZ5/6272ca9d523c4545abd2cbd4e9bf4830/JorjaFox.png"
@@ -157,7 +157,7 @@
 		"squadIfDobUnknown": "u21",
         "careerStatus": "complete",
         "movements": [
-			{ "type": "youth", "date": "2025-10-20", "enddate": "2026-06-30" },
+			{ "type": "youth", "date": "2025-10-20", "endDate": "2026-06-30" },
 			{ "type": "left", "date": "2026-07-01", "club": "" }
         ],
         "photos": {
@@ -202,7 +202,7 @@
         "position": "FWD",
         "careerStatus": "complete",
         "movements": [
-			{ "type": "loan_in", "date": "2025-01-18", "enddate": "2025-06-30", "club": "Manchester City" }
+			{ "type": "loan_in", "date": "2025-01-18", "endDate": "2025-06-30", "club": "Manchester City" }
         ],
         "photos": {
             "official": "https://images.ctfassets.net/9ec6988xevcz/1l4q8XdCJUzpTX4p24eHDC/8129e71bbcd47fa899a3fc8bb20fd7ce/PoppyPritchard_Soldier.png"
@@ -262,7 +262,7 @@
         "careerStatus": "complete",
         "movements": [
 			{ "type": "joined", "date": "2024-07-01", "club": "Sheffield United" },
-			{ "type": "loan_out", "date": "2025-01-31", "enddate": "2025-06-30", "club": "Nottingham Forest" },
+			{ "type": "loan_out", "date": "2025-01-31", "endDate": "2025-06-30", "club": "Nottingham Forest" },
 			{ "type": "left", "date": "2025-06-30", "club": "Hull City" }
         ],
         "photos": {
