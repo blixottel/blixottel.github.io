@@ -1514,7 +1514,7 @@
         "position": "MID",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "youth", "date": "2026-09-19", "endDate": "2027-06-30" }
+			{ "type": "youth", "date": "2026-09-19", "endDate": "2028-06-30" }
         ],
         "photos": { }
     },
@@ -1662,7 +1662,7 @@
         "position": "GK",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "youth", "date": "2025-02-01", "endDate": "2027-06-30" }
+			{ "type": "youth", "date": "2025-02-01", "endDate": "2027-06-30", "club": "Leyton Orient" }
         ],
         "photos": { }
     },
@@ -1785,7 +1785,20 @@
         "position": "DEF",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "youth", "date": "2026-07-24", "endDate": "2028-06-30", "club": "Ipswich Town" }
+			{ "type": "youth", "date": "2026-07-24", "endDate": "2029-06-30", "club": "Ipswich Town" }
+        ],
+        "photos": { }
+    },
+    {
+        "id": "u-josh-kenchington",
+        "name": "Josh Kenchington",
+        "nationality": "England",
+        "dob": "2010-10-07",
+		"squadIfDobUnknown": "Youth",
+        "position": "DEF",
+        "careerStatus": "ongoing",
+        "movements": [
+			{ "type": "youth", "date": "2025-11-07", "endDate": "2026-06-30", "club": "Barnsley" }
         ],
         "photos": { }
     },
@@ -1798,7 +1811,7 @@
         "position": "DEF",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "youth", "date": "2026-10-07", "endDate": "2028-06-30", "club": "Watford" }
+			{ "type": "youth", "date": "2026-10-07", "endDate": "2029-06-30", "club": "Watford" }
         ],
         "photos": { }
     }

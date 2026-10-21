@@ -60,8 +60,7 @@
             "s-anthony-elanga": {
                 "s-f1": { "status": "start", "minutes": 76, "goals": 1, "xg": 0.22 }, "s-f2": { "status": "sub_on", "minutes": 26 }, "s-f3": { "status": "start", "minutes": 82, "goals": 1, "xg": 0.20 },
 				"s-f4": { "status": "start", "minutes": 77, "yellowCard": true }, "s-f5": { "status": "sub_on", "minutes": 24, "xg": 0.22 }, "s-f6": { "status": "injured" }, "s-f7": { "status": "injured" },
-				"s-f8": { "status": "injured" },
-				"s-f9": { "status": "injured" }
+				"s-f8": { "status": "injured" }, "s-f9": { "status": "injured" }, "s-f10": { "status": "injured" }, "s-f11": { "status": "injured" }
             },
             "s-bazoumana-toure": {
                 "s-f1": { "status": "unused_sub" }, "s-f2": { "status": "start", "minutes": 45, "goals": 1, "xg": 0.98 }, "s-f3": { "status": "sub_on", "minutes": 1 }, "s-f4": { "status": "unused_sub" },
@@ -102,8 +101,7 @@
             "s-jacob-ramsey": {
                 "s-f1": { "status": "sub_on", "minutes": 34, "xg": 0.06, "yellowCard": true }, "s-f2": { "status": "start", "minutes": 90, "yellowCard": true }, "s-f3": { "status": "sub_on", "minutes": 8 },
 				"s-f4": { "status": "sub_on", "minutes": 27, "goals": 1, "xg": 0.11 }, "s-f5": { "status": "start", "minutes": 83, "yellowCard": true, "xg": 0.06 }, "s-f6": { "status": "unused_sub" },
-				"s-f7": { "status": "injured" }, "s-f8": { "status": "injured" },
-				"s-f9": { "status": "injured" }
+				"s-f7": { "status": "injured" }, "s-f8": { "status": "injured" }, "s-f9": { "status": "injured" }, "s-f10": { "status": "injured" }, "s-f11": { "status": "injured" }
             },
             "s-joelinton": {
                 "s-f1": { "status": "injured" }, "s-f2": { "status": "injured" }, "s-f3": { "status": "injured" }, "s-f4": { "status": "injured" }, "s-f5": { "status": "injured" }, "s-f6": { "status": "injured" },
@@ -187,8 +185,8 @@
             },
             "s-tino-livramento": {
                 "s-f1": { "status": "injured" }, "s-f2": { "status": "injured" }, "s-f3": { "status": "injured" }, "s-f4": { "status": "sub_on", "minutes": 1 }, "s-f5": { "status": "sub_on", "minutes": 45 },
-				"s-f6": { "status": "sub_on", "minutes": 32, "yellowCard": true }, "s-f7": { "status": "injured" }, "s-f8": { "status": "injured" },
-				"s-f9": { "status": "injured" }
+				"s-f6": { "status": "sub_on", "minutes": 32, "yellowCard": true }, "s-f7": { "status": "injured" }, "s-f8": { "status": "injured" }, "s-f9": { "status": "injured" }, "s-f10": { "status": "injured" },
+				"s-f11": { "status": "injured" }, "s-f12": { "status": "injured" }
             },
             "s-vakhtang-salia": {
                 "s-f7": { "status": "unused_sub" }
