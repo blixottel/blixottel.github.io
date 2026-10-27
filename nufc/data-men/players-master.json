@@ -9,7 +9,8 @@
         "movements": [
 			{ "type": "youth", "date": "2022-08-20", "endDate": "2023-06-30" },
 			{ "type": "joined", "date": "2023-07-01", "club": "Newcastle United Youth" },
-			{ "type": "loan_out", "date": "2025-08-10", "endDate": "2025-12-31", "club": "Coleraine" }
+			{ "type": "loan_out", "date": "2025-08-10", "endDate": "2025-12-31", "club": "Coleraine" },
+			{ "type": "loan_out", "date": "2026-10-22", "endDate": "2026-11-21", "club": "Hebburn Town" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/6TnqTKdu6kmTj4HFXomb7j/4916f069f32921ce62c8a0de3ad64954/Aidan_Harris-02-removebg-preview.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
@@ -1425,7 +1426,8 @@
 			{ "type": "youth", "date": "2023-10-10", "endDate": "2024-06-30" },
 			{ "type": "joined", "date": "2024-07-01", "club": "Newcastle United Youth" },
 			{ "type": "loan_out", "date": "2025-08-22", "endDate": "2025-11-15", "club": "Ashington" },
-			{ "type": "loan_out_dual", "date": "2026-01-22", "endDate": "2026-06-30", "club": "Dunston UTS" }
+			{ "type": "loan_out_dual", "date": "2026-01-22", "endDate": "2026-06-30", "club": "Dunston UTS" },
+			{ "type": "loan_out", "date": "2026-10-11", "endDate": "2026-10-31", "club": "Dunston UTS" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/5hy1ZGvGJ2n6NmUPat5Tg7/a6e3d02ee5ff9fe7c93f7fa433b1fa3a/Untitled_design-35-2.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75",
@@ -1787,20 +1789,7 @@
         "position": "DEF",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "youth", "date": "2026-07-24", "endDate": "2029-06-30", "club": "Ipswich Town" }
-        ],
-        "photos": { }
-    },
-    {
-        "id": "u-josh-kenchington",
-        "name": "Josh Kenchington",
-        "nationality": "England",
-        "dob": "2010-10-07",
-		"squadIfDobUnknown": "Youth",
-        "position": "DEF",
-        "careerStatus": "ongoing",
-        "movements": [
-			{ "type": "youth", "date": "2025-11-07", "endDate": "2026-06-30", "club": "Barnsley" }
+			{ "type": "youth", "date": "2026-07-24", "endDate": "2028-06-30", "club": "Ipswich Town" }
         ],
         "photos": { }
     },

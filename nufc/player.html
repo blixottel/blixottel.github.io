@@ -4,7 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Player — The Teamsheet</title>
+<meta name="description" content="Player profile: career totals, season-by-season appearances and movements, from The Teamsheet squad tracker.">
+<meta property="og:site_name" content="The Teamsheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Player — The Teamsheet">
+<meta property="og:description" content="Player profile: career totals, season-by-season appearances and movements, from The Teamsheet squad tracker.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles/base.css">
 <link rel="stylesheet" href="styles/components.css">
@@ -20,10 +28,13 @@
     <p class="subtitle" id="player-subtitle">Newcastle United</p>
   </div>
 </div>
-<div id="load-error">
-  <strong>Couldn't load this player.</strong> Check the <code>?id=</code> in the address matches an id in
-  <code>players-master.json</code>, and that you're running a local server (<code>python3 -m http.server 8000</code>).
+<div id="load-error" role="alert">
+  <strong>Couldn't load this player.</strong> Please go back to the squad page and try again.
+  <button type="button" class="retry-btn" onclick="location.reload()">Retry</button>
+  <div class="dev-only">Developer note: check the <code>?id=</code> in the address matches an id in <code>players-master.json</code>, and that you're running a local server (<code>python3 -m http.server 8000</code>).</div>
 </div>
+<div id="loading" class="loading" role="status" aria-live="polite"><span class="spinner" aria-hidden="true"></span> Loading player…</div>
+
 <main id="player-root"></main>
 <footer id="footer-note">Built from the same JSON files as the squad tracker. Stats are calculated per squad from the fixture records.</footer>
 <script src="js/teams.js"></script>

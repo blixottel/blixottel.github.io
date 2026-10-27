@@ -1,22 +1,30 @@
 /**
  * base.css — foundation shared by EVERY page: design tokens, reset, the
- * masthead, the team/season switchers, and small page-level furniture
- * (back link, headings, notes, footer, load-error box, player links).
+ * masthead, the team/season switchers, and page-level furniture (back link,
+ * headings, notes, footer, loading indicator, load-error box, player links).
  * Load this first, on every page.
  *
  * styles/ at a glance:
- *   base.css        tokens, reset, masthead, switchers, page furniture   (all pages)
- *   components.css  pills/tags, fixture matrix, markers, legend         (squad tracker + player page)
+ *   base.css        tokens, reset, masthead, switchers, page furniture,
+ *                   loading + load-error states                          (all pages)
+ *   components.css  pills/tags, shared table furniture, fixture matrix,
+ *                   markers, legend                          (squad tracker, player, transfers)
  *   squad.css       tabs, player cards, leaderboards, fixtures list,
- *                   next-match banner                                   (index.html)
- *   player.css      player profile                                      (player.html)
- *   transfers.css   transfer history                                    (transfers.html)
- *   checks.css      data-checks panel, WIP/all-clear notices, to-do     (index, player, validation)
+ *                   next-match banner                                    (index.html)
+ *   player.css      player profile                                       (player.html)
+ *   transfers.css   transfer history                                     (transfers.html)
+ *   checks.css      data-checks panel, WIP/all-clear notices, to-do      (index, player, validation)
  *   (gallery.html keeps its own embedded stylesheet on purpose.)
+ *
+ * Conventions:
+ *   - Colours, fonts and the page width are tokens below; use them rather than literals.
+ *   - Breakpoints (media queries can't use variables): 640px = phone,
+ *     760px = transfer table becomes cards, 1220px = page gutters appear.
  */
 
 /* ===== Design tokens ===== */
 :root {
+  /* Surfaces & ink */
   --ink: #131315;
   --ink-soft: #232326;
   --paper: #F5F4F0;
@@ -27,10 +35,14 @@
   --hairline: #DCDAD4;
   --hairline-dark: #3A3A3D;
   --gold: #B99A4B;
+
+  /* Status families: background, line, ink */
   --amber-bg: #FBF2E1;
   --amber-line: #D9B166;
+  --amber-ink: #8A6414;
   --sky-bg: #EAF1F5;
   --sky-line: #7FA8C0;
+  --sky-ink: #3D6E88;
   --claret-bg: #F6E9E8;
   --claret-line: #B97A76;
   --claret-ink: #7A2E2E;
@@ -39,12 +51,31 @@
   --injury-ink: #9A2A1E;
   --slate-bg: #EDEDF0;
   --slate-line: #B9B9C2;
+  --plum-bg: #F3E6F0;
+  --plum-line: #C9A0BE;
+  --plum: #8E4A7D;
+
+  /* Competitions */
   --cup-ink: #3B2B54;
   --cup-gold: #C9A9E0;
   --cup-col-bg: #F1ECFA;
   --euro-ink: #0A3A5C;
   --euro-gold: #8FD6E8;
   --euro-col-bg: #E7F3F8;
+
+  /* Accents used on small marks */
+  --alert: #C0392B;
+  --yellow-card: #E4B937;
+  --todo: #E08A1E;
+
+  /* Type */
+  --font-display: 'Archivo Black', sans-serif;
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Layout */
+  --page-width: 1180px;
   --radius: 3px;
 }
 
@@ -55,7 +86,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-variant-numeric: tabular-nums;
   -webkit-font-smoothing: antialiased;
 }
@@ -67,9 +98,9 @@ body {
   padding: 40px 24px 28px;
   position: relative;
 }
-.masthead-inner { max-width: 1180px; margin: 0 auto; position: relative; }
+.masthead-inner { max-width: var(--page-width); margin: 0 auto; position: relative; }
 .eyebrow {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -77,14 +108,14 @@ body {
   margin: 0 0 10px;
 }
 h1.title {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(34px, 6vw, 64px);
   line-height: 0.95;
   margin: 0;
   letter-spacing: -0.01em;
 }
 .subtitle {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 400;
   font-size: 16px;
   color: #C9C9CC;
@@ -94,7 +125,7 @@ h1.title {
 .back-link {
   display: inline-block;
   margin: 0 0 14px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.04em;
   color: inherit;
@@ -115,14 +146,14 @@ h1.title {
   gap: 8px;
 }
 .season-switcher-label {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #9B9B9F;
 }
 .season-switcher select {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-heading);
   font-size: 14px;
   font-weight: 600;
   color: var(--paper);
@@ -143,10 +174,10 @@ h1.title {
 }
 
 /* ===== Page furniture ===== */
-main { max-width: 1180px; margin: 0 auto; padding: 0 24px 80px; }
+main { max-width: var(--page-width); margin: 0 auto; padding: 0 24px 80px; }
 
 h3.block-heading {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-heading);
   font-size: 18px;
   letter-spacing: 0.02em;
   margin: 34px 0 4px;
@@ -164,19 +195,62 @@ h3.block-heading {
 .panel-empty { font-size: 12.5px; color: var(--slate); padding: 10px 2px; font-style: italic; }
 
 footer {
-  max-width: 1180px; margin: 40px auto 0; padding: 20px 24px;
+  max-width: var(--page-width); margin: 40px auto 0; padding: 20px 24px;
   border-top: 1px solid var(--hairline);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 11.5px;
   color: var(--slate);
 }
 
+/* ===== Accessibility helpers ===== */
+:focus-visible { outline: 2px solid var(--pitch); outline-offset: 2px; }
+.masthead :focus-visible { outline-color: var(--gold); }
+
+/* Hidden visually but still read by screen readers. */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
+
+/* ===== Loading & load-error states ===== */
+.loading {
+  max-width: var(--page-width); margin: 32px auto; padding: 0 20px;
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.04em;
+  opacity: 0.75;
+}
+.loading .spinner {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid currentColor; border-right-color: transparent;
+  animation: loading-spin 0.8s linear infinite;
+}
+@keyframes loading-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .loading .spinner { animation: loading-spin 3s linear infinite; }
+}
+
 #load-error {
-  max-width: 1180px; margin: 24px auto; padding: 16px 20px;
+  max-width: var(--page-width); margin: 24px auto; padding: 16px 20px;
   background: #fff3f0; border: 1px solid #e0a89c; border-radius: var(--radius);
   font-size: 14px; display: none;
 }
 #load-error code { background: #00000010; padding: 2px 6px; border-radius: 2px; }
+
+/* Technical hints (file://, local server) are only for local development. */
+.dev-only { display: none; }
+html.is-local .dev-only { display: block; margin-top: 8px; }
+
+.retry-btn {
+  margin-left: 10px; padding: 4px 14px; cursor: pointer;
+  font: inherit; font-size: 13px; font-weight: 600;
+  background: transparent; color: inherit;
+  border: 1px solid currentColor; border-radius: var(--radius);
+}
+.retry-btn:hover, .retry-btn:focus-visible { background: #00000012; }
 
 /* Links through to player.html */
 a.player-link { color: inherit; text-decoration: none; }

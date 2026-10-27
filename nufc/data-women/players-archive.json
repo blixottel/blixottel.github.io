@@ -100,7 +100,7 @@
         "careerStatus": "complete",
         "movements": [
 			{ "type": "joined", "date": "2025-01-31", "club": "Birmingham City" },
-			{ "type": "left", "date": "2026-07-29", "club": "Brighton and Hove Albion" }
+			{ "type": "left", "date": "2026-07-29", "club": "Brighton & Hove Albion" }
         ],
         "photos": {
             "official": "https://images.ctfassets.net/9ec6988xevcz/4omuLtsfy3XVIF6GSLMaXG/7825ea20dbccc7d45794e5e14f1acb63/Emily_Murphy_Soldier.png"

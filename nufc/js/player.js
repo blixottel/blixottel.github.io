@@ -203,16 +203,14 @@ async function initPlayer() {
     const id = new URLSearchParams(location.search).get('id');
     if (!id) throw new Error('no id');
     const seasons = (await loadSeasons()) || [];
-    const masterPath = (seasons[0] && seasons[0].playersMasterFile) || TEAM.dataDir + 'players-master.json';
-    const master = await withArchive(await (await fetch(masterPath)).json(), masterPath);
+    const masterPath = sharedMasterFile(seasons);
+    const master = await withArchive(await fetchJson(masterPath), masterPath);
     if (!master.some(p => p.id === id)) throw new Error('unknown id');
 
     const loaded = await Promise.all(seasons.map(async s => {
       try {
-        const [rr, fr] = await Promise.all([fetch(s.playersFile), fetch(s.fixturesFile)]);
-        if (!rr.ok || !fr.ok) return null;
-        const roster = (await rr.json()).filter(r => r.id === id);
-        const fixtures = await fr.json();
+        const [rosterAll, fixtures] = await Promise.all([fetchJson(s.playersFile), fetchJson(s.fixturesFile)]);
+        const roster = rosterAll.filter(r => r.id === id);
         const merged = roster.length ? mergePlayers(master, roster, s.ageBands)[0] : null;
         const squads = squadKeysFor(fixtures)
           .filter(k => namedPlayerIdsFor(fixtures[k]).includes(id))
@@ -232,6 +230,12 @@ async function initPlayer() {
     DUALS = (p.movements || []).filter(m => m.type === 'loan_out_dual');
     document.title = `${p.name} — The Teamsheet`;
     document.getElementById('player-title').textContent = p.name;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.content = `${p.name} — career appearances, goals and movements for ${TEAM.clubName}.`;
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.content = document.title;
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc && metaDesc) ogDesc.content = metaDesc.content;
     const firstL = entries.length ? entries[0].season.label : '', lastL = entries.length ? entries[entries.length - 1].season.label : '';
     const span = firstL === lastL ? firstL : `${firstL} – ${lastL}`;
     document.getElementById('player-subtitle').textContent = `${TEAM.clubName}${span ? ' · ' + span : ''}`;
@@ -277,6 +281,8 @@ async function initPlayer() {
     console.error(err);
     document.getElementById('player-title').textContent = 'Player not found';
     document.getElementById('load-error').style.display = 'block';
+  } finally {
+    hideLoading();
   }
 }
 

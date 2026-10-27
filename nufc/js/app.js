@@ -10,14 +10,17 @@ function applyTeamChrome() {
   document.title = TEAM.title;
   const sub = document.querySelector('.masthead .subtitle');
   if (sub) sub.textContent = TEAM.subtitle;
-  if (TEAMS.length > 1) document.getElementById('season-switcher-slot').appendChild(buildTeamSwitcher());
+  mountTeamSwitcher();
 }
 
 // Tabs are generated from the squads this team/season actually has, so the
 // same index.html serves every team.
 function buildTabs(squadKeys) {
-  document.getElementById('tabs').innerHTML = squadKeys
-    .map(k => `<a href="#${k}">${SQUAD_LABEL[k] || k} <span class="count" id="count-${k}"></span></a>`)
+  const tabs = document.getElementById('tabs');
+  tabs.setAttribute('role', 'tablist');
+  tabs.setAttribute('aria-label', 'Squads');
+  tabs.innerHTML = squadKeys
+    .map(k => `<a role="tab" id="tab-${k}" aria-controls="${k}" aria-selected="false" href="#${k}">${SQUAD_LABEL[k] || k} <span class="count" id="count-${k}"></span></a>`)
     .join('');
 }
 
@@ -25,26 +28,11 @@ async function init() {
   const main = document.getElementById('main');
   applyTeamChrome();
   try {
-    const seasons = await loadSeasons();
-    // playersFile here is the season *roster* file (number/status/etc.) —
-    // the master file (name/dob/photos) is shared across every season and
-    // defaults to players-master.json unless a season entry overrides it
-    // with its own playersMasterFile. Squad membership isn't read from
-    // either file — see mergePlayers in data.js.
-    let masterFile = TEAM.dataDir + 'players-master.json';
-    let playersFile = 'players-season.json';
-    let fixturesFile = 'fixtures.json';
-    let activeSeason = null;
+    const ctx = await resolveSeasonContext();
+    const { seasons, activeSeason, masterFile, playersFile, fixturesFile } = ctx;
 
     if (seasons) {
-      const activeId = currentSeasonId(seasons);
-      activeSeason = seasons.find(s => s.id === activeId) || seasons[0];
-      AGE_AS_OF = seasonAgeDate(activeSeason);
-      masterFile = activeSeason.playersMasterFile || masterFile;
-      playersFile = activeSeason.playersFile;
-      fixturesFile = activeSeason.fixturesFile;
-
-      document.getElementById('season-switcher-slot').appendChild(buildSeasonSwitcher(seasons, activeSeason.id));
+      mountSeasonSwitcher(ctx);
       const eyebrow = document.getElementById('eyebrow');
       if (eyebrow) eyebrow.textContent = `Est. manually · Season ${activeSeason.label || activeSeason.id}${AGE_AS_OF ? ' · Ages as at ' + AGE_AS_OF.toLocaleDateString('en-GB') : ''}`;
       const footerNote = document.getElementById('footer-note');
@@ -53,31 +41,20 @@ async function init() {
       }
     }
 
-    const { players, fixtures } = await loadData(masterFile, playersFile, fixturesFile, activeSeason ? activeSeason.ageBands : []);
+    const { players, fixtures } = await loadData(masterFile, playersFile, fixturesFile, ctx.ageBands);
     const playersById = {};
     players.forEach(p => { playersById[p.id] = p; });
 
     buildNextMatchBanner(findNextMatch(fixtures));
 
-    // Per-season checks, plus the checks that look across every season
-    // (photo consistency, movements vs season files) — these appear in all seasons.
-    const crossIssues = seasons ? await loadCrossSeasonIssues(seasons, masterFile) : [];
-    const issues = validateFixtures(fixtures, playersById, {
-      requireDetailedStats: activeSeason ? activeSeason.requireDetailedStats !== false : true,
-      season: activeSeason,
-    }).concat(crossIssues);
-    // Nudge to mark this season "dataComplete" once every fixture has a result and there are no errors.
-    const completeIssue = seasonCompleteIssue(activeSeason, fixtures, issues);
-    if (completeIssue) issues.push(completeIssue);
-    // ...and the reverse: a season flagged complete that still has fixtures without results, or errors.
-    const staleIssue = seasonStaleCompleteIssue(activeSeason, fixtures, issues);
-    if (staleIssue) issues.push(staleIssue);
+    // Per-season checks plus the cross-season ones (see gatherIssues in stats.js).
+    const issues = await gatherIssues(ctx, fixtures, playersById);
     // The full list of checks now lives on validation.html; here we just
     // show the count as a badge on the "Data checks" nav link.
     setNavBadge('validation', issues.length);
     // Shown on published copies too: a plain heads-up (no specifics) whenever
     // this team/season has any outstanding data checks.
-    document.getElementById('wip-notice').style.display = issues.some(i => !i.ignoreInBanner) ? 'block' : 'none';
+    updateWipNotice(issues, activeSeason);
 
     // The three age-banded squads, plus 'u19' if (and only if) this season's
     // fixtures file actually has one — see CORE_SQUADS/OPTIONAL_SQUADS and
@@ -120,17 +97,61 @@ async function init() {
   } catch (err) {
     console.error(err);
     document.getElementById('load-error').style.display = 'block';
+  } finally {
+    hideLoading();
   }
+}
+
+/**
+ * The heads-up banner under the tabs. Worded per season, and only shown when it's useful:
+ *  - a season still being entered (not "dataComplete"): shown if any outstanding check, with "work in progress" wording;
+ *  - a season marked complete: shown only for real *errors in that season's own data*, or a stale "complete" flag (other warnings and the
+ *    cross-season checks, which would otherwise flag every old season, don't count), with softer "under review" wording.
+ * No specifics are given; the full list is on the Data checks page.
+ */
+function updateWipNotice(issues, season) {
+  const el = document.getElementById('wip-notice');
+  if (!el) return;
+  const label = season ? (season.label || season.id) : 'this season';
+  const complete = !!season && season.dataComplete === true;
+  const relevant = issues.filter(i => !i.ignoreInBanner && (!complete || i.bannerWorthy || (i.severity === 'error' && !i.crossSeason)));
+  if (!relevant.length) { el.style.display = 'none'; return; }
+  el.innerHTML = complete
+    ? `<strong>Data under review.</strong> The ${label} season is marked complete, but a few records are still being double-checked, so you may spot a mistake.`
+    : `<strong>Work in progress.</strong> The ${label} data is still being entered, so this page may contain errors or gaps.`;
+  el.style.display = 'block';
 }
 
 function setupTabs() {
   const tabLinks = Array.from(document.querySelectorAll('nav.tabs a'));
   const sections = Array.from(document.querySelectorAll('section.squad'));
 
+  sections.forEach(s => {
+    s.setAttribute('role', 'tabpanel');
+    s.setAttribute('aria-labelledby', 'tab-' + s.id);
+  });
+
   const showTab = (squadKey) => {
     sections.forEach(s => s.classList.toggle('active-squad', s.id === squadKey));
-    tabLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + squadKey));
+    tabLinks.forEach(a => {
+      const on = a.getAttribute('href') === '#' + squadKey;
+      a.classList.toggle('active', on);
+      a.setAttribute('aria-selected', on ? 'true' : 'false');
+      a.tabIndex = on ? 0 : -1; // only the current tab is in the Tab order; arrow keys move between tabs
+    });
   };
+
+  // Arrow keys / Home / End move between tabs, as screen-reader users expect of a tablist.
+  document.getElementById('tabs').addEventListener('keydown', (e) => {
+    const i = tabLinks.indexOf(document.activeElement);
+    if (i < 0) return;
+    const last = tabLinks.length - 1;
+    const next = { ArrowRight: i === last ? 0 : i + 1, ArrowLeft: i === 0 ? last : i - 1, Home: 0, End: last }[e.key];
+    if (next === undefined) return;
+    e.preventDefault();
+    tabLinks[next].focus();
+    tabLinks[next].click();
+  });
 
   tabLinks.forEach(a => {
     a.addEventListener('click', (e) => {
@@ -142,8 +163,9 @@ function setupTabs() {
   });
 
   const validKeys = sections.map(s => s.id);
-  const initial = validKeys.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'senior';
-  showTab(initial);
+  // Fall back to the first tab this season actually has (not a hard-coded 'senior').
+  const initial = validKeys.includes(location.hash.slice(1)) ? location.hash.slice(1) : validKeys[0];
+  if (initial) showTab(initial);
 }
 
 init();

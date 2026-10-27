@@ -45,7 +45,8 @@ const TEAMS = [
     unknownDobSquad: 'u21',
     youthSquad: 'u21',
     dataFrom: '2024-07-01',
-	placeholderPhoto: 'https://i.ibb.co/3JvpTRJ/cc39cdc9-8937-4e56-9f46-900c96d4da9c.png'
+	// Hosted locally. (Previous third-party image: https://i.ibb.co/3JvpTRJ/cc39cdc9-8937-4e56-9f46-900c96d4da9c.png)
+	placeholderPhoto: 'images/placeholder.svg'
   },
 ];
 const DEFAULT_TEAM = TEAMS[0];

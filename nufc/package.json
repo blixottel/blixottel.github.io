@@ -1,0 +1,6 @@
+{
+  "name": "the-teamsheet",
+  "private": true,
+  "description": "Static site; this file only exists to run the unit tests (needs Node 18 or newer, no dependencies).",
+  "scripts": { "test": "node --test" }
+}

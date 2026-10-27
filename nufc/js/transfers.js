@@ -35,7 +35,9 @@ Object.keys(RETURN_TYPES).forEach(k => { RETURN_BY_SOURCE[RETURN_TYPES[k].from] 
 
 const trEsc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const trDMY = iso => (iso ? iso.split('-').reverse().join('/') : '');
-const trState = { rows: [], seasons: [], dir: 'all', newestFirst: true, showReturns: true };
+// sortKey: which column the list is ordered by; sortDesc: direction. Date sorting groups rows under season headings.
+const trState = { rows: [], seasons: [], dir: 'all', sortKey: 'date', sortDesc: true, showReturns: true };
+const SORT_KEYS = ['date', 'player', 'squad', 'type', 'club'];
 
 function seasonFor(ms, seasons) {
   if (ms === null) return null;
@@ -101,6 +103,102 @@ function groupLabel(r, seasons) {
   return fr && r.ms < fr.start ? `Before ${first.label || first.id}` : `After ${last.label || last.id}`;
 }
 
+// ---- sorting -------------------------------------------------------------------------------------
+// Value a row is ordered by for a column. null = "nothing to sort on" (blank club, no squad): those rows
+// always sink to the bottom, whichever direction is chosen.
+function sortValue(r, key) {
+  if (key === 'player') return r.player.name;
+  if (key === 'type') return r.t.label;
+  if (key === 'club') return r.club || null;
+  if (key === 'squad') {
+    if (!r.squad) return null;
+    const i = SQUAD_ORDER.indexOf(r.squad);
+    return i >= 0 ? i : 98; // squads not in SQUAD_ORDER (e.g. u16) go after the listed ones
+  }
+  return null;
+}
+
+function compareRows(a, b) {
+  const sign = trState.sortDesc ? -1 : 1;
+  const byName = () => a.player.name.localeCompare(b.player.name);
+  if (trState.sortKey === 'date') {
+    // Unknown dates always sink to the bottom; same-day rows fall back to name.
+    if (a.ms === null || b.ms === null) return (a.ms === null) - (b.ms === null);
+    return sign * (a.ms - b.ms) || byName();
+  }
+  const va = sortValue(a, trState.sortKey), vb = sortValue(b, trState.sortKey);
+  if (va === null || vb === null) { if (va !== vb) return (va === null) - (vb === null); }
+  else {
+    const c = typeof va === 'number' ? va - vb : String(va).localeCompare(String(vb));
+    if (c) return sign * c;
+  }
+  // Ties: newest first, then name.
+  if (a.ms !== null && b.ms !== null && a.ms !== b.ms) return b.ms - a.ms;
+  return byName();
+}
+
+// Clicking the active column's header flips the direction; a different column starts at its natural
+// direction (date: newest first; everything else: A to Z).
+function setSortKey(key) {
+  if (key === trState.sortKey) trState.sortDesc = !trState.sortDesc;
+  else { trState.sortKey = key; trState.sortDesc = key === 'date'; }
+  renderTransfers();
+}
+
+function syncSortUi() {
+  document.querySelectorAll('.tr-table thead th[data-sort]').forEach(th => {
+    th.setAttribute('aria-sort', th.dataset.sort === trState.sortKey ? (trState.sortDesc ? 'descending' : 'ascending') : 'none');
+  });
+  document.getElementById('tr-sortkey').value = trState.sortKey;
+  document.getElementById('tr-sort').textContent = trState.sortKey === 'date'
+    ? (trState.sortDesc ? 'Newest first ↓' : 'Oldest first ↑')
+    : (trState.sortDesc ? 'Descending ↓' : 'Ascending ↑');
+}
+
+// ---- shareable filters (kept in the address bar) ---------------------------------------------------
+// ?q= search · dir= in|out · type= · squad= · yr= (the season FILTER; plain ?season= already belongs to the
+// site's season switcher) · sort= · order= asc|desc · returns=0. Only non-default values are written, and
+// any other parameters (team, season) are left alone.
+const FILTER_PARAMS = ['q', 'dir', 'type', 'squad', 'yr', 'sort', 'order', 'returns'];
+
+function readUrlState() {
+  const p = new URLSearchParams(location.search);
+  const setSelect = (id, value) => {
+    const el = document.getElementById(id);
+    if (value && Array.from(el.options).some(o => o.value === value)) el.value = value;
+  };
+  document.getElementById('tr-search').value = p.get('q') || '';
+  setSelect('tr-type', p.get('type'));
+  setSelect('tr-squad', p.get('squad'));
+  setSelect('tr-season', p.get('yr'));
+  if (['in', 'out'].includes(p.get('dir'))) trState.dir = p.get('dir');
+  if (SORT_KEYS.includes(p.get('sort'))) {
+    trState.sortKey = p.get('sort');
+    trState.sortDesc = trState.sortKey === 'date';
+  }
+  if (['asc', 'desc'].includes(p.get('order'))) trState.sortDesc = p.get('order') === 'desc';
+  trState.showReturns = p.get('returns') !== '0';
+  document.getElementById('tr-returns').checked = trState.showReturns;
+  document.querySelectorAll('#tr-dir button').forEach(x => x.classList.toggle('active', x.dataset.dir === trState.dir));
+}
+
+function writeUrlState() {
+  const p = new URLSearchParams(location.search);
+  FILTER_PARAMS.forEach(k => p.delete(k));
+  const q = document.getElementById('tr-search').value.trim();
+  if (q) p.set('q', q);
+  if (trState.dir !== 'all') p.set('dir', trState.dir);
+  [['type', 'tr-type'], ['squad', 'tr-squad'], ['yr', 'tr-season']].forEach(([k, id]) => {
+    const v = document.getElementById(id).value;
+    if (v) p.set(k, v);
+  });
+  if (trState.sortKey !== 'date') p.set('sort', trState.sortKey);
+  if (trState.sortDesc !== (trState.sortKey === 'date')) p.set('order', trState.sortDesc ? 'desc' : 'asc');
+  if (!trState.showReturns) p.set('returns', '0');
+  const qs = p.toString();
+  try { history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash); } catch (e) { /* e.g. file:// in some browsers */ }
+}
+
 function renderTransfers() {
   const q = document.getElementById('tr-search').value.trim().toLowerCase();
   const type = document.getElementById('tr-type').value;
@@ -114,20 +212,19 @@ function renderTransfers() {
     (!squad || r.squad === squad) &&
     (!seasonId || (r.season && r.season.id === seasonId)) &&
     (!q || r.player.name.toLowerCase().includes(q) || r.club.toLowerCase().includes(q))
-  ).sort((a, b) => {
-    // Unknown dates always sink to the bottom; same-day rows fall back to name.
-    if (a.ms === null || b.ms === null) return (a.ms === null) - (b.ms === null);
-    const d = trState.newestFirst ? b.ms - a.ms : a.ms - b.ms;
-    return d || a.player.name.localeCompare(b.player.name);
-  });
+  ).sort(compareRows);
 
   const nIn = list.filter(r => r.t.dir === 'in').length, nOut = list.filter(r => r.t.dir === 'out').length;
   document.getElementById('tr-summary').textContent = `${list.length} movement${list.length === 1 ? '' : 's'} · ${nIn} incoming · ${nOut} outgoing`;
 
+  // Season headings only make sense while the list is in date order.
+  const grouped = trState.sortKey === 'date';
   let html = '', lastGroup = null;
   list.forEach(r => {
-    const g = groupLabel(r, trState.seasons);
-    if (g !== lastGroup) { html += `<tr class="tr-group"><td colspan="7">${trEsc(g)}</td></tr>`; lastGroup = g; }
+    if (grouped) {
+      const g = groupLabel(r, trState.seasons);
+      if (g !== lastGroup) { html += `<tr class="tr-group"><td colspan="7">${trEsc(g)}</td></tr>`; lastGroup = g; }
+    }
     const dir = r.t.dir === 'other' ? '' : `<span class="tr-dir-pill tr-${r.t.dir}">${r.t.dir === 'in' ? 'In' : 'Out'}</span>`;
     const squadHtml = r.squad ? `<span class="guest-tag">${trEsc(SQUAD_SHORT[r.squad] || r.squad)}</span>` : '<span class="tr-none">—</span>';
     const club = r.club ? `<span class="tr-prep">${r.t.prep}</span> ${trEsc(r.club)}` : '<span class="tr-none">—</span>';
@@ -137,6 +234,8 @@ function renderTransfers() {
       `<td><span class="${r.t.cls}">${trEsc(r.t.label)}</span></td><td>${club}</td><td class="tr-details">${details}</td></tr>`;
   });
   document.getElementById('tr-body').innerHTML = html || '<tr><td colspan="7" class="tr-empty">No movements match these filters.</td></tr>';
+  syncSortUi();
+  writeUrlState();
 }
 
 function fillSelect(id, firstLabel, options) {
@@ -147,23 +246,20 @@ function fillSelect(id, firstLabel, options) {
 async function initTransfers() {
   document.title = 'Transfer history — ' + TEAM.title;
   document.getElementById('page-subtitle').textContent = TEAM.clubName + ' — every incoming and outgoing movement, by date';
-  if (TEAMS.length > 1) document.getElementById('season-switcher-slot').appendChild(buildTeamSwitcher());
+  mountTeamSwitcher();
 
   try {
     const seasons = (await loadSeasons()) || [];
-    const masterFile = (seasons[0] && seasons[0].playersMasterFile) || TEAM.dataDir + 'players-master.json';
-    const res = await fetch(masterFile);
-    if (!res.ok) throw new Error('master fetch failed');
-    const master = await withArchive(await res.json(), masterFile);
+    const masterFile = sharedMasterFile(seasons);
+    const master = await withArchive(await fetchJson(masterFile), masterFile);
 
     // Each season's merged roster, keyed by player id, for the squad at the time.
     const rosterMerged = {};
     await Promise.all(seasons.map(async s => {
       try {
-        const r = await fetch(s.playersFile);
-        if (!r.ok) return;
+        const roster = await fetchJson(s.playersFile);
         const map = {};
-        mergePlayers(master, await r.json(), s.ageBands).forEach(p => { map[p.id] = p; });
+        mergePlayers(master, roster, s.ageBands).forEach(p => { map[p.id] = p; });
         rosterMerged[s.id] = map;
       } catch (e) { /* season without a roster file: squads fall back to dob */ }
     }));
@@ -187,28 +283,34 @@ async function initTransfers() {
     });
     ['tr-type', 'tr-squad', 'tr-season'].forEach(id => document.getElementById(id).addEventListener('change', renderTransfers));
     document.getElementById('tr-search').addEventListener('input', renderTransfers);
-    // "Show loan returns" toggle, added next to the sort button. On by default, not remembered between visits.
-    const sortBtn = document.getElementById('tr-sort');
-    const toggle = document.createElement('label');
-    toggle.className = 'tr-toggle';
-    toggle.style.cssText = 'display:inline-flex;align-items:center;gap:6px;margin-left:12px;cursor:pointer;white-space:nowrap';
-    toggle.innerHTML = '<input type="checkbox" id="tr-returns" checked> Show loan returns';
-    sortBtn.insertAdjacentElement('afterend', toggle);
-    toggle.querySelector('input').addEventListener('change', e => {
+    // "Show loan returns" toggle (markup in transfers.html, styles in transfers.css). On by default.
+    document.getElementById('tr-returns').addEventListener('change', e => {
       trState.showReturns = e.target.checked;
       renderTransfers();
     });
-    sortBtn.addEventListener('click', e => {
-      trState.newestFirst = !trState.newestFirst;
-      e.currentTarget.textContent = trState.newestFirst ? 'Newest first ↓' : 'Oldest first ↑';
+    // Sorting: header buttons (wide screens), the "Sort by" dropdown (narrow screens), and the direction button.
+    document.querySelector('.tr-table thead').addEventListener('click', e => {
+      const th = e.target.closest('th[data-sort]');
+      if (th) setSortKey(th.dataset.sort);
+    });
+    document.getElementById('tr-sortkey').addEventListener('change', e => {
+      trState.sortKey = e.target.value;
+      trState.sortDesc = trState.sortKey === 'date';
+      renderTransfers();
+    });
+    document.getElementById('tr-sort').addEventListener('click', () => {
+      trState.sortDesc = !trState.sortDesc;
       renderTransfers();
     });
 
+    readUrlState();
     document.getElementById('transfers-root').hidden = false;
     renderTransfers();
   } catch (err) {
     console.error(err);
     document.getElementById('load-error').style.display = 'block';
+  } finally {
+    hideLoading();
   }
 }
 

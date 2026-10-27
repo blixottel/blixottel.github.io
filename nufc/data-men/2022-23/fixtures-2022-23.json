@@ -2,7 +2,7 @@
     "senior": {
         "fixtures": [
             { "id": "s-f1", "date": "2022-08-06", "opponent": "Nottingham Forest", "venue": "H", "competition": "Premier League", "result": "W 2-0", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 1, "yellowCardsTotal": 0, "redCardsTotal": 0 },
-            { "id": "s-f2", "date": "2022-08-13", "opponent": "Brighton and Hove Albion", "venue": "A", "competition": "Premier League", "result": "D 0-0", "subsUsed": 3, "subsUnused": 6, "assistsTotal": 0, "yellowCardsTotal": 3, "redCardsTotal": 0 },
+            { "id": "s-f2", "date": "2022-08-13", "opponent": "Brighton & Hove Albion", "venue": "A", "competition": "Premier League", "result": "D 0-0", "subsUsed": 3, "subsUnused": 6, "assistsTotal": 0, "yellowCardsTotal": 3, "redCardsTotal": 0 },
             { "id": "s-f3", "date": "2022-08-21", "opponent": "Manchester City", "venue": "H", "competition": "Premier League", "result": "D 3-3", "subsUsed": 4, "subsUnused": 5, "assistsTotal": 2, "yellowCardsTotal": 4, "redCardsTotal": 0 },
             { "id": "s-f4", "date": "2022-08-24", "opponent": "Tranmere Rovers", "venue": "A", "competition": "Carabao Cup", "result": "W 2-1", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 1, "yellowCardsTotal": 0, "redCardsTotal": 0 },
             { "id": "s-f5", "date": "2022-08-28", "opponent": "Wolverhampton Wanderers", "venue": "A", "competition": "Premier League", "result": "D 1-1", "subsUsed": 5, "subsUnused": 4, "assistsTotal": 0, "yellowCardsTotal": 1, "redCardsTotal": 0 },
@@ -44,7 +44,7 @@
             { "id": "s-f41", "date": "2023-04-30", "opponent": "Southampton", "venue": "H", "competition": "Premier League", "result": "" },
             { "id": "s-f42", "date": "2023-05-07", "opponent": "Arsenal", "venue": "H", "competition": "Premier League", "result": "" },
             { "id": "s-f43", "date": "2023-05-13", "opponent": "Leeds United", "venue": "A", "competition": "Premier League", "result": "" },
-            { "id": "s-f44", "date": "2023-05-18", "opponent": "Brighton and Hove Albion", "venue": "H", "competition": "Premier League", "result": "" },
+            { "id": "s-f44", "date": "2023-05-18", "opponent": "Brighton & Hove Albion", "venue": "H", "competition": "Premier League", "result": "" },
             { "id": "s-f45", "date": "2023-05-22", "opponent": "Leicester City", "venue": "H", "competition": "Premier League", "result": "" },
             { "id": "s-f46", "date": "2023-05-28", "opponent": "Chelsea", "venue": "A", "competition": "Premier League", "result": "" }
         ],

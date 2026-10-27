@@ -567,21 +567,30 @@ see "Squads and guest appearances" above), not in this muted section.
 | `gallery.html` | Standalone photo-audit page — self-contained apart from loading `js/teams.js`. |
 | `transfers.html` | Markup for the transfer history page, also shared. |
 | `validation.html` | Markup for the Data checks page. |
-| `styles/base.css` | Loaded by every page (except `gallery.html`): design tokens, reset, masthead, team/season switchers, back link, footer and other page furniture. |
-| `styles/components.css` | Pieces used on more than one page: the status tags/pills, the fixture matrix, matchday markers and the legend. |
+| `styles/base.css` | Loaded by every page (except `gallery.html`): design tokens (colours, fonts, page width), reset, masthead, team/season switchers, back link, footer, the loading indicator and load-error box, and other page furniture. |
+| `styles/components.css` | Pieces used on more than one page: the status tags/pills, shared table furniture, the fixture matrix, matchday markers and the legend. |
 | `styles/squad.css` | Squad tracker only: tabs, player/status cards, leaderboards, fixtures list, next-match banner. |
 | `styles/player.css` | Player profile only. |
-| `styles/transfers.css` | Transfer history only. |
+| `styles/transfers.css` | Transfer history only, including the card layout used on narrow screens. |
 | `styles/checks.css` | Data checks panel, work-in-progress / all-clear notices, and the local-only "To do" badge. |
 | `js/nav.js` | The page-link row in the masthead (Squad tracker · Transfer history · Data checks · Photo gallery). |
 | `js/transfers.js` | Entry point for `transfers.html`. |
 | `js/validation.js` | Entry point for `validation.html`. |
 | `js/teams.js` | The list of teams, which one is active (`?team=`), and each team's data folder and squad settings. Loaded first. |
-| `js/data.js` | Fetching, master/season merging, photo-candidate resolution, and small pure helpers (`calcAge`, `fmtDate`, `normSquad`). |
-| `js/stats.js` | Appearance-stat aggregation and the data-validation checks that power the "Data checks" panel. |
+| `js/data.js` | Fetching (`fetchJson` / `fetchText`, with caching: see below), `resolveSeasonContext()` (which season a page shows and its files), master/season merging, photo-candidate resolution, and small pure helpers (`calcAge`, `fmtDate`, `normSquad`). |
+| `js/stats.js` | Appearance-stat aggregation and the data-validation checks that power the "Data checks" panel (`gatherIssues()` runs them all for a season). |
 | `js/render.js` | Every DOM-building function: player cards, the fixture matrix, fixtures list, leaderboards, side panels, the season and team switchers. |
 | `js/app.js` | Wiring: `init()` loads everything, builds the tabs and calls the `render.js` builders; `setupTabs()` handles the squad tabs. Entry point for `index.html`. |
 | `js/player.js` | Entry point for `player.html`: bio, career totals, movements and the season-by-season timeline. |
+| `tests/` and `package.json` | Unit tests for the calculation code (see below). Not needed to run the site. |
+
+### Loading and caching
+
+Every JSON file is fetched through `fetchJson` / `fetchText` in `js/data.js`. Within one page each file is requested once, however many parts of the page need it (a missing optional file such as `players-former.json` is also only tried once). On a **published** copy the text is also kept in `sessionStorage` for 5 minutes (`JSON_CACHE_TTL_MS`), so moving between the squad, player and transfers pages doesn't download everything again; after you edit a data file, visitors may see the old version for up to that long. On `localhost` / `file://` the storage cache is switched off, so edits show on the next refresh.
+
+### Tests
+
+`npm test` (or `node --test`) runs the unit tests in `tests/`. They need Node 18 or newer and no packages. They load the site's own scripts unchanged, so they cover what the pages actually run: appearance totals, W/D/L parsing, the fixture checks, age bands and squad assignment, roster merging, the transfer-table sorting, the data cache and the season set-up. Run them after changing `js/stats.js`, `js/data.js` or `js/transfers.js`.
 
 ## Player profile (`player.html?id=<player-id>`, plus `&team=women` for the women's team)
 
@@ -613,12 +622,13 @@ Two optional fields in `players-master.json` drive the extras:
 
 ## Transfer history (`transfers.html`, plus `?team=women` for the women's team)
 
-One list of every entry in every player's `movements` (from `players-master.json` and `players-archive.json`), grouped by season and ordered by date (newest first; the button reverses it). Each row shows the date, an **In** / **Out** marker, the player (linked to their profile), their **squad at the time**, the movement type, the club, and any loan dates or `note`.
+One list of every entry in every player's `movements` (from `players-master.json` and `players-archive.json`), grouped by season and ordered by date (newest first; the button reverses it). Click a column heading (Date, Player, Squad, Movement, Club) to sort by it; on a phone the rows show as cards and the "Sort" drop-down replaces the headings. Season headings only show while sorted by date. Each row shows the date, an **In** / **Out** marker, the player (linked to their profile), their **squad at the time**, the movement type, the club, and any loan dates or `note`.
 
 - **In** = `joined`, `youth`, `loan_in`, `trial_in`. **Out** = `left`, `retired`, `loan_out`, `loan_out_dual`.
 - **Squad at the time** is the player's squad in the season the movement date falls in: from that season's roster file if they're listed there (so `squadOverride` is respected), otherwise worked out from their `dob` and that season's `ageBands`. A date that no season in `seasons.json` covers (e.g. before the data starts) shows "—".
 - Filters: direction, movement type, squad, season, and a search box (player or club). Movements with no date sort to the bottom.
 - Unlike the other pages it shows every season at once, so it has a Season filter rather than the Season drop-down.
+- The filters and sort order are kept in the address bar, so a filtered view can be bookmarked or shared: `?q=` (search), `dir=in|out`, `type=`, `squad=`, `yr=` (the season filter; `season=` is the site-wide switcher), `sort=player|squad|type|club`, `order=asc|desc`, `returns=0` (loan returns hidden). Only non-default values appear.
 
 ## players-archive.json
 

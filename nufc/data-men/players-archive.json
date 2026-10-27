@@ -491,7 +491,7 @@
         "movements": [
             { "type": "joined", "date": "2023-07-01", "club": "Odense BK" },
             { "type": "loan_out", "date": "2023-07-01", "endDate": "2024-06-30", "club": "Feyenoord" },
-            { "type": "left", "date": "2024-06-30", "club": "Brighton and Hove Albion" }
+            { "type": "left", "date": "2024-06-30", "club": "Brighton & Hove Albion" }
         ],
         "photos": {
             "premierleague": "https://resources.premierleague.com/premierleague25/photos/players/110x140/592031.png",

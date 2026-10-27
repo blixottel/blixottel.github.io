@@ -4,7 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Transfer history — The Teamsheet</title>
+<meta name="description" content="Every incoming and outgoing movement at Newcastle United (joins, loans, trials and departures), by date, with search and filters.">
+<meta property="og:site_name" content="The Teamsheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Transfer history — The Teamsheet">
+<meta property="og:description" content="Every incoming and outgoing movement at Newcastle United (joins, loans, trials and departures), by date, with search and filters.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles/base.css">
 <link rel="stylesheet" href="styles/components.css">
@@ -23,11 +31,13 @@
   </div>
 </div>
 
-<div id="load-error">
-  <strong>Couldn't load the data files.</strong> If you opened this page directly from disk (a <code>file://</code> link),
-  most browsers block a local page from reading local JSON files. Run a tiny local server from this folder instead, e.g.
-  <code>python3 -m http.server 8000</code>, then open <code>http://localhost:8000/transfers.html</code>.
+<div id="load-error" role="alert">
+  <strong>Couldn't load the transfer data.</strong> Please check your connection and try again.
+  <button type="button" class="retry-btn" onclick="location.reload()">Retry</button>
+  <div class="dev-only">Developer note: if you opened this page directly from disk (a <code>file://</code> link), most browsers block a local page from reading local JSON files. Run a tiny local server from this folder instead, e.g. <code>python3 -m http.server 8000</code>, then open <code>http://localhost:8000/transfers.html</code>.</div>
 </div>
+
+<div id="loading" class="loading" role="status" aria-live="polite"><span class="spinner" aria-hidden="true"></span> Loading transfers…</div>
 
 <main id="transfers-root" hidden>
   <div class="tr-filters" id="tr-filters">
@@ -40,11 +50,27 @@
     <select id="tr-type" aria-label="Movement type"></select>
     <select id="tr-squad" aria-label="Squad"></select>
     <select id="tr-season" aria-label="Season"></select>
+    <select id="tr-sortkey" aria-label="Sort by">
+      <option value="date">Sort: Date</option>
+      <option value="player">Sort: Player</option>
+      <option value="squad">Sort: Squad</option>
+      <option value="type">Sort: Movement</option>
+      <option value="club">Sort: Club</option>
+    </select>
     <button type="button" id="tr-sort" title="Reverse the order">Newest first ↓</button>
+    <label class="tr-toggle"><input type="checkbox" id="tr-returns" checked> Show loan returns</label>
   </div>
   <p class="tr-summary" id="tr-summary"></p>
   <div class="tr-wrap"><table class="tr-table">
-    <thead><tr><th>Date</th><th></th><th>Player</th><th>Squad</th><th>Movement</th><th>Club</th><th>Details</th></tr></thead>
+    <thead><tr>
+      <th data-sort="date" aria-sort="descending"><button type="button" class="tr-th-btn">Date</button></th>
+      <th><span class="visually-hidden">Direction</span></th>
+      <th data-sort="player" aria-sort="none"><button type="button" class="tr-th-btn">Player</button></th>
+      <th data-sort="squad" aria-sort="none"><button type="button" class="tr-th-btn">Squad</button></th>
+      <th data-sort="type" aria-sort="none"><button type="button" class="tr-th-btn">Movement</button></th>
+      <th data-sort="club" aria-sort="none"><button type="button" class="tr-th-btn">Club</button></th>
+      <th>Details</th>
+    </tr></thead>
     <tbody id="tr-body"></tbody>
   </table></div>
 </main>

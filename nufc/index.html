@@ -4,7 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Teamsheet — NUFC Squad Tracker</title>
+<meta name="description" content="Appearance-by-appearance squad tracker for Newcastle United: seniors, U21s and U18s, with player profiles and transfer history.">
+<meta property="og:site_name" content="The Teamsheet">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Teamsheet — NUFC Squad Tracker">
+<meta property="og:description" content="Appearance-by-appearance squad tracker for Newcastle United: seniors, U21s and U18s, with player profiles and transfer history.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles/base.css">
 <link rel="stylesheet" href="styles/components.css">
@@ -28,13 +36,15 @@
 
 <div id="next-match-slot"></div>
 
-<div id="wip-notice" role="note"><strong>Work in progress.</strong> The data for this team and season is still being completed, so this page may contain errors or gaps.</div>
+<div id="wip-notice" role="note"></div>
 
-<div id="load-error">
-  <strong>Couldn't load the data files.</strong> If you opened this page directly from disk (a <code>file://</code> link),
-  most browsers block a local page from reading local JSON files. Run a tiny local server from this folder instead, e.g.
-  <code>python3 -m http.server 8000</code>, then open <code>http://localhost:8000</code>. See DATA-GUIDE.md for details.
+<div id="load-error" role="alert">
+  <strong>Couldn't load the squad data.</strong> Please check your connection and try again.
+  <button type="button" class="retry-btn" onclick="location.reload()">Retry</button>
+  <div class="dev-only">Developer note: if you opened this page directly from disk (a <code>file://</code> link), most browsers block a local page from reading local JSON files. Run a tiny local server from this folder instead, e.g. <code>python3 -m http.server 8000</code>, then open <code>http://localhost:8000</code>. See DATA-GUIDE.md for details.</div>
 </div>
+
+<div id="loading" class="loading" role="status" aria-live="polite"><span class="spinner" aria-hidden="true"></span> Loading squad…</div>
 
 <main id="main"></main>
 

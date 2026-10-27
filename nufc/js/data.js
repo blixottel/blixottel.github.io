@@ -21,7 +21,7 @@ const SQUAD_LABEL = { senior: 'First Team', u21: 'Under-21s', u18: 'Under-18s', 
 // a page that doesn't load teams.js) everything behaves as the men's site did.
 const ACTIVE_TEAM = (typeof TEAM !== 'undefined') ? TEAM : {};
 const SHARED_PHOTO_SOURCES = {
-  placeholder: ACTIVE_TEAM.placeholderPhoto || 'https://i.ibb.co/99RpQjTT/nufc-placeholder.png',
+  placeholder: ACTIVE_TEAM.placeholderPhoto || 'images/placeholder.svg', // hosted locally (was https://i.ibb.co/99RpQjTT/nufc-placeholder.png)
 };
 // u16 has no label of its own — it never gets a page/section (see mergePlayers
 // below) — but SQUAD_SHORT still needs an entry so a U16 player who's played
@@ -112,7 +112,9 @@ function seasonAgeDate(season) {
 }
 function calcAge(dob) {
   if (!dob) return '—';
-  const d = new Date(dob);
+  // A bare "YYYY-MM-DD" is parsed as UTC midnight, which reads back as the previous day in any timezone
+  // behind UTC (all of the Americas) and put ages a day out around birthdays. Parse it as local time instead.
+  const d = new Date(/^\d{4}-\d{2}-\d{2}$/.test(dob) ? dob + 'T00:00:00' : dob);
   const now = AGE_AS_OF || new Date();
   let age = now.getFullYear() - d.getFullYear();
   const m = now.getMonth() - d.getMonth();
@@ -222,16 +224,69 @@ function mergePlayers(masterList, seasonList, ageBands) {
   });
 }
 
+// ---- JSON loading, with caching ---------------------------------------------------------------------
+// Every data file goes through fetchText/fetchJson, which:
+//   1. shares one request between callers on the same page (the master file used to be fetched up to
+//      four times per page: by the page, the cross-season checks, the player-name lookup...), including
+//      the 404s of optional files;
+//   2. on a PUBLISHED copy only, keeps the text in sessionStorage for a few minutes, so moving between
+//      the squad, player and transfers pages doesn't re-download everything. It is switched off on
+//      localhost / file:// so edits to the JSON show up on the next refresh.
+// fetchJson parses the text afresh on every call: callers (withArchive, mergePlayers) modify what they
+// get, so handing out one shared object would corrupt later callers.
+const JSON_CACHE_PREFIX = 'teamsheet:v1:';
+const JSON_CACHE_TTL_MS = 5 * 60 * 1000;   // how long a published copy may serve a file from the cache
+const JSON_CACHE_MAX_CHARS = 1500000;      // files bigger than this are never stored (sessionStorage is ~5 MB)
+const jsonTextInFlight = new Map();
+
+function jsonCacheGet(url) {
+  try {
+    const raw = sessionStorage.getItem(JSON_CACHE_PREFIX + url);
+    if (!raw) return null;
+    const entry = JSON.parse(raw);
+    if (Date.now() - entry.t > JSON_CACHE_TTL_MS) { sessionStorage.removeItem(JSON_CACHE_PREFIX + url); return null; }
+    return entry.text;
+  } catch (e) { return null; }
+}
+function jsonCachePut(url, text) {
+  if (text.length > JSON_CACHE_MAX_CHARS) return;
+  try { sessionStorage.setItem(JSON_CACHE_PREFIX + url, JSON.stringify({ t: Date.now(), text })); }
+  catch (e) { /* storage full or blocked: just don't cache */ }
+}
+
+/** The raw text of a data file. Rejects if the file can't be fetched (404 etc.). */
+function fetchText(url) {
+  let p = jsonTextInFlight.get(url);
+  if (!p) {
+    p = (async () => {
+      const useStorage = !isLocalDev();
+      const hit = useStorage ? jsonCacheGet(url) : null;
+      if (hit !== null) return hit;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('fetch failed: ' + url);
+      const text = await res.text();
+      if (useStorage) jsonCachePut(url, text);
+      return text;
+    })();
+    // Failures are remembered too, for the life of the page: optional files that don't exist (players-former.json
+    // and friends) would otherwise be re-requested by every caller. Reloading the page (or the Retry button) starts afresh.
+    jsonTextInFlight.set(url, p);
+  }
+  return p;
+}
+
+/** A data file, parsed. A brand-new object every call (see above). Rejects on a fetch or JSON error. */
+async function fetchJson(url) {
+  return JSON.parse(await fetchText(url));
+}
+
 async function loadData(masterFile, seasonFile, fixturesFile, ageBands) {
-  const [masterRes, seasonRes, fixturesRes] = await Promise.all([
-    fetch(masterFile),
-    fetch(seasonFile),
-    fetch(fixturesFile),
+  const [masterList, season, fixtures] = await Promise.all([
+    fetchJson(masterFile),
+    fetchJson(seasonFile),
+    fetchJson(fixturesFile),
   ]);
-  if (!masterRes.ok || !seasonRes.ok || !fixturesRes.ok) throw new Error('fetch failed');
-  const master = await withArchive(await masterRes.json(), masterFile);
-  const season = await seasonRes.json();
-  const fixtures = await fixturesRes.json();
+  const master = await withArchive(masterList, masterFile);
   const players = mergePlayers(master, season, ageBands);
 
   return { players, fixtures };
@@ -275,9 +330,7 @@ let LOADED_SEASONS = null;
 
 async function loadSeasons() {
   try {
-    const res = await fetch((ACTIVE_TEAM.dataDir || 'data/') + 'seasons.json');
-    if (!res.ok) return null;
-    const seasons = await res.json();
+    const seasons = await fetchJson((ACTIVE_TEAM.dataDir || 'data/') + 'seasons.json');
     if (!Array.isArray(seasons) || seasons.length === 0) return null;
     LOADED_SEASONS = seasons; // so the checks can work out the data cut-off from the oldest season
     return seasons;
@@ -295,6 +348,14 @@ async function loadSeasons() {
 function isLocalDev() {
   const host = location.hostname;
   return host === 'localhost' || host === '127.0.0.1' || host === '::1' || host === '' || location.protocol === 'file:';
+}
+
+// Marks <html> as "local dev" so CSS can show developer-only hints (.dev-only in base.css),
+// and removes the page's "Loading…" indicator (#loading) once loading has finished or failed.
+if (isLocalDev()) document.documentElement.classList.add('is-local');
+function hideLoading() {
+  const el = document.getElementById('loading');
+  if (el) el.remove();
 }
 
 // Order squads are checked in when looking for the next match, and the
@@ -331,6 +392,47 @@ function currentSeasonId(seasons) {
   const requested = new URLSearchParams(location.search).get('season');
   if (requested && seasons.some(s => s.id === requested)) return requested;
   return seasons[0].id;
+}
+
+/**
+ * The master file shared by every season, for the pages that look across all seasons (player profile,
+ * transfer history): the newest season's `playersMasterFile` if it names one, otherwise the team's default.
+ */
+function sharedMasterFile(seasons) {
+  return (seasons && seasons[0] && seasons[0].playersMasterFile) || (ACTIVE_TEAM.dataDir || 'data/') + 'players-master.json';
+}
+
+/**
+ * The one place that works out "which season is this page showing, and which files belong to it", for
+ * the pages that show a single season (squad tracker, data checks). Returns
+ *   { seasons, activeSeason, masterFile, playersFile, fixturesFile, ageBands }
+ * `seasons`/`activeSeason` are null if there's no seasons.json; the file names then fall back to the
+ * single-season defaults (players-master.json, players-season.json, fixtures.json). `playersFile` is the
+ * season *roster* file; the master file (name/dob/photos) is shared across seasons unless the season
+ * names its own `playersMasterFile`. Also sets AGE_AS_OF so ages are worked out as at that season.
+ * No DOM work: pages add the switcher with mountSeasonSwitcher (render.js).
+ */
+async function resolveSeasonContext() {
+  const seasons = await loadSeasons();
+  const ctx = {
+    seasons,
+    activeSeason: null,
+    masterFile: (ACTIVE_TEAM.dataDir || 'data/') + 'players-master.json',
+    playersFile: 'players-season.json',
+    fixturesFile: 'fixtures.json',
+    ageBands: [],
+  };
+  if (seasons) {
+    const activeId = currentSeasonId(seasons);
+    const s = seasons.find(x => x.id === activeId) || seasons[0];
+    AGE_AS_OF = seasonAgeDate(s);
+    ctx.activeSeason = s;
+    ctx.masterFile = s.playersMasterFile || ctx.masterFile;
+    ctx.playersFile = s.playersFile;
+    ctx.fixturesFile = s.fixturesFile;
+    ctx.ageBands = s.ageBands;
+  }
+  return ctx;
 }
 
 /**
@@ -403,9 +505,7 @@ async function withArchive(master, masterFile) {
   master.forEach(m => { byId[m.id] = m; });
   for (const x of EXTRA_PLAYER_FILES) {
     try {
-      const res = await fetch(masterFile.replace(/[^/]*$/, x.file));
-      if (!res.ok) continue;
-      (await res.json()).forEach(a => {
+      (await fetchJson(masterFile.replace(/[^/]*$/, x.file))).forEach(a => {
         const existing = byId[a.id];
         if (existing) {
           existing[x.also] = true;
@@ -432,11 +532,10 @@ async function loadCrossSeasonIssues(seasons, masterFile) {
   try {
     const defaultMaster = (ACTIVE_TEAM.dataDir || 'data/') + 'players-master.json';
     const cache = {};
-    const getMaster = file => cache[file] || (cache[file] = fetch(file)
-      .then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); })
+    const getMaster = file => cache[file] || (cache[file] = fetchJson(file)
       .then(m => withArchive(m, file))
       .catch(() => null));
-    const getJson = file => fetch(file).then(r => (r.ok ? r.json() : null)).catch(() => null);
+    const getJson = file => fetchJson(file).catch(() => null);
 
     const seasonData = await Promise.all(seasons.map(async s => ({
       season: s,
@@ -458,9 +557,7 @@ async function loadCrossSeasonIssues(seasons, masterFile) {
  */
 async function loadPlayerNames(masterFile) {
   try {
-    const r = await fetch(masterFile);
-    if (!r.ok) return [];
-    const all = await withArchive(await r.json(), masterFile);
+    const all = await withArchive(await fetchJson(masterFile), masterFile);
     return (all || []).map(p => ({ id: p.id, name: p.name }));
   } catch (err) {
     return [];

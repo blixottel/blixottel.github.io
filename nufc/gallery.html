@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Photo Gallery — The Teamsheet</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -570,7 +571,7 @@ const normSquad = (s) => (s || '').trim().toLowerCase() === 'seniors' ? 'senior'
 // doesn't load data.js; it does load js/teams.js (the active team, from
 // ?team=..., decides which data folder to read).
 const SHARED_PHOTO_SOURCES = {
-  placeholder: TEAM.placeholderPhoto || 'https://i.ibb.co/99RpQjTT/nufc-placeholder.png',
+  placeholder: TEAM.placeholderPhoto || 'images/placeholder.svg',
 };
 
 /**

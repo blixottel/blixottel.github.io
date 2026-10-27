@@ -32,6 +32,18 @@ function buildTeamSwitcher() {
   return wrap;
 }
 
+/** Puts the team dropdown in the masthead (only when the site has more than one team). */
+function mountTeamSwitcher() {
+  const slot = document.getElementById('season-switcher-slot');
+  if (slot && TEAMS.length > 1) slot.appendChild(buildTeamSwitcher());
+}
+
+/** Puts the season dropdown in the masthead, for a context from resolveSeasonContext (data.js). */
+function mountSeasonSwitcher(ctx) {
+  const slot = document.getElementById('season-switcher-slot');
+  if (slot && ctx.seasons) slot.appendChild(buildSeasonSwitcher(ctx.seasons, ctx.activeSeason.id));
+}
+
 function buildSeasonSwitcher(seasons, activeId) {
   const wrap = document.createElement('div');
   wrap.className = 'season-switcher';

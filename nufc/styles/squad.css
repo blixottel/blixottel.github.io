@@ -15,12 +15,12 @@ nav.tabs {
   border-bottom: 3px solid var(--ink);
   display: flex;
   gap: 0;
-  max-width: 1180px;
+  max-width: var(--page-width);
   margin: 0 auto;
   overflow-x: auto;
 }
 nav.tabs a {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-size: 14px;
@@ -33,13 +33,14 @@ nav.tabs a {
   transition: color 0.15s ease, background 0.15s ease;
 }
 nav.tabs a:hover { color: var(--ink); background: var(--paper-raised); }
+nav.tabs a:focus-visible { outline-offset: -3px; } /* the tab bar clips outlines drawn outside it */
 nav.tabs a.active {
   color: var(--ink);
   background: var(--paper-raised);
   box-shadow: inset 0 -3px 0 var(--pitch);
 }
 nav.tabs a .count {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   color: var(--gold);
   margin-left: 6px;
@@ -58,18 +59,18 @@ section.squad.active-squad { display: block; }
   margin-bottom: 24px;
 }
 .squad-header h2 {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--font-display);
   font-size: 28px;
   margin: 0;
 }
 .squad-header .meta {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 12px;
   color: var(--slate);
 }
 
 .section-subhead {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-heading);
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -110,12 +111,12 @@ h3.block-heading + .section-subhead { margin-top: 0; }
 .player-card .photo-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .player-card .photo-fallback {
   position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  font-family: 'Archivo Black', sans-serif; font-size: 30px; color: rgba(255,255,255,0.28);
+  font-family: var(--font-display); font-size: 30px; color: rgba(255,255,255,0.28);
 }
 .player-card .number-badge {
   position: absolute; top: 6px; left: 6px;
   background: var(--gold); color: var(--ink);
-  font-family: 'Archivo Black', sans-serif; font-size: 13px;
+  font-family: var(--font-display); font-size: 13px;
   width: 24px; height: 24px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 1px 3px rgba(0,0,0,0.4);
@@ -139,7 +140,7 @@ a.player-card:focus-visible { outline: 2px solid var(--pitch); outline-offset: 2
   display: flex; flex-direction: column; align-items: flex-end; gap: 3px;
 }
 .player-card .status-pill {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 8.5px; font-weight: 700; letter-spacing: 0.03em;
   text-transform: uppercase;
   padding: 2px 5px; border-radius: 2px;
@@ -148,9 +149,9 @@ a.player-card:focus-visible { outline: 2px solid var(--pitch); outline-offset: 2
   cursor: default;
 }
 .status-pill.pill-cross { background: var(--pitch); }
-.status-pill.pill-loan { background: #8A6414; }
+.status-pill.pill-loan { background: var(--amber-ink); }
 .status-pill.pill-left { background: var(--claret-ink); }
-.status-pill.pill-incoming { background: #3D6E88; }
+.status-pill.pill-incoming { background: var(--sky-ink); }
 .status-pill.pill-injured-season { background: var(--injury-ink); }
 .status-pill.pill-not-selected-season { background: var(--slate); }
 .status-pill.pill-trialist { background: var(--cup-ink); }
@@ -166,9 +167,9 @@ a.player-card:focus-visible { outline: 2px solid var(--pitch); outline-offset: 2
   line-height: 1.3;
 }
 .status-card-loan { border-top: 3px solid var(--amber-line); }
-.status-card-loan .card-detail { color: #8A6414; }
+.status-card-loan .card-detail { color: var(--amber-ink); }
 .status-card-incoming { border-top: 3px solid var(--sky-line); }
-.status-card-incoming .card-detail { color: #3D6E88; }
+.status-card-incoming .card-detail { color: var(--sky-ink); }
 .status-card-injured-season { border-top: 3px solid var(--injury-line); }
 .status-card-injured-season .card-detail { color: var(--injury-ink); }
 .status-card-not-selected-season { border-top: 3px solid var(--slate-line); }
@@ -202,7 +203,7 @@ a.player-card:focus-visible { outline: 2px solid var(--pitch); outline-offset: 2
 }
 .leaderboard-card { border: 1px solid var(--hairline); background: var(--paper-raised); padding: 10px 12px 6px; }
 .leaderboard-card h4 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-heading);
   font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -216,13 +217,13 @@ a.player-card:focus-visible { outline: 2px solid var(--pitch); outline-offset: 2
 .leaderboard-card tr:last-child td { border-bottom: none; }
 .leaderboard-card td.lb-name { font-weight: 600; }
 .leaderboard-card td.lb-val {
-  text-align: right; font-family: 'IBM Plex Mono', monospace; font-weight: 700; color: var(--pitch);
+  text-align: right; font-family: var(--font-mono); font-weight: 700; color: var(--pitch);
   width: 40px;
 }
 
 .lb-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
 .lb-tab {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   font-size: 12px;
@@ -237,8 +238,8 @@ a.player-card:focus-visible { outline: 2px solid var(--pitch); outline-offset: 2
 .lb-tab:hover { color: var(--ink); border-color: var(--ink); }
 .lb-tab.active { color: var(--paper-raised); background: var(--ink); border-color: var(--ink); }
 
-/* ===== Compact fixtures list ===== */
-.fixtures-list-wrap { margin-top: 14px; overflow-x: auto; border: 1px solid var(--hairline); background: var(--paper-raised); }
+/* ===== Compact fixtures list =====
+   (.fixtures-list-wrap and the header cells are shared: see components.css) */
 table.fixtures-list { border-collapse: collapse; width: 100%; min-width: 480px; font-size: 12.5px; }
 table.fixtures-list th, table.fixtures-list td {
   padding: 6px 12px;
@@ -246,24 +247,15 @@ table.fixtures-list th, table.fixtures-list td {
   text-align: left;
   white-space: nowrap;
 }
-table.fixtures-list thead th {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10.5px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--slate);
-  background: var(--pitch-soft);
-  border-bottom: 2px solid var(--ink);
-}
 table.fixtures-list td.fl-num, table.fixtures-list td.fl-date {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   color: var(--slate);
   font-size: 11.5px;
 }
 table.fixtures-list td.fl-comp { color: var(--slate); font-size: 11.5px; }
 table.fixtures-list td.fl-fixture { font-weight: 600; white-space: normal; }
 table.fixtures-list td.fl-score {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-weight: 700;
   text-align: right;
 }
@@ -275,7 +267,7 @@ table.fixtures-list tbody tr.fl-cup td { background: var(--cup-col-bg); }
 table.fixtures-list tbody tr.fl-euro td { background: var(--euro-col-bg); }
 table.fixtures-list tbody tr.fl-cup:hover td { background: var(--cup-col-bg); }
 table.fixtures-list tbody tr.fl-euro:hover td { background: var(--euro-col-bg); }
-table.fixtures-list tbody tr.fl-flagged td.fl-fixture::after { content: " ⚠"; color: #C0392B; }
+table.fixtures-list tbody tr.fl-flagged td.fl-fixture::after { content: " ⚠"; color: var(--alert); }
 
 /* ===== Next-match banner ===== */
 #next-match-slot:empty {
@@ -298,7 +290,7 @@ table.fixtures-list tbody tr.fl-flagged td.fl-fixture::after { content: " ⚠"; 
 }
 
 .next-match-label {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.07em;
   font-size: 0.72rem;
@@ -307,7 +299,7 @@ table.fixtures-list tbody tr.fl-flagged td.fl-fixture::after { content: " ⚠"; 
 }
 
 .next-match-squad {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   font-size: 0.72rem;
@@ -319,7 +311,7 @@ table.fixtures-list tbody tr.fl-flagged td.fl-fixture::after { content: " ⚠"; 
 }
 
 .next-match-details {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.85rem;
   color: #e6e6e6;
 }

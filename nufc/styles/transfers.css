@@ -1,7 +1,8 @@
 /**
  * transfers.css — the transfer history page (transfers.html): filter bar,
- * summary line and the movements table. Needs base.css and components.css
- * (for the .guest-tag pills).
+ * summary line and the movements table (which becomes a stack of cards on
+ * narrow screens). Needs base.css and components.css (for the .guest-tag
+ * pills, and the shared table furniture used by .tr-wrap and .tr-table).
  */
 
 #transfers-root { padding-top: 28px; }
@@ -9,17 +10,18 @@
 /* ===== Filters ===== */
 .tr-filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .tr-filters select, .tr-filters input[type="search"], .tr-filters > button {
-  font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 500;
+  font-family: var(--font-heading); font-size: 13px; font-weight: 500;
   color: var(--ink); background: var(--paper-raised);
   border: 1px solid var(--hairline); border-radius: var(--radius);
   padding: 6px 10px; cursor: pointer;
 }
-.tr-filters input[type="search"] { font-family: 'Inter', sans-serif; font-weight: 400; cursor: text; min-width: 190px; }
-.tr-filters select:hover, .tr-filters > button:hover, .tr-filters input:focus { border-color: var(--ink); outline: none; }
+.tr-filters input[type="search"] { font-family: var(--font-body); font-weight: 400; cursor: text; min-width: 190px; }
+.tr-filters select:hover, .tr-filters > button:hover, .tr-filters input:focus { border-color: var(--ink); }
+.tr-filters input:focus { outline: none; }
 
 .tr-dir { display: inline-flex; }
 .tr-dir button {
-  font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  font-family: var(--font-heading); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
   color: var(--slate); background: var(--paper-raised);
   border: 1px solid var(--hairline); margin-left: -1px; padding: 6px 14px; cursor: pointer;
 }
@@ -28,25 +30,39 @@
 .tr-dir button:hover { color: var(--ink); border-color: var(--ink); position: relative; }
 .tr-dir button.active { color: var(--paper-raised); background: var(--ink); border-color: var(--ink); }
 
-.tr-summary { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--slate); margin: 14px 0 10px; }
+/* "Show loan returns" checkbox beside the sort button */
+.tr-toggle { display: inline-flex; align-items: center; gap: 6px; margin-left: 12px; cursor: pointer; white-space: nowrap; }
 
-/* ===== Table ===== */
-.tr-wrap { overflow-x: auto; border: 1px solid var(--hairline); background: var(--paper-raised); }
+/* Sort-by dropdown: only needed where the column headers aren't visible (see the small-screen block). */
+#tr-sortkey { display: none; }
+
+.tr-summary { font-family: var(--font-mono); font-size: 12px; color: var(--slate); margin: 14px 0 10px; }
+
+/* ===== Table (.tr-wrap is the shared scroll holder, see components.css) ===== */
 table.tr-table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 13px; }
 .tr-table th, .tr-table td { padding: 7px 12px; text-align: left; border-bottom: 1px solid var(--hairline); vertical-align: middle; }
-.tr-table thead th {
-  font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--slate); background: var(--pitch-soft); border-bottom: 2px solid var(--ink);
-  position: sticky; top: 0;
-}
+.tr-table thead th { position: sticky; top: 0; }  /* the rest of the header look is shared: see components.css */
 .tr-table tbody tr.tr-row:hover td { background: var(--pitch-soft); }
 .tr-table .guest-tag { margin-left: 0; }
 
+/* Sortable column headers: the whole header cell is a button */
+.tr-table thead th[data-sort] { padding: 0; }
+.tr-th-btn {
+  display: flex; align-items: center; gap: 6px; width: 100%;
+  padding: 7px 12px; cursor: pointer;
+  font: inherit; letter-spacing: inherit; text-transform: inherit; text-align: left;
+  color: inherit; background: none; border: 0;
+}
+.tr-th-btn::after { content: "\2195"; opacity: 0.35; }
+th[aria-sort="ascending"] .tr-th-btn::after { content: "\2191"; opacity: 1; }
+th[aria-sort="descending"] .tr-th-btn::after { content: "\2193"; opacity: 1; }
+.tr-th-btn:hover, th[aria-sort="ascending"] .tr-th-btn, th[aria-sort="descending"] .tr-th-btn { color: var(--ink); }
+
 .tr-group td {
-  font-family: 'Archivo Black', sans-serif; font-size: 15px; background: var(--paper);
+  font-family: var(--font-display); font-size: 15px; background: var(--paper);
   border-bottom: 2px solid var(--ink); padding: 14px 12px 6px;
 }
-.tr-date { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--slate); white-space: nowrap; }
+.tr-date { font-family: var(--font-mono); font-size: 12px; color: var(--slate); white-space: nowrap; }
 .tr-player { font-weight: 600; }
 .tr-prep { color: var(--slate); font-size: 12px; }
 .tr-details { color: var(--slate); font-size: 12.5px; }
@@ -57,10 +73,64 @@ table.tr-table { border-collapse: collapse; width: 100%; min-width: 760px; font-
 /* In / Out */
 .tr-dir-pill {
   display: inline-block; min-width: 34px; text-align: center;
-  font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
   padding: 2px 6px; border-radius: 2px; color: #fff;
 }
 .tr-dir-pill.tr-in { background: var(--pitch); }
 .tr-dir-pill.tr-out { background: var(--claret-ink); }
 tr.tr-row.tr-in td:first-child { box-shadow: inset 3px 0 0 var(--pitch); }
 tr.tr-row.tr-out td:first-child { box-shadow: inset 3px 0 0 var(--claret-line); }
+
+/* ===== Small screens: each movement becomes a card =====
+   The table is only a table while it has room (min-width above); below that
+   each row is laid out as a small grid:
+       player ............ [In/Out]
+       movement  squad  club ......
+       date
+       details
+   The header row is visually hidden (the "Sort by" dropdown replaces its buttons). */
+@media (max-width: 760px) {
+  .tr-filters input[type="search"] { flex: 1 1 100%; }
+  .tr-filters select { flex: 1 1 40%; min-width: 0; }
+  .tr-toggle { margin-left: 0; }
+  #tr-sortkey { display: inline-block; }
+
+  .tr-wrap { overflow: visible; border: 0; background: none; }
+  table.tr-table, .tr-table tbody { display: block; min-width: 0; }
+  .tr-table thead {
+    position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+
+  .tr-table tr.tr-row {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-template-areas:
+      "player  player dir"
+      "move    squad  club"
+      "date    date   date"
+      "details details details";
+    gap: 6px 8px; align-items: center;
+    margin: 0 0 8px; padding: 10px 12px;
+    background: var(--paper-raised);
+    border: 1px solid var(--hairline); border-left: 3px solid var(--hairline-dark);
+    border-radius: var(--radius);
+  }
+  .tr-table tr.tr-row.tr-in { border-left-color: var(--pitch); }
+  .tr-table tr.tr-row.tr-out { border-left-color: var(--claret-line); }
+  .tr-table tr.tr-row:hover { background: var(--pitch-soft); }
+  .tr-table tbody tr.tr-row:hover td { background: transparent; }
+
+  .tr-table tr.tr-row td { padding: 0; border: 0; }
+  .tr-table tr.tr-row td:first-child { box-shadow: none; } /* the card's left border replaces the date cell's accent */
+  .tr-table tr.tr-row td:empty { display: none; }
+  .tr-table tr.tr-row td:nth-child(1) { grid-area: date; }
+  .tr-table tr.tr-row td:nth-child(2) { grid-area: dir; justify-self: end; }
+  .tr-table tr.tr-row td:nth-child(3) { grid-area: player; }
+  .tr-table tr.tr-row td:nth-child(4) { grid-area: squad; }
+  .tr-table tr.tr-row td:nth-child(5) { grid-area: move; }
+  .tr-table tr.tr-row td:nth-child(6) { grid-area: club; min-width: 0; }
+  .tr-table tr.tr-row td:nth-child(7) { grid-area: details; }
+
+  .tr-table tr.tr-group { display: block; }
+  .tr-table tr.tr-group td { display: block; padding: 14px 2px 6px; }
+}

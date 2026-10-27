@@ -4,7 +4,7 @@
             "category": "formula1",
             "name": "Formula 1",
             "resultsVerified": true,
-            "nextDate": "24 Oct 2026",
+            "nextDate": "31 Oct 2026",
             "links": {
                 "official": { "url": "https://www.formula1.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072", "label": "Results", "active": true },
@@ -291,23 +291,6 @@
         {
             "category": "formula4",
             "name": "F4 China",
-            "resultsVerified": false,
-            "nextDate": "17 Oct 2026",
-            "links": {
-                "official": { "url": "http://www.fiaf4.com.cn/fiaf4.html", "label": "Official site", "active": true },
-                "results": { "url": "http://www.fiaf4.com.cn/track/7/", "label": "Results", "active": false },
-                "standings": { "url": "http://www.fiaf4.com.cn/driverpoints.html", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.instagram.com/p/DUkbHOJEX77", "label": "Calendar", "active": true }
-            },
-            "social": [
-                { "platform": "x-twitter", "url": "https://x.com/formula4_china?lang=en" },
-                { "platform": "instagram", "url": "https://www.instagram.com/fia_f4_china" },
-                { "platform": "weibo", "url": "https://passport.weibo.com/visitor/visitor?entry=miniblog&a=enter&url=https%3A%2F%2Fweibo.com%2Fu%2F7744959716&domain=.weibo.com&" }
-            ]
-        },
-        {
-            "category": "formula4",
-            "name": "F4 China",
             "resultsVerified": true,
             "nextDate": "24 Apr 2027",
             "links": {
@@ -326,24 +309,7 @@
             "category": "formula4",
             "name": "F4 France",
             "resultsVerified": true,
-            "nextDate": "2027",
-            "links": {
-                "official": { "url": "https://www.ffsaacademy.org/championnat-de-france-f4/?lang=en", "label": "Official site", "active": true },
-                "results": { "url": "https://www.its-results.com/gt4/2026/5eeb2dbe-3e5d-42fe-8753-3de74635fd58", "label": "Results", "active": false },
-                "standings": { "url": "https://www.ffsaacademy.org/results-f4/?lang=en", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.ffsaacademy.org/championnat-de-france-f4/calendrier-f4/?lang=en", "label": "Calendar", "active": false }
-            },
-            "social": [
-                { "platform": "facebook", "url": "https://www.facebook.com/ffsaacademy" },
-                { "platform": "instagram", "url": "https://www.instagram.com/ffsaacademy" },
-                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCUWV6YsuDBWO5sYxmwSQUQQ"}
-            ]
-        },
-		{
-            "category": "formula4",
-            "name": "F4 France",
-            "resultsVerified": true,
-            "nextDate": "2027",
+            "nextDate": "28 Mar 2027",
             "links": {
                 "official": { "url": "https://www.ffsaacademy.org/championnat-de-france-f4/?lang=en", "label": "Official site", "active": true },
                 "results": { "url": "https://www.its-results.com/gt4/2026/5eeb2dbe-3e5d-42fe-8753-3de74635fd58", "label": "Results", "active": false },
@@ -380,7 +346,7 @@
             "nextDate": "24 Oct 2026",
             "links": {
                 "official": { "url": "https://www.fiaindianf4.com", "label": "Official site", "active": true },
-                "results": { "url": "https://www.fiaindianf4.com/results_3", "label": "Results", "active": false },
+                "results": { "url": "https://speedhive.mylaps.com/organizations/799385", "label": "Results", "active": true },
                 "standings": { "url": "https://www.fiaindianf4.com/results", "label": "Standings", "active": false },
                 "calendar": { "url": "https://www.instagram.com/p/DbFZhBbzYse", "label": "Calendar", "active": true }
             },
@@ -428,7 +394,7 @@
             "category": "formula4",
             "name": "F4 Japan",
             "resultsVerified": true,
-            "nextDate": "17 Oct 2026",
+            "nextDate": "7 Nov 2026",
             "links": {
                 "official": { "url": "https://fiaf4.jp", "label": "Official site", "active": true },
                 "results": { "url": "https://fiaf4.jp/results", "label": "Results", "active": true },
@@ -927,12 +893,12 @@
             "category": "nonFIA",
             "name": "GB4 Winter Series",
             "resultsVerified": true,
-            "nextDate": "24 Oct 2026",
+            "nextDate": "2027",
             "links": {
-                "official": { "url": "https://www.gb-4.net", "label": "Official site", "active": true },
-                "results": { "url": "https://www.tsl-timing.com/Results/bf3gt/2025", "label": "Results", "active": false },
-                "standings": { "url": "https://www.gb-4.net/standings", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.gb-4.net/news/2025/sept/25/gb4-championship-confirms-provisional-2026-calendar-and-winter-series-plans", "label": "Calendar", "active": true }
+                "official": { "url": "https://winter.gb-4.net", "label": "Official site", "active": true },
+                "results": { "url": "https://www.tsl-timing.com/event/264351", "label": "Results", "active": false },
+                "standings": { "url": "https://winter.gb-4.net/standings", "label": "Standings", "active": false },
+                "calendar": { "url": "https://www.gb-4.net/news/2025/sept/25/gb4-championship-confirms-provisional-2026-calendar-and-winter-series-plans", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/GB4Championship" },
@@ -1205,7 +1171,7 @@
             "category": "motorbikes",
             "name": "MotoGP",
             "resultsVerified": true,
-            "nextDate": "24 Oct 2026",
+            "nextDate": "31 Oct 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
@@ -1245,7 +1211,7 @@
             "category": "motorbikes",
             "name": "Moto2",
             "resultsVerified": true,
-            "nextDate": "24 Oct 2026",
+            "nextDate": "31 Oct 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
@@ -1285,7 +1251,7 @@
             "category": "motorbikes",
             "name": "Moto3",
             "resultsVerified": true,
-            "nextDate": "24 Oct 2026",
+            "nextDate": "31 Oct 2026",
             "links": {
                 "official": { "url": "https://www.motogp.com", "label": "Official site", "active": true },
                 "results": { "url": "https://www.motogp.com/en/gp-results", "label": "Results", "active": true },
@@ -1325,12 +1291,12 @@
             "category": "motorbikes",
             "name": "Moto2 Europe",
             "resultsVerified": true,
-            "nextDate": "2027",
+            "nextDate": "1 May 2027",
             "links": {
                 "official": { "url": "https://fimmotojunior.com/", "label": "Official site", "active": true },
-                "results": { "url": "https://fimmotojunior.com/results/2026/results-by-round", "label": "Results", "active": false },
-                "standings": { "url": "https://fimmotojunior.com/results/2026/championship-standing", "label": "Standings", "active": false },
-                "calendar": { "url": "https://fimmotojunior.com/calendar/2026/all-rounds", "label": "Calendar", "active": false }
+                "results": { "url": "https://fimmotojunior.com/results/2027/results-by-round", "label": "Results", "active": false },
+                "standings": { "url": "https://fimmotojunior.com/results/2027/championship-standing", "label": "Standings", "active": false },
+                "calendar": { "url": "https://fimmotojunior.com/calendar/2027/all-rounds", "label": "Calendar", "active": true }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/motojuniorwc" },
@@ -1344,12 +1310,12 @@
             "category": "motorbikes",
             "name": "Moto3 Junior World Championship",
             "resultsVerified": true,
-            "nextDate": "2027",
+            "nextDate": "1 May 2027",
             "links": {
                 "official": { "url": "https://fimmotojunior.com/", "label": "Official site", "active": true },
-                "results": { "url": "https://fimmotojunior.com/results/2026/results-by-round", "label": "Results", "active": false },
-                "standings": { "url": "https://fimmotojunior.com/results/2026/championship-standing", "label": "Standings", "active": false },
-                "calendar": { "url": "https://fimmotojunior.com/calendar/2026/all-rounds", "label": "Calendar", "active": false }
+                "results": { "url": "https://fimmotojunior.com/results/2027/results-by-round", "label": "Results", "active": false },
+                "standings": { "url": "https://fimmotojunior.com/results/2027/championship-standing", "label": "Standings", "active": false },
+                "calendar": { "url": "https://fimmotojunior.com/calendar/2027/all-rounds", "label": "Calendar", "active": true }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/motojuniorwc" },
@@ -1399,12 +1365,12 @@
             "category": "motorbikes",
             "name": "Moto4 European Cup",
             "resultsVerified": true,
-            "nextDate": "2027",
+            "nextDate": "1 May 2027",
             "links": {
                 "official": { "url": "https://fimmotojunior.com", "label": "Official site", "active": true },
-                "results": { "url": "https://fimmotojunior.com/results/2026/results-by-round", "label": "Results", "active": false },
-                "standings": { "url": "https://fimmotojunior.com/results/2026/championship-standing", "label": "Standings", "active": false },
-                "calendar": { "url": "https://fimmotojunior.com/calendar/2026/all-rounds", "label": "Calendar", "active": false }
+                "results": { "url": "https://fimmotojunior.com/results/2027/results-by-round", "label": "Results", "active": false },
+                "standings": { "url": "https://fimmotojunior.com/results/2027/championship-standing", "label": "Standings", "active": false },
+                "calendar": { "url": "https://fimmotojunior.com/calendar/2027/all-rounds", "label": "Calendar", "active": true }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/motojuniorwc" },
@@ -1816,24 +1782,6 @@
 		{
             "category": "karting",
             "name": "Karting World Cup (OK-NJ)",
-            "resultsVerified": false,
-            "nextDate": "10 Oct 2026",
-            "links": {
-                "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
-                "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
-                "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-calendar-approved-world-motor-sport-council", "label": "Calendar", "active": true }
-            },
-            "social": [
-                { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
-                { "platform": "facebook", "url": "https://www.facebook.com/fia.karting.championship.official" },
-                { "platform": "instagram", "url": "https://www.instagram.com/fia.karting.championship" },
-                { "platform": "youtube", "url": "https://www.youtube.com/channel/UCj5zsq1zTNtcA4lDOUz2kAg"}
-            ]
-        },
-		{
-            "category": "karting",
-            "name": "Karting World Cup (OK-NJ)",
             "resultsVerified": true,
             "nextDate": "4 Sep 2027",
             "links": {
@@ -1948,7 +1896,7 @@
                 "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
                 "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
                 "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-arrive-and-drive-europe-championship-competitor-information", "label": "Calendar", "active": false }
+                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-arrive-and-drive-europe-championship-competitor-information", "label": "Calendar", "active": true }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
@@ -1966,7 +1914,7 @@
                 "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
                 "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
                 "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-arrive-and-drive-europe-championship-competitor-information", "label": "Calendar", "active": false }
+                "calendar": { "url": "https://www.fiakarting.com/news/fia-karting-arrive-and-drive-south-america-championship-rescheduled", "label": "Calendar", "active": true }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/fiakarting" },
@@ -1984,7 +1932,7 @@
                 "official": { "url": "https://www.fiakarting.com/page/home", "label": "Official site", "active": true },
                 "results": { "url": "https://www.fiakarting.com/competition-list", "label": "Results", "active": false },
                 "standings": { "url": "https://www.fiakarting.com/championship-standings", "label": "Standings", "active": false },
-                "calendar": { "url": "https://www.fiakarting.com/news/2026-fia-karting-arrive-and-drive-europe-championship-competitor-information", "label": "Calendar", "active": false }
+                "calendar": { "url": "https://www.fiakarting.com/news/fia-karting-arrive-and-drive-south-america-championship-rescheduled", "label": "Calendar", "active": false }
             },
             "social": [
                 { "platform": "x-twitter", "url": "https://x.com/fiakarting" },

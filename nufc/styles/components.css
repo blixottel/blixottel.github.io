@@ -1,13 +1,13 @@
 /**
  * components.css — pieces used on more than one page: the status tags/pills,
- * the fixture matrix (squad tracker AND the player page strips), the
- * matchday markers, and the legend.
+ * shared table furniture, the fixture matrix (squad tracker AND the player
+ * page strips), the matchday markers, and the legend.
  */
 
 /* ===== Tags (.guest-tag and its variants) ===== */
 .guest-tag {
   display: inline-block;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 9.5px;
   letter-spacing: 0.04em;
   color: var(--pitch);
@@ -18,20 +18,39 @@
   margin-left: 7px;
   vertical-align: middle;
 }
-.guest-tag.loan-tag { color: #8A6414; background: var(--amber-bg); border-color: var(--amber-line); }
-.guest-tag.incoming-tag { color: #3D6E88; background: var(--sky-bg); border-color: var(--sky-line); }
+.guest-tag.loan-tag { color: var(--amber-ink); background: var(--amber-bg); border-color: var(--amber-line); }
+.guest-tag.incoming-tag { color: var(--sky-ink); background: var(--sky-bg); border-color: var(--sky-line); }
 .guest-tag.left-tag { color: var(--claret-ink); background: var(--claret-bg); border-color: var(--claret-line); }
 .guest-tag.injured-season-tag { color: var(--injury-ink); background: var(--injury-bg); border-color: var(--injury-line); }
 .guest-tag.not-selected-season-tag { color: var(--slate); background: var(--slate-bg); border-color: var(--slate-line); }
 .guest-tag.trialist-tag { color: var(--cup-ink); background: var(--cup-col-bg); border-color: var(--cup-gold); }
-.pregnancy-leave-tag { background: #F3E6F0; color: #8E4A7D; border-color: #C9A0BE; }
+.pregnancy-leave-tag { background: var(--plum-bg); color: var(--plum); border-color: var(--plum-line); }
+
+/* ===== Shared table furniture ===== */
+/* Bordered, horizontally scrolling holder for a wide table. */
+.matrix-wrap, .fixtures-list-wrap, .tr-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--hairline);
+  background: var(--paper-raised);
+}
+.matrix-wrap, .fixtures-list-wrap { margin-top: 14px; }
+
+/* Header cells of the two "list" tables (squad fixtures list, transfer history). */
+table.fixtures-list thead th, .tr-table thead th {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  background: var(--pitch-soft);
+  border-bottom: 2px solid var(--ink);
+}
 
 /* ===== Fixture matrix ===== */
-.matrix-wrap { margin-top: 14px; overflow-x: auto; border: 1px solid var(--hairline); background: var(--paper-raised); }
 table.matrix { border-collapse: collapse; font-size: 12.5px; min-width: 100%; }
 table.matrix th, table.matrix td { border-bottom: 1px solid var(--hairline); }
 table.matrix thead th {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-weight: 600;
   font-size: 11px;
   color: var(--paper);
@@ -83,7 +102,7 @@ table.matrix thead th.total-col { background: var(--pitch); color: var(--paper-r
 
 /* Cup / European / flagged fixture columns */
 table.matrix thead th.fx-flagged { background: #4a2f2f; }
-table.matrix thead th.fx-flagged .fx-opp::after { content: " ⚠"; color: #E4B937; }
+table.matrix thead th.fx-flagged .fx-opp::after { content: " ⚠"; color: var(--yellow-card); }
 
 table.matrix thead th.fx-cup { background: var(--cup-ink); }
 table.matrix thead th.fx-cup .fx-venue { color: var(--cup-gold); }
@@ -103,15 +122,15 @@ table.matrix tbody tr:hover td.cell.fx-euro-col { background: var(--euro-col-bg)
 .mk-sub { width: 10px; height: 10px; border: 2px solid var(--ink); border-radius: 2px; background: linear-gradient(135deg, var(--ink) 50%, transparent 50%); }
 .mk-unused { width: 8px; height: 8px; border: 2px solid var(--hairline-dark); border-radius: 2px; opacity: 0.6; }
 .mk-out { color: var(--slate); font-size: 12px; font-weight: 700; opacity: 0.5; }
-.mk-injured { color: #C0392B; font-size: 12px; font-weight: 800; }
+.mk-injured { color: var(--alert); font-size: 12px; font-weight: 800; }
 .mk-suspended { color: #B9762F; font-size: 13px; font-weight: 800; }
-.mk-loan { color: #8A6414; font-size: 12px; font-weight: 800; }
+.mk-loan { color: var(--amber-ink); font-size: 12px; font-weight: 800; }
 .mk-transferred { color: var(--claret-ink); font-size: 13px; font-weight: 800; }
-.mk-incoming { color: #3D6E88; font-size: 13px; font-weight: 800; }
+.mk-incoming { color: var(--sky-ink); font-size: 13px; font-weight: 800; }
 .mk-pregnancy {
   display: inline-flex; align-items: center; justify-content: center;
   width: 16px; height: 16px; line-height: 1;
-  font-size: 13px; font-weight: 700; color: #8E4A7D;
+  font-size: 13px; font-weight: 700; color: var(--plum);
 }
 
 /* ===== Legend ===== */
@@ -126,7 +145,7 @@ table.matrix tbody tr:hover td.cell.fx-euro-col { background: var(--euro-col-bg)
 .legend-details { margin: 10px 0 4px; }
 .legend-details > summary {
   display: inline-block; cursor: pointer; list-style: none;
-  font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  font-family: var(--font-heading); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
   color: var(--slate); background: var(--paper-raised); border: 1px solid var(--hairline); border-radius: var(--radius);
   padding: 6px 14px;
 }

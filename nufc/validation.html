@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Data checks — The Teamsheet</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles/base.css">
 <link rel="stylesheet" href="styles/checks.css">
@@ -22,11 +24,13 @@
   </div>
 </div>
 
-<div id="load-error">
-  <strong>Couldn't load the data files.</strong> If you opened this page directly from disk (a <code>file://</code> link),
-  most browsers block a local page from reading local JSON files. Run a tiny local server from this folder instead, e.g.
-  <code>python3 -m http.server 8000</code>, then open <code>http://localhost:8000/validation.html</code>.
+<div id="load-error" role="alert">
+  <strong>Couldn't load the data files.</strong> Please check your connection and try again.
+  <button type="button" class="retry-btn" onclick="location.reload()">Retry</button>
+  <div class="dev-only">Developer note: if you opened this page directly from disk (a <code>file://</code> link), most browsers block a local page from reading local JSON files. Run a tiny local server from this folder instead, e.g. <code>python3 -m http.server 8000</code>, then open <code>http://localhost:8000/validation.html</code>.</div>
 </div>
+
+<div id="loading" class="loading" role="status" aria-live="polite"><span class="spinner" aria-hidden="true"></span> Running data checks…</div>
 
 <div id="all-clear"><strong>All clear.</strong> No data issues found for this team and season.</div>
 

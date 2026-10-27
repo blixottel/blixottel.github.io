@@ -431,10 +431,24 @@
         "position": "DEF",
         "careerStatus": "ongoing",
         "movements": [
-			{ "type": "joined", "date": "2026-07-14", "club": "Brighton and Hove Albion" }
+			{ "type": "joined", "date": "2026-07-14", "club": "Brighton & Hove Albion" }
         ],
         "photos": {
             "official": "https://contentfulproxy.stadion.io/9ec6988xevcz/17icgMg2Kw9lfsZeWQECa5/8fef51660f56bb675f4948116c007784/Rachel_McLauchlan85-Photoroom.png?fm=webp&fit=fill&f=top&w=360&h=360&q=75"
+        }
+    },
+    {
+        "id": "s-soffia-kelly",
+        "name": "Soffia Kelly",
+        "nationality": "Wales",
+        "dob": "2007-03-06",
+        "position": "GK",
+        "careerStatus": "ongoing",
+        "movements": [
+			{ "type": "loan_in", "date": "2026-10-25", "endDate": "2026-11-07", "club": "Aston Villa" }
+        ],
+        "photos": {
+            "official": "https://images.gc.avfcservices.co.uk/fit-in/1200x675/d94ac8a0-98dc-11f1-9fed-bf0f2b7214ee.webp"
         }
     }
 ]

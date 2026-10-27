@@ -179,6 +179,14 @@ function validateFixtures(fixturesData, playersById, options = {}) {
       issues.push({ squad: normSquad(p.squad), fixtureId: null, fixtureLabel: null, severity: 'warning',
         message: `${p.name} has both a "dob" and a "squadIfDobUnknown" in players-master.json — the dob is used for squad assignment and "squadIfDobUnknown" is ignored. Safe to remove it.` });
     }
+    if (p._squadOverrideRedundant) {
+      issues.push({ squad: normSquad(p.squad), fixtureId: null, fixtureLabel: null, severity: 'warning',
+        message: `${p.name} has "squadOverride": "${p.squadOverride}" in the season file, but their date of birth already puts them in that squad — safe to remove the override.` });
+    }
+    if (p.squadOverride && !SQUAD_LABEL[normSquad(p.squadOverride)]) {
+      issues.push({ squad: normSquad(p.squad), fixtureId: null, fixtureLabel: null, severity: 'error',
+        message: `${p.name} has "squadOverride": "${p.squadOverride}", which isn't a squad the site knows (expected one of: ${Object.keys(SQUAD_LABEL).join(', ')}).` });
+    }
     if (p.status && !KNOWN_PLAYER_STATUSES.has(p.status)) {
       issues.push({ squad: normSquad(p.squad), fixtureId: null, fixtureLabel: null, severity: 'error',
         message: `${p.name} has an unrecognized status "${p.status}" in players.json (expected "active", "loan", "incoming", "left", "injured_season", "pregnancy_leave", "not_selected_season", "trialist", or omitted).` });
@@ -225,6 +233,13 @@ function validateFixtures(fixturesData, playersById, options = {}) {
             fl('warning', `fixtures aren't in date order — this one is dated before the previous fixture (${fmtDate(prev.date)} v ${prev.opponent}).`);
           }
           prev = fx;
+        }
+        if (!fx.result && isPlaceholderOpponent(fx.opponent) && (fx.venue === undefined || fx.venue === null || fx.venue === '')) {
+          // Opponent not known yet (e.g. a cup draw that hasn't been made), so no venue either: nothing to check.
+        } else if (fx.venue === undefined || fx.venue === null || fx.venue === '') {
+          fl('warning', `no venue — expected "H" (home), "A" (away) or "N" (neutral).`);
+        } else if (!['H', 'A', 'N'].includes(fx.venue)) {
+          fl('warning', `venue "${fx.venue}" isn't "H" (home), "A" (away) or "N" (neutral).`);
         }
         if (fx.gameweek != null) {
           const comp = (fx.competition && fx.competition.trim()) ? fx.competition.trim() : 'League';
@@ -281,6 +296,21 @@ function validateFixtures(fixturesData, playersById, options = {}) {
           flag('error', `${name} has an unrecognized status "${rec.status}" (expected "start", "sub_on", "unused_sub", "injured", "pregnancy_leave", "suspended", "loan", "transferred", "incoming", or "unavailable") — this record won't be counted anywhere until it's fixed.`);
         }
       });
+
+      // Minutes that can't be right: more than a match lasts (90, or 120 with extra time), or a starter on 0.
+      {
+        const maxMinutes = fx.wentToExtraTime ? 120 : 90;
+        records.forEach(({ pid, rec }) => {
+          if (typeof rec.minutes !== 'number') return;
+          const name = (playersById[pid] || {}).name || pid;
+          if (rec.minutes > maxMinutes) {
+            flag('warning', `${name} has ${rec.minutes} minutes recorded, more than the ${maxMinutes} a match can last${fx.wentToExtraTime ? ' (with extra time)' : ''}.`);
+          }
+          if (rec.status === 'start' && rec.minutes === 0) {
+            flag('warning', `${name} is marked as a starter but has 0 minutes.`);
+          }
+        });
+      }
 
       const starts = records.filter(r => r.rec.status === 'start');
       const subsOn = records.filter(r => r.rec.status === 'sub_on');
@@ -444,6 +474,7 @@ function validateFixtures(fixturesData, playersById, options = {}) {
 
   validatePlayerSeasonConsistency(fixturesData, playersById, options.season).forEach(i => issues.push(i));
   validateRecordShapes(fixturesData, playersById).forEach(i => issues.push(i));
+  validateFixtureConsistency(fixturesData).forEach(i => issues.push(i));
 
   return issues;
 }
@@ -638,8 +669,15 @@ function validatePlayerSeasonConsistency(fixturesData, playersById, season) {
         const live = loansOut.filter(overlaps);
         if (!live.length) {
           push(home, 'warning', `${name} has roster status "loan" in the ${sLabel} season file, but no loan_out (or loan_out_dual) movement overlaps that season.`);
-        } else if (p.loanClub && !live.some(m => sNorm(m.club) === sNorm(p.loanClub))) {
-          push(home, 'warning', `${name}'s roster loanClub is "${p.loanClub}", but their loan movement${live.length === 1 ? '' : 's'} in ${sLabel} ${live.length === 1 ? 'is' : 'are'} to ${live.map(m => m.club || 'an unnamed club').join(' / ')}.`);
+        } else if (p.loanClub) {
+          // More than one loan in a season is written as e.g. "Leyton Orient & Bradford City": take each loan
+          // club's name out of the text and see whether anything other than separators is left over.
+          let rest = sNorm(p.loanClub);
+          live.map(m => sNorm(m.club)).filter(Boolean).sort((a, b) => b.length - a.length).forEach(c => { if (rest.includes(c)) rest = rest.replace(c, ' '); });
+          const leftover = rest.replace(/[&\/,+]|\band\b/g, ' ').replace(/\s+/g, ' ').trim();
+          if (leftover) {
+            push(home, 'warning', `${name}'s roster loanClub is "${p.loanClub}", but their loan movement${live.length === 1 ? '' : 's'} in ${sLabel} ${live.length === 1 ? 'is' : 'are'} to ${live.map(m => m.club || 'an unnamed club').join(' and ')} ("${leftover}" matches none). With several loans, list the clubs joined with " & ".`);
+          }
         }
       }
 
@@ -661,6 +699,18 @@ function validatePlayerSeasonConsistency(fixturesData, playersById, season) {
         if (!gone) {
           push(home, 'warning', `${name} has roster status "left" in the ${sLabel} season file, but no "left" or "retired" movement is dated by the end of that season.`);
         }
+      }
+    }
+
+    // R. On the roster as a plain active player, yet not a single appearance record in any squad all season,
+    //    even though their squad has played. Something should explain that: a status (not_selected_season,
+    //    injured_season, left, loan ...), or they shouldn't be on this season's file. Waits until the squad has
+    //    played a few matches so a brand-new season doesn't flag everyone.
+    if (!p._unresolvedMaster && (!p.status || p.status === 'active')) {
+      const played = homeFixtures.filter(f => f && f.result).length;
+      const anyRecord = Object.keys(fixturesData).some(k => { const recs = ((fixturesData[k] || {}).appearances || {})[pid]; return !!recs && Object.keys(recs).length > 0; });
+      if (played >= 3 && !anyRecord) {
+        push(home, 'warning', `${name} is on the season file as an active player but has no appearance records in any squad, although the ${homeLabel} have played ${played} matches. If they weren't selected, were injured or have gone, give them a status (e.g. "not_selected_season", "injured_season", "left"); otherwise remove them from the season file.`);
       }
     }
 
@@ -782,8 +832,6 @@ function checkMovementDates(p, fixturesData) {
 // 30 June departure from demanding a roster entry in the season that's ending.
 const SEASON_OVERLAP_GRACE_DAYS = 45;
 
-// A trial_in ending and the "joined" that follows it can be this many days apart before it's worth a warning.
-const TRIAL_JOIN_GAP_DAYS = 7;
 
 // A player's career status, as recorded in players-master / -former / -archive.json:
 //   "partial"  — part of their career isn't in the data (joined before TEAM.dataFrom, or a season is missing / unfinished)
@@ -1272,14 +1320,14 @@ function validateAcrossSeasons(masterList, seasonData) {
       }
     }
 
-    // Trial -> signing: a trial_in should run up to the "joined" that follows it. Flags an open-ended trial,
-    // a trial that overlaps the joining date, and a gap of more than TRIAL_JOIN_GAP_DAYS between the two.
+    // Trial -> signing: flags a trial_in that has no endDate but is followed by a "joined", or that ends after
+    // that "joined". (A gap between the trial ending and signing is normal, so isn't flagged.)
     mv.filter(m => m && m.type === 'trial_in' && validDateStr(m.date, true)).forEach(tr => {
       const ts = looseDate(tr.date, false);
       const joined = mv.filter(m => m && m.type === 'joined' && validDateStr(m.date, true) && looseDate(m.date, false) >= ts)
         .sort((a, b) => a.date.localeCompare(b.date))[0];
       if (!joined) return;
-      const what = `${name}'s trial${tr.club ? ' at ' + tr.club : ''} (from ${dmy(tr.date)})`;
+      const what = `${name}'s trial${tr.club ? ' (in from ' + tr.club + ')' : ''} starting ${dmy(tr.date)}`;
       const endRaw = endOf(tr);
       if (!endRaw) {
         add('warning', `${what} has no endDate, but they joined on ${dmy(joined.date)} — set the trial's endDate to the day before.`);
@@ -1289,10 +1337,28 @@ function validateAcrossSeasons(masterList, seasonData) {
       const days = Math.round((looseDate(joined.date, false) - looseDate(endRaw, true)) / DAY);
       if (days < 0) {
         add('warning', `${what} ends ${dmy(endRaw)}, after they joined (${dmy(joined.date)}) — the trial should end before joining.`);
-      } else if (days - 1 > TRIAL_JOIN_GAP_DAYS) {
-        add('warning', `${what} ends ${dmy(endRaw)} but they didn't join until ${dmy(joined.date)} — ${days - 1} days with no movement covering them. Fine if intended; otherwise check the dates.`);
       }
     });
+
+    // Loans (loan_out / loan_out_dual) can only start while the player is at the club: on or after a "joined",
+    // and not after the "left" / "retired" that ends that spell.
+    {
+      const spells = clubSpells(mv);
+      const isoOf = ms => new Date(ms).toISOString().slice(0, 10);
+      if (spells.length) {
+        mv.filter(m => (m.type === 'loan_out' || m.type === 'loan_out_dual') && validDateStr(m.date, true)).forEach(m => {
+          const s = looseDate(m.date, false);
+          if (spells.some(sp => s >= sp.from && s <= sp.to)) return;
+          const first = spells[0];
+          const before = isFinite(first.from) && s < first.from;
+          const prior = spells.filter(sp => isFinite(sp.to) && sp.to < s).pop();
+          const why = before ? `before they joined the club (${dmy(isoOf(first.from))})`
+            : prior ? `after they left the club (${dmy(prior.leftDate)}) and before any later "joined"`
+            : 'outside every spell at the club';
+          add('error', `${name}'s ${m.type} to ${m.club || 'another club'} starts ${dmy(m.date)}, ${why}.`);
+        });
+      }
+    }
 
     // 5. Which player file a player belongs in. "Gone" = the most recent joined/left/retired movement is a
     // leaving one whose date has passed (or has no usable date), or — for a loan-in / trial player who
@@ -1394,6 +1460,127 @@ function validateAcrossSeasons(masterList, seasonData) {
 
     // 4c. careerStatus present and matching the data (see expectedCareerStatus above).
     checkCareerStatus(p, mv, missingFlagged);
+  });
+
+  // ---- the same person under two ids (same name + date of birth) ----
+  {
+    const norm = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    const byKey = {};
+    masterList.forEach(p => { if (p && p.name && p.dob) (byKey[norm(p.name) + '|' + p.dob] = byKey[norm(p.name) + '|' + p.dob] || []).push(p); });
+    Object.keys(byKey).forEach(k => {
+      const ps = byKey[k];
+      const ids = [...new Set(ps.map(p => p.id))];
+      if (ids.length > 1) add('warning', `${ps[0].name} (born ${dmy(ps[0].dob)}) is listed under ${ids.length} different ids (${ids.join(', ')}) — the same person entered twice?`);
+    });
+  }
+
+  // ---- club names: the same club spelt two ways across everyone's movements ----
+  {
+    const FILLER = new Set(['fc', 'afc', 'cf', 'the']);
+    const ABBREV = { utd: 'united' };
+    const coreOf = s => String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/&/g, ' and ')
+      .replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/).filter(w => w && !FILLER.has(w)).map(w => ABBREV[w] || w);
+    const clubs = {};
+    masterList.forEach(p => (Array.isArray(p.movements) ? p.movements : []).forEach(m => {
+      if (!m || typeof m.club !== 'string' || !m.club.trim()) return;
+      const c = clubs[m.club] || (clubs[m.club] = { n: 0, who: [], core: coreOf(m.club) });
+      c.n += 1;
+      const who = p.name || p.id;
+      if (c.who.length < 2 && !c.who.includes(who)) c.who.push(who);
+    }));
+    const raws = Object.keys(clubs);
+    const likeSame = (a, b) => {
+      const ta = clubs[a].core, tb = clubs[b].core, sa = ta.join(' '), sb = tb.join(' ');
+      if (sa === sb) return true; // only case, punctuation, "FC" / "AFC" or "Utd" differ
+      if (sa.replace(/\d+/g, '') === sb.replace(/\d+/g, '')) return false; // differ only in numbers ("U21" / "U23")
+      if (ta.length === tb.length && ta.length >= 2 &&
+          ta.every((w, i) => w === tb[i] || (Math.min(w.length, tb[i].length) >= 3 && (w.startsWith(tb[i]) || tb[i].startsWith(w))))) return true; // "Crewe Alex" / "Crewe Alexandra"
+      return Math.min(sa.length, sb.length) >= 8 && editDistance(sa, sb) <= 2;
+    };
+    const desc = c => `"${c}" (${clubs[c].n} movement${clubs[c].n === 1 ? '' : 's'}, e.g. ${clubs[c].who.join(', ')})`;
+    for (let i = 0; i < raws.length; i++) {
+      for (let j = i + 1; j < raws.length; j++) {
+        if (isDistinctPair(raws[i], raws[j]) || !likeSame(raws[i], raws[j])) continue;
+        add('warning', `Clubs ${desc(raws[i])} and ${desc(raws[j])} look like the same club spelt two ways — use one spelling so the transfer page's search and filters treat them as one. (If they really are different clubs, add the pair to DISTINCT_NAME_PAIRS in stats.js.)`);
+      }
+    }
+  }
+
+  // ---- the same photo URL on two different players (a likely copy-paste slip) ----
+  {
+    const normUrl = u => String(u).trim().replace(/[?#].*$/, '').toLowerCase();
+    const skip = new Set(Object.keys(SHARED_PHOTO_SOURCES).map(k => SHARED_PHOTO_SOURCES[k]).filter(Boolean).map(normUrl));
+    const GENERIC = /placeholder|no[-_]?photo|default[-_]?(player|avatar|image|photo)/i;
+    const byUrl = {};
+    masterList.forEach(p => {
+      if (!p) return;
+      const entries = [];
+      if (p.photos && typeof p.photos === 'object' && !Array.isArray(p.photos)) Object.keys(p.photos).forEach(k => entries.push([k, p.photos[k]]));
+      else if (Array.isArray(p.photos)) p.photos.forEach((u, i) => entries.push(['photo ' + (i + 1), u]));
+      else if (p.photo) entries.push(['photo', p.photo]);
+      entries.forEach(([src, u]) => {
+        if (typeof u !== 'string' || !u.trim()) return;
+        const key = normUrl(u);
+        if (skip.has(key) || GENERIC.test(key)) return;
+        const g = byUrl[key] || (byUrl[key] = { url: u.trim(), owners: {} });
+        const o = g.owners[p.id] || (g.owners[p.id] = { name: p.name || p.id, srcs: [] });
+        if (!o.srcs.includes(src)) o.srcs.push(src);
+      });
+    });
+    Object.keys(byUrl).forEach(key => {
+      const g = byUrl[key], owners = Object.keys(g.owners).map(id => g.owners[id]);
+      if (owners.length < 2) return;
+      const shown = owners.slice(0, 3).map(o => `${o.name} ("${o.srcs.join('", "')}")`).join(', ');
+      const more = owners.length > 3 ? ` and ${owners.length - 3} more` : '';
+      const short = g.url.length > 90 ? g.url.slice(0, 87) + '...' : g.url;
+      add('warning', `${owners.length} players share the same photo: ${shown}${more} — one of them is probably a copy-paste mistake. ${short}`);
+    });
+  }
+
+  // ---- seasons.json: ageBands (each season's cut-offs for turning a date of birth into a squad) ----
+  // Bands are half-open: bornOnOrAfter is inclusive, bornBefore exclusive, and the first matching band wins.
+  // Anyone matching no band is put in the senior squad — right for players older than every band, but a
+  // gap between two bands (or after the youngest) quietly sends those players to the seniors too.
+  seasonData.forEach(sd => {
+    const bands = sd.season.ageBands;
+    if (bands === undefined) return;
+    const sName = `Season ${label(sd.season)}`;
+    if (!Array.isArray(bands)) { add('error', `${sName}'s ageBands in seasons.json isn't a list.`); return; }
+    const isoOf = ms => new Date(ms).toISOString().slice(0, 10);
+    const ok = [];
+    bands.forEach((b, i) => {
+      const where = `${sName} ageBands entry ${i + 1}${b && b.squad ? ' (' + b.squad + ')' : ''}`;
+      if (!b || typeof b !== 'object' || Array.isArray(b)) { add('error', `${where} isn't an object.`); return; }
+      if (!b.squad) add('error', `${where} has no "squad".`);
+      else if (!SQUAD_LABEL[b.squad] && !SQUAD_SHORT[b.squad]) add('warning', `${where}: "${b.squad}" isn't a squad the site knows.`);
+      Object.keys(b).filter(k => !['squad', 'bornOnOrAfter', 'bornBefore'].includes(k)).forEach(k => {
+        const hint = closestField(k, ['squad', 'bornOnOrAfter', 'bornBefore']);
+        add('warning', `${where} has a field "${k}" that the site doesn't read${hint ? ` — did you mean "${hint}"?` : '.'}`);
+      });
+      let bad = false;
+      ['bornOnOrAfter', 'bornBefore'].forEach(f => {
+        if (b[f] !== undefined && !validDateStr(b[f], false)) { add('error', `${where} has an invalid ${f} "${b[f]}" (expected YYYY-MM-DD).`); bad = true; }
+      });
+      if (bad) return;
+      const lo = b.bornOnOrAfter ? looseDate(b.bornOnOrAfter, false) : -Infinity;
+      const hi = b.bornBefore ? looseDate(b.bornBefore, false) : Infinity;
+      if (lo >= hi) { add('error', `${where} can never match anyone: bornOnOrAfter (${dmy(b.bornOnOrAfter)}) isn't before bornBefore (${dmy(b.bornBefore)}).`); return; }
+      ok.push({ squad: b.squad || '?', lo, hi });
+    });
+    const sorted = ok.slice().sort((x, y) => (x.lo < y.lo ? -1 : x.lo > y.lo ? 1 : 0));
+    for (let i = 1; i < sorted.length; i++) {
+      const prev = sorted[i - 1], cur = sorted[i];
+      if (cur.lo < prev.hi) {
+        const to = Math.min(prev.hi, cur.hi);
+        add('error', `${sName}: the "${prev.squad}" and "${cur.squad}" ageBands overlap — anyone born from ${dmy(isoOf(cur.lo))}${isFinite(to) ? ' to before ' + dmy(isoOf(to)) : ' onwards'} matches both, and only the first one listed counts.`);
+      } else if (cur.lo > prev.hi) {
+        add('error', `${sName}: nobody born from ${dmy(isoOf(prev.hi))} to before ${dmy(isoOf(cur.lo))} matches any ageBands entry (between "${prev.squad}" and "${cur.squad}"), so they'd be put in the senior squad. Close the gap.`);
+      }
+    }
+    const youngest = sorted[sorted.length - 1];
+    if (youngest && isFinite(youngest.hi)) {
+      add('warning', `${sName}: anyone born on or after ${dmy(isoOf(youngest.hi))} matches no ageBands entry (the youngest, "${youngest.squad}", stops there), so they'd be put in the senior squad.`);
+    }
   });
 
   // ---- seasons.json: start / end dates ----
@@ -1507,6 +1694,23 @@ const KNOWN_MOVEMENT_TYPES = new Set(['joined', 'left', 'retired', 'loan_out', '
  * so the stat just goes missing. These lists are what records are compared against — if you start using a
  * new field, add it here. A movement's end date is "endDate" and nothing else.
  * ------------------------------------------------------------------ */
+// Pairs of competition / club names that look alike but really are different, so the "spelt two ways"
+// checks skip them. Add pairs here if one of those checks cries wolf. (Names that differ only in a number,
+// like "Premier League" / "Premier League 2", are already skipped.)
+const DISTINCT_NAME_PAIRS = [
+  ['Premier League', 'Premier League 2'],
+  ['Ashington', 'Washington'],
+];
+const nameKey = s => String(s == null ? '' : s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
+function isDistinctPair(a, b) {
+  const x = nameKey(a), y = nameKey(b);
+  return DISTINCT_NAME_PAIRS.some(([p, q]) => (nameKey(p) === x && nameKey(q) === y) || (nameKey(p) === y && nameKey(q) === x));
+}
+// An opponent that isn't known yet (e.g. an FA Cup tie before the draw): "TBA", "TBC", "TBD", "?" ...
+function isPlaceholderOpponent(o) {
+  return /^(tba|tbc|tbd|to be (announced|confirmed|decided|determined)|\?+|-+|—+)$/i.test(String(o == null ? '' : o).trim());
+}
+
 const T_TEXT = 'text', T_FLAG = 'flag', T_COUNT = 'count', T_NUM = 'num';
 const FIELD_SPECS = {
   fixture: {
@@ -1514,6 +1718,7 @@ const FIELD_SPECS = {
     gameweek: [T_COUNT, T_TEXT], subsUsed: T_COUNT, subsUnused: T_COUNT, assistsTotal: T_COUNT,
     yellowCardsTotal: T_COUNT, redCardsTotal: T_COUNT, xg: T_NUM, noDetailedStats: T_FLAG,
     wentToExtraTime: T_FLAG, redCardMinutesLost: T_COUNT, ownGoalsFor: T_COUNT,
+    allowRepeatMeeting: T_FLAG, // acknowledges a legitimate third meeting (see validateFixtureConsistency)
   },
   appearance: {
     status: T_TEXT, goals: T_COUNT, assists: T_COUNT, minutes: T_COUNT, xg: T_NUM,
@@ -1571,6 +1776,94 @@ function recordProblems(rec, spec, renames) {
     if (!want.some(w => fieldTypeOk(v, w))) out.push({ field: k, problem: 'type', expected: want.map(w => TYPE_WORDS[w]).join(' or '), got: describeValue(v) });
   });
   return out;
+}
+
+/**
+ * List-level fixture checks:
+ *  - competition names that look like the same competition spelt two ways (case, spacing, a typo);
+ *  - the same opponent met more often than expected in one competition (more than twice, or twice at the
+ *    same home / away venue) — usually a duplicated or mistyped fixture;
+ *  - a fixture id whose prefix belongs to another squad's list (e.g. "u18-f3" inside the U21s).
+ */
+function validateFixtureConsistency(fixturesData) {
+  const issues = [];
+  const norm = s => String(s == null ? '' : s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
+  const squadKeys = Object.keys(fixturesData || {});
+
+  // Competitions, across every squad
+  const comps = {};
+  squadKeys.forEach(sk => ((fixturesData[sk] || {}).fixtures || []).forEach(fx => {
+    if (fx && typeof fx.competition === 'string' && fx.competition.trim()) comps[fx.competition] = (comps[fx.competition] || 0) + 1;
+  }));
+  const names = Object.keys(comps);
+  for (let i = 0; i < names.length; i++) {
+    for (let j = i + 1; j < names.length; j++) {
+      const a = names[i], b = names[j], na = norm(a), nb = norm(b);
+      let same = na === nb;
+      if (!same) {
+        const strip = s => s.replace(/\d+/g, '').replace(/\s+/g, ' ').trim();
+        if (strip(na) === strip(nb)) continue; // differ only in numbers ("Premier League" / "Premier League 2"): different on purpose
+        same = Math.min(na.length, nb.length) >= 8 && editDistance(na, nb) <= 2;
+      }
+      if (same && !isDistinctPair(a, b)) {
+        issues.push({ squad: '_general', fixtureId: null, fixtureLabel: null, severity: 'warning',
+          message: `Competition "${a}" (${comps[a]} fixture${comps[a] === 1 ? '' : 's'}) and "${b}" (${comps[b]} fixture${comps[b] === 1 ? '' : 's'}) look like the same competition spelt two ways — they'd be grouped separately. Check which is right.` });
+      }
+    }
+  }
+
+  squadKeys.forEach(sk => {
+    const fixtures = ((fixturesData[sk] || {}).fixtures || []).filter(fx => fx && typeof fx === 'object');
+    const where = SQUAD_LABEL[sk] || sk;
+
+    // Repeat meetings
+    const groups = {};
+    fixtures.forEach(fx => {
+      if (!fx.opponent || isPlaceholderOpponent(fx.opponent)) return;
+      const k = norm(fx.opponent) + '|' + norm(fx.competition || 'League');
+      (groups[k] = groups[k] || []).push(fx);
+    });
+    Object.keys(groups).forEach(k => {
+      const list = groups[k];
+      if (list.length < 2) return;
+      if (list.some(f => f.allowRepeatMeeting === true)) return; // acknowledged, e.g. a group game plus a two-legged tie
+      const perVenue = {};
+      list.forEach(f => { if (f.venue === 'H' || f.venue === 'A') perVenue[f.venue] = (perVenue[f.venue] || 0) + 1; });
+      const repeated = Object.keys(perVenue).filter(v => perVenue[v] > 1);
+      if (list.length > 2 || repeated.length) {
+        const last = list[list.length - 1];
+        const comp = (last.competition && last.competition.trim()) ? last.competition.trim() : 'League';
+        issues.push({ squad: sk, fixtureId: last.id, fixtureLabel: `${last.date ? fmtDate(last.date) : 'undated'} v ${last.opponent}`, severity: 'warning',
+          message: `${where}: ${last.opponent} appear ${list.length} times in "${comp}" (${list.map(f => `${f.date ? fmtDate(f.date) : 'undated'} ${f.venue || '?'}`).join(', ')}) — ${list.length > 2 ? 'more than the usual two meetings' : 'twice at the same venue'}. Check for a duplicated or mistyped fixture. If it's right (say a group game plus a two-legged tie), add "allowRepeatMeeting": true to one of these fixtures.` });
+      }
+    });
+
+  });
+
+  // Fixture id prefixes: each squad's usual prefix is the one most of its ids share.
+  const own = {};
+  squadKeys.forEach(sk => {
+    const fixtures = ((fixturesData[sk] || {}).fixtures || []).filter(fx => fx && typeof fx === 'object');
+    const counts = {};
+    fixtures.forEach(fx => { const m = /^([A-Za-z0-9]+)-/.exec(String(fx.id == null ? '' : fx.id)); if (m) counts[m[1].toLowerCase()] = (counts[m[1].toLowerCase()] || 0) + 1; });
+    const best = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0];
+    if (best && fixtures.length >= 3 && counts[best] / fixtures.length > 0.5) own[sk] = best;
+  });
+  squadKeys.forEach(sk => {
+    ((fixturesData[sk] || {}).fixtures || []).forEach(fx => {
+      if (!fx) return;
+      const m = /^([A-Za-z0-9]+)-/.exec(String(fx.id == null ? '' : fx.id));
+      const pre = m ? m[1].toLowerCase() : null;
+      if (!pre || !own[sk] || pre === own[sk]) return;
+      const other = squadKeys.find(o => o !== sk && own[o] === pre);
+      if (other) {
+        const lbl = `${fx.date ? fmtDate(fx.date) : 'undated'} v ${fx.opponent || '(no opponent)'}`;
+        issues.push({ squad: sk, fixtureId: fx.id, fixtureLabel: lbl, severity: 'error',
+          message: `${lbl}: fixture id "${fx.id}" looks like a ${SQUAD_LABEL[other] || other} fixture (ids there start "${pre}-"), but it's in the ${SQUAD_LABEL[sk] || sk} list. Wrong squad, or a mistyped id?` });
+      }
+    });
+  });
+  return issues;
 }
 
 /**
@@ -1757,4 +2050,26 @@ function findDuplicateJsonKeys(text) {
   };
   try { value([]); } catch (e) { return []; }
   return found;
+}
+
+/**
+ * Every data check for one season's page: the per-season checks (validateFixtures), the cross-season
+ * checks, any `extraIssues` the caller already has (the Data checks page adds its duplicate-key
+ * findings), then the two "dataComplete" nudges. Used by the squad tracker (for the badge and banner)
+ * and the Data checks page (for the full list), so both always agree. `ctx` is from resolveSeasonContext.
+ */
+async function gatherIssues(ctx, fixtures, playersById, extraIssues) {
+  const { seasons, activeSeason, masterFile } = ctx;
+  const crossIssues = seasons ? await loadCrossSeasonIssues(seasons, masterFile) : [];
+  const issues = validateFixtures(fixtures, playersById, {
+    requireDetailedStats: activeSeason ? activeSeason.requireDetailedStats !== false : true,
+    season: activeSeason,
+  }).concat(crossIssues, extraIssues || []);
+  // Nudge to mark this season "dataComplete" once every fixture has a result and there are no errors.
+  const completeIssue = seasonCompleteIssue(activeSeason, fixtures, issues);
+  if (completeIssue) issues.push(completeIssue);
+  // ...and the reverse: a season flagged complete that still has fixtures without results, or errors.
+  const staleIssue = seasonStaleCompleteIssue(activeSeason, fixtures, issues);
+  if (staleIssue) { staleIssue.bannerWorthy = true; issues.push(staleIssue); } // a "complete" season that isn't: always worth the banner
+  return issues;
 }
